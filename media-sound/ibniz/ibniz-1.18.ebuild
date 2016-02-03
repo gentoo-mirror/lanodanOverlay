@@ -17,5 +17,5 @@ DEPEND="media-libs/libsdl"
 RDEPEND="${DEPEND}"
 
 src_install() {
-	cp ibniz /usr/bin/ibniz
+	dobin ibniz
 }
