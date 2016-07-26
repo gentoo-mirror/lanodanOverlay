@@ -12,6 +12,9 @@ layman -o https://gitlab.com/lanodan/overlay/raw/master/repositories.xml -f -a l
 	* LibreSSL
 * Very unstable stuff I want to stabilize
 
+# What’s not here
+* Compatibility with SystemD(I’m compatible with rc script, sys V init+rc, openrc)
+
 # Goals
 * Gentoo on smartphones (I currently have a OnePlus One and LCD-less Nexus 4)
 * GNU-less full-blown desktop
