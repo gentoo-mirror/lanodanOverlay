@@ -30,10 +30,3 @@ src_prepare() {
 
 	eapply_user
 }
-
-src_compile() {
-	emake \
-		CC="$(tc-getCC)" \
-		LD="$(tc-getCC)" \
-		linux
-}
