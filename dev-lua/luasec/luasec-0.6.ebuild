@@ -27,6 +27,8 @@ src_prepare() {
 		-e "s#^LUACPATH.*#LUACPATH=$(pkg-config --variable INSTALL_CMOD lua)#" Makefile || die
 	sed -i -e "s/-O2//g" src/Makefile || die
 	lua src/options.lua -g /usr/include/openssl/ssl.h > src/options.h || die
+
+	eapply_user
 }
 
 src_compile() {
