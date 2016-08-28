@@ -4,8 +4,6 @@
 
 EAPI=6
 
-inherit multilib toolchain-funcs
-
 DESCRIPTION="Lua binding for OpenSSL library to provide TLS/SSL communication"
 HOMEPAGE="https://github.com/brunoos/luasec http://www.inf.puc-rio.br/~brunoos/luasec/"
 SRC_URI="https://github.com/brunoos/luasec/archive/${P}.tar.gz"
@@ -16,10 +14,10 @@ KEYWORDS="amd64 arm x86"
 IUSE="libressl"
 
 RDEPEND="
-	>=dev-lang/lua-5.1[deprecated]
+	>=dev-lang/lua-5.1:*[deprecated]
 	dev-lua/luasocket
-	!libressl? ( dev-libs/openssl:0= )
-	libressl? ( dev-libs/libressl:0= )"
+	!libressl? ( dev-libs/openssl:* )
+	libressl? ( dev-libs/libressl:* )"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
