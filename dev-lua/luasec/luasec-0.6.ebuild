@@ -18,8 +18,8 @@ IUSE="libressl"
 RDEPEND="
 	>=dev-lang/lua-5.1[deprecated]
 	dev-lua/luasocket
-	libressl? ( dev-libs/libressl:0 )
-	!libressl? ( dev-libs/openssl:0 )"
+	!libressl? ( dev-libs/openssl:0= )
+	libressl? ( dev-libs/libressl:0= )"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
