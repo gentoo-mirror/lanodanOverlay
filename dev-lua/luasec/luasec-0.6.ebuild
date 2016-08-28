@@ -24,9 +24,9 @@ S=${WORKDIR}/${PN}-${P}
 
 src_prepare() {
 	sed -i -e "s#^LUAPATH.*#LUAPATH=$(pkg-config --variable INSTALL_LMOD lua)#"\
-		-e "s#^LUACPATH.*#LUACPATH=$(pkg-config --variable INSTALL_CMOD lua)#" Makefile || die
-	sed -i -e "s/-O2//g" src/Makefile || die
-	lua src/options.lua -g /usr/include/openssl/ssl.h > src/options.h || die
+		-e "s#^LUACPATH.*#LUACPATH=$(pkg-config --variable INSTALL_CMOD lua)#" Makefile
+	sed -i "s/=-O2 /=/g" src/Makefile
+	lua src/options.lua -g /usr/include/openssl/ssl.h > src/options.h
 
 	eapply_user
 }
