@@ -26,6 +26,10 @@ src_prepare() {
 	sed -i -e "s#^LUAPATH.*#LUAPATH=$(pkg-config --variable INSTALL_LMOD lua)#"\
 		-e "s#^LUACPATH.*#LUACPATH=$(pkg-config --variable INSTALL_CMOD lua)#" Makefile
 	sed -i "s/=-O2 /=/g" src/Makefile
+
+	sed -i 's/$(LUACPATH)/$(DESTDIR)$(LUACPATH)/' Makefile
+	sed -i 's/$(LUAPATH)/$(DESTDIR)$(LUAPATH)/' Makefile
+
 	lua src/options.lua -g /usr/include/openssl/ssl.h > src/options.h
 
 	eapply_user
