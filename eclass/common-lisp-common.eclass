@@ -89,7 +89,7 @@ EOF
 unregister-common-lisp-implementation() {
 	PROGNAME=$(basename $0)
 	if [ `id -u` != 0 ] ; then
-		echo $PROGNAME: you need to be root to run this program
+		echo $PROGNAME: you need to be SuperUser to run this program
 		exit 1
 	fi
 	if [ -z "$1" ] ; then
@@ -186,7 +186,7 @@ standard-impl-postinst() {
 	if test-in ${impl} cmucl sbcl; then
 		impl-restore-timestamp-hack ${impl}
 	fi
-	chown -R root:0 /usr/$(get_libdir)/${impl}
+	chown -R 0:0 /usr/$(get_libdir)/${impl}
 	/usr/bin/clc-autobuild-impl ${impl} yes
 	register-common-lisp-implementation ${impl}
 }
