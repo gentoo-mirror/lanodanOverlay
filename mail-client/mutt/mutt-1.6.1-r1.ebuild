@@ -247,7 +247,7 @@ src_install() {
 	fi
 
 	if use !prefix ; then
-		fowners root:mail /usr/bin/mutt_dotlock
+		fowners 0:mail /usr/bin/mutt_dotlock
 		fperms g+s /usr/bin/mutt_dotlock
 	fi
 
