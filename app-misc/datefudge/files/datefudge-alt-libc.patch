@@ -1,0 +1,42 @@
+diff --git a/datefudge.c b/datefudge.c
+index f816639..1501b10 100644
+--- a/datefudge.c
++++ b/datefudge.c
+@@ -5,8 +5,6 @@
+  * Copyright (C) 2008-2011, Robert Luberda <robert@debian.org>
+  *
+  */
+-#define _GNU_SOURCE
+-
+ #include <sys/file.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
+@@ -17,7 +15,7 @@
+ #include <features.h>
+ #include <unistd.h>
+ #include <time.h>
+-#include <sys/time.h>
++#include <sys/types.h>
+ 
+ static int fudge = 0;
+ static int dostatic = 0;
+@@ -62,8 +60,8 @@ time_t time(time_t *x) {
+ 
+ #endif
+ 
+-int __gettimeofday(struct timeval *x, struct timezone *y) {
+-    static int (*libc_gettimeofday)(struct timeval *, struct timezone *) = NULL;
++int __gettimeofday(struct timeval *x, void *y) {
++    static int (*libc_gettimeofday)(struct timeval *, void *) = NULL;
+     int res;
+ 
+     if(!libc_gettimeofday)
+@@ -74,7 +72,7 @@ int __gettimeofday(struct timeval *x, struct timezone *y) {
+     return 0;
+ }
+ 
+-int gettimeofday(struct timeval *x, struct timezone *y) { 
++int gettimeofday(struct timeval *x, void *y) { 
+     return __gettimeofday(x,y); 
+ }
+ 
