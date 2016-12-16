@@ -1,8 +1,8 @@
 Warning: This is a experimental overlay, it can hurt your cow…
 Commits are now(2016-01-08 22:00 UTC) *all* signed.
 
-# How to add this overlay using layman
-layman -o https://gitlab.com/lanodan/overlay/raw/master/repositories.xml -f -a lanodanOverlay
+# How to add this overlay
+layman -a lanodanOverlay
 
 # What’s mostly in here
 * Early version-bump
