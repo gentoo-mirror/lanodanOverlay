@@ -1,0 +1,2 @@
+# Copyright issue, see : https://github.com/martanne/abduco/issues/20 and https://bugs.debian.org/833897
+app-misc/abduco
