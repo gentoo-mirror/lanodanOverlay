@@ -24,6 +24,7 @@ src_unpack() {
 
 src_prepare() {
 	rm README* || die
+	default
 }
 
 pkg_postinst() {
