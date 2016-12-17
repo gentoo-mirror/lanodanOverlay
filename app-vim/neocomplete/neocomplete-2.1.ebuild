@@ -8,7 +8,7 @@ inherit vim-plugin
 
 DESCRIPTION="Next generation completion framework after neocomplcache"
 HOMEPAGE="https://github.com/Shougo/neocomplete.vim"
-SRC_URI="https://github.com/Shougo/neocomplete.vim/archive/ver.${PV}.tar.gz"
+SRC_URI="https://github.com/Shougo/neocomplete.vim/archive/ver.${PV}.tar.gz -> neocomplete-2.1.tar.gz"
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
