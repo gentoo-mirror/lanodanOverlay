@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<maintainer type="project">
+<email>vim@gentoo.org</email>
+</maintainer>
+<maintainer type="person">
+<email>contact@hacktivis.me</email>
+</maintainer>
+<longdescription lang="en">
+neocomplete is the abbreviation of "neo-completion with cache". It provides keyword completion system by maintaining a cache of keywords in the current buffer. neocomplete can be customized easily and has many more features than Vim's built-in completion.
+</longdescription>
+</pkgmetadata>
