@@ -4,13 +4,13 @@
 
 EAPI=5
 
-DESCRIPTION="IBNIZ is a virtual machine designed for extremely compact low-level audiovisual programs."
+DESCRIPTION="virtual machine designed for extremely compact low-level audiovisual programs"
 HOMEPAGE="http://pelulamu.net/ibniz/"
 SRC_URI="http://pelulamu.net/ibniz/${P}.tar.gz"
 
-LICENSE=""
+LICENSE="ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="media-libs/libsdl"
