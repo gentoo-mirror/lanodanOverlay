@@ -2,4 +2,4 @@
 app-misc/abduco
 
 # last commit is 2014, several issues. See : https://gitlab.com/lanodan/overlay/issues/6
-dev-python/pycrypto:0
+~dev-python/pycrypto-2.1.6
