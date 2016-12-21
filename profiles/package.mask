@@ -1,2 +1,5 @@
 # Copyright issue, see : https://github.com/martanne/abduco/issues/20 and https://bugs.debian.org/833897
 app-misc/abduco
+
+# last commit is 2014, several issues. See : https://gitlab.com/lanodan/overlay/issues/6
+~dev-python/pycrypto-2.1.6
