@@ -99,7 +99,7 @@ GAMES_ENVD="90games"
 # @DESCRIPTION:
 # The USER who owns all game files and usually has write permissions.
 # May be set by the user.
-GAMES_USER=${GAMES_USER:-root}
+GAMES_USER=${GAMES_USER:-0}
 
 # @ECLASS-VARIABLE: GAMES_USER_DED
 # @DESCRIPTION:
@@ -259,7 +259,7 @@ prepgamesdirs() {
 				for d in $(get_libdir) bin ; do
 					# check if dirs exist to avoid "nonfatal" option
 					if [[ -e ${D}/${dir}/${d} ]] ; then
-						fowners root:0 "${dir}/${d}"
+						fowners 0:0 "${dir}/${d}"
 						fperms 755 "${dir}/${d}"
 					fi
 				done
@@ -268,9 +268,9 @@ prepgamesdirs() {
 
 		f=$(find "${D}/${dir}" -perm +4000 -a -uid 0 2>/dev/null)
 		if [[ -n ${f} ]] ; then
-			eerror "A game was detected that is setuid root!"
+			eerror "A game was detected that is setuid 0!"
 			eerror "${f}"
-			die "refusing to merge a setuid root game"
+			die "refusing to merge a setuid 0 game"
 		fi
 	done
 	[[ -d ${D}/${GAMES_BINDIR} ]] || return 0
@@ -285,10 +285,8 @@ games_pkg_setup() {
 	tc-export CC CXX LD AR RANLIB
 
 	enewgroup "${GAMES_GROUP}" 35
-	[[ ${GAMES_USER} != "root" ]] \
-		&& enewuser "${GAMES_USER}" 35 -1 "${GAMES_PREFIX}" "${GAMES_GROUP}"
-	[[ ${GAMES_USER_DED} != "root" ]] \
-		&& enewuser "${GAMES_USER_DED}" 36 /bin/bash "${GAMES_PREFIX}" "${GAMES_GROUP}"
+	enewuser "${GAMES_USER}" 35 -1 "${GAMES_PREFIX}" "${GAMES_GROUP}"
+	enewuser "${GAMES_USER_DED}" 36 /bin/bash "${GAMES_PREFIX}" "${GAMES_GROUP}"
 
 	# Dear portage team, we are so sorry.  Lots of love, games team.
 	# See Bug #61680
