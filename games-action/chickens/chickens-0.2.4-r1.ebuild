@@ -59,7 +59,7 @@ src_install() {
 	doins options.cfg
 	make_desktop_entry ${PN} Chickens
 
-	fowners root:gamestat /usr/bin/${PN} /var/games/${PN}/HighScores
+	fowners 0:gamestat /usr/bin/${PN} /var/games/${PN}/HighScores
 	fperms 2755 /usr/bin/${PN}
 	fperms 660  /var/games/${PN}/HighScores
 }
