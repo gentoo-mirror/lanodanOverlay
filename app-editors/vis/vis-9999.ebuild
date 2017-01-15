@@ -1,28 +1,27 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
 EAPI=5
-inherit git-r3 lua
+inherit git-r3
 
-EGIT_REPO_URI="https://github.com/martanne/vis.git"
 DESCRIPTION="Vis aims to be a modern, legacy free, simple yet efficient vim-like editor."
 HOMEPAGE="https://github.com/martanne/vis"
-KEYWORDS=""
+EGIT_REPO_URI="https://github.com/martanne/vis.git"
 LICENSE="ISC"
 SLOT="0"
+KEYWORDS=""
 IUSE="+lua -selinux"
 
-DEPEND="sys-libs/ncurses dev-libs/libtermkey lua? ( >=dev-lang/lua-5.2 )"
+DEPEND="sys-libs/ncurses:= dev-libs/libtermkey lua? ( >=dev-lang/lua-5.2:= )"
 RDEPEND="${DEPEND} lua? ( >=dev-lua/lpeg-0.12 )"
-LUA_COMPAT=( lua{5.2, 5.3} )
 
 src_prepare() {
 	use lua || {
 		sed -i -e 's|CONFIG_LUA=1|CONFIG_LUA=0|' \
 			config.mk || die "sed config.mk failed"
 	}
-	
+
 	use selinux && {
 		sed -i -e 's|CONFIG_SELINUX=0|CONFIG_SELINUX=1|' \
 			config.mk || die "sed config.mk failed"
