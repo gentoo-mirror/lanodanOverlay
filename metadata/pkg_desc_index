@@ -9,4 +9,4 @@ media-sound/ibniz 1.18: virtual machine designed for extremely compact low-level
 net-misc/openntpd 6.0_p1: Lightweight NTP server ported from OpenBSD
 virtual/editor 0-r1: Virtual for editor
 www-apps/stagit 0.4: static git page generator
-x11-drivers/nvidia-drivers 370.28: NVIDIA Accelerated Graphics Driver
+x11-drivers/nvidia-drivers 370.28 375.26: NVIDIA Accelerated Graphics Driver
