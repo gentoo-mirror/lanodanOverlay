@@ -4,50 +4,43 @@
 EAPI=6
 
 KDE_TEST="forceoptional"
-inherit kde5
+inherit kde5 git-r3
 
 DESCRIPTION="Free digital painting application. Digital Painting, Creative Freedom!"
 HOMEPAGE="https://www.kde.org/applications/graphics/krita/ https://krita.org/"
-SRC_URI="mirror://kde/stable/${PN}/${PV}/${P}.1.tar.gz"
+SRC_URI=""
+GIT_REPO_URI="git://anongit.kde.org/krita.git"
 
 LICENSE="GPL-2+"
 KEYWORDS="~amd64 ~x86"
-IUSE="color-management fftw +gsl +jpeg openexr pdf qtmedia +raw tiff vc"
+IUSE="color-management fftw +gsl +jpeg openexr pdf qtmedia +raw tiff vc threads curl zlib"
 
 COMMON_DEPEND="
 	$(add_frameworks_dep karchive)
-	$(add_frameworks_dep kcompletion)
 	$(add_frameworks_dep kconfig)
+	$(add_frameworks_dep kwidgetsaddons)
+	$(add_frameworks_dep kcompletion)
 	$(add_frameworks_dep kcoreaddons)
-	$(add_frameworks_dep kcrash)
 	$(add_frameworks_dep kguiaddons)
 	$(add_frameworks_dep ki18n)
-	$(add_frameworks_dep kiconthemes)
-	$(add_frameworks_dep kio)
 	$(add_frameworks_dep kitemmodels)
 	$(add_frameworks_dep kitemviews)
-	$(add_frameworks_dep kwidgetsaddons)
 	$(add_frameworks_dep kwindowsystem)
-	$(add_frameworks_dep kxmlgui)
-	$(add_qt_dep qtconcurrent)
-	$(add_qt_dep qtdbus)
 	$(add_qt_dep qtgui '-gles2')
+	$(add_qt_dep qtwidgets)
+	$(add_qt_dep qtxml)
 	$(add_qt_dep qtnetwork)
 	$(add_qt_dep qtprintsupport)
 	$(add_qt_dep qtsvg)
-	$(add_qt_dep qtwidgets)
+	$(add_qt_dep qttest)
+	$(add_qt_dep qtconcurrent)
 	$(add_qt_dep qtx11extras)
-	$(add_qt_dep qtxml)
 	dev-libs/boost:=
 	media-gfx/exiv2:=
 	media-libs/lcms
 	media-libs/libpng:0=
-	net-misc/curl
-	sys-libs/zlib
 	virtual/opengl
-	x11-libs/libX11
-	x11-libs/libxcb
-	x11-libs/libXi
+	x11-apps/xinput
 	color-management? ( media-libs/opencolorio )
 	fftw? ( sci-libs/fftw:3.0= )
 	gsl? ( sci-libs/gsl:= )
@@ -60,6 +53,9 @@ COMMON_DEPEND="
 	qtmedia? ( $(add_qt_dep qtmultimedia) )
 	raw? ( media-libs/libraw:= )
 	tiff? ( media-libs/tiff:0 )
+	zlib? ( sys-libs/zlib )
+	threads? ( dev-libs/libpthread-stubs )
+	curl? ( net-misc/curl )
 "
 DEPEND="${COMMON_DEPEND}
 	dev-cpp/eigen:3
@@ -72,9 +68,13 @@ RDEPEND="${COMMON_DEPEND}
 	!app-office/calligra-l10n:4[calligra_features_krita(+)]
 "
 
-S="${WORKDIR}/${P}.1"
-
 PATCHES=( "${FILESDIR}"/${PN}-vc-fix-gcc49-abi.patch )
+
+src_prepare() {
+	git checkout -b ${PV} $(git rev-parse v${PV} 2>/dev/null) # tag is ambigous
+
+	default_src_prepare
+}
 
 src_configure() {
 	local mycmakeargs=(
