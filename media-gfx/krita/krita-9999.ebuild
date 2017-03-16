@@ -9,7 +9,7 @@ inherit kde5 git-r3
 DESCRIPTION="Free digital painting application. Digital Painting, Creative Freedom!"
 HOMEPAGE="https://www.kde.org/applications/graphics/krita/ https://krita.org/"
 SRC_URI=""
-GIT_REPO_URI="git://anongit.kde.org/krita.git"
+EGIT_REPO_URI="git://anongit.kde.org/krita.git"
 
 LICENSE="GPL-2+"
 KEYWORDS="~amd64 ~x86"
