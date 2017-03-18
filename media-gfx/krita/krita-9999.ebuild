@@ -12,7 +12,7 @@ SRC_URI=""
 EGIT_REPO_URI="git://anongit.kde.org/krita.git"
 
 LICENSE="GPL-2+"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE="color-management fftw +gsl +jpeg openexr pdf qtmedia +raw tiff vc threads curl zlib"
 
 COMMON_DEPEND="
