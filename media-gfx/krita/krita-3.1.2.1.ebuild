@@ -10,6 +10,7 @@ DESCRIPTION="Free digital painting application. Digital Painting, Creative Freed
 HOMEPAGE="https://www.kde.org/applications/graphics/krita/ https://krita.org/"
 SRC_URI=""
 EGIT_REPO_URI="git://anongit.kde.org/krita.git"
+EGIT_COMMIT="v${PV}"
 
 LICENSE="GPL-2+"
 KEYWORDS="~amd64 ~x86"
@@ -67,14 +68,6 @@ RDEPEND="${COMMON_DEPEND}
 	!app-office/calligra:4[calligra_features_krita]
 	!app-office/calligra-l10n:4[calligra_features_krita(+)]
 "
-
-PATCHES=( "${FILESDIR}"/${PN}-vc-fix-gcc49-abi.patch )
-
-src_prepare() {
-	git checkout -b ${PV} $(git rev-parse v${PV} 2>/dev/null) # tag is ambigous
-
-	default_src_prepare
-}
 
 src_configure() {
 	local mycmakeargs=(
