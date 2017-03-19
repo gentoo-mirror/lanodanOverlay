@@ -3,6 +3,8 @@
 
 EAPI=6
 
+inherit eutils
+
 DESCRIPTION="A minimalist image viewer using raw XLib."
 HOMEPAGE="http://www.johnhawthorn.com/meh"
 SRC_URI="http://web.uvic.ca/~jhawthor/${P}.tar.gz"
@@ -18,3 +20,9 @@ DEPEND="
 	media-libs/giflib
 	media-libs/libpng:*"
 RDEPEND="${DEPEND}"
+
+src_prepare() {
+	default
+	cd "${S}"
+	epatch "${FILESDIR}/giflib5+.patch"
+}
