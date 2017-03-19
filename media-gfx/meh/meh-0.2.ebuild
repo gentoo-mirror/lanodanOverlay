@@ -3,6 +3,8 @@
 
 EAPI=6
 
+inherit eutils
+
 DESCRIPTION="A minimalist image viewer using raw XLib."
 HOMEPAGE="http://www.johnhawthorn.com/meh"
 SRC_URI="http://web.uvic.ca/~jhawthor/${P}.tar.gz"
