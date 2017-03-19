@@ -1,4 +1,4 @@
-DEFINED_PHASES=-
+DEFINED_PHASES=prepare
 DEPEND=x11-libs/libXext virtual/jpeg:* media-libs/giflib media-libs/libpng:*
 DESCRIPTION=A minimalist image viewer using raw XLib.
 EAPI=6
@@ -8,5 +8,6 @@ LICENSE=MIT
 RDEPEND=x11-libs/libXext virtual/jpeg:* media-libs/giflib media-libs/libpng:*
 SLOT=0
 SRC_URI=http://web.uvic.ca/~jhawthor/meh-0.2.tar.gz
-_eclass_exported_funcs=-
-_md5_=145f374ff0d3c9d372e9b5461b589bf5
+_eclass_exported_funcs=src_prepare:-
+_eclasses_=epatch	122e1264e67c4f59a1482f2095e0b35d	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	1ef31aee2bd63ffbfcae8a1843c9208d	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	0236be304ee52e7f179ed2f337075515	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
+_md5_=bc4587887e74cda5efbd6f99384f57ab
