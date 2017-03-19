@@ -11,7 +11,7 @@ EGIT_REPO_URI="git://github.com/jhawthorn/meh.git http://github.com/jhawthorn/me
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="

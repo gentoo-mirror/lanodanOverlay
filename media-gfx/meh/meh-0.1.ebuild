@@ -17,12 +17,6 @@ IUSE=""
 DEPEND="
 	x11-libs/libXext
 	virtual/jpeg:*
-	media-libs/giflib
+	<media-libs/giflib-4.2.0
 	media-libs/libpng:*"
 RDEPEND="${DEPEND}"
-
-src_prepare() {
-	default
-	cd "${S}"
-	epatch "${FILESDIR}/giflib5+.patch"
-}
