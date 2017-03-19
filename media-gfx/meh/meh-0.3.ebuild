@@ -18,3 +18,9 @@ DEPEND="
 	media-libs/giflib
 	media-libs/libpng:*"
 RDEPEND="${DEPEND}"
+
+src_prepare() {
+	default
+	cd "${S}"
+	epatch "${FILESDIR}/giflib5+.patch"
+}
