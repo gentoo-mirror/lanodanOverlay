@@ -6,6 +6,7 @@ app-vim/neocomplete 2.1: Next generation completion framework after neocomplcach
 games-action/chickens 0.2.4 0.2.4-r1: Target chickens with rockets and shotguns. Funny
 games-engines/love 0.7.2-r1 0.8.0 0.10.2 9999: A framework for 2D games in Lua
 gnustep-base/gnustep-base 1.24.9: A library of general-purpose, non-graphical Objective C objects
+media-gfx/krita 3.1.2.1 9999: Free digital painting application. Digital Painting, Creative Freedom!
 media-gfx/meh 0.1 0.2 0.3 9999: A minimalist image viewer using raw XLib.
 media-sound/ibniz 1.18: virtual machine designed for extremely compact low-level audiovisual programs
 net-misc/openntpd 6.0_p1: Lightweight NTP server ported from OpenBSD
