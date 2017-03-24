@@ -1,0 +1,54 @@
+# ChangeLog for media-gfx/krita
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
+
+*krita-3.0 (05 Jun 2016)
+
+  05 Jun 2016; Michael Palimaka <kensington@gentoo.org> +krita-3.0.ebuild,
+  +metadata.xml:
+  new package
+
+  Imported from KDE overlay.
+
+  Package-Manager: portage-2.3.0_rc1
+
+*krita-3.0.1 (22 Sep 2016)
+
+  22 Sep 2016; Michael Palimaka <kensington@gentoo.org>
+  +files/krita-3.0.1-breeze-collisions.patch,
+  +files/krita-3.0.1-vc-cxxflags.patch, +krita-3.0.1.ebuild:
+  version bump
+
+  Gentoo-bug: 594594
+
+  Package-Manager: portage-2.3.1
+
+  25 Sep 2016; Michael Palimaka <kensington@gentoo.org> krita-3.0.1.ebuild:
+  Add blocker against calligra-l10n
+
+  Gentoo-bug: 594772
+
+  Package-Manager: portage-2.3.0
+
+*krita-3.1.1 (17 Dec 2016)
+
+  17 Dec 2016; Johannes Huber <johu@gentoo.org> +krita-3.1.1.ebuild:
+  Version bump 3.1.1
+
+  Gentoo-bug: 602648
+  Thanks-to: rx80 <rokfaith@gmail.com>
+
+  Package-Manager: Portage-2.3.3, Repoman-2.3.1
+
+  17 Dec 2016; Johannes Huber <johu@gentoo.org> -krita-3.0.ebuild:
+  Remove 3.0
+
+  Package-Manager: Portage-2.3.3, Repoman-2.3.1
+
+  17 Dec 2016; Johannes Huber <johu@gentoo.org>
+  -files/krita-3.0.1-breeze-collisions.patch,
+  -files/krita-3.0.1-vc-cxxflags.patch, -krita-3.0.1.ebuild:
+  Remove 3.0.1
+
+  Package-Manager: Portage-2.3.3, Repoman-2.3.1
+
