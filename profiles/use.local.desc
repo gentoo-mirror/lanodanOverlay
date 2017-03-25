@@ -2,6 +2,8 @@
 # Please add your descriptions to your package's metadata.xml ONLY.
 # * generated automatically using pmaint *
 
+app-editors/vis:lpeg - runtime for syntax highlight using dev-lua/lpeg
+app-editors/vis:tre - more memory efficient regex search using dev-libs/tre
 media-gfx/krita:color-management - Enable color management via media-libs/opencolorio
 media-gfx/krita:qtmedia - Enable sound support for animations via dev-qt/qtmultimedia
 media-gfx/krita:vc - Enable support for dev-libs/vc, could be a significant speed boost
