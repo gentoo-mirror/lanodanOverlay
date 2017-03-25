@@ -10,5 +10,6 @@ Vis aims to be a modern, legacy free, simple yet efficient editor combining the 
 <use>
 <flag name="tre">more memory efficient regex search using <pkg>dev-libs/tre</pkg></flag>
 <flag name="lpeg">runtime for syntax highlight using <pkg>dev-lua/lpeg</pkg></flag>
+<flag name="curses">use curses (not only GNU ncurses), else it can cause flickering</flag>
 </use>
 </pkgmetadata>

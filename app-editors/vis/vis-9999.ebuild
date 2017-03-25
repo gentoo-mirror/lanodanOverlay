@@ -11,15 +11,17 @@ EGIT_REPO_URI="https://github.com/martanne/vis.git"
 LICENSE="ISC"
 SLOT="0"
 KEYWORDS=""
-IUSE="+lua +lpeg -selinux tre"
+IUSE="+lua +lpeg -selinux tre +curses"
 
-DEPEND="sys-libs/ncurses:= dev-libs/libtermkey lua? ( >=dev-lang/lua-5.2:= ) tre? ( dev-libs/tre:* )"
+#TODO: virtual/curses
+DEPEND="dev-libs/libtermkey lua? ( >=dev-lang/lua-5.2:= ) tre? ( dev-libs/tre:* ) curses? ( sys-libs/ncurses:= )"
 RDEPEND="${DEPEND} lua? ( lpeg? ( >=dev-lua/lpeg-0.12 ) ) "
 
 src_configure() {
 	econf $(use_enable lua)
 	econf $(use_enable tre)
 	econf $(use_enable selinux)
+	econf $(use_enable curses)
 }
 
 update_symlinks() {
