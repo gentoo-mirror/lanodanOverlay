@@ -11,10 +11,10 @@ EGIT_REPO_URI="https://github.com/martanne/vis.git"
 LICENSE="ISC"
 SLOT="0"
 KEYWORDS=""
-IUSE="+lua -selinux"
+IUSE="+lua +lpeg -selinux tre"
 
-DEPEND="sys-libs/ncurses:= dev-libs/libtermkey lua? ( >=dev-lang/lua-5.2:= )"
-RDEPEND="${DEPEND} lua? ( >=dev-lua/lpeg-0.12 )"
+DEPEND="sys-libs/ncurses:= dev-libs/libtermkey lua? ( >=dev-lang/lua-5.2:= ) tre? ( dev-libs/tre:* )"
+RDEPEND="${DEPEND} lua? ( lpeg? ( >=dev-lua/lpeg-0.12 ) ) "
 
 src_prepare() {
 	use lua || {
