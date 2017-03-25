@@ -16,16 +16,10 @@ IUSE="+lua +lpeg -selinux tre"
 DEPEND="sys-libs/ncurses:= dev-libs/libtermkey lua? ( >=dev-lang/lua-5.2:= ) tre? ( dev-libs/tre:* )"
 RDEPEND="${DEPEND} lua? ( lpeg? ( >=dev-lua/lpeg-0.12 ) ) "
 
-src_prepare() {
-	use lua || {
-		sed -i -e 's|CONFIG_LUA=1|CONFIG_LUA=0|' \
-			config.mk || die "sed config.mk failed"
-	}
-
-	use selinux && {
-		sed -i -e 's|CONFIG_SELINUX=0|CONFIG_SELINUX=1|' \
-			config.mk || die "sed config.mk failed"
-	}
+src_configure() {
+	econf $(use_enable lua)
+	econf $(use_enable tre)
+	econf $(use_enable selinux)
 }
 
 update_symlinks() {
