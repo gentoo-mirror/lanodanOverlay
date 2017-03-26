@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="Vis aims to be a modern, legacy free, simple yet efficient vim-like editor."
 HOMEPAGE="https://github.com/martanne/vis"
-SRC_URI="https://github.com/martanne/vis/archive/v${PV}.tar.gz"
+SRC_URI="https://github.com/martanne/vis/archive/v${PV}.tar.gz -> vis-0.3.tar.gz"
 LICENSE="ISC"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
