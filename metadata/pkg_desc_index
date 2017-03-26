@@ -1,5 +1,5 @@
 app-editors/2f30-ed 9999: simple ed
-app-editors/vis 0.1 0.2 9999: Vis aims to be a modern, legacy free, simple yet efficient vim-like editor.
+app-editors/vis 0.1 0.2 0.3 9999: Vis aims to be a modern, legacy free, simple yet efficient vim-like editor.
 app-misc/datefudge 1.17-r1: A program (and preload library) to fake system date
 app-portage/gentoolkit 0.3.0.9-r2: Collection of administration scripts for Gentoo
 app-vim/neocomplete 2.1: Next generation completion framework after neocomplcache
