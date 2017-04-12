@@ -12,8 +12,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="+lua -selinux"
 
-DEPEND="sys-libs/ncurses:= dev-libs/libtermkey lua? ( >=dev-lang/lua-5.2:= )"
-RDEPEND="${DEPEND} lua? ( >=dev-lua/lpeg-0.12 )"
+DEPEND="sys-libs/ncurses:= dev-libs/libtermkey lpeg? ( >=dev-lang/lua-5.2:= )"
+RDEPEND="${DEPEND} lpeg? ( >=dev-lua/lpeg-0.12 )"
 
 src_prepare() {
 	use lua || {
