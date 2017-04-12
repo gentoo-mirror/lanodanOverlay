@@ -10,10 +10,10 @@ SRC_URI="https://github.com/martanne/vis/archive/v${PV}.tar.gz -> vis-0.2.tar.gz
 LICENSE="ISC"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
-IUSE="+lua -selinux"
+IUSE="lpeg -selinux"
 
-DEPEND="sys-libs/ncurses:= dev-libs/libtermkey lua? ( >=dev-lang/lua-5.2:= )"
-RDEPEND="${DEPEND} lua? ( >=dev-lua/lpeg-0.12 )"
+DEPEND="sys-libs/ncurses:= dev-libs/libtermkey lpeg? ( >=dev-lang/lua-5.2:= )"
+RDEPEND="${DEPEND} lpeg? ( >=dev-lua/lpeg-0.12 )"
 
 src_prepare() {
 	use lua || {
