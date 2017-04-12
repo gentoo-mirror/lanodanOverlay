@@ -1,13 +1,13 @@
 DEFINED_PHASES=postinst postrm prepare
-DEPEND=sys-libs/ncurses:= dev-libs/libtermkey lua? ( >=dev-lang/lua-5.2:= )
+DEPEND=sys-libs/ncurses:= dev-libs/libtermkey lpeg? ( >=dev-lang/lua-5.2:= )
 DESCRIPTION=Vis aims to be a modern, legacy free, simple yet efficient vim-like editor.
 EAPI=5
 HOMEPAGE=https://github.com/martanne/vis
 IUSE=+lua -selinux
 KEYWORDS=~amd64 ~x86 ~arm
 LICENSE=ISC
-RDEPEND=sys-libs/ncurses:= dev-libs/libtermkey lua? ( >=dev-lang/lua-5.2:= ) lua? ( >=dev-lua/lpeg-0.12 )
+RDEPEND=sys-libs/ncurses:= dev-libs/libtermkey lpeg? ( >=dev-lang/lua-5.2:= ) lpeg? ( >=dev-lua/lpeg-0.12 )
 SLOT=0
 SRC_URI=https://github.com/martanne/vis/archive/v0.1.tar.gz -> vis-0.1.tar.gz
 _eclass_exported_funcs=pkg_postrm:- pkg_postinst:- src_prepare:-
-_md5_=9480d4be3e69d8729bb6ad795dff9667
+_md5_=e563c972bf50bc925596f6a7931a61db
