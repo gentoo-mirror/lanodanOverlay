@@ -4,23 +4,24 @@
 
 EAPI=5
 
-DESCRIPTION="Vis aims to be a modern, legacy free, simple yet efficient vim-like editor."
+DESCRIPTION="modern, legacy free, simple yet efficient vim-like editor."
 HOMEPAGE="https://github.com/martanne/vis"
-SRC_URI="https://github.com/martanne/vis/archive/v${PV}.tar.gz -> vis-0.3.tar.gz"
+SRC_URI="https://github.com/martanne/vis/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="ISC"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE="lua lpeg -selinux tre +curses"
+KEYWORDS="~amd64 ~arm ~x86"
+IUSE="+ncurses lua lpeg selinux tre"
 
 #TODO: virtual/curses
-DEPEND="dev-libs/libtermkey lua? ( >=dev-lang/lua-5.2:= ) tre? ( dev-libs/tre:* ) curses? ( sys-libs/ncurses:= )"
+DEPEND="dev-libs/libtermkey lua? ( >=dev-lang/lua-5.2:= ) tre? ( dev-libs/tre:= ) ncurses? ( sys-libs/ncurses:= )"
 RDEPEND="${DEPEND} lua? ( lpeg? ( >=dev-lua/lpeg-0.12 ) ) "
 
 src_configure() {
-	econf $(use_enable lua) \
-		$(use_enable tre) \
+	econf \
+		$(use_enable lua) \
+		$(use_enable ncurses curses) \
 		$(use_enable selinux) \
-		$(use_enable curses)
+		$(use_enable tre)
 }
 
 update_symlinks() {
