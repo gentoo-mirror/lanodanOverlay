@@ -3,7 +3,6 @@
 # * generated automatically using pmaint *
 
 app-admin/pass-otp:qrcode - Add support for qtcodes using media-gfx/qrencode
-app-editors/vis:curses - use curses (not only GNU ncurses), else it can cause flickering
 app-editors/vis:lpeg - runtime for syntax highlight using dev-lua/lpeg
 app-editors/vis:tre - more memory efficient regex search using dev-libs/tre
 media-gfx/krita:color-management - Enable color management via media-libs/opencolorio
