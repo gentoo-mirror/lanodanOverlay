@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
+	<maintainer type="person">
+		<name>Haelwenn (lanodan) Monnier</name>
+		<email>contact@hacktivis.me</email>
+	</maintainer>
 	<maintainer type="project">
 		<email>libressl@gentoo.org</email>
 	</maintainer>
@@ -11,6 +15,7 @@
 	</longdescription>
 	<use>
 		<flag name="asm">Enables assembly</flag>
+		<flag name="nc">Enables TLS-enabled nc(1)</flag>
 	</use>
 	<upstream>
 		<changelog>http://www.libressl.org/releases.html</changelog>
