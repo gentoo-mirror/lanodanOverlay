@@ -15,7 +15,7 @@ LICENSE="ISC openssl"
 # versions, we have to change the subslot to trigger rebuild of consumers.
 SLOT="0/43"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~mips ~ppc ~ppc64 ~x86"
-IUSE="+asm static-libs"
+IUSE="+asm nc static-libs"
 
 RDEPEND="!dev-libs/openssl:0"
 DEPEND="${RDEPEND}"
