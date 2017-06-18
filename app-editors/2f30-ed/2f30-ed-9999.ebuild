@@ -9,7 +9,7 @@ DESCRIPTION="simple ed"
 HOMEPAGE="http://git.2f30.org/ed"
 EGIT_REPO_URI="git://git.2f30.org/ed.git"
 
-LICENSE=""
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS=""
 IUSE=""
