@@ -3,7 +3,8 @@ DEPEND=>=dev-vcs/git-1.8.2.1
 DESCRIPTION=simple ed
 EAPI=6
 HOMEPAGE=http://git.2f30.org/ed
+LICENSE=MIT
 SLOT=0
 _eclass_exported_funcs=src_unpack:git-r3 src_compile:- src_install:-
 _eclasses_=git-r3	cbafa3261c37c7e3af44bb16a34ea390
-_md5_=da80c18313dfd8aade771edb86004174
+_md5_=c1e56222b7a7a91a4c5cf46e68c23a99
