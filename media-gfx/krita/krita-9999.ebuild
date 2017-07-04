@@ -11,40 +11,39 @@ HOMEPAGE="https://www.kde.org/applications/graphics/krita/ https://krita.org/"
 SRC_URI=""
 EGIT_REPO_URI="git://anongit.kde.org/krita.git"
 
-LICENSE="GPL-2+"
+LICENSE="GPL-3 GPL-3+"
 KEYWORDS=""
 IUSE="color-management fftw +gsl +jpeg openexr pdf qtmedia +raw tiff vc threads curl zlib"
 
 COMMON_DEPEND="
 	$(add_frameworks_dep karchive)
-	$(add_frameworks_dep kconfig)
-	$(add_frameworks_dep kwidgetsaddons)
 	$(add_frameworks_dep kcompletion)
+	$(add_frameworks_dep kconfig)
 	$(add_frameworks_dep kcoreaddons)
 	$(add_frameworks_dep kguiaddons)
 	$(add_frameworks_dep ki18n)
 	$(add_frameworks_dep kitemmodels)
 	$(add_frameworks_dep kitemviews)
+	$(add_frameworks_dep kwidgetsaddons)
 	$(add_frameworks_dep kwindowsystem)
+	$(add_qt_dep qtconcurrent)
 	$(add_qt_dep qtgui '-gles2')
-	$(add_qt_dep qtwidgets)
-	$(add_qt_dep qtxml)
 	$(add_qt_dep qtnetwork)
 	$(add_qt_dep qtprintsupport)
 	$(add_qt_dep qtsvg)
 	$(add_qt_dep qttest)
-	$(add_qt_dep qtconcurrent)
+	$(add_qt_dep qtwidgets)
 	$(add_qt_dep qtx11extras)
-	dev-libs/boost:=
-	media-gfx/exiv2:=
-	media-libs/lcms
-	media-libs/libpng:0=
-	virtual/opengl
-	x11-apps/xinput
+	$(add_qt_dep qtxml)
 	color-management? ( media-libs/opencolorio )
+	curl? ( net-misc/curl )
+	dev-libs/boost:=
 	fftw? ( sci-libs/fftw:3.0= )
 	gsl? ( sci-libs/gsl:= )
 	jpeg? ( virtual/jpeg:0 )
+	media-gfx/exiv2:=
+	media-libs/lcms
+	media-libs/libpng:0=
 	openexr? (
 		media-libs/ilmbase:=
 		media-libs/openexr
@@ -52,10 +51,11 @@ COMMON_DEPEND="
 	pdf? ( app-text/poppler[qt5] )
 	qtmedia? ( $(add_qt_dep qtmultimedia) )
 	raw? ( media-libs/libraw:= )
-	tiff? ( media-libs/tiff:0 )
-	zlib? ( sys-libs/zlib )
 	threads? ( dev-libs/libpthread-stubs )
-	curl? ( net-misc/curl )
+	tiff? ( media-libs/tiff:0 )
+	virtual/opengl
+	x11-apps/xinput
+	zlib? ( sys-libs/zlib )
 "
 DEPEND="${COMMON_DEPEND}
 	dev-cpp/eigen:3
@@ -67,6 +67,8 @@ RDEPEND="${COMMON_DEPEND}
 	!app-office/calligra:4[calligra_features_krita]
 	!app-office/calligra-l10n:4[calligra_features_krita(+)]
 "
+
+PATCHES=( "${FILESDIR}"/${PN}-vc-fix-gcc49-abi.patch )
 
 src_configure() {
 	local mycmakeargs=(
