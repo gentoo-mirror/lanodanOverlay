@@ -7,6 +7,10 @@ app-editors/vis:lpeg - runtime for syntax highlight using dev-lua/lpeg
 app-editors/vis:tre - more memory efficient regex search using dev-libs/tre
 dev-libs/libressl:asm - Enables assembly
 dev-libs/libressl:nc - Enables TLS-enabled nc(1)
+dev-qt/qtnetwork:bindist - Disable EC support via dev-libs/openssl
+dev-qt/qtnetwork:connman - Enable net-misc/connman-based bearer plugin
+dev-qt/qtnetwork:libproxy - Use net-libs/libproxy for automatic HTTP/SOCKS proxy configuration
+dev-qt/qtnetwork:networkmanager - Enable net-misc/networkmanager-based bearer plugin
 media-gfx/krita:color-management - Enable color management via media-libs/opencolorio
 media-gfx/krita:qtmedia - Enable sound support for animations via dev-qt/qtmultimedia
 media-gfx/krita:vc - Enable support for dev-libs/vc, could be a significant speed boost
