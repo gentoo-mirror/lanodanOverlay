@@ -90,6 +90,10 @@ src_prepare() {
 src_configure() {
 	export NINJA_PATH=/usr/bin/ninja
 
+	my_gcc_version=$(gcc --version | head -1 | sed -r 's|.*\) (.*)$|\1|')
+	qmake -set QT_GCC_MINOR_VERSION $(echo $my_gcc_version | cut -d. -f2)
+	qmake -set QT_GCC_MAJOR_VERSION $(echo $my_gcc_version | cut -d. -f1)
+
 	local myqmakeargs=(
 		$(usex bindist '' 'WEBENGINE_CONFIG+=use_proprietary_codecs')
 		$(usex system-ffmpeg 'WEBENGINE_CONFIG+=use_system_ffmpeg' '')
