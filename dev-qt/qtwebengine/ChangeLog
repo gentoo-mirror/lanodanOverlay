@@ -1,0 +1,148 @@
+# ChangeLog for dev-qt/qtwebengine
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
+
+*qtwebengine-5.6.0 (23 Apr 2016)
+
+  23 Apr 2016; Michael Palimaka <kensington@gentoo.org>
+  +files/qtwebengine-5.6.0-icu.patch,
+  +files/qtwebengine-5.6.0-nss-3.23-01.patch,
+  +files/qtwebengine-5.6.0-nss-3.23-02.patch, +metadata.xml,
+  +qtwebengine-5.6.0.ebuild:
+  dev-qt: version bump 5.6.0
+
+  Package-Manager: portage-2.2.28
+
+  08 May 2016; Davide Pesavento <pesa@gentoo.org> qtwebengine-5.6.0.ebuild:
+  add a few missing deps and several slot operators
+
+  Package-Manager: portage-2.2.28
+
+*qtwebengine-5.6.1 (14 Jun 2016)
+
+  14 Jun 2016; Davide Pesavento <pesa@gentoo.org> +qtwebengine-5.6.1.ebuild:
+  dev-qt: Qt 5.6.1 version bump
+
+  Package-Manager: portage-2.3.0_rc1
+
+  22 Jul 2016; Michael Palimaka <kensington@gentoo.org>
+  qtwebengine-5.6.1.ebuild:
+  dev-qt: stabilise 5.6.1 on amd64/x86
+
+  Gentoo-bug: 586180
+
+  Package-Manager: portage-2.3.0
+
+*qtwebengine-5.7.0 (12 Aug 2016)
+
+  12 Aug 2016; Michael Palimaka <kensington@gentoo.org>
+  +qtwebengine-5.7.0.ebuild:
+  dev-qt: version bump 5.7.0
+
+  Package-Manager: portage-2.3.0
+
+  18 Aug 2016; Michael Palimaka <kensington@gentoo.org>
+  -files/qtwebengine-5.6.0-icu.patch,
+  -files/qtwebengine-5.6.0-nss-3.23-01.patch,
+  -files/qtwebengine-5.6.0-nss-3.23-02.patch, -qtwebengine-5.6.0.ebuild:
+  dev-qt: remove 5.6.0
+
+  Package-Manager: portage-2.3.0
+
+  31 Aug 2016; Michael Palimaka <kensington@gentoo.org>
+  qtwebengine-5.7.0.ebuild:
+  relax media-video/ffmpeg dependency for 5.7.0
+
+  Package-Manager: portage-2.3.0
+
+*qtwebengine-5.6.2 (12 Oct 2016)
+
+  12 Oct 2016; Davide Pesavento <pesa@gentoo.org> +qtwebengine-5.6.2.ebuild:
+  dev-qt: Qt 5.6.2 version bump
+
+  Package-Manager: portage-2.3.1
+
+  01 Dec 2016; Michael Palimaka <kensington@gentoo.org> +files/a.patch,
+  +files/b.patch, qtwebengine-5.6.2.ebuild, qtwebengine-5.7.0.ebuild:
+  ensure build against system icu headers
+
+  Gentoo-bug: 601264
+
+  Package-Manager: portage-2.3.2
+
+  01 Dec 2016; Michael Palimaka <kensington@gentoo.org> -files/a.patch,
+  -files/b.patch:
+  remove patches accidentally introduced in
+  9f88b15ff6b650018934340b24e50d10eb15aa58
+
+  Package-Manager: portage-2.3.2
+
+  06 Dec 2016; Michael Palimaka <kensington@gentoo.org>
+  +files/qtwebengine-5.7.0-fix-system-ffmpeg.patch,
+  +files/qtwebengine-5.7.0-gcc6.patch, +files/qtwebengine-5.7.0-icu58.patch,
+  +files/qtwebengine-5.7.0-undef-madv_free.patch, qtwebengine-5.7.0.ebuild:
+  Add patches.
+
+  qtwebengine-5.7.0-fix-system-ffmpeg.patch undefines
+  FF_API_CONVERGENCE_DURATION,
+  which should only be defined when not using the system ffmpeg. This causes
+  segmentation faults at runtime with FFMPEG 3.x
+
+  qtwebengine-5.7.0-gcc6.patch is adapted from
+  http://code.qt.io/cgit/qt/qtwebengine-
+  chromium.git/commit/?id=cffcf22082879939bbcfa89e88057beda829a0a7
+  http://code.qt.io/cgit/qt/qtwebengine-
+  chromium.git/commit/?id=ae73e50e7d8c1371ed293c10150646a2719f4598
+  http://code.qt.io/cgit/qt/qtwebengine.git/commit/?id=c7aeb3b03ecce75c40d3f53
+  352e8b7b3a4d6d050
+  http://code.qt.io/cgit/qt/qtwebengine.git/commit/?id=d6c8a2cf8fa374e6d1c0a57
+  8391b57112c047fa4
+
+  qtwebengine-5.7.0-icu58.patch is adapted from
+  www-client/chromium/files/chromium-icu-58.patch
+
+  qtwebengine-5.7.0-undef-madv_free.patch is adapted from
+  http://code.qt.io/cgit/qt/qtwebengine-
+  chromium.git/commit/?id=fa8cdb3a32c377b6290d0a92d2522186bcd48293
+
+  Gentoo-Bug: 599094
+
+  06 Dec 2016; Michael Palimaka <kensington@gentoo.org>
+  +files/qtwebengine-paxmark-mksnapshot.patch, metadata.xml,
+  qtwebengine-5.6.2.ebuild, qtwebengine-5.7.0.ebuild:
+  Fix on PaX kernels
+
+  Gentoo-Bug: 582558
+  Gentoo-Bug: 579712
+
+  06 Dec 2016; Michael Palimaka <kensington@gentoo.org>
+  qtwebengine-5.6.2.ebuild, qtwebengine-5.7.0.ebuild:
+  Use correct libsrtp slot.
+
+  06 Dec 2016; Michael Palimaka <kensington@gentoo.org>
+  qtwebengine-5.6.2.ebuild:
+  dev-qt: stabilise 5.6.2 for amd64/x86
+
+  Gentoo-bug: 598780
+
+  Package-Manager: portage-2.3.2
+
+*qtwebengine-5.7.1 (14 Dec 2016)
+
+  14 Dec 2016; Michael Palimaka <kensington@gentoo.org>
+  +qtwebengine-5.7.1.ebuild:
+  dev-qt: version bump 5.7.1
+
+  Package-Manager: portage-2.3.3
+
+  14 Dec 2016; Michael Palimaka <kensington@gentoo.org>
+  -files/qtwebengine-5.7.0-gcc6.patch, -qtwebengine-5.7.0.ebuild:
+  dev-qt: remove 5.7.0
+
+  Package-Manager: portage-2.3.3
+
+  15 Dec 2016; Davide Pesavento <pesa@gentoo.org> qtwebengine-5.6.2.ebuild:
+  fix typo in comment
+
+  Package-Manager: Portage-2.3.3, Repoman-2.3.1
+
