@@ -11,16 +11,20 @@ EGIT_REPO_URI="https://github.com/martanne/vis.git"
 LICENSE="ISC"
 SLOT="0"
 KEYWORDS=""
-IUSE="+ncurses lua lpeg selinux tre"
+IUSE="+ncurses lua lpeg selinux test tre"
 
 #TODO: virtual/curses
 DEPEND="dev-libs/libtermkey lua? ( >=dev-lang/lua-5.2:= ) tre? ( dev-libs/tre:= ) ncurses? ( sys-libs/ncurses:= )"
 RDEPEND="${DEPEND} lua? ( lpeg? ( >=dev-lua/lpeg-0.12 ) ) "
 
+src_prepare() {
+	use test && which vim &>/dev/null || sed -i 's/.*vim.*//' "${S}/test/Makefile"
+}
+
 src_configure() {
 	econf \
-		$(use_enable curses) \
 		$(use_enable lua) \
+		$(use_enable ncurses curses) \
 		$(use_enable selinux) \
 		$(use_enable tre)
 }
