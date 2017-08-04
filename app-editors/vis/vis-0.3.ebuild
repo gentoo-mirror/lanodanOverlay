@@ -24,9 +24,9 @@ RDEPEND="${DEPEND} lua? ( lpeg? ( >=dev-lua/lpeg-0.12 ) ) "
 
 src_prepare() {
 	use test && (
-		rm -r ${S}/test
-		mv ${WORKDIR}/${MY_PT} ${S}/test
-		which vim &>/dev/null || sed -i 's/.*vim.*//' ${S}/test/Makefile
+		rm -r "${S}/test"
+		mv "${WORKDIR}/${MY_PT}" "${S}/test"
+		which vim &>/dev/null || sed -i 's/.*vim.*//' "${S}/test/Makefile"
 	)
 }
 
