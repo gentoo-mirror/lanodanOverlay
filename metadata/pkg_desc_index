@@ -15,6 +15,7 @@ media-gfx/krita 3.1.4 9999: Free digital painting application. Digital Painting,
 media-gfx/meh 0.1 0.2 0.3 9999: A minimalist image viewer using raw XLib.
 media-libs/rtmidi 2.1.1: common C++ API for realtime MIDI input/output
 media-sound/ibniz 1.18: virtual machine designed for extremely compact low-level audiovisual programs
+net-misc/drawterm 9999: connect to Plan 9 CPU servers from other operating systems
 net-misc/openntpd 6.0_p1: Lightweight NTP server ported from OpenBSD
 virtual/editor 0-r1: Virtual for editor
 www-apps/stagit 0.4 0.5: static git page generator
