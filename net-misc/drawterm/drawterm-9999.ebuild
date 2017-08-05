@@ -7,7 +7,7 @@ inherit eutils mercurial
 
 DESCRIPTION="connect to Plan 9 CPU servers from other operating systems"
 HOMEPAGE="http://drawterm.9front.org/"
-LICENSE="PLAN9 MIT"
+LICENSE="9base MIT"
 SLOT="9front"
 SRC_URI=""
 EHG_REPO_URI="https://code.9front.org/hg/drawterm"
