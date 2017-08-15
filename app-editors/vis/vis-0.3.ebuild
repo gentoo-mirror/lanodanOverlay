@@ -1,7 +1,7 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 MY_PTV=0.1
 MY_PT=${PN}-test-${MY_PTV}
@@ -30,6 +30,8 @@ src_prepare() {
 		mv "${WORKDIR}/${MY_PT}" test
 		which vim &>/dev/null || sed -i 's/.*vim.*//' test/Makefile
 	fi
+
+	default
 }
 
 src_configure() {
