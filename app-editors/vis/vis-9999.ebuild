@@ -23,7 +23,7 @@ RDEPEND="${DEPEND}
 
 src_prepare() {
 	if use test; then
-		type -P vim &>/dev/null || sed -i 's/.*vim.*//' /test/Makefile || die
+		type -P vim &>/dev/null || sed -i 's/.*vim.*//' test/Makefile || die
 	fi
 
 	default
