@@ -13,11 +13,18 @@ KEYWORDS=""
 IUSE="+ncurses lua lpeg selinux test tre"
 
 #TODO: virtual/curses
-DEPEND="dev-libs/libtermkey lua? ( >=dev-lang/lua-5.2:= ) tre? ( dev-libs/tre:= ) ncurses? ( sys-libs/ncurses:= ) app-eselect/eselect-vi"
-RDEPEND="${DEPEND} lua? ( lpeg? ( >=dev-lua/lpeg-0.12 ) ) "
+DEPEND="dev-libs/libtermkey
+	lua? ( >=dev-lang/lua-5.2:= )
+	tre? ( dev-libs/tre:= )
+	ncurses? ( sys-libs/ncurses:= )"
+RDEPEND="${DEPEND}
+	lua? ( lpeg? ( >=dev-lua/lpeg-0.12 ) )
+	app-eselect/eselect-vi"
 
 src_prepare() {
-	use test && which vim &>/dev/null || sed -i 's/.*vim.*//' "${S}/test/Makefile"
+	if use test; then
+		type -P vim &>/dev/null || sed -i 's/.*vim.*//' /test/Makefile || die
+	fi
 }
 
 src_configure() {
