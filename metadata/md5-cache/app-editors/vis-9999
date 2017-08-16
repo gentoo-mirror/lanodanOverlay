@@ -1,12 +1,11 @@
-DEFINED_PHASES=configure postinst postrm prepare unpack
-DEPEND=dev-libs/libtermkey lua? ( >=dev-lang/lua-5.2:= ) tre? ( dev-libs/tre:= ) ncurses? ( sys-libs/ncurses:= ) app-eselect/eselect-vi >=dev-vcs/git-1.8.2.1
+DEFINED_PHASES=configure postinst postrm prepare
+DEPEND=dev-libs/libtermkey lua? ( >=dev-lang/lua-5.2:= ) tre? ( dev-libs/tre:= ) ncurses? ( sys-libs/ncurses:= )
 DESCRIPTION=modern, legacy free, simple yet efficient vim-like editor.
-EAPI=5
+EAPI=6
 HOMEPAGE=https://github.com/martanne/vis
 IUSE=+ncurses lua lpeg selinux test tre
 LICENSE=ISC
-RDEPEND=dev-libs/libtermkey lua? ( >=dev-lang/lua-5.2:= ) tre? ( dev-libs/tre:= ) ncurses? ( sys-libs/ncurses:= ) app-eselect/eselect-vi lua? ( lpeg? ( >=dev-lua/lpeg-0.12 ) )
+RDEPEND=dev-libs/libtermkey lua? ( >=dev-lang/lua-5.2:= ) tre? ( dev-libs/tre:= ) ncurses? ( sys-libs/ncurses:= ) lua? ( lpeg? ( >=dev-lua/lpeg-0.12 ) ) app-eselect/eselect-vi
 SLOT=0
-_eclass_exported_funcs=pkg_postrm:- pkg_postinst:- src_unpack:git-r3 src_prepare:- src_configure:-
-_eclasses_=git-r3	cbafa3261c37c7e3af44bb16a34ea390
-_md5_=ed31d9e69b98b02af6dfce0bd7eaddfd
+_eclass_exported_funcs=pkg_postrm:- pkg_postinst:- src_prepare:- src_configure:-
+_md5_=cf1a5891f2c26fc86e99774631da6eaf

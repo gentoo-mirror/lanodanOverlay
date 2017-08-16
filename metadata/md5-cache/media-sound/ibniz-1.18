@@ -9,4 +9,4 @@ RDEPEND=media-libs/libsdl
 SLOT=0
 SRC_URI=http://pelulamu.net/ibniz/ibniz-1.18.tar.gz
 _eclass_exported_funcs=src_install:-
-_md5_=e8d6ee76ce9c147e0c9d99aaee5aff8e
+_md5_=7dd55d8f96203b5cf8cb5ef09ea43911
