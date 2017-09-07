@@ -5,6 +5,5 @@ EAPI=6
 HOMEPAGE=http://git.2f30.org/ed
 LICENSE=MIT
 SLOT=0
-_eclass_exported_funcs=src_unpack:git-r3 src_compile:- src_install:-
 _eclasses_=git-r3	4f7ddb4119309845d6687213171ab445
 _md5_=c1e56222b7a7a91a4c5cf46e68c23a99
