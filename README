@@ -26,3 +26,6 @@ Adding this overlay: layman -a lanodanOverlay
 ## media-gfx/krita
 • Changed dependencies (Used the CMakeList.txt file to get required and optionnals)
 • Added USE flags: threads curl zlib
+
+## app-misc/kanatest
+• Bumped from EAPI 5 to EAPI 6
