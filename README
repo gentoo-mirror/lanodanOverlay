@@ -16,6 +16,7 @@ Adding this overlay: layman -a lanodanOverlay
 • Long-term goals:
 	• being able to remove bash (using a shim?)
 	• UID 0 ≠ root compatibility
+	• Reproductibility (see Debian Projects)
 
 # Recipes notes compared to ::gentoo:
 
@@ -29,3 +30,4 @@ Adding this overlay: layman -a lanodanOverlay
 
 ## app-misc/kanatest
 • Bumped from EAPI 5 to EAPI 6
+• Add patch removing __DATE__ __TIME__

@@ -25,7 +25,8 @@ src_prepare() {
 	epatch \
 		"${FILESDIR}"/${P}+gtk-2.22.patch \
 		"${FILESDIR}"/${P}-autoconf.patch \
-		"${FILESDIR}"/${P}-cflags.patch
+		"${FILESDIR}"/${P}-cflags.patch \
+		"${FILESDIR}"/${P}-no_datetime.patch
 
 	sed -i \
 		-e '/Encoding/d' \
