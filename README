@@ -1,0 +1,33 @@
+Warning: This is a experimental overlay for gentoo, it can hurt your furry friend…
+Commits since 2016-01-08 22:00 UTC are signed.
+
+Adding this overlay: layman -a lanodanOverlay
+
+# What’s in here
+• ebuilds removed from ::gentoo
+• ebuilds different from ::gentoo (See notes compared to ::gentoo)
+• ebuilds not yet present in ::gentoo
+
+# Goals
+• More compatibility with my systems choices (LLVM, LibreSSL, musl, Hardened, …)
+• More security
+• Gentoo on my smartphone(s)
+• More choices, alternatives, …
+• Long-term goals:
+	• being able to remove bash (using a shim?)
+	• UID 0 ≠ root compatibility
+	• Reproductibility (see Debian Projects)
+
+# Recipes notes compared to ::gentoo:
+
+## app-editors/vis
+• Note: I proxy-maintain ::gentoo one too, so this one is experimental
+• Added dependencies on dev-lang/lua-5.2
+
+## media-gfx/krita
+• Changed dependencies (Used the CMakeList.txt file to get required and optionnals)
+• Added USE flags: threads curl zlib
+
+## app-misc/kanatest
+• Bumped from EAPI 5 to EAPI 6
+• Add patch removing __DATE__ __TIME__
