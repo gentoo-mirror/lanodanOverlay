@@ -1,9 +1,9 @@
 DEFINED_PHASES=-
 DESCRIPTION=Lightweight osu! port
-EAPI=0
+EAPI=6
 HOMEPAGE=https://github.com/fmang/oshu
 KEYWORDS=~amd64 ~x86
 LICENSE=GPL-3
 SLOT=0
 SRC_URI=https://www.mg0.fr/oshu/oshu-1.3.0.tar.gz
-_md5_=76bc8933987a6664d82af600ffa0b09b
+_md5_=551311dfd72cbccef9aacba94e6de8b7
