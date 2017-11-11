@@ -8,7 +8,7 @@ inherit autotools git-r3
 DESCRIPTION="Lightweight osu! port"
 HOMEPAGE="https://github.com/fmang/oshu"
 SRC_URI="https://www.mg0.fr/oshu/samples-v1.tar.bz2 -> oshu-samples-v1.tar.bz2"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 LICENSE="GPL-3"
 SLOT="0"
 

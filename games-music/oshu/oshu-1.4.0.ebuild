@@ -3,6 +3,8 @@
 
 EAPI=6
 
+inherit eutils
+
 DESCRIPTION="Lightweight osu! port"
 HOMEPAGE="https://github.com/fmang/oshu"
 SRC_URI="https://www.mg0.fr/oshu/${P}.tar.gz"
@@ -22,3 +24,8 @@ DEPENDS="
 	${RDEPENDS}
 	virtual/pkgconfig
 	"
+
+src_prepare() {
+	epatch "${FILESDIR}/${P}-remove_short_option_for_autoplay_and_pause_in_manpage.patch"
+	default
+}
