@@ -5,7 +5,7 @@ EAPI=6
 
 DESCRIPTION="Lightweight osu! port"
 HOMEPAGE="https://github.com/fmang/oshu"
-SRC_URI="https://www.mg0.fr/oshu/oshu-1.3.0.tar.gz"
+SRC_URI="https://www.mg0.fr/oshu/${P}.tar.gz"
 KEYWORDS="~amd64 ~x86"
 LICENSE="GPL-3"
 SLOT="0"
