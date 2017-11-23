@@ -13,11 +13,11 @@ LICENSE="GPL-3"
 SLOT="0"
 
 RDEPENDS="
-	media-libs/libsdl2
-	media-libs/sdl2-image
+	media-libs/libsdl2:=
+	media-libs/sdl2-image:=
 	|| (
-		media-video/ffmpeg
-		media-video/libav
+		media-video/ffmpeg:=
+		media-video/libav:=
 	)"
 
 DEPENDS="

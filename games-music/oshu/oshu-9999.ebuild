@@ -16,11 +16,11 @@ EGIT_REPO_URI="https://github.com/fmang/oshu.git"
 #EGIT_COMMIT="1.3.0"
 
 RDEPENDS="
-	media-libs/libsdl2
-	media-libs/sdl2-image
+	media-libs/libsdl2:=
+	media-libs/sdl2-image:=
 	|| (
-		media-video/ffmpeg
-		media-video/libav
+		media-video/ffmpeg:=
+		media-video/libav:=
 	)"
 
 DEPENDS="
