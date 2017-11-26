@@ -7,6 +7,7 @@ app-editors/vis:lpeg - runtime for syntax highlight using dev-lua/lpeg
 app-editors/vis:tre - more memory efficient regex search using dev-libs/tre
 dev-lang/mono:pax_kernel - Enable if the user plans to run the package under a pax enabled hardened kernel
 dev-lang/mono:xen - Make mono generate code that is considerably faster on xen VMs but slightly slower on for normal systems.
+dev-libs/libgcrypt:cryptonerd - Remove/disable broken/weak code/crypto
 dev-libs/libressl:asm - Enables assembly
 dev-libs/libressl:nc - Enables TLS-enabled nc(1)
 dev-qt/qtnetwork:bindist - Disable EC support via dev-libs/openssl

@@ -5,6 +5,7 @@ app-misc/datefudge 1.17-r1: A program (and preload library) to fake system date
 app-misc/kanatest 0.4.8: Visual flashcard tool for memorizing the Japanese Hiragana and Katakana alphabet
 app-vim/neocomplete 2.1: Next generation completion framework after neocomplcache
 dev-lang/mono 5.4.0.201: Mono runtime and class libraries, a C# compiler/interpreter
+dev-libs/libgcrypt 1.8.1: General purpose crypto library based on the code used in GnuPG
 dev-libs/libressl 2.5.4: Free version of the SSL/TLS protocol forked from OpenSSL
 dev-python/pycrypto 9999: Fake ebuild to mask pycrypto in a overlay
 dev-qt/qtnetwork 5.6.2 5.7.1: Network abstraction library for the Qt5 framework
