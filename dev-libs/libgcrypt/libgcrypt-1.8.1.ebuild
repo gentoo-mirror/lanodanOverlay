@@ -12,7 +12,7 @@ SRC_URI="mirror://gnupg/${PN}/${P}.tar.bz2"
 LICENSE="LGPL-2.1 MIT"
 SLOT="0/20" # subslot = soname major version
 KEYWORDS="alpha amd64 arm ~arm64 hppa ia64 ~m68k ~mips ppc ppc64 ~s390 ~sh sparc x86 ~ppc-aix ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~amd64-linux ~arm-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~m68k-mint ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
-IUSE="doc static-libs"
+IUSE="doc static-libs cryptonerd"
 
 RDEPEND=">=dev-libs/libgpg-error-1.25[${MULTILIB_USEDEP}]
 	abi_x86_32? (
@@ -58,7 +58,13 @@ multilib_src_configure() {
 		$([[ ${CHOST} == *86*-darwin* ]] && echo "--disable-asm")
 		$([[ ${CHOST} == sparcv9-*-solaris* ]] && echo "--disable-asm")
 	)
-	ECONF_SOURCE="${S}" econf "${myeconfargs[@]}"
+	if use cryptonerd; then
+		ECONF_SOURCE="${S}" econf "${myeconfargs[@]}" \
+			--enable-ciphers='AES CAMELLIA salsa20 chacha20 cast5' \
+			--enable-digests='crc sha256 sha512 sha3 whirlpool blake2 rmd160'
+	else
+		ECONF_SOURCE="${S}" econf "${myeconfargs[@]}"
+	fi
 }
 
 multilib_src_compile() {
