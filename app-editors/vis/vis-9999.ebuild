@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
-inheri<M-Down>t git-r3
+inherit git-r3
 
 DESCRIPTION="modern, legacy free, simple yet efficient vim-like editor."
 HOMEPAGE="https://github.com/martanne/vis"
