@@ -15,6 +15,6 @@ SLOT="0"
 KEYWORDS="amd64 ~arm ~ia64 ppc ppc64 x86 ~x86-fbsd ~amd64-linux ~x86-linux"
 
 src_configure() {
-	local mycmakeargs=( -DBUILD_SHARED_LIBS=ON )
+	local mycmakeargs=( -DBUILD_SHARED_LIBS=ON -DBUILD_PKGCONFIG=ON )
 	cmake-utils_src_configure
 }
