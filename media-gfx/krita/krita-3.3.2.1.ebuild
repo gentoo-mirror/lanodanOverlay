@@ -11,8 +11,11 @@ HOMEPAGE="https://www.kde.org/applications/graphics/krita/ https://krita.org/"
 SRC_URI="mirror://kde/stable/${PN}/${PV%.1}/${P}.tar.xz"
 
 LICENSE="GPL-3"
-KEYWORDS=""
+KEYWORDS="amd64 x86"
 IUSE="color-management fftw +gsl +jpeg openexr pdf qtmedia +raw tiff vc threads curl zlib"
+
+# https://bugs.gentoo.org/630508
+RESTRICT+=" test"
 
 COMMON_DEPEND="
 	$(add_frameworks_dep karchive)
