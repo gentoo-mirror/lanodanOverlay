@@ -1,27 +1,9 @@
-app-admin/pass-otp 0.1.0 1.0.0: A pass extension for managing one-time-password (OTP) tokens.
-app-editors/2f30-ed 9999: simple ed
-app-editors/vis 0.3 0.4 9999: modern, legacy free, simple yet efficient vim-like editor.
-app-misc/datefudge 1.17-r1: A program (and preload library) to fake system date
 app-misc/kanatest 0.4.8: Visual flashcard tool for memorizing the Japanese Hiragana and Katakana alphabet
-app-vim/neocomplete 2.1: Next generation completion framework after neocomplcache
-dev-lang/mono 5.4.0.201: Mono runtime and class libraries, a C# compiler/interpreter
 dev-libs/libgcrypt 1.8.1: General purpose crypto library based on the code used in GnuPG
-dev-libs/libressl 2.5.4: Free version of the SSL/TLS protocol forked from OpenSSL
 dev-libs/pugixml 1.8: Light-weight, simple, and fast XML parser for C++ with XPath support
 dev-python/pycrypto 9999: Fake ebuild to mask pycrypto in a overlay
 dev-qt/qtnetwork 5.6.2 5.7.1: Network abstraction library for the Qt5 framework
-dev-qt/qtwebengine 5.6.2 5.7.1-r1: Library for rendering dynamic web content in Qt5 C++ and QML applications
-dev-util/samurai 0.2: ninja-compatible build tool written in C
-games-action/chickens 0.2.4 0.2.4-r1: Target chickens with rockets and shotguns. Funny
-games-board/cockatrice 2.3.17: An open-source multiplatform software for playing card games over a network
-games-engines/love 0.7.2-r1 0.8.0 0.10.2 9999: A framework for 2D games in Lua
-games-music/oshu 1.4.0 1.5.0 9999: Lightweight osu! port
-gnustep-base/gnustep-base 1.24.9: A library of general-purpose, non-graphical Objective C objects
-media-gfx/krita 3.2.1 3.3.2.1 9999: Free digital painting application. Digital Painting, Creative Freedom!
-media-gfx/meh 0.1 0.2 0.3 9999: A minimalist image viewer using raw XLib.
-media-libs/rtmidi 2.1.1: common C++ API for realtime MIDI input/output
-media-sound/ibniz 1.18: virtual machine designed for extremely compact low-level audiovisual programs
-net-misc/drawterm 9999: connect to Plan 9 CPU servers from other operating systems
+dev-qt/qtwebengine 5.6.2: Library for rendering dynamic web content in Qt5 C++ and QML applications
+games-action/chickens 0.2.4: Target chickens with rockets and shotguns. Funny
+games-engines/love 0.7.2-r1 0.8.0: A framework for 2D games in Lua
 net-misc/openntpd 6.0_p1: Lightweight NTP server ported from OpenBSD
-virtual/editor 0-r1: Virtual for editor
-www-apps/stagit 0.4 0.5: static git page generator
