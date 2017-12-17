@@ -12,4 +12,7 @@ dev-qt/qtwebengine:pax_kernel - Enable building under a PaX enabled kernel
 dev-qt/qtwebengine:system-ffmpeg - Use the system-wide media-video/ffmpeg instead of bundled.
 dev-qt/qtwebengine:system-icu - Use the system-wide dev-libs/icu instead of bundled.
 dev-qt/qtwebengine:widgets - Enable QtWidgets support
+media-gfx/krita:color-management - Enable color management via media-libs/opencolorio
+media-gfx/krita:qtmedia - Enable sound support for animations via dev-qt/qtmultimedia
+media-gfx/krita:vc - Enable support for dev-libs/vc, could be a significant speed boost
 net-misc/openntpd:libressl - Enable HTTPS TLS time constraint support using dev-libs/libressl
