@@ -14,6 +14,9 @@ LICENSE="GPL-3"
 KEYWORDS=""
 IUSE="color-management fftw +gsl +jpeg openexr pdf qtmedia +raw tiff vc threads curl zlib"
 
+# https://bugs.gentoo.org/630508
+RESTRICT+=" test"
+
 COMMON_DEPEND="
 	$(add_frameworks_dep karchive)
 	$(add_frameworks_dep kcompletion)
