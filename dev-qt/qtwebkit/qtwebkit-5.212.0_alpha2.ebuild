@@ -1,6 +1,5 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 CMAKE_MAKEFILE_GENERATOR="ninja"
@@ -11,6 +10,7 @@ inherit check-reqs cmake-utils eutils flag-o-matic python-any-r1 ruby-single too
 
 MY_P="qtwebkit-5.212.0-alpha2" # FIXME: ${PV}
 DESCRIPTION="Open source web browser engine"
+HOMEPAGE="https://github.com/annulen/webkit"
 SRC_URI="https://github.com/annulen/webkit/releases/download/${MY_P}/${MY_P}.tar.xz"
 QV="5.2" # Minimum Qt version
 
@@ -52,7 +52,7 @@ RDEPEND="
 	opengl? ( >=dev-qt/qtopengl-${QV} )
 	orientation? ( >=dev-qt/qtsensors-${QV} )
 	printsupport? ( >=dev-qt/qtprintsupport-${QV} )
-	qml? ( 
+	qml? (
 		>=dev-qt/qtdeclarative-${QV}
 		>=dev-qt/qtwebchannel-${QV}[qml] )
 	X? (
