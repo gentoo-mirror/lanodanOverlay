@@ -22,7 +22,8 @@ RESTRICT="!bindist? ( bindist )"
 RDEPEND=">=app-misc/c_rehash-1.7-r1
 	gmp? ( >=dev-libs/gmp-5.1.3-r1[static-libs(+)?,${MULTILIB_USEDEP}] )
 	zlib? ( >=sys-libs/zlib-1.2.8-r1[static-libs(+)?,${MULTILIB_USEDEP}] )
-	kerberos? ( >=app-crypt/mit-krb5-1.11.4[${MULTILIB_USEDEP}] )"
+	kerberos? ( >=app-crypt/mit-krb5-1.11.4[${MULTILIB_USEDEP}] )
+	!libressl? ( !dev-libs/openssl:0 )"
 DEPEND="${RDEPEND}
 	>=dev-lang/perl-5
 	sctp? ( >=net-misc/lksctp-tools-1.0.12 )
@@ -179,7 +180,14 @@ multilib_src_compile() {
 	# depend is needed to use $confopts; it also doesn't matter
 	# that it's -j1 as the code itself serializes subdirs
 	emake -j1 depend
-	emake all
+	if use libressl; then
+		emake build_libcrypto
+		emake libcrypto.so.1.0.0
+		emake build_libssl
+		emake libssl.so.1.0.0
+	else
+		emake all
+	fi
 	# rehash is needed to prep the certs/ dir; do this
 	# separately to avoid parallel build issues.
 	emake rehash
@@ -190,10 +198,18 @@ multilib_src_test() {
 }
 
 multilib_src_install() {
-	emake INSTALL_PREFIX="${D}" install
+	if use libressl; then
+		into "/usr/${EROOT}"
+		dolib.so libssl.so.1.0.0
+		dolib.so libcrypto.so.1.0.0
+	else
+		emake INSTALL_PREFIX="${D}" install
+	fi
 }
 
 multilib_src_install_all() {
+	use libressl && return 0
+	
 	# openssl installs perl version of c_rehash by default, but
 	# we provide a shell version via app-misc/c_rehash
 	rm "${ED}"/usr/bin/c_rehash || die
