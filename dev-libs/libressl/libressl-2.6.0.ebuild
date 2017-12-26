@@ -17,8 +17,7 @@ SLOT="0/43"
 KEYWORDS="~alpha amd64 arm ~arm64 hppa ~ia64 ~mips ppc ppc64 sparc x86"
 IUSE="+asm static-libs"
 
-RDEPEND="!dev-libs/openssl:0"
-DEPEND="${RDEPEND}"
+DEPEND=""
 PDEPEND="app-misc/ca-certificates"
 
 RESTRICT="test" # bug #625266
