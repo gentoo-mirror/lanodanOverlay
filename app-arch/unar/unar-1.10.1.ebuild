@@ -20,7 +20,10 @@ RDEPEND="gnustep-base/gnustep-base
 	app-arch/bzip2"
 DEPEND="${RDEPEND}
 	>=gnustep-base/gnustep-make-2.6.0[native-exceptions]
-	sys-devel/gcc[objc]"
+	|| (
+		sys-devel/gcc[objc]
+		sys-devel/clang
+	)"
 
 S="${WORKDIR}/The Unarchiver/XADMaster"
 
