@@ -10,7 +10,11 @@ SRC_URI="https://www.opensmtpd.org/archives/${P}.tar.gz"
 LICENSE="ISC BSD BSD-1 BSD-2 BSD-4"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~x86"
-IUSE=""
+IUSE="libressl"
 
-DEPEND=""
+DEPEND="?libressl ( dev-libs/libressl:= )"
 RDEPEND="${DEPEND}"
+
+src_prepare() {
+	use libressl && epatch "${FILESDIR}/${PV}-Replace-res_randomid_with_arc4random.patch"
+}
