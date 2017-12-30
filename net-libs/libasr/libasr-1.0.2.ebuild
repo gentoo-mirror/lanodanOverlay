@@ -12,7 +12,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 IUSE="libressl"
 
-DEPEND="?libressl ( dev-libs/libressl:= )"
+DEPEND="libressl? ( dev-libs/libressl:= )"
 RDEPEND="${DEPEND}"
 
 src_prepare() {
