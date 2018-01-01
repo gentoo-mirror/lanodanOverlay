@@ -1,0 +1,10 @@
+DEFINED_PHASES=unpack
+DEPEND=virtual/ssh >=dev-vcs/git-1.8.2.1
+DESCRIPTION=Parallel SSH, batch and command line oriented
+EAPI=6
+HOMEPAGE=https://github.com/bearstech/pussh
+LICENSE=GPL-3
+RDEPEND=virtual/ssh
+SLOT=0
+_eclasses_=git-r3	fec09a83ae965b041b47f5ff7c8ba29a
+_md5_=178b6c3e1bc46fb52a6982ae1033f70d
