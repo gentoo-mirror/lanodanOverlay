@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -8,9 +8,9 @@ inherit kde5
 
 DESCRIPTION="Free digital painting application. Digital Painting, Creative Freedom!"
 HOMEPAGE="https://www.kde.org/applications/graphics/krita/ https://krita.org/"
-SRC_URI="mirror://kde/stable/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://kde/stable/${PN}/${PV%.1}/${P}.tar.gz"
 
-LICENSE="GPL-3 GPL-3+"
+LICENSE="GPL-3"
 KEYWORDS="~amd64 ~x86"
 IUSE="color-management fftw +gsl +jpeg openexr pdf qtmedia +raw tiff vc threads curl zlib"
 
