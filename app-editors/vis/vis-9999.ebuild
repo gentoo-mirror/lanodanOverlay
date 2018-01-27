@@ -26,15 +26,21 @@ src_prepare() {
 		type -P vim &>/dev/null || sed -i 's/.*vim.*//' test/Makefile || die
 	fi
 
+	sed -i 's|STRIP?=.*|STRIP=true|' Makefile || die
+	sed -i 's|${DOCPREFIX}/vis|${DOCPREFIX}|' Makefile || die
+	sed -i 's|DOCUMENTATION = LICENSE|DOCUMENTATION =|' Makefile || die
+
 	default
 }
 
 src_configure() {
-	econf \
+	./configure \
+		--prefix="${EROOT}usr" \
+		--docdir="${EROOT}usr/share/doc/${PF}" \
 		$(use_enable lua) \
 		$(use_enable ncurses curses) \
 		$(use_enable selinux) \
-		$(use_enable tre)
+		$(use_enable tre) || die
 }
 
 update_symlinks() {
