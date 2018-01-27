@@ -31,6 +31,7 @@ src_prepare() {
 		which vim &>/dev/null || sed -i 's/.*vim.*//' test/Makefile
 	fi
 
+	sed -i 's|STRIP?=.*|STRIP=true|' Makefile || die
 	sed -i 's|${DOCPREFIX}/vis|${DOCPREFIX}|' Makefile || die
 	sed -i 's|DOCUMENTATION = LICENSE|DOCUMENTATION =|' Makefile || die
 
