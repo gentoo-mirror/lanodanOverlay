@@ -5,6 +5,11 @@
 	<email>contact@hacktivis.me</email>
 	<name>Haelwenn (lanodan) Monnier</name>
 </maintainer>
+<upstream>
+	<changelog>https://github.com/martanne/vis</changelog>
+	<bugs-to>https://github.com/martanne/vis/issues</bugs-to>
+	<remote-id type="github">martanne/vis</remote-id>
+</upstream>
 <longdescription lang="en">
 Vis aims to be a modern, legacy free, simple yet efficient editor combining the strengths of both vi(m) and sam.
 </longdescription>
