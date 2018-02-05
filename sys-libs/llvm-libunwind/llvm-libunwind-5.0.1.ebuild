@@ -41,6 +41,6 @@ multilib_src_configure() {
 multilib_src_install() {
 	cmake-utils_src_install
 
-	# install headers like sys-libs/libunwind
+	insinto "${EPREFIX}/usr/lib/llvm/${SLOT}"
 	doheader "${S}"/include/*.h
 }
