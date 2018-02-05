@@ -41,6 +41,7 @@ multilib_src_configure() {
 multilib_src_install() {
 	cmake-utils_src_install
 
-	insinto "${EPREFIX}/usr/lib/llvm/${SLOT}"
-	doheader "${S}"/include/*.h
+	# Look into that later, the current goal is to get rid of collision
+	#insinto "${EPREFIX}/usr/lib/llvm/${SLOT}"
+	#doheader "${S}"/include/*.h
 }
