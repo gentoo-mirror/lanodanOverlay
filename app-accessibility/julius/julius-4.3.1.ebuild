@@ -31,17 +31,6 @@ pkg_setup() {
 	tc-export CC CXX
 }
 
-src_configure() {
-	local mymic i
-	for i in alsa oss portaudio pulseaudio ; do
-		use ${i} && mymic=${i}
-	done
-
-	econf \
-		--with-mictype=${mymic} \
-		$(use_with sndfile)
-}
-
 src_install() {
 	default
 	if ! has ja ${LINGUAS} ; then
