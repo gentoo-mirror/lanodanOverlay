@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=zx2c4 pass manager extension for Firefox
+EAPI=6
+HOMEPAGE=https://github.com/passff/passff
+IUSE=extension_xpi +extension_host
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2
+RDEPEND=>=dev-lang/python-3.4.0:*
+SLOT=0
+SRC_URI=extension_host? ( https://github.com/passff/passff/releases/download/1.1/passff.json -> passff-1.1.json https://github.com/passff/passff/releases/download/1.1/passff.py -> passff-1.1.py ) extension_xpi? ( https://github.com/passff/passff/releases/download/1.1/passff.xpi -> passff-1.1.xpi )
+_md5_=94e17a0e06bd5f2cfeda4b53b1db7a6a

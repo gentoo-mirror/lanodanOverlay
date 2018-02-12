@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DEPEND=dev-libs/cairo:=[X] dev-libs/glib:= x11-libs/libXinerama:= >=dev-vcs/git-1.8.2.1
+DESCRIPTION=Make pointer-driven interfaces easier and faster for users to operate
+EAPI=6
+HOMEPAGE=https://github.com/jordansissel/keynav
+LICENSE=BSD
+RDEPEND=dev-libs/cairo:=[X] dev-libs/glib:= x11-libs/libXinerama:= x11-misc/xdotool
+SLOT=0
+_eclasses_=git-r3	fec09a83ae965b041b47f5ff7c8ba29a
+_md5_=513ef42dfbe5d6d1b715bae5a06ebd22
