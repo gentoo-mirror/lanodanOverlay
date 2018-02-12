@@ -15,7 +15,7 @@ SRC_URI="
 	)
 "
 
-LICENSE="GPL-2.0"
+LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="extension_xpi +extension_host"
