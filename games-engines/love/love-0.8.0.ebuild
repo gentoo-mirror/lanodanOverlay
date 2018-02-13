@@ -22,7 +22,7 @@ SLOT="0"
 IUSE=""
 
 RDEPEND="dev-games/physfs
-	dev-lang/lua[deprecated]
+	dev-lang/lua:*[deprecated]
 	media-libs/devil[mng,png,tiff]
 	media-libs/freetype
 	media-libs/libmodplug
