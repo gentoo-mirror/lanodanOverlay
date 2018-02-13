@@ -17,6 +17,7 @@ IUSE=""
 
 RDEPEND="
 	>=dev-libs/boost-1.55.0:=
+	app-arch/lz4:=
 	dev-libs/lzo:2=
 	dev-qt/linguist-tools:5
 	dev-qt/qtcore:5
