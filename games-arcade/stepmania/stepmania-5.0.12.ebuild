@@ -9,8 +9,7 @@ FFMPEG_VER="2.1.3" # From CMake/SetupFfmpeg.cmake
 
 DESCRIPTION="Advanced rhythm game, designed for both home and arcade use"
 HOMEPAGE="http://www.stepmania.com/"
-SRC_URI="https://github.com/stepmania/stepmania/archive/v${PV}.tar.gz -> ${P}.tar.gz
-	ffmpeg? ( !system-ffmpeg? ( https://ffmpeg.org/releases/ffmpeg-${FFMPEG_VER}.tar.bz2 ) )"
+SRC_URI="https://github.com/stepmania/stepmania/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT default-songs? ( CC-BY-NC-4.0 )"
 SLOT="0"
@@ -31,7 +30,7 @@ RDEPEND="virtual/opengl
 	alsa? ( media-libs/alsa-lib )
 	pulseaudio? ( media-sound/pulseaudio )
 	jack? ( media-sound/jack-audio-connection-kit )
-	ffmpeg? ( system-ffmpeg? ( <media-video/ffmpeg-3 ) )
+	ffmpeg? ( system-ffmpeg? ( media-video/ffmpeg ) )
 	gtk? (
 		x11-libs/gtk+:2
 		dev-libs/glib:2
@@ -46,13 +45,6 @@ RDEPEND="virtual/opengl
 	)"
 DEPEND="${RDEPEND}
 	doc? ( app-doc/doxygen )"
-
-src_unpack() {
-	default
-	if use ffmpeg && ! use system-ffmpeg; then
-		mv "${WORKDIR}/ffmpeg-${FFMPEG_VER}" "${S}/extern/ffmpeg-linux-${FFMPEG_VER}" || die
-	fi
-}
 
 src_prepare() {
 	eapply "${FILESDIR}/stepmania-select-audio-backends.patch"
