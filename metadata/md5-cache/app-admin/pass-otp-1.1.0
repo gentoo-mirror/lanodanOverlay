@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile postinst
+DESCRIPTION=A pass extension for managing one-time-password (OTP) tokens.
+EAPI=6
+HOMEPAGE=https://github.com/tadfisher/pass-otp
+IUSE=qrcode
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-3+
+RDEPEND=>=app-admin/pass-1.7 qrcode? ( media-gfx/qrencode ) sys-auth/oath-toolkit
+SLOT=0
+SRC_URI=https://github.com/tadfisher/pass-otp/releases/download/v1.1.0/pass-otp-1.1.0.tar.gz
+_md5_=d275aea4f8b1cadfc872e0556e1c2e1c
