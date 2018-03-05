@@ -5,17 +5,14 @@ EAPI=6
 
 DESCRIPTION="A pass extension for managing one-time-password (OTP) tokens."
 HOMEPAGE="https://github.com/tadfisher/pass-otp"
-SRC_URI="https://github.com/tadfisher/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/tadfisher/pass-otp/releases/download/v${PV}/${P}.tar.gz"
 
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="qrcode"
 
-COMMON_DEPEND="app-shells/bash:*"
-DEPEND=${COMMON_DEPEND}
-RDEPEND="${COMMON_DEPEND}
-	>=app-admin/pass-1.7
+RDEPEND=">=app-admin/pass-1.7
 	qrcode? ( media-gfx/qrencode )
 	sys-auth/oath-toolkit"
 
