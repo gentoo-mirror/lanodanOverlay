@@ -15,6 +15,8 @@ RESTRICT="mirror"
 
 IUSE="mp3 vorbis"
 
+RDEPEND="${DEPEND}
+	virtual/pkgconfig"
 DEPEND="mp3? ( media-libs/libmad )
 	vorbis? ( media-libs/tremor )"
 
@@ -30,13 +32,13 @@ src_prepare() {
 
 src_compile() {
 	if use vorbis; then
-		append-flags -DOGG_DECODE -ltremor
+		append-flags -DOGG_DECODE $(pkg-config --libs vorbisidec)
 	fi
 	if use mp3; then
-		append-flags -DMP3_DECODE -lmad
+		append-flags -DMP3_DECODE $(pkg-config --libs mad)
 	fi
 
-	$(tc-getCC) ${CFLAGS} -DT_LINUX -Wall -lm -lpthread ${LDFLAGS} sbagen.c -o sbagen || die "Sbagen: compilation failed"
+	$(tc-getCC) ${CFLAGS} -DT_LINUX -Wall -lpthread ${LDFLAGS} sbagen.c -o sbagen || die "Sbagen: compilation failed"
 }
 
 src_install() {
