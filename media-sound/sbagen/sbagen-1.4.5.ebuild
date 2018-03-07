@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit toolchain-funcs
+inherit toolchain-funcs flag-o-matic
 
 DESCRIPTION="Command line sequenced binaural beat generator"
 HOMEPAGE="http://sbagen.sourceforge.net/"
