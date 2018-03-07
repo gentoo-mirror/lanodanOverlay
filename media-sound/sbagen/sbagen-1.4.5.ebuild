@@ -44,7 +44,7 @@ src_compile() {
 src_install() {
 	dobin sbagen
 	if use vorbis; then
-		insinto
+		insinto ${EPREFIX}/usr/share/${PN}
 		doins *.ogg
 	fi
 	einstalldocs
