@@ -20,7 +20,7 @@ RDEPEND="${DEPEND}
 DEPEND="mp3? ( media-libs/libmad )
 	vorbis? ( media-libs/tremor )"
 
-DOCS="README.md SBAGEN.txt"
+DOCS="README.txt SBAGEN.txt"
 
 src_prepare() {
 	default
