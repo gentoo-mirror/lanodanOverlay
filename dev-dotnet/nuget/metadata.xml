@@ -5,7 +5,4 @@
 	<email>contact@hacktivis.me</email>
 	<name>Haelwenn (lanodan) Monnier</name>
 </maintainer>
-<use>
-	<flag name="sounds">Downloads extra sounds (in Vorbis)</flag>
-</use>
 </pkgmetadata>

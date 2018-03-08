@@ -7,18 +7,19 @@ inherit toolchain-funcs flag-o-matic
 
 DESCRIPTION="Command line sequenced binaural beat generator"
 HOMEPAGE="http://sbagen.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tgz"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tgz
+	vorbis? ( sounds? ( http://uazu.net/sbagen/sbagen-river-1.4.1.tgz ) )"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 RESTRICT="mirror"
 
-IUSE="mp3 vorbis"
+IUSE="mp3 vorbis sounds"
 
-RDEPEND="${DEPEND}
-	virtual/pkgconfig"
 DEPEND="mp3? ( media-libs/libmad )
 	vorbis? ( media-libs/tremor )"
+RDEPEND="${DEPEND}
+	virtual/pkgconfig"
 
 DOCS="README.txt SBAGEN.txt"
 
@@ -43,8 +44,9 @@ src_compile() {
 
 src_install() {
 	dobin sbagen
-	if use vorbis; then
-		insinto ${EPREFIX}/usr/share/${PN}
+	if use sounds; then
+		cd ../sbagen-1.4.1
+		insinto "/usr/share/${PN}"
 		doins *.ogg
 	fi
 	einstalldocs
