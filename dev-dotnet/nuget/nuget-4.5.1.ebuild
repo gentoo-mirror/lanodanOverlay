@@ -17,6 +17,7 @@ S="${WORKDIR}"
 src_compile() { :; }
 
 src_install() {
+	insinto "/usr/bin"
 	doexe "${FILESDIR}/nuget"
 	insinto "/usr/lib/${PN}"
 	doins "${DISTDIR}/nuget.exe"
