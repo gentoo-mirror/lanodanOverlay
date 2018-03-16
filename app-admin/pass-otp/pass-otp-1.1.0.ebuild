@@ -15,13 +15,9 @@ IUSE="qrcode test"
 DEPEND="test? ( dev-tcltk/expect:* )"
 
 RDEPEND=">=app-admin/pass-1.7
-	qrcode? ( media-gfx/qrencode )
-	sys-auth/oath-toolkit"
+	sys-auth/oath-toolkit
+	qrcode? ( media-gfx/qrencode )"
 
 src_compile() {
 	:
-}
-
-pkg_postinst() {
-	elog "'PASSWORD_STORE_ENABLE_EXTENSIONS=true' is needed to run 'pass otp'."
 }
