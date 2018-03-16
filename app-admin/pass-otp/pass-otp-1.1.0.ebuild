@@ -21,7 +21,3 @@ RDEPEND=">=app-admin/pass-1.7
 src_compile() {
 	:
 }
-
-pkg_postinst() {
-	elog "'PASSWORD_STORE_ENABLE_EXTENSIONS=true' is needed to run 'pass otp'."
-}
