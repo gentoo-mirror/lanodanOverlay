@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -11,7 +11,7 @@ SRC_URI="osu-skin? ( https://www.mg0.fr/oshu/skins/osu-v1.tar.gz -> ${PN}-skin-v
 KEYWORDS=""
 LICENSE="GPL-3 CC-BY-NC-4.0"
 SLOT="0"
-IUSE="osu-skin"
+IUSE="libav osu-skin"
 
 EGIT_REPO_URI="https://github.com/fmang/oshu.git"
 CMAKE_MIN_VERSION="3.9.0"
