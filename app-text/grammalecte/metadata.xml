@@ -5,7 +5,4 @@
 	<email>contact@hacktivis.me</email>
 	<name>Haelwenn (lanodan) Monnier</name>
 </maintainer>
-<use>
-	<flag name="osu-skin">Include more complete osu-skin (other is minimal)</flag>
-</use>
 </pkgmetadata>

@@ -3,19 +3,18 @@
 
 EAPI=6
 
-inherit cmake-utils git-r3
+inherit cmake-utils
 
 DESCRIPTION="Lightweight osu! port"
 HOMEPAGE="https://github.com/fmang/oshu"
-SRC_URI="osu-skin? ( https://www.mg0.fr/oshu/skins/osu-v1.tar.gz -> ${PN}-skin-v1.tar.gz )"
-KEYWORDS=""
+SRC_URI="https://www.mg0.fr/oshu/releases/${P}.tar.gz
+	osu-skin? ( https://www.mg0.fr/oshu/skins/osu-v1.tar.gz -> ${PN}-skin-v1.tar.gz )"
+KEYWORDS="~amd64 ~x86"
 LICENSE="GPL-3 CC-BY-NC-4.0"
 SLOT="0"
 IUSE="libav osu-skin"
 
-EGIT_REPO_URI="https://github.com/fmang/oshu.git"
 CMAKE_MIN_VERSION="3.9.0"
-
 RDEPEND="
 	>=media-libs/libsdl2-2.0.5:=
 	media-libs/sdl2-image:=[jpeg,png]

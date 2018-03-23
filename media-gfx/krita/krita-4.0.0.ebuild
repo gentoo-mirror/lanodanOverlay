@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -8,10 +8,10 @@ inherit kde5
 
 DESCRIPTION="Free digital painting application. Digital Painting, Creative Freedom!"
 HOMEPAGE="https://www.kde.org/applications/graphics/krita/ https://krita.org/"
-SRC_URI="mirror://kde/stable/${PN}/${PV%.1}/${P}.tar.xz"
+SRC_URI="mirror://kde/stable/${PN}/${PV%.1}/${P}.tar.gz"
 
 LICENSE="GPL-3"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="color-management fftw +gsl +jpeg openexr pdf qtmedia +raw tiff vc threads curl zlib"
 
 # https://bugs.gentoo.org/630508
@@ -69,8 +69,6 @@ RDEPEND="${COMMON_DEPEND}
 	!app-office/calligra:4[calligra_features_krita]
 	!app-office/calligra-l10n:4[calligra_features_krita(+)]
 "
-
-PATCHES=( "${FILESDIR}"/${PN}-3.2.0-tests-optional.patch )
 
 src_configure() {
 	local mycmakeargs=(
