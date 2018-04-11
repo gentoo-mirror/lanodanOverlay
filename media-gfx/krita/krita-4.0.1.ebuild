@@ -70,8 +70,6 @@ RDEPEND="${COMMON_DEPEND}
 	!app-office/calligra-l10n:4[calligra_features_krita(+)]
 "
 
-PATCHES=( "${FILESDIR}"/${PN}-3.2.0-tests-optional.patch )
-
 src_configure() {
 	local mycmakeargs=(
 		$(cmake-utils_use_find_package color-management OCIO)
