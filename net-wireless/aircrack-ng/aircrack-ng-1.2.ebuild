@@ -6,7 +6,7 @@ EAPI="6"
 PYTHON_COMPAT=( python2_7 )
 DISTUTILS_OPTIONAL=1
 
-inherit toolchain-funcs distutils-r1 flag-o-matic
+inherit toolchain-funcs distutils-r1 flag-o-matic autotools
 
 DESCRIPTION="WLAN tools for breaking 802.11 WEP/WPA keys"
 HOMEPAGE="http://www.aircrack-ng.org"
@@ -21,16 +21,15 @@ SLOT="0"
 IUSE="+airdrop-ng +airgraph-ng kernel_linux kernel_FreeBSD libressl +netlink +pcre +sqlite +experimental"
 
 DEPEND="net-libs/libpcap
-	!libressl? ( dev-libs/openssl:0= )
-	libressl? ( dev-libs/libressl:0= )
+	dev-libs/openssl:0=
 	netlink? ( dev-libs/libnl:3 )
 	pcre? ( dev-libs/libpcre )
 	airdrop-ng? ( ${PYTHON_DEPS} )
 	airgraph-ng? ( ${PYTHON_DEPS} )
 	experimental? ( sys-libs/zlib )
 	sqlite? ( >=dev-db/sqlite-3.4 )"
-RDEPEND="${DEPEND}
-	kernel_linux? (
+RDEPEND="${DEPEND}"
+PDEPEND="kernel_linux? (
 		net-wireless/iw
 		net-wireless/wireless-tools
 		sys-apps/ethtool
@@ -51,12 +50,25 @@ pkg_setup() {
 		AR="$(tc-getAR)" \
 		LD="$(tc-getLD)" \
 		RANLIB="$(tc-getRANLIB)" \
-		libnl=$(usex netlink true false) \
-		pcre=$(usex pcre true false) \
-		sqlite=$(usex sqlite true false) \
-		experimental=$(usex experimental true false)
-		prefix="${ED}/usr" \
+		DESTDIR="${ED}"
 	)
+}
+
+src_prepare() {
+	epatch "${FILESDIR}"/aircrack-ng-1.2-no-force-stack-protector.patch
+	eapply_user
+	eautoreconf
+}
+
+src_configure() {
+	econf \
+		--disable-asan \
+		$(use_enable netlink libnl) \
+		$(use_with experimental) \
+		$(use_with sqlite sqlite3) \
+		--enable-shared \
+		--disable-static \
+		--without-opt
 }
 
 src_compile() {
