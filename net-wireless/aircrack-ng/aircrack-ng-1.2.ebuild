@@ -21,7 +21,8 @@ SLOT="0"
 IUSE="+airdrop-ng +airgraph-ng kernel_linux kernel_FreeBSD libressl +netlink +pcre +sqlite +experimental"
 
 DEPEND="net-libs/libpcap
-	dev-libs/openssl:0=
+	!libressl? ( dev-libs/openssl:0= )
+	libressl? ( dev-libs/openssl:0= )
 	netlink? ( dev-libs/libnl:3 )
 	pcre? ( dev-libs/libpcre )
 	airdrop-ng? ( ${PYTHON_DEPS} )
