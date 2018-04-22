@@ -22,7 +22,7 @@ IUSE="+airdrop-ng +airgraph-ng kernel_linux kernel_FreeBSD libressl +netlink +pc
 
 DEPEND="net-libs/libpcap
 	!libressl? ( dev-libs/openssl:0= )
-	libressl? ( dev-libs/openssl:0= )
+	libressl? ( dev-libs/libressl:0= )
 	netlink? ( dev-libs/libnl:3 )
 	pcre? ( dev-libs/libpcre )
 	airdrop-ng? ( ${PYTHON_DEPS} )
