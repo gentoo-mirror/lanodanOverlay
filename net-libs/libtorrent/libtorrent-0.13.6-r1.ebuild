@@ -39,11 +39,11 @@ src_prepare() {
 	append-cxxflags "-std=c++11"
 	find "${WORKDIR}" -type f|xargs fgrep -lw tr1|xargs sed -i -e 's,<tr1/,<,' -e 's/std::tr1/std/g'
 	epatch "${FILESDIR}/libtorrent-0.13.6-clangpatch-src_utils_queue_buckets_h.patch"
+	epatch "${FILESDIR}/libtorrent-0.13.6-clangpatch-src_torrent_utils_log_cc.patch"
 	epatch "${FILESDIR}/libtorrent-0.13.6-configure.ac_cppunit_use_pkg-config.patch"
 	epatch "${FILESDIR}/libtorrent-0.13.6-patch-src_utils_instrumentation_h.patch"
-	epatch "${FILESDIR}/libtorrent-0.13.6-src_torrent_utils_extents_h.patch"
-	epatch "${FILESDIR}/libtorrent-0.13.6-src_torrent_utils_log_cc.patch"
-	epatch "${FILESDIR}/libtorrent-0.13.6-src_net_socket_set_h.patch"
+	epatch "${FILESDIR}/libtorrent-0.13.6-patch-src_torrent_utils_extents_h.patch"
+	epatch "${FILESDIR}/libtorrent-0.13.6-patch-src_net_socket_set_h.patch"
 
 	# Fixes a unassigned warning for a happy QA
 	epatch "${FILESDIR}/libtorrent-0.13.6-src_dht_dht_transaction_cc.patch"
