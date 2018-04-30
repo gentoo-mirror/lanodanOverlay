@@ -45,6 +45,18 @@ src_prepare() {
 	epatch "${FILESDIR}/libtorrent-0.13.6-patch-src_torrent_utils_extents_h.patch"
 	epatch "${FILESDIR}/libtorrent-0.13.6-patch-src_net_socket_set_h.patch"
 
+	# static members must exist, even have external linkage for some, so that rtorrent can work
+	epatch \
+		"${FILESDIR}/libtorrent-0.13.6-patch-src_data_memory_chunk_cc.patch" \
+		"${FILESDIR}/libtorrent-0.13.6-patch-src_protocol_request_list_cc.patch" \
+		"${FILESDIR}/libtorrent-0.13.6-patch-src_torrent_common_h.patch" \
+		"${FILESDIR}/libtorrent-0.13.6-patch-src_torrent_data_block_failed_h.patch" \
+		"${FILESDIR}/libtorrent-0.13.6-patch-src_torrent_data_file_cc.patch" \
+		"${FILESDIR}/libtorrent-0.13.6-patch-src_torrent_data_transfer_list_cc.patch" \
+		"${FILESDIR}/libtorrent-0.13.6-patch-src_torrent_download_cc.patch" \
+		"${FILESDIR}/libtorrent-0.13.6-patch-src_torrent_peer_connection_list_cc.patch" \
+		"${FILESDIR}/libtorrent-0.13.6-patch-src_torrent_utils_net_h.patch"
+
 	# Fixes a unassigned warning for a happy QA
 	epatch "${FILESDIR}/libtorrent-0.13.6-src_dht_dht_transaction_cc.patch"
 
