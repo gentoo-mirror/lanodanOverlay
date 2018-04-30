@@ -1,0 +1,15 @@
+$OpenBSD: patch-test_Makefile_in,v 1.5 2015/09/11 09:16:03 pascal Exp $
+
+Unbreak build.
+
+--- test/Makefile.in.orig	Thu Sep 10 20:20:28 2015
++++ test/Makefile.in	Thu Sep 10 20:20:33 2015
+@@ -561,7 +561,7 @@ rtorrentTest_SOURCES = \
+ 	main.cc
+ 
+ rtorrentTest_CXXFLAGS = $(CPPUNIT_CFLAGS)
+-rtorrentTest_LDFLAGS = $(CPPUNIT_LIBS)  -ldl
++rtorrentTest_LDFLAGS = $(CPPUNIT_LIBS)
+ AM_CPPFLAGS = -I$(srcdir) -I$(top_srcdir) -I$(top_srcdir)/src
+ all: all-am
+ 
