@@ -37,13 +37,25 @@ src_prepare() {
 
 	# Fix compiling with Clang by being C++11
 	append-cxxflags "-std=c++11"
-	find "${WORKDIR}" -type f|xargs fgrep -lw tr1|xargs sed -i -e 's,<tr1/,<,' -e 's/std::tr1/std/g'
+	find "${WORKDIR}" -type f|xargs fgrep -lw tr1|xargs sed -i -e 's,<tr1/,<,' -e 's/std::tr1/std/g' -e 's/tr1::bind/std::bind/g'
 	epatch "${FILESDIR}/libtorrent-0.13.6-clangpatch-src_utils_queue_buckets_h.patch"
 	epatch "${FILESDIR}/libtorrent-0.13.6-clangpatch-src_torrent_utils_log_cc.patch"
 	epatch "${FILESDIR}/libtorrent-0.13.6-configure.ac_cppunit_use_pkg-config.patch"
 	epatch "${FILESDIR}/libtorrent-0.13.6-patch-src_utils_instrumentation_h.patch"
 	epatch "${FILESDIR}/libtorrent-0.13.6-patch-src_torrent_utils_extents_h.patch"
 	epatch "${FILESDIR}/libtorrent-0.13.6-patch-src_net_socket_set_h.patch"
+
+	epatch "${FILESDIR}/libtorrent-0.13.6-462f358f_fixed_c++11_issues.patch"
+
+	# static members must exist, even have external linkage for some, so that rtorrent can work
+	epatch \
+		"${FILESDIR}/libtorrent-0.13.6-patch-src_torrent_common_h.patch" \
+		"${FILESDIR}/libtorrent-0.13.6-patch-src_torrent_data_block_failed_h.patch" \
+		"${FILESDIR}/libtorrent-0.13.6-patch-src_torrent_data_file_cc.patch" \
+		"${FILESDIR}/libtorrent-0.13.6-patch-src_torrent_data_transfer_list_cc.patch" \
+		"${FILESDIR}/libtorrent-0.13.6-patch-src_torrent_download_cc.patch" \
+		"${FILESDIR}/libtorrent-0.13.6-patch-src_torrent_peer_connection_list_cc.patch" \
+		"${FILESDIR}/libtorrent-0.13.6-patch-src_torrent_utils_net_h.patch"
 
 	# Fixes a unassigned warning for a happy QA
 	epatch "${FILESDIR}/libtorrent-0.13.6-src_dht_dht_transaction_cc.patch"
