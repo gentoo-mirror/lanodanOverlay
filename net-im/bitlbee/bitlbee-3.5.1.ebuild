@@ -10,7 +10,7 @@ if [[ ${PV} == "9999" ]]; then
 	inherit git-r3
 else
 	SRC_URI="https://get.bitlbee.org/src/${P}.tar.gz"
-	KEYWORDS="amd64 ppc ~ppc64 x86 ~x86-fbsd"
+	KEYWORDS="~amd64 ~ppc ~ppc64 x86 ~x86-fbsd"
 fi
 
 DESCRIPTION="irc to IM gateway that support multiple IM protocols"
@@ -23,7 +23,6 @@ IUSE="debug +gnutls ipv6 libevent libressl nss otr +plugins selinux test xinetd
 	${IUSE_PROTOCOLS}"
 
 REQUIRED_USE="
-	|| ( purple xmpp msn oscar )
 	xmpp? ( !nss )
 	test? ( plugins )
 "
