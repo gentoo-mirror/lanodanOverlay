@@ -1,4 +1,4 @@
-DEFINED_PHASES=install postinst postrm preinst
+DEFINED_PHASES=install nofetch postinst postrm preinst
 DEPEND=>=sys-apps/sed-4
 DESCRIPTION=Psychological horror game presented as a romance visual novel
 EAPI=5
