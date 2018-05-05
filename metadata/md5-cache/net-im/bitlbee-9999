@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile configure install postinst prepare setup unpack
+DEPEND=>=dev-libs/glib-2.16 purple? ( net-im/pidgin ) libevent? ( dev-libs/libevent:= ) otr? ( >=net-libs/libotr-4 ) gnutls? ( net-libs/gnutls:= ) !gnutls? ( nss? ( dev-libs/nss ) !nss? ( libressl? ( dev-libs/libressl:= ) !libressl? ( dev-libs/openssl:0= ) ) ) virtual/pkgconfig selinux? ( sec-policy/selinux-bitlbee ) test? ( dev-libs/check ) virtual/pkgconfig >=dev-vcs/git-1.8.2.1
+DESCRIPTION=irc to IM gateway that support multiple IM protocols
+EAPI=6
+HOMEPAGE=https://www.bitlbee.org/
+IUSE=debug +gnutls ipv6 libevent libressl nss otr +plugins selinux test xinetd msn oscar purple twitter +xmpp
+LICENSE=GPL-2
+RDEPEND=>=dev-libs/glib-2.16 purple? ( net-im/pidgin ) libevent? ( dev-libs/libevent:= ) otr? ( >=net-libs/libotr-4 ) gnutls? ( net-libs/gnutls:= ) !gnutls? ( nss? ( dev-libs/nss ) !nss? ( libressl? ( dev-libs/libressl:= ) !libressl? ( dev-libs/openssl:0= ) ) ) virtual/logger xinetd? ( sys-apps/xinetd )
+REQUIRED_USE=xmpp? ( !nss ) test? ( plugins )
+SLOT=0
+_eclasses_=git-r3	25b08efef07cea6bcd45b8c6dcce2782	multilib	97f470f374f2e94ccab04a2fb21d811e	systemd	a31844b675f1a1fea87fbe1144aee5f5	toolchain-funcs	885c7d8dd70a58825f3d17e35a3cd1e9	user	8bc2845510e2109af75e3eeac607ec81
+_md5_=02bd030545f7c6dfc5ee00c582fced00
