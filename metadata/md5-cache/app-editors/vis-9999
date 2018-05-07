@@ -7,5 +7,5 @@ IUSE=+ncurses lua lpeg selinux test tre
 LICENSE=ISC
 RDEPEND=dev-libs/libtermkey lua? ( >=dev-lang/lua-5.2:= ) tre? ( dev-libs/tre:= ) ncurses? ( sys-libs/ncurses:= ) lua? ( lpeg? ( >=dev-lua/lpeg-0.12 ) ) app-eselect/eselect-vi
 SLOT=0
-_eclasses_=git-r3	25b08efef07cea6bcd45b8c6dcce2782
+_eclasses_=git-r3	af51ccfceeb403ab80f1bf9209d372c8
 _md5_=806825a072795950ef43d14518e26c06
