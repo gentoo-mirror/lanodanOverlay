@@ -1,0 +1,42 @@
+diff --git a/Makefile b/Makefile
+index 739c63f..500e8a0 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,5 +1,6 @@
+ # compiler
+-CC := g++
++CXX ?= g++
++PREFIX ?= /usr/local
+ 
+ # OS and specific libs
+ OS := $(shell uname)
+@@ -21,23 +23,24 @@ TARGET := tinymania
+ SRCEXT := cpp
+ SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
+ OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
+-CFLAGS := -g -std=c++17 -O3 -Wall -Wextra -pedantic
++CXXFLAGS ?= -g -O3 -Wall -Wextra -pedantic
+ INC := -I include
+ 
+ #specify linked libraries
+ 
+ $(TARGET): $(OBJECTS)
+ 	@echo " linking..."
+-	@echo " $(CC) $^ -o $(TARGET) $(LIB)"; $(CC) $^ -o $(TARGET) $(LIB)
++	$(CXX) $^ -o $(TARGET) $(LIB)
+ 
+ $(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)
+ 	@echo " compiling..."
+ 	@mkdir -p $(BUILDDIR)
+-	@echo " $(CC) $(CFLAGS) $(INC) -c -o $@ $<"; $(CC) $(CFLAGS) $(INC) -c -o $@ $<
++	$(CXX) $(CXXFLAGS) -std=c++14 $(INC) -c -o $@ $<
+ 
+ install: $(TARGET)
+-	cp tinymania /usr/bin/tinymania
++	mkdir -p $(DESTDIR)$(PREFIX)/bin
++	cp tinymania $(DESTDIR)$(PREFIX)/bin/tinymania
+ 
+ clean:
+ 	@echo " cleaning ..."
+-	@echo " $(RM) -r $(BUILDDIR) $(TARGET)"; $(RM) -r $(BUILDDIR) $(TARGET)
++	$(RM) -r $(BUILDDIR) $(TARGET)
