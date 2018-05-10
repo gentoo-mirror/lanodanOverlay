@@ -24,6 +24,7 @@ RDEPEND="
 "
 
 src_install() {
-	dodoc README
+	dodoc README.md
+	dodoc Changelog.md
 	dobin sshpaste
 }
