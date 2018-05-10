@@ -3,17 +3,13 @@
 
 EAPI=6
 
-inherit git-r3
-
 DESCRIPTION="wgetpaste clone for pushing to your own server"
 HOMEPAGE="https://hacktivis.me/git/sshpaste/"
-SRC_URI=""
-
-EGIT_REPO_URI="https://hacktivis.me/git/sshpaste.git"
+SRC_URI="https://hacktivis.me/git/sshpaste/archives/sshpaste-1.0.0.tar.gz"
 
 LICENSE="ISC"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~alpha ~amd64 ~amd64-fbsd ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
 IUSE="X"
 
 DEPEND=""
