@@ -5,12 +5,12 @@ EAPI=6
 
 inherit git-r3 eutils
 
-DESCRIPTION=""
-HOMEPAGE=""
+DESCRIPTION="A VSRG clone for playing .osu files."
+HOMEPAGE="https://git.sakamoto.gq/eal/tinymania"
 
 EGIT_REPO_URI="https://git.sakamoto.gq/eal/tinymania.git"
 
-LICENSE=""
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
 IUSE=""
