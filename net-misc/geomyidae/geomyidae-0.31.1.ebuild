@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit user.eclass
+inherit user
 
 DESCRIPTION="A small C-based gopherd."
 HOMEPAGE="gopher://bitreich.org/1/scm/geomyidae http://git.r-36.net/geomyidae/"
