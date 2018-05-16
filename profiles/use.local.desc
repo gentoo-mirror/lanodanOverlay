@@ -2,7 +2,6 @@
 # Please add your descriptions to your package's metadata.xml ONLY.
 # * generated automatically using pmaint *
 
-dev-libs/libgcrypt:cryptonerd - Remove/disable broken/weak code/crypto
 dev-qt/qtnetwork:bindist - Disable EC support via dev-libs/openssl
 dev-qt/qtnetwork:connman - Enable net-misc/connman-based bearer plugin
 dev-qt/qtnetwork:libproxy - Use net-libs/libproxy for automatic HTTP/SOCKS proxy configuration
@@ -13,3 +12,4 @@ dev-qt/qtwebengine:system-ffmpeg - Use the system-wide media-video/ffmpeg instea
 dev-qt/qtwebengine:system-icu - Use the system-wide dev-libs/icu instead of bundled.
 dev-qt/qtwebengine:widgets - Enable QtWidgets support
 net-misc/openntpd:libressl - Enable HTTPS TLS time constraint support using dev-libs/libressl
+net-p2p/rtorrent:daemon - Uses app-misc/screen to daemonize this application
