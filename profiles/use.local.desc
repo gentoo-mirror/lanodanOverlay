@@ -12,4 +12,3 @@ dev-qt/qtwebengine:system-ffmpeg - Use the system-wide media-video/ffmpeg instea
 dev-qt/qtwebengine:system-icu - Use the system-wide dev-libs/icu instead of bundled.
 dev-qt/qtwebengine:widgets - Enable QtWidgets support
 net-misc/openntpd:libressl - Enable HTTPS TLS time constraint support using dev-libs/libressl
-net-p2p/rtorrent:daemon - Uses app-misc/screen to daemonize this application

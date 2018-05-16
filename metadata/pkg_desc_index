@@ -10,5 +10,4 @@ games-action/chickens 0.2.4: Target chickens with rockets and shotguns. Funny
 games-engines/love 0.7.2-r1 0.8.0: A framework for 2D games in Lua
 media-libs/libsidplay 2.1.1-r5: C64 SID player library
 net-misc/openntpd 6.0_p1: Lightweight NTP server ported from OpenBSD
-net-p2p/rtorrent 0.9.6-r1: General purpose crypto library based on the code used in GnuPG
 sys-libs/llvm-libunwind 5.0.1: C++ runtime stack unwinder from LLVM
