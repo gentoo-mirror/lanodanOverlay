@@ -31,3 +31,6 @@ Adding this overlay: layman -a lanodanOverlay
 ## app-misc/kanatest
 • Bumped from EAPI 5 to EAPI 6
 • Add patch removing __DATE__ __TIME__
+
+## media-libs/libsidplay:2
+• Clang compatibility (removed a GCC-4.3 patch)
