@@ -1,0 +1,6 @@
+# unmaintained, got vulnerability, use pycryptodome
+dev-python/pycrypto
+
+# Lack of backporting for security fixes; no release after CVEs; code copypasta
+# =media-gfx/exiv2-0.26_p20180319 -> broken compilation
+media-gfx/exiv2

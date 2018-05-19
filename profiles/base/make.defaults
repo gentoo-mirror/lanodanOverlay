@@ -1,0 +1,15 @@
+USE="
+	libressl dane -suid cjk cacert idn jumbo-build smp threads -kde -handbook -sslv3 urandom -zeroconf
+	system-binutils system-boost system-cairo system-capstone system-clang system-cmark system-crontab system-ffmpeg system-harfbuzz system-heimdal system-icu system-jpeg system-jsoncpp system-libevent system-libmspack system-libs system-libvpx system-libyaml system-lua system-mitkrb5 system-qemu system-qt system-renpy system-seabios system-snappy system-sqlite system-tbb system-uulib system-wide system-wine system-zlib
+"
+# system-* are generated using
+# sed -r 's/.*\/.*:(.*) -.*/\1 /' /usr/portage/profiles/use.local.desc | sort -u | grep ^system- | grep -v ' -' | tr -d "\n\r"
+
+CURL_SSL="libressl"
+
+CFLAGS="-O2 -pipe -march=native -mtune=native -Wall -Wextra -Wconversion -Wno-error=conversion -Wsign-conversion -Wno-error=sign-conversion -Wno-error=unknown-warning-option -Wno-macro-redefined -Wformat -Wformat-security"
+CXXFLAGS="${CFLAGS}"
+
+ACCEPT_LICENSE="-* @FREE"
+L10N="en en-US en-GB fr fr-FR fr-CA fr-CH fr-BE ja ja-JP is jbo de de-DE"
+LINGUAS="en en_US en_GB fr fr_FR fr_CA fr_CH fr_BE ja ja_JP is jbo de de_DE"

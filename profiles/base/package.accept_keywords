@@ -1,0 +1,6 @@
+# My Gentoo Packages
+app-admin/pass-otp ~*
+app-editors/vis ~*
+games-arcade/oshu ~*
+www-plugins/passff ~*
+www-plugins/passff-host ~*
