@@ -22,7 +22,7 @@ SONAME="152"
 SLOT="0/${SONAME}"
 
 LICENSE="GPL-2"
-IUSE="10bit altivec +interlaced opencl pic static-libs cpu_flags_x86_sse +threads"
+IUSE="10bit altivec asm +interlaced opencl pic static-libs cpu_flags_x86_sse +threads"
 
 ASM_DEP=">=dev-lang/nasm-2.13"
 DEPEND="abi_x86_32? ( ${ASM_DEP} )
@@ -34,11 +34,6 @@ DOCS=( AUTHORS doc/{ratecontrol,regression_test,standards,threads,vui}.txt )
 
 multilib_src_configure() {
 	tc-export CC
-	local asm_conf=""
-
-	if [[ ${ABI} == x86* ]] && { use pic || use !cpu_flags_x86_sse ; } || [[ ${ABI} == "x32" ]] || [[ ${CHOST} == armv5* ]] || [[ ${ABI} == ppc* ]] && { use !altivec ; }; then
-		asm_conf=" --disable-asm"
-	fi
 
 	"${S}/configure" \
 		--prefix="${EPREFIX}"/usr \
@@ -57,5 +52,5 @@ multilib_src_configure() {
 		$(usex opencl "" "--disable-opencl") \
 		$(usex static-libs "--enable-static" "") \
 		$(usex threads "" "--disable-thread") \
-		${asm_conf} || die
+		$(use_enable asm)
 }
