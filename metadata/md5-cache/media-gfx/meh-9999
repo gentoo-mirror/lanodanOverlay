@@ -1,5 +1,5 @@
 DEFINED_PHASES=unpack
-DEPEND=x11-libs/libXext virtual/jpeg:* media-libs/giflib media-libs/libpng:* >=dev-vcs/git-1.8.2.1
+DEPEND=x11-libs/libXext virtual/jpeg:* media-libs/giflib media-libs/libpng:* >=dev-vcs/git-1.8.2.1[curl]
 DESCRIPTION=A minimalist image viewer using raw XLib.
 EAPI=6
 HOMEPAGE=http://www.johnhawthorn.com/meh
@@ -7,5 +7,5 @@ KEYWORDS=~amd64 ~x86
 LICENSE=MIT
 RDEPEND=x11-libs/libXext virtual/jpeg:* media-libs/giflib media-libs/libpng:*
 SLOT=0
-_eclasses_=git-r3	af51ccfceeb403ab80f1bf9209d372c8
+_eclasses_=git-r3	8f6de46b0aa318aea0e8cac62ece098b
 _md5_=882606d31f1ad1aef7d64e3d01958e88

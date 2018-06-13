@@ -1,5 +1,5 @@
 DEFINED_PHASES=unpack
-DEPEND=net-im/pidgin dev-libs/json-glib >=dev-vcs/git-1.8.2.1
+DEPEND=net-im/pidgin dev-libs/json-glib >=dev-vcs/git-1.8.2.1[curl]
 DESCRIPTION=Pidgin/Purple PRotocol PLugin for Discord
 EAPI=6
 HOMEPAGE=https://github.com/EionRobb/purple-discord
@@ -7,5 +7,5 @@ KEYWORDS=~amd64 ~x86
 LICENSE=GPL-3
 RDEPEND=net-im/pidgin dev-libs/json-glib
 SLOT=0
-_eclasses_=git-r3	af51ccfceeb403ab80f1bf9209d372c8
+_eclasses_=git-r3	8f6de46b0aa318aea0e8cac62ece098b
 _md5_=ae72ddd818299b1eccfacd4f4b581754
