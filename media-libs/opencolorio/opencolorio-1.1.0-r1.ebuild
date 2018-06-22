@@ -55,6 +55,10 @@ src_prepare() {
 	cmake-utils_src_prepare
 
 	use python && python_fix_shebang .
+
+	sed -i 's/.*-Werror.*//' \
+		src/pyglue/CMakeLists.txt \
+		src/core/CMakeLists.txt
 }
 
 src_configure() {
