@@ -14,7 +14,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
+DEPEND="
+	dev-libs/granite
+	dev-libs/json-glib
+"
 RDEPEND="${DEPEND}"
 
 src_prepare() {
