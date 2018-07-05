@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DEPEND=net-libs/nodejs[npm]
+DESCRIPTION=JavaScript parser, mangler/compressor and beautifier toolkit
+EAPI=6
+HOMEPAGE=http://lisperator.net/uglifyjs
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=net-libs/nodejs[npm]
+SLOT=0
+SRC_URI=https://registry.npmjs.org/uglify-js/-/uglify-js-3.4.0.tgz
+_md5_=72a73471ab9e76eb7c0cd41b76d645c9
