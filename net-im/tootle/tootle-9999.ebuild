@@ -17,8 +17,11 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="
+	dev-libs/glib
 	dev-libs/granite
 	dev-libs/json-glib
+	net-libs/libsoup:2.4
+	x11-libs/gtk+:3
 "
 RDEPEND="${DEPEND}"
 
