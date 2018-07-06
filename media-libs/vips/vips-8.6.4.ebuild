@@ -6,7 +6,7 @@ PYTHON_COMPAT=( python2_7 )
 inherit eutils autotools python-single-r1 multilib-minimal
 
 DESCRIPTION="VIPS Image Processing Library"
-SRC_URI="https://github.com/jcupitt/libvips/releases/download/v8.6.4/vips-8.6.4.tar.gz -> lib${P}.tar.gz"
+SRC_URI="https://github.com/jcupitt/libvips/releases/download/v8.6.4/vips-8.6.4.tar.gz -> ${P}.tar.gz"
 HOMEPAGE="https://jcupitt.github.io/libvips/"
 
 RESTRICT="mirror"
@@ -50,8 +50,6 @@ DEPEND="
 REQUIRED_USE="
 	python? ( ${PYTHON_REQUIRED_USE} )
 "
-
-S="${WORKDIR}/lib${P}"
 
 DOCS=(ChangeLog NEWS THANKS TODO README.md)
 
