@@ -15,4 +15,11 @@ media-libs/x264:10bit - Set output bit depth to 10, this may not be compatible w
 media-libs/x264:interlaced - enable interlaced encoding support, this can decrease encoding speed by up to 2%
 media-libs/x264:opencl - Add support for OpenCL.
 media-libs/x264:pic - disable optimized assembly code that is not PIC friendly
+net-libs/webkit-gtk:coverage - Enable code coverage support
+net-libs/webkit-gtk:egl - Enable EGL support
+net-libs/webkit-gtk:geolocation - Enable geolocation support through app-misc/geoclue
+net-libs/webkit-gtk:gles2 - Enable GLESv2 support
+net-libs/webkit-gtk:nsplugin - Enable full nsplugin support (GTK2 plugins)
+net-libs/webkit-gtk:webgl - Build support for the WebGL HTML API using virtual/opengl
+net-libs/webkit-gtk:woff - Enable WOFF2 support using media-libs/woff2
 net-misc/openntpd:libressl - Enable HTTPS TLS time constraint support using dev-libs/libressl
