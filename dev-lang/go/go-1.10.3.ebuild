@@ -39,7 +39,7 @@ case ${PV}  in
 	case ${PV} in
 	*_beta*|*_rc*) ;;
 	*)
-		KEYWORDS="-* amd64 ~arm ~arm64 ~ppc64 ~s390 ~x86 ~amd64-fbsd ~x86-fbsd ~x64-macos ~x64-solaris"
+		KEYWORDS="~amd64 ~x86 ~arm"
 		# The upstream tests fail under portage but pass if the build is
 		# run according to their documentation [1].
 		# I am restricting the tests on released versions until this is
@@ -49,16 +49,19 @@ case ${PV}  in
 		;;
 	esac
 esac
-SRC_URI+="!gccgo? ( ${BOOTSTRAP_URI} )"
+SRC_URI+="!gccgo? ( !bootstrap? ( ${BOOTSTRAP_URI} ) )"
 
 DESCRIPTION="A concurrent garbage collected and typesafe programming language"
 HOMEPAGE="https://golang.org"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-IUSE="gccgo"
+IUSE="gccgo bootstrap"
 
-DEPEND="gccgo? ( >=sys-devel/gcc-5[go] )"
+DEPEND="
+	gccgo? ( >=sys-devel/gcc-5[go] )
+	bootstrap? ( dev-lang/go-bootstrap )
+"
 RDEPEND="!<dev-go/go-tools-0_pre20150902"
 
 # These test data objects have writable/executable stacks.
@@ -170,6 +173,10 @@ src_compile()
 		[[ -x ${go_binary} ]] ||
 			die "go-$(gcc-major-version): command not found"
 		ln -s "${go_binary}" "${GOROOT_BOOTSTRAP}/bin/go" || die
+	fi
+	if use bootstrap; then
+		ln -s "${EPREFIX}/usr/lib/go1.4/bin/go" "${GOROOT_BOOTSTRAP}/bin/go" || die
+		export GOROOT_BOOTSTRAP="${EPREFIX}/usr/lib/go1.4"
 	fi
 	export GOROOT_FINAL="${EPREFIX}"/usr/lib/go
 	export GOROOT="$(pwd)"
