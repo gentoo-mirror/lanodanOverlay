@@ -175,6 +175,7 @@ src_compile()
 		ln -s "${go_binary}" "${GOROOT_BOOTSTRAP}/bin/go" || die
 	fi
 	if use bootstrap; then
+		mkdir -p "${GOROOT_BOOTSTRAP}/bin" || die
 		ln -s "${EPREFIX}/usr/lib/go1.4/bin/go" "${GOROOT_BOOTSTRAP}/bin/go" || die
 		export GOROOT_BOOTSTRAP="${EPREFIX}/usr/lib/go1.4"
 	fi
