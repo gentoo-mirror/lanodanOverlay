@@ -24,55 +24,6 @@ DEPEND="${GNUSTEP_CORE_DEPEND}
 		) )"
 RDEPEND="${DEPEND}"
 
-pkg_setup() {
-	# Determine libobjc.so to use
-	if use libobjc2; then
-		libobjc_version=libobjc.so.4
-	else
-		# Find version in active gcc
-		for ver in {2..5};
-		do
-			if $(tc-getCC) -Werror -Wl,-l:libobjc.so.${ver} -x objective-c \
-				- <<<$'int main() {}' -o /dev/null 2> /dev/null;
-			then
-				libobjc_version=libobjc.so.${ver}
-			fi
-		done
-	fi
-
-	# Stop if we could not get libobjc.so
-	if [[ -z ${libobjc_version} ]]; then
-		eerror "${P} requires a working Objective-C runtime and a compiler with"
-		eerror "Objective-C support. Your current settings lack these requirements"
-		if ! use libobjc2;
-		then
-			eerror "Please switch your active compiler to gcc with USE=objc, or clang"
-		fi
-		die "Could not find Objective-C runtime"
-	fi
-
-	# For existing installations, determine if we will use another libobjc.so
-	if has_version gnustep-base/gnustep-make; then
-		local current_libobjc="$(awk -F: '/^OBJC_LIB_FLAG/ {print $2}' ${EPREFIX}/usr/share/GNUstep/Makefiles/config.make)"
-		# Old installations did not set this explicitely
-		: ${current_libobjc:=libobjc.so.2}
-
-		if [[ ${current_libobjc} != ${libobjc_version} ]]; then
-			ewarn "Warning: changed libobjc.so version!!"
-			ewarn "The libobjc.so version used for gnustep-make has changed"
-			ewarn "(either by the libojbc2 use-flag or a GCC upgrade)"
-			ewarn "You must rebuild all gnustep packages installed."
-			ewarn ""
-			ewarn "To do so, please emerge gnustep-base/gnustep-updater and run:"
-			ewarn "# gnustep-updater -l"
-		fi
-	fi
-
-	if use libobjc2; then
-		export CC=clang
-	fi
-}
-
 src_prepare() {
 	# Multilib-strict
 	sed -e "s#/lib#/$(get_libdir)#" -i FilesystemLayouts/fhs-system || die "sed failed"
