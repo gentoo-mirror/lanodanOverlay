@@ -11,7 +11,7 @@ games-engines/love 0.7.2-r1 0.8.0: A framework for 2D games in Lua
 media-libs/libsidplay 2.1.1-r5: C64 SID player library
 media-libs/opencolorio 1.1.0-r1: A color management framework for visual effects and animation
 media-libs/x264 0.0.20170701: A free library for encoding X264/AVC streams
-net-libs/webkit-gtk 2.21.4: Open source web browser engine
+net-libs/webkit-gtk 2.21.4 2.21.92: Open source web browser engine
 net-misc/openntpd 6.0_p1: Lightweight NTP server ported from OpenBSD
 sci-misc/labview 8.6.0: LabVIEW System Design Software
 sys-libs/llvm-libunwind 5.0.1: C++ runtime stack unwinder from LLVM
