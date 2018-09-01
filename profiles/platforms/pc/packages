@@ -3,5 +3,3 @@ sys-power/acpi
 sys-apps/pciutils
 sys-power/acpid
 sys-apps/dmidecode
-sys-kernel/linux-firmware
-
