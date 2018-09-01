@@ -9,7 +9,6 @@ app-misc/pax-utils
 app-misc/tmux
 app-portage/gentoolkit
 app-portage/layman
-app-shells/thefuck
 app-text/wgetpaste
 net-analyzer/mtr
 net-analyzer/nmap
