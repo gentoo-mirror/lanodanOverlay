@@ -3,3 +3,5 @@ sys-power/acpi
 sys-apps/pciutils
 sys-power/acpid
 sys-apps/dmidecode
+sys-boot/grub
+sys-fs/cryptsetup
