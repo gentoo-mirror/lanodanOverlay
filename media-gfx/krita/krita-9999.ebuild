@@ -1,19 +1,21 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
 KDE_TEST="forceoptional"
-inherit kde5 git-r3
+VIRTUALX_REQUIRED="test"
+PYTHON_COMPAT=( python3_{4,5,6} )
+inherit kde5 python-single-r1 git-r3
 
 DESCRIPTION="Free digital painting application. Digital Painting, Creative Freedom!"
 HOMEPAGE="https://www.kde.org/applications/graphics/krita/ https://krita.org/"
 SRC_URI=""
 EGIT_REPO_URI="git://anongit.kde.org/krita.git"
 
-LICENSE="GPL-3 GPL-3+"
+LICENSE="GPL-3"
 KEYWORDS=""
-IUSE="color-management fftw +gsl +jpeg openexr pdf qtmedia +raw tiff vc threads curl zlib"
+IUSE="color-management fftw gif +gsl +jpeg openexr pdf qtmedia +raw tiff vc threads curl zlib"
 
 COMMON_DEPEND="
 	$(add_frameworks_dep karchive)
@@ -39,6 +41,7 @@ COMMON_DEPEND="
 	curl? ( net-misc/curl )
 	dev-libs/boost:=
 	fftw? ( sci-libs/fftw:3.0= )
+	gif? ( media-libs/giflib )
 	gsl? ( sci-libs/gsl:= )
 	jpeg? ( virtual/jpeg:0 )
 	media-gfx/exiv2:=
@@ -49,8 +52,13 @@ COMMON_DEPEND="
 		media-libs/openexr
 	)
 	pdf? ( app-text/poppler[qt5] )
+	python? (
+		${PYTHON_DEPS}
+		dev-python/PyQt5[${PYTHON_USEDEP}]
+		dev-python/sip[${PYTHON_USEDEP}]
+	)
 	qtmedia? ( $(add_qt_dep qtmultimedia) )
-	raw? ( media-libs/libraw:= )
+	raw? ( <media-libs/libraw-0.19:= )
 	threads? ( dev-libs/libpthread-stubs )
 	tiff? ( media-libs/tiff:0 )
 	virtual/opengl
@@ -68,16 +76,24 @@ RDEPEND="${COMMON_DEPEND}
 	!app-office/calligra-l10n:4[calligra_features_krita(+)]
 "
 
-PATCHES=( "${FILESDIR}"/${PN}-vc-fix-gcc49-abi.patch )
+# https://bugs.gentoo.org/630508
+RESTRICT+=" test"
+
+pkg_setup() {
+	use python && python-single-r1_pkg_setup
+}
 
 src_configure() {
 	local mycmakeargs=(
 		$(cmake-utils_use_find_package color-management OCIO)
 		$(cmake-utils_use_find_package fftw FFTW3)
+		$(cmake-utils_use_find_package gif GIF)
 		$(cmake-utils_use_find_package gsl GSL)
 		$(cmake-utils_use_find_package jpeg JPEG)
 		$(cmake-utils_use_find_package openexr OpenEXR)
 		$(cmake-utils_use_find_package pdf Poppler)
+		$(cmake-utils_use_find_package python PyQt5)
+		$(cmake-utils_use_find_package python SIP)
 		$(cmake-utils_use_find_package qtmedia Qt5Multimedia)
 		$(cmake-utils_use_find_package raw LibRaw)
 		$(cmake-utils_use_find_package tiff TIFF)
