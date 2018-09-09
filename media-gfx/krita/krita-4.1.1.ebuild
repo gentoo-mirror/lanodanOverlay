@@ -4,18 +4,17 @@
 EAPI=6
 
 KDE_TEST="forceoptional"
-inherit kde5
+VIRTUALX_REQUIRED="test"
+PYTHON_COMPAT=( python3_{4,5,6} )
+inherit kde5 python-single-r1
 
 DESCRIPTION="Free digital painting application. Digital Painting, Creative Freedom!"
 HOMEPAGE="https://www.kde.org/applications/graphics/krita/ https://krita.org/"
-SRC_URI="mirror://kde/stable/${PN}/${PV%.1}/${P}.tar.gz"
+SRC_URI="mirror://kde/stable/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 KEYWORDS="~amd64 ~x86"
-IUSE="color-management fftw +gsl +jpeg openexr pdf qtmedia +raw tiff vc threads curl zlib"
-
-# https://bugs.gentoo.org/630508
-RESTRICT+=" test"
+IUSE="color-management fftw gif +gsl +jpeg openexr pdf qtmedia +raw tiff vc threads curl zlib"
 
 COMMON_DEPEND="
 	$(add_frameworks_dep karchive)
@@ -41,6 +40,7 @@ COMMON_DEPEND="
 	curl? ( net-misc/curl )
 	dev-libs/boost:=
 	fftw? ( sci-libs/fftw:3.0= )
+	gif? ( media-libs/giflib )
 	gsl? ( sci-libs/gsl:= )
 	jpeg? ( virtual/jpeg:0 )
 	media-gfx/exiv2:=
@@ -51,8 +51,13 @@ COMMON_DEPEND="
 		media-libs/openexr
 	)
 	pdf? ( app-text/poppler[qt5] )
+	python? (
+		${PYTHON_DEPS}
+		dev-python/PyQt5[${PYTHON_USEDEP}]
+		dev-python/sip[${PYTHON_USEDEP}]
+	)
 	qtmedia? ( $(add_qt_dep qtmultimedia) )
-	raw? ( media-libs/libraw:= )
+	raw? ( <media-libs/libraw-0.19:= )
 	threads? ( dev-libs/libpthread-stubs )
 	tiff? ( media-libs/tiff:0 )
 	virtual/opengl
@@ -70,14 +75,24 @@ RDEPEND="${COMMON_DEPEND}
 	!app-office/calligra-l10n:4[calligra_features_krita(+)]
 "
 
+# https://bugs.gentoo.org/630508
+RESTRICT+=" test"
+
+pkg_setup() {
+	use python && python-single-r1_pkg_setup
+}
+
 src_configure() {
 	local mycmakeargs=(
 		$(cmake-utils_use_find_package color-management OCIO)
 		$(cmake-utils_use_find_package fftw FFTW3)
+		$(cmake-utils_use_find_package gif GIF)
 		$(cmake-utils_use_find_package gsl GSL)
 		$(cmake-utils_use_find_package jpeg JPEG)
 		$(cmake-utils_use_find_package openexr OpenEXR)
 		$(cmake-utils_use_find_package pdf Poppler)
+		$(cmake-utils_use_find_package python PyQt5)
+		$(cmake-utils_use_find_package python SIP)
 		$(cmake-utils_use_find_package qtmedia Qt5Multimedia)
 		$(cmake-utils_use_find_package raw LibRaw)
 		$(cmake-utils_use_find_package tiff TIFF)
