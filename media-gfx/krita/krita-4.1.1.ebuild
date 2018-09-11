@@ -14,7 +14,7 @@ SRC_URI="mirror://kde/stable/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 KEYWORDS="~amd64 ~x86"
-IUSE="color-management fftw gif +gsl +jpeg openexr pdf qtmedia +raw tiff vc threads curl zlib"
+IUSE="color-management fftw gif +gsl +jpeg openexr pdf python qtmedia +raw tiff vc threads curl zlib"
 
 COMMON_DEPEND="
 	$(add_frameworks_dep karchive)
