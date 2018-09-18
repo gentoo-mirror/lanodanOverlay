@@ -7,5 +7,5 @@ KEYWORDS=~amd64 ~x86
 LICENSE=MIT
 RDEPEND=x11-libs/libXext virtual/jpeg:* media-libs/giflib media-libs/libpng:*
 SLOT=0
-_eclasses_=git-r3	918d6a744039c29af2cadc7317459765
+_eclasses_=git-r3	0d4635eeb5a96cd5315597a47eba25c9
 _md5_=882606d31f1ad1aef7d64e3d01958e88
