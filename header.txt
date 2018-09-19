@@ -1,0 +1,2 @@
+# Copyright 2018 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+# Distributed under the terms of the GNU General Public License v2
