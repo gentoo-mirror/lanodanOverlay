@@ -15,3 +15,4 @@ net-libs/webkit-gtk 2.21.4 2.21.92: Open source web browser engine
 net-misc/openntpd 6.0_p1: Lightweight NTP server ported from OpenBSD
 sci-misc/labview 8.6.0: LabVIEW System Design Software
 sys-libs/llvm-libunwind 5.0.1: C++ runtime stack unwinder from LLVM
+virtual/man 0-r1: Virtual for man
