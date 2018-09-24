@@ -19,6 +19,7 @@ RDEPEND="
 	!static? ( ${LIB_DEPEND//\[static-libs(+)]} )
 	!sys-apps/man-db
 	!sys-apps/man
+	!sys-apps/groff
 "
 DEPEND="${RDEPEND}
 	static? ( ${LIB_DEPEND} )"
