@@ -13,3 +13,6 @@ CXXFLAGS="${CFLAGS}"
 ACCEPT_LICENSE="-* @FREE"
 L10N="en en-US en-GB fr fr-FR fr-CA fr-CH fr-BE ja ja-JP is jbo de de-DE"
 LINGUAS="en en_US en_GB fr fr_FR fr_CA fr_CH fr_BE ja ja_JP is jbo de de_DE"
+
+# mandoc
+PORTAGE_COMPRESS="gzip"
