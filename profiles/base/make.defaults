@@ -5,7 +5,7 @@ USE="
 # system-* are generated using
 # sed -r 's/.*\/.*:(.*) -.*/\1 /' /usr/portage/profiles/use.local.desc | sort -u | grep ^system- | grep -v ' -' | tr -d "\n\r"
 
-CURL_SSL="libressl"
+CURL_SSL="libressl -openssl"
 
 CFLAGS="-O2 -pipe -march=native -mtune=native -Wno-conversion -Wsign-conversion -Wno-error=sign-conversion -Wformat -Wformat-security"
 CXXFLAGS="${CFLAGS}"
