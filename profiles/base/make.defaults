@@ -5,13 +5,14 @@ USE="
 # system-* are generated using
 # sed -r 's/.*\/.*:(.*) -.*/\1 /' /usr/portage/profiles/use.local.desc | sort -u | grep ^system- | grep -v ' -' | tr -d "\n\r"
 
-CURL_SSL="libressl"
+CURL_SSL="libressl -openssl"
 
 CFLAGS="-O2 -pipe -march=native -mtune=native -Wno-conversion -Wsign-conversion -Wno-error=sign-conversion -Wformat -Wformat-security"
 CXXFLAGS="${CFLAGS}"
 
 CONFIG_PROTECT="${CONFIG_PROTECT} /lib/udev/rules.d/"
-EGIT_CLONE_TYPE="shallow" # --depth=1
+INSTALL_MASK="/usr/lib/systemd /usr/lib64/systemd /etc/systemd /etc/sudoers /etc/sudoers.d"
+
 EMERGE_DEFAULT_OPTS="--keep-going"
 FEATURES="webrsync-gpg userfetch usersandbox splitdebug network-sandbox"
 FETCHCOMMAND="curl -L -C - --retry 3 --connect-timeout 60 -o \"\${DISTDIR}/\${FILE}\" \"\${URI}\""
@@ -22,3 +23,6 @@ RESUMECOMMAND="${FETCHCOMMAND}"
 
 ACCEPT_LICENSE="-* @FREE"
 L10N="en en-US en-GB fr fr-FR fr-CA fr-CH fr-BE ja ja-JP is jbo de de-DE"
+
+EGIT_CLONE_TYPE="shallow" # --depth=1
+CMAKE_MAKEFILE_GENERATOR="ninja"
