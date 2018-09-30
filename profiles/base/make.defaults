@@ -7,12 +7,18 @@ USE="
 
 CURL_SSL="libressl"
 
-CFLAGS="-O2 -pipe -march=native -mtune=native -Wall -Wextra -Wconversion -Wno-error=conversion -Wsign-conversion -Wno-error=sign-conversion -Wno-error=unknown-warning-option -Wno-macro-redefined -Wformat -Wformat-security"
+CFLAGS="-O2 -pipe -march=native -mtune=native -Wno-conversion -Wsign-conversion -Wno-error=sign-conversion -Wformat -Wformat-security"
 CXXFLAGS="${CFLAGS}"
+
+CONFIG_PROTECT="${CONFIG_PROTECT} /lib/udev/rules.d/"
+EGIT_CLONE_TYPE="shallow" # --depth=1
+EMERGE_DEFAULT_OPTS="--keep-going"
+FEATURES="webrsync-gpg userfetch usersandbox splitdebug network-sandbox"
+FETCHCOMMAND="curl -L -C - --retry 3 --connect-timeout 60 -o \"\${DISTDIR}/\${FILE}\" \"\${URI}\""
+GENTOO_MIRRORS="https://mirror.swordarmor.fr/gentoo/ https://mirrors.dotsrc.org/gentoo/ https://gentoo.osuosl.org/ http://distfiles.gentoo.org"
+PORTAGE_COMPRESS="gzip" # mandoc
+PORTAGE_GPG_DIR="/var/lib/gentoo/gkeys/keyrings/gentoo/release/"
+RESUMECOMMAND="${FETCHCOMMAND}"
 
 ACCEPT_LICENSE="-* @FREE"
 L10N="en en-US en-GB fr fr-FR fr-CA fr-CH fr-BE ja ja-JP is jbo de de-DE"
-LINGUAS="en en_US en_GB fr fr_FR fr_CA fr_CH fr_BE ja ja_JP is jbo de de_DE"
-
-# mandoc
-PORTAGE_COMPRESS="gzip"

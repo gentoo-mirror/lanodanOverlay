@@ -1,5 +1,4 @@
 # sets:graphical
-app-text/mupdf
 media-fonts/source-pro
 x11-terms/st
 x11-misc/arandr
@@ -9,7 +8,7 @@ media-fonts/unifont
 media-fonts/vlgothic
 media-gfx/feh
 media-video/mpv
-virtual/imagemagick-tools
+media-gfx/maim
 x11-apps/setxkbmap
 x11-apps/xev
 x11-apps/xinput
