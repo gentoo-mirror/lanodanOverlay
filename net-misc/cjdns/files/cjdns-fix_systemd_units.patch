@@ -1,0 +1,39 @@
+From 9303439700406cc0dc3b9817c672147848687e82 Mon Sep 17 00:00:00 2001
+From: Alex Acevedo <alex-acevedo@protonmail.com>
+Date: Thu, 26 Oct 2017 16:40:29 -0400
+Subject: [PATCH] fix systemd units
+
+---
+ contrib/systemd/cjdns-resume.service | 2 +-
+ contrib/systemd/cjdns.service        | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/contrib/systemd/cjdns-resume.service b/contrib/systemd/cjdns-resume.service
+index 3e6ce991..92c0bdc1 100644
+--- a/contrib/systemd/cjdns-resume.service
++++ b/contrib/systemd/cjdns-resume.service
+@@ -4,7 +4,7 @@ After=sleep.target
+ 
+ [Service]
+ Type=oneshot
+-ExecStart=/bin/systemctl restart cjdns
++ExecStart=/usr/bin/systemctl restart cjdns
+ 
+ [Install]
+ WantedBy=sleep.target
+diff --git a/contrib/systemd/cjdns.service b/contrib/systemd/cjdns.service
+index 3238aefb..aa4a49fb 100644
+--- a/contrib/systemd/cjdns.service
++++ b/contrib/systemd/cjdns.service
+@@ -9,7 +9,7 @@ ProtectSystem=true
+ SyslogIdentifier=cjdroute
+ ExecStartPre=/bin/sh -ec "if ! test -s /etc/cjdroute.conf; \
+                 then umask 077; \
+-                /usr/bin/cjdroute --genconf > /etc/cjdroute.conf; \
++                /usr/sbin/cjdroute --genconf > /etc/cjdroute.conf; \
+                 echo 'WARNING: A new /etc/cjdroute.conf file has been generated.'; \
+             fi"
+ ExecStart=/bin/sh -c "exec cjdroute --nobg < /etc/cjdroute.conf"
+-- 
+2.13.6
+
