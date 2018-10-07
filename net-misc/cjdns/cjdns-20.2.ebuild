@@ -19,6 +19,8 @@ ISUE=""
 DEPEND=">=net-libs/nodejs-8.11.1
 	    ${PYTHON_DEPS}"
 
+S="${WORKDIR}/cjdns-cjdns-v${PV}"
+
 pkg_setup() {
 	linux-info_pkg_setup
 	if ! linux_config_exists; then
