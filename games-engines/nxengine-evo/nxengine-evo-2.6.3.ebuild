@@ -22,4 +22,11 @@ DEPENDS="
 src_install() {
 	newbin bin/extract nx-extract
 	dobin bin/nx
+
+	insinto "/usr/share/${PF}"
+	doins -r data
+
+	einfo "Download CaveStory (english) http://www.cavestory.org/downloads/cavestoryen.zip"
+	einfo "And put /usr/share/${PF}/data files into the unpacked “CaveStory/data”"
+	einfo "Run nx-extract to prepare the game and then nx to play it"
 }
