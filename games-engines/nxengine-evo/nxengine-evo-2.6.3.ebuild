@@ -7,8 +7,11 @@ inherit cmake-utils
 
 DESCRIPTION="rewrite of the jump-and-run platformer Doukutsu Monogatari(Cave Story)"
 HOMEPAGE="https://github.com/nxengine/nxengine-evo http://nxengine.sourceforge.net/"
-SRC_URI="https://github.com/nxengine/nxengine-evo/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-SLOT="evo"
+SRC_URI="
+	https://github.com/nxengine/nxengine-evo/archive/v${PV}.tar.gz -> ${P}.tar.gz
+	https://www.cavestory.org/downloads/cavestoryen.zip
+"
+SLOT="0"
 LICENSE="GPL-3"
 KEYWORDS="~amd64"
 
@@ -19,14 +22,18 @@ DEPENDS="
 	media-libs/sdl2-ttf:=
 "
 
+src_compile() {
+	cmake-utils_src_compile
+
+	cp -r data/ "${WORKDIR}/CaveStory"
+	cd "${WORKDIR}/CaveStory"
+	${S}/bin/extract
+}
+
 src_install() {
 	newbin bin/extract nx-extract
 	dobin bin/nx
 
-	insinto "/usr/share/${PF}"
-	doins -r data
-
-	einfo "Download CaveStory (english) http://www.cavestory.org/downloads/cavestoryen.zip"
-	einfo "And put /usr/share/${PF}/data files into the unpacked “CaveStory/data”"
-	einfo "Run nx-extract to prepare the game and then nx to play it"
+	dodir /usr/share
+	cp -r "${WORKDIR}/CaveStory/" "${ED}/usr/share/nxengine"
 }
