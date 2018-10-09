@@ -15,7 +15,7 @@ EGIT_REPO_URI="git://anongit.kde.org/krita.git"
 
 LICENSE="GPL-3"
 KEYWORDS=""
-IUSE="color-management fftw gif +gsl +jpeg openexr pdf python qtmedia +raw tiff vc threads curl zlib"
+IUSE="color-management exiv2 fftw gif +gsl +jpeg openexr pdf python qtmedia +raw tiff vc threads curl zlib"
 
 COMMON_DEPEND="
 	$(add_frameworks_dep karchive)
@@ -39,12 +39,12 @@ COMMON_DEPEND="
 	$(add_qt_dep qtxml)
 	color-management? ( media-libs/opencolorio )
 	curl? ( net-misc/curl )
+	exiv2? ( media-gfx/exiv2:= )
 	dev-libs/boost:=
 	fftw? ( sci-libs/fftw:3.0= )
 	gif? ( media-libs/giflib )
 	gsl? ( sci-libs/gsl:= )
 	jpeg? ( virtual/jpeg:0 )
-	media-gfx/exiv2:=
 	media-libs/lcms
 	media-libs/libpng:0=
 	openexr? (
