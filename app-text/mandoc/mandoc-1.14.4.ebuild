@@ -43,6 +43,8 @@ src_prepare() {
 		EXAMPLEDIR="${EPREFIX}/usr/share/examples/mandoc"
 		MANPATH_DEFAULT="${EPREFIX}/usr/man:${EPREFIX}/usr/share/man:${EPREFIX}/usr/local/man:${EPREFIX}/usr/local/share/man"
 
+		MANM_MAN=mandoc_man
+		MANM_MDOC=mandoc_mdoc
 		CFLAGS="${CFLAGS} ${CPPFLAGS}"
 		LDFLAGS="${LDFLAGS} $(usex static -static '')"
 		AR="$(tc-getAR)"
