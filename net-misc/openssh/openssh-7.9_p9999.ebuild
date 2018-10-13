@@ -8,12 +8,11 @@ inherit user flag-o-matic multilib autotools pam systemd git-r3
 DESCRIPTION="Port of OpenBSD's free SSH release"
 HOMEPAGE="https://www.openssh.com/"
 SRC_URI=""
-EGIT_REPO_URI="https://anongit.mindrot.org/openssh.git"
+EGIT_REPO_URI="git://anongit.mindrot.org/openssh.git"
 
 LICENSE="BSD GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~ppc-aix ~x64-cygwin ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~m68k-mint ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
-# Probably want to drop ssl defaulting to on in a future version.
+KEYWORDS="~amd64"
 IUSE="abi_mips_n32 audit bindist debug kerberos kernel_linux ldns libedit libressl livecd pam +pie selinux +ssl static test X"
 RESTRICT="!test? ( test )"
 REQUIRED_USE="ldns? ( ssl )
@@ -52,14 +51,10 @@ RDEPEND="${RDEPEND}
 	userland_GNU? ( virtual/shadow )
 	X? ( x11-apps/xauth )"
 
-S="${WORKDIR}/${PARCH}"
-
 src_prepare() {
 	default
 
-	sed -i \
-		-e "/_PATH_XAUTH/s:/usr/X11R6/bin/xauth:${EPREFIX%/}/usr/bin/xauth:" \
-		pathnames.h || die
+	eautoreconf
 
 	tc-export PKG_CONFIG
 	local sed_args=(
@@ -70,15 +65,6 @@ src_prepare() {
 		-e 's:-D_FORTIFY_SOURCE=2::'
 	)
 
-	# The -ftrapv flag ICEs on hppa #505182
-	use hppa && sed_args+=(
-		-e '/CFLAGS/s:-ftrapv:-fdisable-this-test:'
-		-e '/OSSH_CHECK_CFLAG_LINK.*-ftrapv/d'
-	)
-	# _XOPEN_SOURCE causes header conflicts on Solaris
-	[[ ${CHOST} == *-solaris* ]] && sed_args+=(
-		-e 's/-D_XOPEN_SOURCE//'
-	)
 	sed -i "${sed_args[@]}" configure{.ac,} || die
 
 	eautoreconf
