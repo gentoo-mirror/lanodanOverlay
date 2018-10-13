@@ -147,7 +147,6 @@ src_install() {
 
 	doman contrib/ssh-copy-id.1
 	dodoc CREDITS OVERVIEW README* TODO sshd_config
-	dodoc ChangeLog
 
 	diropts -m 0700
 	dodir /etc/skel/.ssh
