@@ -1,2 +1,6 @@
 # lua overlay provides slotted dev-lang/lua
-*/* -system-lua
+# */* -system-lua
+net-proxy/haproxy -lua
+games-strategy/freeciv -system-lua
+net-analyzer/nmap -system-lua
+media-plugins/grilo-plugins -lua
