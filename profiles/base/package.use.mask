@@ -1,0 +1,2 @@
+# lua overlay provides slotted dev-lang/lua
+*/* -system-lua
