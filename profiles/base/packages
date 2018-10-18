@@ -21,4 +21,3 @@ sys-apps/gradm
 sys-devel/clang
 sys-kernel/gentoo-sources
 sys-process/dcron
-net-misc/dhcpcd
