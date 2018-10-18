@@ -12,7 +12,7 @@ EGIT_REPO_URI="git://anongit.mindrot.org/openssh.git"
 
 LICENSE="BSD GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
 IUSE="abi_mips_n32 audit bindist debug kerberos kernel_linux ldns libedit libressl livecd pam +pie selinux +ssl static test X"
 RESTRICT="!test? ( test )"
 REQUIRED_USE="ldns? ( ssl )
