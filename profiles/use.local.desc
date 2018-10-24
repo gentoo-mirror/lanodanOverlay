@@ -2,15 +2,6 @@
 # Please add your descriptions to your package's metadata.xml ONLY.
 # * generated automatically using pmaint *
 
-dev-qt/qtnetwork:bindist - Disable EC support via dev-libs/openssl
-dev-qt/qtnetwork:connman - Enable net-misc/connman-based bearer plugin
-dev-qt/qtnetwork:libproxy - Use net-libs/libproxy for automatic HTTP/SOCKS proxy configuration
-dev-qt/qtnetwork:networkmanager - Enable net-misc/networkmanager-based bearer plugin
-dev-qt/qtwebengine:geolocation - Enable physical position determination via dev-qt/qtpositioning
-dev-qt/qtwebengine:pax_kernel - Enable building under a PaX enabled kernel
-dev-qt/qtwebengine:system-ffmpeg - Use the system-wide media-video/ffmpeg instead of bundled.
-dev-qt/qtwebengine:system-icu - Use the system-wide dev-libs/icu instead of bundled.
-dev-qt/qtwebengine:widgets - Enable QtWidgets support
 media-libs/x264:10bit - Set output bit depth to 10, this may not be compatible with all decoders
 media-libs/x264:interlaced - enable interlaced encoding support, this can decrease encoding speed by up to 2%
 media-libs/x264:opencl - Add support for OpenCL.
