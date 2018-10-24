@@ -20,5 +20,4 @@ sys-apps/ed
 sys-apps/gradm
 sys-devel/clang
 sys-kernel/gentoo-sources
-sys-power/powertop
 sys-process/dcron
