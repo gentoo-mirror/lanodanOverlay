@@ -1,16 +1,16 @@
 app-admin/syslog-ng
-dev-perl/rename
-sys-power/powertop
-app-shells/mksh
-app-portage/cpuid2cpuflags
 app-crypt/gentoo-keys
 app-editors/vis
 app-misc/pax-utils
 app-misc/tmux
+app-portage/cpuid2cpuflags
 app-portage/gentoolkit
 app-portage/layman
-app-text/wgetpaste
+app-shells/mksh
 app-text/mandoc
+app-text/sshpaste
+dev-perl/rename
+dev-util/plan9port
 net-analyzer/mtr
 net-analyzer/nmap
 net-analyzer/tcpdump
@@ -20,4 +20,5 @@ sys-apps/ed
 sys-apps/gradm
 sys-devel/clang
 sys-kernel/gentoo-sources
+sys-power/powertop
 sys-process/dcron
