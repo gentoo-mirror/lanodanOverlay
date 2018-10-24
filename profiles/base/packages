@@ -8,7 +8,7 @@ app-portage/gentoolkit
 app-portage/layman
 app-shells/mksh
 app-text/mandoc
-app-text/wgetpaste
+app-text/sshpaste
 dev-perl/rename
 dev-util/plan9port
 net-analyzer/mtr
