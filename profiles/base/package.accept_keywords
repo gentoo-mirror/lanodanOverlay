@@ -4,5 +4,3 @@ app-editors/vis ~*
 games-arcade/oshu ~*
 www-plugins/passff ~*
 www-plugins/passff-host ~*
-
-~dev-util/plan9port-20140306
