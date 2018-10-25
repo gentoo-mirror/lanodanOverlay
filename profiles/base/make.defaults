@@ -17,7 +17,7 @@ EMERGE_DEFAULT_OPTS="--keep-going"
 FEATURES="webrsync-gpg userfetch usersandbox splitdebug network-sandbox"
 FETCHCOMMAND="curl -L -C - --retry 3 --connect-timeout 60 -o \"\${DISTDIR}/\${FILE}\" \"\${URI}\""
 GENTOO_MIRRORS="https://mirror.swordarmor.fr/gentoo/ https://mirrors.dotsrc.org/gentoo/ https://gentoo.osuosl.org/ http://distfiles.gentoo.org"
-PORTAGE_COMPRESS="gzip" # mandoc
+PORTAGE_COMPRESS="true" # mandoc
 PORTAGE_GPG_DIR="/var/lib/gentoo/gkeys/keyrings/gentoo/release/"
 RESUMECOMMAND="${FETCHCOMMAND}"
 
