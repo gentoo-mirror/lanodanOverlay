@@ -10,7 +10,6 @@ app-shells/mksh
 app-text/mandoc
 app-text/sshpaste
 dev-perl/rename
-dev-util/plan9port
 net-analyzer/mtr
 net-analyzer/nmap
 net-analyzer/tcpdump
