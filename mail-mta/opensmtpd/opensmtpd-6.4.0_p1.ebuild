@@ -46,6 +46,9 @@ S=${WORKDIR}/${MY_P/_}
 src_prepare() {
 	# Use /run instead of /var/run
 	sed -i -e '/pidfile_path/s:_PATH_VARRUN:"/run/":' openbsd-compat/pidfile.c || die
+	epatch "${FILESDIR}/opensmtpd-6.4.0_p1_missing_object_file_smtpctl.patch"
+	append-cflags "-ffunction-sections"
+	append-ldflags "-Wl,--gc-sections"
 	epatch_user
 	eautoreconf
 }
