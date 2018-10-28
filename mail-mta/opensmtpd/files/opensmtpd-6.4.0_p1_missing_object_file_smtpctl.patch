@@ -1,0 +1,33 @@
+From a0dc55816ac0aa58b832331799fb7d1e160e427d Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?L=C3=A9o=20Gaspard?= <leo@gaspard.io>
+Date: Sat, 27 Oct 2018 11:53:28 +0900
+Subject: [PATCH] Add missing object file for smtpctl
+
+With this change and addition of `CFLAGS=-ffunction-sections` and
+`LDFLAGS=-Wl,--gc-sections`, it now builds.
+
+`purge_config` is defined in `config.c` but used in `parse.y`, making
+`config.c` mandatory. But `config.c` requires lots of functions from
+other files in other unrelated functions, meaning that these unrelated
+(and unused in `smtpctl`) functions need to be garbage-collected.
+
+This is a workaround, a better way would likely be to refactor
+`purge_config` and `config_default` out of `config.c`, but I don't want
+to push for a change that would separate the portable version and the
+OpenBSD version too much.
+---
+ mk/smtpctl/Makefile.am | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/mk/smtpctl/Makefile.am b/mk/smtpctl/Makefile.am
+index 5af0b713..f0fce735 100644
+--- a/mk/smtpctl/Makefile.am
++++ b/mk/smtpctl/Makefile.am
+@@ -4,6 +4,7 @@ sbin_PROGRAMS=		smtpctl
+ 
+ smtpctl_SOURCES=	$(smtpd_srcdir)/enqueue.c
+ smtpctl_SOURCES+=	$(smtpd_srcdir)/parser.c
++smtpctl_SOURCES+=	$(smtpd_srcdir)/parse.c
+ smtpctl_SOURCES+=	$(smtpd_srcdir)/log.c
+ smtpctl_SOURCES+=	$(smtpd_srcdir)/envelope.c
+ smtpctl_SOURCES+=	$(smtpd_srcdir)/queue_backend.c
