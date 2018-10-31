@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit toolchain-funcs
+inherit toolchain-funcs flag-o-matic
 
 DESCRIPTION="modular and portable cryptographic toolkit"
 HOMEPAGE="https://www.libtom.net/LibTomCrypt/"
