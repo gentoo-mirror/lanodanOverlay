@@ -16,6 +16,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~s
 IUSE="bsdpty minimal multicall pam +shadow static +syslog zlib"
 
 LIB_DEPEND="zlib? ( sys-libs/zlib[static-libs(+)] )
+	dev-libs/libtomcrypt[static-libs(+)]
 	dev-libs/libtommath[static-libs(+)]"
 RDEPEND="!static? ( ${LIB_DEPEND//\[static-libs(+)]} )
 	pam? ( virtual/pam )"
@@ -38,6 +39,8 @@ set_options() {
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-0.46-dbscp.patch
+	rm -fr libtomcrypt || die
+	rm -fr libtommath || die
 	sed \
 		-e '/SFTPSERVER_PATH/s:".*":"/usr/lib/misc/sftp-server":' \
 		default_options.h > localoptions.h || die
@@ -48,12 +51,11 @@ src_prepare() {
 }
 
 src_configure() {
-	# XXX: Need to add libtomcrypt to the tree and re-enable this.
-	#	--disable-bundled-libtom
 	# We disable the hardening flags as our compiler already enables them
 	# by default as is appropriate for the target.
 	econf \
 		--disable-harden \
+		--disable-bundled-libtom \
 		$(use_enable zlib) \
 		$(use_enable pam) \
 		$(use_enable !bsdpty openpty) \
