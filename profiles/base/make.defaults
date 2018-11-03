@@ -1,5 +1,6 @@
 USE="
-	libressl dane -suid cjk cacert idn jumbo-build smp threads -kde -handbook -sslv3 urandom -zeroconf
+	-suid -kde -handbook -sslv3 -zeroconf
+	cacert cjk dane idn mandoc jumbo-build smp threads urandom
 	system-binutils system-boost system-cairo system-capstone system-clang system-cmark system-crontab system-ffmpeg system-harfbuzz system-heimdal system-icu system-jpeg system-jsoncpp system-libevent system-libmspack system-libs system-libvpx system-libyaml system-lua system-mitkrb5 system-qemu system-qt system-renpy system-seabios system-snappy system-sqlite system-tbb system-uulib system-wide system-wine system-zlib
 "
 # system-* are generated using

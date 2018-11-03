@@ -16,29 +16,31 @@ SRC_URI="https://www.opensmtpd.org/archives/${MY_P/_}.tar.gz"
 LICENSE="ISC BSD BSD-1 BSD-2 BSD-4"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="libressl pam +mta"
+IUSE="libressl pam mandoc +mta"
 
-DEPEND="!libressl? ( dev-libs/openssl:0 )
-		libressl? ( dev-libs/libressl )
-		sys-libs/zlib
-		pam? ( virtual/pam )
-		elibc_musl? ( sys-libs/fts-standalone )
-		sys-libs/db:=
-		dev-libs/libevent
-		app-misc/ca-certificates
-		net-mail/mailbase
-		net-libs/libasr
-		!mail-mta/courier
-		!mail-mta/esmtp
-		!mail-mta/exim
-		!mail-mta/mini-qmail
-		!mail-mta/msmtp[mta]
-		!mail-mta/netqmail
-		!mail-mta/nullmailer
-		!mail-mta/postfix
-		!mail-mta/qmail-ldap
-		!mail-mta/sendmail
-		!mail-mta/ssmtp[mta]
+DEPEND="
+	!libressl? ( dev-libs/openssl:0 )
+	libressl? ( dev-libs/libressl )
+	sys-libs/zlib
+	pam? ( virtual/pam )
+	elibc_musl? ( sys-libs/fts-standalone )
+	mandoc? ( app-text/mandoc )
+	sys-libs/db:=
+	dev-libs/libevent
+	app-misc/ca-certificates
+	net-mail/mailbase
+	net-libs/libasr
+	!mail-mta/courier
+	!mail-mta/esmtp
+	!mail-mta/exim
+	!mail-mta/mini-qmail
+	!mail-mta/msmtp[mta]
+	!mail-mta/netqmail
+	!mail-mta/nullmailer
+	!mail-mta/postfix
+	!mail-mta/qmail-ldap
+	!mail-mta/sendmail
+	!mail-mta/ssmtp[mta]
 "
 RDEPEND="${DEPEND}"
 
@@ -61,6 +63,7 @@ src_configure() {
 		--with-path-socket=/run \
 		--with-path-CAfile=/etc/ssl/certs/ca-certificates.crt \
 		--sysconfdir=/etc/opensmtpd \
+		--with-mantype=doc \
 		$(use_with pam auth-pam)
 }
 

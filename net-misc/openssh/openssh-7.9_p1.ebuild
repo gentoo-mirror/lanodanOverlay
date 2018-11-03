@@ -3,12 +3,13 @@
 
 EAPI=6
 
-inherit user flag-o-matic multilib autotools pam systemd git-r3
+inherit user flag-o-matic multilib autotools pam systemd
+
+PARCH=${P/_}
 
 DESCRIPTION="Port of OpenBSD's free SSH release"
 HOMEPAGE="https://www.openssh.com/"
-SRC_URI=""
-EGIT_REPO_URI="git://anongit.mindrot.org/openssh.git"
+SRC_URI="mirror://openbsd/OpenSSH/portable/${PARCH}.tar.gz"
 
 LICENSE="BSD GPL-2"
 SLOT="0"
@@ -85,6 +86,7 @@ src_configure() {
 		--datadir="${EPREFIX%/}"/usr/share/openssh
 		--with-privsep-path="${EPREFIX%/}"/var/empty
 		--with-privsep-user=sshd
+		--with-mantype=doc
 		$(use_with audit audit linux)
 		$(use_with kerberos kerberos5 "${EPREFIX%/}"/usr)
 		$(use_with ldns)
