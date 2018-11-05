@@ -14,7 +14,7 @@ SRC_URI="https://ftp.isc.org/isc/inn/${P}.tar.gz"
 # GPL-2 only for init script
 LICENSE="ISC GPL-2+ public-domain BSD-4 BSD-2 RSA BSD MIT GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="berkdb innkeywords inntaggedhash ipv6 kerberos perl python sasl libressl ssl"
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
