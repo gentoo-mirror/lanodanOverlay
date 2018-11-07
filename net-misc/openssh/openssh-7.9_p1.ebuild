@@ -52,6 +52,8 @@ RDEPEND="${RDEPEND}
 	userland_GNU? ( virtual/shadow )
 	X? ( x11-apps/xauth )"
 
+S="${WORKDIR}/${PARCH}"
+
 src_prepare() {
 	default
 
