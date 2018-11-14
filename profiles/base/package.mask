@@ -4,3 +4,8 @@ dev-python/pycrypto
 # Lack of backporting for security fixes; no release after CVEs; code copypasta
 # =media-gfx/exiv2-0.26_p20180319 -> broken compilation
 media-gfx/exiv2
+
+# Haelwenn (lanodan) Monnier <contact@hacktivis.me> 2018-11-14
+# libutf8proc is undocumented dependency
+# fails to build with a OpenSSL-like error in stable (1.9.7-r1)
+dev-vcs/subversion
