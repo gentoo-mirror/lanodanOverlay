@@ -148,7 +148,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	eapply "${WORKDIR}/patches"
 	eapply_user
 
 	fperms +x build/transform_libtool_scripts.sh
