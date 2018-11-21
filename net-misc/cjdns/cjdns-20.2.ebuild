@@ -14,10 +14,7 @@ LICENSE="GPL-3"
 
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-ISUE=""
-
-DEPEND=">=net-libs/nodejs-8.11.1
-	    ${PYTHON_DEPS}"
+IUSE=""
 
 S="${WORKDIR}/cjdns-cjdns-v${PV}"
 
