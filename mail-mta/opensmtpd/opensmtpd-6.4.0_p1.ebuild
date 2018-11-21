@@ -15,7 +15,7 @@ SRC_URI="https://www.opensmtpd.org/archives/${MY_P/_}.tar.gz"
 
 LICENSE="ISC BSD BSD-1 BSD-2 BSD-4"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64"
 IUSE="libressl pam mandoc +mta"
 
 DEPEND="
