@@ -1,1 +1,2 @@
+sys-libs/pam cracklib
 dev-libs/libgcrypt o-flag-munging
