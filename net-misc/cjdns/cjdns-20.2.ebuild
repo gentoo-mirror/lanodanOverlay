@@ -3,21 +3,18 @@
 
 EAPI=5
 
-PYTHON_COMPAT=( python3_4 )
+PYTHON_COMPAT=( python3_{4,5,6} )
 
 inherit eutils linux-info systemd python-single-r1 flag-o-matic
 
-DESCRIPTION="encrypted IPv6 network using public-key cryptography for address allocation and DHT for routing"
+DESCRIPTION="encrypted IPv6 using public-key cryptography for allocation and DHT for routing"
 HOMEPAGE="https://github.com/cjdelisle/cjdns"
 SRC_URI="https://github.com/cjdelisle/cjdns/archive/cjdns-v${PV}.tar.gz"
 LICENSE="GPL-3"
 
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-ISUE=""
-
-DEPEND=">=net-libs/nodejs-8.11.1
-	    ${PYTHON_DEPS}"
+IUSE=""
 
 S="${WORKDIR}/cjdns-cjdns-v${PV}"
 
