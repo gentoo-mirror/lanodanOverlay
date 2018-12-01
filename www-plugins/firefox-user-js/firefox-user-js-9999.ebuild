@@ -10,8 +10,6 @@ HOMEPAGE="https://github.com/pyllyukko/user.js"
 SLOT="0"
 LICENSE="MIT"
 
-FEATURES="test"
-
 EGIT_REPO_URI="${HOMEPAGE}.git"
 
 src_prepare() {
