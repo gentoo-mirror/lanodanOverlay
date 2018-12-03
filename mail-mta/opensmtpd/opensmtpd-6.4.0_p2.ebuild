@@ -66,6 +66,7 @@ src_configure() {
 		--with-path-socket=/run \
 		--with-path-CAfile=/etc/ssl/certs/ca-certificates.crt \
 		--sysconfdir=/etc/opensmtpd \
+		--libexecdir=/usr/libexec \
 		--with-mantype=doc \
 		$(use_with pam auth-pam)
 }
