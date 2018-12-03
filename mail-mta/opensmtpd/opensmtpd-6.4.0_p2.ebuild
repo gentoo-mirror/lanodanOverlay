@@ -49,6 +49,7 @@ S=${WORKDIR}/${MY_P/_}
 src_prepare() {
 	# Use /run instead of /var/run
 	sed -i -e '/pidfile_path/s:_PATH_VARRUN:"/run/":' openbsd-compat/pidfile.c || die
+	sed -i -e 's;/usr/libexec/;/usr/libexec/opensmtpd/;g' smtpd/parse.y || die
 	epatch "${FILESDIR}/opensmtpd-6.4.0_p1_missing_object_file_smtpctl.patch"
 	append-cflags "-ffunction-sections"
 	append-ldflags "-Wl,--gc-sections"
@@ -66,7 +67,6 @@ src_configure() {
 		--with-path-socket=/run \
 		--with-path-CAfile=/etc/ssl/certs/ca-certificates.crt \
 		--sysconfdir=/etc/opensmtpd \
-		--libexecdir=/usr/libexec \
 		--with-mantype=doc \
 		$(use_with pam auth-pam)
 }
