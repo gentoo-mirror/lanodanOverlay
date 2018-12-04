@@ -32,13 +32,13 @@ get_linker_path() {
 
 src_compile() {
 	emake \
-		LINKER_NAME="$(get_linker_name)" \
+		LINKER_PATH="$(get_linker_path)" \
 		LOADER_NAME="$(get_loader_name)"
 }
 
 src_install() {
 	emake \
-		LINKER_NAME="$(get_linker_name)" \
+		LINKER_PATH="$(get_linker_path)" \
 		LOADER_NAME="$(get_loader_name)" \
 		DESTDIR="${D}" \
 		install
