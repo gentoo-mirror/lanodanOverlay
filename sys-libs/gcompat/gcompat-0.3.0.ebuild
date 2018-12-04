@@ -12,8 +12,6 @@ LICENSE="UoI-NCSA"
 SRC_URI="https://distfiles.adelielinux.org/source/gcompat/${P}.tar.xz"
 SLOT="0"
 
-arch=$(ldd 2>&1 | sed -n '1s/^musl libc (\(.*\))$/\1/p')
-
 get_loader_name() {
 	# Loosely based on Adélie APKBUILD
 	# TODO: Check against glibc’s logic
@@ -27,16 +25,21 @@ get_loader_name() {
 	esac
 }
 
+get_linker_path() {
+	local arch=$(ldd 2>&1 | sed -n '1s/^musl libc (\(.*\))$/\1/p')
+	echo "/lib/ld-musl-${arch}.so.1"
+}
+
 src_compile() {
 	emake \
-		LINKER_PATH="/lib/ld-musl-${arch}.so.1" \
+		LINKER_NAME="$(get_linker_name)" \
 		LOADER_NAME="$(get_loader_name)" \
 		WITH_LIBUCONTEXT=YesPlease
 }
 
 src_install() {
 	emake \
-		LINKER_PATH="/lib/ld-musl-${arch}.so.1" \
+		LINKER_NAME="$(get_linker_name)" \
 		LOADER_NAME="$(get_loader_name)" \
 		WITH_LIBUCONTEXT=YesPlease \
 		DESTDIR="${D}" \
