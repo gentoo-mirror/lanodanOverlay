@@ -33,15 +33,13 @@ get_linker_path() {
 src_compile() {
 	emake \
 		LINKER_NAME="$(get_linker_name)" \
-		LOADER_NAME="$(get_loader_name)" \
-		WITH_LIBUCONTEXT=YesPlease
+		LOADER_NAME="$(get_loader_name)"
 }
 
 src_install() {
 	emake \
 		LINKER_NAME="$(get_linker_name)" \
 		LOADER_NAME="$(get_loader_name)" \
-		WITH_LIBUCONTEXT=YesPlease \
 		DESTDIR="${D}" \
 		install
 }
