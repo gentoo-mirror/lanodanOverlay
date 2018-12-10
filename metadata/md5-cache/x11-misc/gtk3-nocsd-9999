@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DEPEND=x11-libs/gtk+:3 >=dev-vcs/git-1.8.2.1[curl]
+DESCRIPTION=A hack to disable gtk3 client-side decorations
+EAPI=6
+HOMEPAGE=https://github.com/naufalfachrian/gtk3-nocsd
+KEYWORDS=~amd64
+LICENSE=GPL-2
+RDEPEND=x11-libs/gtk+:3
+SLOT=0
+_eclasses_=git-r3	0d4635eeb5a96cd5315597a47eba25c9	multilib	b2f01ad412baf81650c23fcf0975fa33	toolchain-funcs	f164325a2cdb5b3ea39311d483988861
+_md5_=2e5c603f144483d66cabc03e9ec12afd
