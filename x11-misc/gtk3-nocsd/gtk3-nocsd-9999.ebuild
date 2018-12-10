@@ -6,9 +6,9 @@ EAPI=6
 inherit multilib git-r3
 
 DESCRIPTION="A hack to disable gtk3 client-side decorations"
-HOMEPAGE="https://github.com/PCMan/gtk3-nocsd"
+HOMEPAGE="https://github.com/naufalfachrian/gtk3-nocsd"
 
-EGIT_REPO_URI="https://github.com/PCMan/gtk3-nocsd.git"
+EGIT_REPO_URI="https://github.com/naufalfachrian/gtk3-nocsd.git"
 
 SLOT="0"
 KEYWORDS="~amd64"
