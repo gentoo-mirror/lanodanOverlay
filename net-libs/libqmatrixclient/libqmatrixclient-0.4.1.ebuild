@@ -12,7 +12,7 @@ SLOT="0"
 LICENSE="LGPL-2.1"
 KEYWORDS="~amd64"
 
-DEPENDS="
+DEPEND="
 	dev-qt/qtnetwork:5=
 	dev-qt/qtgui:5=
 "

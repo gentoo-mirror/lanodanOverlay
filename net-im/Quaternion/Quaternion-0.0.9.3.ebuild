@@ -12,7 +12,7 @@ SLOT="0"
 LICENSE="GPL-3"
 KEYWORDS="~amd64"
 
-DEPENDS="
+DEPEND="
 	dev-qt/qtwidgets:5=
 	dev-qt/qtnetwork:5=
 	dev-qt/qtquickcontrols:5=
