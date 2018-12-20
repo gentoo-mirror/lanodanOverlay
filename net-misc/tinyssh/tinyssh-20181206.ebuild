@@ -8,13 +8,20 @@ inherit systemd
 DESCRIPTION="A small SSH server with state-of-the-art cryptography"
 HOMEPAGE="https://tinyssh.org"
 SRC_URI="https://github.com/janmojzis/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
-RESTRICT="mirror"
 
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND="sys-apps/ucspi-tcp"
+IUSE="+sodium"
+
+DEPEND="
+	sodium? ( dev-libs/libsodium )
+"
+RDEPEND="
+	${DEPEND}
+	sys-apps/ucspi-tcp
+"
 
 src_prepare() {
 	# Leave optimization level to user CFLAGS
@@ -28,7 +35,15 @@ src_prepare() {
 }
 
 src_compile() {
-	emake compile
+	if use sodium
+	then
+		emake \
+			LIBS="-lsodium" \
+			CFLAGS="$CFLAGS -I/usr/include/sodium" \
+			LDFLAGS="-L/usr/lib"
+	else
+		emake
+	fi
 }
 
 src_install() {
@@ -45,8 +60,6 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo
 	einfo "TinySSH is in beta stage, and ready for production use."
 	einfo "See https://tinyssh.org for more information."
-	einfo
 }

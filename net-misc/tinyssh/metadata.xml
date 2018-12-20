@@ -13,4 +13,7 @@
 		TinySSH is a minimalistic and secure SSH server which
 		implements only a subset of SSHv2 features.
 	</longdescription>
+	<use>
+		<flag name="sodium">Use <pkg>dev-libs/libsodium</pkg> for cryptography</flag>
+	</use>
 </pkgmetadata>
