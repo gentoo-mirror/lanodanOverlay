@@ -14,7 +14,7 @@ SRC_URI+=" https://dev.gentoo.org/~leio/distfiles/${P}-patchset.tar.xz"
 LICENSE="LGPL-2+"
 SLOT="0"
 
-IUSE="afp archive bluray cdda elogind fuse google gnome-keyring gnome-online-accounts gphoto2 gtk +http ios mtp nfs policykit samba systemd test +udev udisks zeroconf"
+IUSE="afp archive bluray cdda elogind fuse google gnome-keyring gnome-online-accounts gphoto2 gtk +http ios mtp nfs policykit samba sftp systemd test +udev udisks zeroconf"
 REQUIRED_USE="
 	cdda? ( udev )
 	elogind? ( !systemd udisks )
@@ -29,7 +29,7 @@ RDEPEND="
 	app-crypt/gcr:=
 	>=dev-libs/glib-2.51:2
 	dev-libs/libxml2:2
-	net-misc/openssh
+	sftp? ( net-misc/openssh )
 	afp? ( >=dev-libs/libgcrypt-1.2.2:0= )
 	archive? ( app-arch/libarchive:= )
 	bluray? ( media-libs/libbluray:= )
@@ -127,6 +127,7 @@ src_configure() {
 		$(use_enable nfs) \
 		$(use_enable policykit admin) \
 		$(use_enable samba) \
+		$(use_enable sftp) \
 		$(use_enable systemd libsystemd-login) \
 		$(use_enable udev gudev) \
 		$(use_enable udev) \
