@@ -13,5 +13,4 @@ media-libs/opencolorio 1.1.0-r1: A color management framework for visual effects
 media-libs/x264 0.0.20170701: A free library for encoding X264/AVC streams
 net-misc/openntpd 6.0_p1: Lightweight NTP server ported from OpenBSD
 sci-misc/labview 8.6.0: LabVIEW System Design Software
-sys-libs/llvm-libunwind 5.0.1: C++ runtime stack unwinder from LLVM
 virtual/man 0-r1: Virtual for man
