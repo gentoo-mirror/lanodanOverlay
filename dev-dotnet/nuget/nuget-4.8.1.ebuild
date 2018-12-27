@@ -1,11 +1,13 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
+
+# See https://dist.nuget.org/index.json for available versions
 
 DESCRIPTION="Nuget - .NET Package Manager"
 HOMEPAGE="https://www.nuget.org/"
-SRC_URI="https://dist.nuget.org/win-x86-commandline/v${PV}/nuget.exe"
+SRC_URI="https://dist.nuget.org/win-x86-commandline/v${PV}/nuget.exe -> ${P}.exe"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -17,8 +19,8 @@ S="${WORKDIR}"
 src_compile() { :; }
 
 src_install() {
-	insinto "/usr/bin"
+	exeinto "/usr/bin"
 	doexe "${FILESDIR}/nuget"
 	insinto "/usr/lib/${PN}"
-	doins "${DISTDIR}/nuget.exe"
+	newins "${DISTDIR}/${P}.exe" "nuget.exe"
 }
