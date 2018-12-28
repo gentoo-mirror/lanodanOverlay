@@ -5,7 +5,7 @@ EAPI=6
 
 inherit meson vala gnome2-utils
 
-DESCRIPTION="GTK3 client for Mastodon"
+DESCRIPTION="GTK3 client for Mastodon API"
 HOMEPAGE="https://github.com/bleakgrey/tootle"
 SRC_URI="https://github.com/bleakgrey/tootle/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
