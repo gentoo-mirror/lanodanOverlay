@@ -5,7 +5,7 @@
 		<email>contact@hacktivis.me</email>
 		<name>Haelwenn (lanodan) Monnier</name>
 	</maintainer>
-	<longdescription lang="en">
-simple ed
-</longdescription>
+	<upstream>
+		<remote-id type="github">libtom/libtomcrypt</remote-id>
+	</upstream>
 </pkgmetadata>
