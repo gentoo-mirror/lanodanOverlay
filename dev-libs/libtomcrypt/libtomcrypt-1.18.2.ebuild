@@ -12,23 +12,19 @@ SRC_URI="https://github.com/libtom/libtomcrypt/releases/download/v${PV}/crypt-${
 LICENSE="WTFPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="doc +libtommath tomsfastmath"
+IUSE="doc"
 
-RDEPEND="libtommath? ( dev-libs/libtommath )
-	tomsfastmath? ( >=dev-libs/tomsfastmath-0.12 )
-	!libtommath? ( !tomsfastmath? ( dev-libs/libtommath ) )"
+RDEPEND="dev-libs/libtommath"
 DEPEND="${RDEPEND}
 	doc? ( virtual/latex-base app-text/ghostscript-gpl )"
 
 src_compile() {
-	local extraflags=""
-	use libtommath && append-flags "-DUSE_LTM -DLTM_DESC" && extraflags="-ltommath"
-	use tomsfastmath && append-flags "-DUSE_TFM -DTFM_DESC" && extraflags="${extraflags} -ltfm"
-	EXTRALIBS="${extraflags}" \
-		CC=$(tc-getCC) \
-		IGNORE_SPEED=1 \
-		emake -f makefile.shared \
-		|| die "emake failed"
+	append-flags "-DUSE_LTM -DLTM_DESC"
+
+	EXTRALIBS="-ltommath" \
+	CC=$(tc-getCC) \
+	IGNORE_SPEED=1 \
+		emake -f makefile.shared || die "emake failed"
 
 	use doc && emake emake -f makefile.shared docs
 }
