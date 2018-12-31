@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<maintainer type="person">
-<name>Haelwenn (lanodan) Monnier</name>
-<email>contact@hacktivis.me</email>
-</maintainer>
+	<maintainer type="person">
+		<name>Haelwenn (lanodan) Monnier</name>
+		<email>contact@hacktivis.me</email>
+	</maintainer>
 </pkgmetadata>
