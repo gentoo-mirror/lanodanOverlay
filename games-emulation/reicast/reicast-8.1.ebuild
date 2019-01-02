@@ -3,6 +3,8 @@
 
 EAPI=7
 
+inherit toolchain-funcs
+
 DESCRIPTION="A Dreamcast Emulator"
 HOMEPAGE="http://reicast.com/"
 LICENSE="GPL-2"
@@ -16,6 +18,15 @@ DEPEND="
 "
 
 S="${WORKDIR}/reicast-emulator-r${PV}/shell/linux"
+
+src_compile() {
+	emake \
+		CC="$(tc-getCC)" \
+		CXX="$(tc-getCXX)" \
+		AS="$(tc-getAS)" \
+		STRIP="$(tc-getSTRIP)" \
+		LD="$(tc-getLD)"
+}
 
 src_install() {
 	emake DESTDIR="${D}" PREFIX="/usr" install
