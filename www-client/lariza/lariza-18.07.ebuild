@@ -7,7 +7,7 @@ inherit git-r3
 
 DESCRIPTION="simple web browser using GTK+ 3, GLib and WebKit2GTK+"
 HOMEPAGE="https://uninformativ.de/git/lariza"
-EGIT_SRC_URI="https://www.uninformativ.de/git/lariza.git"
+EGIT_REPO_URI="https://www.uninformativ.de/git/lariza.git"
 EGIT_COMMIT="42ab1d83c804d950e41f1dfe55bacb939844c637"
 LICENSE="MIT"
 SLOT="0"
