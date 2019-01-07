@@ -1,0 +1,11 @@
+BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=unpack
+DEPEND=x11-libs/gtk+:3 net-libs/webkit-gtk
+DESCRIPTION=Minimalist and privacy-oriented WebKitGTK+ browser
+EAPI=7
+HOMEPAGE=https://hacktivis.me/git/badwolf
+KEYWORDS=~amd64
+LICENSE=BSD
+SLOT=0
+_eclasses_=git-r3	0d4635eeb5a96cd5315597a47eba25c9
+_md5_=813abd2991da8e07098c6d7c6ff70b91
