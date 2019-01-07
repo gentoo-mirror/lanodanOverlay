@@ -13,9 +13,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DOCS=("CHANGES", "README", "PATCHES")
+DOCS=("CHANGES" "README" "PATCHES")
 
 DEPEND="
 	x11-libs/gtk+:3
 	net-libs/webkit-gtk
 "
+
+src_install() {
+	emake DESTDIR="${D}" prefix="/usr" install
+}
