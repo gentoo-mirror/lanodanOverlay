@@ -1,5 +1,5 @@
 BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
-DEFINED_PHASES=unpack
+DEFINED_PHASES=install unpack
 DEPEND=x11-libs/gtk+:3 net-libs/webkit-gtk
 DESCRIPTION=Minimalist and privacy-oriented WebKitGTK+ browser
 EAPI=7
@@ -8,4 +8,4 @@ KEYWORDS=~amd64
 LICENSE=BSD
 SLOT=0
 _eclasses_=git-r3	0d4635eeb5a96cd5315597a47eba25c9
-_md5_=d41a3be3a9521be4fa167fbe548201a7
+_md5_=f55d999b3338a8d081c3851514a7dca3
