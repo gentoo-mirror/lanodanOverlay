@@ -19,7 +19,6 @@ RDEPEND="
 	!static? ( ${LIB_DEPEND//\[static-libs(+)]} )
 	!sys-apps/man-db
 	!sys-apps/man
-	!sys-apps/groff
 "
 DEPEND="${RDEPEND}
 	static? ( ${LIB_DEPEND} )"
@@ -45,6 +44,9 @@ src_prepare() {
 
 		MANM_MAN=mandoc_man
 		MANM_MDOC=mandoc_mdoc
+		MANM_ROFF=mandoc_roff
+		MANM_EQN=mandoc_eqn
+		MANM_TBL=mandoc_tbl
 		CFLAGS="${CFLAGS} ${CPPFLAGS}"
 		LDFLAGS="${LDFLAGS} $(usex static -static '')"
 		AR="$(tc-getAR)"
