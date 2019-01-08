@@ -47,6 +47,7 @@ src_prepare() {
 		MANM_ROFF=mandoc_roff
 		MANM_EQN=mandoc_eqn
 		MANM_TBL=mandoc_tbl
+		BINM_SOELIM=msoelim
 		CFLAGS="${CFLAGS} ${CPPFLAGS}"
 		LDFLAGS="${LDFLAGS} $(usex static -static '')"
 		AR="$(tc-getAR)"
