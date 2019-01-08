@@ -19,3 +19,8 @@ DEPEND="
 	x11-libs/gtk+:3
 	net-libs/webkit-gtk
 "
+
+src_install() {
+	emake DESTDIR="${D}" PREFIX="/usr" install
+	einstalldocs
+}
