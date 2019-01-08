@@ -8,6 +8,7 @@ inherit git-r3
 DESCRIPTION="Minimalist and privacy-oriented WebKitGTK+ browser"
 HOMEPAGE="https://hacktivis.me/git/badwolf"
 EGIT_REPO_URI="https://hacktivis.me/git/badwolf.git"
+EGIT_MIN_CLONE_TYPE="single+tags"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
