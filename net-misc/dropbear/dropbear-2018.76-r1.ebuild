@@ -38,7 +38,8 @@ set_options() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-0.46-dbscp.patch
+	epatch "${FILESDIR}/${PN}-0.46-dbscp.patch"
+	epatch "${FILESDIR}/dropbear-openssh-CVE-2018-20685.patch"
 	rm -fr libtomcrypt || die
 	rm -fr libtommath || die
 	sed \
