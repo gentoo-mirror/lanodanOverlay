@@ -29,11 +29,11 @@ S=${WORKDIR}/${MY_P}
 PATCHES=( "${FILESDIR}/${P}_libressl.patch" )
 
 src_configure() {
-	cd "${S}"/drill
+	cd "${S}"/drill || die
 	econf $(use_with ssl)
 
 	if use examples; then
-		cd "${S}"/examples
+		cd "${S}"/examples || die
 		econf \
 			$(use_enable dane) \
 			$(use_enable ecdsa) \
@@ -51,12 +51,12 @@ src_compile() {
 }
 
 src_install() {
-	cd "${S}"/drill
+	cd "${S}"/drill || die
 	emake DESTDIR="${D}" install
 	dodoc ChangeLog.22-nov-2005 README REGRESSIONS
 
 	if use examples; then
-		cd "${S}"/examples
+		cd "${S}"/examples || die
 		emake DESTDIR="${D}" install
 		newdoc README README.examples
 	fi
