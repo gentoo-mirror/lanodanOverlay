@@ -21,4 +21,7 @@ media-libs/x264:10bit - Set output bit depth to 10, this may not be compatible w
 media-libs/x264:interlaced - enable interlaced encoding support, this can decrease encoding speed by up to 2%
 media-libs/x264:opencl - Add support for OpenCL.
 media-libs/x264:pic - disable optimized assembly code that is not PIC friendly
+net-dns/ldns-utils:dane - Enable DNS-based Authentication of Named Entities (DANE) support
+net-dns/ldns-utils:ecdsa - Enable ECDSA support
+net-dns/ldns-utils:gost - Enable GOST support
 net-misc/openntpd:libressl - Enable HTTPS TLS time constraint support using dev-libs/libressl

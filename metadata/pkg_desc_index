@@ -12,6 +12,7 @@ gnome-base/gvfs 1.32.2: Virtual filesystem implementation for gio
 media-libs/libsidplay 2.1.1-r5: C64 SID player library
 media-libs/opencolorio 1.1.0-r1: A color management framework for visual effects and animation
 media-libs/x264 0.0.20170701: A free library for encoding X264/AVC streams
+net-dns/ldns-utils 1.7.0-r1: Set of utilities to simplify various dns(sec) tasks
 net-misc/openntpd 6.0_p1: Lightweight NTP server ported from OpenBSD
 sci-misc/labview 8.6.0: LabVIEW System Design Software
 virtual/man 0-r1: Virtual for man
