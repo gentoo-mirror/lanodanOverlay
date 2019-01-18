@@ -12,11 +12,14 @@ SRC_URI="https://github.com/inspircd/inspircd/archive/v${PV}.tar.gz -> ${P}.tar.
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
-IUSE="geoip gnutls ipv6 ldap mysql pcre posix postgres sqlite ssl tre"
+IUSE="geoip gnutls ipv6 ldap libressl mysql pcre posix postgres sqlite ssl tre"
 
 RDEPEND="
 	dev-lang/perl
-	ssl? ( dev-libs/openssl:= )
+	ssl? (
+		!libressl? ( dev-libs/openssl:= )
+		libressl? ( dev-libs/libressl:= )
+	)
 	geoip? ( dev-libs/geoip )
 	gnutls? ( net-libs/gnutls:= dev-libs/libgcrypt:0 )
 	ldap? ( net-nds/openldap )
