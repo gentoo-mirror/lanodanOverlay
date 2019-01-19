@@ -52,7 +52,9 @@ S="${WORKDIR}/${P/_beta/-b}"
 
 src_prepare() {
 	# Remove third-party librairies
-	sed 's;add_subdirectory(extern);;' CMakeLists.txt || die
+	sed -i 's;add_subdirectory(extern);;' CMakeLists.txt || die
+
+	cmake-utils_src_prepare
 }
 
 src_configure() {
