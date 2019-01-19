@@ -1,7 +1,7 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 2018-2019 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit git-r3
 
@@ -22,9 +22,3 @@ RDEPEND="
 	virtual/ssh
 	X? ( x11-misc/xclip )
 "
-
-src_install() {
-	dodoc README.md
-	dodoc Changelog.md
-	dobin sshpaste
-}
