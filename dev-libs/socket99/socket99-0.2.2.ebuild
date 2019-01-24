@@ -3,6 +3,8 @@
 
 EAPI=7
 
+inherit flag-o-matic
+
 DESCRIPTION="Wrapper library for the BSD sockets API with a nicer C99 interface"
 HOMEPAGE="https://github.com/silentbicycle/socket99"
 SRC_URI="https://github.com/silentbicycle/socket99/archive/v0.2.2.tar.gz -> ${P}.tar.gz"
