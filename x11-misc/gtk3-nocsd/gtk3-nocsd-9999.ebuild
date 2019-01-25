@@ -22,5 +22,5 @@ src_install() {
 	emake prefix="${D}/usr" libdir="${D}/usr/$(get_libdir)" install
 
 	dodir /etc/env.d
-	printf "GTK_CSD=0\nLD_PRELOAD=${EROOT%/}/usr/$(get_libdir)/libgtk3-nocsd.so.0" > "${D}/etc/env.d/90gtk3-nocsd" || die
+	einfo "Add to your .profile:\nGTK_CSD=0\nLD_PRELOAD=${EROOT%/}/usr/$(get_libdir)/libgtk3-nocsd.so.0"
 }
