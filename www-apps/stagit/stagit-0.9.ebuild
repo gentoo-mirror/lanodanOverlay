@@ -16,6 +16,6 @@ DEPEND="dev-libs/libgit2:="
 RDEPEND="${DEPEND}"
 
 src_configure() {
-	sed -i "s/PREFIX =.*/PREFIX ?= ${EPREFIX}/usr/" "${S}/config.mk" || die
+	sed -i "s;PREFIX =.*;PREFIX ?= ${EPREFIX}/usr;" "${S}/config.mk" || die
 	sed -i "s/#CC =.*/CC ?= ${CC:-cc}/" "${S}/config.mk" || die
 }
