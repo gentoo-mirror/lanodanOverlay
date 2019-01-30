@@ -18,7 +18,7 @@ RDEPEND="${DEPEND}"
 src_configure() {
 	sed -i \
 		-e "s;^PREFIX =.*;PREFIX ?= ${EPREFIX}/usr;" \
-		-e "s;^MANPREFIX = .*;MANPREFIX = ${PREFIX}/share/man;" \
+		-e "s;^MANPREFIX = .*;MANPREFIX = ${EPREFIX}/usr/share/man;" \
 		"${S}/config.mk" || die
 
 	sed -i "s/#CC =.*/CC ?= ${CC:-cc}/" "${S}/config.mk" || die
