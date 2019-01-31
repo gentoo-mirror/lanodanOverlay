@@ -1,0 +1,12 @@
+DEFINED_PHASES=-
+DEPEND=!libressl? ( dev-libs/openssl:= ) libressl? ( dev-libs/libressl:= ) sys-libs/zlib
+DESCRIPTION=OpenPGP implementation from NetBSD
+EAPI=7
+HOMEPAGE=http://netpgp.com/
+IUSE=libressl
+KEYWORDS=~amd64
+LICENSE=ISC
+RDEPEND=!libressl? ( dev-libs/openssl:= ) libressl? ( dev-libs/libressl:= ) sys-libs/zlib
+SLOT=0
+SRC_URI=http://netpgp.com/src/netpgp-20140220.tar.gz
+_md5_=e42769110156d706ec501bddaa6d5b29
