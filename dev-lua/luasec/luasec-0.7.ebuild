@@ -16,11 +16,12 @@ LUA_S="${PN}-${P}"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="examples"
+IUSE="examples libressl"
 
 RDEPEND="
 	dev-lua/luasocket
-	dev-libs/openssl
+	!libressl? ( dev-libs/openssl:= )
+	libressl? ( dev-libs/libressl:= )
 "
 DEPEND="
 	${RDEPEND}
