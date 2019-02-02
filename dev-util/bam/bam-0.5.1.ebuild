@@ -8,7 +8,7 @@ inherit eutils toolchain-funcs
 
 DESCRIPTION="Fast and flexible Lua-based build system"
 HOMEPAGE="https://matricks.github.com/bam/"
-SRC_URI="https://github.com/matricks/${PN}/${P}.tar.bz2"
+SRC_URI="https://github.com/matricks/${PN}/${P}.tar.gz"
 
 LICENSE="ZLIB"
 SLOT="0"
