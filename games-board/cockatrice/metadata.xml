@@ -5,4 +5,10 @@
 		<email>contact@hacktivis.me</email>
 		<name>Haelwenn (lanodan) Monnier</name>
 	</maintainer>
+	<use>
+		<flag name="client">Build with client support</flag>
+		<flag name="oracle">Build with oracle support</flag>
+		<flag name="server">Build with server support</flag>
+	</use>
+	<remote-id type="github">Cockatrice/cockatrice</remote-id>
 </pkgmetadata>
