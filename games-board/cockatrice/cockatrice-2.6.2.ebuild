@@ -21,27 +21,23 @@ IUSE="+client server +oracle nls"
 
 DEPEND="
 	dev-libs/protobuf:=
-	nls? ( dev-qt/linguist-tools:5= )
+	nls? ( dev-qt/linguist-tools:5 )
+	dev-qt/qtnetwork:5
 	client? (
-		dev-qt/qtconcurrent:5=
-		dev-qt/qtmultimedia:5=
-		dev-qt/qtnetwork:5=
-		dev-qt/qtprintsupport:5=
-		dev-qt/qtsvg:5=
-		dev-qt/qtwidgets:5=
+		dev-qt/qtconcurrent:5
+		dev-qt/qtmultimedia:5
+		dev-qt/qtprintsupport:5
+		dev-qt/qtsvg:5
+		dev-qt/qtwidgets:5
 	)
 	server? (
-		dev-qt/qtnetwork:5=
-		dev-qt/qtsql:5=
-		# soft-deps follows
-		dev-qt/qtwebsockets:5=
+		dev-qt/qtsql:5
+		dev-qt/qtwebsockets:5
 	)
 	oracle? (
-		dev-qt/qtconcurrent:5=
-		dev-qt/qtnetwork:5=
-		dev-qt/qtsvg:5=
-		dev-qt/qtwidgets:5=
-		# soft-deps follows
+		dev-qt/qtconcurrent:5
+		dev-qt/qtsvg:5
+		dev-qt/qtwidgets:5
 		sys-libs/zlib:5=
 	)
 "
