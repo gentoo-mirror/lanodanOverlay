@@ -13,18 +13,18 @@ LICENSE="GPL-3"
 SRC_URI="mirror://gnu/${PN}/${PN}-${MY_PV}.tar.gz"
 KEYWORDS="~amd64"
 SLOT="0"
-IUSE="experimental http mysql postgres nls +sqlite X"
+IUSE="experimental http mysql postgres nls +sqlite X +libextractor"
 REQUIRED_USE="|| ( mysql postgres sqlite )"
 
 S="${WORKDIR}/${PN}-${MY_PV}"
 
 DEPEND="
 	>=net-misc/curl-7.21.0
-	>=media-libs/libextractor-0.6.1
 	dev-libs/libgcrypt
 	>=dev-libs/libunistring-0.9.2
 	sys-libs/ncurses
 	sys-libs/zlib
+	libextractor? ( >=media-libs/libextractor-0.6.1 )
 	http? ( >=net-libs/libmicrohttpd-0.9.18 )
 	mysql? ( >=virtual/mysql-5.1 )
 	postgres? ( dev-db/postgresql )
