@@ -1,13 +1,13 @@
 DEFINED_PHASES=configure install postinst setup
-DEPEND=>=net-misc/curl-7.21.0 >=media-libs/libextractor-0.6.1 dev-libs/libgcrypt >=dev-libs/libunistring-0.9.2 sys-libs/ncurses sys-libs/zlib http? ( >=net-libs/libmicrohttpd-0.9.18 ) mysql? ( >=virtual/mysql-5.1 ) postgres? ( dev-db/postgresql ) nls? ( sys-devel/gettext ) sqlite? ( >=dev-db/sqlite-3.0 ) X? ( x11-libs/libXt x11-libs/libXext x11-libs/libX11 x11-libs/libXrandr )
+DEPEND=>=net-misc/curl-7.21.0 dev-libs/libgcrypt >=dev-libs/libunistring-0.9.2 sys-libs/ncurses sys-libs/zlib libextractor? ( >=media-libs/libextractor-0.6.1 ) http? ( >=net-libs/libmicrohttpd-0.9.18 ) mysql? ( >=virtual/mysql-5.1 ) postgres? ( dev-db/postgresql ) nls? ( sys-devel/gettext ) sqlite? ( >=dev-db/sqlite-3.0 ) X? ( x11-libs/libXt x11-libs/libXext x11-libs/libX11 x11-libs/libXrandr )
 DESCRIPTION=GNUnet is a framework for secure peer-to-peer networking.
 EAPI=7
 HOMEPAGE=http://gnunet.org/
-IUSE=experimental http mysql postgres nls +sqlite X
+IUSE=experimental http mysql postgres nls +sqlite X +libextractor
 KEYWORDS=~amd64
 LICENSE=GPL-3
 REQUIRED_USE=|| ( mysql postgres sqlite )
 SLOT=0
 SRC_URI=mirror://gnu/gnunet/gnunet-0.11.0pre66.tar.gz
 _eclasses_=user	8bc2845510e2109af75e3eeac607ec81
-_md5_=e2a0972848d389e4227e113e89b66cc5
+_md5_=bef0d9c9bdaf3c9999005a57dc38b025
