@@ -5,7 +5,4 @@
 		<email>contact@hacktivis.me</email>
 		<name>Haelwenn (lanodan) Monnier</name>
 	</maintainer>
-	<longdescription lang="en">
-meh is a small, simple, super fast image viewer using raw XLib. It is similar to feh, but faster and simpler.
-</longdescription>
 </pkgmetadata>
