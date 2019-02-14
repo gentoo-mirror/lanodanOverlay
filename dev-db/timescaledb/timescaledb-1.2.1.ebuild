@@ -1,4 +1,5 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
+# Copyright 2018-2019 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -6,7 +7,7 @@ EAPI=6
 POSTGRES_COMPAT=( 9.6 10 )
 POSTGRES_USEDEP="server"
 
-inherit cmake-utils postgres-multi
+inherit postgres-multi
 
 DESCRIPTION="A time-series database optimized for fast ingest and complex queries"
 HOMEPAGE="http://www.timescale.com/"
@@ -17,15 +18,14 @@ SLOT="0"
 IUSE="static-libs"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND="
-	${POSTGRES_DEP}
-"
+DEPEND="${POSTGRES_DEP}"
 RDEPEND="${DEPEND}"
 
-S=${WORKDIR}/${PN}
+S="${WORKDIR}/${PN}"
 
 src_prepare() {
-	eapply_user
+	default
+
 	postgres-multi_src_prepare
 }
 src_configure() {
