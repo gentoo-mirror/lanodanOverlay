@@ -15,7 +15,7 @@ LICENSE="GPL-3"
 SLOT="0"
 IUSE="webp gpg idn"
 
-RDEPENDS="
+RDEPEND="
 	dev-python/keyring
 	>=dev-python/python-nbxmpp-0.6.9
 	>=dev-python/pyopenssl-0.12
