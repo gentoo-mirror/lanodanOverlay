@@ -1,10 +1,9 @@
-app-accessibility/julius 4.3.1: Large Vocabulary Continuous Speech Recognition Engine
+app-accessibility/julius 4.3.1 4.5: Large Vocabulary Continuous Speech Recognition Engine
 app-arch/unar 1.10.1: unpacker for various archiving formats, e.g. rar v3
 app-doc/single-unix-specification 4_p3: The Single UNIX Specification, Version 4, 2018 Edition
 app-i18n/unicode-data 11.0.0: Unicode data from unicode.org
 app-misc/kanatest 0.4.8: Visual flashcard tool for memorizing the Japanese Hiragana and Katakana alphabet
 dev-db/postgresql 9.6.11: PostgreSQL RDBMS
-dev-libs/pugixml 1.8: Light-weight, simple, and fast XML parser for C++ with XPath support
 dev-python/pycrypto 9999: Fake ebuild to mask pycrypto in a overlay
 dev-util/bam 0.5.1: Fast and flexible Lua-based build system
 games-action/chickens 0.2.4: Target chickens with rockets and shotguns. Funny
