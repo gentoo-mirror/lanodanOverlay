@@ -19,3 +19,9 @@ DEPEND="
 	sys-libs/zlib
 "
 RDEPEND="${DEPEND}"
+
+src_prepare() {
+	sed -i 's/WARNCFLAGS="-Werror /WARNCFLAGS="/' configure || die
+
+	default
+}
