@@ -17,9 +17,10 @@ IUSE="webp gpg idn"
 
 RDEPENDS="
 	dev-python/keyring
-	>=dev-python/python-nbxmpp-0.6.7
+	>=dev-python/python-nbxmpp-0.6.9
 	>=dev-python/pyopenssl-0.12
 	>=dev-python/cssutils-1.0.2
+	>=dev-python/precis-i18n-1.0.0
 	webp? ( dev-python/pillow )
 	gpg? ( dev-python/python-gnupg )
 	idn? (
