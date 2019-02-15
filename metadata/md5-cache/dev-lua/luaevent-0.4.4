@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install prepare setup test unpack
+DEPEND=dev-libs/libevent:0= virtual/pkgconfig lua_targets_lua51? ( dev-lang/lua:5.1 ) lua_targets_lua52? ( dev-lang/lua:5.2 ) lua_targets_lua53? ( dev-lang/lua:5.3 ) lua_targets_luajit2? ( dev-lang/luajit:2 )
+DESCRIPTION=libevent bindings for Lua
+EAPI=7
+HOMEPAGE=http://luaforge.net/projects/luaevent
+IUSE=lua_targets_lua51 lua_targets_lua52 lua_targets_lua53 lua_targets_luajit2
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=LGPL-2.1
+RDEPEND=dev-libs/libevent:0= lua_targets_lua51? ( dev-lang/lua:5.1 ) lua_targets_lua52? ( dev-lang/lua:5.2 ) lua_targets_lua53? ( dev-lang/lua:5.3 ) lua_targets_luajit2? ( dev-lang/luajit:2 )
+REQUIRED_USE=|| ( lua_targets_lua51 lua_targets_lua52 lua_targets_lua53 lua_targets_luajit2 )
+SLOT=0
+SRC_URI=https://github.com/harningt/luaevent/archive/v0.4.4.tar.gz -> luaevent-0.4.4.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	flag-o-matic	a09389deba2c0a7108b581e02c7cecbf	lua	7327fcbf9026441b1d1c600d7e28d3c2	multilib	b2f01ad412baf81650c23fcf0975fa33	patches	7d362f094a8079c0604a5efbde318576	toolchain-funcs	f164325a2cdb5b3ea39311d483988861
+_md5_=8169783b8b91d5b2f4b8c3260a5dffba
