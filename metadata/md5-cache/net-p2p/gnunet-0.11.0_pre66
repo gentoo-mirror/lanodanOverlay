@@ -9,5 +9,5 @@ LICENSE=GPL-3
 REQUIRED_USE=|| ( mysql postgres sqlite )
 SLOT=0
 SRC_URI=mirror://gnu/gnunet/gnunet-0.11.0pre66.tar.gz
-_eclasses_=user	8bc2845510e2109af75e3eeac607ec81
+_eclasses_=user	8bd74731cafdcdad8f7a63637302e073
 _md5_=bef0d9c9bdaf3c9999005a57dc38b025
