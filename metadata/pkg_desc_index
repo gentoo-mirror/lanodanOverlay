@@ -4,6 +4,7 @@ app-doc/single-unix-specification 4_p3: The Single UNIX Specification, Version 4
 app-i18n/unicode-data 11.0.0: Unicode data from unicode.org
 app-misc/kanatest 0.4.8: Visual flashcard tool for memorizing the Japanese Hiragana and Katakana alphabet
 dev-db/postgresql 9.6.11: PostgreSQL RDBMS
+dev-libs/libtermkey 0.21.1: Library for easy processing of keyboard entry from terminal-based programs
 dev-python/pycrypto 9999: Fake ebuild to mask pycrypto in a overlay
 dev-util/bam 0.5.1: Fast and flexible Lua-based build system
 games-action/chickens 0.2.4: Target chickens with rockets and shotguns. Funny

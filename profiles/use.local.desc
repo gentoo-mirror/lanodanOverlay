@@ -6,6 +6,7 @@ dev-db/postgresql:llvm - Add support for llvm JIT engine
 dev-db/postgresql:pg_legacytimestamp - Use double precision floating-point numbers instead of 64-bit integers for timestamp storage.
 dev-db/postgresql:server - Disable to build and install the clients and libraries only.
 dev-db/postgresql:uuid - Enable server side UUID generation (via dev-libs/ossp-uuid).
+dev-libs/libtermkey:demos - Install demos, which pulls in dev-libs/glib
 gnome-base/gvfs:afp - Enables support for accessing AFP (Apple Filing Protocol) network shares
 gnome-base/gvfs:archive - Enables support for accessing files in archives transparently via app-arch/libarchive
 gnome-base/gvfs:bluray - Enable playback of Blu-ray filesystems using media-libs/libbluray
