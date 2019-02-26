@@ -2,7 +2,7 @@
 # Copyright 2019 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 inherit flag-o-matic
 
 DESCRIPTION="Library for easy processing of keyboard entry from terminal-based programs"
@@ -19,6 +19,8 @@ DEPEND="${RDEPEND}
 	sys-devel/libtool
 	virtual/pkgconfig
 	demos? ( dev-libs/glib:2 )"
+
+PATCHES=( "${FILESDIR}/${P}_no_manpage_compression.patch" )
 
 src_prepare() {
 	default
