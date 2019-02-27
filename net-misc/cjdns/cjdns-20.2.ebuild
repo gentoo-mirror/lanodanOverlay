@@ -20,6 +20,7 @@ IUSE=""
 S="${WORKDIR}/cjdns-cjdns-v${PV}"
 
 PATCHES=( "${FILESDIR}/${PN}-fix_systemd_units.patch" )
+DOCS=( "README.md" "doc" )
 
 pkg_setup() {
 	linux-info_pkg_setup
@@ -42,8 +43,13 @@ src_install() {
 	systemd_dounit contrib/systemd/cjdns-resume.service
 	newinitd contrib/openrc/cjdns cjdns
 
-	dodoc README.md
+	einstalldocs
+
 	dosbin cjdroute
+
+	insinto "${ROOT}usr/share/${P}"
+	doins -r tools
+	doins -r contrib
 }
 
 pkg_postinst() {
