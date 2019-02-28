@@ -1,4 +1,5 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
+# Copyright 2018-2019 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
 # Copied from katawa-shoujo-1.3.1.ebuild
