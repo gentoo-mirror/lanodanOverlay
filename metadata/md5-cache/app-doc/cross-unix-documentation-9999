@@ -1,5 +1,5 @@
 BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
-DEFINED_PHASES=unpack
+DEFINED_PHASES=install unpack
 DESCRIPTION=documentation of similarities and (noteworthy) differencies between Unix systems
 EAPI=7
 HOMEPAGE=https://hacktivis.me/git/cross-unix-documentation/
@@ -7,4 +7,4 @@ KEYWORDS=~amd64
 LICENSE=CC-BY-4.0
 SLOT=0
 _eclasses_=git-r3	0d4635eeb5a96cd5315597a47eba25c9
-_md5_=2884206e12861316926edb10d3b0fae4
+_md5_=597ba5063073ac5e1fa034adaf8147bc
