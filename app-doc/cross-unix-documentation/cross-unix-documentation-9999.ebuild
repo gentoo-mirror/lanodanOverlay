@@ -8,6 +8,7 @@ inherit git-r3
 DESCRIPTION="documentation of similarities and (noteworthy) differencies between Unix systems"
 HOMEPAGE="https://hacktivis.me/git/cross-unix-documentation/"
 EGIT_REPO_URI="https://hacktivis.me/git/cross-unix-documentation.git"
+EGIT_MIN_CLONE_TYPE="single+tags"
 LICENSE="CC-BY-4.0"
 SLOT="0"
 KEYWORDS="~amd64"
