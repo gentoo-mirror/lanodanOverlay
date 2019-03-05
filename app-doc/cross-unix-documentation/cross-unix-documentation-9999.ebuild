@@ -12,3 +12,7 @@ EGIT_MIN_CLONE_TYPE="single+tags"
 LICENSE="CC-BY-4.0"
 SLOT="0"
 KEYWORDS="~amd64"
+
+src_install() {
+	emake DESTDIR="${D}" PREFIX="/usr" install
+}
