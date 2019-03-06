@@ -10,6 +10,7 @@ DESCRIPTION="Vi IMitation"
 HOMEPAGE="https://www.vim.org/ https://ftp.nluug.nl/pub/vim/old/"
 SRC_URI="https://ftp.nluug.nl/pub/vim/old/${P}.tar.gz"
 SLOT="${PV}"
+KEYWORDS="~x86 ~amd64"
 
 S="${WORKDIR}/${P}/src"
 
