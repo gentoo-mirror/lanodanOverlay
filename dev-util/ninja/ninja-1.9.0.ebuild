@@ -3,6 +3,15 @@
 
 EAPI=7
 
-DESCRIPTION="Fake ebuild to dev-util/samurai"
-SLOT="samurai"
+DESCRIPTION="Fake virtual ebuild to allow dev-util/samurai"
+SLOT="virtual"
 KEYWORDS="~amd64"
+ISUE="samurai"
+RDEPEND="
+	samurai ( dev-util/samurai )
+	!samurai ( dev-util/ninja:0 )
+"
+
+src_install() {
+	use samurai && dosym samu /usr/bin/ninja
+}

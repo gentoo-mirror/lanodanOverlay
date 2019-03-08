@@ -5,4 +5,7 @@
 		<email>contact@hacktivis.me</email>
 		<name>Haelwenn (lanodan) Monnier</name>
 	</maintainer>
+	<use>
+		<flag name="samurai">Use <pkg>dev-util/samurai</pkg> instead of <pkg>dev-util/ninja</pkg></flag>
+	</use>
 </pkgmetadata>
