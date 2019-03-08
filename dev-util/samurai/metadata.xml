@@ -5,4 +5,7 @@
 		<email>contact@hacktivis.me</email>
 		<name>Haelwenn (lanodan) Monnier</name>
 	</maintainer>
+	<use>
+		<flag name="replace">Create a symlink which overrides <pkg>dev-util/ninja</pkg> implementation</flag>
+	</use>
 </pkgmetadata>
