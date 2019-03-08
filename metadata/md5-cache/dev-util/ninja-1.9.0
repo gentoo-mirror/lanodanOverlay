@@ -1,9 +1,0 @@
-DEFINED_PHASES=install
-DESCRIPTION=Fake virtual ebuild to allow dev-util/samurai
-EAPI=7
-IUSE=samurai
-KEYWORDS=~amd64
-LICENSE=public-domain
-RDEPEND=samurai? ( dev-util/samurai !dev-util/ninja:0 ) !samurai? ( dev-util/ninja:0 )
-SLOT=virtual
-_md5_=2cc91547cf81ca78f33cc534532520e1
