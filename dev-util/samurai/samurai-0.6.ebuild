@@ -9,13 +9,7 @@ SRC_URI="https://github.com/michaelforney/samurai/releases/download/${PV}/${P}.t
 LICENSE="ISC Apache-2.0 MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="replace"
-RDEPEND="replace? ( !dev-util/ninja )"
 
 src_install() {
 	emake DESTDIR="${D}" PREFIX=/usr install
-
-	if use replace; then
-		dosym samu /usr/bin/ninja
-	fi
 }
