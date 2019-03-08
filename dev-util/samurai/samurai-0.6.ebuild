@@ -13,7 +13,7 @@ IUSE="replace"
 RDEPEND="replace? ( !dev-util/ninja )"
 
 src_install() {
-	default
+	emake DESTDIR="${D}" PREFIX=/usr install
 
 	if use replace; then
 		dosym samu /usr/bin/ninja
