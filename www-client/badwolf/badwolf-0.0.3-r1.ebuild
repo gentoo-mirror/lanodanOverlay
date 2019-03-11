@@ -12,6 +12,8 @@ KEYWORDS="~amd64"
 
 DOCS=("README.md" "KnowledgeBase.md")
 
+PATCHES=("${FILESDIR}/${P}-bugfix_javascript-toggle.patch")
+
 DEPEND="
 	x11-libs/gtk+:3
 	net-libs/webkit-gtk
