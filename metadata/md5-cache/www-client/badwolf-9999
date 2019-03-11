@@ -1,11 +1,12 @@
 BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
-DEFINED_PHASES=install unpack
+DEFINED_PHASES=configure install postinst unpack
 DEPEND=x11-libs/gtk+:3 net-libs/webkit-gtk
 DESCRIPTION=Minimalist and privacy-oriented WebKitGTK+ browser
 EAPI=7
 HOMEPAGE=https://hacktivis.me/git/badwolf
+IUSE=savedconfig
 KEYWORDS=~amd64
 LICENSE=BSD
 SLOT=0
-_eclasses_=git-r3	0d4635eeb5a96cd5315597a47eba25c9
-_md5_=f55d999b3338a8d081c3851514a7dca3
+_eclasses_=git-r3	0d4635eeb5a96cd5315597a47eba25c9	portability	2b88d3ecc35035a3b8ab628b49cafb0e	savedconfig	e6948c872ff47e15a10e5ad1be15c18e
+_md5_=26ea42313cdeb522a7200a3fd002c627
