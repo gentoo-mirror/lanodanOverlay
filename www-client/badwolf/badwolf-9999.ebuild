@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit git-r3
+inherit git-r3 savedconfig
 
 DESCRIPTION="Minimalist and privacy-oriented WebKitGTK+ browser"
 HOMEPAGE="https://hacktivis.me/git/badwolf"
@@ -20,7 +20,13 @@ DEPEND="
 	net-libs/webkit-gtk
 "
 
+src_configure() {
+	restore_config config.h
+	default
+}
+
 src_install() {
 	emake DESTDIR="${D}" PREFIX="/usr" install
+	save_config config.h
 	einstalldocs
 }
