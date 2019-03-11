@@ -7,4 +7,4 @@ KEYWORDS=~amd64
 LICENSE=BSD
 SLOT=0
 SRC_URI=https://hacktivis.me/releases/badwolf-0.0.3.tar.gz
-_md5_=8650c5192371fcc02581550856bb89d8
+_md5_=ff0ed452d4623090058431bc707624b8
