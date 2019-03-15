@@ -17,7 +17,7 @@ LICENSE="LGPL-2+ BSD"
 SLOT="4/37" # soname version of libwebkit2gtk-4.0
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~amd64-linux ~x86-linux ~x86-macos"
 
-IUSE="aqua coverage doc +egl +geolocation gles2 gnome-keyring +gstreamer +introspection +jit libnotify nsplugin +opengl spell wayland +webgl +X"
+IUSE="aqua coverage doc +egl +geolocation gles2 gnome-keyring +gstreamer +introspection +jit jpeg2k libnotify nsplugin +opengl spell wayland +webgl +X"
 
 # webgl needs gstreamer, bug #560612
 # gstreamer with opengl/gles2 needs egl
@@ -87,6 +87,7 @@ RDEPEND="
 
 	libnotify? ( x11-libs/libnotify )
 	dev-libs/hyphen
+	jpeg2k? ( >=media-libs/openjpeg-2.2.0:2= )
 
 	egl? ( media-libs/mesa[egl] )
 	gles2? ( media-libs/mesa[gles2] )
@@ -238,6 +239,7 @@ src_configure() {
 		-DENABLE_JIT=$(usex jit)
 		-DUSE_LIBNOTIFY=$(usex libnotify)
 		-DUSE_LIBSECRET=$(usex gnome-keyring)
+		-DUSE_OPENJPEG=$(usex jpeg2k)
 		-DUSE_WOFF2=ON
 		-DENABLE_PLUGIN_PROCESS_GTK2=$(usex nsplugin)
 		-DENABLE_SPELLCHECK=$(usex spell)
