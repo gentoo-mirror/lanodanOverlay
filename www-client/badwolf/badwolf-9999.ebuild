@@ -3,15 +3,22 @@
 
 EAPI=7
 
-inherit git-r3 savedconfig
+inherit savedconfig
+
+if [[ "${PV}" == "9999" ]]
+then
+	EGIT_REPO_URI="https://hacktivis.me/git/badwolf.git"
+	EGIT_MIN_CLONE_TYPE="single+tags"
+	inherit git-r3
+else
+	SRC_URI="https://hacktivis.me/releases/${P}.tar.gz"
+	KEYWORDS="~amd64"
+fi
 
 DESCRIPTION="Minimalist and privacy-oriented WebKitGTK+ browser"
 HOMEPAGE="https://hacktivis.me/git/badwolf"
-EGIT_REPO_URI="https://hacktivis.me/git/badwolf.git"
-EGIT_MIN_CLONE_TYPE="single+tags"
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
 
 DOCS=("README.md" "KnowledgeBase.md")
 
