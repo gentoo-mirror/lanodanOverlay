@@ -11,8 +11,10 @@ then
 	EGIT_MIN_CLONE_TYPE="single+tags"
 	inherit git-r3
 else
-	SRC_URI="https://hacktivis.me/releases/${P}.tar.gz"
+	MY_P="${PN}-$(ver_rs 3-4 - 4-5 .)"
+	SRC_URI="https://hacktivis.me/releases/${MY_P}.tar.gz"
 	KEYWORDS="~amd64"
+	S="${WORKDIR}/${MY_P}"
 fi
 
 DESCRIPTION="Minimalist and privacy-oriented WebKitGTK+ browser"
