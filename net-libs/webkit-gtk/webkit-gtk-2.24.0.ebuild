@@ -21,9 +21,7 @@ IUSE="aqua coverage doc +egl +geolocation gles2 gnome-keyring +gstreamer +intros
 
 # webgl needs gstreamer, bug #560612
 # gstreamer with opengl/gles2 needs egl
-# non-GL builds are (temporarily?) broken - https://bugs.webkit.org/show_bug.cgi?id=193380
 REQUIRED_USE="
-	^^ ( opengl gles2 )
 	geolocation? ( introspection )
 	gles2? ( egl !opengl )
 	gstreamer? ( opengl? ( egl ) )
@@ -44,12 +42,12 @@ RESTRICT="test"
 # Missing OpenWebRTC checks and conditionals, but ENABLE_MEDIA_STREAM/ENABLE_WEB_RTC is experimental upstream (PRIVATE OFF)
 # >=gst-plugins-opus-1.14.4-r1 for opusparse (required by MSE)
 RDEPEND="
-	>=x11-libs/cairo-1.10.2:=[X?]
-	>=media-libs/fontconfig-2.8.0:1.0
-	>=media-libs/freetype-2.4.2:2
+	>=x11-libs/cairo-1.16.0:=[X?]
+	>=media-libs/fontconfig-2.13.0:1.0
+	>=media-libs/freetype-2.9.0:2
 	>=dev-libs/libgcrypt-1.6.0:0=
 	>=x11-libs/gtk+-3.22:3[aqua?,introspection?,wayland?,X?]
-	>=media-libs/harfbuzz-1.3.3:=[icu(+)]
+	>=media-libs/harfbuzz-1.4.2:=[icu(+)]
 	>=dev-libs/icu-3.8.1-r1:=
 	virtual/jpeg:0=
 	>=net-libs/libsoup-2.48:2.4[introspection?]
@@ -74,7 +72,7 @@ RDEPEND="
 		>=media-libs/gstreamer-1.14:1.0
 		>=media-libs/gst-plugins-base-1.14:1.0[egl?,gles2?,opengl?]
 		>=media-plugins/gst-plugins-opus-1.14.4-r1:1.0
-		>=media-libs/gst-plugins-bad-1.10:1.0
+		>=media-libs/gst-plugins-bad-1.14:1.0
 	)
 
 	X? (
