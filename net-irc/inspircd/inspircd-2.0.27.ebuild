@@ -12,11 +12,11 @@ SRC_URI="https://github.com/inspircd/inspircd/archive/v${PV}.tar.gz -> ${P}.tar.
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
-IUSE="geoip gnutls ipv6 ldap libressl mysql pcre posix postgres sqlite ssl tre"
+IUSE="geoip gnutls ipv6 ldap libressl mysql pcre posix postgres sqlite openssl tre"
 
 RDEPEND="
 	dev-lang/perl
-	ssl? (
+	openssl? (
 		!libressl? ( dev-libs/openssl:= )
 		libressl? ( dev-libs/libressl:= )
 	)
@@ -56,7 +56,7 @@ src_configure() {
 	use posix && extras+="m_regex_posix.cpp,"
 	use postgres && extras+="m_pgsql.cpp,"
 	use sqlite && extras+="m_sqlite3.cpp,"
-	use ssl && extras+="m_ssl_openssl.cpp,"
+	use openssl && extras+="m_ssl_openssl.cpp,"
 	use tre && extras+="m_regex_tre.cpp,"
 
 	# The first configuration run enables certain "extra" InspIRCd
@@ -76,7 +76,7 @@ src_configure() {
 		--module-dir="/usr/$(get_libdir)/${PN}/modules"
 		$(usex ipv6 '' '--disable-ipv6')
 		$(usex gnutls '--enable-gnutls' '')
-		$(usex ssl '--enable-openssl' ''))
+		$(usex openssl '--enable-openssl' ''))
 	./configure "${myconf[@]}"
 }
 
