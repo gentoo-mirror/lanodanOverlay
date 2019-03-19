@@ -26,6 +26,7 @@
 		<flag name="postgres">Enable PostgreSQL database backend</flag>
 		<flag name="sqlite">Enable Sqlite database backend</flag>
 		<flag name="tre">Enable support for TRE, a lightweight, robust, and efficient POSIX compliant regexp matching library</flag>
+		<flag name="mbedtls">Enable TLS support via <pkg>net-libs/mbedtls</pkg></flag>
 	</use>
 	<upstream>
 		<remote-id type="github">inspircd/inspircd</remote-id>
