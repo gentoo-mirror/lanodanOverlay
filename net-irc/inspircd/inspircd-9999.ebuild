@@ -1,21 +1,31 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="7"
+EAPI=7
 
 inherit toolchain-funcs user
 
 DESCRIPTION="Inspire IRCd - The Stable, High-Performance Modular IRCd"
-HOMEPAGE="https://inspircd.github.com/"
-SRC_URI="https://github.com/inspircd/inspircd/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="http://www.inspircd.org/"
+if [[ "${PV}" == "9999" ]]
+then
+	inherit git-r3
+
+	EGIT_REPO_URI="https://github.com/inspircd/inspircd.git"
+else
+	SRC_URI="https://github.com/inspircd/inspircd/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
+fi
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
-IUSE="geoip gnutls ipv6 ldap libressl mysql pcre posix postgres sqlite openssl tre"
+IUSE="geoip gnutls ldap libressl mbedtls mysql pcre posix postgres sqlite openssl sslrehash tre"
+
+REQUIRED_USE="sslrehash? ( || ( gnutls mbedtls openssl ) )"
 
 RDEPEND="
 	dev-lang/perl
+	dev-libs/utfcpp:=
 	openssl? (
 		!libressl? ( dev-libs/openssl:= )
 		libressl? ( dev-libs/libressl:= )
@@ -24,14 +34,15 @@ RDEPEND="
 	gnutls? ( net-libs/gnutls:= dev-libs/libgcrypt:0 )
 	ldap? ( net-nds/openldap )
 	mysql? ( dev-db/mysql-connector-c:= )
+	mbedtls? ( net-libs/mbedtls:= )
 	postgres? ( dev-db/postgresql:= )
 	pcre? ( dev-libs/libpcre )
 	sqlite? ( >=dev-db/sqlite-3.0 )
-	tre? ( dev-libs/tre )"
+	tre? ( dev-libs/tre )
+"
 DEPEND="${RDEPEND}"
 
 DOCS=( docs/. )
-PATCHES=( "${FILESDIR}"/${P}-fix-path-builds.patch )
 
 pkg_setup() {
 	enewgroup ${PN}
@@ -41,13 +52,17 @@ pkg_setup() {
 src_prepare() {
 	default
 
-	# Patch the inspircd launcher with the inspircd user
-	sed -i -e "s/@UID@/${PN}/" "${S}/make/template/${PN}" || die
+	rm -r vendor/utfcpp || die "Failed removing bundling of utfcpp"
+	grep -l 'vendor_directory("utfcpp")' -r src | xargs sed -i 's/vendor_directory("utfcpp")/utf8/' || die "Failed changing the flag for utfcpp"
 }
 
 src_configure() {
 	local extras=""
 
+	tc-export CXX
+
+	# NOTE: remove when modulemanager is rewrote
+	# extra modules are found in src/modules/extra
 	use geoip && extras+="m_geoip.cpp,"
 	use gnutls && extras+="m_ssl_gnutls.cpp,"
 	use ldap && extras+="m_ldapauth.cpp,m_ldapoper.cpp,"
@@ -58,6 +73,8 @@ src_configure() {
 	use sqlite && extras+="m_sqlite3.cpp,"
 	use openssl && extras+="m_ssl_openssl.cpp,"
 	use tre && extras+="m_regex_tre.cpp,"
+	use mbedtls && extras+="m_ssl_mbedtls.cpp,"
+	use sslrehash && extras+="m_sslrehashsignal.cpp,"
 
 	# The first configuration run enables certain "extra" InspIRCd
 	# modules, the second run generates the actual makefile.
@@ -65,18 +82,20 @@ src_configure() {
 		./configure --disable-interactive --enable-extras=${extras%,}
 	fi
 
+	# Remove --development on stable release ebuild
 	local myconf=(
-		--with-cc="$(tc-getCXX)"
 		--disable-interactive
+		--development
 		--prefix="/usr/$(get_libdir)/${PN}"
 		--config-dir="/etc/${PN}"
 		--data-dir="/var/lib/${PN}/data"
 		--log-dir="/var/log/${PN}"
 		--binary-dir="/usr/bin"
 		--module-dir="/usr/$(get_libdir)/${PN}/modules"
-		$(usex ipv6 '' '--disable-ipv6')
-		$(usex gnutls '--enable-gnutls' '')
-		$(usex openssl '--enable-openssl' ''))
+		--gid=${PN}
+		--uid=${PN}
+	)
+
 	./configure "${myconf[@]}"
 }
 
