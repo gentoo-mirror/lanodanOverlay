@@ -11,8 +11,10 @@ SRC_URI="https://ftp.gnome.org/pub/GNOME/sources/${PN}/$(ver_cut 1-2)/${P}.tar.x
 
 LICENSE="LGPL-2.1+"
 SLOT="0"
-IUSE="gnome gnutls +libproxy libressl +openssl test"
+IUSE="gnome gnutls +libproxy libressl +openssl test ssl"
 KEYWORDS="~amd64"
+
+REQUIRED_USE="ssl? ( || ( gnutls openssl ) )"
 
 DEPEND="
 	>=dev-libs/glib-2.55.1:2
