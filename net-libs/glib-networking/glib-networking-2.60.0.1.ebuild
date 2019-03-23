@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit gnome2-utils meson xdg
+inherit gnome2-utils meson xdg multilib-minimal
 
 DESCRIPTION="Network-related giomodules for glib"
 HOMEPAGE="https://git.gnome.org/browse/${PN}/"
@@ -11,20 +11,22 @@ SRC_URI="https://ftp.gnome.org/pub/GNOME/sources/${PN}/$(ver_cut 1-2)/${P}.tar.x
 
 LICENSE="LGPL-2.1+"
 SLOT="0"
-IUSE="gnome gnutls +libproxy libressl +openssl test"
+IUSE="gnome gnutls +libproxy libressl +openssl test ssl"
 KEYWORDS="~amd64"
 
+REQUIRED_USE="ssl? ( || ( gnutls openssl ) )"
+
 DEPEND="
-	>=dev-libs/glib-2.55.1:2
-	libproxy? ( >=net-libs/libproxy-0.3.1:= )
-	gnutls? ( >=net-libs/gnutls-3.4.6:= )
+	>=dev-libs/glib-2.55.1:2[${MULTILIB_USEDEP}]
+	libproxy? ( >=net-libs/libproxy-0.3.1:=[${MULTILIB_USEDEP}] )
+	gnutls? ( >=net-libs/gnutls-3.4.6:=[${MULTILIB_USEDEP}] )
 	openssl? (
-		!libressl? ( dev-libs/openssl:0= )
-		libressl? ( dev-libs/libressl:= )
+		!libressl? ( dev-libs/openssl:0=[${MULTILIB_USEDEP}] )
+		libressl? ( dev-libs/libressl:=[${MULTILIB_USEDEP}] )
 	)
 "
 
-src_configure() {
+multilib_src_configure() {
 	local emesonargs=(
 		$(meson_feature gnutls)
 		$(meson_feature openssl)
@@ -37,12 +39,24 @@ src_configure() {
 	meson_src_configure
 }
 
+multilib_src_compile() {
+	meson_src_compile
+}
+
+multilib_src_install() {
+	meson_src_install
+}
+
+multilib_src_test() {
+	meson_src_test
+}
+
 pkg_postinst() {
 	xdg_pkg_postinst
-	gnome2_giomodule_cache_update
+	multilib_foreach_abi gnome2_giomodule_cache_update
 }
 
 pkg_postrm() {
 	xdg_pkg_postrm
-	gnome2_giomodule_cache_update
+	multilib_foreach_abi gnome2_giomodule_cache_update
 }
