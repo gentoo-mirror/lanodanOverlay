@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>contact@hacktivis.me</email>
+		<name>Haelwenn (lanodan) Monnier</name>
+	</maintainer>
+	<use>
+		<flag name="libproxy">Use <pkg>net-libs/libproxy</pkg> for getting the HTTP/HTTPS/SOCKS proxy configuration</flag>
+		<flag name="gnome">Extract HTTP/HTTPS/SOCKS proxy configuration stored using GSettings</flag>
+		<flag name="openssl">support for OpenSSL networking configration</flag>
+	</use>
+</pkgmetadata>
