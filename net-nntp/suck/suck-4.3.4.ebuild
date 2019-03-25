@@ -15,8 +15,8 @@ IUSE="perl ssl libressl"
 RDEPEND="
 	sys-libs/gdbm:=
 	ssl? (
-		!libressl ( dev-libs/openssl:0= )
-		libressl ( dev-libs/libressl:= )
+		!libressl? ( dev-libs/openssl:0= )
+		libressl? ( dev-libs/libressl:= )
 	)
 "
 DEPEND="${RDEPEND}
