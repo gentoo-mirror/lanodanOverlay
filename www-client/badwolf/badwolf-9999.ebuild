@@ -36,9 +36,9 @@ src_configure() {
 
 src_compile() {
 	emake \
-		CC="$(CC)" \
-		CFLAGS="$(CFLAGS)" \
-		LDFLAGS="$(LDFLAGS)"
+		CC="${CC}" \
+		CFLAGS="${CFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 }
 
 src_install() {
