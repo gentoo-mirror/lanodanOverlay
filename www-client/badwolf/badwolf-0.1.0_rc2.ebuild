@@ -34,6 +34,13 @@ src_configure() {
 	default
 }
 
+src_compile() {
+	emake \
+		CC="${CC}" \
+		CFLAGS="${CFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
+}
+
 src_install() {
 	emake DESTDIR="${D}" PREFIX="/usr" install
 	save_config config.h
