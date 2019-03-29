@@ -1,4 +1,4 @@
-DEFINED_PHASES=configure install postinst
+DEFINED_PHASES=compile configure install postinst
 DEPEND=x11-libs/gtk+:3 net-libs/webkit-gtk
 DESCRIPTION=Minimalist and privacy-oriented WebKitGTK+ browser
 EAPI=7
@@ -7,6 +7,6 @@ IUSE=savedconfig
 KEYWORDS=~amd64
 LICENSE=BSD
 SLOT=0
-SRC_URI=https://hacktivis.me/releases/badwolf-0.1.0-rc.1.tar.gz
+SRC_URI=https://hacktivis.me/releases/badwolf-0.1.0-rc.2.tar.gz
 _eclasses_=portability	2b88d3ecc35035a3b8ab628b49cafb0e	savedconfig	e6948c872ff47e15a10e5ad1be15c18e
-_md5_=f9a5209a35a39b0ee6dbaa6b373e38b0
+_md5_=068e6532e1f063f4ffbda3b7dd461f62
