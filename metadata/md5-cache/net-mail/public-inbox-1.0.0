@@ -1,0 +1,9 @@
+DEFINED_PHASES=prepare
+DEPEND=dev-vcs/git dev-lang/perl dev-db/sqlite dev-perl/Time-ParseDate dev-perl/Email-MIME dev-perl/Email-MIME-ContentType dev-perl/Plack dev-perl/URI xapian? ( dev-perl/Search-Xapian ) gzip? ( dev-perl/PerlIO-gzip dev-perl/DBI dev-perl/DBD-SQLite ) nntp? ( dev-perl/DBD-SQLite ) inbox_watch? ( dev-perl/Filesys-Notify-Simple ) daemon? ( dev-perl/Inline-C )
+EAPI=7
+HOMEPAGE=https://public-inbox.org/
+IUSE=+xapian gzip nntp inbox_watch daemon
+KEYWORDS=~amd64
+SLOT=0
+SRC_URI=https://public-inbox.org/releases/public-inbox-1.0.0.tar.gz
+_md5_=bfde7b3848c3169d12e7b6bc17f34bb0
