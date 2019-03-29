@@ -1,7 +1,8 @@
 # sets:graphical
 media-fonts/source-pro
 x11-terms/st
-x11-misc/arandr
+# Depends on python2, see https://gitlab.com/arandr/arandr/issues/32
+#x11-misc/arandr
 media-fonts/emojione-color-font
 media-fonts/symbola
 media-fonts/unifont
