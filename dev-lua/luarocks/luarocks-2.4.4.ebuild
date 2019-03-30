@@ -13,12 +13,15 @@ SRC_URI="http://luarocks.org/releases/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc x86"
-IUSE="curl openssl"
+IUSE="curl openssl libressl"
 
 DEPEND="
 	curl? ( net-misc/curl )
 	!curl? ( net-misc/wget )
-	openssl? ( dev-libs/openssl )
+	openssl? (
+		!libressl? ( dev-libs/openssl:0= )
+		libressl? ( dev-libs/libressl:= )
+	)
 	!openssl? ( sys-apps/coreutils )
 "
 RDEPEND="
