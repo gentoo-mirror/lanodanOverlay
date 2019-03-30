@@ -2,6 +2,7 @@ app-accessibility/julius 4.3.1 4.5: Large Vocabulary Continuous Speech Recogniti
 app-arch/unar 1.10.1: unpacker for various archiving formats, e.g. rar v3
 app-doc/single-unix-specification 4_p3: The Single UNIX Specification, Version 4, 2018 Edition
 app-i18n/unicode-data 11.0.0: Unicode data from unicode.org
+app-misc/binwalk 2.1.1-r2: A tool for identifying files embedded inside firmware images
 app-misc/kanatest 0.4.8: Visual flashcard tool for memorizing the Japanese Hiragana and Katakana alphabet
 dev-db/postgresql 9.6.11: PostgreSQL RDBMS
 dev-libs/libtermkey 0.21.1-r1: Library for easy processing of keyboard entry from terminal-based programs
