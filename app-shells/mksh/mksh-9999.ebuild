@@ -35,8 +35,8 @@ src_compile() {
 }
 
 src_install() {
-	exeinto /bin
-	doexe mksh
+	into /
+	dobin mksh
 	doman mksh.1
 	dodoc dot.mkshrc
 }
