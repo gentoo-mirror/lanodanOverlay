@@ -29,14 +29,9 @@ S="${WORKDIR}/${PN}"
 src_compile() {
 	tc-export CC
 	# we want to build static with klibc
-	if use static
-	then
-		unset CC
-		export CC="/usr/bin/klcc"
-		export LDSTATIC="-static"
-	fi
+	if use static; then export CC="/usr/bin/klcc"; export LDSTATIC="-static"; fi
 	export CPPFLAGS="${CPPFLAGS} -DMKSH_DEFAULT_PROFILEDIR=\\\"${EPREFIX}/etc\\\""
-	sh Build.sh -r -c lto || sh Rebuild.sh || die
+	sh Build.sh -r die
 }
 
 src_install() {
