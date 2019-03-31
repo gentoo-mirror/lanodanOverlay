@@ -49,10 +49,3 @@ src_install() {
 src_test() {
 	./test.sh || die
 }
-
-pkg_postinst() {
-	ebegin "Updating /etc/shells"
-	( grep -v "^/bin/mksh$" "${ROOT}"etc/shells; echo "/bin/mksh" ) > "${T}"/shells
-	mv -f "${T}"/shells "${ROOT}"etc/shells
-	eend $?
-}
