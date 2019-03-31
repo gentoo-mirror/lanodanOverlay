@@ -31,7 +31,7 @@ src_compile() {
 	# we want to build static with klibc
 	if use static; then export CC="/usr/bin/klcc"; export LDSTATIC="-static"; fi
 	export CPPFLAGS="${CPPFLAGS} -DMKSH_DEFAULT_PROFILEDIR=\\\"${EPREFIX}/etc\\\""
-	sh Build.sh -r die
+	sh Build.sh -r || die
 }
 
 src_install() {
