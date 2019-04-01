@@ -8,4 +8,4 @@ IUSE=savedconfig
 LICENSE=BSD
 SLOT=0
 _eclasses_=git-r3	0d4635eeb5a96cd5315597a47eba25c9	portability	2b88d3ecc35035a3b8ab628b49cafb0e	savedconfig	e6948c872ff47e15a10e5ad1be15c18e
-_md5_=068e6532e1f063f4ffbda3b7dd461f62
+_md5_=c353d4979dbfb29952072d9f97c5b858
