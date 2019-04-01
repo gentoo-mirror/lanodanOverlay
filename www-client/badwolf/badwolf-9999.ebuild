@@ -36,8 +36,8 @@ src_configure() {
 
 src_compile() {
 	emake \
-		CC="${CC}" \
-		CFLAGS="${CFLAGS}" \
+		CC="${CC:-cc}" \
+		CFLAGS="${CFLAGS:--02 -Wall -Wextra}" \
 		LDFLAGS="${LDFLAGS}"
 }
 
