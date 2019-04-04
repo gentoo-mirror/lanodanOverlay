@@ -1,0 +1,32 @@
+From 857d3d68cb3bc2cf3da50bc9daff9325d05179a4 Mon Sep 17 00:00:00 2001
+From: Christopher O'Neill <code@chrisoneill.co.uk>
+Date: Tue, 27 Feb 2018 10:21:34 +0000
+Subject: [PATCH] Fix #151: clang6.0.0 (freeBSD) build failure
+
+Add explicit cast for narrowing conversion to hopefully fix the build failure.
+---
+ src/tracker/sdl/SDL_Main.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/tracker/sdl/SDL_Main.cpp b/src/tracker/sdl/SDL_Main.cpp
+index 420b4d92..526302bc 100644
+--- a/src/tracker/sdl/SDL_Main.cpp
++++ b/src/tracker/sdl/SDL_Main.cpp
+@@ -609,7 +609,7 @@ void translateKeyDownEvent(const SDL_Event& event)
+ 	printf ("DEBUG: Key pressed: VK: %d, SC: %d, Scancode: %d\n", toVK(keysym), toSC(keysym), keysym.sym);
+ #endif
+ 
+-	pp_uint16 chr[3] = {toVK(keysym), toSC(keysym), keysym.sym};
++	pp_uint16 chr[3] = {toVK(keysym), toSC(keysym), static_cast<pp_uint16> (keysym.sym)};
+ 
+ 	PPEvent myEvent(eKeyDown, &chr, sizeof(chr));
+ 	RaiseEventSerialized(&myEvent);
+@@ -621,7 +621,7 @@ void translateKeyUpEvent(const SDL_Event& event)
+ 
+ 	preTranslateKey(keysym);
+ 
+-	pp_uint16 chr[3] = {toVK(keysym), toSC(keysym), keysym.sym};
++	pp_uint16 chr[3] = {toVK(keysym), toSC(keysym), static_cast<pp_uint16> (keysym.sym)};
+ 
+ 	PPEvent myEvent(eKeyUp, &chr, sizeof(chr));
+ 	RaiseEventSerialized(&myEvent);
