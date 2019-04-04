@@ -22,8 +22,6 @@ RDEPEND="
 	jack? ( media-sound/jack-audio-connection-kit )"
 DEPEND="${RDEPEND}"
 
-S="${WORKDIR}/MilkyTracker-${PV}"
-
 src_configure() {
 	local mycmakeargs=(
 		-DCMAKE_INSTALL_DOCDIR=share/doc/${PF}
