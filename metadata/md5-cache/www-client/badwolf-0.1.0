@@ -7,6 +7,6 @@ IUSE=savedconfig
 KEYWORDS=~amd64
 LICENSE=BSD
 SLOT=0
-SRC_URI=https://hacktivis.me/releases/badwolf-0.1.0-rc.2.tar.gz
+SRC_URI=https://hacktivis.me/releases/badwolf-0.1.0.tar.gz
 _eclasses_=portability	2b88d3ecc35035a3b8ab628b49cafb0e	savedconfig	e6948c872ff47e15a10e5ad1be15c18e
 _md5_=c353d4979dbfb29952072d9f97c5b858
