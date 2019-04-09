@@ -4,7 +4,7 @@
 EAPI=6
 CMAKE_MAKEFILE_GENERATOR="ninja"
 PYTHON_COMPAT=( python2_7 )
-USE_RUBY="ruby23 ruby24 ruby25"
+USE_RUBY="ruby23 ruby24 ruby25 ruby26"
 
 inherit check-reqs cmake-utils flag-o-matic gnome2 pax-utils python-any-r1 ruby-single toolchain-funcs virtualx
 
@@ -102,7 +102,6 @@ DEPEND="${RDEPEND}
 	${PYTHON_DEPS}
 	${RUBY_DEPS}
 	>=app-accessibility/at-spi2-core-2.5.3
-	>=dev-lang/perl-5.10
 	dev-util/glib-utils
 	>=dev-util/gtk-doc-am-1.10
 	>=dev-util/gperf-3.0.1
@@ -111,7 +110,7 @@ DEPEND="${RDEPEND}
 	sys-devel/gettext
 	virtual/pkgconfig
 
-	dev-lang/perl
+	>=dev-lang/perl-5.10
 	virtual/perl-Data-Dumper
 	virtual/perl-Carp
 	virtual/perl-JSON-PP
