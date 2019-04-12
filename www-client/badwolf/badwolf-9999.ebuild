@@ -11,7 +11,7 @@ then
 	EGIT_MIN_CLONE_TYPE="single+tags"
 	inherit git-r3
 else
-	MY_P="${PN}-$(ver_rs 3-4 - 4-5 .)"
+	MY_P="${PN}-$(ver_rs 3 - 4 .)"
 	SRC_URI="https://hacktivis.me/releases/${MY_P}.tar.gz"
 	KEYWORDS="~amd64"
 	S="${WORKDIR}/${MY_P}"
@@ -38,11 +38,16 @@ src_compile() {
 	emake \
 		CC="${CC:-cc}" \
 		CFLAGS="${CFLAGS:--02 -Wall -Wextra}" \
-		LDFLAGS="${LDFLAGS}"
+		LDFLAGS="${LDFLAGS}" \
+		PREFIX="/usr"
 }
 
 src_install() {
-	emake DESTDIR="${D}" PREFIX="/usr" install
+	emake \
+		DESTDIR="${D}" \
+		PREFIX="/usr" \
+		install
+
 	save_config config.h
 	einstalldocs
 }
