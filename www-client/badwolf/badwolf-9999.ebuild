@@ -38,11 +38,16 @@ src_compile() {
 	emake \
 		CC="${CC:-cc}" \
 		CFLAGS="${CFLAGS:--02 -Wall -Wextra}" \
-		LDFLAGS="${LDFLAGS}"
+		LDFLAGS="${LDFLAGS}" \
+		PREFIX="/usr"
 }
 
 src_install() {
-	emake DESTDIR="${D}" PREFIX="/usr" install
+	emake \
+		DESTDIR="${D}" \
+		PREFIX="/usr" \
+		install
+
 	save_config config.h
 	einstalldocs
 }
