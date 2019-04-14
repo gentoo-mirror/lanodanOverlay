@@ -3,12 +3,21 @@
 
 EAPI=7
 
-inherit haskell-cabal git-r3
+CABAL_FEATURES="lib"
+
+inherit haskell-cabal
+
+if [[ $PV = 9999 ]]; then
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/waymonad/waymonad.git"
+	EGIT_SUBMODULES=()
+else
+	SRC_URI="https://github.com/waymonad/waymonad/archive/${PV}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="~amd64"
+fi
 
 DESCRIPTION="wayland compositor based on ideas from and inspired by xmonad"
 HOMEPAGE="https://github.com/waymonad/waymonad"
-EGIT_REPO_URI="https://github.com/waymonad/waymonad.git"
-EGIT_SUBMODULES=()
 SLOT="0"
 
 # Shipped in GHC: containers, time, directory, unix, process, bytestring,
