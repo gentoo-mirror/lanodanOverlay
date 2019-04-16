@@ -21,7 +21,7 @@ DESCRIPTION="MirBSD Korn Shell"
 HOMEPAGE="http://mirbsd.de/mksh"
 LICENSE="BSD"
 SLOT="0"
-IUSE="static"
+IUSE="static +lksh"
 DEPEND="static? ( dev-libs/klibc )"
 RDEPEND=""
 S="${WORKDIR}/${PN}"
@@ -31,16 +31,24 @@ src_compile() {
 	# we want to build static with klibc
 	if use static; then export CC="/usr/bin/klcc"; export LDSTATIC="-static"; fi
 	export CPPFLAGS="${CPPFLAGS} -DMKSH_DEFAULT_PROFILEDIR=\\\"${EPREFIX}/etc\\\""
-	sh Build.sh -r || die
+	# TODO: Ask baselayout to replace mksh with lksh instead
+	if use lksh
+	then
+		export CPPFLAGS="${CPPFLAGS} -DMKSH_BINSHPOSIX -DMKSH_BINSHREDUCED"
+		sh Build.sh -r -L || die
+	else
+		sh Build.sh -r || die
+	fi
 }
 
 src_install() {
 	exeinto /bin
+	use lksh && doexe lksh
 	doexe mksh
 	doman mksh.1
 	dodoc dot.mkshrc
 }
 
 src_test() {
-	./test.sh || die
+	./test.sh -v || die
 }

@@ -5,4 +5,7 @@
 		<email>contact@hacktivis.me</email>
 		<name>Haelwenn (lanodan) Monnier</name>
 	</maintainer>
+	<use>
+		<flag name="lksh">Builds the POSIX-Compliant arithmetics (host’s long) variant</flag>
+	</use>
 </pkgmetadata>
