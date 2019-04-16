@@ -31,14 +31,15 @@ src_compile() {
 	# we want to build static with klibc
 	if use static; then export CC="/usr/bin/klcc"; export LDSTATIC="-static"; fi
 	export CPPFLAGS="${CPPFLAGS} -DMKSH_DEFAULT_PROFILEDIR=\\\"${EPREFIX}/etc\\\""
-	# TODO: Ask baselayout to replace mksh with lksh instead
+
+	# Note: lksh should be used as a replacement to /bin/sh instead of mksh
 	if use lksh
 	then
 		export CPPFLAGS="${CPPFLAGS} -DMKSH_BINSHPOSIX -DMKSH_BINSHREDUCED"
 		sh Build.sh -r -L || die
-	else
-		sh Build.sh -r || die
 	fi
+
+	sh Build.sh -r || die
 }
 
 src_install() {
