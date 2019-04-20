@@ -17,4 +17,5 @@ media-libs/x264 0.0.20170701: A free library for encoding X264/AVC streams
 net-dns/ldns-utils 1.7.0-r1: Set of utilities to simplify various dns(sec) tasks
 net-misc/openntpd 6.0_p1: Lightweight NTP server ported from OpenBSD
 sci-misc/labview 8.6.0: LabVIEW System Design Software
+sys-apps/openrc 0.38.3-r1: OpenRC manages the services, startup and shutdown of a host
 virtual/man 9: Virtual for man
