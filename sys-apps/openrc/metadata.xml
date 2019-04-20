@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>contact@hacktivis.me</email>
+		<name>Haelwenn (lanodan) Monnier</name>
+	</maintainer>
+	<use>
+		<flag name="bash">
+			enable the use of bash in service scripts (experimental)
+		</flag>
+		<flag name="netifrc">enable Gentoo's network stack (net.* scripts)</flag>
+		<flag name="newnet">enable the new network stack (experimental)</flag>
+	</use>
+	<upstream>
+		<remote-id type="github">openrc/openrc</remote-id>
+	</upstream>
+</pkgmetadata>
