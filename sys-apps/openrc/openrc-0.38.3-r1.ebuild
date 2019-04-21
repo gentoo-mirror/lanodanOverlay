@@ -45,6 +45,7 @@ RDEPEND="${COMMON_DEPEND}
 	!prefix? (
 		kernel_linux? (
 			!init? ( >=sys-apps/sysvinit-2.86-r6[selinux?] )
+			init? ( !sys-apps/sysvinit )
 			virtual/tmpfiles
 		)
 		kernel_FreeBSD? ( sys-freebsd/freebsd-sbin )
