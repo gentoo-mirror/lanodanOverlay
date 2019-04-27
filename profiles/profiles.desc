@@ -1,2 +1,3 @@
 amd64 client/amd64-pc dev
+amd64 client/musl-amd64-pc dev
 amd64 server/amd64-pc dev
