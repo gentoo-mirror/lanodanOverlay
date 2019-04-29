@@ -6,6 +6,6 @@
 		<name>Haelwenn (lanodan) Monnier</name>
 	</maintainer>
 	<use>
-		<flag name="libzip">Depending on <pkg>dev-libs/libzip</pkg></flag>
+		<flag name="libzip">Enable loading of game data from ZIP packages via <pkg>dev-libs/libzip</pkg></flag>
 	</use>
 </pkgmetadata>
