@@ -1,0 +1,10 @@
+BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=compile configure install postinst postrm setup test unpack
+DEPEND=dev-haskell/mtl dev-haskell/cereal dev-haskell/text dev-haskell/hayland dev-haskell/xml dev-haskell/hsroots
+DESCRIPTION=Haskell bindings for libxkbcommon
+EAPI=7
+HOMEPAGE=https://github.com/waymonad/waymonad-scanner
+LICENSE=LGPL-2.1
+SLOT=0
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	fac7ea2deca456f8e70b85a6ebef9e8a	git-r3	0d4635eeb5a96cd5315597a47eba25c9	haskell-cabal	b5e68c01ecdfbaa48ee638388bdc1c7c	multilib	b2f01ad412baf81650c23fcf0975fa33	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	b45201c4e6c096b98e250336954e64b9
+_md5_=de82fb9b20ab5c479aafbcff6e37c3f4

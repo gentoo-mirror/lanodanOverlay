@@ -1,0 +1,10 @@
+BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=compile configure install postinst postrm setup test unpack
+DEPEND=dev-haskell/text
+DESCRIPTION=Haskell bindings for libinput
+EAPI=7
+HOMEPAGE=https://github.com/waymonad/libinput
+LICENSE=LGPL-2.1
+SLOT=0
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	fac7ea2deca456f8e70b85a6ebef9e8a	git-r3	0d4635eeb5a96cd5315597a47eba25c9	haskell-cabal	b5e68c01ecdfbaa48ee638388bdc1c7c	multilib	b2f01ad412baf81650c23fcf0975fa33	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	b45201c4e6c096b98e250336954e64b9
+_md5_=3686e72c64360c1be1f4f2175ab2e742
