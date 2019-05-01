@@ -16,11 +16,11 @@ INSTALL_MASK="/usr/lib/systemd /usr/lib64/systemd /lib/systemd /etc/systemd /etc
 
 EMERGE_DEFAULT_OPTS="--keep-going"
 FEATURES="webrsync-gpg userfetch usersandbox splitdebug network-sandbox"
-FETCHCOMMAND="curl -L -C - --retry 3 --connect-timeout 60 -o \"\${DISTDIR}/\${FILE}\" \"\${URI}\""
+FETCHCOMMAND="curl -sSL --fail --retry 3 --connect-timeout 60 -o \"\${DISTDIR}/\${FILE}\" \"\${URI}\""
 GENTOO_MIRRORS="https://mirror.swordarmor.fr/gentoo/ https://mirrors.dotsrc.org/gentoo/ https://gentoo.osuosl.org/ http://distfiles.gentoo.org"
 PORTAGE_COMPRESS="true" # mandoc
 PORTAGE_GPG_DIR="/var/lib/gentoo/gkeys/keyrings/gentoo/release/"
-RESUMECOMMAND="${FETCHCOMMAND}"
+RESUMECOMMAND="curl -sSL -C - --fail --retry 3 --connect-timeout 60 -o \"\${DISTDIR}/\${FILE}\" \"\${URI}\""
 
 ACCEPT_LICENSE="-* @FREE"
 L10N="en en-US en-GB fr fr-FR fr-CA fr-CH fr-BE ja ja-JP is jbo de de-DE"
