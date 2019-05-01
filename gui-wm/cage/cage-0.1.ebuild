@@ -3,11 +3,14 @@
 
 EAPI=7
 
+inherit meson
+
 DESCRIPTION="Wayland Kiosk"
 HOMEPAGE="https://hjdskes.nl/projects/cage"
 SRC_URI="https://github.com/Hjdskes/cage/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
+KEYWORDS="~amd64"
 
 # dev-libs/wayland provides wayland-server, wayland-scanner
 DEPEND="
