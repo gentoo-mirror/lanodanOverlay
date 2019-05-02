@@ -27,6 +27,7 @@ RDEPEND="${DEPEND}"
 src_configure() {
 	local emesonargs=(
 		"$(meson_use xwayland)"
+		"-Dwerror=false"
 	)
 
 	meson_src_configure
