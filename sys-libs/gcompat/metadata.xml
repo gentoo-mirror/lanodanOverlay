@@ -5,4 +5,7 @@
 		<email>contact@hacktivis.me</email>
 		<name>Haelwenn (lanodan) Monnier</name>
 	</maintainer>
+	<use>
+		<flag name="obstack">Use <pkg>sys-libs/obstack-standalone</pkg> for greater compatibility</flag>
+	</use>
 </pkgmetadata>
