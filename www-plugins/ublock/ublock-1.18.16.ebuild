@@ -3,11 +3,11 @@
 
 EAPI=7
 
-MY_XPINAME="${P}-an+fx"
+MY_XPINAME="uBlock0_${PV}.firefox"
 
-DESCRIPTION="Local CDN Emulation"
-HOMEPAGE="https://decentraleyes.org/"
-SRC_URI="https://addons.mozilla.org/firefox/downloads/file/1705979/decentraleyes-2.0.10-an+fx.xpi"
+DESCRIPTION="An efficient blocker for Chromium and Firefox. Fast and lean"
+HOMEPAGE="https://github.com/gorhill/uBlock"
+SRC_URI="https://github.com/gorhill/uBlock/releases/download/${PV}/${MY_XPINAME}.xpi"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -24,5 +24,5 @@ src_install() {
 	# See https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Distribution_options/Sideloading_add-ons#Installation_using_the_standard_extension_folders
 	insinto "/usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/"
 	# Use the extension id found in the manifest.json for the filename and add .xpi
-	newins "${MY_XPINAME}.xpi" "jid1-BoFifL9Vbdl2zQ@jetpack.xpi"
+	newins "${MY_XPINAME}.xpi" "uBlock0@raymondhill.net.xpi"
 }
