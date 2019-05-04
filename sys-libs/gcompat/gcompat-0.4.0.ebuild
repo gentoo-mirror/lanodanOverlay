@@ -9,8 +9,12 @@ DESCRIPTION="The GNU C Library compatibility layer for musl"
 HOMEPAGE="https://code.foxkit.us/adelie/gcompat"
 KEYWORDS="~x86 ~amd64"
 LICENSE="UoI-NCSA"
+IUSE="obstack"
 SRC_URI="https://distfiles.adelielinux.org/source/gcompat/${P}.tar.xz"
 SLOT="0"
+
+DEPEND="obstack? ( sys-libs/obstack-standalone )"
+RDEPEND="${DEPEND}"
 
 get_loader_name() {
 	# Loosely based on Adélie APKBUILD
@@ -33,13 +37,15 @@ get_linker_path() {
 src_compile() {
 	emake \
 		LINKER_PATH="$(get_linker_path)" \
-		LOADER_NAME="$(get_loader_name)"
+		LOADER_NAME="$(get_loader_name)" \
+		WITH_OBSTACK="$(usex obstack 'obstack-standalone' 'no')"
 }
 
 src_install() {
 	emake \
 		LINKER_PATH="$(get_linker_path)" \
 		LOADER_NAME="$(get_loader_name)" \
+		WITH_OBSTACK="$(usex obstack 'obstack-standalone' 'no')" \
 		DESTDIR="${D}" \
 		install
 }
