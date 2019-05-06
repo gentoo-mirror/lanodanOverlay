@@ -7,24 +7,22 @@ inherit meson
 
 if [[ "${PV}" == "9999" ]]; then
 	inherit git-r3
-	EGIT_REPO_URI="https://github.com/Hjdskes/cage"
+	EGIT_REPO_URI="https://git.sr.ht/~sircmpwn/wio"
 else
-	SRC_URI="https://github.com/Hjdskes/cage/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64"
 fi
 
 DESCRIPTION="Wayland Kiosk"
-HOMEPAGE="https://hjdskes.nl/projects/cage"
-LICENSE="MIT"
+HOMEPAGE="https://wio-project.org/"
+LICENSE="BSD"
 SLOT="0"
-IUSE="xwayland"
+IUSE=""
 
-# dev-libs/wayland provides wayland-server, wayland-scanner
+# dev-libs/wayland provides wayland-server
 DEPEND="
 	>=gui-libs/wlroots-0.6.0:=
-	xwayland? ( gui-libs/wlroots[X] )
-	>=dev-libs/wayland-protocols-1.14:=
-	x11-libs/pixman:=
+	x11-libs/cairo:=
+	dev-libs/wayland-protocols:=
 	x11-libs/libxkbcommon:=
 	dev-libs/wayland:=
 "
@@ -32,7 +30,6 @@ RDEPEND="${DEPEND}"
 
 src_configure() {
 	local emesonargs=(
-		"$(meson_use xwayland)"
 		"-Dwerror=false"
 	)
 
