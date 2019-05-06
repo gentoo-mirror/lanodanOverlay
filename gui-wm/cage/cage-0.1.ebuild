@@ -16,6 +16,7 @@ IUSE="xwayland"
 # dev-libs/wayland provides wayland-server, wayland-scanner
 DEPEND="
 	>=gui-libs/wlroots-0.5.0:=
+	!>gui-libs/wlroots-0.6
 	xwayland? ( gui-libs/wlroots[X] )
 	>=dev-libs/wayland-protocols-1.14:=
 	x11-libs/pixman:=
