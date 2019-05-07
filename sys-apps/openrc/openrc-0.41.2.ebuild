@@ -159,7 +159,7 @@ src_install() {
 	# start all the tty at boot except tty1 to not conflict with OpenRC output
 	if use init; then
 		for n in 2 3 4 5 6; do
-			dosym "/etc/init.d/agetty" "${ED}/etc/init.d/agetty.${n}"
+			dosym "/etc/init.d/agetty" "/etc/init.d/agetty.${n}"
 			dosym "/etc/init.d/agetty.${n}" "/etc/runlevel/boot/agetty.${n}"
 		done
 		# I like to keep a tty for OpenRC
