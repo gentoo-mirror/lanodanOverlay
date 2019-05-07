@@ -46,6 +46,7 @@ RDEPEND="${COMMON_DEPEND}
 	!prefix? (
 		kernel_linux? (
 			!init? ( >=sys-apps/sysvinit-2.86-r6[selinux?] )
+			init? ( !sys-apps/sysvinit )
 			virtual/tmpfiles
 		)
 		kernel_FreeBSD? ( sys-freebsd/freebsd-sbin )
@@ -153,6 +154,17 @@ src_install() {
 	dodoc ChangeLog *.md
 	if use newnet; then
 		dodoc README.newnet
+	fi
+
+	# start all the tty at boot except tty1 to not conflict with OpenRC output
+	if use init; then
+		for n in 2 3 4 5 6; do
+			dosym "/etc/init.d/agetty" "${ED}/etc/init.d/agetty.${n}"
+			dosym "/etc/init.d/agetty.${n}" "/etc/runlevel/boot/agetty.${n}"
+		done
+		# I like to keep a tty for OpenRC
+		#dosym "/etc/init.d/agetty" "${ED}/etc/init.d/agetty.1"
+		#dosym "/etc/init.d/agetty.1" "/etc/runlevel/default/agetty.1"
 	fi
 }
 
