@@ -19,7 +19,7 @@ DEPEND="
 "
 
 src_configure() {
-	local cmakeargs=(
+	local mycmakeargs=(
 		-DCMAKE_INSTALL_INCLUDEDIR=include/libqmatrixclient
 	)
 
