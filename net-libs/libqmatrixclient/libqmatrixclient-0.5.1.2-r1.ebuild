@@ -17,3 +17,11 @@ DEPEND="
 	dev-qt/qtgui:5=
 	dev-qt/qtmultimedia:5=
 "
+
+src_configure() {
+	local cmakeargs=(
+		-DCMAKE_INSTALL_INCLUDEDIR=include/libqmatrixclient
+	)
+
+	cmake-utils_src_configure
+}
