@@ -22,14 +22,12 @@ HOMEPAGE="http://mirbsd.de/mksh"
 LICENSE="BSD"
 SLOT="0"
 IUSE="static +lksh"
-DEPEND="static? ( dev-libs/klibc )"
 RDEPEND=""
 S="${WORKDIR}/${PN}"
 
 src_compile() {
 	tc-export CC
-	# we want to build static with klibc
-	if use static; then export CC="/usr/bin/klcc"; export LDSTATIC="-static"; fi
+	if use static; then export LDSTATIC="-static"; fi
 	export CPPFLAGS="${CPPFLAGS} -DMKSH_DEFAULT_PROFILEDIR=\\\"${EPREFIX}/etc\\\""
 
 	# Note: lksh should be used as a replacement to /bin/sh instead of mksh
