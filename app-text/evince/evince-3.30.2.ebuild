@@ -56,7 +56,7 @@ RDEPEND="${COMMON_DEPEND}
 "
 DEPEND="${COMMON_DEPEND}
 	app-text/docbook-xml-dtd:4.3
-	dbus? ( dev-util/gdbus-codegen )
+	dev-util/gdbus-codegen
 	dev-util/glib-utils
 	>=dev-util/gtk-doc-am-1.13
 	>=dev-util/intltool-0.35
