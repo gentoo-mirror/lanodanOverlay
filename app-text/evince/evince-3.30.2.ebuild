@@ -70,6 +70,7 @@ DEPEND="${COMMON_DEPEND}
 
 PATCHES=(
 	"${FILESDIR}"/${PV}-internal-synctex.patch # don't automagically link to synctex from texlive-core - always use internal copy of this small parser for now; requires eautoreconf
+	"${FILESDIR}"/${PV}-application-name-dbus.patch # unbreak build when compiled without dbus - fixed in 3.31.4+
 )
 
 src_prepare() {
