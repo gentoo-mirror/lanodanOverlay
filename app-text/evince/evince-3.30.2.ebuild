@@ -13,14 +13,14 @@ HOMEPAGE="https://wiki.gnome.org/Apps/Evince"
 LICENSE="GPL-2+ CC-BY-SA-3.0"
 # subslot = evd3.(suffix of libevdocument3)-evv3.(suffix of libevview3)
 SLOT="0/evd3.4-evv3.3"
-IUSE="djvu dvi gstreamer gnome gnome-keyring +introspection nautilus nsplugin postscript spell t1lib tiff xps"
-KEYWORDS="~alpha amd64 ~arm ~arm64 ~ia64 ~mips ~ppc ~ppc64 ~sparc x86 ~x86-fbsd ~amd64-linux ~x86-linux ~x64-solaris"
+IUSE="dbus djvu dvi gstreamer gnome gnome-keyring +introspection nautilus nsplugin postscript spell t1lib tiff xps"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~x64-solaris"
 
 # atk used in libview
 # bundles unarr
 COMMON_DEPEND="
 	dev-libs/atk
-	>=dev-libs/glib-2.36:2[dbus]
+	>=dev-libs/glib-2.36:2[dbus?]
 	>=dev-libs/libxml2-2.5:2
 	sys-libs/zlib:=
 	>=x11-libs/gdk-pixbuf-2.36.5:2
@@ -56,7 +56,7 @@ RDEPEND="${COMMON_DEPEND}
 "
 DEPEND="${COMMON_DEPEND}
 	app-text/docbook-xml-dtd:4.3
-	dev-util/gdbus-codegen
+	dbus? ( dev-util/gdbus-codegen )
 	dev-util/glib-utils
 	>=dev-util/gtk-doc-am-1.13
 	>=dev-util/intltool-0.35
@@ -88,7 +88,7 @@ src_configure() {
 		--enable-comics \
 		--enable-thumbnailer \
 		--with-platform=gnome \
-		--enable-dbus \
+		$(use_enable dbus) \
 		$(use_enable djvu) \
 		$(use_enable dvi) \
 		$(use_enable gstreamer multimedia) \
