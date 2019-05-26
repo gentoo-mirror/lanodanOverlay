@@ -1,0 +1,29 @@
+From 674ab1de72145485f8ea2a715a6ff67a5c99548b Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Sun, 6 Jan 2019 14:49:13 +0100
+Subject: [PATCH] unbreak build when compiled without dbus
+
+APPLICATION_NAME is also used in ev_application_new() since 9363553a
+
+Fixes #1055
+---
+ shell/ev-application.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/shell/ev-application.c b/shell/ev-application.c
+index b01b3fa0..2085ba60 100644
+--- a/shell/ev-application.c
++++ b/shell/ev-application.c
+@@ -64,8 +64,8 @@ struct _EvApplicationClass {
+ 
+ G_DEFINE_TYPE (EvApplication, ev_application, GTK_TYPE_APPLICATION)
+ 
+-#ifdef ENABLE_DBUS
+ #define APPLICATION_NAME             "org.gnome.Evince"
++#ifdef ENABLE_DBUS
+ #define APPLICATION_DBUS_OBJECT_PATH "/org/gnome/evince/Evince"
+ #define APPLICATION_DBUS_INTERFACE   "org.gnome.evince.Application"
+ 
+-- 
+2.21.0
+
