@@ -1,0 +1,11 @@
+DEFINED_PHASES=install
+DESCRIPTION=pure Unix shell script implementing ACME client protocol
+EAPI=7
+HOMEPAGE=https://acme.sh/
+IUSE=standalone
+KEYWORDS=~amd64
+LICENSE=GPL-3
+RDEPEND=net-misc/curl || ( dev-libs/libressl dev-libs/openssl:0 ) standalone? ( net-misc/socat ) virtual/cron
+SLOT=0
+SRC_URI=https://github.com/Neilpang/acme.sh/archive/2.8.1.tar.gz -> acme-sh-2.8.1.tar.gz
+_md5_=79b55e0cc6983ebd3f7e2c4fbe64e42f
