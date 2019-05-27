@@ -15,15 +15,19 @@ SRC_URI="https://portland.freedesktop.org/download/${MY_P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="alpha amd64 arm arm64 hppa ia64 ~mips ppc ppc64 s390 ~sh sparc x86 ~amd64-fbsd"
-IUSE="doc"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd"
+IUSE="dbus doc gnome"
 
 RDEPEND="
 	dev-util/desktop-file-utils
 	dev-perl/File-MimeInfo
-	dev-perl/Net-DBus
-	dev-perl/X11-Protocol
-	sys-apps/dbus
+	dbus? (
+		sys-apps/dbus
+		gnome? (
+			dev-perl/Net-DBus
+			dev-perl/X11-Protocol
+		)
+	)
 	x11-misc/shared-mime-info
 	x11-apps/xprop
 	x11-apps/xset
