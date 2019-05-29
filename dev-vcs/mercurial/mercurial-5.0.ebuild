@@ -90,7 +90,7 @@ python_install_all() {
 		elisp-site-file-install "${FILESDIR}"/${SITEFILE}
 	fi
 
-	local RM_CONTRIB=( hgk hg-ssh bash_completion zsh_completion wix plan9 *.el )
+	local RM_CONTRIB=( hgk hg-ssh bash_completion zsh_completion plan9 *.el )
 
 	if use chg; then
 		dobin contrib/chg/chg
