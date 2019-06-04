@@ -1,2 +1,5 @@
 # Now provided by the kernel
 net-wireless/crda-9999
+
+# No
+sys-apps/less-999
