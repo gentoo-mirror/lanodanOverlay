@@ -5,18 +5,23 @@ EAPI=7
 
 inherit meson
 
+if [[ "${PV}" == "9999" ]]; then
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/Hjdskes/cage"
+else
+	SRC_URI="https://github.com/Hjdskes/cage/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="~amd64"
+fi
+
 DESCRIPTION="Wayland Kiosk"
 HOMEPAGE="https://hjdskes.nl/projects/cage"
-SRC_URI="https://github.com/Hjdskes/cage/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
 IUSE="xwayland"
 
 # dev-libs/wayland provides wayland-server, wayland-scanner
 DEPEND="
-	>=gui-libs/wlroots-0.5.0:=
-	!>gui-libs/wlroots-0.6
+	>=gui-libs/wlroots-0.6.0:=
 	xwayland? ( gui-libs/wlroots[X] )
 	>=dev-libs/wayland-protocols-1.14:=
 	x11-libs/pixman:=
