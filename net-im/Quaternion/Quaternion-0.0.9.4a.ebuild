@@ -20,6 +20,13 @@ DEPEND="
 	dev-qt/qtgui:5=
 	dev-qt/linguist-tools:5=
 	dev-qt/qtmultimedia:5=
-	dev-qt/qtdbus:5=
 	>=net-libs/libqmatrixclient-0.5.1:=
 "
+
+src_prepare() {
+	# I wouldn't be surprised that Qt on a Ubuntu PPA is broken
+	# https://github.com/quotient-im/Quaternion/pull/484/files#r256167611
+	sed -i 's/Multimedia DBus)/Multimedia)/' CMakeLists.txt || die "Failed removing hard-dep on QtDbus"
+
+	default
+}
