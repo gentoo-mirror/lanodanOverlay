@@ -12,6 +12,7 @@ SRC_URI="https://github.com/erlang/rebar3/archive/3.11.1.tar.gz -> ${P}.tar.gz"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
+RESTRICT="network-sandbox"
 
 DEPEND="dev-lang/erlang"
 RDEPEND="${DEPEND}"
