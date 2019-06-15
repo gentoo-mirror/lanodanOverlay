@@ -249,7 +249,6 @@ rebar3_src_install() {
 
 	local bin
 	local dest="$(get_erl_libs)/${P}"
-	local old_workdir="${PWD}"
 
 	insinto "${dest}"
 	pushd "_build/default/lib/${PN}" >/dev/null
