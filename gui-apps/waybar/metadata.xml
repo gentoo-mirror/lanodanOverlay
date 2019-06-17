@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>contact@hacktivis.me</email>
+		<name>Haelwenn (lanodan) Monnier</name>
+	</maintainer>
+	<use>
+		<flag name="mpd">Enable support for Music Player Daemon</flag>
+		<flag name="network">Enable support for network features</flag>
+		<flag name="tray">Enable support for tray</flag>
+	</use>
+</pkgmetadata>
