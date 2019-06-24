@@ -7,5 +7,6 @@
 	</maintainer>
 	<use>
 		<flag name="mta">Enable this to install as system-wide MTA</flag>
+		<flag name="mdoc">Use mdoc format for manpages</flag>
 	</use>
 </pkgmetadata>

@@ -13,7 +13,7 @@ SRC_URI="https://www.opensmtpd.org/archives/${P/_}.tar.gz"
 LICENSE="ISC BSD BSD-1 BSD-2 BSD-4"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="libressl pam mandoc +mta"
+IUSE="libressl pam mdoc +mta"
 
 DEPEND="
 	!libressl? ( dev-libs/openssl:0 )
@@ -21,7 +21,6 @@ DEPEND="
 	sys-libs/zlib
 	pam? ( virtual/pam )
 	elibc_musl? ( sys-libs/fts-standalone )
-	mandoc? ( app-text/mandoc )
 	sys-libs/db:=
 	dev-libs/libevent
 	app-misc/ca-certificates
@@ -68,7 +67,7 @@ src_configure() {
 		--with-path-socket=/run \
 		--with-path-CAfile=/etc/ssl/certs/ca-certificates.crt \
 		--sysconfdir=/etc/opensmtpd \
-		--with-mantype=doc \
+		--with-mantype=$(usex mdoc doc man) \
 		$(use_with pam auth-pam)
 }
 
