@@ -3,6 +3,8 @@
 # * generated automatically using pmaint *
 
 app-misc/binwalk:graph - Enable support for generating entropy graphs
+app-misc/binwalk:jffs2 - Enable support for JFFS2 filesystem
+app-misc/binwalk:squashfs - Enable support for squashfs filesystem
 dev-libs/libtermkey:demos - Install demos, which pulls in dev-libs/glib
 gnome-base/gvfs:afp - Enables support for accessing AFP (Apple Filing Protocol) network shares
 gnome-base/gvfs:archive - Enables support for accessing files in archives transparently via app-arch/libarchive
