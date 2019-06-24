@@ -18,6 +18,8 @@ DEPEND="
 	dev-qt/qtmultimedia:5=
 "
 
+S="${WORKDIR}/libQuotient-${PV}"
+
 src_configure() {
 	local mycmakeargs=(
 		-DCMAKE_INSTALL_INCLUDEDIR=include/libqmatrixclient
