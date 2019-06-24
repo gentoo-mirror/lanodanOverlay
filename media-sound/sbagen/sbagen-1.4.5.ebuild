@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tgz
 	vorbis? ( sounds? ( http://uazu.net/sbagen/sbagen-river-1.4.1.tgz ) )"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 RESTRICT="mirror"
 
 IUSE="mp3 vorbis sounds"

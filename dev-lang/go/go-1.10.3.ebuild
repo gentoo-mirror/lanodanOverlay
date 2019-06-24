@@ -39,7 +39,7 @@ case ${PV}  in
 	case ${PV} in
 	*_beta*|*_rc*) ;;
 	*)
-		KEYWORDS="~amd64 ~x86 ~arm"
+		KEYWORDS="~amd64 ~arm ~x86"
 		# The upstream tests fail under portage but pass if the build is
 		# run according to their documentation [1].
 		# I am restricting the tests on released versions until this is

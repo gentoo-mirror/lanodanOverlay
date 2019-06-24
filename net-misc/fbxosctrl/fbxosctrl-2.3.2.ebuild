@@ -11,7 +11,7 @@ DESCRIPTION="Shell tool to control some Freebox OS stuff: wifi, reboot..."
 HOMEPAGE="https://github.com/skimpax/fbxosctrl"
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 SRC_URI="
 	https://github.com/skimpax/fbxosctrl/archive/${PV}.tar.gz -> ${P}.tar.gz
 	https://raw.githubusercontent.com/wiki/skimpax/fbxosctrl/Mise-en-oeuvre-de-fbxosctrl.md -> fbxosctrl-lisezmoi.md

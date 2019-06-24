@@ -7,7 +7,7 @@ EAPI=4
 inherit eutils
 
 SRC_URI="http://files.backbone.ws/projects/labview/${P}.tar.bz2"
-KEYWORDS="-* x86 amd64"
+KEYWORDS="-* amd64 x86"
 
 DESCRIPTION="LabVIEW System Design Software"
 
