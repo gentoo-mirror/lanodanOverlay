@@ -20,7 +20,10 @@ DEPEND="
 	libressl? ( dev-libs/libressl )
 	sys-libs/zlib
 	pam? ( virtual/pam )
-	elibc_musl? ( sys-libs/fts-standalone )
+	elibc_musl? (
+		sys-libs/fts-standalone
+		sys-libs/queue-standalone
+	)
 	sys-libs/db:=
 	dev-libs/libevent
 	app-misc/ca-certificates
