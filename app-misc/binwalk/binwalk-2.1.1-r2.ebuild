@@ -1,4 +1,5 @@
 # Copyright 1999-2017 Gentoo Foundation
+# Copyright 2018-2019 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -19,7 +20,7 @@ HOMEPAGE="https://github.com/devttys0/binwalk"
 
 LICENSE="MIT"
 SLOT="0"
-IUSE="graph squashfs jffs2"
+IUSE="graph jffs2 squashfs"
 
 RDEPEND="
 	$(python_gen_cond_dep 'dev-python/backports-lzma[${PYTHON_USEDEP}]' python2_7)
