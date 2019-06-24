@@ -19,5 +19,7 @@
 	</upstream>
 	<use>
 		<flag name="graph">Enable support for generating entropy graphs</flag>
+		<flag name="jffs2">Enable support for JFFS2 filesystem</flag>
+		<flag name="squashfs">Enable support for squashfs filesystem</flag>
 	</use>
 </pkgmetadata>

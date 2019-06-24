@@ -7,7 +7,7 @@ inherit multilib-minimal
 
 DESCRIPTION="The GNU C Library compatibility layer for musl"
 HOMEPAGE="https://code.foxkit.us/adelie/gcompat"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 LICENSE="UoI-NCSA"
 IUSE="obstack"
 SRC_URI="https://distfiles.adelielinux.org/source/gcompat/${P}.tar.xz"
