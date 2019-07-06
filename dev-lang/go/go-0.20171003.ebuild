@@ -10,7 +10,7 @@ HOMEPAGE="https://golang.org/doc/install/source"
 SRC_URI="https://dl.google.com/go/go1.4-bootstrap-${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
-SLOT="0"
+SLOT="bootstrap"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
