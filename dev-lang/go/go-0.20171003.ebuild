@@ -5,9 +5,11 @@ EAPI=6
 
 inherit eutils toolchain-funcs
 
+MY_PV="${PV//0./}"
+
 DESCRIPTION="Boostrap Go from C (useful for musl libc)"
 HOMEPAGE="https://golang.org/doc/install/source"
-SRC_URI="https://dl.google.com/go/go1.4-bootstrap-${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://dl.google.com/go/go1.4-bootstrap-${MY_PV}.tar.gz"
 
 LICENSE="BSD"
 SLOT="bootstrap"
