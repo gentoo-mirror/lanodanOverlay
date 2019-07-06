@@ -5,19 +5,19 @@ EAPI=6
 
 inherit eutils toolchain-funcs
 
+MY_PV="${PV//0./}"
+
 DESCRIPTION="Boostrap Go from C (useful for musl libc)"
 HOMEPAGE="https://golang.org/doc/install/source"
-SRC_URI="https://dl.google.com/go/go1.4-bootstrap-${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://dl.google.com/go/go1.4-bootstrap-${MY_PV}.tar.gz"
 
 LICENSE="BSD"
-SLOT="0"
+SLOT="bootstrap"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
 RDEPEND=""
-
-RESTRICT="mirror"
 
 # The go tools should not cause the multilib-strict check to fail.
 QA_MULTILIB_PATHS="usr/lib/go1.4/pkg/tool/.*/.*"
