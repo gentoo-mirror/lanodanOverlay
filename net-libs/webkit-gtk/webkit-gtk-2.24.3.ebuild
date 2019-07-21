@@ -97,7 +97,6 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	${PYTHON_DEPS}
 	${RUBY_DEPS}
-	>=app-accessibility/at-spi2-core-2.5.3
 	dev-util/glib-utils
 	>=dev-util/gtk-doc-am-1.10
 	>=dev-util/gperf-3.0.1
