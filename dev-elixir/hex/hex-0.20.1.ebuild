@@ -7,7 +7,7 @@ inherit mix
 
 DESCRIPTION=""
 HOMEPAGE="https://github.com/hexpm/hex"
-LICENSE="Apache-2"
+LICENSE="Apache-2.0"
 SLOT="0"
 SRC_URI="https://github.com/hexpm/hex/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 KEYWORDS="~amd64"
