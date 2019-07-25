@@ -35,6 +35,9 @@ HEX_OFFLINE=1
 # @ECLASS-VARIABLE: MIX_ENV
 MIX_ENV="prod"
 
+# @ECLASS-VARIABLE: MIX_NO_DEPS
+MIX_NO_DEPS=1
+
 # @FUNCTION: emix
 # @USAGE: <targets>
 # @DESCRIPTION:
@@ -70,7 +73,7 @@ mix_src_prepare() {
 mix_src_compile() {
 	debug-print-function ${FUNCNAME} "${@}"
 
-	emix compile
+	emix compile --no-deps-check
 }
 
 # @FUNCTION: mix_src_install
