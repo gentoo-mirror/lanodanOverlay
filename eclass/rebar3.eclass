@@ -12,7 +12,7 @@
 # @BLURB: Build Erlang/OTP projects using dev-util/rebar3.
 # @DESCRIPTION:
 # An eclass providing functions to build Erlang/OTP projects using
-# dev-util/rebar3.
+# dev-util/rebar:3.
 #
 # rebar3 is a tool which tries to resolve dependencies itself which is by
 # cloning remote git repositories. Dependant projects are usually expected to
@@ -37,7 +37,7 @@ EXPORT_FUNCTIONS src_prepare src_compile src_test src_install
 RDEPEND="dev-lang/erlang"
 DEPEND="
 	${RDEPEND}
-	dev-util/rebar3
+	dev-util/rebar:3
 "
 
 # @ECLASS-VARIABLE: REBAR3_APP_SRC
@@ -187,9 +187,11 @@ rebar3_set_vsn() {
 
 	local version="${1:-${PV%_*}}"
 
-	sed -e "s/vsn, git/vsn, \"${version}\"/" \
-		-i "${S}/${REBAR3_APP_SRC}" \
-		|| die "failed to set version in src/${PN}.app.src"
+	if [ -f "${S}/${REBAR3_APP_SRC}" ]; then
+		sed -e "s/vsn, git/vsn, \"${version}\"/" \
+			-i "${S}/${REBAR3_APP_SRC}" \
+			|| die "failed to set version in ${S}/${REBAR3_APP_SRC}"
+	fi
 }
 
 # @FUNCTION: rebar3_src_prepare
