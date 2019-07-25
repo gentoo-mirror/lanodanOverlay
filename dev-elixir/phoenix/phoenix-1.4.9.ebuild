@@ -20,7 +20,7 @@ DEPEND="
 		dev-elixir/plug:1.8
 		dev-elixir/plug:1.9
 	)
-	dev-elixir/telemetry:0.4
+	>=dev-erlang/telemetry-0.4
 	dev-elixir/phoenix_pubsub:1.1
 	json? ( dev-elixir/jason:1.0 )
 	doc? (
