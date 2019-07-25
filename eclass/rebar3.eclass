@@ -34,9 +34,14 @@ esac
 
 EXPORT_FUNCTIONS src_prepare src_compile src_test src_install
 
-RDEPEND="dev-lang/erlang"
-DEPEND="
-	${RDEPEND}
+# @ECLASS-VARIABLE: REBAR3_DEPS
+# @DESCRIPTION:
+# This is an eclass-generated dependency string for required dependencies
+#
+# Not included by default in DEPEND to avoid a circular dependency on
+# emerging dev-util/rebar:3
+REBAR3_DEPS="
+	dev-lang/erlang
 	dev-util/rebar:3
 "
 
