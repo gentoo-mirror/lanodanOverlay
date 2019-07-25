@@ -8,7 +8,7 @@ inherit mix
 DESCRIPTION="JSON Object Signing and Encryption (JOSE) for Erlang and Elixir"
 HOMEPAGE="https://github.com/potatosalad/erlang-jose"
 LICENSE="MIT"
-SLOT="0"
+SLOT="$(ver_cut 1-2)"
 SRC_URI="https://github.com/potatosalad/erlang-jose/archive/${PV}.tar.gz -> ${P}.tar.gz"
 KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 IUSE="test doc"
