@@ -33,5 +33,5 @@ src_install() {
 	dobin rebar3
 	doman manpages/rebar3.1
 	dodoc rebar.config.sample
-	dobashcomp priv/shell-completion/bash/${PN}
+	dobashcomp priv/shell-completion/bash/rebar3
 }
