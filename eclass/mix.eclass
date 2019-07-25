@@ -29,6 +29,9 @@ EXPORT_FUNCTIONS src_prepare src_compile src_install
 RDEPEND="dev-lang/elixir"
 DEPEND="${RDEPEND}"
 
+# @ECLASS-VARIABLE: HEX_OFFLINE
+HEX_OFFLINE=1
+
 # @ECLASS-VARIABLE: MIX_ENV
 MIX_ENV="prod"
 
