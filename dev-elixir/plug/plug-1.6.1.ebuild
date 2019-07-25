@@ -16,6 +16,7 @@ KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 IUSE="telemetry doc"
 
 DEPEND="
+	dev-elixir/hex
 	>=dev-elixir/mime-1.0
 	>=dev-elixir/plug_crypto-1.0
 	telemetry? ( >=dev-elixir/telemetry-0.4 )
