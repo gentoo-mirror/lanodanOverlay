@@ -85,7 +85,7 @@ mix_src_install() {
 	insinto "/usr/$(get_libdir)/erlang/lib/${P}"
 	pushd "_build/${MIX_BUILD_NAME}/lib/${PN}" >/dev/null
 	for reldir in src ebin priv include; do
-		[ -d "$reldir" ] && newins -r "$(realpath ${reldir})" "$reldir"
+		[ -d "$reldir" ] && doins -r "$(realpath ${reldir})"
 	done
 	popd >/dev/null
 }
