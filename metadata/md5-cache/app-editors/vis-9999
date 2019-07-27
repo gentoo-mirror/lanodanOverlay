@@ -5,7 +5,8 @@ EAPI=6
 HOMEPAGE=https://github.com/martanne/vis
 IUSE=+ncurses lua lpeg selinux test tre
 LICENSE=ISC
+PROPERTIES=live
 RDEPEND=dev-libs/libtermkey lua? ( >=dev-lang/lua-5.2:= ) tre? ( dev-libs/tre:= ) ncurses? ( sys-libs/ncurses:= ) lua? ( lpeg? ( >=dev-lua/lpeg-0.12 ) ) app-eselect/eselect-vi
 SLOT=0
-_eclasses_=git-r3	0d4635eeb5a96cd5315597a47eba25c9
+_eclasses_=git-r3	562b380fc59ae6a8622171d0acb777d1
 _md5_=806825a072795950ef43d14518e26c06

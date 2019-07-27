@@ -4,7 +4,8 @@ DESCRIPTION=Make pointer-driven interfaces easier and faster for users to operat
 EAPI=6
 HOMEPAGE=https://github.com/jordansissel/keynav
 LICENSE=BSD
+PROPERTIES=live
 RDEPEND=dev-libs/cairo:=[X] dev-libs/glib:= x11-libs/libXinerama:= x11-misc/xdotool
 SLOT=0
-_eclasses_=git-r3	0d4635eeb5a96cd5315597a47eba25c9
+_eclasses_=git-r3	562b380fc59ae6a8622171d0acb777d1
 _md5_=513ef42dfbe5d6d1b715bae5a06ebd22
