@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge.jp/julius/60273/${P}.tar.gz"
 
 LICENSE="julius"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="+alsa oss portaudio pulseaudio sndfile"
 REQUIRED_USE="^^ ( alsa oss portaudio pulseaudio )"
 
