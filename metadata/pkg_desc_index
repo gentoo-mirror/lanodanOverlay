@@ -5,6 +5,7 @@ app-misc/kanatest 0.4.8: Visual flashcard tool for memorizing the Japanese Hirag
 dev-libs/libtermkey 0.21.1-r1: Library for easy processing of keyboard entry from terminal-based programs
 dev-python/pycrypto 9999: Fake ebuild to mask pycrypto in a overlay
 dev-util/bam 0.5.1: Fast and flexible Lua-based build system
+dev-util/gdbus-codegen 2.61.1: GDBus code and documentation generator
 games-engines/love 0.7.2-r1 0.8.0: A framework for 2D games in Lua
 gnome-base/gvfs 1.32.2: Virtual filesystem implementation for gio
 media-libs/libsidplay 2.1.1-r5: C64 SID player library
