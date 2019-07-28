@@ -12,7 +12,7 @@ SRC_URI="http://luarocks.org/releases/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="curl openssl libressl"
 
 DEPEND="

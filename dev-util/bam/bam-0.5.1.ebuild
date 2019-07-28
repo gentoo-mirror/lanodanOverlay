@@ -12,7 +12,7 @@ SRC_URI="https://github.com/matricks/${PN}/${P}.tar.gz"
 
 LICENSE="ZLIB"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="doc test"
 
 RDEPEND="dev-lang/lua:="
