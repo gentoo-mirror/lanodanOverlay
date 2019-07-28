@@ -2,30 +2,3 @@
 # Please add your descriptions to your package's metadata.xml ONLY.
 # * generated automatically using pmaint *
 
-app-misc/binwalk:graph - Enable support for generating entropy graphs
-app-misc/binwalk:jffs2 - Enable support for JFFS2 filesystem
-app-misc/binwalk:squashfs - Enable support for squashfs filesystem
-dev-libs/libtermkey:demos - Install demos, which pulls in dev-libs/glib
-gnome-base/gvfs:afp - Enables support for accessing AFP (Apple Filing Protocol) network shares
-gnome-base/gvfs:archive - Enables support for accessing files in archives transparently via app-arch/libarchive
-gnome-base/gvfs:bluray - Enable playback of Blu-ray filesystems using media-libs/libbluray
-gnome-base/gvfs:elogind - Use sys-auth/elogind for session tracking.
-gnome-base/gvfs:fuse - Enables fuse mount points in $HOME/.gvfs for legacy application access
-gnome-base/gvfs:gnome-online-accounts - Enable configuration panel for net-libs/gnome-online-accounts accounts
-gnome-base/gvfs:google - Enables support for accessing Google accounts via dev-libs/libgdata
-gnome-base/gvfs:http - Enable the HTTP/DAV backend using net-libs/libsoup
-gnome-base/gvfs:nfs - Enable NFS client support via net-fs/libnfs.
-gnome-base/gvfs:sftp - Enable support for accessing SFTP(SSH FTP) remotes
-gnome-base/gvfs:udev - Enable udev base replacement code for cdda feature
-media-libs/x264:10bit - Set output bit depth to 10, this may not be compatible with all decoders
-media-libs/x264:interlaced - enable interlaced encoding support, this can decrease encoding speed by up to 2%
-media-libs/x264:opencl - Add support for OpenCL.
-media-libs/x264:pic - disable optimized assembly code that is not PIC friendly
-net-dns/ldns-utils:dane - Enable DNS-based Authentication of Named Entities (DANE) support
-net-dns/ldns-utils:ecdsa - Enable ECDSA support
-net-dns/ldns-utils:gost - Enable GOST support
-net-misc/openntpd:libressl - Enable HTTPS TLS time constraint support using dev-libs/libressl
-sys-apps/openrc:bash - enable the use of bash in service scripts (experimental)
-sys-apps/openrc:init - install as a replacement of sys-apps/sysvinit
-sys-apps/openrc:netifrc - enable Gentoo's network stack (net.* scripts)
-sys-apps/openrc:newnet - enable the new network stack (experimental)
