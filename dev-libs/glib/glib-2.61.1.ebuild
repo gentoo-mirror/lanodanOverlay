@@ -108,13 +108,6 @@ multilib_src_configure() {
 		export ac_cv_func_posix_get{pwuid,grgid}_r=yes
 	fi
 
-	if multilib_is_native_abi; then
-		local d
-		for d in glib gio gobject; do
-			ln -s "${S}"/docs/reference/${d}/html docs/reference/${d}/html || die
-		done
-	fi
-
 	local emesonargs=(
 		$(usex debug "-Dbuildtype='debug'" "")
 		-Ddefault_library=$(usex static-libs both shared)
