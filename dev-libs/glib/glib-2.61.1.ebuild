@@ -1,40 +1,33 @@
 # Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
-PYTHON_COMPAT=( python{2_7,3_5,3_6,3_7} )
-GNOME2_LA_PUNT="yes"
+EAPI=7
+PYTHON_COMPAT=( python{3_5,3_6,3_7} )
 
-inherit bash-completion-r1 epunt-cxx flag-o-matic gnome-meson libtool linux-info \
-	multilib multilib-minimal pax-utils python-any-r1 toolchain-funcs virtualx
+inherit bash-completion-r1 flag-o-matic gnome.org gnome2-utils linux-info meson multilib multilib-minimal python-any-r1 toolchain-funcs xdg
 
 DESCRIPTION="The GLib library of C routines"
 HOMEPAGE="https://www.gtk.org/"
 LICENSE="LGPL-2.1+"
 SLOT="2"
 IUSE="dbus debug fam gtk-doc kernel_linux +mime selinux static-libs systemtap test utils xattr"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux"
 
-# Added util-linux multilib dependency to have libmount support (which
-# is always turned on on linux systems, unless explicitly disabled, but
-# this ebuild does not do that anyway) (bug #599586)
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux"
 
 RDEPEND="
-	!<dev-util/gdbus-codegen-${PV}
+	${PYTHON_DEPS}
 	>=dev-libs/libpcre-8.31:3[${MULTILIB_USEDEP},static-libs?]
-	>=virtual/libiconv-0-r1[${MULTILIB_USEDEP}]
-	>=virtual/libffi-3.0.13-r1:=[${MULTILIB_USEDEP}]
-	>=virtual/libintl-0-r2[${MULTILIB_USEDEP}]
+	!<dev-util/gdbus-codegen-${PV}
+	>=dev-util/gdbus-codegen-${PV}
 	>=sys-libs/zlib-1.2.8-r1[${MULTILIB_USEDEP}]
+	virtual/libelf:0=
+	>=virtual/libffi-3.0.13-r1:=[${MULTILIB_USEDEP}]
+	>=virtual/libiconv-0-r1[${MULTILIB_USEDEP}]
+	>=virtual/libintl-0-r2[${MULTILIB_USEDEP}]
 	kernel_linux? ( >=sys-apps/util-linux-2.23[${MULTILIB_USEDEP}] )
 	selinux? ( >=sys-libs/libselinux-2.2.2-r5[${MULTILIB_USEDEP}] )
 	xattr? ( >=sys-apps/attr-2.4.47-r1[${MULTILIB_USEDEP}] )
 	fam? ( >=virtual/fam-0-r1[${MULTILIB_USEDEP}] )
-	utils? (
-		${PYTHON_DEPS}
-		>=dev-util/gdbus-codegen-${PV}
-		virtual/libelf:0=
-	)
 "
 DEPEND="${RDEPEND}
 	app-text/docbook-xml-dtd:4.1.2
@@ -44,19 +37,15 @@ DEPEND="${RDEPEND}
 	gtk-doc? ( >=dev-util/gtk-doc-1.20 )
 	systemtap? ( >=dev-util/systemtap-1.3 )
 	${PYTHON_DEPS}
-	test? (
-		sys-devel/gdb
-		${PYTHON_DEPS}
-		>=dev-util/gdbus-codegen-${PV}
-		>=sys-apps/dbus-1.2.14 )
+	test? ( >=sys-apps/dbus-1.2.14 )
+	virtual/pkgconfig[${MULTILIB_USEDEP}]
 "
-PDEPEND="!<gnome-base/gvfs-1.6.4-r990
+PDEPEND="
 	dbus? ( gnome-base/dconf )
 	mime? ( x11-misc/shared-mime-info )
 "
 # shared-mime-info needed for gio/xdgmime, bug #409481
 # dconf is needed to be able to save settings, bug #498436
-# Earlier versions of gvfs do not work with glib
 
 MULTILIB_CHOST_TOOLS=(
 	/usr/bin/gio-querymodules$(get_exeext)
@@ -75,20 +64,34 @@ pkg_setup() {
 }
 
 src_prepare() {
+	if ! use test; then
+		# Don't build tests, also prevents extra deps, bug #512022
+		sed -i -e '/subdir.*tests/d' {.,gio,glib}/meson.build || die
+	fi
+
+	# Don't build fuzzing binaries - not used
+	sed -i -e '/subdir.*fuzzing/d' meson.build || die
+
 	# gdbus-codegen is a separate package
-	eapply "${FILESDIR}"/${PN}-2.61.1-external-codegen.patch
+	sed -i -e 's/install.*true/install : false/g' gio/gdbus-2.0/codegen/meson.build || die
+	# Older than meson-0.50 doesn't know about install kwarg for configure_file; for that we need to remove the install_dir kwarg.
+	# Upstream will remove the install kwarg in a future version to require only meson-0.49.2 or newer, at which point the
+	# install_dir removal only should be kept.
+	sed -i -e '/install_dir/d' gio/gdbus-2.0/codegen/meson.build || die
 
-	# Tarball doesn't come with gtk-doc.make and we can't unconditionally depend on dev-util/gtk-doc due
-	# to circular deps during bootstramp. If actually not building gtk-doc, an almost empty file will do
-	# fine as well - this is also what upstream autogen.sh does if gtkdocize is not found. If gtk-doc is
-	# installed, eautoreconf will call gtkdocize, which overwrites the empty gtk-doc.make with a full copy.
-	cat > gtk-doc.make << EOF
-EXTRA_DIST =
-CLEANFILES =
-EOF
+	# Same kind of meson-0.50 issue with some installed-tests files; will likely be fixed upstream soon
+	sed -i -e '/install_dir/d' gio/tests/meson.build || die
 
-	gnome-meson_src_prepare
-	epunt_cxx
+	cat > "${T}/glib-test-ld-wrapper" <<-EOF
+		#!/usr/bin/env sh
+		exec \${LD:-ld} "\$@"
+	EOF
+	chmod a+x "${T}/glib-test-ld-wrapper" || die
+	sed -i -e "s|'ld'|'${T}/glib-test-ld-wrapper'|g" gio/tests/meson.build || die
+
+	xdg_src_prepare
+	gnome2_environment_reset
+	# TODO: python_name sedding for correct python shebang? Might be relevant mainly for glib-utils only
 }
 
 multilib_src_configure() {
@@ -105,30 +108,36 @@ multilib_src_configure() {
 		export ac_cv_func_posix_get{pwuid,grgid}_r=yes
 	fi
 
-	local myconf
-
-	use static-libs && myconf="-Ddefault_library='static'"
-	use debug && myconf="$myconf -Dbuildtype='debug'"
-
-	gnome-meson_src_configure \
-		${myconf} \
-		-Denable-libmount=$(usex kernel_linux yes no) \
-		$(meson_use systemtap enable-dtrace) \
-		$(meson_use systemtap enable-systemtap) \
-		-Dwith-pcre=system \
-		-Dwith-docs=no \
-		-Dwith-man=yes
-
 	if multilib_is_native_abi; then
 		local d
 		for d in glib gio gobject; do
 			ln -s "${S}"/docs/reference/${d}/html docs/reference/${d}/html || die
 		done
 	fi
+
+	local emesonargs=(
+		$(usex debug "-Dbuildtype='debug'" "")
+		-Ddefault_library=$(usex static-libs both shared)
+		$(meson_feature selinux)
+		$(meson_use xattr)
+		-Dlibmount=true # only used if host_system == 'linux'
+		-Dinternal_pcre=false
+		-Dman=true
+		$(meson_use systemtap dtrace)
+		$(meson_use systemtap)
+		-Dgtk_doc=$(multilib_native_usex gtk-doc true false)
+		$(meson_use fam)
+		-Dinstalled_tests=false
+		-Dnls=enabled
+	)
+
+
+	meson_src_configure
+
 }
 
 multilib_src_compile() {
-	gnome-meson_src_compile
+	meson_src_compile
 }
 
 multilib_src_test() {
@@ -143,19 +152,12 @@ multilib_src_test() {
 	mkdir "$G_DBUS_COOKIE_SHA1_KEYRING_DIR"
 	chmod 0700 "$G_DBUS_COOKIE_SHA1_KEYRING_DIR"
 
-	# Hardened: gdb needs this, bug #338891
-	if host-is-pax ; then
-		pax-mark -mr "${BUILD_DIR}"/tests/.libs/assert-msg-test \
-			|| die "Hardened adjustment failed"
-	fi
-
-	# Need X for dbus-launch session X11 initialization
-	virtx meson_src_test
+	meson_src_test --timeout-multiplier 2 --no-suite flaky
 }
 
 multilib_src_install() {
 	chmod +x glib-gettextize || die
-	gnome-meson_src_install completiondir="$(get_bashcompdir)"
+	meson_src_install completiondir="$(get_bashcompdir)"
 	keepdir /usr/$(get_libdir)/gio/modules
 }
 
@@ -174,28 +176,39 @@ multilib_src_install_all() {
 
 	# Don't install gdb python macros, bug 291328
 	rm -rf "${ED}/usr/share/gdb/" "${ED}/usr/share/glib-2.0/gdb/"
+
+	# These are installed by dev-util/glib-utils
+	# TODO: With patching we might be able to get rid of the python-any deps and removals, and test depend on glib-utils instead; revisit now with meson
+	rm "${ED}/usr/bin/glib-genmarshal" || die
+	rm "${ED}/usr/share/man/man1/glib-genmarshal.1" || die
+	rm "${ED}/usr/bin/glib-mkenums" || die
+	rm "${ED}/usr/share/man/man1/glib-mkenums.1" || die
+	rm "${ED}/usr/bin/gtester-report" || die
+	rm "${ED}/usr/share/man/man1/gtester-report.1" || die
+	# gdbus-codegen manpage installed by dev-util/gdbus-codegen
+	rm "${ED}/usr/share/man/man1/gdbus-codegen.1" || die
 }
 
 pkg_preinst() {
-	gnome-meson_pkg_preinst
+	xdg_pkg_preinst
 
 	# Make gschemas.compiled belong to glib alone
-	local cache="usr/share/glib-2.0/schemas/gschemas.compiled"
+	local cache="/usr/share/glib-2.0/schemas/gschemas.compiled"
 
-	if [[ -e ${EROOT}${cache} ]]; then
-		cp "${EROOT}"${cache} "${ED}"/${cache} || die
+	if [[ -e "${EROOT}${cache}" ]]; then
+		cp "${EROOT}${cache}" "${ED}${cache}" || die
 	else
-		touch "${ED}"/${cache} || die
+		touch "${ED}${cache}" || die
 	fi
 
 	multilib_pkg_preinst() {
 		# Make giomodule.cache belong to glib alone
-		local cache="usr/$(get_libdir)/gio/modules/giomodule.cache"
+		local cache="/usr/$(get_libdir)/gio/modules/giomodule.cache"
 
-		if [[ -e ${EROOT}${cache} ]]; then
-			cp "${EROOT}"${cache} "${ED}"/${cache} || die
+		if [[ -e "${EROOT}${cache}" ]]; then
+			cp "${EROOT}${cache}" "${ED}${cache}" || die
 		else
-			touch "${ED}"/${cache} || die
+			touch "${ED}${cache}" || die
 		fi
 	}
 
@@ -207,10 +220,11 @@ pkg_preinst() {
 }
 
 pkg_postinst() {
-	# force (re)generation of gschemas.compiled
-	GNOME2_ECLASS_GLIB_SCHEMAS="force"
-
-	gnome-meson_pkg_postinst
+	xdg_pkg_postinst
+	# glib installs no schemas itself, but we force update for fresh install in case
+	# something has dropped in a schemas file without direct glib dep; and for upgrades
+	# in case the compiled schema format could have changed
+	gnome2_schemas_update
 
 	multilib_pkg_postinst() {
 		gnome2_giomodule_cache_update \
@@ -227,13 +241,14 @@ pkg_postinst() {
 }
 
 pkg_postrm() {
-	gnome-meson_pkg_postrm
+	xdg_pkg_postrm
+	gnome2_schemas_update
 
 	if [[ -z ${REPLACED_BY_VERSION} ]]; then
 		multilib_pkg_postrm() {
-			rm -f "${EROOT}"usr/$(get_libdir)/gio/modules/giomodule.cache
+			rm -f "${EROOT}"/usr/$(get_libdir)/gio/modules/giomodule.cache
 		}
 		multilib_foreach_abi multilib_pkg_postrm
-		rm -f "${EROOT}"usr/share/glib-2.0/schemas/gschemas.compiled
+		rm -f "${EROOT}"/usr/share/glib-2.0/schemas/gschemas.compiled
 	fi
 }
