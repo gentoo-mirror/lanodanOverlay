@@ -1,0 +1,14 @@
+BDEPEND=>=dev-lang/go-1.12.0 >=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=setup unpack
+DEPEND=app-text/scdoc
+DESCRIPTION=Asynchronous email client for your terminal, written in Go.
+EAPI=7
+HOMEPAGE=https://aerc-mail.org
+IUSE=html
+LICENSE=MIT
+PROPERTIES=live
+RDEPEND=app-text/scdoc || ( dev-libs/libvterm dev-libs/libvterm-neovim ) virtual/awk html? ( net-proxy/dante || ( virtual/w3m www-client/lynx www-client/links ) )
+RESTRICT=network-sandbox
+SLOT=0
+_eclasses_=git-r3	562b380fc59ae6a8622171d0acb777d1
+_md5_=97b5e6e9cbc243b979cb779c2878c217
