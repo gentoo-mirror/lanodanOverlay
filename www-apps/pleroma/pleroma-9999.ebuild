@@ -22,7 +22,7 @@ IUSE=""
 DEPEND="
 	dev-lang/erlang:=
 	>=dev-lang/elixir-1.7:=
-	dev-elixir/auto_linker
+	dev-elixir/linkify
 	>=dev-elixir/cachex-3.0.2
 	>=dev-elixir/calendar-0.17.4
 	>=dev-elixir/comeonin-4.1.1
