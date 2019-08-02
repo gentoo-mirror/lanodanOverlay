@@ -16,6 +16,7 @@ DEPEND="
 	dev-qt/qtwidgets:5=
 	dev-qt/qtnetwork:5=
 	dev-qt/qtquickcontrols:5=
+	dev-qt/qtquickcontrols2:5=
 	dev-qt/qtscript:5=
 	dev-qt/qtgui:5=
 	dev-qt/linguist-tools:5=
