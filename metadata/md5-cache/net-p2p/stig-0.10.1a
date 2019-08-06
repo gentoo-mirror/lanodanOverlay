@@ -1,0 +1,15 @@
+BDEPEND=python_targets_python3_5? ( dev-lang/python:3.5 ) python_targets_python3_6? ( dev-lang/python:3.6 ) python_targets_python3_7? ( dev-lang/python:3.7 ) >=dev-lang/python-exec-2:=[python_targets_python3_5(-)?,python_targets_python3_6(-)?,python_targets_python3_7(-)?,-python_single_target_python3_5(-),-python_single_target_python3_6(-),-python_single_target_python3_7(-)]
+DEFINED_PHASES=compile configure install prepare test
+DEPEND=>=dev-python/urwid-2.0 >=dev-python/urwidtrees-1.0.2 dev-python/aiohttp dev-python/async_timeout dev-python/pyxdg dev-python/blinker dev-python/natsort geoip? ( dev-python/maxminddb ) dev-python/setproctitle test? ( dev-python/asynctest )
+DESCRIPTION=TUI and CLI for the BitTorrent client Transmission
+EAPI=7
+HOMEPAGE=https://github.com/rndusr/stig
+IUSE=geoip test python_targets_python3_5 python_targets_python3_6 python_targets_python3_7
+KEYWORDS=~amd64
+LICENSE=GPL-3
+RDEPEND=>=dev-python/urwid-2.0 >=dev-python/urwidtrees-1.0.2 dev-python/aiohttp dev-python/async_timeout dev-python/pyxdg dev-python/blinker dev-python/natsort geoip? ( dev-python/maxminddb ) dev-python/setproctitle python_targets_python3_5? ( dev-lang/python:3.5 ) python_targets_python3_6? ( dev-lang/python:3.6 ) python_targets_python3_7? ( dev-lang/python:3.7 ) >=dev-lang/python-exec-2:=[python_targets_python3_5(-)?,python_targets_python3_6(-)?,python_targets_python3_7(-)?,-python_single_target_python3_5(-),-python_single_target_python3_6(-),-python_single_target_python3_7(-)]
+REQUIRED_USE=|| ( python_targets_python3_5 python_targets_python3_6 python_targets_python3_7 )
+SLOT=0
+SRC_URI=https://github.com/rndusr/stig/archive/v0.10.1a.tar.gz -> stig-0.10.1a.tar.gz
+_eclasses_=distutils-r1	9838160d624a44b2d56d1266a69fd473	multibuild	40fe59465edacd730c644ec2bc197809	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	python-r1	ce1cd23cfdc1848e8e32743efe34f299	python-utils-r1	08e17157a6807add7db1f8d01e7e391f	toolchain-funcs	a3a237ef6c0c58546bf23b2c382f9e56
+_md5_=40ee8e9ad3960635412c2655411dd78f
