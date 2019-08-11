@@ -2,3 +2,153 @@
 # Please add your descriptions to your package's metadata.xml ONLY.
 # * generated automatically using pmaint *
 
+app-crypt/acme-sh:standalone - runtime-depend on net-misc/socat used in Standalone mode
+app-editors/vis:lpeg - runtime for syntax highlight using dev-lua/lpeg
+app-editors/vis:tre - more memory efficient regex search using dev-libs/tre
+app-emulation/wine-proton:capi - Enable ISDN support via CAPI
+app-emulation/wine-proton:custom-cflags - Bypass strip-flags; use at your own peril
+app-emulation/wine-proton:dos - Pull in games-emulation/dosbox to run DOS applications
+app-emulation/wine-proton:gecko - Add support for the Gecko engine when using iexplore
+app-emulation/wine-proton:gssapi - Use GSSAPI (Kerberos SSP support)
+app-emulation/wine-proton:gstreamer - Use media-libs/gstreamer to provide DirectShow functionality;
+app-emulation/wine-proton:mono - Add support for .NET using Wine's Mono add-on
+app-emulation/wine-proton:netapi - Use libnetapi from net-fs/samba to support Windows networks in netapi32.dll
+app-emulation/wine-proton:opencl - Enable OpenCL support
+app-emulation/wine-proton:osmesa - Add support for OpenGL in bitmaps using libOSMesa
+app-emulation/wine-proton:pcap - Support packet capture software (e.g. wireshark)
+app-emulation/wine-proton:perl - Install helpers written in perl (winedump/winemaker)
+app-emulation/wine-proton:prelink - Run prelink on DLLs during build; For versions before wine-1.7.55 or hardened, do not disable if you do not know what this means as it can break things at runtime
+app-emulation/wine-proton:realtime - Pull in sys-auth/rtkit for low-latency pulseaudio support
+app-emulation/wine-proton:run-exes - Use Wine to open and run .EXE and .MSI files
+app-emulation/wine-proton:samba - Add support for NTLM auth. see http://wiki.winehq.org/NtlmAuthSetupGuide and http://wiki.winehq.org/NtlmSigningAndSealing
+app-emulation/wine-proton:sdl - Add support for gamepad detection using SDL
+app-emulation/wine-proton:udev - Use virtual/libudev to provide plug and play support
+app-emulation/wine-proton:vkd3d - Use app-emulation/vkd3d to provide Direct3D 12 support
+app-emulation/wine-proton:vulkan - Enable Vulkan drivers
+app-misc/anki:recording - Enable support for audio recording
+app-misc/anki:sound - Enable support for adding sound to cards
+app-misc/binwalk:graph - Enable support for generating entropy graphs
+app-misc/binwalk:jffs2 - Enable support for JFFS2 filesystem
+app-misc/binwalk:squashfs - Enable support for squashfs filesystem
+app-shells/mksh:lksh - Builds the POSIX-Compliant arithmetics (host’s long) variant
+app-text/evince:dvi - Enable the built-in DVI viewer
+app-text/evince:nautilus - Enable property page extension in gnome-base/nautilus
+app-text/evince:postscript - Enable support for PostScript and Adobe Illustrator documents with app-text/libspectre
+app-text/evince:spell - Enable inline spell check for annotations via app-text/gspell
+app-text/evince:t1lib - Enable the Type-1 fonts for the built-in DVI viewer (media-libs/t1lib)
+app-text/evince:xps - Enable XPS viewer using app-text/libgxps
+dev-libs/glib:dbus - Enable dependencies required by glib libraries using dbus service to manage settings saving
+dev-libs/glib:mime - Pull in shared MIME database that many glib-based applications require at runtime to detect or open files. Warning: do not disable this flag unless installing on a headless server.
+dev-libs/glib:systemtap - Build support for profiling and tracing using dev-util/systemtap
+dev-libs/glib:utils - Install gtester-report utility to generate test report files for your software; build gresource utility with ELF support.
+dev-libs/libtermkey:demos - Install demos, which pulls in dev-libs/glib
+dev-lua/luarocks:openssl - 
+dev-vcs/mercurial:bugzilla - Support bugzilla integration.
+dev-vcs/mercurial:chg - Support Mercurial command server client
+dev-vcs/mercurial:gpg - Support signing with GnuPG.
+dev-vcs/mercurial:tk - Install dev-lang/tk for hgk script.
+games-action/supertuxkart:fribidi - Support for right-to-left languages
+games-action/supertuxkart:recorder - Enable recording with media-libs/libopenglrecorder
+games-action/supertuxkart:wiimote - Support for wiimote input devices
+games-arcade/oshu:osu-skin - Include more complete osu-skin (other is minimal)
+games-arcade/stepmania:crash-handler - Enable the custom crash handler
+games-arcade/stepmania:default-songs - Install the songs that are distributed with the game by default
+games-arcade/stepmania:gles2 - Enable support for OpenGL ES 2
+games-arcade/stepmania:networking - Enable network-related functionality
+games-arcade/stepmania:parport - Enable support for lights connected to the parallel port
+games-arcade/stepmania:system-ffmpeg - Do not use the bundled version of media-video/ffmpeg
+games-arcade/stepmania:wav - Enable support for WAV audio files
+games-arcade/taisei:libzip - Enable loading of game data from ZIP packages via dev-libs/libzip
+games-board/cockatrice:client - Build with client support
+games-board/cockatrice:oracle - Build with oracle support
+games-board/cockatrice:server - Build with server support
+games-engines/openmw:devtools - Install development tools like bsatool, esmtool and opencs.
+games-misc/ponysay:fish-completion - Enable fish completion support
+games-misc/ponysay:non-free - Install non-free ponies (i.e. from the MLP franchise)
+games-visualnovel/doki-doki-litterature-club:system-renpy - Use games-engines/renpy instead of the bundled one (experimental)
+gnome-base/gvfs:afp - Enables support for accessing AFP (Apple Filing Protocol) network shares
+gnome-base/gvfs:archive - Enables support for accessing files in archives transparently via app-arch/libarchive
+gnome-base/gvfs:bluray - Enable playback of Blu-ray filesystems using media-libs/libbluray
+gnome-base/gvfs:elogind - Use sys-auth/elogind for session tracking.
+gnome-base/gvfs:fuse - Enables fuse mount points in $HOME/.gvfs for legacy application access
+gnome-base/gvfs:gnome-online-accounts - Enable configuration panel for net-libs/gnome-online-accounts accounts
+gnome-base/gvfs:google - Enables support for accessing Google accounts via dev-libs/libgdata
+gnome-base/gvfs:http - Enable the HTTP/DAV backend using net-libs/libsoup
+gnome-base/gvfs:nfs - Enable NFS client support via net-fs/libnfs.
+gnome-base/gvfs:sftp - Enable support for accessing SFTP(SSH FTP) remotes
+gnome-base/gvfs:udev - Enable udev base replacement code for cdda feature
+gnustep-base/gnustep-make:libobjc2 - Enables use of the GNUstep Objective-C runtime (gnustep-base/libobjc2) with non-fragile ABI and sys-devel/clang compiler
+gnustep-base/gnustep-make:native-exceptions - Enables use of the native Objective-C exception support (@try/@catch/@finally) built-in objective-c exceptions with compilers that support it
+gui-apps/waybar:mpd - Enable support for Music Player Daemon
+gui-apps/waybar:network - Enable support for network features
+gui-apps/waybar:tray - Enable support for tray
+gui-wm/cage:xwayland - Enable ability support native X11 applications
+mail-mta/opensmtpd:mdoc - Use mdoc format for manpages
+mail-mta/opensmtpd:mta - Enable this to install as system-wide MTA
+media-fonts/forkawesome:otf - Install the OpenType version of the font
+media-fonts/forkawesome:ttf - Install the TrueType version of the font
+media-libs/vips:fits - Enable support for the FITS image format through sci-libs/cfitsio
+media-libs/vips:matio - Enable support for reading images from Matlab files through sci-libs/matio
+media-libs/vips:openslide - Enable support for reading images from OpenSlide files through media-libs/openslide(currently conflicts with jpeg-turbo)
+media-libs/x264:10bit - Set output bit depth to 10, this may not be compatible with all decoders
+media-libs/x264:interlaced - enable interlaced encoding support, this can decrease encoding speed by up to 2%
+media-libs/x264:opencl - Add support for OpenCL.
+media-libs/x264:pic - disable optimized assembly code that is not PIC friendly
+media-sound/sbagen:sounds - Downloads extra sounds (in Vorbis)
+net-dns/getdns:stubby - Include stubby in getdns
+net-dns/ldns-utils:dane - Enable DNS-based Authentication of Named Entities (DANE) support
+net-dns/ldns-utils:ecdsa - Enable ECDSA support
+net-dns/ldns-utils:gost - Enable GOST support
+net-im/bitlbee:libevent - Use libevent for event handling
+net-im/bitlbee:nss - Use NSS for SSL support in MSN and Jabber
+net-im/bitlbee:otr - Enable support for encrypted conversations
+net-im/bitlbee:plugins - Enable support for plugins
+net-im/bitlbee:purple - Use libpurple instead of the built-in IM protocol support
+net-im/bitlbee:twitter - Enable Twitter protocol support
+net-irc/inspircd:geoip - Add geoip support for country and city lookup based on IPs
+net-irc/inspircd:gnutls - Enable TLS support via net-libs/gnutls
+net-irc/inspircd:ipv6 - Enable support for IP version 6
+net-irc/inspircd:ldap - Enable LDAP support
+net-irc/inspircd:mbedtls - Enable TLS support via net-libs/mbedtls
+net-irc/inspircd:mysql - Enable MySQL database backend
+net-irc/inspircd:pcre - Adds support for Perl Compatible Regular Expressions
+net-irc/inspircd:posix - Adds support for POSIX-compatible functions
+net-irc/inspircd:postgres - Enable PostgreSQL database backend
+net-irc/inspircd:sqlite - Enable Sqlite database backend
+net-irc/inspircd:tre - Enable support for TRE, a lightweight, robust, and efficient POSIX compliant regexp matching library
+net-irc/unrealircd:class-nofakelag - Enable an unsupported class::options flag called “nofakelag” allowing you to grant fakelag exemption to normal user (instead of just opers).
+net-irc/unrealircd:extban-stacking - Enable extended channel bans (such as +b ~c: and +b ~n:) to contain other extended bans instead of just hostmasks.
+net-irc/unrealircd:operoverride - Enable OperOverride extension
+net-irc/unrealircd:operoverride-verify - Enable requiring opers to invite themselves to +s/+p channels
+net-irc/unrealircd:prefixaq - Enable chanadmin and chanowner prefixes
+net-irc/unrealircd:showlistmodes - Display channel modes in /LIST (only configured at compiletime)
+net-irc/unrealircd:shunnotices - Enable notifying a user when un-shunned
+net-irc/unrealircd:topicisnuhost - Enable displaying nick!user@host as topic setter
+net-irc/unrealircd:usermod - Enable /set* and /chg* commands
+net-libs/glib-networking:gnome - Extract HTTP/HTTPS/SOCKS proxy configuration stored using GSettings
+net-libs/glib-networking:libproxy - Use net-libs/libproxy for getting the HTTP/HTTPS/SOCKS proxy configuration
+net-libs/glib-networking:openssl - support for OpenSSL networking configration
+net-libs/webkit-gtk:coverage - Enable code coverage support
+net-libs/webkit-gtk:egl - Enable EGL support
+net-libs/webkit-gtk:geolocation - Enable geolocation support through app-misc/geoclue
+net-libs/webkit-gtk:gles2 - Enable GLESv2 support
+net-libs/webkit-gtk:nsplugin - Enable full nsplugin support (GTK2 plugins)
+net-libs/webkit-gtk:webgl - Build support for the WebGL HTML API using virtual/opengl
+net-misc/dropbear:bsdpty - Add support for legacy BSD pty's rather than dynamic UNIX pty's -- do not use this flag unless you are absolutely sure you actually want it
+net-misc/dropbear:multicall - Build all the programs as one little binary (to save space)
+net-misc/dropbear:shadow - Enable shadow password support
+net-misc/openntpd:libressl - Enable HTTPS TLS time constraint support using dev-libs/libressl
+net-misc/tinyssh:sodium - Use dev-libs/libsodium for cryptography
+net-nntp/inn:innkeywords - Enable automatic keyword generation support
+net-nntp/inn:inntaggedhash - Use tagged hash table for history (disables large file support)
+net-p2p/gnunet:experimental - enable experimental options
+net-p2p/gnunet:http - enable embedded http server support
+net-wireless/aircrack-ng:airdrop-ng - Build airdrop-ng
+net-wireless/aircrack-ng:airgraph-ng - Build airgraph-ng
+net-wireless/aircrack-ng:experimental - Build the "experimental" tools which may randomly fail to run properly
+net-wireless/aircrack-ng:netlink - Use netlink for channel control instead of WEXT
+sys-apps/openrc:bash - enable the use of bash in service scripts (experimental)
+sys-apps/openrc:init - install as a replacement of sys-apps/sysvinit
+sys-apps/openrc:netifrc - enable Gentoo's network stack (net.* scripts)
+sys-apps/openrc:newnet - enable the new network stack (experimental)
+sys-libs/gcompat:obstack - Use sys-libs/obstack-standalone for greater compatibility
