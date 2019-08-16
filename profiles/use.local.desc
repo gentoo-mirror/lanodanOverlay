@@ -88,8 +88,10 @@ mail-mta/opensmtpd:mta - Enable this to install as system-wide MTA
 media-fonts/forkawesome:otf - Install the OpenType version of the font
 media-fonts/forkawesome:ttf - Install the TrueType version of the font
 media-libs/vips:fits - Enable support for the FITS image format through sci-libs/cfitsio
+media-libs/vips:gsf - Enable support for creating image pyramids with dzsave
+media-libs/vips:heif - Enable support for HEIC images
 media-libs/vips:matio - Enable support for reading images from Matlab files through sci-libs/matio
-media-libs/vips:openslide - Enable support for reading images from OpenSlide files through media-libs/openslide(currently conflicts with jpeg-turbo)
+media-libs/vips:pango - Enable support for text rendering
 media-libs/x264:10bit - Set output bit depth to 10, this may not be compatible with all decoders
 media-libs/x264:interlaced - enable interlaced encoding support, this can decrease encoding speed by up to 2%
 media-libs/x264:opencl - Add support for OpenCL.

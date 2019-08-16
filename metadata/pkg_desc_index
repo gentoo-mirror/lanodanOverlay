@@ -85,7 +85,7 @@ media-gfx/opentoonz 1.2.0: An open-source full-featured 2D animation creation so
 media-libs/libsidplay 2.1.1-r5: C64 SID player library
 media-libs/opencolorio 1.1.0-r1: A color management framework for visual effects and animation
 media-libs/rtmidi 2.1.1: common C++ API for realtime MIDI input/output
-media-libs/vips 8.6.4: VIPS Image Processing Library
+media-libs/vips 8.8.1: VIPS Image Processing Library
 media-libs/x264 0.0.20170701: A free library for encoding X264/AVC streams
 media-sound/ibniz 1.18: virtual machine designed for extremely compact low-level audiovisual programs
 media-sound/milkytracker 1.02.00: FastTracker 2 inspired music tracker
