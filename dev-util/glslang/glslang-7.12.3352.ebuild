@@ -11,3 +11,6 @@ SRC_URI="https://github.com/KhronosGroup/glslang/archive/${PV}.tar.gz -> ${P}.ta
 KEYWORDS="~amd64 ~x86"
 LICENSE="BSD"
 SLOT="0"
+DEPENDS="
+	>=dev-lang/python-3.0
+"
