@@ -5,7 +5,6 @@ app-misc/pax-utils
 app-misc/tmux
 app-portage/cpuid2cpuflags
 app-portage/gentoolkit
-app-portage/layman
 app-shells/mksh
 app-text/mandoc
 app-text/sshpaste
