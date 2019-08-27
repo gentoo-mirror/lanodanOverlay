@@ -22,10 +22,6 @@ DEPEND="${RDEPEND}
 # This ebuild doesn't even compile anything, causing tests to fail when updating (bug #316071)
 RESTRICT="test"
 
-src_configure() {
-	:
-}
-
 src_compile() {
 	:
 }
