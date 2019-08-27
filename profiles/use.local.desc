@@ -56,7 +56,6 @@ games-arcade/stepmania:default-songs - Install the songs that are distributed wi
 games-arcade/stepmania:gles2 - Enable support for OpenGL ES 2
 games-arcade/stepmania:networking - Enable network-related functionality
 games-arcade/stepmania:parport - Enable support for lights connected to the parallel port
-games-arcade/stepmania:system-ffmpeg - Do not use the bundled version of media-video/ffmpeg
 games-arcade/stepmania:wav - Enable support for WAV audio files
 games-arcade/taisei:libzip - Enable loading of game data from ZIP packages via dev-libs/libzip
 games-board/cockatrice:client - Build with client support
@@ -85,8 +84,6 @@ gui-apps/waybar:tray - Enable support for tray
 gui-wm/cage:xwayland - Enable ability support native X11 applications
 mail-mta/opensmtpd:mdoc - Use mdoc format for manpages
 mail-mta/opensmtpd:mta - Enable this to install as system-wide MTA
-media-fonts/forkawesome:otf - Install the OpenType version of the font
-media-fonts/forkawesome:ttf - Install the TrueType version of the font
 media-libs/vips:fits - Enable support for the FITS image format through sci-libs/cfitsio
 media-libs/vips:gsf - Enable support for creating image pyramids with dzsave
 media-libs/vips:heif - Enable support for HEIC images
