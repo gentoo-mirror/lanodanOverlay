@@ -11,7 +11,7 @@ HOMEPAGE="https://www.gtk.org/gtk-doc/"
 
 LICENSE="GPL-2 FDL-1.1"
 SLOT="0"
-KEYWORDS="alpha amd64 arm arm64 hppa ia64 ~m68k ~mips ppc ppc64 s390 ~sh sparc x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x64-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x64-solaris"
 
 IUSE="debug doc emacs pdf test"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
@@ -71,10 +71,6 @@ src_install() {
 	gnome2_src_install
 
 	python_fix_shebang "${ED}"/usr/bin/
-
-	# Don't install those files, they are in gtk-doc-am now
-	rm "${ED}"/usr/share/aclocal/gtk-doc.m4 || die "failed to remove gtk-doc.m4"
-	rm "${ED}"/usr/bin/gtkdoc-rebase || die "failed to remove gtkdoc-rebase"
 
 	if use doc; then
 		docinto doc
