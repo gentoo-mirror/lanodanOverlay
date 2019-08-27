@@ -46,7 +46,7 @@ dev-util/gdbus-codegen 2.61.1: GDBus code and documentation generator
 dev-util/glib-utils 2.61.1: Build utilities for GLib using projects
 dev-util/glslang 7.11.3214 7.12.3352: Khronos reference front-end for GLSL and ESSL, and sample SPIR-V generator
 dev-util/gtk-doc 1.32: GTK+ Documentation Generator
-dev-util/gtk-doc-am 1.32: Automake files from gtk-doc
+dev-util/gtk-doc-am 1.32: Virtual ebuild for ::gentoo compatibility
 dev-util/itstool 2.0.5: Translation tool for XML documents that uses gettext files and ITS rules
 dev-util/pmbootstrap 1.5.1: Sophisticated chroot/build/flash tool to develop and install postmarketOS.
 dev-vcs/mercurial 5.0.2: Scalable distributed SCM
