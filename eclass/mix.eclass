@@ -82,7 +82,7 @@ mix_src_compile() {
 mix_src_install() {
 	debug-print-function ${FUNCNAME} "${@}"
 
-	insinto "/usr/$(get_libdir)/erlang/lib/${P}"
+	insinto "/usr/$(get_libdir)/elixir/lib/${P}"
 	pushd "_build/${MIX_BUILD_NAME}/lib/${PN}" >/dev/null
 	for reldir in src ebin priv include; do
 		[ -d "$reldir" ] && doins -r "$(realpath ${reldir})"
