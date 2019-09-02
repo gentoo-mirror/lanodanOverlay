@@ -63,6 +63,7 @@ dev-util/rebar 3.11.1: Sophisticated build-tool for Erlang projects that follows
 dev-vcs/mercurial 5.0.2: Scalable distributed SCM
 games-action/chickens 0.2.4 0.2.4-r1: Target chickens with rockets and shotguns. Funny
 games-action/supertuxkart 1.0: A kart racing game starring Tux, the linux penguin (TuxKart fork)
+games-action/teeworlds 0.7.3.1: Online multi-player platform 2D shooter
 games-arcade/oshu 1.6.0 2.0.0 9999: Lightweight osu! port
 games-arcade/osu-lazer 9999.999.9: rhythm is just a *click* away!
 games-arcade/stepmania 5.0.12 5.1.0_beta2: Advanced rhythm game, designed for both home and arcade use
