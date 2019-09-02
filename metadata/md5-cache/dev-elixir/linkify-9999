@@ -1,0 +1,13 @@
+BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=compile install prepare unpack
+DEPEND=test? ( >=dev-elixir/credo-1.1.0 ) doc? ( >=dev-elixir/ex_doc-0.20 ) dev-lang/elixir
+DESCRIPTION=basic package for turning website names into links
+EAPI=7
+HOMEPAGE=https://git.pleroma.social/pleroma/linkify
+IUSE=test doc
+LICENSE=MIT
+PROPERTIES=live
+RDEPEND=test? ( >=dev-elixir/credo-1.1.0 ) doc? ( >=dev-elixir/ex_doc-0.20 ) dev-lang/elixir
+SLOT=9999
+_eclasses_=git-r3	562b380fc59ae6a8622171d0acb777d1	mix	a9f226ef3febd0bbaa07bcde42a8be4b
+_md5_=d9177ff62330bffbe3cbcb861a39a0e2

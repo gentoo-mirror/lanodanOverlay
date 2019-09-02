@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare
+DEPEND=doc? ( >=dev-elixir/ex_doc-0.19.1 ) dev-lang/elixir
+DESCRIPTION=Crypto-related functionality for the web
+EAPI=7
+HOMEPAGE=https://github.com/elixir-plug/plug_crypto
+IUSE=doc
+KEYWORDS=~amd64 ~arm ~arm64 ~x86
+LICENSE=Apache-2.0
+RDEPEND=doc? ( >=dev-elixir/ex_doc-0.19.1 ) dev-lang/elixir
+SLOT=1.0
+SRC_URI=https://github.com/elixir-plug/plug_crypto/archive/v1.0.0.tar.gz -> plug_crypto-1.0.0.tar.gz
+_eclasses_=mix	a9f226ef3febd0bbaa07bcde42a8be4b
+_md5_=fba7278fbd6fb5491753b2517a8679b1

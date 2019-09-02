@@ -22,6 +22,16 @@ app-text/mandoc 1.14.5: Suite of tools compiling mdoc and man
 app-text/sshpaste 1.0.1 9999: wgetpaste clone for pushing to your own server
 dev-db/timescaledb 1.2.1: A time-series database optimized for fast ingest and complex queries
 dev-dotnet/nuget 5.0.2: Nuget - .NET Package Manager
+dev-elixir/hex 0.20.1: 
+dev-elixir/jose 1.8.4: JSON Object Signing and Encryption (JOSE) for Erlang and Elixir
+dev-elixir/linkify 9999: basic package for turning website names into links
+dev-elixir/mime 1.0.1: MIME type module for Elixir
+dev-elixir/phoenix 1.4.9: productive web framework that does not compromise speed or maintainability
+dev-elixir/phoenix_pubsub 1.1.2: Distributed PubSub and Presence platform for the Phoenix Framework
+dev-elixir/plug 1.6.1 1.8.2: specification and conveniences for composable modules between web applications
+dev-elixir/plug_crypto 1.0.0: Crypto-related functionality for the web
+dev-erlang/base64url 1.0-r1: URL safe base64-compatible codec
+dev-erlang/telemetry 0.4.0: Dynamic dispatching library for metrics and instrumentations.
 dev-haskell/hayland 9999: Haskell bindings to Wayland library (Waymonad fork)
 dev-haskell/hfuse 0.2.4.5: Bindings for the FUSE library
 dev-haskell/hsroots 9999: Haskell bindings for libxkbcommon
@@ -49,6 +59,7 @@ dev-util/gtk-doc 1.32: GTK+ Documentation Generator
 dev-util/gtk-doc-am 1.32: Virtual ebuild for ::gentoo compatibility
 dev-util/itstool 2.0.5: Translation tool for XML documents that uses gettext files and ITS rules
 dev-util/pmbootstrap 1.5.1: Sophisticated chroot/build/flash tool to develop and install postmarketOS.
+dev-util/rebar 3.11.1: Sophisticated build-tool for Erlang projects that follows OTP principles
 dev-vcs/mercurial 5.0.2: Scalable distributed SCM
 games-action/chickens 0.2.4 0.2.4-r1: Target chickens with rockets and shotguns. Funny
 games-action/supertuxkart 1.0: A kart racing game starring Tux, the linux penguin (TuxKart fork)
@@ -87,7 +98,7 @@ media-gfx/opentoonz 1.2.0: An open-source full-featured 2D animation creation so
 media-libs/libsidplay 2.1.1-r5: C64 SID player library
 media-libs/opencolorio 1.1.0-r1: A color management framework for visual effects and animation
 media-libs/rtmidi 2.1.1: common C++ API for realtime MIDI input/output
-media-libs/vips 8.8.1: VIPS Image Processing Library
+media-libs/vips 8.8.2: VIPS Image Processing Library
 media-libs/x264 0.0.20170701: A free library for encoding X264/AVC streams
 media-sound/ibniz 1.18: virtual machine designed for extremely compact low-level audiovisual programs
 media-sound/milkytracker 1.02.00: FastTracker 2 inspired music tracker
@@ -124,6 +135,7 @@ sys-apps/openrc 0.38.3-r1 0.41.2: OpenRC manages the services, startup and shutd
 sys-libs/gcompat 0.4.0: The GNU C Library compatibility layer for musl
 virtual/editor 0-r1: Virtual for editor
 virtual/man 9: Virtual for man
+www-apps/pleroma 1.0.2 9999: Microblogging software federating over OStatus and ActivityPub
 www-apps/searx 0.15.0: Decentralized and privacy-respecting, hackable metasearch engine
 www-apps/stagit 0.8 0.9: static git page generator
 www-client/lariza 18.07: simple web browser using GTK+ 3, GLib and WebKit2GTK+

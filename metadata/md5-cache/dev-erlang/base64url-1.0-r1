@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare test
+DEPEND=dev-lang/erlang dev-util/rebar:3 >=dev-lang/erlang-17.1
+DESCRIPTION=URL safe base64-compatible codec
+EAPI=6
+HOMEPAGE=https://github.com/dvv/base64url
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=dev-lang/erlang dev-util/rebar:3 >=dev-lang/erlang-17.1
+SLOT=0
+SRC_URI=https://github.com/dvv/base64url/archive/v1.0.tar.gz -> base64url-1.0.tar.gz
+_eclasses_=rebar3	acf5142f819f04911b6cd65afb207f6b
+_md5_=866329109e420c0f0c285b274c3dbbac
