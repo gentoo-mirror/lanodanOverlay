@@ -2,6 +2,11 @@
 # Please add your descriptions to your package's metadata.xml ONLY.
 # * generated automatically using pmaint *
 
+app-admin/pass:X - Use x11-misc/xclip to copy passwords to the clipboard.
+app-admin/pass:dmenu - Add support for x11-misc/dmenu with the 'passmenu' program.
+app-admin/pass:fish-completion - Enable fish completion support.
+app-admin/pass:git - Use dev-vcs/git for password revisions.
+app-admin/pass:importers - Allow importing passwords from other password managers using various contributed scripts.
 app-crypt/acme-sh:standalone - runtime-depend on net-misc/socat used in Standalone mode
 app-editors/vis:lpeg - runtime for syntax highlight using dev-lua/lpeg
 app-editors/vis:tre - more memory efficient regex search using dev-libs/tre
