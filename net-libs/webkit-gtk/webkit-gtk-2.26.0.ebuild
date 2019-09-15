@@ -17,7 +17,7 @@ LICENSE="LGPL-2+ BSD"
 SLOT="4/37" # soname version of libwebkit2gtk-4.0
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~amd64-linux ~x86-linux ~x86-macos"
 
-IUSE="aqua coverage doc +egl examples experimental +geolocation gles2 gnome-keyring +gstreamer +introspection jpeg2k libnotify +opengl sandbox spell wayland +wpe +webgl +X"
+IUSE="aqua coverage doc +egl examples experimental +geolocation gles2 gnome-keyring +gstreamer +introspection jpeg2k libnotify media-source +opengl sandbox spell wayland +wpe +webgl +X"
 
 # webgl needs gstreamer, bug #560612
 # gstreamer with opengl/gles2 needs egl
@@ -29,6 +29,7 @@ REQUIRED_USE="
 		|| ( gles2 opengl ) )
 	wayland? ( egl )
 	wpe? ( wayland )
+	media-source? ( gstreamer )
 	|| ( aqua wayland X )
 "
 
@@ -70,7 +71,9 @@ RDEPEND="
 		>=media-libs/gstreamer-1.14:1.0
 		>=media-libs/gst-plugins-base-1.14:1.0[egl?,gles2?,opengl?]
 		>=media-plugins/gst-plugins-opus-1.14.4-r1:1.0
-		>=media-libs/gst-plugins-bad-1.14:1.0 )
+		>=media-libs/gst-plugins-bad-1.14:1.0
+	)
+	media-source? ( >=media-libs/gstreamer-1.16:1.0 )
 
 	X? (
 		x11-libs/libX11
@@ -256,6 +259,7 @@ src_configure() {
 		-DENABLE_OPENGL=${opengl_enabled}
 		-DUSE_WPE_RENDERER=$(usex wpe)
 		-DENABLE_BUBBLEWRAP_SANDBOX=$(usex sandbox)
+		-DENABLE_MEDIA_SOURCE=$(usex media-source)
 		-DCMAKE_BUILD_TYPE=Release
 		-DPORT=GTK
 		${ruby_interpreter}
