@@ -256,7 +256,7 @@ src_configure() {
 		-DENABLE_X11_TARGET=$(usex X)
 		-DENABLE_OPENGL=${opengl_enabled}
 		-DENABLE_OPENGL=${opengl_enabled}
-		-DUSE_WPE_RENDERER=${usex wpe}
+		-DUSE_WPE_RENDERER=$(usex wpe)
 		-DCMAKE_BUILD_TYPE=Release
 		-DPORT=GTK
 		${ruby_interpreter}
