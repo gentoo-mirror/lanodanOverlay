@@ -17,7 +17,7 @@ LICENSE="LGPL-2+ BSD"
 SLOT="4/37" # soname version of libwebkit2gtk-4.0
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~amd64-linux ~x86-linux ~x86-macos"
 
-IUSE="aqua coverage doc +egl examples experimental +geolocation gles2 gnome-keyring +gstreamer +introspection jpeg2k libnotify nsplugin +opengl spell wayland +wpe +webgl +X"
+IUSE="aqua coverage doc +egl examples experimental +geolocation gles2 gnome-keyring +gstreamer +introspection jpeg2k libnotify media-source +opengl sandbox spell wayland +wpe +webgl +X"
 
 # webgl needs gstreamer, bug #560612
 # gstreamer with opengl/gles2 needs egl
@@ -25,11 +25,11 @@ REQUIRED_USE="
 	geolocation? ( introspection )
 	gles2? ( egl !opengl )
 	gstreamer? ( opengl? ( egl ) )
-	nsplugin? ( X )
 	webgl? ( gstreamer
 		|| ( gles2 opengl ) )
 	wayland? ( egl )
 	wpe? ( wayland )
+	media-source? ( gstreamer )
 	|| ( aqua wayland X )
 "
 
@@ -51,28 +51,29 @@ RDEPEND="
 	>=media-libs/harfbuzz-1.4.2:=[icu(+)]
 	>=dev-libs/icu-3.8.1-r1:=
 	virtual/jpeg:0=
-	>=net-libs/libsoup-2.48:2.4[introspection?]
+	>=net-libs/libsoup-2.54:2.4[introspection?]
 	>=dev-libs/libxml2-2.8.0:2
 	>=media-libs/libpng-1.4:0=
 	dev-db/sqlite:3=
 	sys-libs/zlib:0
-	>=dev-libs/atk-2.8.0
+	>=dev-libs/atk-2.16.0
 	media-libs/libwebp:=
 
 	>=dev-libs/glib-2.40:2
 	>=dev-libs/libxslt-1.1.7
-	media-libs/woff2
+	>=media-libs/woff2-1.0.2
 	gnome-keyring? ( app-crypt/libsecret )
 	geolocation? ( >=app-misc/geoclue-2.1.5:2.0 )
 	introspection? ( >=dev-libs/gobject-introspection-1.32.0:= )
 	dev-libs/libtasn1:=
-	nsplugin? ( >=x11-libs/gtk+-2.24.10:2 )
 	spell? ( >=app-text/enchant-0.22:= )
 	gstreamer? (
 		>=media-libs/gstreamer-1.14:1.0
 		>=media-libs/gst-plugins-base-1.14:1.0[egl?,gles2?,opengl?]
 		>=media-plugins/gst-plugins-opus-1.14.4-r1:1.0
-		>=media-libs/gst-plugins-bad-1.14:1.0 )
+		>=media-libs/gst-plugins-bad-1.14:1.0
+	)
+	media-source? ( >=media-libs/gstreamer-1.16:1.0 )
 
 	X? (
 		x11-libs/libX11
@@ -92,9 +93,10 @@ RDEPEND="
 		x11-libs/libXcomposite
 		x11-libs/libXdamage )
 	wpe? (
-		net-libs/libwpe:=
+		>=net-libs/libwpe-1.3.0:=
 		dev-libs/wpebackend-fdo:=
 	)
+	sandbox? ( sys-apps/bubblewrap )
 "
 
 # paxctl needed for bug #407085
@@ -247,7 +249,6 @@ src_configure() {
 		-DUSE_LIBSECRET=$(usex gnome-keyring)
 		-DUSE_OPENJPEG=$(usex jpeg2k)
 		-DUSE_WOFF2=ON
-		-DENABLE_PLUGIN_PROCESS_GTK2=$(usex nsplugin)
 		-DENABLE_SPELLCHECK=$(usex spell)
 		-DENABLE_WAYLAND_TARGET=$(usex wayland)
 		-DENABLE_WEBGL=$(usex webgl)
@@ -257,6 +258,8 @@ src_configure() {
 		-DENABLE_OPENGL=${opengl_enabled}
 		-DENABLE_OPENGL=${opengl_enabled}
 		-DUSE_WPE_RENDERER=$(usex wpe)
+		-DENABLE_BUBBLEWRAP_SANDBOX=$(usex sandbox)
+		-DENABLE_MEDIA_SOURCE=$(usex media-source)
 		-DCMAKE_BUILD_TYPE=Release
 		-DPORT=GTK
 		${ruby_interpreter}
@@ -291,5 +294,4 @@ src_install() {
 	# Prevents crashes on PaX systems, bug #522808
 	pax-mark m "${ED}usr/libexec/webkit2gtk-4.0/jsc" "${ED}usr/libexec/webkit2gtk-4.0/WebKitWebProcess"
 	pax-mark m "${ED}usr/libexec/webkit2gtk-4.0/WebKitPluginProcess"
-	use nsplugin && pax-mark m "${ED}usr/libexec/webkit2gtk-4.0/WebKitPluginProcess"2
 }
