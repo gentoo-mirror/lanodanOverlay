@@ -17,7 +17,7 @@ LICENSE="LGPL-2+ BSD"
 SLOT="4/37" # soname version of libwebkit2gtk-4.0
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~amd64-linux ~x86-linux ~x86-macos"
 
-IUSE="aqua coverage doc +egl examples experimental +geolocation gles2 gnome-keyring +gstreamer +introspection jpeg2k libnotify nsplugin +opengl spell wayland +wpe +webgl +X"
+IUSE="aqua coverage doc +egl examples experimental +geolocation gles2 gnome-keyring +gstreamer +introspection jpeg2k libnotify +opengl spell wayland +wpe +webgl +X"
 
 # webgl needs gstreamer, bug #560612
 # gstreamer with opengl/gles2 needs egl
@@ -25,7 +25,6 @@ REQUIRED_USE="
 	geolocation? ( introspection )
 	gles2? ( egl !opengl )
 	gstreamer? ( opengl? ( egl ) )
-	nsplugin? ( X )
 	webgl? ( gstreamer
 		|| ( gles2 opengl ) )
 	wayland? ( egl )
@@ -66,7 +65,6 @@ RDEPEND="
 	geolocation? ( >=app-misc/geoclue-2.1.5:2.0 )
 	introspection? ( >=dev-libs/gobject-introspection-1.32.0:= )
 	dev-libs/libtasn1:=
-	nsplugin? ( >=x11-libs/gtk+-2.24.10:2 )
 	spell? ( >=app-text/enchant-0.22:= )
 	gstreamer? (
 		>=media-libs/gstreamer-1.14:1.0
@@ -247,7 +245,6 @@ src_configure() {
 		-DUSE_LIBSECRET=$(usex gnome-keyring)
 		-DUSE_OPENJPEG=$(usex jpeg2k)
 		-DUSE_WOFF2=ON
-		-DENABLE_PLUGIN_PROCESS_GTK2=$(usex nsplugin)
 		-DENABLE_SPELLCHECK=$(usex spell)
 		-DENABLE_WAYLAND_TARGET=$(usex wayland)
 		-DENABLE_WEBGL=$(usex webgl)
@@ -291,5 +288,4 @@ src_install() {
 	# Prevents crashes on PaX systems, bug #522808
 	pax-mark m "${ED}usr/libexec/webkit2gtk-4.0/jsc" "${ED}usr/libexec/webkit2gtk-4.0/WebKitWebProcess"
 	pax-mark m "${ED}usr/libexec/webkit2gtk-4.0/WebKitPluginProcess"
-	use nsplugin && pax-mark m "${ED}usr/libexec/webkit2gtk-4.0/WebKitPluginProcess"2
 }
