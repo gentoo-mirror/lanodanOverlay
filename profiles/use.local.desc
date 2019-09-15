@@ -137,6 +137,7 @@ net-libs/webkit-gtk:egl - Enable EGL support
 net-libs/webkit-gtk:experimental - Enable experimental features
 net-libs/webkit-gtk:geolocation - Enable geolocation support through app-misc/geoclue
 net-libs/webkit-gtk:gles2 - Enable GLESv2 support
+net-libs/webkit-gtk:media-source - Enable support for Media Sources Extension (requires gstreamer 1.16+)
 net-libs/webkit-gtk:nsplugin - Enable full nsplugin support (GTK2 plugins)
 net-libs/webkit-gtk:webgl - Build support for the WebGL HTML API using virtual/opengl
 net-libs/webkit-gtk:wpe - Enable net-libs/libwpe rendering
