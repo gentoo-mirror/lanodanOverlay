@@ -17,7 +17,7 @@ LICENSE="LGPL-2+ BSD"
 SLOT="4/37" # soname version of libwebkit2gtk-4.0
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~amd64-linux ~x86-linux ~x86-macos"
 
-IUSE="aqua coverage doc +egl examples experimental +geolocation gles2 gnome-keyring +gstreamer +introspection jpeg2k libnotify nsplugin +opengl spell wayland wpe +webgl +X"
+IUSE="aqua coverage doc +egl examples experimental +geolocation gles2 gnome-keyring +gstreamer +introspection jpeg2k libnotify nsplugin +opengl spell wayland +wpe +webgl +X"
 
 # webgl needs gstreamer, bug #560612
 # gstreamer with opengl/gles2 needs egl
@@ -92,8 +92,8 @@ RDEPEND="
 		x11-libs/libXcomposite
 		x11-libs/libXdamage )
 	wpe? (
-		net-libs/libwpe
-		dev-libs/wpebackend-fdo
+		net-libs/libwpe:=
+		dev-libs/wpebackend-fdo:=
 	)
 "
 
@@ -255,6 +255,8 @@ src_configure() {
 		$(cmake-utils_use_find_package opengl OpenGL)
 		-DENABLE_X11_TARGET=$(usex X)
 		-DENABLE_OPENGL=${opengl_enabled}
+		-DENABLE_OPENGL=${opengl_enabled}
+		-DUSE_WPE_RENDERER=${usex wpe}
 		-DCMAKE_BUILD_TYPE=Release
 		-DPORT=GTK
 		${ruby_interpreter}
