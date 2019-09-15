@@ -51,17 +51,17 @@ RDEPEND="
 	>=media-libs/harfbuzz-1.4.2:=[icu(+)]
 	>=dev-libs/icu-3.8.1-r1:=
 	virtual/jpeg:0=
-	>=net-libs/libsoup-2.48:2.4[introspection?]
+	>=net-libs/libsoup-2.54:2.4[introspection?]
 	>=dev-libs/libxml2-2.8.0:2
 	>=media-libs/libpng-1.4:0=
 	dev-db/sqlite:3=
 	sys-libs/zlib:0
-	>=dev-libs/atk-2.8.0
+	>=dev-libs/atk-2.16.0
 	media-libs/libwebp:=
 
 	>=dev-libs/glib-2.40:2
 	>=dev-libs/libxslt-1.1.7
-	media-libs/woff2
+	>=media-libs/woff2-1.0.2
 	gnome-keyring? ( app-crypt/libsecret )
 	geolocation? ( >=app-misc/geoclue-2.1.5:2.0 )
 	introspection? ( >=dev-libs/gobject-introspection-1.32.0:= )
@@ -93,7 +93,7 @@ RDEPEND="
 		x11-libs/libXcomposite
 		x11-libs/libXdamage )
 	wpe? (
-		net-libs/libwpe:=
+		>=net-libs/libwpe-1.3.0:=
 		dev-libs/wpebackend-fdo:=
 	)
 	sandbox? ( sys-apps/bubblewrap )
