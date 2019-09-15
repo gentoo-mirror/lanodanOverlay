@@ -134,10 +134,12 @@ net-libs/glib-networking:libproxy - Use net-libs/libproxy for getting the HTTP/H
 net-libs/glib-networking:openssl - support for OpenSSL networking configration
 net-libs/webkit-gtk:coverage - Enable code coverage support
 net-libs/webkit-gtk:egl - Enable EGL support
+net-libs/webkit-gtk:experimental - Enable experimental features
 net-libs/webkit-gtk:geolocation - Enable geolocation support through app-misc/geoclue
 net-libs/webkit-gtk:gles2 - Enable GLESv2 support
 net-libs/webkit-gtk:nsplugin - Enable full nsplugin support (GTK2 plugins)
 net-libs/webkit-gtk:webgl - Build support for the WebGL HTML API using virtual/opengl
+net-libs/webkit-gtk:wpe - Enable net-libs/libwpe rendering
 net-misc/dropbear:bsdpty - Add support for legacy BSD pty's rather than dynamic UNIX pty's -- do not use this flag unless you are absolutely sure you actually want it
 net-misc/dropbear:multicall - Build all the programs as one little binary (to save space)
 net-misc/dropbear:shadow - Enable shadow password support
