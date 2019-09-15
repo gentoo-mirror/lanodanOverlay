@@ -17,7 +17,7 @@ LICENSE="LGPL-2+ BSD"
 SLOT="4/37" # soname version of libwebkit2gtk-4.0
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~amd64-linux ~x86-linux ~x86-macos"
 
-IUSE="aqua coverage doc +egl examples experimental +geolocation gles2 gnome-keyring +gstreamer +introspection jpeg2k libnotify +opengl spell wayland +wpe +webgl +X"
+IUSE="aqua coverage doc +egl examples experimental +geolocation gles2 gnome-keyring +gstreamer +introspection jpeg2k libnotify +opengl sandbox spell wayland +wpe +webgl +X"
 
 # webgl needs gstreamer, bug #560612
 # gstreamer with opengl/gles2 needs egl
@@ -93,6 +93,7 @@ RDEPEND="
 		net-libs/libwpe:=
 		dev-libs/wpebackend-fdo:=
 	)
+	sandbox? ( sys-apps/bubblewrap )
 "
 
 # paxctl needed for bug #407085
@@ -254,6 +255,7 @@ src_configure() {
 		-DENABLE_OPENGL=${opengl_enabled}
 		-DENABLE_OPENGL=${opengl_enabled}
 		-DUSE_WPE_RENDERER=$(usex wpe)
+		-DENABLE_BUBBLEWRAP_SANDBOX=$(usex sandbox)
 		-DCMAKE_BUILD_TYPE=Release
 		-DPORT=GTK
 		${ruby_interpreter}
