@@ -94,7 +94,7 @@ RDEPEND="
 		x11-libs/libXdamage )
 	wpe? (
 		>=net-libs/libwpe-1.3.0:=
-		dev-libs/wpebackend-fdo:=
+		dev-libs/wpebackend-fdo-1.3.1:=
 	)
 	sandbox? ( sys-apps/bubblewrap )
 "
