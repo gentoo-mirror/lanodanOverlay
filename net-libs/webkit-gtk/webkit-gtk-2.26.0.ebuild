@@ -28,7 +28,7 @@ REQUIRED_USE="
 	webgl? ( gstreamer
 		|| ( gles2 opengl ) )
 	wayland? ( egl )
-	wpe? ( wayland )
+	wpe? ( opengl wayland )
 	media-source? ( gstreamer )
 	|| ( aqua wayland X )
 "
