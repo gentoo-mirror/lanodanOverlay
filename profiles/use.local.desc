@@ -52,9 +52,6 @@ dev-vcs/mercurial:bugzilla - Support bugzilla integration.
 dev-vcs/mercurial:chg - Support Mercurial command server client
 dev-vcs/mercurial:gpg - Support signing with GnuPG.
 dev-vcs/mercurial:tk - Install dev-lang/tk for hgk script.
-games-action/supertuxkart:fribidi - Support for right-to-left languages
-games-action/supertuxkart:recorder - Enable recording with media-libs/libopenglrecorder
-games-action/supertuxkart:wiimote - Support for wiimote input devices
 games-arcade/oshu:osu-skin - Include more complete osu-skin (other is minimal)
 games-arcade/stepmania:crash-handler - Enable the custom crash handler
 games-arcade/stepmania:default-songs - Install the songs that are distributed with the game by default
