@@ -141,6 +141,7 @@ net-libs/webkit-gtk:geolocation - Enable geolocation support through app-misc/ge
 net-libs/webkit-gtk:gles2 - Enable GLESv2 support
 net-libs/webkit-gtk:media-source - Enable support for Media Sources Extension (requires gstreamer 1.16+)
 net-libs/webkit-gtk:nsplugin - Enable full nsplugin support (GTK2 plugins)
+net-libs/webkit-gtk:sandbox - Enable sandboxing functionality through sys-apps/bubblewrap
 net-libs/webkit-gtk:webgl - Build support for the WebGL HTML API using virtual/opengl
 net-libs/webkit-gtk:wpe - Enable net-libs/libwpe rendering
 net-misc/dropbear:bsdpty - Add support for legacy BSD pty's rather than dynamic UNIX pty's -- do not use this flag unless you are absolutely sure you actually want it
