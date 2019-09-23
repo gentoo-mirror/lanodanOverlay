@@ -94,7 +94,7 @@ RDEPEND="
 		x11-libs/libXdamage )
 	wpe? (
 		>=net-libs/libwpe-1.3.0:=
-		dev-libs/wpebackend-fdo-1.3.1:=
+		>=dev-libs/wpebackend-fdo-1.3.1:=
 	)
 	sandbox? ( sys-apps/bubblewrap )
 "
@@ -255,7 +255,6 @@ src_configure() {
 		$(cmake-utils_use_find_package egl EGL)
 		$(cmake-utils_use_find_package opengl OpenGL)
 		-DENABLE_X11_TARGET=$(usex X)
-		-DENABLE_OPENGL=${opengl_enabled}
 		-DENABLE_OPENGL=${opengl_enabled}
 		-DUSE_WPE_RENDERER=$(usex wpe)
 		-DENABLE_BUBBLEWRAP_SANDBOX=$(usex sandbox)
