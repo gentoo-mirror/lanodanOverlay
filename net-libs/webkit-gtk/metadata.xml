@@ -15,5 +15,6 @@
 		<flag name="experimental">Enable experimental features</flag>
 		<flag name="wpe">Enable <pkg>net-libs/libwpe</pkg> rendering</flag>
 		<flag name="media-source">Enable support for Media Sources Extension (requires gstreamer 1.16+)</flag>
+		<flag name="sandbox">Enable sandboxing functionality through <pkg>sys-apps/bubblewrap</pkg></flag>
 	</use>
 </pkgmetadata>

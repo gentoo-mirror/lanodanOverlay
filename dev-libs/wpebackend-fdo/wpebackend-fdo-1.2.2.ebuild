@@ -11,7 +11,7 @@ HOMEPAGE="https://wpewebkit.org/"
 LICENSE="BSD-2"
 SRC_URI="https://wpewebkit.org/releases/${P}.tar.xz"
 SLOT="1.0" # WPE_API_VERSION
-KEYWORDS="~amd64 ~arm"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~amd64-linux ~x86-linux ~x86-macos"
 IUSE=""
 
 # documentation depends on hotdoc
