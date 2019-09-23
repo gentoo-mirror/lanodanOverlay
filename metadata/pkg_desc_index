@@ -46,7 +46,7 @@ dev-libs/libdazzle 3.33.1: Experimental new features for GTK+ and GLib
 dev-libs/libtermkey 0.21.1-r1: Library for easy processing of keyboard entry from terminal-based programs
 dev-libs/libtomcrypt 1.18.2: modular and portable cryptographic toolkit
 dev-libs/socket99 0.2.2: Wrapper library for the BSD sockets API with a nicer C99 interface
-dev-libs/wpebackend-fdo 1.2.2: FreeDesktop.Org backend for WPE WebKit
+dev-libs/wpebackend-fdo 1.2.2 1.4.0: FreeDesktop.Org backend for WPE WebKit
 dev-lua/luaevent 0.4.6: libevent bindings for Lua
 dev-lua/luarocks 2.4.4: A deployment and management system for Lua modules
 dev-lua/luasec 0.7: Lua binding for OpenSSL library to provide TLS/SSL communication.
@@ -117,10 +117,10 @@ net-irc/unrealircd 4.2.0: An advanced Internet Relay Chat daemon
 net-libs/glib-networking 2.60.0.1 2.60.2: Network-related giomodules for glib
 net-libs/libasr 1.0.2 9999: Async Resolver Library from OpenBSD/OpenSMTPD
 net-libs/libqmatrixclient 0.5.2: A Qt5 library to write cross-platfrom clients for Matrix
-net-libs/libwpe 1.2.1: WebKit port optimized for embedded devices
+net-libs/libwpe 1.2.1 1.4.0: WebKit port optimized for embedded devices
 net-libs/serf 1.3.9: HTTP client library
 net-libs/webkit-gtk 2.24.4 2.26.0: Open source web browser engine
-net-libs/wpewebkit 2.24.3: WebKit port optimized for embedded devices
+net-libs/wpewebkit 2.24.3 2.26.0: WebKit port optimized for embedded devices
 net-mail/public-inbox 1.0.0: 
 net-misc/cjdns 20.2: encrypted IPv6 using public-key cryptography for allocation and DHT for routing
 net-misc/drawterm 9999: connect to Plan 9 CPU servers from other operating systems
