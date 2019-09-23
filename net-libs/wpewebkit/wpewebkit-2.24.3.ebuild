@@ -13,7 +13,7 @@ HOMEPAGE="https://wpewebkit.org/"
 LICENSE="LGPL-2+ BSD"
 SRC_URI="https://wpewebkit.org/releases/${P}.tar.xz"
 SLOT="1.0" # WPE_API_VERSION
-KEYWORDS="~amd64 ~arm"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~amd64-linux ~x86-linux ~x86-macos"
 IUSE="doc examples experimental jpeg2k qt +gstreamer"
 
 RDEPEND="
