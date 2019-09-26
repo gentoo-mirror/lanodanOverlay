@@ -22,6 +22,7 @@ app-text/grammalecte 0.6.4: Grammatical corrector for the French language
 app-text/mandoc 1.14.5: Suite of tools compiling mdoc and man
 app-text/sshpaste 1.0.1 9999: wgetpaste clone for pushing to your own server
 dev-db/timescaledb 1.2.1: A time-series database optimized for fast ingest and complex queries
+dev-dotnet/dotnetcore-sdk 3.0.100: .NET Core cli utility for building, testing, packaging and running projects
 dev-dotnet/nuget 5.0.2: Nuget - .NET Package Manager
 dev-elixir/hex 0.20.1: 
 dev-elixir/jose 1.8.4: JSON Object Signing and Encryption (JOSE) for Erlang and Elixir
@@ -41,6 +42,7 @@ dev-haskell/waymonad-scanner 9999: Haskell bindings for libxkbcommon
 dev-haskell/xkbcommon 0.0.3 9999: Haskell bindings for libxkbcommon (Waymonad)
 dev-lang/erlang 22.1: Erlang programming language, runtime environment and libraries (OTP)
 dev-lang/go 0.20171003: Boostrap Go from C (useful for musl libc)
+dev-lang/mono 6.4.0.198: Mono runtime and class libraries, a C# compiler/interpreter
 dev-libs/glib 2.61.1: The GLib library of C routines
 dev-libs/libdazzle 3.33.1: Experimental new features for GTK+ and GLib
 dev-libs/libtermkey 0.21.1-r1: Library for easy processing of keyboard entry from terminal-based programs
