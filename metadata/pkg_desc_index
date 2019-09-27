@@ -116,7 +116,7 @@ net-im/gajim 1.0.3 1.1.2: A GTK+ Jabber client
 net-im/tootle 0.2.0 9999: GTK3 client for Mastodon API
 net-irc/inspircd 2.0.27 9999: Inspire IRCd - The Stable, High-Performance Modular IRCd
 net-irc/unrealircd 4.2.0: An advanced Internet Relay Chat daemon
-net-libs/glib-networking 2.60.0.1 2.60.2: Network-related giomodules for glib
+net-libs/glib-networking 2.60.3: Network-related giomodules for glib
 net-libs/libasr 1.0.2 9999: Async Resolver Library from OpenBSD/OpenSMTPD
 net-libs/libqmatrixclient 0.5.2: A Qt5 library to write cross-platfrom clients for Matrix
 net-libs/libwpe 1.2.1 1.4.0: WebKit port optimized for embedded devices
