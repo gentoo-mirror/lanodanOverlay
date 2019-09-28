@@ -4,7 +4,7 @@
 EAPI=7
 PYTHON_COMPAT=( python{3_5,3_6,3_7} )
 
-inherit bash-completion-r1 flag-o-matic gnome.org gnome2-utils linux-info meson multilib multilib-minimal python-any-r1 toolchain-funcs xdg
+inherit flag-o-matic gnome.org gnome2-utils linux-info meson multilib multilib-minimal python-any-r1 toolchain-funcs xdg
 
 DESCRIPTION="The GLib library of C routines"
 HOMEPAGE="https://www.gtk.org/"
@@ -150,7 +150,7 @@ multilib_src_test() {
 
 multilib_src_install() {
 	chmod +x glib-gettextize || die
-	meson_src_install completiondir="$(get_bashcompdir)"
+	meson_src_install
 	keepdir /usr/$(get_libdir)/gio/modules
 }
 
