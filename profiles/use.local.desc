@@ -87,9 +87,6 @@ gnome-base/gvfs:sftp - Enable support for accessing SFTP(SSH FTP) remotes
 gnome-base/gvfs:udev - Enable udev base replacement code for cdda feature
 gnustep-base/gnustep-make:libobjc2 - Enables use of the GNUstep Objective-C runtime (gnustep-base/libobjc2) with non-fragile ABI and sys-devel/clang compiler
 gnustep-base/gnustep-make:native-exceptions - Enables use of the native Objective-C exception support (@try/@catch/@finally) built-in objective-c exceptions with compilers that support it
-gui-apps/waybar:mpd - Enable support for Music Player Daemon
-gui-apps/waybar:network - Enable support for network features
-gui-apps/waybar:tray - Enable support for tray
 gui-wm/cage:xwayland - Enable ability support native X11 applications
 mail-mta/opensmtpd:mdoc - Use mdoc format for manpages
 mail-mta/opensmtpd:mta - Enable this to install as system-wide MTA
