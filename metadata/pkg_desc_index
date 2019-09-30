@@ -84,8 +84,6 @@ games-sports/vdrift 2014.10.20 9999: A driving simulation made with drift racing
 games-visualnovel/doki-doki-litterature-club 1.1.1: Psychological horror game presented as a romance visual novel
 gnome-base/gvfs 1.32.2: Virtual filesystem implementation for gio
 gnustep-base/gnustep-make 2.7.0: GNUstep Makefile Package
-gui-apps/grim 1.2.0: Grab images from a Wayland compositor
-gui-apps/slurp 1.2.0: Select a region in a Wayland compositor and print it to stdout
 gui-wm/cage 0.1.1 9999: Wayland Kiosk
 gui-wm/inaban 9999: Distrustful Tiling Wayland Compositor
 gui-wm/waymonad 9999: wayland compositor based on ideas from and inspired by xmonad
