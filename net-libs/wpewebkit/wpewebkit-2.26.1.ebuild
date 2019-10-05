@@ -14,7 +14,7 @@ LICENSE="LGPL-2+ BSD"
 SRC_URI="https://wpewebkit.org/releases/${P}.tar.xz"
 SLOT="1.0" # WPE_API_VERSION
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~amd64-linux ~x86-linux ~x86-macos"
-IUSE="doc examples experimental jpeg2k qt +gstreamer"
+IUSE="accessibility doc examples experimental jpeg2k qt +gstreamer"
 
 RDEPEND="
 	>=x11-libs/cairo-1.10.2:=
@@ -47,6 +47,10 @@ RDEPEND="
 		>=media-plugins/gst-plugins-opus-1.14.4-r1:1.0
 		>=media-libs/gst-plugins-bad-1.14:1.0
 	)
+	accessibility? (
+		>=dev-libs/atk-2.16.0:=
+		app-accessibility/at-spi2-atk:=
+	)
 "
 DEPEND="
 	${RDEPEND}
@@ -74,6 +78,7 @@ src_configure() {
 
 	local mycmakeargs=(
 		"-DPORT=WPE"
+		-DENABLE_ACCESSIBILITY=$(usex accessibility)
 		-DSHOULD_INSTALL_JS_SHELL=ON
 		-DENABLE_EXPERIMENTAL_FEATURES=$(usex experimental)
 		-DENABLE_GTKDOC=$(usex doc)
