@@ -14,19 +14,19 @@ LICENSE="LGPL-2+ BSD"
 SRC_URI="https://wpewebkit.org/releases/${P}.tar.xz"
 SLOT="1.0" # WPE_API_VERSION
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~amd64-linux ~x86-linux ~x86-macos"
-IUSE="accessibility doc examples experimental jpeg2k qt +gstreamer"
+IUSE="accessibility doc examples experimental jpeg2k qt +gstreamer sandbox +webdriver +webcrypto"
 
 RDEPEND="
-	>=x11-libs/cairo-1.10.2:=
+	>=x11-libs/cairo-1.14.0:=
 	>=media-libs/fontconfig-2.8.0:=
 	>=media-libs/freetype-2.4.2:=
-	>=dev-libs/glib-2.40.0:=
+	>=dev-libs/glib-2.44.0:=
 	>=media-libs/harfbuzz-0.9.18:=
 	dev-libs/icu
 	virtual/jpeg:=
 	>=media-libs/libepoxy-1.4.0:=
 	>=dev-libs/libgcrypt-1.6.0:=
-	>=net-libs/libsoup-2.42.0:=
+	>=net-libs/libsoup-2.54.0:=
 	>=dev-libs/libxml2-2.8.0:=
 	media-libs/libpng:=
 	dev-db/sqlite:=
@@ -34,12 +34,20 @@ RDEPEND="
 	net-libs/libwpe:=
 	sys-libs/zlib:=
 
+	>=dev-libs/libxslt-1.1.7
+	>=media-libs/woff2-1.0.2
+
 	jpeg2k? ( >=media-libs/openjpeg-2.2.0:2= )
+	webcrypto? (
+		dev-libs/libtasn1:=
+		>=dev-libs/libgcrypt-1.7.0:=
+	)
 	qt? (
 		dev-qt/qtcore:5=
 		dev-qt/qtquickcontrols:5=
 		dev-qt/qtgui:5=
-		>=dev-libs/wpebackend-fdo-1.0:=
+		dev-qt/qttest:5=
+		>=dev-libs/wpebackend-fdo-1.3.0:=
 	)
 	gstreamer? (
 		>=media-libs/gstreamer-1.14:1.0
@@ -51,6 +59,7 @@ RDEPEND="
 		>=dev-libs/atk-2.16.0:=
 		app-accessibility/at-spi2-atk:=
 	)
+	sandbox? ( sys-apps/bubblewrap )
 "
 DEPEND="
 	${RDEPEND}
@@ -79,6 +88,8 @@ src_configure() {
 	local mycmakeargs=(
 		"-DPORT=WPE"
 		-DENABLE_ACCESSIBILITY=$(usex accessibility)
+		-DENABLE_BUBBLEWRAP_SANDBOX=$(usex sandbox)
+		-DUSE_WOFF2=ON
 		-DSHOULD_INSTALL_JS_SHELL=ON
 		-DENABLE_EXPERIMENTAL_FEATURES=$(usex experimental)
 		-DENABLE_GTKDOC=$(usex doc)
@@ -87,6 +98,9 @@ src_configure() {
 		-DENABLE_MINIBROWSER=$(usex examples)
 		-DENABLE_VIDEO=$(usex gstreamer)
 		-DENABLE_WEB_AUDIO=$(usex gstreamer)
+		-DENABLE_WEBDRIVER=$(usex webdriver)
+		-DENABLE_WEB_CRYPTO=$(usex webcrypto)
+		-DENABLE_XSLT=ON
 		${ruby_interpreter}
 	)
 

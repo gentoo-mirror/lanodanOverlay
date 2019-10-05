@@ -5,4 +5,8 @@
 		<email>contact@hacktivis.me</email>
 		<name>Haelwenn (lanodan) Monnier</name>
 	</maintainer>
+	<use>
+		<flag name="experimental">Enable experimental features</flag>
+		<flag name="qt">Enable support for the Qt API</flag>
+	</use>
 </pkgmetadata>
