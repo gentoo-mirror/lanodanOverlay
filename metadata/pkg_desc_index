@@ -71,7 +71,6 @@ games-action/teeworlds 0.7.3.1: Online multi-player platform 2D shooter
 games-arcade/oshu 1.6.0 2.0.0 9999: Lightweight osu! port
 games-arcade/osu-lazer 9999.999.9: rhythm is just a *click* away!
 games-arcade/stepmania 5.0.12 5.1.0_beta2: Advanced rhythm game, designed for both home and arcade use
-games-arcade/taisei 1.2 1.3: Clone of the Touhou series, written in C using SDL/OpenGL/OpenAL.
 games-arcade/tinymania 9999: A VSRG clone for playing .osu files.
 games-board/cockatrice 2.6.2: An open-source multiplatform software for playing card games over a network
 games-emulation/reicast 8.1: A Dreamcast Emulator
