@@ -18,7 +18,6 @@ app-misc/kanatest 0.4.8: Visual flashcard tool for memorizing the Japanese Hirag
 app-shells/mksh 57-r2 9999: MirBSD Korn Shell
 app-text/base91 2.0.0: A Base91 Encoder & Decoder for Haskell
 app-text/evince 3.30.2: Simple document viewer for GNOME
-app-text/grammalecte 0.6.4: Grammatical corrector for the French language
 app-text/mandoc 1.14.5: Suite of tools compiling mdoc and man
 app-text/sshpaste 1.0.1 9999: wgetpaste clone for pushing to your own server
 dev-db/timescaledb 1.2.1: A time-series database optimized for fast ingest and complex queries
@@ -43,7 +42,7 @@ dev-haskell/xkbcommon 0.0.3 9999: Haskell bindings for libxkbcommon (Waymonad)
 dev-lang/erlang 22.1: Erlang programming language, runtime environment and libraries (OTP)
 dev-lang/go 0.20171003: Boostrap Go from C (useful for musl libc)
 dev-lang/mono 6.4.0.198: Mono runtime and class libraries, a C# compiler/interpreter
-dev-libs/glib 2.62.0: The GLib library of C routines
+dev-libs/glib 2.62.1: The GLib library of C routines
 dev-libs/libdazzle 3.33.1: Experimental new features for GTK+ and GLib
 dev-libs/libtermkey 0.21.1-r1: Library for easy processing of keyboard entry from terminal-based programs
 dev-libs/libtomcrypt 1.18.2: modular and portable cryptographic toolkit
@@ -57,8 +56,8 @@ dev-python/pycrypto 9999: Fake ebuild to mask pycrypto in a overlay
 dev-python/python-nbxmpp 0.6.10: Python library to use Jabber/XMPP networks in a non-blocking way
 dev-tex/dot2tex 2.11.2: A Graphviz to LaTeX converter
 dev-util/bam 0.5.1: Fast and flexible Lua-based build system
-dev-util/gdbus-codegen 2.62.0: GDBus code and documentation generator
-dev-util/glib-utils 2.62.0: Build utilities for GLib using projects
+dev-util/gdbus-codegen 2.62.1: GDBus code and documentation generator
+dev-util/glib-utils 2.62.1: Build utilities for GLib using projects
 dev-util/glslang 7.11.3214 7.12.3352: Khronos reference front-end for GLSL and ESSL, and sample SPIR-V generator
 dev-util/gtk-doc 1.32: GTK+ Documentation Generator
 dev-util/gtk-doc-am 1.32: Virtual ebuild for ::gentoo compatibility
@@ -110,9 +109,7 @@ net-im/Quaternion 0.0.9.4a 0.0.9.4c: A Qt5-based IM client for the Matrix protoc
 net-im/bitlbee 3.5.1 9999: irc to IM gateway that support multiple IM protocols
 net-im/gajim 1.0.3 1.1.2: A GTK+ Jabber client
 net-im/tootle 0.2.0 9999: GTK3 client for Mastodon API
-net-irc/inspircd 2.0.27 9999: Inspire IRCd - The Stable, High-Performance Modular IRCd
 net-irc/unrealircd 4.2.0: An advanced Internet Relay Chat daemon
-net-libs/glib-networking 2.62.0: Network-related giomodules for glib
 net-libs/libasr 1.0.2 9999: Async Resolver Library from OpenBSD/OpenSMTPD
 net-libs/libqmatrixclient 0.5.2: A Qt5 library to write cross-platfrom clients for Matrix
 net-libs/libwpe 1.2.1 1.4.0.1: WebKit port optimized for embedded devices
@@ -122,7 +119,6 @@ net-libs/wpewebkit 2.24.3 2.26.1: WebKit port optimized for embedded devices
 net-mail/public-inbox 1.0.0: 
 net-misc/cjdns 20.2: encrypted IPv6 using public-key cryptography for allocation and DHT for routing
 net-misc/drawterm 9999: connect to Plan 9 CPU servers from other operating systems
-net-misc/dropbear 2018.76-r1: small SSH 2 client/server designed for small memory environments
 net-misc/fbxosctrl 2.3.2: Shell tool to control some Freebox OS stuff: wifi, reboot...
 net-misc/geomyidae 0.31.1: A small C-based gopherd.
 net-misc/openntpd 6.0_p1: Lightweight NTP server ported from OpenBSD
@@ -132,7 +128,6 @@ net-nntp/inn 2.6.2: The Internet News daemon, fully featured NNTP server
 net-nntp/suck 4.3.4: Grab news from a remote NNTP server and feed them to another
 net-p2p/gnunet 0.11.0_pre66: GNUnet is a framework for secure peer-to-peer networking.
 net-p2p/stig 0.10.1a: TUI and CLI for the BitTorrent client Transmission
-net-wireless/aircrack-ng 1.2: WLAN tools for breaking 802.11 WEP/WPA keys
 sci-misc/labview 8.6.0: LabVIEW System Design Software
 sys-apps/openrc 0.38.3-r1 0.41.2: OpenRC manages the services, startup and shutdown of a host
 sys-libs/gcompat 0.4.0: The GNU C Library compatibility layer for musl

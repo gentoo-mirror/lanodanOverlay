@@ -2,9 +2,9 @@ DEFINED_PHASES=compile install unpack
 DEPEND=>=dev-vcs/git-1.8.2.1[curl]
 DESCRIPTION=simple ed
 EAPI=6
-HOMEPAGE=http://git.2f30.org/ed
+HOMEPAGE=https://git.2f30.org/ed
 LICENSE=MIT
 PROPERTIES=live
 SLOT=0
 _eclasses_=git-r3	562b380fc59ae6a8622171d0acb777d1
-_md5_=c1e56222b7a7a91a4c5cf46e68c23a99
+_md5_=5345f05036b0f39dedcac66b47544b11

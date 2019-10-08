@@ -7,7 +7,8 @@ IUSE=doc json test
 KEYWORDS=~amd64
 LICENSE=MIT
 RDEPEND=|| ( dev-elixir/plug:1.8 dev-elixir/plug:1.9 ) >=dev-erlang/telemetry-0.4 dev-elixir/phoenix_pubsub:1.1 json? ( dev-elixir/jason:1.0 ) doc? ( dev-elixir/ex_doc:0.20 dev-elixir/inch_ex:0.2 ) test? ( dev-elixir/gettext:0.15 dev-elixir/phoenix_html:2.11 dev-elixir/websocket_client ) dev-lang/elixir
+RESTRICT=!test? ( test )
 SLOT=1.4
 SRC_URI=https://github.com/phoenixframework/phoenix/archive/v1.4.9.tar.gz -> phoenix-1.4.9.tar.gz
 _eclasses_=mix	a9f226ef3febd0bbaa07bcde42a8be4b
-_md5_=39ff86dfc795a6b7b3a8f1c10e7df40a
+_md5_=84a4437c62dd4682b6503183222c5657

@@ -1,10 +1,10 @@
 DEFINED_PHASES=install
 DESCRIPTION=The Single UNIX Specification, Version 4, 2018 Edition
 EAPI=6
-HOMEPAGE=https://www2.opengroup.org/ogsys/catalog/T101 http://pubs.opengroup.org/onlinepubs/9699919799/
+HOMEPAGE=https://www2.opengroup.org/ogsys/catalog/T101 https://pubs.opengroup.org/onlinepubs/9699919799/
 KEYWORDS=~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86 ~x64-macos
 LICENSE=sus4-copyright
 RESTRICT=mirror
 SLOT=4
-SRC_URI=http://pubs.opengroup.org/onlinepubs/9699919799/download/susv4-2018.tgz
-_md5_=887967d48f8a3a8c49a7ee5769d626bb
+SRC_URI=https://pubs.opengroup.org/onlinepubs/9699919799/download/susv4-2018.tgz
+_md5_=1432ebc1532495d8acd862f87b20aa8f

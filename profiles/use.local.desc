@@ -109,17 +109,6 @@ net-im/bitlbee:otr - Enable support for encrypted conversations
 net-im/bitlbee:plugins - Enable support for plugins
 net-im/bitlbee:purple - Use libpurple instead of the built-in IM protocol support
 net-im/bitlbee:twitter - Enable Twitter protocol support
-net-irc/inspircd:geoip - Add geoip support for country and city lookup based on IPs
-net-irc/inspircd:gnutls - Enable TLS support via net-libs/gnutls
-net-irc/inspircd:ipv6 - Enable support for IP version 6
-net-irc/inspircd:ldap - Enable LDAP support
-net-irc/inspircd:mbedtls - Enable TLS support via net-libs/mbedtls
-net-irc/inspircd:mysql - Enable MySQL database backend
-net-irc/inspircd:pcre - Adds support for Perl Compatible Regular Expressions
-net-irc/inspircd:posix - Adds support for POSIX-compatible functions
-net-irc/inspircd:postgres - Enable PostgreSQL database backend
-net-irc/inspircd:sqlite - Enable Sqlite database backend
-net-irc/inspircd:tre - Enable support for TRE, a lightweight, robust, and efficient POSIX compliant regexp matching library
 net-irc/unrealircd:class-nofakelag - Enable an unsupported class::options flag called “nofakelag” allowing you to grant fakelag exemption to normal user (instead of just opers).
 net-irc/unrealircd:extban-stacking - Enable extended channel bans (such as +b ~c: and +b ~n:) to contain other extended bans instead of just hostmasks.
 net-irc/unrealircd:operoverride - Enable OperOverride extension
@@ -144,19 +133,12 @@ net-libs/webkit-gtk:webgl - Build support for the WebGL HTML API using virtual/o
 net-libs/webkit-gtk:wpe - Enable net-libs/libwpe rendering
 net-libs/wpewebkit:experimental - Enable experimental features
 net-libs/wpewebkit:qt - Enable support for the Qt API
-net-misc/dropbear:bsdpty - Add support for legacy BSD pty's rather than dynamic UNIX pty's -- do not use this flag unless you are absolutely sure you actually want it
-net-misc/dropbear:multicall - Build all the programs as one little binary (to save space)
-net-misc/dropbear:shadow - Enable shadow password support
 net-misc/openntpd:libressl - Enable HTTPS TLS time constraint support using dev-libs/libressl
 net-misc/tinyssh:sodium - Use dev-libs/libsodium for cryptography
 net-nntp/inn:innkeywords - Enable automatic keyword generation support
 net-nntp/inn:inntaggedhash - Use tagged hash table for history (disables large file support)
 net-p2p/gnunet:experimental - enable experimental options
 net-p2p/gnunet:http - enable embedded http server support
-net-wireless/aircrack-ng:airdrop-ng - Build airdrop-ng
-net-wireless/aircrack-ng:airgraph-ng - Build airgraph-ng
-net-wireless/aircrack-ng:experimental - Build the "experimental" tools which may randomly fail to run properly
-net-wireless/aircrack-ng:netlink - Use netlink for channel control instead of WEXT
 sys-apps/openrc:bash - enable the use of bash in service scripts (experimental)
 sys-apps/openrc:init - install as a replacement of sys-apps/sysvinit
 sys-apps/openrc:netifrc - enable Gentoo's network stack (net.* scripts)
