@@ -14,7 +14,7 @@ else
 fi
 
 DESCRIPTION="Wayland Kiosk"
-HOMEPAGE="https://hjdskes.nl/projects/cage"
+HOMEPAGE="https://www.hjdskes.nl/projects/cage/"
 LICENSE="MIT"
 SLOT="0"
 IUSE="xwayland"

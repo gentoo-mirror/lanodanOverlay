@@ -5,7 +5,7 @@ EAPI=5
 inherit eutils games
 
 DESCRIPTION="A framework for 2D games in Lua"
-HOMEPAGE="http://love2d.org/"
+HOMEPAGE="https://love2d.org/"
 SRC_URI="https://www.bitbucket.org/rude/${PN}/downloads/${P}-linux-src.tar.gz"
 
 LICENSE="ZLIB"

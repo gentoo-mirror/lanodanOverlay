@@ -10,7 +10,7 @@ POSTGRES_USEDEP="server"
 inherit postgres-multi
 
 DESCRIPTION="A time-series database optimized for fast ingest and complex queries"
-HOMEPAGE="http://www.timescale.com/"
+HOMEPAGE="https://www.timescale.com/"
 SRC_URI="https://github.com/timescale/${PN}/releases/download/${PV}/${P}.tar.gz"
 
 LICENSE="Apache-2.0"

@@ -4,8 +4,8 @@
 EAPI=6
 
 DESCRIPTION="common C++ API for realtime MIDI input/output"
-HOMEPAGE="http://www.music.mcgill.ca/~gary/rtmidi/"
-SRC_URI="http://www.music.mcgill.ca/~gary/rtmidi/release/${P}.tar.gz"
+HOMEPAGE="https://www.music.mcgill.ca/~gary/rtmidi/"
+SRC_URI="https://www.music.mcgill.ca/~gary/rtmidi/release/${P}.tar.gz"
 RESTRICT="mirror"
 
 LICENSE="MIT-with-advertising"

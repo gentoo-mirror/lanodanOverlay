@@ -6,7 +6,7 @@ EAPI=7
 inherit lua
 
 DESCRIPTION="libevent bindings for Lua"
-HOMEPAGE="http://luaforge.net/projects/luaevent"
+HOMEPAGE="http://luaforge.net/projects/luaevent/"
 SRC_URI="https://github.com/harningt/luaevent/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LGPL-2.1"

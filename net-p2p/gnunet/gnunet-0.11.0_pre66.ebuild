@@ -8,7 +8,7 @@ inherit user
 MY_PV="0.11.0pre66"
 
 DESCRIPTION="GNUnet is a framework for secure peer-to-peer networking."
-HOMEPAGE="http://gnunet.org/"
+HOMEPAGE="https://gnunet.org/"
 LICENSE="GPL-3"
 SRC_URI="mirror://gnu/${PN}/${PN}-${MY_PV}.tar.gz"
 KEYWORDS="~amd64"

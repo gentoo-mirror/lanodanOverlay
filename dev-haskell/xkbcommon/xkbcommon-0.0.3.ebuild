@@ -8,7 +8,7 @@ CABAL_FEATURES="lib"
 inherit haskell-cabal
 
 DESCRIPTION="Haskell bindings for libxkbcommon"
-HOMEPAGE="https://github.com/tulcod/haskell-xkbcommon"
+HOMEPAGE="https://github.com/abooij/haskell-xkbcommon"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 SLOT="0"
 LICENSE="BSD MIT"

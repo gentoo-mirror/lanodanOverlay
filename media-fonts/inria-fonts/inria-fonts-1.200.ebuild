@@ -10,7 +10,7 @@ inherit font
 
 DESCRIPTION="Inria Serif and Inria Sans Typeface"
 HOMEPAGE="https://black-foundry.com/work/inria/"
-SRC_URI="https://github.com/BlackFoundry/InriaFonts/archive/v${PV}.tar.gz -> ${MY_P}.tar.gz"
+SRC_URI="https://github.com/BlackFoundryCom/InriaFonts/archive/v${PV}.tar.gz -> ${MY_P}.tar.gz"
 
 LICENSE="OFL-1.1"
 SLOT="0"

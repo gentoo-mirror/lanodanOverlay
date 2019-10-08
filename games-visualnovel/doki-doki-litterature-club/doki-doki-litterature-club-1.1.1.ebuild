@@ -20,6 +20,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc +system-renpy"
 
+# app-arch/unzip for SRC_URI
+DEPEND="app-arch/unzip"
 RDEPEND="system-renpy? ( games-engines/renpy )"
 
 REQUIRED_USE="!system-renpy? ( || ( amd64 x86 ) )"

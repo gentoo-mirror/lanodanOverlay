@@ -13,7 +13,7 @@ if [[ $PV = 9999 ]]; then
 	ECVS_AUTH="ext"
 	KEYWORDS=""
 else
-	SRC_URI="http://www.mirbsd.org/MirOS/dist/mir/mksh/${PN}-R${PV}.tgz"
+	SRC_URI="https://www.mirbsd.org/MirOS/dist/mir/mksh/${PN}-R${PV}.tgz"
 	KEYWORDS="~amd64 ~ppc ~x86 ~amd64-linux ~x86-linux"
 fi
 

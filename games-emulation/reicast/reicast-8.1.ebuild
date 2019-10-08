@@ -6,7 +6,7 @@ EAPI=7
 inherit toolchain-funcs
 
 DESCRIPTION="A Dreamcast Emulator"
-HOMEPAGE="http://reicast.com/"
+HOMEPAGE="https://reicast.com/"
 LICENSE="GPL-2"
 SRC_URI="https://github.com/reicast/reicast-emulator/archive/r${PV}.tar.gz -> ${P}.tar.gz"
 SLOT="0"

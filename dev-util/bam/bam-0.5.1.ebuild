@@ -7,8 +7,8 @@ EAPI=7
 inherit eutils toolchain-funcs
 
 DESCRIPTION="Fast and flexible Lua-based build system"
-HOMEPAGE="https://matricks.github.com/bam/"
-SRC_URI="https://github.com/matricks/${PN}/${P}.tar.gz"
+HOMEPAGE="https://matricks.github.io/bam/"
+SRC_URI="https://github.com/matricks/bam/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="ZLIB"
 SLOT="0"

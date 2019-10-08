@@ -6,9 +6,9 @@ EAPI=6
 inherit toolchain-funcs flag-o-matic
 
 DESCRIPTION="Command line sequenced binaural beat generator"
-HOMEPAGE="http://sbagen.sourceforge.net/"
+HOMEPAGE="https://sbagen.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tgz
-	vorbis? ( sounds? ( http://uazu.net/sbagen/sbagen-river-1.4.1.tgz ) )"
+	vorbis? ( sounds? ( https://uazu.net/sbagen/sbagen-river-1.4.1.tgz ) )"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"

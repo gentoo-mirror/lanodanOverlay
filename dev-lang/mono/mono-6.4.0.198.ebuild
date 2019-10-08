@@ -12,7 +12,7 @@ IUSE="nls minimal pax_kernel xen doc"
 inherit autotools eutils linux-info mono-env flag-o-matic pax-utils multilib-minimal
 
 DESCRIPTION="Mono runtime and class libraries, a C# compiler/interpreter"
-HOMEPAGE="http://www.mono-project.com/Main_Page"
+HOMEPAGE="https://www.mono-project.com/Main_Page"
 LICENSE="MIT LGPL-2.1 GPL-2 BSD-4 NPL-1.1 Ms-PL GPL-2-with-linking-exception IDPL"
 
 SRC_URI="http://download.mono-project.com/sources/mono/${P}.tar.xz"

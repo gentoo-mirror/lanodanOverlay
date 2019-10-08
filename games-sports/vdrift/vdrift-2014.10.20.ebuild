@@ -11,7 +11,7 @@ inherit python-any-r1 scons-utils
 MY_P="${PN}-$(ver_rs 1-2 -)"
 
 DESCRIPTION="A driving simulation made with drift racing in mind"
-HOMEPAGE="http://vdrift.net/"
+HOMEPAGE="https://vdrift.net/"
 SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2"
 
 LICENSE="GPL-3 ZLIB LGPL-2.1+"

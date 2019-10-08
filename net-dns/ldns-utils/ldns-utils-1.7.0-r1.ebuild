@@ -6,8 +6,8 @@ EAPI=6
 MY_P=${P/-utils}
 
 DESCRIPTION="Set of utilities to simplify various dns(sec) tasks"
-HOMEPAGE="http://www.nlnetlabs.nl/projects/ldns/"
-SRC_URI="http://www.nlnetlabs.nl/downloads/ldns/${MY_P}.tar.gz"
+HOMEPAGE="https://www.nlnetlabs.nl/projects/ldns/"
+SRC_URI="https://www.nlnetlabs.nl/downloads/ldns/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

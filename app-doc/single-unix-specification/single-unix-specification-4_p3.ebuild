@@ -4,8 +4,8 @@
 EAPI=6
 
 DESCRIPTION="The Single UNIX Specification, Version 4, 2018 Edition"
-HOMEPAGE="https://www2.opengroup.org/ogsys/catalog/T101 http://pubs.opengroup.org/onlinepubs/9699919799/"
-SRC_URI="http://pubs.opengroup.org/onlinepubs/9699919799/download/susv4-2018.tgz"
+HOMEPAGE="https://www2.opengroup.org/ogsys/catalog/T101 https://pubs.opengroup.org/onlinepubs/9699919799/"
+SRC_URI="https://pubs.opengroup.org/onlinepubs/9699919799/download/susv4-2018.tgz"
 
 LICENSE="sus4-copyright"
 SLOT="4"

@@ -6,8 +6,8 @@ EAPI=6
 inherit cmake-utils
 
 DESCRIPTION="An open-source Zelda-like 2D game engine"
-HOMEPAGE="http://www.solarus-games.org/"
-SRC_URI="http://www.solarus-games.org/downloads/${PN}/${P}-src.tar.gz"
+HOMEPAGE="https://www.solarus-games.org/"
+SRC_URI="https://www.solarus-games.org/downloads/${PN}/${P}-src.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

@@ -7,8 +7,8 @@ EAPI=6
 inherit lua
 
 DESCRIPTION="A deployment and management system for Lua modules"
-HOMEPAGE="http://www.luarocks.org"
-SRC_URI="http://luarocks.org/releases/${P}.tar.gz"
+HOMEPAGE="https://www.luarocks.org"
+SRC_URI="https://luarocks.org/releases/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

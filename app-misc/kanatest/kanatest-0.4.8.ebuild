@@ -5,7 +5,7 @@ EAPI=6
 inherit autotools eutils gnome2-utils
 
 DESCRIPTION="Visual flashcard tool for memorizing the Japanese Hiragana and Katakana alphabet"
-HOMEPAGE="http://www.clayo.org/kanatest"
+HOMEPAGE="http://www.clayo.org/kanatest/"
 SRC_URI="http://www.clayo.org/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2 GPL-2+"
