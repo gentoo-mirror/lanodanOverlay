@@ -19,7 +19,7 @@ else
 fi
 
 DESCRIPTION="A driving simulation made with drift racing in mind"
-HOMEPAGE="http://vdrift.net/"
+HOMEPAGE="https://vdrift.net/"
 LICENSE="GPL-3 ZLIB LGPL-2.1+"
 SLOT="0"
 

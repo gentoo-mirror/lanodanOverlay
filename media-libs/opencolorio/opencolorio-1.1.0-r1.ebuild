@@ -9,9 +9,9 @@ PYTHON_COMPAT=( python{2_7,3_4,3_5,3_6} )
 inherit cmake-utils python-single-r1 vcs-snapshot
 
 DESCRIPTION="A color management framework for visual effects and animation"
-HOMEPAGE="http://opencolorio.org/"
+HOMEPAGE="https://opencolorio.org/"
 
-SRC_URI="https://github.com/imageworks/OpenColorIO/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/AcademySoftwareFoundation/OpenColorIO/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

@@ -17,6 +17,7 @@ fi
 SLOT="$(ver_cut 1-2)"
 LICENSE="MIT"
 IUSE="test doc"
+RESTRICT="!test? ( test )"
 
 DEPEND="
 	test? ( >=dev-elixir/credo-1.1.0 )

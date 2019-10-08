@@ -4,7 +4,7 @@
 EAPI=7
 
 DESCRIPTION="static git page generator"
-HOMEPAGE="https://git.codemadness.org/stagit"
+HOMEPAGE="https://git.codemadness.org/stagit/"
 SRC_URI="https://codemadness.org/releases/stagit/${P}.tar.gz"
 
 LICENSE="MIT"

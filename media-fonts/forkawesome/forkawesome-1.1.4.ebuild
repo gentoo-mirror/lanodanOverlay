@@ -8,7 +8,7 @@ inherit font
 REPO_PN="Fork-Awesome"
 
 DESCRIPTION="The iconic font"
-HOMEPAGE="http://fontawesome.io"
+HOMEPAGE="https://fontawesome.com/"
 SRC_URI="https://github.com/ForkAwesome/${REPO_PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="CC-BY-3.0 OFL-1.1" # MIT for CSS/LESS files?

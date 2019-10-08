@@ -14,6 +14,7 @@ SLOT="$(ver_cut 1-2)"
 SRC_URI="https://github.com/phoenixframework/phoenix/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 KEYWORDS="~amd64"
 IUSE="doc json test"
+RESTRICT="!test? ( test )"
 
 DEPEND="
 	|| (

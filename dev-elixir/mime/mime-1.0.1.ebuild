@@ -8,7 +8,7 @@ inherit mix
 MIX_REWRITE=true
 
 DESCRIPTION="MIME type module for Elixir"
-HOMEPAGE="https://github.com/elixir-lang/mime"
+HOMEPAGE="https://github.com/elixir-plug/mime"
 LICENSE="Apache-2.0"
 SLOT="$(ver_cut 1-2)"
 SRC_URI="https://github.com/elixir-plug/mime/archive/v${PV}.tar.gz -> ${P}.tar.gz"

@@ -6,7 +6,7 @@ EAPI=7
 inherit cmake-utils
 
 DESCRIPTION="Advanced rhythm game, designed for both home and arcade use"
-HOMEPAGE="http://www.stepmania.com/"
+HOMEPAGE="https://www.stepmania.com/"
 SRC_URI="https://github.com/stepmania/stepmania/archive/v${PV/_beta/-b}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT default-songs? ( CC-BY-NC-4.0 )"

@@ -12,6 +12,7 @@ SLOT="$(ver_cut 1-2)"
 SRC_URI="https://github.com/potatosalad/erlang-jose/archive/${PV}.tar.gz -> ${P}.tar.gz"
 KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 IUSE="test doc"
+RESTRICT="!test? ( test )"
 
 DEPEND="
 	dev-elixir/hex

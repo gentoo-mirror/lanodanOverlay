@@ -14,7 +14,7 @@ else
 fi
 
 DESCRIPTION="Distrustful Tiling Wayland Compositor"
-HOMEPAGE="https://hacktivis.me/git/inaban"
+HOMEPAGE="https://hacktivis.me/git/inaban/"
 LICENSE="BSD"
 SLOT="0"
 IUSE="suid"
