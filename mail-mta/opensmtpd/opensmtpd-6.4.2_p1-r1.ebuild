@@ -19,7 +19,7 @@ DEPEND="
 	!libressl? ( dev-libs/openssl:0 )
 	libressl? ( dev-libs/libressl )
 	sys-libs/zlib
-	pam? ( virtual/pam )
+	pam? ( sys-libs/pam )
 	elibc_musl? (
 		sys-libs/fts-standalone
 		sys-libs/queue-standalone
