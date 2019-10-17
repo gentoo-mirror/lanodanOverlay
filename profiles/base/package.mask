@@ -10,7 +10,11 @@ media-gfx/exiv2
 # fails to build with a OpenSSL-like error in stable (1.9.7-r1)
 dev-vcs/subversion
 
-# aelwenn (lanodan) Monnier <contact@hacktivis.me> 2018-12-27
+# Haelwenn (lanodan) Monnier <contact@hacktivis.me> 2018-12-27
 # Bloated, quite insecure (too much trust in other apps, more than paging)
 # alternative can be sys-apps/most, see virtual/pager for others
 sys-apps/less
+
+# Haelwenn (lanodan) Monnier <contact@hacktivis.me> 2019-10-17
+# Vulnerable to CVE-2018-17828 (non-removal of "../" in the paths)
+=dev-libs/zziplib-0.13.69
