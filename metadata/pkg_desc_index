@@ -131,7 +131,7 @@ net-nntp/suck 4.3.4: Grab news from a remote NNTP server and feed them to anothe
 net-p2p/gnunet 0.11.0_pre66: GNUnet is a framework for secure peer-to-peer networking.
 net-p2p/stig 0.10.1a: TUI and CLI for the BitTorrent client Transmission
 sci-misc/labview 8.6.0: LabVIEW System Design Software
-sys-apps/openrc 0.38.3-r1 0.41.2: OpenRC manages the services, startup and shutdown of a host
+sys-apps/openrc 0.41.2-r1: OpenRC manages the services, startup and shutdown of a host
 sys-libs/gcompat 0.4.0: The GNU C Library compatibility layer for musl
 virtual/editor 0-r1: Virtual for editor
 virtual/man 9: Virtual for man
