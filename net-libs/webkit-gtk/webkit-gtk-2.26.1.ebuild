@@ -129,6 +129,8 @@ S="${WORKDIR}/${MY_P}"
 
 CHECKREQS_DISK_BUILD="18G" # and even this might not be enough, bug #417307
 
+PATCHES=( "${FILESDIR}/${P}-250818_webdriver_off.diff" )
+
 pkg_pretend() {
 	if [[ ${MERGE_TYPE} != "binary" ]] ; then
 		if is-flagq "-g*" && ! is-flagq "-g*0" ; then

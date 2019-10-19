@@ -1,0 +1,25 @@
+Index: /Source/WebKit/UIProcess/Automation/gtk/WebAutomationSessionGtk.cpp
+===================================================================
+--- /Source/WebKit/UIProcess/Automation/gtk/WebAutomationSessionGtk.cpp	(revision 250817)
++++ /Source/WebKit/UIProcess/Automation/gtk/WebAutomationSessionGtk.cpp	(revision 250818)
+@@ -35,4 +35,5 @@
+ using namespace WebCore;
+ 
++#if ENABLE(WEBDRIVER_MOUSE_INTERACTIONS)
+ static unsigned modifiersToEventState(OptionSet<WebEvent::Modifier> modifiers)
+ {
+@@ -132,5 +133,7 @@
+     }
+ }
+-
++#endif // ENABLE(WEBDRIVER_MOUSE_INTERACTIONS)
++
++#if ENABLE(WEBDRIVER_KEYBOARD_INTERACTIONS)
+ static void doKeyStrokeEvent(GdkEventType type, GtkWidget* widget, unsigned keyVal, unsigned state, bool doReleaseAfterPress = false)
+ {
+@@ -332,4 +335,5 @@
+     } while (*p);
+ }
++#endif // ENABLE(WEBDRIVER_KEYBOARD_INTERACTIONS)
+ 
+ } // namespace WebKit
