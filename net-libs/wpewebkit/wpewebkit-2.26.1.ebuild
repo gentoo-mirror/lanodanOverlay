@@ -91,6 +91,7 @@ src_configure() {
 		-DENABLE_BUBBLEWRAP_SANDBOX=$(usex sandbox)
 		-DUSE_WOFF2=ON
 		-DSHOULD_INSTALL_JS_SHELL=ON
+		-DENABLE_ENCRYPTED_MEDIA=OFF
 		-DENABLE_EXPERIMENTAL_FEATURES=$(usex experimental)
 		-DENABLE_GTKDOC=$(usex doc)
 		-DUSE_OPENJPEG=$(usex jpeg2k)
