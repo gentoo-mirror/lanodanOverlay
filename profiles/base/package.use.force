@@ -2,5 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 # Haelwenn (lanodan) Monnier <contact@hacktivis.me> (2019-10-19)
-# webkit-gtk 2.26.1 fails building without WebGL
+# webkit-gtk 2.26.x fails building without WebGL
+# https://bugs.webkit.org/show_bug.cgi?id=203956
 ~net-libs/webkit-gtk-2.26.1 webgl
+~net-libs/webkit-gtk-2.26.2 webgl
