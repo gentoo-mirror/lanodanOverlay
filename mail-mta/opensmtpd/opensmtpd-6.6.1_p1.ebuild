@@ -16,8 +16,8 @@ KEYWORDS="~amd64"
 IUSE="libressl pam mdoc +mta"
 
 DEPEND="
-	!libressl? ( dev-libs/openssl:0 )
-	libressl? ( dev-libs/libressl )
+	!libressl? ( >=dev-libs/openssl-1.1.0:0 )
+	libressl? ( >=dev-libs/libressl-3.0.2 )
 	sys-libs/zlib
 	pam? ( sys-libs/pam )
 	elibc_musl? (
