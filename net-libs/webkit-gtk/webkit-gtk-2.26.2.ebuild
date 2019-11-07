@@ -96,7 +96,10 @@ RDEPEND="
 		>=net-libs/libwpe-1.3.0:=
 		>=dev-libs/wpebackend-fdo-1.3.1:=
 	)
-	sandbox? ( sys-apps/bubblewrap )
+	sandbox? (
+		sys-apps/bubblewrap
+		sys-apps/xdg-dbus-proxy
+	)
 "
 
 # paxctl needed for bug #407085
