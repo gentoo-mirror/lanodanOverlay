@@ -133,6 +133,7 @@ net-p2p/stig 0.10.1a: TUI and CLI for the BitTorrent client Transmission
 sci-misc/labview 8.6.0: LabVIEW System Design Software
 sys-apps/openrc 0.41.2-r1: OpenRC manages the services, startup and shutdown of a host
 sys-apps/xdg-dbus-proxy 0.1.2: filtering proxy for D-Bus connections
+sys-libs/db 5.3.28-r3: Oracle Berkeley DB
 sys-libs/gcompat 0.4.0: The GNU C Library compatibility layer for musl
 virtual/editor 0-r1: Virtual for editor
 virtual/man 9: Virtual for man
