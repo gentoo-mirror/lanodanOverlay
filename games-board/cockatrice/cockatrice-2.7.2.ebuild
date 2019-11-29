@@ -6,13 +6,13 @@ EAPI=7
 
 inherit cmake-utils
 
-MY_P="Cockatrice-2018-12-20-Release-${PV}"
+MY_P="2019-08-31-Release-${PV}"
 
 DESCRIPTION="An open-source multiplatform software for playing card games over a network"
 HOMEPAGE="https://github.com/Cockatrice/Cockatrice"
 
 SRC_URI="https://github.com/Cockatrice/Cockatrice/archive/${MY_P}.tar.gz -> ${P}.tar.gz"
-S="${WORKDIR}/${MY_P}"
+S="${WORKDIR}/Cockatrice-${MY_P}"
 
 LICENSE="GPL-2"
 SLOT="0"
