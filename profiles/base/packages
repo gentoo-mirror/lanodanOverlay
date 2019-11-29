@@ -1,4 +1,4 @@
-app-admin/syslog-ng
+app-admin/rsyslog
 app-crypt/gentoo-keys
 app-editors/vis
 app-misc/pax-utils
