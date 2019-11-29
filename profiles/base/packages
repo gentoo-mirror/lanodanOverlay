@@ -18,4 +18,4 @@ sys-apps/ed
 sys-devel/clang
 sys-kernel/gentoo-sources
 sys-process/dcron
--sys-apps/less
+*-sys-apps/less
