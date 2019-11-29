@@ -71,7 +71,7 @@ games-arcade/oshu 1.6.0 2.0.0 9999: Lightweight osu! port
 games-arcade/osu-lazer 9999.999.9: rhythm is just a *click* away!
 games-arcade/stepmania 5.1.0_beta2: Advanced rhythm game, designed for both home and arcade use
 games-arcade/tinymania 9999: A VSRG clone for playing .osu files.
-games-board/cockatrice 2.6.2: An open-source multiplatform software for playing card games over a network
+games-board/cockatrice 2.7.2: An open-source multiplatform software for playing card games over a network
 games-emulation/reicast 8.1: A Dreamcast Emulator
 games-engines/devilutionX 0.5.0 9999: Diablo build for modern operating systems
 games-engines/love 0.7.2-r1 0.8.0 0.10.2 9999: A framework for 2D games in Lua
