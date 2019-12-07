@@ -53,7 +53,6 @@ dev-libs/glib:dbus - Enable dependencies required by glib libraries using dbus s
 dev-libs/glib:mime - Pull in shared MIME database that many glib-based applications require at runtime to detect or open files. Warning: do not disable this flag unless installing on a headless server.
 dev-libs/glib:systemtap - Build support for profiling and tracing using dev-util/systemtap
 dev-libs/glib:utils - Install gtester-report utility to generate test report files for your software; build gresource utility with ELF support.
-dev-libs/libtermkey:demos - Install demos, which pulls in dev-libs/glib
 dev-lua/luarocks:openssl - 
 dev-vcs/mercurial:bugzilla - Support bugzilla integration.
 dev-vcs/mercurial:chg - Support Mercurial command server client
@@ -121,6 +120,8 @@ net-irc/unrealircd:usermod - Enable /set* and /chg* commands
 net-libs/glib-networking:gnome - Extract HTTP/HTTPS/SOCKS proxy configuration stored using GSettings
 net-libs/glib-networking:libproxy - Use net-libs/libproxy for getting the HTTP/HTTPS/SOCKS proxy configuration
 net-libs/glib-networking:openssl - support for OpenSSL networking configration
+net-libs/libsoup:gssapi - Enable GSSAPI support
+net-libs/libsoup:samba - Use net-fs/samba for NTLM Single Sign-On
 net-libs/webkit-gtk:coverage - Enable code coverage support
 net-libs/webkit-gtk:egl - Enable EGL support
 net-libs/webkit-gtk:experimental - Enable experimental features
