@@ -6,6 +6,7 @@
 		<name>Haelwenn (lanodan) Monnier</name>
 	</maintainer>
 	<use>
-		<flag name="demos">Install demos, which pulls in <pkg>dev-libs/glib</pkg></flag>
+		<flag name="gssapi">Enable GSSAPI support</flag>
+		<flag name="samba">Use <pkg>net-fs/samba</pkg> for NTLM Single Sign-On</flag>
 	</use>
 </pkgmetadata>
