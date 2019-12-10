@@ -17,7 +17,7 @@ app-misc/binwalk 2.1.1-r2: A tool for identifying files embedded inside firmware
 app-misc/kanatest 0.4.8: Visual flashcard tool for memorizing the Japanese Hiragana and Katakana alphabet
 app-shells/mksh 57-r2 9999: MirBSD Korn Shell
 app-text/base91 2.0.0: A Base91 Encoder & Decoder for Haskell
-app-text/evince 3.30.2: Simple document viewer for GNOME
+app-text/evince 3.32.1: Simple document viewer for GNOME
 app-text/mandoc 1.14.5: Suite of tools compiling mdoc and man
 app-text/sshpaste 1.0.1 9999: wgetpaste clone for pushing to your own server
 dev-db/timescaledb 1.2.1: A time-series database optimized for fast ingest and complex queries
