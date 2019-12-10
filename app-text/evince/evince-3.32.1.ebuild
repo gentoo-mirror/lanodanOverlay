@@ -24,7 +24,7 @@ COMMON_DEPEND="
 	>=dev-libs/libxml2-2.5:2
 	sys-libs/zlib:=
 	>=x11-libs/gdk-pixbuf-2.36.5:2
-	>=x11-libs/gtk+-3.16.0:3[introspection?]
+	>=x11-libs/gtk+-3.22.0:3[introspection?]
 	gnome-base/gsettings-desktop-schemas
 	>=x11-libs/cairo-1.10:=
 	>=app-text/poppler-0.33[cairo]
@@ -69,15 +69,14 @@ DEPEND="${COMMON_DEPEND}
 #  app-text/yelp-tools
 
 PATCHES=(
-	"${FILESDIR}"/${PV}-internal-synctex.patch # don't automagically link to synctex from texlive-core - always use internal copy of this small parser for now; requires eautoreconf
-	"${FILESDIR}"/${PV}-application-name-dbus.patch # unbreak build when compiled without dbus - fixed in 3.31.4+
+	"${FILESDIR}"/3.30.2-internal-synctex.patch # don't automagically link to synctex from texlive-core - always use internal copy of this small parser for now; requires eautoreconf
 )
 
 src_prepare() {
 	gnome2_src_prepare
 
 	# Do not depend on adwaita-icon-theme, bug #326855, #391859
-	# https://bugs.freedesktop.org/show_bug.cgi?id=29942
+	# https://gitlab.freedesktop.org/xdg/default-icon-theme/issues/7
 	sed -e 's/adwaita-icon-theme >= $ADWAITA_ICON_THEME_REQUIRED//g' \
 		-i configure || die "sed failed"
 }
