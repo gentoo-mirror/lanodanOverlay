@@ -1,5 +1,5 @@
 BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
-DEFINED_PHASES=compile unpack
+DEFINED_PHASES=install unpack
 DEPEND=dev-lang/go:0
 DESCRIPTION=remove binary blobs from a directory
 EAPI=7
@@ -10,4 +10,4 @@ PROPERTIES=live
 RDEPEND=dev-lang/go:0
 SLOT=0
 _eclasses_=git-r3	6d22636df236df4cc8475f7b7668bdcd
-_md5_=e7d3ac89a44137002469758af7fbbce3
+_md5_=fbe409c4373ff25e1040c8b494934cc2
