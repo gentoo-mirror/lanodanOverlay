@@ -1,0 +1,13 @@
+BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=compile unpack
+DEPEND=dev-lang/go:0
+DESCRIPTION=remove binary blobs from a directory
+EAPI=7
+HOMEPAGE=https://hacktivis.me/git/go-deblob/
+KEYWORDS=~amd64 ~arm ~arm64 ~hppa ~m68k ~mips ~ppc64 ~s390 ~sh ~sparc ~x86
+LICENSE=BSD
+PROPERTIES=live
+RDEPEND=dev-lang/go:0
+SLOT=0
+_eclasses_=git-r3	6d22636df236df4cc8475f7b7668bdcd
+_md5_=e7d3ac89a44137002469758af7fbbce3
