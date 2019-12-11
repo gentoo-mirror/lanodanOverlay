@@ -17,6 +17,7 @@ EGIT_MIN_CLONE_TYPE="single+tags"
 DEPEND="dev-lang/go:0"
 RDEPEND="${DEPEND}"
 
-src_compile() {
-	emake PREFIX="/usr"
+src_install() {
+	emake DESTDIR="${D}" PREFIX="/usr" install
+	einstalldocs
 }
