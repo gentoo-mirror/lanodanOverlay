@@ -1,3 +1,4 @@
+-*sys-apps/less
 app-admin/rsyslog
 app-crypt/gentoo-keys
 app-editors/vis
@@ -9,6 +10,7 @@ app-shells/mksh
 app-text/mandoc
 app-text/sshpaste
 dev-perl/rename
+dev-util/go-deblob
 net-analyzer/mtr
 net-analyzer/nmap
 net-analyzer/tcpdump
@@ -18,4 +20,3 @@ sys-apps/ed
 sys-devel/clang
 sys-kernel/gentoo-sources
 sys-process/dcron
--*sys-apps/less
