@@ -16,6 +16,8 @@ KEYWORDS="~amd64 ~arm ~arm64 ~hppa ~m68k ~mips ~ppc64 ~s390 ~sh ~sparc ~x86"
 
 EGIT_REPO_URI="https://hacktivis.me/git/go-deblob.git"
 EGIT_MIN_CLONE_TYPE="single+tags"
+# network needed for go-module_live_vendor
+RESTRICT="network-sandbox"
 
 src_unpack() {
 	git-r3_src_unpack
