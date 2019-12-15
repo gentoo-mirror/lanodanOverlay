@@ -10,5 +10,5 @@ PROPERTIES=live
 RDEPEND=app-text/scdoc || ( dev-libs/libvterm dev-libs/libvterm-neovim ) virtual/awk html? ( net-proxy/dante || ( virtual/w3m www-client/lynx www-client/links ) )
 RESTRICT=network-sandbox
 SLOT=0
-_eclasses_=git-r3	6d22636df236df4cc8475f7b7668bdcd
+_eclasses_=git-r3	7d6c351ee8b1feb12ed8c8b0adae088b
 _md5_=97b5e6e9cbc243b979cb779c2878c217
