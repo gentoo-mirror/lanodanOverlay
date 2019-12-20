@@ -1,18 +1,19 @@
 USE="
 	-suid -kde -handbook -sslv3 -zeroconf
-	cacert cjk dane idn mandoc jumbo-build smp threads urandom iproute2 caps
-	system-av1 system-binutils system-boost system-bootloader system-bootstrap system-cairo system-clang system-cmark system-crontab system-digest system-ffmpeg system-harfbuzz system-heimdal system-icu system-ipxe system-jpeg system-jsoncpp system-lcms system-leveldb system-libevent system-libs system-libvpx system-libyaml system-llvm system-lua system-lz4 system-mitkrb5 system-qemu system-renpy system-seabios system-snappy system-sqlite system-ssl system-tbb system-uulib system-webp system-wide system-zlib
+	cacert cjk dane idn mandoc jumbo-build smp threads urandom iproute2 caps pic
+	system-*
 "
-# system-* are generated using
-# sed -r 's/.*\/.*:(.*) -.*/\1 /' /usr/portage/profiles/use.local.desc | sort -u | grep ^system- | grep -v ' -' | tr -d "\n\r"
 
 CURL_SSL="libressl -openssl"
 
-CFLAGS="-O2 -pipe -march=native -mtune=native -Wno-conversion -Wsign-conversion -Wno-error=sign-conversion -Wformat -Wformat-security"
+CFLAGS="-O2 -ggdb -fPIE -fPIC -fstack-protector-strong -pipe -march=native -mtune=native -Wno-conversion -Wsign-conversion -Wno-error=sign-conversion -Wformat -Wformat-security"
+LDFLAGS="-Wl,--as-needed -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now"
+OBJCCFLAGS="${CFLAGS}"
 CXXFLAGS="${CFLAGS}"
+OBJCXXFLAGS="${CFLAGS}"
 
 CONFIG_PROTECT="${CONFIG_PROTECT} /lib/udev/rules.d/"
-INSTALL_MASK="/usr/lib/systemd /usr/lib64/systemd /lib/systemd /etc/systemd /etc/sudoers /etc/sudoers.d /usr/share/bash-completion /usr/share/zsh/site-functions"
+INSTALL_MASK="/usr/lib/systemd /usr/lib64/systemd /lib/systemd /etc/systemd /etc/sudoers /etc/sudoers.d /usr/share/bash-completion /usr/share/zsh/site-functions /etc/xdg/autostart"
 
 EMERGE_DEFAULT_OPTS="--keep-going"
 FEATURES="webrsync-gpg userfetch usersandbox splitdebug network-sandbox"
