@@ -33,10 +33,6 @@ REQUIRED_USE="
 	|| ( aqua wayland X )
 "
 
-# Tests fail to link for inexplicable reasons
-# https://bugs.webkit.org/show_bug.cgi?id=148210
-RESTRICT="test"
-
 # Aqua support in gtk3 is untested
 # Dependencies found at Source/cmake/OptionsGTK.cmake
 # Various compile-time optionals for gtk+-3.22.0 - ensure it
@@ -123,10 +119,11 @@ DEPEND="${RDEPEND}
 	doc? ( >=dev-util/gtk-doc-1.10 )
 	geolocation? ( dev-util/gdbus-codegen )
 	sys-apps/paxctl
+
+	test? (
+		dev-python/pygobject:3[python_targets_python2_7]
+		x11-themes/hicolor-icon-theme )
 "
-#	test? (
-#		dev-python/pygobject:3[python_targets_python2_7]
-#		x11-themes/hicolor-icon-theme )
 
 S="${WORKDIR}/${MY_P}"
 
