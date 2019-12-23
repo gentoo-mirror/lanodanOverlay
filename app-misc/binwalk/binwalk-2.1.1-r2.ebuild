@@ -30,7 +30,7 @@ RDEPEND="
 		sys-fs/sasquatch
 	)
 	jffs2? ( app-arch/jefferson )
-	dev-python/capstone-python
+	dev-libs/capstone[python]
 	sys-fs/mtd-utils
 	app-arch/arj
 	app-arch/p7zip
