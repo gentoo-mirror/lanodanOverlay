@@ -17,16 +17,16 @@ LICENSE="LGPL-2+ BSD"
 SLOT="4/37" # soname version of libwebkit2gtk-4.0
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~amd64-linux ~x86-linux ~x86-macos"
 
-IUSE="aqua coverage doc +egl examples experimental +geolocation gles2 gnome-keyring +gstreamer +introspection jpeg2k libnotify media-source +opengl sandbox spell wayland +wpe +webgl +X"
+IUSE="aqua coverage doc +egl examples experimental +geolocation gles2-only gnome-keyring +gstreamer +introspection jpeg2k libnotify media-source +opengl sandbox spell wayland +wpe +webgl +X"
 
 # webgl needs gstreamer, bug #560612
-# gstreamer with opengl/gles2 needs egl
+# gstreamer with opengl/gles2-only needs egl
 REQUIRED_USE="
 	geolocation? ( introspection )
-	gles2? ( egl !opengl )
+	gles2-only? ( egl !opengl )
 	gstreamer? ( opengl? ( egl ) )
 	webgl? ( gstreamer
-		|| ( gles2 opengl ) )
+		|| ( gles2-only opengl ) )
 	wayland? ( egl )
 	wpe? ( opengl wayland )
 	media-source? ( gstreamer )
@@ -65,9 +65,10 @@ RDEPEND="
 	spell? ( >=app-text/enchant-0.22:= )
 	gstreamer? (
 		>=media-libs/gstreamer-1.14:1.0
-		>=media-libs/gst-plugins-base-1.14:1.0[egl?,gles2?,opengl?]
+		>=media-libs/gst-plugins-base-1.14:1.0[egl?,opengl?]
 		>=media-plugins/gst-plugins-opus-1.14.4-r1:1.0
 		>=media-libs/gst-plugins-bad-1.14:1.0
+		gles2-only? ( media-libs/gst-plugins-base[gles2] )
 	)
 	media-source? ( >=media-libs/gstreamer-1.16:1.0 )
 
@@ -83,7 +84,7 @@ RDEPEND="
 	jpeg2k? ( >=media-libs/openjpeg-2.2.0:2= )
 
 	egl? ( media-libs/mesa[egl] )
-	gles2? ( media-libs/mesa[gles2] )
+	gles2-only? ( media-libs/mesa[gles2] )
 	opengl? ( virtual/opengl )
 	webgl? (
 		x11-libs/libXcomposite
@@ -145,7 +146,7 @@ pkg_pretend() {
 		fi
 	fi
 
-	if ! use opengl && ! use gles2; then
+	if ! use opengl && ! use gles2-only; then
 		ewarn
 		ewarn "You are disabling OpenGL usage (USE=opengl or USE=gles) completely."
 		ewarn "This is an unsupported configuration meant for very specific embedded"
@@ -220,7 +221,7 @@ src_configure() {
 	# opengl needs to be explicetly handled, bug #576634
 
 	local opengl_enabled
-	if use opengl || use gles2; then
+	if use opengl || use gles2-only; then
 		opengl_enabled=ON
 	else
 		opengl_enabled=OFF
@@ -238,8 +239,8 @@ src_configure() {
 		-DENABLE_API_TESTS=$(usex test)
 		-DENABLE_GTKDOC=$(usex doc)
 		-DENABLE_GEOLOCATION=$(usex geolocation)
-		$(cmake-utils_use_find_package gles2 OpenGLES2)
-		-DENABLE_GLES2=$(usex gles2)
+		$(cmake-utils_use_find_package gles2-only OpenGLES2)
+		-DENABLE_GLES2=$(usex gles2-only)
 		-DENABLE_VIDEO=$(usex gstreamer)
 		-DENABLE_WEB_AUDIO=$(usex gstreamer)
 		-DENABLE_INTROSPECTION=$(usex introspection)
