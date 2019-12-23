@@ -227,8 +227,6 @@ src_configure() {
 	fi
 
 	local mycmakeargs=(
-		#-DENABLE_UNIFIED_BUILDS=$(usex jumbo-build) # broken in 2.24.1
-		-DUSE_SYSTEM_MALLOC=ON
 		-DENABLE_WEBDRIVER=OFF
 		-DENABLE_WEB_CRYPTO=OFF
 		-DENABLE_TOUCH_EVENTS=OFF
@@ -259,6 +257,8 @@ src_configure() {
 		-DUSE_WPE_RENDERER=$(usex wpe)
 		-DENABLE_BUBBLEWRAP_SANDBOX=$(usex sandbox)
 		-DENABLE_MEDIA_SOURCE=$(usex media-source)
+		# https://bugs.webkit.org/show_bug.cgi?id=197947
+		-DENABLE_DARK_MODE_CSS=OFF
 		-DCMAKE_BUILD_TYPE=Release
 		-DPORT=GTK
 		${ruby_interpreter}
