@@ -1,0 +1,10 @@
+DEFINED_PHASES=configure
+DESCRIPTION=HMM-based speech synthesis system (HTS) engine and API
+EAPI=7
+HOMEPAGE=http://hts-engine.sourceforge.net/
+IUSE=speech-tools
+KEYWORDS=~amd64
+LICENSE=BSD
+SLOT=0
+SRC_URI=http://downloads.sourceforge.net/hts-engine/hts_engine_API-1.10.tar.gz
+_md5_=d7b4292923320784866a2869ea93ff32

@@ -43,6 +43,7 @@ dev-lang/erlang 22.1: Erlang programming language, runtime environment and libra
 dev-lang/go 0.20171003: Boostrap Go from C (useful for musl libc)
 dev-lang/mono 6.4.0.198: Mono runtime and class libraries, a C# compiler/interpreter
 dev-libs/glib 2.62.3: The GLib library of C routines
+dev-libs/hts_engine 1.10: HMM-based speech synthesis system (HTS) engine and API
 dev-libs/libdazzle 3.34.1: Experimental new features for GTK+ and GLib
 dev-libs/libtomcrypt 1.18.2: modular and portable cryptographic toolkit
 dev-libs/socket99 0.2.2: Wrapper library for the BSD sockets API with a nicer C99 interface
