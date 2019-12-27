@@ -1,4 +1,5 @@
 app-accessibility/julius 4.3.1 4.5: Large Vocabulary Continuous Speech Recognition Engine
+app-accessibility/mimic1 1.2.0.2 9999: Mycroft's TTS engine, based on CMU's Flite (Festival Lite)
 app-admin/pass 1.7.3-r1: Stores, retrieves, generates, and synchronizes passwords securely
 app-admin/pass-update 2.1: pass extension that provides an easy flow for updating passwords
 app-arch/unar 1.10.1: unpacker for various archiving formats, e.g. rar v3
