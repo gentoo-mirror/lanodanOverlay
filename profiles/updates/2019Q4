@@ -1,1 +1,2 @@
 move net-libs/libwpe gui-libs/libwpe
+move dev-libs/wpebackend-fdo gui-libs/wpebackend-fdo
