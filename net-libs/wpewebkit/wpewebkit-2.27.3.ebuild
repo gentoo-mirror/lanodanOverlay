@@ -31,7 +31,7 @@ RDEPEND="
 	media-libs/libpng:=
 	dev-db/sqlite:=
 	media-libs/libwebp:=
-	net-libs/libwpe:=
+	gui-libs/libwpe:=
 	sys-libs/zlib:=
 
 	>=dev-libs/libxslt-1.1.7
