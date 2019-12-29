@@ -31,7 +31,7 @@ RDEPEND="
 	media-libs/libpng:=
 	dev-db/sqlite:=
 	media-libs/libwebp:=
-	net-libs/libwpe:=
+	gui-libs/libwpe:=
 	sys-libs/zlib:=
 
 	>=dev-libs/libxslt-1.1.7
@@ -47,7 +47,7 @@ RDEPEND="
 		dev-qt/qtquickcontrols:5=
 		dev-qt/qtgui:5=
 		dev-qt/qttest:5=
-		>=dev-libs/wpebackend-fdo-1.3.0:=
+		>=gui-libs/wpebackend-fdo-1.3.0:=
 	)
 	gstreamer? (
 		>=media-libs/gstreamer-1.14:1.0

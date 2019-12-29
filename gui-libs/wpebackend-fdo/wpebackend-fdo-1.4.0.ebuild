@@ -19,6 +19,6 @@ DEPEND="
 	media-libs/mesa[egl]
 	dev-libs/glib:=
 	>=dev-libs/wayland-1.10:=
-	net-libs/libwpe:=
+	gui-libs/libwpe:=
 "
 RDEPEND="${DEPEND}"

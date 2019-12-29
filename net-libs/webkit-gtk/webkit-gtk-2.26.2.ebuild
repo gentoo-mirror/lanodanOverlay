@@ -4,7 +4,8 @@
 EAPI=6
 CMAKE_MAKEFILE_GENERATOR="ninja"
 PYTHON_COMPAT=( python{2_7,3_5,3_6,3_7} )
-USE_RUBY="ruby24 ruby25 ruby26"
+USE_RUBY="ruby24 ruby25 ruby26 ruby27"
+CMAKE_MIN_VERSION=3.10
 
 inherit check-reqs cmake-utils flag-o-matic gnome2 pax-utils python-any-r1 ruby-single toolchain-funcs virtualx
 
@@ -17,7 +18,7 @@ LICENSE="LGPL-2+ BSD"
 SLOT="4/37" # soname version of libwebkit2gtk-4.0
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~amd64-linux ~x86-linux ~x86-macos"
 
-IUSE="aqua coverage doc +egl examples experimental +geolocation gles2-only gnome-keyring +gstreamer +introspection jpeg2k libnotify media-source +opengl sandbox spell wayland +wpe +webgl +X"
+IUSE="aqua coverage doc +egl examples experimental +geolocation gles2-only gnome-keyring +gstreamer +introspection jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell wayland +wpe +webgl +X"
 
 # webgl needs gstreamer, bug #560612
 # gstreamer with opengl/gles2-only needs egl
@@ -43,7 +44,7 @@ RDEPEND="
 	>=media-libs/fontconfig-2.13.0:1.0
 	>=media-libs/freetype-2.9.0:2
 	>=dev-libs/libgcrypt-1.7.0:0=
-	>=x11-libs/gtk+-3.22:3[aqua?,introspection?,wayland?,X?]
+	>=x11-libs/gtk+-3.22.0:3[aqua?,introspection?,wayland?,X?]
 	>=media-libs/harfbuzz-1.4.2:=[icu(+)]
 	>=dev-libs/icu-3.8.1-r1:=
 	virtual/jpeg:0=
@@ -55,7 +56,7 @@ RDEPEND="
 	>=dev-libs/atk-2.16.0
 	media-libs/libwebp:=
 
-	>=dev-libs/glib-2.40:2
+	>=dev-libs/glib-2.44.0:2
 	>=dev-libs/libxslt-1.1.7
 	>=media-libs/woff2-1.0.2
 	gnome-keyring? ( app-crypt/libsecret )
@@ -90,11 +91,12 @@ RDEPEND="
 		x11-libs/libXcomposite
 		x11-libs/libXdamage )
 	wpe? (
-		>=net-libs/libwpe-1.3.0:=
-		>=dev-libs/wpebackend-fdo-1.3.1:=
+		>=gui-libs/libwpe-1.3.0:=
+		>=gui-libs/wpebackend-fdo-1.3.1:=
 	)
-	sandbox? (
-		sys-apps/bubblewrap
+	seccomp? (
+		>=sys-apps/bubblewrap-0.3.1
+		sys-libs/libseccomp
 		sys-apps/xdg-dbus-proxy
 	)
 "
@@ -108,7 +110,7 @@ DEPEND="${RDEPEND}
 	>=dev-util/gtk-doc-am-1.10
 	>=dev-util/gperf-3.0.1
 	>=sys-devel/bison-2.4.3
-	|| ( >=sys-devel/gcc-6.0 >=sys-devel/clang-3.3 )
+	|| ( >=sys-devel/gcc-7.3 >=sys-devel/clang-5 )
 	sys-devel/gettext
 	virtual/pkgconfig
 
@@ -137,18 +139,18 @@ pkg_pretend() {
 			check-reqs_pkg_pretend
 		fi
 
-		if ! test-flag-CXX -std=c++11 ; then
-			die "You need at least GCC 4.9.x or Clang >= 3.3 for C++11-specific compiler flags"
+		if ! test-flag-CXX -std=c++17 ; then
+			die "You need at least GCC 7.3.x or Clang >= 5 for C++11-specific compiler flags"
 		fi
 
-		if tc-is-gcc && [[ $(gcc-version) < 4.9 ]] ; then
-			die 'The active compiler needs to be gcc 4.9 (or newer)'
+		if tc-is-gcc && [[ $(gcc-version) < 7.3 ]] ; then
+			die 'The active compiler needs to be gcc 7.3 (or newer)'
 		fi
 	fi
 
 	if ! use opengl && ! use gles2-only; then
 		ewarn
-		ewarn "You are disabling OpenGL usage (USE=opengl or USE=gles) completely."
+		ewarn "You are disabling OpenGL usage (USE=opengl or USE=gles2-only) completely."
 		ewarn "This is an unsupported configuration meant for very specific embedded"
 		ewarn "use cases, where there truly is no GL possible (and even that use case"
 		ewarn "is very unlikely to come by). If you have GL (even software-only), you"
@@ -166,6 +168,8 @@ pkg_setup() {
 }
 
 src_prepare() {
+	eapply "${FILESDIR}/${PN}-2.24.4-icu-65.patch" # bug 698596
+	eapply "${FILESDIR}/${PN}-2.24.4-eglmesaext-include.patch" # bug 699054 # https://bugs.webkit.org/show_bug.cgi?id=204108
 	cmake-utils_src_prepare
 	gnome2_src_prepare
 }
@@ -235,6 +239,7 @@ src_configure() {
 		-DSHOULD_INSTALL_JS_SHELL=ON
 		-DENABLE_EXPERIMENTAL_FEATURES=$(usex experimental)
 		-DENABLE_MINIBROWSER=$(usex examples)
+		-DENABLE_UNIFIED_BUILDS=$(usex jumbo-build)
 		-DENABLE_QUARTZ_TARGET=$(usex aqua)
 		-DENABLE_API_TESTS=$(usex test)
 		-DENABLE_GTKDOC=$(usex doc)
@@ -256,10 +261,11 @@ src_configure() {
 		-DENABLE_X11_TARGET=$(usex X)
 		-DENABLE_OPENGL=${opengl_enabled}
 		-DUSE_WPE_RENDERER=$(usex wpe)
-		-DENABLE_BUBBLEWRAP_SANDBOX=$(usex sandbox)
+		-DENABLE_BUBBLEWRAP_SANDBOX=$(usex seccomp)
 		-DENABLE_MEDIA_SOURCE=$(usex media-source)
 		# https://bugs.webkit.org/show_bug.cgi?id=197947
 		-DENABLE_DARK_MODE_CSS=OFF
++		-DBWRAP_EXECUTABLE="${EPREFIX}"/usr/bin/bwrap # If bubblewrap[suid] then portage makes it go-r and cmake find_program fails with that
 		-DCMAKE_BUILD_TYPE=Release
 		-DPORT=GTK
 		${ruby_interpreter}
