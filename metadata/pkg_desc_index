@@ -48,7 +48,6 @@ dev-libs/hts_engine 1.10: HMM-based speech synthesis system (HTS) engine and API
 dev-libs/libdazzle 3.34.1: Experimental new features for GTK+ and GLib
 dev-libs/libtomcrypt 1.18.2: modular and portable cryptographic toolkit
 dev-libs/socket99 0.2.2: Wrapper library for the BSD sockets API with a nicer C99 interface
-dev-libs/wpebackend-fdo 1.2.2 1.4.0: FreeDesktop.Org backend for WPE WebKit
 dev-lua/luaevent 0.4.6: libevent bindings for Lua
 dev-lua/luarocks 2.4.4: A deployment and management system for Lua modules
 dev-lua/luasec 0.7: Lua binding for OpenSSL library to provide TLS/SSL communication.
@@ -86,6 +85,8 @@ games-sports/vdrift 2014.10.20 9999: A driving simulation made with drift racing
 games-visualnovel/doki-doki-litterature-club 1.1.1: Psychological horror game presented as a romance visual novel
 gnome-base/gvfs 1.32.2: Virtual filesystem implementation for gio
 gnustep-base/gnustep-make 2.7.0: GNUstep Makefile Package
+gui-libs/libwpe 1.2.1 1.4.0.1: WebKit port optimized for embedded devices
+gui-libs/wpebackend-fdo 1.2.2 1.4.0: FreeDesktop.Org backend for WPE WebKit
 gui-wm/cage 0.1.1 9999: Wayland Kiosk
 gui-wm/inaban 9999: Distrustful Tiling Wayland Compositor
 gui-wm/waymonad 9999: wayland compositor based on ideas from and inspired by xmonad
@@ -117,7 +118,6 @@ net-libs/glib-networking 2.62.2: Network-related giomodules for glib
 net-libs/libasr 1.0.2 9999: Async Resolver Library from OpenBSD/OpenSMTPD
 net-libs/libqmatrixclient 0.5.2: A Qt5 library to write cross-platfrom clients for Matrix
 net-libs/libsoup 2.68.3: HTTP client/server library for GNOME
-net-libs/libwpe 1.2.1 1.4.0.1: WebKit port optimized for embedded devices
 net-libs/serf 1.3.9: HTTP client library
 net-libs/webkit-gtk 2.26.2: Open source web browser engine
 net-libs/wpewebkit 2.26.2 2.27.3: WebKit port optimized for embedded devices
