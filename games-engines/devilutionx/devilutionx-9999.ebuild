@@ -3,9 +3,7 @@
 
 EAPI=7
 
-CMAKE_MAKEFILE_GENERATOR=emake
-
-inherit cmake-utils multilib
+inherit cmake-utils
 
 DESCRIPTION="Diablo build for modern operating systems"
 HOMEPAGE="https://github.com/diasurgical/devilutionX"
@@ -14,6 +12,7 @@ if [[ "${PV}" == 9999 ]] ; then
 	EGIT_REPO_URI="https://github.com/diasurgical/devilutionX.git"
 else
 	SRC_URI="https://github.com/diasurgical/devilutionX/archive/${PV}.tar.gz -> ${P}.tar.gz"
+	S="${WORKDIR}/devilutionX-${PV}"
 	KEYWORDS="~amd64 ~x86"
 fi
 
@@ -34,18 +33,12 @@ BDEPEND="
 "
 
 src_configure() {
-	# for some reason cmake doesn't find sodium
 	local mycmakeargs=(
 		-DBINARY_RELEASE=ON
 		-DDEBUG="$(usex debug)"
-		-DNONET=yes
 	)
 
 	cmake-utils_src_configure
-}
-
-src_install() {
-	dobin ${BUILD_DIR}/devilutionx
 }
 
 pkg_postinst() {
