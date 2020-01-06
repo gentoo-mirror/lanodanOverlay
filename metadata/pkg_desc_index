@@ -35,6 +35,7 @@ dev-elixir/plug 1.6.1 1.8.2: specification and conveniences for composable modul
 dev-elixir/plug_crypto 1.0.0: Crypto-related functionality for the web
 dev-erlang/base64url 1.0-r1: URL safe base64-compatible codec
 dev-erlang/telemetry 0.4.0: Dynamic dispatching library for metrics and instrumentations.
+dev-haskell/filepath-bytestring 1.4.2.1.6: repairs a damanged git repisitory
 dev-haskell/hayland 9999: Haskell bindings to Wayland library (Waymonad fork)
 dev-haskell/hfuse 0.2.4.5: Bindings for the FUSE library
 dev-haskell/hsroots 9999: Haskell bindings for libxkbcommon
@@ -103,11 +104,29 @@ media-fonts/inria-fonts 1.200: Inria Serif and Inria Sans Typeface
 media-fonts/opendyslexic 20160623: Opensource font for dyslexics and for high readability
 media-fonts/unifont 12.1.03: GNU Unifont - a Pan-Unicode X11 bitmap iso10646 font
 media-gfx/opentoonz 1.2.0: An open-source full-featured 2D animation creation software
+media-libs/gst-plugins-bad 1.16.2: Less plugins for GStreamer
+media-libs/gst-plugins-base 1.16.2: Basepack of plugins for gstreamer
+media-libs/gst-plugins-good 1.16.2: Basepack of plugins for GStreamer
+media-libs/gst-plugins-ugly 1.16.2: Basepack of plugins for gstreamer
+media-libs/gstreamer 1.16.2: Open source multimedia framework
 media-libs/libsidplay 2.1.1-r5: C64 SID player library
 media-libs/opencolorio 1.1.0-r1: A color management framework for visual effects and animation
 media-libs/rtmidi 2.1.1: common C++ API for realtime MIDI input/output
 media-libs/vips 8.8.2: VIPS Image Processing Library
 media-libs/x264 0.0.20170701: A free library for encoding X264/AVC streams
+media-plugins/gst-plugins-assrender 1.16.2: ASS/SSA rendering with effects support plugin for GStreamer
+media-plugins/gst-plugins-dash 1.16.2: MPEG-DASH plugin for GStreamer
+media-plugins/gst-plugins-faad 1.16.2: AAC audio decoder plugin.
+media-plugins/gst-plugins-hls 1.16.2: HTTP live streaming plugin for GStreamer
+media-plugins/gst-plugins-libav 1.16.2: FFmpeg based gstreamer plugin
+media-plugins/gst-plugins-meta 1.16.2: Meta ebuild to pull in gst plugins for apps
+media-plugins/gst-plugins-modplug 1.16.2: MOD audio decoder plugin for GStreamer
+media-plugins/gst-plugins-mpg123 1.16.2: MP3 decoder plugin for GStreamer
+media-plugins/gst-plugins-opus 1.16.2: Opus audio parser plugin for GStreamer
+media-plugins/gst-plugins-rtmp 1.16.2: RTMP source/sink plugin for GStreamer
+media-plugins/gst-plugins-srtp 1.16.2: SRTP encoder/decoder plugin for GStreamer
+media-plugins/gst-plugins-vaapi 1.16.2: Hardware accelerated video decoding through VA-API plugin for GStreamer
+media-plugins/gst-plugins-vpx 1.16.2: VP8/VP9 video encoder/decoder plugin for GStreamer
 media-sound/ibniz 1.18: virtual machine designed for extremely compact low-level audiovisual programs
 media-sound/milkytracker 1.02.00: FastTracker 2 inspired music tracker
 media-sound/sbagen 1.4.5: Command line sequenced binaural beat generator

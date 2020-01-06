@@ -89,6 +89,19 @@ gnustep-base/gnustep-make:native-exceptions - Enables use of the native Objectiv
 gui-wm/cage:xwayland - Enable ability support native X11 applications
 mail-mta/opensmtpd:mdoc - Use mdoc format for manpages
 mail-mta/opensmtpd:mta - Enable this to install as system-wide MTA
+media-libs/gst-plugins-bad:bzip2 - Enable bzip2 encoder/decoder plugin
+media-libs/gst-plugins-bad:egl - Enable EGL support
+media-libs/gst-plugins-bad:gles2 - Enable GLES2 support
+media-libs/gst-plugins-base:X - Enable ximagesink and xvimagesink plugins; build GLX platform support if USE=opengl is enabled; build x11 windowing system support if USE=egl is enabled
+media-libs/gst-plugins-base:egl - Enable EGL platform support
+media-libs/gst-plugins-base:gbm - Enable Graphics Buffer Manager based EGL windowing system support (requires egl and at least one of gles or opengl)
+media-libs/gst-plugins-base:gles2 - Enable OpenGL library and plugin via GLESv2 API (requires egl)
+media-libs/gst-plugins-base:ivorbis - Enable integer based vorbis decoder
+media-libs/gst-plugins-base:opengl - Enable OpenGL library and plugin via desktop OpenGL API
+media-libs/gst-plugins-base:pango - Enable pango GStreamer plugin
+media-libs/gst-plugins-base:wayland - Enable Wayland EGL windowing system support (requires egl and at least one of gles2 or opengl)
+media-libs/gstreamer:orc - Disable some PaX memory protections to allow plugins that use dev-lang/orc for runtime optimization to be used on hardened PaX systems
+media-libs/gstreamer:unwind - Enable sys-libs/libunwind usage for better backtrace support in leaks tracer module
 media-libs/vips:fits - Enable support for the FITS image format through sci-libs/cfitsio
 media-libs/vips:gsf - Enable support for creating image pyramids with dzsave
 media-libs/vips:heif - Enable support for HEIC images
@@ -98,6 +111,12 @@ media-libs/x264:10bit - Set output bit depth to 10, this may not be compatible w
 media-libs/x264:interlaced - enable interlaced encoding support, this can decrease encoding speed by up to 2%
 media-libs/x264:opencl - Add support for OpenCL.
 media-libs/x264:pic - disable optimized assembly code that is not PIC friendly
+media-plugins/gst-plugins-meta:http - Enable http streaming via net-libs/libsoup
+media-plugins/gst-plugins-meta:libvisual - Enable visualization effects via media-libs/libvisual
+media-plugins/gst-plugins-meta:vpx - Enables vp8 codec support using libvpx, required to play some HTML5 videos
+media-plugins/gst-plugins-vaapi:drm - Enable DRM renderer
+media-plugins/gst-plugins-vaapi:egl - Enable EGL support
+media-plugins/gst-plugins-vaapi:gles2 - Enable GLESv2 and GLESv3 support
 media-sound/sbagen:sounds - Downloads extra sounds (in Vorbis)
 net-dns/getdns:stubby - Include stubby in getdns
 net-dns/ldns-utils:dane - Enable DNS-based Authentication of Named Entities (DANE) support
