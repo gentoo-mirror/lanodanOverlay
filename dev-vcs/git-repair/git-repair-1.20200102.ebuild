@@ -19,7 +19,7 @@ RDEPEND="
 	dev-haskell/attoparsec:=[profile?]
 	dev-haskell/data-default:=[profile?]
 	>=dev-haskell/exceptions-0.6:=[profile?]
-	>=dev-haskell/filepath-bytestring:=[profile?]
+	>=dev-haskell/filepath-bytestring-1.4.2.1.0:=[profile?]
 	dev-haskell/hslogger:=[profile?]
 	dev-haskell/ifelse:=[profile?]
 	dev-haskell/mtl:=[profile?]
