@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DEPEND=!dev-python/smartypants test? ( app-text/htmltidy ) >=dev-vcs/git-1.8.2.1[curl]
+DESCRIPTION=Standards compliant, fast, secure markdown processing library in C
+EAPI=6
+HOMEPAGE=https://github.com/hoedown/hoedown
+IUSE=test
+LICENSE=ISC
+PROPERTIES=live
+RDEPEND=!dev-python/smartypants
+SLOT=0
+_eclasses_=git-r3	7d6c351ee8b1feb12ed8c8b0adae088b	multilib	1d91b03d42ab6308b5f4f6b598ed110e	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
+_md5_=be8f5e91baff07052564b32eac15277b
