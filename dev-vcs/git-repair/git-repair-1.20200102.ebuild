@@ -19,17 +19,18 @@ RDEPEND="
 	dev-haskell/attoparsec:=[profile?]
 	dev-haskell/data-default:=[profile?]
 	>=dev-haskell/exceptions-0.6:=[profile?]
-	dev-haskell/hslogger
-	dev-haskell/ifelse
-	dev-haskell/mtl
-	dev-haskell/network
-	dev-haskell/network-uri
-	>=dev-haskell/optparse-applicative-0.14.1
-	dev-haskell/quickcheck
-	dev-haskell/setenv
-	dev-haskell/split
-	dev-haskell/text
-	>=dev-haskell/unix-compat-0.5
-	dev-haskell/utf8-string
+	>=dev-haskell/filepath-bytestring-1.4.2.1.0:=[profile?]
+	dev-haskell/hslogger:=[profile?]
+	dev-haskell/ifelse:=[profile?]
+	dev-haskell/mtl:=[profile?]
+	dev-haskell/network:=[profile?]
+	dev-haskell/network-uri:=[profile?]
+	>=dev-haskell/optparse-applicative-0.14.1:=[profile?]
+	dev-haskell/quickcheck:=[profile?]
+	dev-haskell/setenv:=[profile?]
+	dev-haskell/split:=[profile?]
+	dev-haskell/text:=[profile?]
+	>=dev-haskell/unix-compat-0.5:=[profile?]
+	dev-haskell/utf8-string:=[profile?]
 "
 DEPEND="${RDEPEND}"
