@@ -33,4 +33,7 @@ RDEPEND="
 	>=dev-haskell/unix-compat-0.5:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
 "
-DEPEND="${RDEPEND}"
+DEPEND="
+	${RDEPEND}
+	>=dev-lang/ghc-8.4.1
+"
