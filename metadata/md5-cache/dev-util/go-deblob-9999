@@ -8,5 +8,5 @@ LICENSE=BSD
 PROPERTIES=live
 RESTRICT=network-sandbox
 SLOT=0
-_eclasses_=git-r3	7d6c351ee8b1feb12ed8c8b0adae088b	go-module	488438da42f039cd5990a0186492c3f5
+_eclasses_=git-r3	809e27702c573cbba31c08ed00bbad33	go-module	488438da42f039cd5990a0186492c3f5
 _md5_=5fce3dfd2f49e8e4c30fe6988a08ab28
