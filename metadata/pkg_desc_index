@@ -63,7 +63,7 @@ dev-tex/dot2tex 2.11.2: A Graphviz to LaTeX converter
 dev-util/bam 0.5.1: Fast and flexible Lua-based build system
 dev-util/gdbus-codegen 2.62.3: GDBus code and documentation generator
 dev-util/glib-utils 2.62.3: Build utilities for GLib using projects
-dev-util/glslang 7.11.3214 7.12.3352: Khronos reference front-end for GLSL and ESSL, and sample SPIR-V generator
+dev-util/glslang 8.13.3559: Khronos reference front-end for GLSL and ESSL, and sample SPIR-V generator
 dev-util/go-deblob 9999: remove binary blobs from a directory
 dev-util/gtk-doc 1.32: GTK+ Documentation Generator
 dev-util/gtk-doc-am 1.32: Virtual ebuild for ::gentoo compatibility
