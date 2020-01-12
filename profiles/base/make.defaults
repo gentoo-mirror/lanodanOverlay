@@ -1,6 +1,6 @@
 USE="
 	-suid -kde -handbook -sslv3 -zeroconf
-	cacert cjk dane idn mandoc jumbo-build smp threads urandom iproute2 caps pic
+	cacert cjk dane idn mandoc jumbo-build smp threads urandom iproute2 caps pic metric
 	system-*
 "
 
