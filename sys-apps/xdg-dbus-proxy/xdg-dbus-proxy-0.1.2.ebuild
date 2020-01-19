@@ -16,6 +16,8 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 
+PATCHES=( "${FILESDIR}/xdg-dbus-proxy-0.1.2_temp_failure_retry.patch" )
+
 src_configure() {
 	econf --enable-man
 }
