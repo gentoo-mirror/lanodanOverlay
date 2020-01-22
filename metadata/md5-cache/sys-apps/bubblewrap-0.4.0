@@ -1,0 +1,14 @@
+DEFINED_PHASES=configure setup
+DEPEND=sys-libs/libseccomp sys-libs/libcap selinux? ( >=sys-libs/libselinux-2.1.9 ) app-text/docbook-xml-dtd:4.3 app-text/docbook-xsl-stylesheets dev-libs/libxslt virtual/pkgconfig
+DESCRIPTION=Unprivileged sandboxing tool, namespaces-powered chroot-like solution
+EAPI=7
+HOMEPAGE=https://github.com/containers/bubblewrap
+IUSE=selinux +suid kernel_linux
+KEYWORDS=~amd64 ~arm ~arm64 ~ppc ~ppc64 ~x86
+LICENSE=LGPL-2+
+RDEPEND=sys-libs/libseccomp sys-libs/libcap selinux? ( >=sys-libs/libselinux-2.1.9 )
+RESTRICT=test
+SLOT=0
+SRC_URI=https://github.com/containers/bubblewrap/releases/download/v0.4.0/bubblewrap-0.4.0.tar.xz
+_eclasses_=bash-completion-r1	47a7402d95930413ce25ba8d857339bb	linux-info	953c3b1c472dcadbf62098a9301327f2	multilib	1d91b03d42ab6308b5f4f6b598ed110e	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
+_md5_=bdff56f704673bd44372d14ec18cef93
