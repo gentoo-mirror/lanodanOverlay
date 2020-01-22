@@ -168,7 +168,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	eapply "${FILESDIR}/${PN}-2.24.4-icu-65.patch" # bug 698596
 	eapply "${FILESDIR}/${PN}-2.24.4-eglmesaext-include.patch" # bug 699054 # https://bugs.webkit.org/show_bug.cgi?id=204108
 	cmake-utils_src_prepare
 	gnome2_src_prepare
