@@ -255,8 +255,6 @@ src_configure() {
 		-DUSE_WPE_RENDERER=$(usex wpe)
 		-DENABLE_BUBBLEWRAP_SANDBOX=$(usex seccomp)
 		-DENABLE_MEDIA_SOURCE=$(usex media-source)
-		# https://bugs.webkit.org/show_bug.cgi?id=197947
-		-DENABLE_DARK_MODE_CSS=OFF
 +		-DBWRAP_EXECUTABLE="${EPREFIX}"/usr/bin/bwrap # If bubblewrap[suid] then portage makes it go-r and cmake find_program fails with that
 		-DCMAKE_BUILD_TYPE=Release
 		-DPORT=GTK
