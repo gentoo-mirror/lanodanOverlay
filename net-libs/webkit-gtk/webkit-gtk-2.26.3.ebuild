@@ -225,17 +225,19 @@ src_configure() {
 	fi
 
 	local mycmakeargs=(
+		# begin PRIVATE options
+		#-DSHOULD_INSTALL_JS_SHELL=$(usex examples)
+		-DENABLE_GEOLOCATION=$(usex geolocation)
+		-DENABLE_UNIFIED_BUILDS=$(usex jumbo-build)
+		#-DENABLE_API_TESTS=$(usex test)
+		# end
 		-DENABLE_WEBDRIVER=OFF
 		-DENABLE_WEB_CRYPTO=OFF
 		-DENABLE_TOUCH_EVENTS=OFF
 		-DENABLE_DRAG_SUPPORT=OFF
 		-DENABLE_MINIBROWSER=$(usex examples)
-		-DSHOULD_INSTALL_JS_SHELL=$(usex examples)
-		-DENABLE_UNIFIED_BUILDS=$(usex jumbo-build)
 		-DENABLE_QUARTZ_TARGET=$(usex aqua)
-		-DENABLE_API_TESTS=$(usex test)
 		-DENABLE_GTKDOC=$(usex doc)
-		-DENABLE_GEOLOCATION=$(usex geolocation)
 		$(cmake-utils_use_find_package gles2-only OpenGLES2)
 		-DENABLE_GLES2=$(usex gles2-only)
 		-DENABLE_VIDEO=$(usex gstreamer)
