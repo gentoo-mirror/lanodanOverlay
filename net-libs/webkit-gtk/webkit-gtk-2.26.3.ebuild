@@ -18,16 +18,13 @@ LICENSE="LGPL-2+ BSD"
 SLOT="4/37" # soname version of libwebkit2gtk-4.0
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~amd64-linux ~x86-linux ~x86-macos"
 
-IUSE="aqua coverage doc +egl examples experimental +geolocation gles2-only gnome-keyring +gstreamer +introspection jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell wayland +wpe +webgl +X"
+IUSE="aqua coverage doc +egl examples +geolocation gles2-only gnome-keyring +gstreamer +introspection jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell wayland +wpe +X"
 
-# webgl needs gstreamer, bug #560612
 # gstreamer with opengl/gles2-only needs egl
 REQUIRED_USE="
 	geolocation? ( introspection )
 	gles2-only? ( egl !opengl )
 	gstreamer? ( opengl? ( egl ) )
-	webgl? ( gstreamer
-		|| ( gles2-only opengl ) )
 	wayland? ( egl )
 	wpe? ( opengl wayland )
 	media-source? ( gstreamer )
@@ -87,9 +84,6 @@ RDEPEND="
 	egl? ( media-libs/mesa[egl] )
 	gles2-only? ( media-libs/mesa[gles2] )
 	opengl? ( virtual/opengl )
-	webgl? (
-		x11-libs/libXcomposite
-		x11-libs/libXdamage )
 	wpe? (
 		>=gui-libs/libwpe-1.3.0:=
 		>=gui-libs/wpebackend-fdo-1.3.1:=
@@ -231,18 +225,19 @@ src_configure() {
 	fi
 
 	local mycmakeargs=(
+		# begin PRIVATE options
+		#-DSHOULD_INSTALL_JS_SHELL=$(usex examples)
+		-DENABLE_GEOLOCATION=$(usex geolocation)
+		-DENABLE_UNIFIED_BUILDS=$(usex jumbo-build)
+		#-DENABLE_API_TESTS=$(usex test)
+		# end
 		-DENABLE_WEBDRIVER=OFF
 		-DENABLE_WEB_CRYPTO=OFF
 		-DENABLE_TOUCH_EVENTS=OFF
 		-DENABLE_DRAG_SUPPORT=OFF
-		-DSHOULD_INSTALL_JS_SHELL=ON
-		-DENABLE_EXPERIMENTAL_FEATURES=$(usex experimental)
 		-DENABLE_MINIBROWSER=$(usex examples)
-		-DENABLE_UNIFIED_BUILDS=$(usex jumbo-build)
 		-DENABLE_QUARTZ_TARGET=$(usex aqua)
-		-DENABLE_API_TESTS=$(usex test)
 		-DENABLE_GTKDOC=$(usex doc)
-		-DENABLE_GEOLOCATION=$(usex geolocation)
 		$(cmake-utils_use_find_package gles2-only OpenGLES2)
 		-DENABLE_GLES2=$(usex gles2-only)
 		-DENABLE_VIDEO=$(usex gstreamer)
@@ -254,7 +249,6 @@ src_configure() {
 		-DUSE_WOFF2=ON
 		-DENABLE_SPELLCHECK=$(usex spell)
 		-DENABLE_WAYLAND_TARGET=$(usex wayland)
-		-DENABLE_WEBGL=$(usex webgl)
 		$(cmake-utils_use_find_package egl EGL)
 		$(cmake-utils_use_find_package opengl OpenGL)
 		-DENABLE_X11_TARGET=$(usex X)
@@ -262,8 +256,6 @@ src_configure() {
 		-DUSE_WPE_RENDERER=$(usex wpe)
 		-DENABLE_BUBBLEWRAP_SANDBOX=$(usex seccomp)
 		-DENABLE_MEDIA_SOURCE=$(usex media-source)
-		# https://bugs.webkit.org/show_bug.cgi?id=197947
-		-DENABLE_DARK_MODE_CSS=OFF
 +		-DBWRAP_EXECUTABLE="${EPREFIX}"/usr/bin/bwrap # If bubblewrap[suid] then portage makes it go-r and cmake find_program fails with that
 		-DCMAKE_BUILD_TYPE=Release
 		-DPORT=GTK
