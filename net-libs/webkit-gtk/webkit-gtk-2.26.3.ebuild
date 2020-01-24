@@ -18,16 +18,13 @@ LICENSE="LGPL-2+ BSD"
 SLOT="4/37" # soname version of libwebkit2gtk-4.0
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~amd64-linux ~x86-linux ~x86-macos"
 
-IUSE="aqua coverage doc +egl examples experimental +geolocation gles2-only gnome-keyring +gstreamer +introspection jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell wayland +wpe +webgl +X"
+IUSE="aqua coverage doc +egl examples experimental +geolocation gles2-only gnome-keyring +gstreamer +introspection jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell wayland +wpe +X"
 
-# webgl needs gstreamer, bug #560612
 # gstreamer with opengl/gles2-only needs egl
 REQUIRED_USE="
 	geolocation? ( introspection )
 	gles2-only? ( egl !opengl )
 	gstreamer? ( opengl? ( egl ) )
-	webgl? ( gstreamer
-		|| ( gles2-only opengl ) )
 	wayland? ( egl )
 	wpe? ( opengl wayland )
 	media-source? ( gstreamer )
@@ -87,9 +84,6 @@ RDEPEND="
 	egl? ( media-libs/mesa[egl] )
 	gles2-only? ( media-libs/mesa[gles2] )
 	opengl? ( virtual/opengl )
-	webgl? (
-		x11-libs/libXcomposite
-		x11-libs/libXdamage )
 	wpe? (
 		>=gui-libs/libwpe-1.3.0:=
 		>=gui-libs/wpebackend-fdo-1.3.1:=
@@ -254,7 +248,6 @@ src_configure() {
 		-DUSE_WOFF2=ON
 		-DENABLE_SPELLCHECK=$(usex spell)
 		-DENABLE_WAYLAND_TARGET=$(usex wayland)
-		-DENABLE_WEBGL=$(usex webgl)
 		$(cmake-utils_use_find_package egl EGL)
 		$(cmake-utils_use_find_package opengl OpenGL)
 		-DENABLE_X11_TARGET=$(usex X)
