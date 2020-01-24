@@ -18,7 +18,7 @@ LICENSE="LGPL-2+ BSD"
 SLOT="4/37" # soname version of libwebkit2gtk-4.0
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~amd64-linux ~x86-linux ~x86-macos"
 
-IUSE="aqua coverage doc +egl examples experimental +geolocation gles2-only gnome-keyring +gstreamer +introspection jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell wayland +wpe +X"
+IUSE="aqua coverage doc +egl examples +geolocation gles2-only gnome-keyring +gstreamer +introspection jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell wayland +wpe +X"
 
 # gstreamer with opengl/gles2-only needs egl
 REQUIRED_USE="
@@ -229,9 +229,8 @@ src_configure() {
 		-DENABLE_WEB_CRYPTO=OFF
 		-DENABLE_TOUCH_EVENTS=OFF
 		-DENABLE_DRAG_SUPPORT=OFF
-		-DSHOULD_INSTALL_JS_SHELL=ON
-		-DENABLE_EXPERIMENTAL_FEATURES=$(usex experimental)
 		-DENABLE_MINIBROWSER=$(usex examples)
+		-DSHOULD_INSTALL_JS_SHELL=$(usex examples)
 		-DENABLE_UNIFIED_BUILDS=$(usex jumbo-build)
 		-DENABLE_QUARTZ_TARGET=$(usex aqua)
 		-DENABLE_API_TESTS=$(usex test)
