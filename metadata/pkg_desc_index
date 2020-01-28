@@ -142,8 +142,8 @@ net-libs/libasr 1.0.2 9999: Async Resolver Library from OpenBSD/OpenSMTPD
 net-libs/libqmatrixclient 0.5.2: A Qt5 library to write cross-platfrom clients for Matrix
 net-libs/libsoup 2.68.3: HTTP client/server library for GNOME
 net-libs/serf 1.3.9: HTTP client library
-net-libs/webkit-gtk 2.26.3: Open source web browser engine
-net-libs/wpewebkit 2.26.2 2.27.3: WebKit port optimized for embedded devices
+net-libs/webkit-gtk 2.26.2 2.26.3: Open source web browser engine
+net-libs/wpewebkit 2.26.3 2.27.3: WebKit port optimized for embedded devices
 net-mail/public-inbox 1.0.0: 
 net-misc/cjdns 20.2: encrypted IPv6 using public-key cryptography for allocation and DHT for routing
 net-misc/drawterm 9999: connect to Plan 9 CPU servers from other operating systems
