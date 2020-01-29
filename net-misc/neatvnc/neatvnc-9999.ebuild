@@ -24,18 +24,6 @@ RDEPEND="
 	x11-libs/libdrm
 "
 
-src_prepare() {
-	default
-
-	# grep -l '"sys/queue.h"' "$S"/include/*.h \
-	# 	| xargs sed -i 's;"sys/queue.h";<sys/queue.h>;' \
-	# 	|| die 'Failed changing "sys/queue.h" to <sys/queue.h>'
-	#
-	# rm "${S}/include/sys/queue.h" || die 'Failed removing include/sys/queue.h'
-
-	sed -i '/<sys\/cdefs.h>/d' "${S}/include/sys/queue.h"
-}
-
 src_configure() {
 	local emesonargs=(
 		$(meson_feature jpeg tight-encoding)
