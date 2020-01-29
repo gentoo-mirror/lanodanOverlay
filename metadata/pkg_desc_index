@@ -90,6 +90,7 @@ games-sports/vdrift 2014.10.20 9999: A driving simulation made with drift racing
 games-visualnovel/doki-doki-litterature-club 1.1.1: Psychological horror game presented as a romance visual novel
 gnome-base/gvfs 1.32.2: Virtual filesystem implementation for gio
 gnustep-base/gnustep-make 2.7.0: GNUstep Makefile Package
+gui-apps/wayvnc 9999: VNC server for wlroots based Wayland compositors
 gui-libs/libwpe 1.2.1 1.4.0.1: WebKit port optimized for embedded devices
 gui-libs/wpebackend-fdo 1.2.2 1.4.0: FreeDesktop.Org backend for WPE WebKit
 gui-wm/cage 0.1.1 9999: Wayland Kiosk
@@ -149,6 +150,7 @@ net-misc/cjdns 20.2: encrypted IPv6 using public-key cryptography for allocation
 net-misc/drawterm 9999: connect to Plan 9 CPU servers from other operating systems
 net-misc/fbxosctrl 2.3.2: Shell tool to control some Freebox OS stuff: wifi, reboot...
 net-misc/geomyidae 0.31.1: A small C-based gopherd.
+net-misc/neatvnc 9999: liberally licensed VNC server library that's intended to be fast and neat
 net-misc/openntpd 6.0_p1: Lightweight NTP server ported from OpenBSD
 net-misc/pussh 9999: Parallel SSH, batch and command line oriented
 net-misc/tinyssh 20181206 20190101: A small SSH server with state-of-the-art cryptography
