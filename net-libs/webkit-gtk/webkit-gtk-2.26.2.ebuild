@@ -3,6 +3,7 @@
 
 EAPI=6
 CMAKE_MAKEFILE_GENERATOR="ninja"
+CMAKE_BUILD_TYPE="Release"
 PYTHON_COMPAT=( python{2_7,3_5,3_6,3_7} )
 USE_RUBY="ruby24 ruby25 ruby26 ruby27"
 CMAKE_MIN_VERSION=3.10
@@ -258,7 +259,6 @@ src_configure() {
 		-DENABLE_BUBBLEWRAP_SANDBOX=$(usex seccomp)
 		-DENABLE_MEDIA_SOURCE=$(usex media-source)
 		-DBWRAP_EXECUTABLE="${EPREFIX}"/usr/bin/bwrap # If bubblewrap[suid] then portage makes it go-r and cmake find_program fails with that
-		-DCMAKE_BUILD_TYPE=Release
 		-DPORT=GTK
 		${ruby_interpreter}
 	)
