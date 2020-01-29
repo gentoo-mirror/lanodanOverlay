@@ -1,9 +1,10 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 CMAKE_MAKEFILE_GENERATOR="ninja"
-PYTHON_COMPAT=( python{2_7,3_5,3_6,3_7} )
+CMAKE_BUILD_TYPE="Release"
+PYTHON_COMPAT=( python{2_7,3_6,3_7} )
 USE_RUBY="ruby24 ruby25 ruby26 ruby27"
 CMAKE_MIN_VERSION=3.10
 
@@ -34,7 +35,7 @@ REQUIRED_USE="
 # Aqua support in gtk3 is untested
 # Dependencies found at Source/cmake/OptionsGTK.cmake
 # Various compile-time optionals for gtk+-3.22.0 - ensure it
-# Missing OpenWebRTC checks and conditionals, but ENABLE_MEDIA_STREAM/ENABLE_WEB_RTC is experimental upstream (PRIVATE OFF)
+# Missing WebRTC support, but ENABLE_MEDIA_STREAM/ENABLE_WEB_RTC is experimental upstream (PRIVATE OFF) and shouldn't be used yet in 2.26
 # >=gst-plugins-opus-1.14.4-r1 for opusparse (required by MSE)
 RDEPEND="
 	>=x11-libs/cairo-1.16.0:=[X?]
@@ -64,10 +65,10 @@ RDEPEND="
 	gstreamer? (
 		>=media-libs/gstreamer-1.14:1.0
 		>=media-libs/gst-plugins-base-1.14:1.0[egl?,opengl?]
+		gles2-only? ( media-libs/gst-plugins-base:1.0[gles2] )
 		>=media-plugins/gst-plugins-opus-1.14.4-r1:1.0
-		>=media-libs/gst-plugins-bad-1.14:1.0
-		gles2-only? ( media-libs/gst-plugins-base[gles2] )
-	)
+		>=media-libs/gst-plugins-bad-1.14:1.0 )
+
 	media-source? ( >=media-libs/gstreamer-1.16:1.0 )
 
 	X? (
@@ -134,11 +135,7 @@ pkg_pretend() {
 		fi
 
 		if ! test-flag-CXX -std=c++17 ; then
-			die "You need at least GCC 7.3.x or Clang >= 5 for C++11-specific compiler flags"
-		fi
-
-		if tc-is-gcc && [[ $(gcc-version) < 7.3 ]] ; then
-			die 'The active compiler needs to be gcc 7.3 (or newer)'
+			die "You need at least GCC 7.3.x or Clang >= 5 for C++17-specific compiler flags"
 		fi
 	fi
 
@@ -195,14 +192,11 @@ src_configure() {
 #		append-ldflags "-Wl,--reduce-memory-overheads"
 #	fi
 
-	# Multiple rendering bugs on youtube, github, etc without this, bug #547224
-	append-flags $(test-flags -fno-strict-aliasing)
-
 	# Ruby situation is a bit complicated. See bug 513888
 	local rubyimpl
 	local ruby_interpreter=""
 	for rubyimpl in ${USE_RUBY}; do
-		if has_version "virtual/rubygems[ruby_targets_${rubyimpl}]"; then
+		if has_version --host-root "virtual/rubygems[ruby_targets_${rubyimpl}]"; then
 			ruby_interpreter="-DRUBY_EXECUTABLE=$(type -P ${rubyimpl})"
 		fi
 	done
@@ -212,8 +206,6 @@ src_configure() {
 
 	# TODO: Check Web Audio support
 	# should somehow let user select between them?
-	#
-	# FTL_JIT requires llvm
 	#
 	# opengl needs to be explicetly handled, bug #576634
 
@@ -226,10 +218,10 @@ src_configure() {
 
 	local mycmakeargs=(
 		# begin PRIVATE options
-		#-DSHOULD_INSTALL_JS_SHELL=$(usex examples)
+		-DSHOULD_INSTALL_JS_SHELL=$(usex examples)
 		-DENABLE_GEOLOCATION=$(usex geolocation)
 		-DENABLE_UNIFIED_BUILDS=$(usex jumbo-build)
-		#-DENABLE_API_TESTS=$(usex test)
+		-DENABLE_API_TESTS=$(usex test)
 		# end
 		-DENABLE_WEBDRIVER=OFF
 		-DENABLE_WEB_CRYPTO=OFF
@@ -253,11 +245,11 @@ src_configure() {
 		$(cmake-utils_use_find_package opengl OpenGL)
 		-DENABLE_X11_TARGET=$(usex X)
 		-DENABLE_OPENGL=${opengl_enabled}
+		-DENABLE_WEBGL=${opengl_enabled}
 		-DUSE_WPE_RENDERER=$(usex wpe)
 		-DENABLE_BUBBLEWRAP_SANDBOX=$(usex seccomp)
 		-DENABLE_MEDIA_SOURCE=$(usex media-source)
 		-DBWRAP_EXECUTABLE="${EPREFIX}"/usr/bin/bwrap # If bubblewrap[suid] then portage makes it go-r and cmake find_program fails with that
-		-DCMAKE_BUILD_TYPE=Release
 		-DPORT=GTK
 		${ruby_interpreter}
 	)
