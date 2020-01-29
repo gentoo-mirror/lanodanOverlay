@@ -11,7 +11,6 @@ EGIT_REPO_URI="https://github.com/any1/wayvnc.git"
 LICENSE="ISC"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="gnutls jpeg"
 
 DEPEND="
 	media-libs/mesa:=
