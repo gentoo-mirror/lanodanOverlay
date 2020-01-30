@@ -98,7 +98,7 @@ gui-wm/inaban 9999: Distrustful Tiling Wayland Compositor
 gui-wm/waymonad 9999: wayland compositor based on ideas from and inspired by xmonad
 gui-wm/wio 9999: Wayland Kiosk
 mail-client/aerc 0.2.1 9999: Asynchronous email client for your terminal, written in Go.
-mail-mta/opensmtpd 6.4.2_p1-r1 6.6.1_p1: Lightweight but featured SMTP daemon from OpenBSD
+mail-mta/opensmtpd 6.6.2_p1: Lightweight but featured SMTP daemon from OpenBSD
 media-fonts/3270font 2.0.0: A IBM 3270 Terminal font in a modern format
 media-fonts/forkawesome 1.1.4: The iconic font
 media-fonts/inria-fonts 1.200: Inria Serif and Inria Sans Typeface
