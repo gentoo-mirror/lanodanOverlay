@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install
+DEPEND=dev-libs/libtermkey:= unibilium? ( >=dev-libs/unibilium-1.1.0:= ) !unibilium? ( sys-libs/ncurses:= )
+DESCRIPTION=library for building interactive full-screen terminal programs
+EAPI=7
+HOMEPAGE=http://www.leonerd.org.uk/code/libtickit/
+IUSE=+unibilium
+KEYWORDS=~amd64
+LICENSE=MIT
+RDEPEND=dev-libs/libtermkey:= unibilium? ( >=dev-libs/unibilium-1.1.0:= ) !unibilium? ( sys-libs/ncurses:= )
+SLOT=0
+SRC_URI=http://www.leonerd.org.uk/code/libtickit/libtickit-0.3.3.tar.gz
+_md5_=608ec6881d6487b2ce3cbb8d7fb57362
