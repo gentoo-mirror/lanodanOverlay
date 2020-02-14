@@ -1,13 +1,13 @@
 DEFINED_PHASES=compile configure install test
-DEPEND=obstack? ( sys-libs/obstack-standalone )
+DEPEND=libucontext? ( sys-libs/libucontext ) obstack? ( sys-libs/obstack-standalone )
 DESCRIPTION=The GNU C Library compatibility layer for musl
 EAPI=7
 HOMEPAGE=https://code.foxkit.us/adelie/gcompat
-IUSE=obstack abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_riscv_lp64d abi_riscv_lp64 abi_s390_32 abi_s390_64
+IUSE=libucontext obstack abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_riscv_lp64d abi_riscv_lp64 abi_s390_32 abi_s390_64
 KEYWORDS=~amd64 ~x86
 LICENSE=UoI-NCSA
-RDEPEND=obstack? ( sys-libs/obstack-standalone )
+RDEPEND=libucontext? ( sys-libs/libucontext ) obstack? ( sys-libs/obstack-standalone )
 SLOT=0
 SRC_URI=https://distfiles.adelielinux.org/source/gcompat/gcompat-0.4.0.tar.xz
 _eclasses_=multibuild	40fe59465edacd730c644ec2bc197809	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multilib-build	dfda7934df092a96e439c05b4aeac519	multilib-minimal	8bddda43703ba94d8341f4e247f97566	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
-_md5_=1af0090cedfa08d56cc24f48509204c9
+_md5_=7bfef830ccdeef5dcba4bb5ba7b44c9e
