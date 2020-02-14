@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit multilib-minimal
+inherit multilib-minimal flag-o-matic
 
 DESCRIPTION="The GNU C Library compatibility layer for musl"
 HOMEPAGE="https://code.foxkit.us/adelie/gcompat"
@@ -38,6 +38,8 @@ get_linker_path() {
 }
 
 src_compile() {
+	filter-flags "-Wl,--as-needed"
+
 	emake \
 		LINKER_PATH="$(get_linker_path)" \
 		LOADER_NAME="$(get_loader_name)" \
