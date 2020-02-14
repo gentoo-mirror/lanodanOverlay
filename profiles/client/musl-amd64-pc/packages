@@ -26,7 +26,6 @@ x11-wm/xmonad-contrib
 
 # sets:client
 #net-fs/sshfs
-net-misc/bsdwhois
 net-vpn/iodine
 app-admin/pass
 
