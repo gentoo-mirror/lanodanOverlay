@@ -1,4 +1,4 @@
-# Copyright 2018 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+# Copyright 2018-2020 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -9,11 +9,14 @@ DESCRIPTION="The GNU C Library compatibility layer for musl"
 HOMEPAGE="https://code.foxkit.us/adelie/gcompat"
 KEYWORDS="~amd64 ~x86"
 LICENSE="UoI-NCSA"
-IUSE="obstack"
-SRC_URI="https://distfiles.adelielinux.org/source/gcompat/${P}.tar.xz"
+IUSE="libucontext obstack"
+SRC_URI="https://distfiles.adelielinux.org/source/${PN}/${P}.tar.xz"
 SLOT="0"
 
-DEPEND="obstack? ( sys-libs/obstack-standalone )"
+DEPEND="
+	libucontext? ( sys-libs/libucontext )
+	obstack? ( sys-libs/obstack-standalone )
+"
 RDEPEND="${DEPEND}"
 
 get_loader_name() {
@@ -38,7 +41,8 @@ src_compile() {
 	emake \
 		LINKER_PATH="$(get_linker_path)" \
 		LOADER_NAME="$(get_loader_name)" \
-		WITH_OBSTACK="$(usex obstack 'obstack-standalone' 'no')"
+		WITH_OBSTACK="$(usex obstack 'obstack-standalone' 'no')" \
+		$(usex libucontext WITH_LIBUCONTEXT=yes '')
 }
 
 src_install() {
@@ -46,6 +50,7 @@ src_install() {
 		LINKER_PATH="$(get_linker_path)" \
 		LOADER_NAME="$(get_loader_name)" \
 		WITH_OBSTACK="$(usex obstack 'obstack-standalone' 'no')" \
+		$(usex libucontext WITH_LIBUCONTEXT=yes '') \
 		DESTDIR="${D}" \
 		install
 }
