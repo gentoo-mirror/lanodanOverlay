@@ -3,7 +3,6 @@
 
 EAPI=6
 CMAKE_MAKEFILE_GENERATOR="ninja"
-CMAKE_BUILD_TYPE="Release"
 PYTHON_COMPAT=( python{2_7,3_6,3_7} )
 USE_RUBY="ruby24 ruby25 ruby26 ruby27"
 CMAKE_MIN_VERSION=3.10
@@ -19,7 +18,7 @@ LICENSE="LGPL-2+ BSD"
 SLOT="4/37" # soname version of libwebkit2gtk-4.0
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~amd64-linux ~x86-linux ~x86-macos"
 
-IUSE="aqua coverage doc +egl examples +geolocation gles2-only gnome-keyring +gstreamer +introspection jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell wayland +wpe +X"
+IUSE="aqua coverage debug doc +egl examples +geolocation gles2-only gnome-keyring +gstreamer +introspection jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell wayland +wpe +X"
 
 # gstreamer with opengl/gles2-only needs egl
 REQUIRED_USE="
@@ -126,6 +125,12 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/${MY_P}"
 
 CHECKREQS_DISK_BUILD="18G" # and even this might not be enough, bug #417307
+
+if use debug; then
+	CMAKE_BUILD_TYPE="Debug"
+else
+	CMAKE_BUILD_TYPE="Release"
+end
 
 pkg_pretend() {
 	if [[ ${MERGE_TYPE} != "binary" ]] ; then
