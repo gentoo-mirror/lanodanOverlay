@@ -126,12 +126,6 @@ S="${WORKDIR}/${MY_P}"
 
 CHECKREQS_DISK_BUILD="18G" # and even this might not be enough, bug #417307
 
-if use debug; then
-	CMAKE_BUILD_TYPE="Debug"
-else
-	CMAKE_BUILD_TYPE="Release"
-end
-
 pkg_pretend() {
 	if [[ ${MERGE_TYPE} != "binary" ]] ; then
 		if is-flagq "-g*" && ! is-flagq "-g*0" ; then
@@ -170,6 +164,12 @@ src_prepare() {
 }
 
 src_configure() {
+	if use debug; then
+		CMAKE_BUILD_TYPE="Debug"
+	else
+		CMAKE_BUILD_TYPE="Release"
+	fi
+
 	# Respect CC, otherwise fails on prefix #395875
 	tc-export CC
 
