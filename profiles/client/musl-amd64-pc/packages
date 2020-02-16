@@ -18,7 +18,6 @@ x11-base/xorg-server
 x11-misc/dmenu
 x11-misc/redshift
 x11-misc/slock
-x11-misc/xautolock
 x11-misc/xbindkeys
 x11-misc/xmobar
 x11-wm/xmonad
@@ -26,7 +25,6 @@ x11-wm/xmonad-contrib
 
 # sets:client
 #net-fs/sshfs
-net-vpn/iodine
 app-admin/pass
 
 # sets:fonts
