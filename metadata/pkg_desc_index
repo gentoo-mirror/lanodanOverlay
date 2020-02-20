@@ -22,7 +22,7 @@ app-text/evince 3.32.1: Simple document viewer for GNOME
 app-text/hoedown 3.0.7 9999: Standards compliant, fast, secure markdown processing library in C
 app-text/mandoc 1.14.5: Suite of tools compiling mdoc and man
 app-text/sshpaste 1.0.1 9999: wgetpaste clone for pushing to your own server
-dev-db/timescaledb 1.2.1: A time-series database optimized for fast ingest and complex queries
+dev-db/timescaledb 1.2.1 1.6.0: A time-series database optimized for fast ingest and complex queries
 dev-dotnet/dotnetcore-sdk 3.0.100: .NET Core cli utility for building, testing, packaging and running projects
 dev-dotnet/nuget 5.0.2: Nuget - .NET Package Manager
 dev-elixir/hex 0.20.1: 
@@ -139,6 +139,7 @@ net-im/bitlbee 3.5.1 9999: irc to IM gateway that support multiple IM protocols
 net-im/gajim 1.0.3 1.1.2: A GTK+ Jabber client
 net-im/tootle 0.2.0 9999: GTK3 client for Mastodon API
 net-irc/unrealircd 4.2.0: An advanced Internet Relay Chat daemon
+net-irc/weechat 2.7.1 9999: Portable and multi-interface IRC client
 net-libs/glib-networking 2.62.3: Network-related giomodules for glib
 net-libs/libasr 1.0.2 9999: Async Resolver Library from OpenBSD/OpenSMTPD
 net-libs/libqmatrixclient 0.5.2: A Qt5 library to write cross-platfrom clients for Matrix
