@@ -21,7 +21,9 @@ RDEPEND="
 	dev-libs/libxslt
 	dev-libs/libxml2
 	app-text/docbook-xsl-stylesheets
-	dev-python/pygments[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '
+		dev-python/pygments[${PYTHON_MULTI_USEDEP}]
+	')
 	doc? ( app-text/yelp-tools )
 	emacs? ( virtual/emacs )
 	pdf? (
