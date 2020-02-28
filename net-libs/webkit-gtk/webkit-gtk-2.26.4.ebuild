@@ -3,7 +3,7 @@
 
 EAPI=6
 CMAKE_MAKEFILE_GENERATOR="ninja"
-PYTHON_COMPAT=( python{2_7,3_6,3_7} )
+PYTHON_COMPAT=( python{3_6,3_7} )
 USE_RUBY="ruby24 ruby25 ruby26 ruby27"
 CMAKE_MIN_VERSION=3.10
 
@@ -118,7 +118,7 @@ DEPEND="${RDEPEND}
 	sys-apps/paxctl
 
 	test? (
-		dev-python/pygobject:3[python_targets_python2_7]
+		dev-python/pygobject:3[${PYTHON_USEDEP}]
 		x11-themes/hicolor-icon-theme )
 "
 
@@ -166,8 +166,6 @@ src_prepare() {
 src_configure() {
 	if use debug; then
 		CMAKE_BUILD_TYPE="Debug"
-	else
-		CMAKE_BUILD_TYPE="Release"
 	fi
 
 	# Respect CC, otherwise fails on prefix #395875
