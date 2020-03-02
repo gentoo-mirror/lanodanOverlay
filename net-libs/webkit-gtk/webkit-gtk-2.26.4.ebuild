@@ -18,7 +18,7 @@ LICENSE="LGPL-2+ BSD"
 SLOT="4/37" # soname version of libwebkit2gtk-4.0
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~amd64-linux ~x86-linux ~x86-macos"
 
-IUSE="aqua coverage debug doc +egl examples +geolocation gles2-only gnome-keyring +gstreamer +introspection jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell wayland +wpe +X"
+IUSE="aqua coverage debug doc +egl examples +geolocation gles2-only gnome-keyring +gstreamer +introspection +jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell wayland +wpe +X"
 
 # gstreamer with opengl/gles2-only needs egl
 REQUIRED_USE="
@@ -55,7 +55,7 @@ RDEPEND="
 
 	>=dev-libs/glib-2.44.0:2
 	>=dev-libs/libxslt-1.1.7
-	>=media-libs/woff2-1.0.2
+	media-libs/woff2
 	gnome-keyring? ( app-crypt/libsecret )
 	geolocation? ( >=app-misc/geoclue-2.1.5:2.0 )
 	introspection? ( >=dev-libs/gobject-introspection-1.32.0:= )
