@@ -117,10 +117,12 @@ DEPEND="${RDEPEND}
 	geolocation? ( dev-util/gdbus-codegen )
 	sys-apps/paxctl
 
-	test? (
-		dev-python/pygobject:3[${PYTHON_USEDEP}]
-		x11-themes/hicolor-icon-theme )
 "
+RESTRICT="test"
+# tests are b0rk, PYTHON_USEDEP is as well
+#	test? (
+#		dev-python/pygobject:3[${PYTHON_USEDEP}]
+#		x11-themes/hicolor-icon-theme )
 
 S="${WORKDIR}/${MY_P}"
 
