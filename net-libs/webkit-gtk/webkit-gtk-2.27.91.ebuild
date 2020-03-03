@@ -16,7 +16,7 @@ SRC_URI="https://www.webkitgtk.org/releases/${MY_P}.tar.xz"
 
 LICENSE="LGPL-2+ BSD"
 SLOT="4/37" # soname version of libwebkit2gtk-4.0
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~amd64-linux ~x86-linux ~x86-macos"
+#KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~amd64-linux ~x86-linux ~x86-macos"
 
 IUSE="aqua coverage debug doc +egl examples +geolocation gles2-only gnome-keyring +gstreamer +introspection +jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell wayland +wpe +X"
 
@@ -160,7 +160,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	eapply "${FILESDIR}/${PN}-2.24.4-eglmesaext-include.patch" # bug 699054 # https://bugs.webkit.org/show_bug.cgi?id=204108
 	cmake-utils_src_prepare
 	gnome2_src_prepare
 }
