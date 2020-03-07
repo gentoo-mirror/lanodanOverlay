@@ -1,4 +1,4 @@
-BDEPEND=>=dev-vcs/git-1.8.2.1[curl] >=dev-lang/go-1.12
+BDEPEND=>=dev-vcs/git-1.8.2.1[curl] >=dev-lang/go-1.12 app-arch/unzip
 DEFINED_PHASES=install postinst unpack
 DESCRIPTION=remove binary blobs from a directory
 EAPI=7
@@ -8,5 +8,5 @@ LICENSE=BSD
 PROPERTIES=live
 RESTRICT=network-sandbox
 SLOT=0
-_eclasses_=git-r3	86a0188f2ad9eb3d65e4d031ab8a0422	go-module	2e23fcc4b7fb60746e74822d4ca3a669
+_eclasses_=git-r3	86a0188f2ad9eb3d65e4d031ab8a0422	go-module	7b83d59124252e3e756e1071c0f06678
 _md5_=5fce3dfd2f49e8e4c30fe6988a08ab28
