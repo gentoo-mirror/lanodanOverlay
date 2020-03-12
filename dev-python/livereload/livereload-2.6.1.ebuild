@@ -26,6 +26,8 @@ RDEPEND="
 	www-servers/tornado[${PYTHON_USEDEP}]
 "
 
+S="${WORKDIR}/python-${P}"
+
 python_install_all() {
 	use examples && local EXAMPLES=( example/. )
 
