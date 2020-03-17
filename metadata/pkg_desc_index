@@ -49,6 +49,7 @@ dev-libs/glib 2.62.3 2.62.5: The GLib library of C routines
 dev-libs/hts_engine 1.10: HMM-based speech synthesis system (HTS) engine and API
 dev-libs/libdazzle 3.34.1: Experimental new features for GTK+ and GLib
 dev-libs/libtomcrypt 1.18.2: modular and portable cryptographic toolkit
+dev-libs/libucl 0.8.1: Universal configuration library parser
 dev-libs/socket99 0.2.2: Wrapper library for the BSD sockets API with a nicer C99 interface
 dev-lua/luaevent 0.4.6: libevent bindings for Lua
 dev-lua/luarocks 2.4.4: A deployment and management system for Lua modules
