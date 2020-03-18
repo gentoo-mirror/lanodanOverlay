@@ -160,7 +160,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	eapply "${FILESDIR}/${PN}-2.24.4-eglmesaext-include.patch" # bug 699054 # https://bugs.webkit.org/show_bug.cgi?id=204108
 	cmake-utils_src_prepare
 	gnome2_src_prepare
 }
@@ -230,11 +229,12 @@ src_configure() {
 		# end
 		-DENABLE_WEBDRIVER=OFF
 		-DENABLE_WEB_CRYPTO=OFF
-		-DENABLE_TOUCH_EVENTS=OFF
-		-DENABLE_DRAG_SUPPORT=OFF
+		# -DENABLE_TOUCH_EVENTS=OFF
+		# -DENABLE_DRAG_SUPPORT=OFF
 		-DENABLE_MINIBROWSER=$(usex examples)
 		-DENABLE_QUARTZ_TARGET=$(usex aqua)
-		-DENABLE_GTKDOC=$(usex doc)
+		# Fails with ld.lld, often breaks the builds if there is compiler warnings
+		# -DENABLE_GTKDOC=$(usex doc)
 		$(cmake-utils_use_find_package gles2-only OpenGLES2)
 		-DENABLE_GLES2=$(usex gles2-only)
 		-DENABLE_VIDEO=$(usex gstreamer)
