@@ -160,6 +160,7 @@ net-misc/neatvnc 9999: liberally licensed VNC server library that's intended to 
 net-misc/openntpd 6.0_p1: Lightweight NTP server ported from OpenBSD
 net-misc/pussh 9999: Parallel SSH, batch and command line oriented
 net-misc/tinyssh 20181206 20190101: A small SSH server with state-of-the-art cryptography
+net-misc/yacy 1.922.20191013.9964: YaCy - p2p based distributed web-search engine
 net-nntp/inn 2.6.2: The Internet News daemon, fully featured NNTP server
 net-nntp/suck 4.3.4: Grab news from a remote NNTP server and feed them to another
 net-p2p/gnunet 0.11.0_pre66: GNUnet is a framework for secure peer-to-peer networking.
