@@ -1,8 +1,8 @@
 # sets:graphical
 media-fonts/source-pro
 x11-terms/st
-media-fonts/emojione-color-font
-media-fonts/symbola
+media-fonts/noto-emoji
+media-fonts/quivira
 media-fonts/unifont
 media-fonts/vlgothic
 media-gfx/feh
