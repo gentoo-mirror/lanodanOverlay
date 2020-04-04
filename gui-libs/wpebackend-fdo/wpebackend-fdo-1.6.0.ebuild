@@ -1,10 +1,10 @@
-# Copyright 2019 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+# Copyright 2019-2020 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 CMAKE_MAKEFILE_GENERATOR="ninja"
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="FreeDesktop.Org backend for WPE WebKit"
 HOMEPAGE="https://wpewebkit.org/"
@@ -19,6 +19,6 @@ DEPEND="
 	media-libs/mesa[egl]
 	dev-libs/glib:=
 	>=dev-libs/wayland-1.10:=
-	gui-libs/libwpe:=
+	>=gui-libs/libwpe-1.6:=
 "
 RDEPEND="${DEPEND}"
