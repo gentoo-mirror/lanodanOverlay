@@ -1,4 +1,4 @@
-# Copyright 2019 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+# Copyright 2019-2020 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -6,7 +6,7 @@ CMAKE_MAKEFILE_GENERATOR="ninja"
 PYTHON_COMPAT=( python{2_7,3_5,3_6,3_7} )
 USE_RUBY="ruby24 ruby25 ruby26"
 
-inherit cmake-utils python-any-r1 ruby-single
+inherit cmake python-any-r1 ruby-single
 
 DESCRIPTION="WebKit port optimized for embedded devices"
 HOMEPAGE="https://wpewebkit.org/"
@@ -105,5 +105,5 @@ src_configure() {
 		${ruby_interpreter}
 	)
 
-	cmake-utils_src_configure
+	cmake_src_configure
 }
