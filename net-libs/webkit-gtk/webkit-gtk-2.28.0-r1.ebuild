@@ -167,6 +167,8 @@ src_prepare() {
 src_configure() {
 	if use debug; then
 		CMAKE_BUILD_TYPE="Debug"
+	else
+		CMAKE_BUILD_TYPE="RelWithDebInfo"
 	fi
 
 	# Respect CC, otherwise fails on prefix #395875
