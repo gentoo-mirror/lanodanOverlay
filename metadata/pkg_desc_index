@@ -1,3 +1,4 @@
+acct-user/sndiod 0: daemon user for sndio
 app-accessibility/julius 4.3.1 4.5: Large Vocabulary Continuous Speech Recognition Engine
 app-accessibility/mimic1 1.2.0.2 9999: Mycroft's TTS engine, based on CMU's Flite (Festival Lite)
 app-admin/pass 1.7.3-r1: Stores, retrieves, generates, and synchronizes passwords securely
@@ -136,6 +137,7 @@ media-plugins/gst-plugins-vpx 1.16.2: VP8/VP9 video encoder/decoder plugin for G
 media-sound/ibniz 1.18: virtual machine designed for extremely compact low-level audiovisual programs
 media-sound/milkytracker 1.02.00: FastTracker 2 inspired music tracker
 media-sound/sbagen 1.4.5: Command line sequenced binaural beat generator
+media-sound/sndio 1.6.0: small audio and MIDI framework part of the OpenBSD project
 net-dns/getdns 1.3.0: Modern asynchronous DNS API
 net-dns/ldns-utils 1.7.0-r1: Set of utilities to simplify various dns(sec) tasks
 net-im/Quaternion 0.0.9.4e: A Qt5-based IM client for the Matrix protocol
