@@ -32,20 +32,16 @@ DEPEND="
 		${RDEPEND}
 		dev-python/potr
 		dev-python/pyinotify
+		dev-python/python-mpd
 	)"
 
 DOC_CONTENTS="
 Install these optional runtime dependencies for additional features.
 * dev-python/potr for OTR encryption support.
 * dev-python/pyinotify for screen autoaway plugin support.
+* dev-python/python-mpd for music player daemon support.
 "
 DISABLE_AUTOFORMATTING=true
-
-src_prepare() {
-	default
-	# Delete unmaintained plugin which requires an excessive external dep
-	rm plugins/mpd_client.py || die
-}
 
 src_install() {
 	distutils-r1_src_install
