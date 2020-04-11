@@ -2,7 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-PYTHON_COMPAT=( python3_6 )
+# also python3_8 compatible but deps in gentoo aren't so makes repoman frown
+PYTHON_COMPAT=( python3_{6,7} )
 
 inherit distutils-r1 readme.gentoo-r1
 
@@ -14,7 +15,7 @@ IUSE="test"
 RESTRICT="!test? ( test )"
 
 if [[ "${PV}" == "9999" ]]; then
-	EGIT_REPO_URI="https://git.poez.io/${PN}.git"
+	EGIT_REPO_URI="https://lab.louiz.org/${PN}/${PN}.git"
 	inherit git-r3
 else
 	SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
