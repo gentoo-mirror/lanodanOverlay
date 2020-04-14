@@ -15,7 +15,8 @@ OBJCXXFLAGS="${CFLAGS}"
 CONFIG_PROTECT="${CONFIG_PROTECT} /lib/udev/rules.d/"
 INSTALL_MASK="/usr/lib/systemd /usr/lib64/systemd /lib/systemd /etc/systemd /etc/sudoers /etc/sudoers.d /usr/share/bash-completion /usr/share/zsh/site-functions /etc/xdg/autostart"
 
-EMERGE_DEFAULT_OPTS="--keep-going --usepkg"
+# --binpkg-changed-deps=y → Silence binpkg USE-matching warning
+EMERGE_DEFAULT_OPTS="--keep-going --usepkg --binpkg-changed-deps=y"
 FEATURES="userfetch userpriv usersandbox usersync sandbox splitdebug network-sandbox"
 FETCHCOMMAND="curl -L --fail --retry 3 --connect-timeout 60 -o \"\${DISTDIR}/\${FILE}\" \"\${URI}\""
 GENTOO_MIRRORS="https://mirror.swordarmor.fr/gentoo/ https://mirrors.dotsrc.org/gentoo/ https://gentoo.osuosl.org/ http://distfiles.gentoo.org"
