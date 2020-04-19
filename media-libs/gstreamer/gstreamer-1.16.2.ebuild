@@ -34,6 +34,10 @@ DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )
 "
 
+PATCHES=(
+	"${FILESDIR}"/${PN}-1.14.5-make43.patch # remove when bumping and switching to Meson
+)
+
 src_configure() {
 	if [[ ${CHOST} == *-interix* ]] ; then
 		export ac_cv_lib_dl_dladdr=no
