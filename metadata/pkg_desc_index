@@ -125,16 +125,21 @@ media-plugins/gst-plugins-aom 1.16.2: HTTP live streaming plugin for GStreamer
 media-plugins/gst-plugins-assrender 1.16.2: ASS/SSA rendering with effects support plugin for GStreamer
 media-plugins/gst-plugins-dash 1.16.2: MPEG-DASH plugin for GStreamer
 media-plugins/gst-plugins-faad 1.16.2: AAC audio decoder plugin.
+media-plugins/gst-plugins-flac 1.16.2: FLAC encoder/decoder/tagger plugin for GStreamer
 media-plugins/gst-plugins-hls 1.16.2: HTTP live streaming plugin for GStreamer
 media-plugins/gst-plugins-libav 1.16.2: FFmpeg based gstreamer plugin
 media-plugins/gst-plugins-meta 1.16.2: Meta ebuild to pull in gst plugins for apps
 media-plugins/gst-plugins-modplug 1.16.2: MOD audio decoder plugin for GStreamer
+media-plugins/gst-plugins-mpeg2dec 1.16.2: MPEG2 decoder plugin for GStreamer
 media-plugins/gst-plugins-mpg123 1.16.2: MP3 decoder plugin for GStreamer
 media-plugins/gst-plugins-opus 1.16.2: Opus audio parser plugin for GStreamer
 media-plugins/gst-plugins-rtmp 1.16.2: RTMP source/sink plugin for GStreamer
+media-plugins/gst-plugins-soup 1.16.2: HTTP client source/sink plugin for GStreamer
 media-plugins/gst-plugins-srtp 1.16.2: SRTP encoder/decoder plugin for GStreamer
 media-plugins/gst-plugins-vaapi 1.16.2: Hardware accelerated video decoding through VA-API plugin for GStreamer
 media-plugins/gst-plugins-vpx 1.16.2: VP8/VP9 video encoder/decoder plugin for GStreamer
+media-plugins/gst-plugins-wavpack 1.16.2: Wavpack audio encoder/decoder plugin for GStreamer
+media-plugins/gst-plugins-x264 1.16.2: H.264 encoder plugin for GStreamer
 media-sound/ibniz 1.18: virtual machine designed for extremely compact low-level audiovisual programs
 media-sound/milkytracker 1.02.00: FastTracker 2 inspired music tracker
 media-sound/sbagen 1.4.5: Command line sequenced binaural beat generator
