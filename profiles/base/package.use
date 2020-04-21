@@ -9,6 +9,7 @@ gui-apps/waybar -tray
 mail-mta/opensmtpd mdoc
 media-libs/phonon -vlc
 media-plugins/gst-plugins-meta ogg vorbis libass mp3 vpx aac opus theora ffmpeg modplug
+media-sound/ncmpc doc # manpages, depends on sphinx
 net-libs/glib-networking -gnutls
 net-libs/webkit-gtk jit -geoloc -webgl media-source
 net-misc/curl -imap -pop3 -smtp gopher
