@@ -30,7 +30,7 @@ src_prepare() {
 src_configure() {
 	cd "${S}_build" || die "Failed changing to build directory"
 
-	"${S}/configure" --enable-libsalsa=NO --regparm || die "Failed running ./configure"
+	"${S}/configure" --enable-libsalsa=NO || die "Failed running ./configure"
 }
 
 src_compile() {
