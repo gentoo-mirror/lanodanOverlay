@@ -1,0 +1,9 @@
+DEFINED_PHASES=compile configure install prepare
+DESCRIPTION=Open Sound System (OSS)
+EAPI=7
+HOMEPAGE=http://www.opensound.com/
+KEYWORDS=~amd64
+LICENSE=GPL-2
+SLOT=0
+SRC_URI=http://www.opensound.com/developer/sources/stable/gpl/oss-v4.2-build2019-src-gpl.tar.bz2
+_md5_=85a1c08a2fbb560baf59293cdf8611a5
