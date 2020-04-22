@@ -64,6 +64,7 @@ dev-python/mkdocs 1.0.4 1.1: Project documentation with Markdown.
 dev-python/pycrypto 9999: Fake ebuild to mask pycrypto in a overlay
 dev-python/pygame_sdl2 7.3.5: Reimplementation of portions of the pygame API using SDL2
 dev-python/python-nbxmpp 0.6.10: Python library to use Jabber/XMPP networks in a non-blocking way
+dev-python/slixmpp 1.4.2 9999: Python 3 library for XMPP
 dev-tex/dot2tex 2.11.2: A Graphviz to LaTeX converter
 dev-util/bam 0.5.1: Fast and flexible Lua-based build system
 dev-util/gdbus-codegen 2.62.5 2.62.6: GDBus code and documentation generator
