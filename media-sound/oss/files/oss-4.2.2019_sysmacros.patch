@@ -1,0 +1,10 @@
+--- oss-v4.2-build2019-src-gpl/os_cmd/Linux/ossdetect/ossdetect.c   2020-04-22 22:58:08.862252980 +0200
++++ oss-v4.2-build2019-src-gpl/os_cmd/Linux/ossdetect/ossdetect.c   2020-04-22 22:58:19.357989299 +0200
+@@ -23,6 +23,7 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <sys/dir.h>
++#include <sys/sysmacros.h>
+
+ #define PCI_PASS       0
+ #define USB_PASS       1
