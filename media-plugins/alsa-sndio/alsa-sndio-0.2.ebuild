@@ -16,6 +16,12 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 
+src_prepare() {
+	default
+
+	sed -i "s;/lib/alsa-lib/;$(get_libdir)/alsa-lib/;" Makefile || die "Failed changing libdir"
+}
+
 src_install() {
 	export PREFIX="/usr"
 
