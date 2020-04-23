@@ -122,6 +122,7 @@ media-libs/opencolorio 1.1.0-r1: A color management framework for visual effects
 media-libs/rtmidi 2.1.1: common C++ API for realtime MIDI input/output
 media-libs/vips 8.9.1: VIPS Image Processing Library
 media-libs/x264 0.0.20170701: A free library for encoding X264/AVC streams
+media-plugins/alsa-sndio 0.2: Sndio audio sink and source for GStreamer
 media-plugins/gst-plugins-aom 1.16.2: HTTP live streaming plugin for GStreamer
 media-plugins/gst-plugins-assrender 1.16.2: ASS/SSA rendering with effects support plugin for GStreamer
 media-plugins/gst-plugins-dash 1.16.2: MPEG-DASH plugin for GStreamer
@@ -135,12 +136,14 @@ media-plugins/gst-plugins-mpeg2dec 1.16.2: MPEG2 decoder plugin for GStreamer
 media-plugins/gst-plugins-mpg123 1.16.2: MP3 decoder plugin for GStreamer
 media-plugins/gst-plugins-opus 1.16.2: Opus audio parser plugin for GStreamer
 media-plugins/gst-plugins-rtmp 1.16.2: RTMP source/sink plugin for GStreamer
+media-plugins/gst-plugins-sndio 1.8.0.1: Sndio audio sink and source for GStreamer
 media-plugins/gst-plugins-soup 1.16.2: HTTP client source/sink plugin for GStreamer
 media-plugins/gst-plugins-srtp 1.16.2: SRTP encoder/decoder plugin for GStreamer
 media-plugins/gst-plugins-vaapi 1.16.2: Hardware accelerated video decoding through VA-API plugin for GStreamer
 media-plugins/gst-plugins-vpx 1.16.2: VP8/VP9 video encoder/decoder plugin for GStreamer
 media-plugins/gst-plugins-wavpack 1.16.2: Wavpack audio encoder/decoder plugin for GStreamer
 media-plugins/gst-plugins-x264 1.16.2: H.264 encoder plugin for GStreamer
+media-sound/aucatctl 0.1: A tool for controlling aucat and/or sndiod volume through MIDI
 media-sound/ibniz 1.18: virtual machine designed for extremely compact low-level audiovisual programs
 media-sound/milkytracker 1.02.00: FastTracker 2 inspired music tracker
 media-sound/oss 4.2.2019: Open Sound System (OSS)
