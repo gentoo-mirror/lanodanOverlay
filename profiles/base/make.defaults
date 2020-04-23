@@ -17,7 +17,7 @@ INSTALL_MASK="/usr/lib/systemd /usr/lib64/systemd /lib/systemd /etc/systemd /etc
 
 # --binpkg-changed-deps=y → Silence binpkg USE-matching warning
 EMERGE_DEFAULT_OPTS="--keep-going --usepkg --binpkg-changed-deps=y"
-FEATURES="userfetch userpriv usersandbox usersync sandbox splitdebug network-sandbox"
+FEATURES="userfetch userpriv usersandbox usersync sandbox splitdebug network-sandbox noinfo"
 FETCHCOMMAND="curl -L --fail --retry 3 --connect-timeout 60 -o \"\${DISTDIR}/\${FILE}\" \"\${URI}\""
 GENTOO_MIRRORS="https://mirror.swordarmor.fr/gentoo/ https://mirrors.dotsrc.org/gentoo/ https://gentoo.osuosl.org/ http://distfiles.gentoo.org"
 PORTAGE_COMPRESS="true" # mandoc
