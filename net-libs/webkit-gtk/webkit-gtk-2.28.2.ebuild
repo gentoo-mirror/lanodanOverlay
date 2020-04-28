@@ -18,9 +18,9 @@ LICENSE="LGPL-2+ BSD"
 SLOT="4/37" # soname version of libwebkit2gtk-4.0
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~amd64-linux ~x86-linux ~x86-macos"
 
-IUSE="aqua coverage debug doc +egl examples +geolocation gles2-only gnome-keyring +gstreamer +introspection +jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell wayland +wpe +X"
+IUSE="aqua coverage debug +egl examples +geolocation gles2-only gnome-keyring +gstreamer gtk-doc +introspection +jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell wayland +wpe +X"
 
-# gstreamer with opengl/gles2-only needs egl
+# gstreamer with opengl/gles2 needs egl
 REQUIRED_USE="
 	geolocation? ( introspection )
 	gles2-only? ( egl !opengl )
@@ -57,7 +57,6 @@ RDEPEND="
 	>=dev-libs/libxslt-1.1.7
 	media-libs/woff2
 	gnome-keyring? ( app-crypt/libsecret )
-	geolocation? ( >=app-misc/geoclue-2.1.5:2.0 )
 	introspection? ( >=dev-libs/gobject-introspection-1.32.0:= )
 	dev-libs/libtasn1:=
 	spell? ( >=app-text/enchant-0.22:= )
@@ -113,10 +112,13 @@ DEPEND="${RDEPEND}
 	virtual/perl-Carp
 	virtual/perl-JSON-PP
 
-	doc? ( >=dev-util/gtk-doc-1.10 )
+	gtk-doc? ( >=dev-util/gtk-doc-1.10 )
 	geolocation? ( dev-util/gdbus-codegen )
 	sys-apps/paxctl
 
+"
+RDEPEND="${RDEPEND}
+	geolocation? ( >=app-misc/geoclue-2.1.5:2.0 )
 "
 RESTRICT="test"
 # tests are b0rk, PYTHON_USEDEP is as well
@@ -222,11 +224,11 @@ src_configure() {
 
 	local mycmakeargs=(
 		# begin PRIVATE options
-		-DSHOULD_INSTALL_JS_SHELL=$(usex examples)
-		-DENABLE_GEOLOCATION=$(usex geolocation)
-		-DENABLE_UNIFIED_BUILDS=$(usex jumbo-build)
 		-DENABLE_API_TESTS=$(usex test)
-		# end
+		-DSHOULD_INSTALL_JS_SHELL=$(usex examples)
+		-DENABLE_GEOLOCATION=$(usex geolocation) # Runtime optional (talks over dbus service)
+		-DENABLE_UNIFIED_BUILDS=$(usex jumbo-build)
+		# end PRIVATE options
 		-DENABLE_WEBDRIVER=OFF
 		-DENABLE_WEB_CRYPTO=OFF
 		# -DENABLE_TOUCH_EVENTS=OFF
@@ -234,7 +236,7 @@ src_configure() {
 		-DENABLE_MINIBROWSER=$(usex examples)
 		-DENABLE_QUARTZ_TARGET=$(usex aqua)
 		# Fails with ld.lld, often breaks the builds if there is compiler warnings
-		# -DENABLE_GTKDOC=$(usex doc)
+		# -DENABLE_GTKDOC=$(usex gtk-doc)
 		$(cmake-utils_use_find_package gles2-only OpenGLES2)
 		-DENABLE_GLES2=$(usex gles2-only)
 		-DENABLE_VIDEO=$(usex gstreamer)
