@@ -10,8 +10,9 @@ DESCRIPTION="Console XMPP client that looks like most famous IRC clients"
 HOMEPAGE="https://poez.io/"
 LICENSE="ZLIB"
 SLOT="0"
-IUSE="test"
+IUSE="autoaway mpd otr test"
 RESTRICT="!test? ( test )"
+REQUIRE_USE="test? ( autoaway otr )"
 
 if [[ "${PV}" == "9999" ]]; then
 	EGIT_REPO_URI="https://lab.louiz.org/${PN}/${PN}.git"
@@ -26,20 +27,24 @@ RDEPEND="
 	dev-python/pyasn1-modules[${PYTHON_USEDEP}]
 	dev-python/pyasn1[${PYTHON_USEDEP}]
 	dev-python/slixmpp[${PYTHON_USEDEP}]
+	autoaway? ( dev-python/pyinotify )
+	otr? ( dev-python/potr )
+	mpd? ( dev-python/python-mpd )
 "
 DEPEND="
 	test? (
 		${RDEPEND}
 		dev-python/potr
 		dev-python/pyinotify
-		dev-python/python-mpd
 	)"
 
 DOC_CONTENTS="
 Install these optional runtime dependencies for additional features.
 * dev-python/potr for OTR encryption support.
 * dev-python/pyinotify for screen autoaway plugin support.
-* dev-python/python-mpd for music player daemon support.
+* dev-python/python-mpd for mpd (music player daemon) support.
+* dev-python/pygments for code highlight support.
+* app-misc/figlet for ASCII Art support.
 "
 DISABLE_AUTOFORMATTING=true
 
