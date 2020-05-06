@@ -14,6 +14,7 @@ KEYWORDS="~amd64"
 
 DEPEND="
 	media-libs/mesa:=
+	dev-libs/aml:=
 	dev-libs/libuv:=
 	x11-libs/libxkbcommon:=
 	net-misc/neatvnc:=
