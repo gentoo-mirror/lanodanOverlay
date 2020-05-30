@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-inherit multilib-minimal autotools
+inherit autotools multilib-minimal
 
 DESCRIPTION="A free, cross-platform, open-source, audio I/O library"
 HOMEPAGE="http://www.portaudio.com/"
@@ -12,7 +12,7 @@ SRC_URI="http://www.portaudio.com/archives/pa_stable_v190600_20161030.tgz
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux"
-IUSE="alsa +cxx debug doc jack oss static-libs sndio"
+IUSE="alsa +cxx debug doc jack oss sndio static-libs"
 
 RDEPEND="alsa? ( >=media-libs/alsa-lib-1.0.27.2[${MULTILIB_USEDEP}] )
 	jack? ( virtual/jack[${MULTILIB_USEDEP}] )
@@ -30,21 +30,19 @@ DOCS=( README.txt )
 
 PATCHES=(
 	"${DISTDIR}/${PN}-19.06.00-audacity-portmixer.patch"
+	"${FILESDIR}"/${PN}-19.06.00-AR.patch # bug #720966, trigger reconf
 	"${FILESDIR}/${PN}-19.06.00-sndio.patch"
 )
 
 src_prepare() {
 	default
 
-	# depcomp is required when building the bindings/cpp extension
-	# but will be removed by autoreconf + libtool >= 2.4.6
-	# Protect it from removal
-	mv depcomp{,~} || die
+	mkdir -p "${S}/src/hostapi/sndio/" || die
+	cp "${FILESDIR}/${PN}-19.06.00-pa_sndio.c" "${S}/src/hostapi/sndio/pa_sndio.c" || die
 
-	eautoreconf
+	eautoconf
 
-	# Restore depcomp
-	mv depcomp{~,} || die
+	multilib_copy_sources
 }
 
 multilib_src_configure() {
