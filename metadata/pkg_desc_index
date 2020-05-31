@@ -121,6 +121,7 @@ media-libs/gstreamer 1.16.2: Open source multimedia framework
 media-libs/libsidplay 2.1.1-r5: C64 SID player library
 media-libs/opencolorio 1.1.0-r1: A color management framework for visual effects and animation
 media-libs/portaudio 19.06.00-r3: A free, cross-platform, open-source, audio I/O library
+media-libs/portmidi 217-r3: Library for real time MIDI input and output
 media-libs/rtmidi 2.1.1: common C++ API for realtime MIDI input/output
 media-libs/vips 8.9.1: VIPS Image Processing Library
 media-libs/x264 0.0.20170701: A free library for encoding X264/AVC streams
