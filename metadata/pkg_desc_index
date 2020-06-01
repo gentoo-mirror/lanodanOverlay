@@ -20,7 +20,7 @@ app-shells/mksh 57-r2 9999: MirBSD Korn Shell
 app-text/base91 2.0.0: A Base91 Encoder & Decoder for Haskell
 app-text/evince 3.34.2: Simple document viewer for GNOME
 app-text/hoedown 3.0.7 9999: Standards compliant, fast, secure markdown processing library in C
-app-text/mandoc 1.14.5: Suite of tools compiling mdoc and man
+app-text/mandoc 1.14.5-r1: Suite of tools compiling mdoc and man
 app-text/sshpaste 1.0.1 9999: wgetpaste clone for pushing to your own server
 dev-db/timescaledb 1.2.1 1.6.0: A time-series database optimized for fast ingest and complex queries
 dev-dotnet/dotnetcore-sdk 3.0.100: .NET Core cli utility for building, testing, packaging and running projects
