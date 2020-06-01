@@ -23,6 +23,11 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	static? ( ${LIB_DEPEND} )"
 
+PATCHES=(
+	"$FILESDIR"/mandoc-1.14.5-fix-tbl-null-pointer.patch
+	"$FILESDIR"/mandoc_configure.patch
+)
+
 src_prepare() {
 	default
 
