@@ -11,7 +11,7 @@ SRC_URI="https://mandoc.bsd.lv/snapshots/${P}.tar.gz"
 
 LICENSE="ISC"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 IUSE="static"
 
 LIB_DEPEND="sys-libs/zlib[static-libs(+)]"
@@ -22,6 +22,11 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}
 	static? ( ${LIB_DEPEND} )"
+
+PATCHES=(
+	"$FILESDIR"/mandoc-1.14.5-fix-tbl-null-pointer.patch
+	"$FILESDIR"/mandoc_configure.patch
+)
 
 src_prepare() {
 	default
