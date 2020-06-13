@@ -11,7 +11,7 @@ HOMEPAGE="https://www.gtk.org/"
 
 LICENSE="LGPL-2+"
 SLOT="4"
-IUSE="broadway colord cups cloudprint cloudproviders examples gtk-doc +introspection test vim-syntax wayland +X xinerama tracker3 vulkan profiler"
+IUSE="broadway colord cups cloudprint cloudproviders examples ffmpeg +gstreamer gtk-doc +introspection test vim-syntax wayland +X xinerama tracker3 vulkan profiler"
 REQUIRED_USE="
 	|| ( wayland X )
 	xinerama? ( X )
@@ -31,6 +31,7 @@ BDEPEND="
 	dev-libs/libxslt
 "
 
+# gstreamer-player-1.0.pc => media-libs/gst-plugins-bad
 DEPEND="
 	>=dev-libs/glib-2.63.1:2[${MULTILIB_USEDEP}]
 	>=x11-libs/pango-1.45.0[introspection?,${MULTILIB_USEDEP}]
@@ -69,6 +70,10 @@ DEPEND="
 	cloudproviders? ( dev-libs/libcloudproviders )
 	profiler? ( dev-util/sysprof-capture )
 
+	ffmpeg? ( media-video/ffmpeg:= )
+
+	gstreamer? ( >=media-libs/gst-plugins-bad-1.12.3 )
+
 	cups? ( net-print/cups )
 	cloudprint? (
 		net-libs/rest:0.7
@@ -87,8 +92,6 @@ multilib_src_configure() {
 		$(meson_use wayland wayland-backend)
 		$(meson_use broadway broadway-backend)
 
-		-Dmedia="none"
-
 		-Dvulkan=$(usex vulkan)
 		-Dxinerama=$(usex xinerama)
 		$(meson_use cloudproviders)
@@ -98,6 +101,16 @@ multilib_src_configure() {
 		-Dprint-backends=file
 		-Dcolord=$(usex colord)
 	)
+
+	if use ffmpeg && use gstreamer; then
+		emesonargs+=( -Dmedia=ffmpeg,gstreamer )
+	elif use ffmpeg; then
+		emesonargs+=( -Dmedia=ffmpeg )
+	elif use gstreamer; then
+		emesonargs+=( -Dmedia=gstreamer )
+	else
+		emesonargs+=( -Dmedia=none )
+	fi
 
 	meson_src_configure
 }
