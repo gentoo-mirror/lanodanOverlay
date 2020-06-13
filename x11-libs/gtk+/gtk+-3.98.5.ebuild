@@ -98,7 +98,7 @@ multilib_src_configure() {
 		$(meson_use profiler)
 		$(meson_use tracker3)
 
-		-Dprint-backends=file
+		-Dprint-backends=file,lpr$(usex cups ,cups '')$(usex cloudprint ,cloudprint '')
 		-Dcolord=$(usex colord)
 	)
 
