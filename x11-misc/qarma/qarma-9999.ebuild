@@ -26,3 +26,7 @@ RDEPEND="${DEPEND}"
 src_configure() {
 	eqmake5 $(usex dbus "" "CONFIG+=DISABLE_DBUS")
 }
+
+src_install() {
+	dobin qarma
+}
