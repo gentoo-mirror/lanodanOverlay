@@ -7,7 +7,7 @@ app-crypt/acme-sh 2.8.1 9999: pure Unix shell script implementing ACME client pr
 app-crypt/netpgp 20140220: OpenPGP implementation from NetBSD
 app-doc/afaq 15.1: An Anarchist FAQ, scrapped in one collection and a markdown version
 app-doc/cross-unix-documentation 9999: documentation of similarities and (noteworthy) differencies between Unix systems
-app-doc/single-unix-specification 4_p3: The Single UNIX Specification, Version 4, 2018 Edition
+app-doc/single-unix-specification 4_p3-r1: The Single UNIX Specification, Version 4, 2018 Edition
 app-editors/2f30-ed 9999: simple ed
 app-editors/vim 1.24: Vi IMitation
 app-editors/vis 0.5 9999: modern, legacy free, simple yet efficient vim-like editor.
