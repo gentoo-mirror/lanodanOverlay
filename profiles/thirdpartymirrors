@@ -1,2 +1,5 @@
 openbsd		https://ftp.fr.openbsd.org/pub/OpenBSD/ https://mirrors.evowise.com/pub/OpenBSD/
-debian		http://ftp.fr.debian.org/debian/ http://deb.debian.org/debian/
+debian		http://ftp.free.fr/mirrors/ftp.debian.org/ http://ftp.fr.debian.org/debian/ http://deb.debian.org/debian/
+cpan		http://ftp.free.fr/mirrors/CPAN/ https://www.cpan.org
+gentoo		http://ftp.free.fr/mirrors/ftp.gentoo.org/
+mplayer		http://ftp.free.fr/mirrors/mplayerhq.hu/MPlayer/
