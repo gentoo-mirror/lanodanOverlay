@@ -62,10 +62,11 @@ RDEPEND="
 	spell? ( >=app-text/enchant-0.22:= )
 	gstreamer? (
 		>=media-libs/gstreamer-1.14:1.0
-		>=media-libs/gst-plugins-base-1.14:1.0[egl?,opengl?]
+		>=media-libs/gst-plugins-base-1.14:1.0[egl?,opengl?,X?]
 		gles2-only? ( media-libs/gst-plugins-base:1.0[gles2] )
 		>=media-plugins/gst-plugins-opus-1.14.4-r1:1.0
-		>=media-libs/gst-plugins-bad-1.14:1.0 )
+		>=media-libs/gst-plugins-bad-1.14:1.0[X?]
+	)
 
 	media-source? ( >=media-libs/gstreamer-1.16:1.0 )
 
