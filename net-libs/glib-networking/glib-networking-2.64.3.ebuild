@@ -17,7 +17,7 @@ KEYWORDS="~amd64"
 REQUIRED_USE="ssl? ( || ( gnutls openssl ) )"
 
 DEPEND="
-	>=dev-libs/glib-2.60:2[${MULTILIB_USEDEP}]
+	>=dev-libs/glib-2.63.0:2[${MULTILIB_USEDEP}]
 	libproxy? ( >=net-libs/libproxy-0.3.1:=[${MULTILIB_USEDEP}] )
 	gnutls? ( >=net-libs/gnutls-3.4.6:=[${MULTILIB_USEDEP}] )
 	openssl? (
