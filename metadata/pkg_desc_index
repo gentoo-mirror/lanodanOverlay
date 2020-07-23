@@ -119,7 +119,9 @@ media-libs/gst-plugins-good 1.16.2: Basepack of plugins for GStreamer
 media-libs/gst-plugins-ugly 1.16.2: Basepack of plugins for gstreamer
 media-libs/gstreamer 1.16.2: Open source multimedia framework
 media-libs/libsidplay 2.1.1-r5: C64 SID player library
+media-libs/monado 9999: The open source OpenXR runtime.
 media-libs/opencolorio 1.1.0-r1: A color management framework for visual effects and animation
+media-libs/openxr-loader 9999: OpenXR loader
 media-libs/portaudio 19.06.00-r3: A free, cross-platform, open-source, audio I/O library
 media-libs/portmidi 217-r3: Library for real time MIDI input and output
 media-libs/rtmidi 2.1.1: common C++ API for realtime MIDI input/output
