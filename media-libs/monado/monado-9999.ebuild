@@ -8,7 +8,7 @@ inherit cmake git-r3
 DESCRIPTION="The open source OpenXR runtime."
 HOMEPAGE="https://monado.dev"
 EGIT_REPO_URI="https://gitlab.freedesktop.org/monado/monado.git"
-LICENSE="boost"
+LICENSE="Boost-1.0"
 SLOT="0"
 
 # TODO: OpenHMD
