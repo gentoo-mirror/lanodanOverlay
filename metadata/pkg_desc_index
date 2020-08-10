@@ -111,7 +111,7 @@ media-fonts/3270font 2.0.0: A IBM 3270 Terminal font in a modern format
 media-fonts/forkawesome 1.1.4: The iconic font
 media-fonts/inria-fonts 1.200: Inria Serif and Inria Sans Typeface
 media-fonts/opendyslexic 20160623: Opensource font for dyslexics and for high readability
-media-fonts/unifont 13.0.02: GNU Unifont - a Pan-Unicode X11 bitmap iso10646 font
+media-fonts/unifont 13.0.03: GNU Unifont - a Pan-Unicode X11 bitmap iso10646 font
 media-gfx/opentoonz 1.2.0: An open-source full-featured 2D animation creation software
 media-libs/gst-plugins-bad 1.16.2: Less plugins for GStreamer
 media-libs/gst-plugins-base 1.16.2: Basepack of plugins for gstreamer
