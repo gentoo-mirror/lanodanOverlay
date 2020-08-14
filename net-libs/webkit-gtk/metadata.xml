@@ -16,5 +16,6 @@
 		<flag name="seccomp">Enable sandboxing functionality through <pkg>sys-apps/bubblewrap</pkg></flag>
 		<flag name="webgl">Build support for the WebGL HTML API using <pkg>virtual/opengl</pkg></flag>
 		<flag name="wpe">Enable <pkg>gui-libs/libwpe</pkg> rendering</flag>
+		<flag name="gtk4">Use <pkg>x11-libs/gtk+:4</pkg> instead of earlier slots</flag>
 	</use>
 </pkgmetadata>
