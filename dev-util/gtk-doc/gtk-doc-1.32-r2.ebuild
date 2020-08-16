@@ -56,6 +56,10 @@ src_prepare() {
 	sed -e '1,/exit 1/s/exit 1/exit $1/' \
 		-i gtkdoc-mkpdf.in || die
 
+	# Fix dev-libs/glib[gtk-doc] doc generation tests by fixing stuff surrounding deprecations
+	# https://gitlab.gnome.org/GNOME/glib/-/merge_requests/1488
+	eapply "${FILESDIR}"/${PV}-deprecation-parse-fixes.patch
+
 	gnome2_src_prepare
 }
 
