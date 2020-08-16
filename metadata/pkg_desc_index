@@ -71,7 +71,7 @@ dev-util/gdbus-codegen 2.62.5 2.62.6: GDBus code and documentation generator
 dev-util/glib-utils 2.62.5 2.62.6: Build utilities for GLib using projects
 dev-util/glslang 8.13.3559: Khronos reference front-end for GLSL and ESSL, and sample SPIR-V generator
 dev-util/go-deblob 1.0.0: remove binary blobs from a directory
-dev-util/gtk-doc 1.32-r1: GTK+ Documentation Generator
+dev-util/gtk-doc 1.32-r2: GTK+ Documentation Generator
 dev-util/gtk-doc-am 1.32: Virtual ebuild for ::gentoo compatibility
 dev-util/itstool 2.0.5: Translation tool for XML documents that uses gettext files and ITS rules
 dev-util/pmbootstrap 1.5.1: Sophisticated chroot/build/flash tool to develop and install postmarketOS.
