@@ -3,9 +3,12 @@
 
 EAPI=7
 
+# one-indexed: [0, 0, pre, 621]
+MY_PV="$(ver_cut 4)"
+
 DESCRIPTION="A GTK/Pango-based terminal that uses libvterm to provide terminal emulation"
 HOMEPAGE="http://www.leonerd.org.uk/code/pangoterm/"
-SRC_URI="https://bazaar.launchpad.net/~leonerd/pangoterm/trunk/tarball/616 -> ${P}.tar.gz"
+SRC_URI="https://bazaar.launchpad.net/~leonerd/pangoterm/trunk/tarball/${MY_PV} -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

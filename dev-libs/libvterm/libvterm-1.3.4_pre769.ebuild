@@ -5,9 +5,12 @@ EAPI=7
 
 inherit libtool flag-o-matic
 
+# one-indexed: [1, 3, 4, pre, 769]
+MY_PV="$(ver_cut 5)"
+
 DESCRIPTION="An abstract library implementation of a VT220/xterm/ECMA-48 terminal emulator"
 HOMEPAGE="http://www.leonerd.org.uk/code/libvterm/"
-SRC_URI="https://bazaar.launchpad.net/~libvterm/libvterm/trunk/tarball/767 -> ${P}.tar.gz"
+SRC_URI="https://bazaar.launchpad.net/~libvterm/libvterm/trunk/tarball/${MY_PV} -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
