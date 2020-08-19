@@ -46,7 +46,6 @@ dev-lang/erlang 22.1: Erlang programming language, runtime environment and libra
 dev-lang/go 0.20171003: Boostrap Go from C (useful for musl libc)
 dev-lang/mono 6.4.0.198: Mono runtime and class libraries, a C# compiler/interpreter
 dev-libs/aml 9999: Another Main Loop
-dev-libs/glib 2.62.5 2.62.6: The GLib library of C routines
 dev-libs/hts_engine 1.10: HMM-based speech synthesis system (HTS) engine and API
 dev-libs/libdazzle 3.34.1: Experimental new features for GTK+ and GLib
 dev-libs/libtomcrypt 1.18.2: modular and portable cryptographic toolkit
@@ -67,8 +66,6 @@ dev-python/python-nbxmpp 0.6.10: Python library to use Jabber/XMPP networks in a
 dev-python/slixmpp 1.4.2 9999: Python 3 library for XMPP
 dev-tex/dot2tex 2.11.2: A Graphviz to LaTeX converter
 dev-util/bam 0.5.1: Fast and flexible Lua-based build system
-dev-util/gdbus-codegen 2.62.5 2.62.6: GDBus code and documentation generator
-dev-util/glib-utils 2.62.5 2.62.6: Build utilities for GLib using projects
 dev-util/glslang 8.13.3559: Khronos reference front-end for GLSL and ESSL, and sample SPIR-V generator
 dev-util/go-deblob 1.0.0: remove binary blobs from a directory
 dev-util/gtk-doc 1.32-r2: GTK+ Documentation Generator

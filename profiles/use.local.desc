@@ -49,10 +49,6 @@ dev-lang/erlang:kpoll - Enable kernel polling support
 dev-lang/erlang:pgo - Build erts with profile-guided optimizations
 dev-lang/mono:pax_kernel - Enable if the user plans to run the package under a pax enabled hardened kernel
 dev-lang/mono:xen - Make mono generate code that is considerably faster on xen VMs but slightly slower on for normal systems.
-dev-libs/glib:dbus - Enable dependencies required by glib libraries using dbus service to manage settings saving
-dev-libs/glib:mime - Pull in shared MIME database that many glib-based applications require at runtime to detect or open files. Warning: do not disable this flag unless installing on a headless server.
-dev-libs/glib:systemtap - Build support for profiling and tracing using dev-util/systemtap
-dev-libs/glib:utils - Install gtester-report utility to generate test report files for your software; build gresource utility with ELF support.
 dev-libs/hts_engine:speech-tools - use memory allocation/free functions of app-accessibility/speech-tools
 dev-lua/luarocks:openssl - 
 dev-vcs/mercurial:bugzilla - Support bugzilla integration.
