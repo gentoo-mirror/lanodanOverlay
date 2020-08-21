@@ -204,6 +204,7 @@ gstreamer_multilib_src_configure() {
 
 	einfo "Configuring to build ${GST_PLUGINS_BUILD} plugin(s) ..."
 	emesonargs+=(
+		-Dexamples=disabled
 		-Dpackage-name="Gentoo GStreamer ebuild"
 		-Dpackage-origin="https://www.gentoo.org"
 		"${@}"

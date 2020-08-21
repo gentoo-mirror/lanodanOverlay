@@ -58,7 +58,6 @@ multilib_src_configure() {
 	local emesonargs=(
 		-Dbenchmarks=enabled
 		-Dgst_debug=false
-		-Dexamples=enabled
 		-Dcheck=enabled
 		$(meson_feature unwind libunwind)
 		$(meson_feature unwind libdw)

@@ -95,7 +95,6 @@ multilib_src_configure() {
 
 	local emesonargs=(
 		-Diso-codes=enabled
-		-Dexamples=disabled
 		$(meson_feature alsa)
 		$(meson_feature ogg)
 		$(meson_feature orc)
