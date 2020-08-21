@@ -115,6 +115,14 @@ media-plugins/gst-plugins-vaapi:drm - Enable DRM renderer
 media-plugins/gst-plugins-vaapi:egl - Enable EGL support
 media-plugins/gst-plugins-vaapi:gles2 - Enable GLESv2 and GLESv3 support
 media-sound/sbagen:sounds - Downloads extra sounds (in Vorbis)
+media-video/obs-studio:fdk - Enable libfdk support for AAC encoding.
+media-video/obs-studio:imagemagick - Use ImageMagick for image loading instead of FFmpeg.
+media-video/obs-studio:luajit - Build support for scripting via Luajit.
+media-video/obs-studio:nvenc - Enable NVENC encoding for nVidia video cards.
+media-video/obs-studio:python - Build support for scripting via Python 3.
+media-video/obs-studio:speex - Enable noise suppression filter support via media-libs/speexdsp.
+media-video/obs-studio:ssl - Build support for TLS/SSL connections (RTMPS) via net-libs/mbedtls.
+media-video/obs-studio:vlc - Build support for using media-video/vlc as a media source.
 net-dns/getdns:stubby - Include stubby in getdns
 net-dns/ldns-utils:dane - Enable DNS-based Authentication of Named Entities (DANE) support
 net-dns/ldns-utils:ecdsa - Enable ECDSA support
