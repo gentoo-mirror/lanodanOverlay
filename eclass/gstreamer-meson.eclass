@@ -116,6 +116,9 @@ if [[ ${PN} != ${GST_ORG_MODULE} ]]; then
 else
 	IUSE="nls"
 	DEPEND="${DEPEND} nls? ( >=sys-devel/gettext-0.17 )"
+
+	multilib_src_compile() { eninja; }
+	multilib_src_install() { DESTDIR="${D}" eninja install; }
 fi
 
 DEPEND="${DEPEND} ${RDEPEND}"
