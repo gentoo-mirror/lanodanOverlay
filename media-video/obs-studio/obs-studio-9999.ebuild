@@ -51,7 +51,6 @@ DEPEND="
 	media-libs/x264:=
 	media-video/ffmpeg:=[x264]
 	net-misc/curl
-	sys-apps/dbus
 	sys-libs/zlib
 	virtual/udev
 	alsa? ( media-libs/alsa-lib )
