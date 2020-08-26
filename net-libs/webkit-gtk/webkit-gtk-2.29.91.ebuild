@@ -174,6 +174,12 @@ src_configure() {
 		CMAKE_BUILD_TYPE="Debug"
 	fi
 
+	# gtk-doc fails to generate docs when ld.lld is used, force binutils
+	if use gtk-doc; then
+		export CC_LD="ld"
+		export LD="ld"
+	fi
+
 	# Respect CC, otherwise fails on prefix #395875
 	tc-export CC
 
@@ -261,18 +267,10 @@ src_configure() {
 		-DENABLE_BUBBLEWRAP_SANDBOX=$(usex seccomp)
 		-DENABLE_MEDIA_SOURCE=$(usex media-source)
 		-DBWRAP_EXECUTABLE="${EPREFIX}"/usr/bin/bwrap # If bubblewrap[suid] then portage makes it go-r and cmake find_program fails with that
+		-DUSE_LD_GOLD=ON
 		-DPORT=GTK
 		${ruby_interpreter}
 	)
-
-	# Allow it to use GOLD when possible as it has all the magic to
-	# detect when to use it and using gold for this concrete package has
-	# multiple advantages and is also the upstream default, bug #585788
-#	if tc-ld-is-gold ; then
-#		mycmakeargs+=( -DUSE_LD_GOLD=ON )
-#	else
-#		mycmakeargs+=( -DUSE_LD_GOLD=OFF )
-#	fi
 
 	cmake-utils_src_configure
 }
