@@ -259,17 +259,9 @@ src_configure() {
 		-DENABLE_MEDIA_SOURCE=$(usex media-source)
 		-DBWRAP_EXECUTABLE="${EPREFIX}"/usr/bin/bwrap # If bubblewrap[suid] then portage makes it go-r and cmake find_program fails with that
 		-DPORT=GTK
+		-DUSE_LD_GOLD=ON
 		${ruby_interpreter}
 	)
-
-	# Allow it to use GOLD when possible as it has all the magic to
-	# detect when to use it and using gold for this concrete package has
-	# multiple advantages and is also the upstream default, bug #585788
-#	if tc-ld-is-gold ; then
-#		mycmakeargs+=( -DUSE_LD_GOLD=ON )
-#	else
-#		mycmakeargs+=( -DUSE_LD_GOLD=OFF )
-#	fi
 
 	cmake-utils_src_configure
 }
