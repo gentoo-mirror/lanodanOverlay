@@ -18,7 +18,7 @@ LICENSE="LGPL-2+ BSD"
 SLOT="4/37" # soname version of libwebkit2gtk-4.0
 KEYWORDS=""
 
-IUSE="aqua coverage debug +egl examples +geolocation gles2-only gnome-keyring +gstreamer gtk4 gtk-doc +introspection +jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell systemd wayland +wpe +X"
+IUSE="aqua debug +egl examples +geolocation gles2-only gnome-keyring +gstreamer gtk4 gtk-doc +introspection +jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell systemd wayland +wpe +X"
 
 # gstreamer with opengl/gles2 needs egl
 REQUIRED_USE="
@@ -63,10 +63,11 @@ RDEPEND="
 	spell? ( >=app-text/enchant-0.22:= )
 	gstreamer? (
 		>=media-libs/gstreamer-1.14:1.0
-		>=media-libs/gst-plugins-base-1.14:1.0[egl?,opengl?]
+		>=media-libs/gst-plugins-base-1.14:1.0[egl?,opengl?,X?]
 		gles2-only? ( media-libs/gst-plugins-base:1.0[gles2] )
 		>=media-plugins/gst-plugins-opus-1.14.4-r1:1.0
-		>=media-libs/gst-plugins-bad-1.14:1.0 )
+		>=media-libs/gst-plugins-bad-1.14:1.0[X?]
+	)
 
 	media-source? ( >=media-libs/gstreamer-1.16:1.0 )
 
@@ -239,8 +240,7 @@ src_configure() {
 		# -DENABLE_DRAG_SUPPORT=OFF
 		-DENABLE_MINIBROWSER=$(usex examples)
 		-DENABLE_QUARTZ_TARGET=$(usex aqua)
-		# Fails with ld.lld, often breaks the builds if there is compiler warnings
-		# -DENABLE_GTKDOC=$(usex gtk-doc)
+		-DENABLE_GTKDOC=$(usex gtk-doc)
 		$(cmake-utils_use_find_package gles2-only OpenGLES2)
 		-DENABLE_GLES2=$(usex gles2-only)
 		-DENABLE_VIDEO=$(usex gstreamer)

@@ -18,7 +18,7 @@ LICENSE="LGPL-2+ BSD"
 SLOT="4/37" # soname version of libwebkit2gtk-4.0
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~amd64-linux ~x86-linux ~x86-macos"
 
-IUSE="aqua coverage debug +egl examples +geolocation gles2-only gnome-keyring +gstreamer gtk-doc +introspection +jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell wayland +wpe +X"
+IUSE="aqua debug +egl examples +geolocation gles2-only gnome-keyring +gstreamer gtk-doc +introspection +jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell wayland +wpe +X"
 
 # gstreamer with opengl/gles2 needs egl
 REQUIRED_USE="
@@ -163,6 +163,7 @@ pkg_setup() {
 }
 
 src_prepare() {
+	eapply "${FILESDIR}"/2.28.2-opengl-without-X-fixes.patch
 	cmake-utils_src_prepare
 	gnome2_src_prepare
 }
@@ -236,8 +237,7 @@ src_configure() {
 		# -DENABLE_DRAG_SUPPORT=OFF
 		-DENABLE_MINIBROWSER=$(usex examples)
 		-DENABLE_QUARTZ_TARGET=$(usex aqua)
-		# Fails with ld.lld, often breaks the builds if there is compiler warnings
-		# -DENABLE_GTKDOC=$(usex gtk-doc)
+		-DENABLE_GTKDOC=$(usex gtk-doc)
 		$(cmake-utils_use_find_package gles2-only OpenGLES2)
 		-DENABLE_GLES2=$(usex gles2-only)
 		-DENABLE_VIDEO=$(usex gstreamer)
