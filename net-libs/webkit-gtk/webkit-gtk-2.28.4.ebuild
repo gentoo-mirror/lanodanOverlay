@@ -173,6 +173,12 @@ src_configure() {
 		CMAKE_BUILD_TYPE="Debug"
 	fi
 
+	# gtk-doc fails to generate docs when ld.lld is used, force binutils
+	if use gtk-doc; then
+		export CC_LD="ld"
+		export LD="ld"
+	fi
+
 	# Respect CC, otherwise fails on prefix #395875
 	tc-export CC
 
