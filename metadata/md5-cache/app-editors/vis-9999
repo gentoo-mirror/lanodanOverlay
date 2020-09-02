@@ -8,5 +8,5 @@ LICENSE=ISC
 PROPERTIES=live
 RDEPEND=dev-libs/libtermkey lua? ( >=dev-lang/lua-5.2:= ) tre? ( dev-libs/tre:= ) ncurses? ( sys-libs/ncurses:= ) lua? ( lpeg? ( >=dev-lua/lpeg-0.12 ) ) app-eselect/eselect-vi
 SLOT=0
-_eclasses_=git-r3	8ec5b53812bce105ae7943930e4660f8
+_eclasses_=git-r3	3e7ec3d6619213460c85e2aa48398441
 _md5_=806825a072795950ef43d14518e26c06

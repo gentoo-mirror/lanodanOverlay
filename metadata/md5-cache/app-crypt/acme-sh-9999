@@ -8,5 +8,5 @@ LICENSE=GPL-3
 PROPERTIES=live
 RDEPEND=net-misc/curl || ( dev-libs/libressl dev-libs/openssl:0 ) standalone? ( net-misc/socat ) virtual/cron
 SLOT=0
-_eclasses_=git-r3	8ec5b53812bce105ae7943930e4660f8
+_eclasses_=git-r3	3e7ec3d6619213460c85e2aa48398441
 _md5_=aa9fdc19b5f3b437973820d96d2008b4
