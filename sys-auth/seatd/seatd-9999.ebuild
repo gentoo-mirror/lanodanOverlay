@@ -16,8 +16,8 @@ else
 	SRC_URI="https://git.sr.ht/~kennylevinsen/seatd/archive/${PV}.tar.gz -> ${P}.tar.gz"
 fi
 LICENSE="MIT"
-SLOT="0"
-IUSE="logind"
+SLOT="0/1"
+IUSE="examples logind"
 
 DEPEND="logind? ( || ( sys-auth/elogind sys-apps/systemd ) )"
 RDEPEND="${DEPEND}"
@@ -26,6 +26,7 @@ BDEPEND="app-text/scdoc"
 src_configure() {
 	local emesonargs=(
 		-Dman-pages=enabled
+		$(meson_feature examples)
 		$(meson_feature logind)
 	)
 
