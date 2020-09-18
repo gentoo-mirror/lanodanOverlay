@@ -7,7 +7,7 @@ PYTHON_COMPAT=( python3_{5,6,7} )
 inherit eutils elisp-common gnome2 python-single-r1 readme.gentoo-r1
 
 DESCRIPTION="GTK+ Documentation Generator"
-HOMEPAGE="https://www.gtk.org/gtk-doc/"
+HOMEPAGE="https://gitlab.gnome.org/GNOME/gtk-doc"
 
 LICENSE="GPL-2 FDL-1.1"
 SLOT="0"
