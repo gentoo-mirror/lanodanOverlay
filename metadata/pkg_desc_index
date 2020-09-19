@@ -146,7 +146,6 @@ media-plugins/gst-plugins-wavpack 1.16.2: Wavpack audio encoder/decoder plugin f
 media-plugins/gst-plugins-x264 1.16.2: H.264 encoder plugin for GStreamer
 media-sound/aucatctl 0.1: A tool for controlling aucat and/or sndiod volume through MIDI
 media-sound/ibniz 1.18: virtual machine designed for extremely compact low-level audiovisual programs
-media-sound/milkytracker 1.02.00: FastTracker 2 inspired music tracker
 media-sound/oss 4.2.2019: Open Sound System (OSS)
 media-sound/sbagen 1.4.5: Command line sequenced binaural beat generator
 media-video/obs-studio 9999: Software for Recording and Streaming Live Video Content (wayland branch)
