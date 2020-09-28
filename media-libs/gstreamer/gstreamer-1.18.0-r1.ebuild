@@ -75,7 +75,7 @@ multilib_src_configure() {
 		)
 	fi
 
-	gstreamer_multilib_src_configure
+	meson_src_configure
 }
 
 multilib_src_install() {
