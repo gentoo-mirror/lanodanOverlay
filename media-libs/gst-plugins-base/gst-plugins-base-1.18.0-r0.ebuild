@@ -90,28 +90,44 @@ DEPEND="${RDEPEND}
 	X? ( x11-base/xorg-proto )
 "
 
+DOCS="AUTHORS NEWS README RELEASE"
+
 multilib_src_configure() {
 	filter-flags -mno-sse -mno-sse2 -mno-sse4.1 #610340
 
+	gstreamer_environment_reset
+
 	local emesonargs=(
-		-Diso-codes=enabled
+		-Dexamples=disabled
+		-Dpackage-name="Gentoo GStreamer ebuild"
+		-Dpackage-origin="https://www.gentoo.org"
+
 		$(meson_feature alsa)
 		$(meson_feature ogg)
 		$(meson_feature orc)
 		$(meson_feature pango)
 		$(meson_feature theora)
 		$(meson_feature vorbis)
-		$(meson_feature X x)
+		$(meson_feature X x11)
 		$(meson_feature X xshm)
 		$(meson_feature X xvideo)
 	)
 
 	if use opengl || use gles2; then
+		# because meson doesn't likes extraneous commas
+		local gl_platform=( $(use X && echo glx) $(use egl && echo egl) )
+		local gl_winsys=(
+			$(use X && echo x11)
+			$(use wayland && echo wayland)
+			$(use egl && echo egl)
+			$(use gbm && echo gbm)
+		)
+
 		emesonargs+=(
 			-Dgl=enabled
-			-Dgl_api=opengl,$(use gles2 && echo gles2)
-			-Dgl_platform=$(use X && echo glx,)$(use egl && echo egl)
-			-Dgl_winsys=$(use X && echo x11,)$(use wayland && echo wayland,)$(use egl && echo egl,)$(use gbm && echo gbm)
+			-Dgl_api=opengl$(use gles2 && echo ,gles2)
+			-Dgl_platform=$(IFS=, ; echo "${gl_platform[*]}")
+			-Dgl_winsys=$(IFS=, ; echo "${gl_winsys[*]}")
 		)
 	else
 		emesonargs+=(
@@ -122,16 +138,5 @@ multilib_src_configure() {
 		)
 	fi
 
-	gstreamer_multilib_src_configure
-}
-
-multilib_src_install_all() {
-	DOCS="AUTHORS NEWS README RELEASE"
-	einstalldocs
-	find "${ED}" -name '*.la' -delete || die
-}
-
-multilib_src_test() {
-	unset GSETTINGS_BACKEND
-	eninja check
+	meson_src_configure
 }
