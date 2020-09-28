@@ -4,7 +4,7 @@
 EAPI=6
 GST_ORG_MODULE=gst-plugins-bad
 
-inherit gstreamer
+inherit gstreamer-meson
 
 DESCRIPTION="MOD audio decoder plugin for GStreamer"
 KEYWORDS="~alpha ~amd64 ~arm64 ~hppa ~mips ~ppc ~ppc64 ~x86"

@@ -4,7 +4,7 @@
 EAPI=6
 GST_ORG_MODULE=gst-plugins-base
 
-inherit gstreamer
+inherit gstreamer-meson
 
 DESCRIPTION="Opus audio parser plugin for GStreamer"
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
