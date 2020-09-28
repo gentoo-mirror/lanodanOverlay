@@ -97,10 +97,12 @@ multilib_src_configure() {
 
 	gstreamer_environment_reset
 
+	# opus: split to media-plugins/gst-plugins-opus
 	local emesonargs=(
 		-Dexamples=disabled
 		-Dpackage-name="Gentoo GStreamer ebuild"
 		-Dpackage-origin="https://www.gentoo.org"
+		-Dopus=disabled
 
 		$(meson_feature alsa)
 		$(meson_feature ogg)
