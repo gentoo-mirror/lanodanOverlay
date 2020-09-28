@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit autotools eapi7-ver multilib-minimal
+inherit gstreamer-meson multilib-minimal
 
 MY_PN="gst-libav"
 MY_PV="$(ver_cut 1-3)"
@@ -34,26 +34,3 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/${MY_P}"
 
 RESTRICT="test" # FIXME: tests seem to get stuck at one point; investigate properly
-
-multilib_src_configure() {
-	GST_PLUGINS_BUILD=""
-
-	ECONF_SOURCE=${S} \
-	econf \
-		--disable-maintainer-mode \
-		--with-package-name="Gentoo GStreamer ebuild" \
-		--with-package-origin="https://www.gentoo.org" \
-		--disable-fatal-warnings \
-		--with-system-libav \
-		$(use_enable orc)
-}
-
-multilib_src_compile() {
-	# Don't build with -Werror; verbose build
-	emake ERROR_CFLAGS= V=1
-}
-
-multilib_src_install_all() {
-	einstalldocs
-	find "${ED}" -name '*.la' -delete || die
-}
