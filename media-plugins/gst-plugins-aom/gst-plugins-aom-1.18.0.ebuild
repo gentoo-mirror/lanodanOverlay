@@ -4,7 +4,7 @@
 EAPI=6
 GST_ORG_MODULE=gst-plugins-bad
 
-inherit gstreamer
+inherit gstreamer-meson
 
 DESCRIPTION="HTTP live streaming plugin for GStreamer"
 KEYWORDS="~amd64 ~x86"
@@ -12,7 +12,3 @@ IUSE=""
 
 RDEPEND="media-libs/libaom:0=[${MULTILIB_USEDEP}]"
 DEPEND="${RDEPEND}"
-
-multilib_src_configure() {
-	gstreamer_multilib_src_configure --enable-aom
-}

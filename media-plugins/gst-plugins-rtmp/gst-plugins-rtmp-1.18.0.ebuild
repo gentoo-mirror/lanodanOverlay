@@ -4,7 +4,7 @@
 EAPI=6
 GST_ORG_MODULE=gst-plugins-bad
 
-inherit gstreamer
+inherit gstreamer-meson
 
 DESCRIPTION="RTMP source/sink plugin for GStreamer"
 KEYWORDS="~amd64 ~x86"

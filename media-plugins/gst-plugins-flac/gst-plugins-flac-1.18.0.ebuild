@@ -4,7 +4,7 @@
 EAPI=6
 GST_ORG_MODULE=gst-plugins-good
 
-inherit gstreamer
+inherit gstreamer-meson
 
 DESCRIPTION="FLAC encoder/decoder/tagger plugin for GStreamer"
 KEYWORDS="~alpha amd64 arm arm64 ~hppa ~ia64 ~mips ppc ppc64 ~sparc x86"

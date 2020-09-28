@@ -4,7 +4,7 @@
 EAPI=6
 GST_ORG_MODULE=gst-plugins-good
 
-inherit autotools gstreamer
+inherit gstreamer-meson
 
 DESCRIPTION="VP8/VP9 video encoder/decoder plugin for GStreamer"
 KEYWORDS="~amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"

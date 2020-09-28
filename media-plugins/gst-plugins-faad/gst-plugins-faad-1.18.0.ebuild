@@ -4,11 +4,11 @@
 EAPI=6
 GST_ORG_MODULE=gst-plugins-bad
 
-inherit gstreamer
+inherit gstreamer-meson
 
-DESCRIPTION="ASS/SSA rendering with effects support plugin for GStreamer"
+DESCRIPTION="AAC audio decoder plugin."
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
-RDEPEND=">=media-libs/libass-0.10.2:=[${MULTILIB_USEDEP}]"
+RDEPEND=">=media-libs/faad2-2.7-r3[${MULTILIB_USEDEP}]"
 DEPEND="${RDEPEND}"

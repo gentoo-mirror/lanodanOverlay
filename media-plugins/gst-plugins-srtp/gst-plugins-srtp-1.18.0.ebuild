@@ -4,7 +4,7 @@
 EAPI=6
 GST_ORG_MODULE=gst-plugins-bad
 
-inherit gstreamer
+inherit gstreamer-meson
 
 DESCRIPTION="SRTP encoder/decoder plugin for GStreamer"
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~x86"
