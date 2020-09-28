@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit multilib-minimal
+inherit gstreamer-meson multilib-minimal
 
 MY_PN="gstreamer-vaapi"
 DESCRIPTION="Hardware accelerated video decoding through VA-API plugin for GStreamer"
@@ -72,39 +72,24 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/${MY_PN}-${PV}"
 
 multilib_src_configure() {
-	local myconf=()
+	local emesonargs=(
+		-Dwith_encoders=yes
+		-Ddrm=$(usex drm yes no)
+		-Dwith_x11=$(usex X yes no)
+		-Dwith_wayland=$(usex wayland yes no)
+	)
+
 	if use opengl || use gles2; then
-		myconf+=(
-			$(use_enable egl)
-			--with-glapi=$(usex opengl 'gl,' '')$(usex gles2 'gles2,gles3' '') # It's fine to have extra commas passed
-		)
+		emesonargs+=( -Dwith_egl=$(usex egl yes no) )
 	else
-		myconf+=(
-			--disable-egl
-			--without-glapi
-		)
+		emesonargs+=( -Dwith_egl=no )
 	fi
 
 	if use opengl && use X; then
-		myconf+=( --enable-glx )
+		emesonargs+=( -Dwith_glx=yes )
 	else
-		myconf+=( --disable-glx )
+		emesonargs+=( -Dwith_glx=no )
 	fi
 
-	ECONF_SOURCE=${S} \
-	econf \
-		--disable-static \
-		--disable-debug \
-		--disable-examples \
-		--enable-encoders \
-		$(use_enable drm) \
-		$(use_enable X x11) \
-		$(use_enable wayland) \
-		--without-gtk \
-		"${myconf[@]}"
-}
-
-multilib_src_install_all() {
-	einstalldocs
-	find "${ED}" -name '*.la' -delete || die
+	gstreamer_multilib_src_configure
 }
