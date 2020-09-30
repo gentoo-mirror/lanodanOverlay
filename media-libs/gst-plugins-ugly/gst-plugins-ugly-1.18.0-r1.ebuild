@@ -4,6 +4,12 @@
 EAPI=6
 GST_ORG_MODULE="gst-plugins-ugly"
 
+# List done from editing meson_options.txt in app-editors/vis
+# - Get only the ones with no-external deps (nicely in their own block)
+# - :x/option\('([^']*)'.*/ c/\1/
+# - Press J
+GST_PLUGINS_BUILD="asfdemux dvdlpcmdec dvdsub realmedia xingmux"
+
 inherit gstreamer-meson
 
 DESCRIPTION="Basepack of plugins for gstreamer"

@@ -4,6 +4,12 @@
 EAPI=6
 GST_ORG_MODULE="gst-plugins-good"
 
+# List done from editing meson_options.txt in app-editors/vis
+# - Get only the ones with no-external deps (nicely in their own block)
+# - :x/option\('([^']*)'.*/ c/\1/
+# - Press J
+GST_PLUGINS_BUILD="alpha apetag audiofx audioparsers auparse autodetect avi cutter debugutils deinterlace dtmf effectv equalizer flv flx goom goom2k1 icydemux id3demux imagefreeze interleave isomp4 law level matroska monoscope multifile multipart replaygain rtp rtpmanager rtsp shapewipe smpte spectrum udp videobox videocrop videofilter videomixer wavenc wavparse y4m"
+
 inherit flag-o-matic gstreamer-meson
 
 DESCRIPTION="Basepack of plugins for GStreamer"
