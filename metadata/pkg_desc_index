@@ -111,10 +111,10 @@ media-fonts/inria-fonts 1.200: Inria Serif and Inria Sans Typeface
 media-fonts/opendyslexic 20160623: Opensource font for dyslexics and for high readability
 media-fonts/unifont 13.0.03: GNU Unifont - a Pan-Unicode X11 bitmap iso10646 font
 media-gfx/opentoonz 1.2.0: An open-source full-featured 2D animation creation software
-media-libs/gst-plugins-bad 1.16.2 1.18.0: Less plugins for GStreamer
-media-libs/gst-plugins-base 1.16.2 1.18.0-r0: Basepack of plugins for gstreamer
-media-libs/gst-plugins-good 1.16.2 1.18.0: Basepack of plugins for GStreamer
-media-libs/gst-plugins-ugly 1.16.2 1.18.0: Basepack of plugins for gstreamer
+media-libs/gst-plugins-bad 1.16.2 1.18.0-r1: Less plugins for GStreamer
+media-libs/gst-plugins-base 1.16.2 1.18.0-r1: Basepack of plugins for gstreamer
+media-libs/gst-plugins-good 1.16.2 1.18.0-r1: Basepack of plugins for GStreamer
+media-libs/gst-plugins-ugly 1.16.2 1.18.0-r1: Basepack of plugins for gstreamer
 media-libs/gstreamer 1.16.2 1.18.0-r1: Open source multimedia framework
 media-libs/libsidplay 2.1.1-r5: C64 SID player library
 media-libs/monado 9999: The open source OpenXR runtime.
