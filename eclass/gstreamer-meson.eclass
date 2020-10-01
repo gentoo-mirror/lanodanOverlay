@@ -54,7 +54,7 @@ case "${GST_ORG_MODULE}" in
 	# copied GST_PLUGINS_DISABLED from media-libs/${GST_ORG_MODULE} then added GST_PLUGINS_ENABLED
 	gst-plugins-bad)
 		# removed from list: shm ipcpipeline gl
-		GST_PLUGINS_DISABLED="aom avtp androidmedia applemedia assrender bluez bs2b bz2 chromaprint closedcaption colormanagement curl curl-ssh2 d3dvideosink d3d11 dash dc1394 decklink directfb directsound dtls dts dvb faac faad fbdev fdkaac flite fluidsynth gme gsm iqa kate kms ladspa libde265 libmms lv2 mediafoundation microdns modplug mpeg2enc mplex msdk musepack neon nvcodec ofa openal openexr openh264 openjpeg openmpt openni2 opensles opus resindvd rsvg rtmp sbc sctp smoothstreaming sndfile soundtouch spandsp srt srtp svthevcenc teletext tinyalsa transcode ttml uvch264 va voaacenc voamrwbenc vulkan wasapi wasapi2 webp webrtc webrtcdsp wildmidi winks winscreencap x265 zbar zxing wpe magicleap v4l2codecs hls"
+		GST_PLUGINS_DISABLED="aom avtp androidmedia applemedia assrender bluez bs2b bz2 chromaprint closedcaption colormanagement curl curl-ssh2 d3dvideosink d3d11 dash dc1394 decklink directfb directsound dtls dts dvb faac faad fbdev fdkaac flite fluidsynth gme gsm iqa kate kms ladspa libde265 libmms lv2 mediafoundation microdns modplug mpeg2enc mplex msdk musepack neon nvcodec ofa openal openexr openh264 openjpeg openmpt openni2 opensles opus resindvd rsvg rtmp sbc sctp smoothstreaming sndfile soundtouch spandsp srt srtp svthevcenc teletext tinyalsa transcode ttml uvch264 va voaacenc voamrwbenc vulkan wasapi wasapi2 webp webrtc webrtcdsp wildmidi winks winscreencap x265 zbar zxing wpe magicleap v4l2codecs hls opencv"
 		GST_PLUGINS_DISABLED="${GST_PLUGINS_DISABLED} accurip adpcmdec adpcmenc aiff asfmux audiobuffersplit audiofxbad audiolatency audiomixmatrix audiovisualizers autoconvert bayer camerabin2 coloreffects deb ugutils dvbsubenc dvbsuboverlay dvdspu faceoverlay festival fieldanalysis freeverb frei0r gaudieffects gdp geometrictransform id3tag inter interlace ivfpars e ivtc jp2kdecimator jpegformat librfb midi mpegdemux mpegpsmux mpegtsdemux mpegtsmux mxf netsim onvif pcapparse pnm proxy rawparse removesilence rist rtmp2 rtp sdp segmentclip siren smooth speed subenc switchbin timecode videofilters videoframe_audiolevel videoparsers videosignal vmnc y4m"
 		;;
 	gst-plugins-base)
@@ -62,7 +62,7 @@ case "${GST_ORG_MODULE}" in
 		GST_PLUGINS_DISABLED="${GST_PLUGINS_DISABLED} adder app audioconvert audiomixer audiorate audioresample audiotestsrc compositor encoding gio gio-typefinder overlaycomposition pbtypes playback rawparse subparse tcp typefind videoconvert videorate videoscale videotestsrc volume"
 		;;
 	gst-plugins-good)
-		GST_PLUGINS_DISABLED="aalib cairo directsound dv dv1394 flac gdk-pixbuf gtk3 jack jpeg lame libcaca mpg123 oss oss4 osxaudio osxvideo png pulse qt5 shout2 soup speex taglib twolame vpx waveform wavpack"
+		GST_PLUGINS_DISABLED="aalib cairo directsound dv dv1394 flac gdk-pixbuf gtk3 jack jpeg lame libcaca mpg123 oss oss4 osxaudio osxvideo png pulse qt5 shout2 soup speex taglib twolame vpx waveform wavpack  rpicamsrc ximagesrc v4l2"
 		GST_PLUGINS_DISABLED="${GST_PLUGINS_DISABLED} alpha apetag audiofx audioparsers auparse autodetect avi cutter debugutils deinterlace dtmf effectv equalizer flv flx goom goom2k1 icydemux id3demux imagefreeze interleave isomp4 law level matroska monoscope multifile multipart replaygain rtp rtpmanager rtsp shapewipe smpte spectrum udp videobox videocrop videofilter videomixer wavenc wavparse y4m"
 		;;
 	gst-plugins-ugly)
