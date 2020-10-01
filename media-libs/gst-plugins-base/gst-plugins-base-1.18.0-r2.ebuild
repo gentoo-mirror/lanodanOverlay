@@ -3,12 +3,7 @@
 
 EAPI=6
 GST_ORG_MODULE="gst-plugins-base"
-
-# List done from editing meson_options.txt in app-editors/vis
-# - Get only the ones with no-external deps (nicely in their own block)
-# - :x/option\('([^']*)'.*/ c/\1/
-# - Press J
-GST_PLUGINS_BUILD="adder app audioconvert audiomixer audiorate audioresample audiotestsrc compositor encoding gio gio-typefinder overlaycomposition pbtypes playback rawparse subparse tcp typefind videoconvert videorate videoscale videotestsrc volume"
+GST_PLUGINS_ENABLED="adder app audioconvert audiomixer audiorate audioresample audiotestsrc compositor encoding gio gio-typefinder overlaycomposition pbtypes playback rawparse subparse tcp typefind videoconvert videorate videoscale videotestsrc volume"
 
 inherit flag-o-matic gstreamer-meson
 
@@ -101,14 +96,9 @@ DOCS="AUTHORS NEWS README RELEASE"
 multilib_src_configure() {
 	filter-flags -mno-sse -mno-sse2 -mno-sse4.1 #610340
 
-	gstreamer_environment_reset
-
 	# opus: split to media-plugins/gst-plugins-opus
 	local emesonargs=(
-		-Dexamples=disabled
-		-Dpackage-name="Gentoo GStreamer ebuild"
-		-Dpackage-origin="https://www.gentoo.org"
-		-Dopus=disabled
+		-Dtools=enabled
 
 		$(meson_feature alsa)
 		$(meson_feature ogg)
