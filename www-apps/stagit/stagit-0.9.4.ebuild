@@ -17,10 +17,8 @@ RDEPEND="${DEPEND}"
 
 src_configure() {
 	sed -i \
+		-e "/^.POSIX:/d" \
 		-e "s;^PREFIX =.*;PREFIX ?= ${EPREFIX}/usr;" \
 		-e "s;^MANPREFIX = .*;MANPREFIX = ${EPREFIX}/usr/share/man;" \
-		-e "s;^LDFLAGS = -s;LDFLAGS = ;" \
-		"${S}/config.mk" || die
-
-	sed -i "s/#CC =.*/CC ?= ${CC:-cc}/" "${S}/config.mk" || die
+		"${S}/Makefile" || die
 }

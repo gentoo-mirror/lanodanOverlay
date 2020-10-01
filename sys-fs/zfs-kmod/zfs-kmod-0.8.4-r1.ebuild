@@ -20,7 +20,7 @@ fi
 
 LICENSE="CDDL debug? ( GPL-2+ )"
 SLOT="0"
-IUSE="custom-cflags debug +rootfs"
+IUSE="custom-cflags debug kernel-builtin +rootfs"
 
 DEPEND=""
 
@@ -114,12 +114,15 @@ src_configure() {
 		--with-linux="${KV_DIR}"
 		--with-linux-obj="${KV_OUT_DIR}"
 		$(use_enable debug)
+		$(use_enable kernel-builtin linux-builtin)
 	)
 
 	CONFIG_SHELL="${EPREFIX}/bin/bash" econf "${myconf[@]}"
 }
 
 src_compile() {
+	use kernel-builtin && return
+
 	set_arch_to_kernel
 
 	myemakeargs=(
@@ -132,17 +135,21 @@ src_compile() {
 }
 
 src_install() {
-	set_arch_to_kernel
+	if use kernel-builtin; then
+		./copy-builtin /usr/src/linux || die "Failed to copy in current kernel"
+	else
+		set_arch_to_kernel
 
-	myemakeargs+=(
-		DEPMOD="/bin/true"
-		DESTDIR="${D}"
-		INSTALL_MOD_PATH="${INSTALL_MOD_PATH:-$EROOT}"
-	)
+		myemakeargs+=(
+			DEPMOD="/bin/true"
+			DESTDIR="${D}"
+			INSTALL_MOD_PATH="${INSTALL_MOD_PATH:-$EROOT}"
+		)
 
-	emake "${myemakeargs[@]}" install
+		emake "${myemakeargs[@]}" install
 
-	einstalldocs
+		einstalldocs
+	fi
 }
 
 pkg_postinst() {
