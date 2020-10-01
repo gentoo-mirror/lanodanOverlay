@@ -188,6 +188,7 @@ sys-apps/bubblewrap 0.4.0: Unprivileged sandboxing tool, namespaces-powered chro
 sys-apps/openrc 0.41.2-r1: OpenRC manages the services, startup and shutdown of a host
 sys-apps/xdg-dbus-proxy 0.1.2: filtering proxy for D-Bus connections
 sys-auth/seatd 0.3.0 9999: Minimal seat management daemon and universal library
+sys-fs/zfs-kmod 0.8.4-r1: Linux ZFS kernel module for sys-fs/zfs
 sys-libs/db 5.3.28-r3: Oracle Berkeley DB
 sys-libs/gcompat 0.4.0: The GNU C Library compatibility layer for musl
 sys-libs/libtickit 0.3.3: library for building interactive full-screen terminal programs
@@ -196,7 +197,7 @@ virtual/editor 0-r1: Virtual for editor
 virtual/man 9: Virtual for man
 www-apps/pleroma 1.0.2 9999: Microblogging software federating over OStatus and ActivityPub
 www-apps/searx 0.15.0: Decentralized and privacy-respecting, hackable metasearch engine
-www-apps/stagit 0.8 0.9: static git page generator
+www-apps/stagit 0.9.4: static git page generator
 www-client/lariza 18.07: simple web browser using GTK+ 3, GLib and WebKit2GTK+
 www-plugins/decentraleyes 2.0.10: Local CDN Emulation
 www-plugins/firefox-user-js 9999: Firefox configuration hardening
