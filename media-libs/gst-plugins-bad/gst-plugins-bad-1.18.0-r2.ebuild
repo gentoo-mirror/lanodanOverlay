@@ -4,11 +4,7 @@
 EAPI=6
 GST_ORG_MODULE="gst-plugins-bad"
 
-# List done from editing meson_options.txt in app-editors/vis
-# - Get only the ones with no-external deps (nicely in their own block)
-# - :x/option\('([^']*)'.*/ c/\1/
-# - Press J
-GST_PLUGINS_BUILD="accurip adpcmdec adpcmenc aiff asfmux audiobuffersplit audiofxbad audiolatency audiomixmatrix audiovisualizers autoconvert bayer camerabin2 coloreffects deb ugutils dvbsubenc dvbsuboverlay dvdspu faceoverlay festival fieldanalysis freeverb frei0r gaudieffects gdp geometrictransform id3tag inter interlace ivfpars e ivtc jp2kdecimator jpegformat librfb midi mpegdemux mpegpsmux mpegtsdemux mpegtsmux mxf netsim onvif pcapparse pnm proxy rawparse removesilence rist rtmp2 rtp sdp segmentclip siren smooth speed subenc switchbin timecode videofilters videoframe_audiolevel videoparsers videosignal vmnc y4m"
+GST_PLUGINS_ENABLED="accurip adpcmdec adpcmenc aiff asfmux audiobuffersplit audiofxbad audiolatency audiomixmatrix audiovisualizers autoconvert bayer camerabin2 coloreffects deb ugutils dvbsubenc dvbsuboverlay dvdspu faceoverlay festival fieldanalysis freeverb frei0r gaudieffects gdp geometrictransform id3tag inter interlace ivfpars e ivtc jp2kdecimator jpegformat librfb midi mpegdemux mpegpsmux mpegtsdemux mpegtsmux mxf netsim onvif pcapparse pnm proxy rawparse removesilence rist rtmp2 rtp sdp segmentclip siren smooth speed subenc switchbin timecode videofilters videoframe_audiolevel videoparsers videosignal vmnc y4m"
 
 inherit flag-o-matic gstreamer-meson virtualx
 
@@ -56,7 +52,6 @@ multilib_src_configure() {
 	local emesonargs=(
 		-Dshm=enabled
 		-Dipcpipeline=enabled
-		$(meson_feature orc)
 		$(meson_feature vnc librfb)
 		$(meson_feature wayland)
 	)

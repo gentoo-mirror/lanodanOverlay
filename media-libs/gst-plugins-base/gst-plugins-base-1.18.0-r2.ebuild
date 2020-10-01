@@ -3,6 +3,7 @@
 
 EAPI=6
 GST_ORG_MODULE="gst-plugins-base"
+GST_PLUGINS_ENABLED="adder app audioconvert audiomixer audiorate audioresample audiotestsrc compositor encoding gio gio-typefinder overlaycomposition pbtypes playback rawparse subparse tcp typefind videoconvert videorate videoscale videotestsrc volume"
 
 inherit flag-o-matic gstreamer-meson
 
@@ -95,14 +96,9 @@ DOCS="AUTHORS NEWS README RELEASE"
 multilib_src_configure() {
 	filter-flags -mno-sse -mno-sse2 -mno-sse4.1 #610340
 
-	gstreamer_environment_reset
-
 	# opus: split to media-plugins/gst-plugins-opus
 	local emesonargs=(
-		-Dexamples=disabled
-		-Dpackage-name="Gentoo GStreamer ebuild"
-		-Dpackage-origin="https://www.gentoo.org"
-		-Dopus=disabled
+		-Dtools=enabled
 
 		$(meson_feature alsa)
 		$(meson_feature ogg)
@@ -140,5 +136,5 @@ multilib_src_configure() {
 		)
 	fi
 
-	meson_src_configure
+	gstreamer_multilib_src_configure
 }

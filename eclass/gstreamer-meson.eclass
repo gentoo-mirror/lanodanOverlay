@@ -38,12 +38,38 @@ case "${EAPI:-0}" in
 		;;
 esac
 
-# @ECLASS-VARIABLE: GST_PLUGINS_BUILD
+# @ECLASS-VARIABLE: GST_PLUGINS_ENABLED
 # @DESCRIPTION:
 # Defines the plugins to be built.
 # May be set by an ebuild and contain more than one indentifier, space
 # seperated (only src_configure can handle mutiple plugins at this time).
-: ${GST_PLUGINS_BUILD:=${PN/gst-plugins-/}}
+: ${GST_PLUGINS_ENABLED:=${PN/gst-plugins-/}}
+
+# @ECLASS-VARIABLE: GST_PLUGINS_DISABLED
+# @DESCRIPTION:
+# Defines the plugins to not be built, GST_PLUGINS_ENABLED overrides it.
+# May be set by an ebuild and contain more than one indentifier, space
+# seperated (only src_configure can handle mutiple plugins at this time).
+case "${GST_ORG_MODULE}" in
+	# copied GST_PLUGINS_DISABLED from media-libs/${GST_ORG_MODULE} then added GST_PLUGINS_ENABLED
+	gst-plugins-bad)
+		# removed from list: shm ipcpipeline gl
+		GST_PLUGINS_DISABLED="aom avtp androidmedia applemedia assrender bluez bs2b bz2 chromaprint closedcaption colormanagement curl curl-ssh2 d3dvideosink d3d11 dash dc1394 decklink directfb directsound dtls dts dvb faac faad fbdev fdkaac flite fluidsynth gme gsm iqa kate kms ladspa libde265 libmms lv2 mediafoundation microdns modplug mpeg2enc mplex msdk musepack neon nvcodec ofa openal openexr openh264 openjpeg openmpt openni2 opensles opus resindvd rsvg rtmp sbc sctp smoothstreaming sndfile soundtouch spandsp srt srtp svthevcenc teletext tinyalsa transcode ttml uvch264 va voaacenc voamrwbenc vulkan wasapi wasapi2 webp webrtc webrtcdsp wildmidi winks winscreencap x265 zbar zxing wpe magicleap v4l2codecs hls"
+		GST_PLUGINS_DISABLED="${GST_PLUGINS_DISABLED} accurip adpcmdec adpcmenc aiff asfmux audiobuffersplit audiofxbad audiolatency audiomixmatrix audiovisualizers autoconvert bayer camerabin2 coloreffects deb ugutils dvbsubenc dvbsuboverlay dvdspu faceoverlay festival fieldanalysis freeverb frei0r gaudieffects gdp geometrictransform id3tag inter interlace ivfpars e ivtc jp2kdecimator jpegformat librfb midi mpegdemux mpegpsmux mpegtsdemux mpegtsmux mxf netsim onvif pcapparse pnm proxy rawparse removesilence rist rtmp2 rtp sdp segmentclip siren smooth speed subenc switchbin timecode videofilters videoframe_audiolevel videoparsers videosignal vmnc y4m"
+		;;
+	gst-plugins-base)
+		GST_PLUGINS_DISABLED="cdparanoia libvisual opus tremor"
+		GST_PLUGINS_DISABLED="${GST_PLUGINS_DISABLED} adder app audioconvert audiomixer audiorate audioresample audiotestsrc compositor encoding gio gio-typefinder overlaycomposition pbtypes playback rawparse subparse tcp typefind videoconvert videorate videoscale videotestsrc volume"
+		;;
+	gst-plugins-good)
+		GST_PLUGINS_DISABLED="aalib cairo directsound dv dv1394 flac gdk-pixbuf gtk3 jack jpeg lame libcaca mpg123 oss oss4 osxaudio osxvideo png pulse qt5 shout2 soup speex taglib twolame vpx waveform wavpack"
+		GST_PLUGINS_DISABLED="${GST_PLUGINS_DISABLED} alpha apetag audiofx audioparsers auparse autodetect avi cutter debugutils deinterlace dtmf effectv equalizer flv flx goom goom2k1 icydemux id3demux imagefreeze interleave isomp4 law level matroska monoscope multifile multipart replaygain rtp rtpmanager rtsp shapewipe smpte spectrum udp videobox videocrop videofilter videomixer wavenc wavparse y4m"
+		;;
+	gst-plugins-ugly)
+		GST_PLUGINS_DISABLED="a52dec amrnb amrwbdec cdio dvdread mpeg2dec sidplay x264"
+		GST_PLUGINS_DISABLED="${GST_PLUGINS_DISABLED} asfdemux dvdlpcmdec dvdsub realmedia xingmux"
+		;;
+esac
 
 # @ECLASS-VARIABLE: GST_PLUGINS_BUILD_DIR
 # @DESCRIPTION:
@@ -84,7 +110,6 @@ SRC_URI="https://gstreamer.freedesktop.org/src/${GST_ORG_MODULE}/${GST_ORG_MODUL
 
 LICENSE="GPL-2"
 case ${GST_ORG_PVP} in
-	0.10) SLOT="0.10"; GST_MIN_PV="0.10.36-r2" ;;
 	1.*) SLOT="1.0"; GST_MIN_PV="1.2.4-r1" ;;
 	*) die "Unkown gstreamer release."
 esac
@@ -133,16 +158,6 @@ gstreamer_environment_reset() {
 	xdg_environment_reset
 }
 
-# @FUNCTION: gstreamer_get_plugins
-# @INTERNAL
-# @DESCRIPTION:
-# Get the list of plugins requiring external dependencies.
-gstreamer_get_plugins() {
-	# Must be called from src_prepare/src_configure
-	GST_PLUGINS_LIST=$(sed -rn "s/^option\('(\w+)',\stype\s:\s'feature'.*/ \1 /p" \
-		"${EMESON_SOURCE:-${S}}"/meson_options.txt)
-}
-
 # @FUNCTION: gstreamer_get_plugin_dir
 # @USAGE: gstreamer_get_plugin_dir [<build_dir>]
 # @INTERNAL
@@ -171,15 +186,15 @@ gstreamer_get_plugin_dir() {
 gstreamer_multilib_src_configure() {
 	local plugin emesonargs=() EMESON_SOURCE=${EMESON_SOURCE:-${S}}
 
-	gstreamer_get_plugins
 	gstreamer_environment_reset
 
-	for plugin in ${GST_PLUGINS_LIST} ; do
-		if has ${plugin} ${GST_PLUGINS_BUILD} ; then
-			emesonargs+=( -D${plugin}=enabled )
-		else
-			emesonargs+=( -D${plugin}=disabled )
-		fi
+	# app-editor/vis regex for meson_options.txt: :x/option\('([^']*)'.*/ c/\1/
+	for plugin in ${GST_PLUGINS_DISABLED} ; do
+		emesonargs+=( -D${plugin}=disabled )
+	done
+
+	for plugin in ${GST_PLUGINS_ENABLED} ; do
+		emesonargs+=( -D${plugin}=enabled )
 	done
 
 	if grep -q "option(\'orc\'" "${EMESON_SOURCE}"/meson_options.txt ; then
@@ -202,7 +217,7 @@ gstreamer_multilib_src_configure() {
 		emesonargs+=( $(meson_feature nls) )
 	fi
 
-	einfo "Configuring to build ${GST_PLUGINS_BUILD} plugin(s) ..."
+	einfo "Configuring to build ${GST_PLUGINS_ENABLED} plugin(s) ..."
 	emesonargs+=(
 		-Dexamples=disabled
 		-Dpackage-name="Gentoo GStreamer ebuild"
