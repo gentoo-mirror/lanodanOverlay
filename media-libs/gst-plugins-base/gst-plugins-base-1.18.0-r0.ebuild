@@ -4,12 +4,6 @@
 EAPI=6
 GST_ORG_MODULE="gst-plugins-base"
 
-# List done from editing meson_options.txt in app-editors/vis
-# - Get only the ones with no-external deps (nicely in their own block)
-# - :x/option\('([^']*)'.*/ c/\1/
-# - Press J
-GST_PLUGINS_BUILD="adder app audioconvert audiomixer audiorate audioresample audiotestsrc compositor encoding gio gio-typefinder overlaycomposition pbtypes playback rawparse subparse tcp typefind videoconvert videorate videoscale videotestsrc volume"
-
 inherit flag-o-matic gstreamer-meson
 
 DESCRIPTION="Basepack of plugins for gstreamer"
@@ -146,5 +140,5 @@ multilib_src_configure() {
 		)
 	fi
 
-	gstreamer_multilib_src_configure
+	meson_src_configure
 }
