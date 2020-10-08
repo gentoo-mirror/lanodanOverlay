@@ -11,7 +11,7 @@ SRC_URI="http://www.opensound.com/developer/sources/stable/gpl/${MY_P}.tar.bz2"
 S="${WORKDIR}/${MY_P}"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
 
 DEPENDS="x11-libs/gtk+:2"
 RDEPENDS="${DEPENDS}"
