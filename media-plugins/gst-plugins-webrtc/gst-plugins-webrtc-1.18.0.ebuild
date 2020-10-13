@@ -19,12 +19,5 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}"
 
-GST_PLUGINS_BUILD="webrtc webrtcdsp"
+GST_PLUGINS_ENABLED="webrtc webrtcdsp"
 GST_PLUGINS_BUILD_DIR="webrtc webrtcdsp"
-
-src_prepare() {
-	default
-	gstreamer_system_link gst-libs/gst/webrtc:gstreamer-webrtc
-	gstreamer_system_link gst-libs/gst/sctp:gstreamer-sctp
-	gstreamer_system_link gst-libs/gst/audio:gstreamer-bad-audio
-}
