@@ -7,7 +7,7 @@ DESCRIPTION="Standard (de)compression library (Sortix's libz fork)"
 HOMEPAGE="https://sortix.org/libz/"
 SRC_URI="https://sortix.org/libz/release/libz-${PV}.tar.gz"
 LICENSE="ZLIB"
-SLOT="libz"
+SLOT="0/1"
 KEYWORDS="~amd64"
 
 RDEPEND="!sys-libs/zlib:0"
