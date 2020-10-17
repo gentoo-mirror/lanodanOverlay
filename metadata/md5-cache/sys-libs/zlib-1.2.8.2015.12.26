@@ -1,0 +1,10 @@
+DEFINED_PHASES=-
+DESCRIPTION=Standard (de)compression library (Sortix's libz fork)
+EAPI=7
+HOMEPAGE=https://sortix.org/libz/
+KEYWORDS=~amd64
+LICENSE=ZLIB
+RDEPEND=!sys-libs/zlib:0
+SLOT=libz
+SRC_URI=https://sortix.org/libz/release/libz-1.2.8.2015.12.26.tar.gz
+_md5_=2fb00049a9333f1a8ba390d293f8cf34
