@@ -1,4 +1,4 @@
-# Copyright 2020 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+# Copyright 2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -6,7 +6,7 @@ EAPI=7
 inherit meson
 
 DESCRIPTION="Minimal seat management daemon and universal library"
-HOMEPAGE="https://git.sr.ht/~kennylevinsen/seatd"
+HOMEPAGE="https://sr.ht/~kennylevinsen/seatd"
 if [[ ${PV} == 9999 ]]; then
 	inherit git-r3
 
@@ -17,24 +17,31 @@ else
 fi
 LICENSE="MIT"
 SLOT="0/1"
-IUSE="examples logind"
+IUSE="elogind systemd"
+REQUIRED_USE="?? ( elogind systemd )"
 
-DEPEND="logind? ( || ( sys-auth/elogind sys-apps/systemd ) )"
+DEPEND="
+	elogind? ( sys-auth/elogind )
+	systemd? ( sys-apps/systemd )
+"
 RDEPEND="${DEPEND}"
-BDEPEND="app-text/scdoc"
+BDEPEND=">=app-text/scdoc-1.9.7"
 
 src_configure() {
 	local emesonargs=(
 		-Dman-pages=enabled
-		$(meson_feature examples)
-		$(meson_feature logind)
 	)
+
+	if use elogind || use systemd; then
+		emesonargs+=( -Dlogind=enabled )
+	else
+		emesonargs+=( -Dlogind=disabled )
+	fi
 
 	meson_src_configure
 }
 
 src_install() {
 	meson_src_install
-
 	newinitd "${FILESDIR}/seatd.initd" seatd
 }
