@@ -188,7 +188,7 @@ sci-misc/labview 8.6.0: LabVIEW System Design Software
 sys-apps/bubblewrap 0.4.0: Unprivileged sandboxing tool, namespaces-powered chroot-like solution
 sys-apps/openrc 0.41.2-r1: OpenRC manages the services, startup and shutdown of a host
 sys-apps/xdg-dbus-proxy 0.1.2: filtering proxy for D-Bus connections
-sys-auth/seatd 0.3.0 9999: Minimal seat management daemon and universal library
+sys-auth/seatd 0.4.0 9999: Minimal seat management daemon and universal library
 sys-fs/zfs-kmod 0.8.4-r1: Linux ZFS kernel module for sys-fs/zfs
 sys-libs/db 5.3.28-r3: Oracle Berkeley DB
 sys-libs/gcompat 0.4.0: The GNU C Library compatibility layer for musl
