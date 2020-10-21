@@ -42,7 +42,6 @@ dev-haskell/hsroots 9999: Haskell bindings for libxkbcommon
 dev-haskell/libinput 9999: Haskell bindings for libinput
 dev-haskell/waymonad-scanner 9999: Haskell bindings for libxkbcommon
 dev-haskell/xkbcommon 0.0.3 9999: Haskell bindings for libxkbcommon (Waymonad)
-dev-lang/elixir 1.11.0: Elixir programming language
 dev-lang/erlang 22.1: Erlang programming language, runtime environment and libraries (OTP)
 dev-lang/go 0.20171003: Boostrap Go from C (useful for musl libc)
 dev-lang/mono 6.4.0.198: Mono runtime and class libraries, a C# compiler/interpreter
