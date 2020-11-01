@@ -122,6 +122,9 @@ media-video/obs-studio:python - Build support for scripting via Python 3.
 media-video/obs-studio:speex - Enable noise suppression filter support via media-libs/speexdsp.
 media-video/obs-studio:ssl - Build support for TLS/SSL connections (RTMPS) via net-libs/mbedtls.
 media-video/obs-studio:vlc - Build support for using media-video/vlc as a media source.
+media-video/pipewire:jack - Enable SPA JACK plugin and emulation to be able to run JACK applications on top of PipeWire
+media-video/pipewire:pulseaudio - Enable emulation to be able to run PulseAudio applications on top of PipeWire
+media-video/pipewire:vulkan - Enable vulkan spa plugin integration
 net-dns/getdns:stubby - Include stubby in getdns
 net-dns/ldns-utils:dane - Enable DNS-based Authentication of Named Entities (DANE) support
 net-dns/ldns-utils:ecdsa - Enable ECDSA support
