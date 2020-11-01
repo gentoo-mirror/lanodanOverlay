@@ -1,0 +1,78 @@
+commit ae96087dc0141ebdaf463590aba08327abe8f28e
+Author: Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+Date:   2020-11-01T03:28:49 GMT
+
+    Make DBus an optionnal dependency
+
+diff --git a/meson.build b/meson.build
+index adabcccf..893f4c6f 100644
+--- a/meson.build
++++ b/meson.build
+@@ -290,7 +290,7 @@ mathlib = cc.find_library('m', required : false)
+ rt_lib = cc.find_library('rt', required : false) # clock_gettime
+ dl_lib = cc.find_library('dl', required : false)
+ pthread_lib = dependency('threads')
+-dbus_dep = dependency('dbus-1')
++dbus_dep = dependency('dbus-1', required : get_option('dbus'))
+ sdl_dep = dependency('sdl2', required : false)
+ sndfile_dep = dependency('sndfile', version : '>= 1.0.20', required : false)
+ 
+diff --git a/meson_options.txt b/meson_options.txt
+index f03033c3..87afbe3b 100644
+--- a/meson_options.txt
++++ b/meson_options.txt
+@@ -131,3 +131,7 @@ option('pw-cat',
+ option('udevrulesdir',
+        type : 'string',
+        description : 'Directory for udev rules (defaults to /lib/udev/rules.d)')
++option('dbus',
++       description: 'Build support for DBus-based interfaces',
++       type: 'boolean',
++       value: true)
+diff --git a/spa/plugins/support/meson.build b/spa/plugins/support/meson.build
+index 5db32c89..d78a9dcc 100644
+--- a/spa/plugins/support/meson.build
++++ b/spa/plugins/support/meson.build
+@@ -31,11 +31,13 @@ if get_option('evl')
+ 		        install_dir : join_paths(spa_plugindir, 'support'))
+ endif
+ 
+-spa_dbus_sources = ['dbus.c']
++if get_option('dbus')
++	spa_dbus_sources = ['dbus.c']
+ 
+-spa_dbus_lib = shared_library('spa-dbus',
+-			spa_dbus_sources,
+-			include_directories : [ spa_inc],
+-			dependencies : [dbus_dep, ],
+-			install : true,
+-		        install_dir : join_paths(spa_plugindir, 'support'))
++	spa_dbus_lib = shared_library('spa-dbus',
++				spa_dbus_sources,
++				include_directories : [ spa_inc],
++				dependencies : [dbus_dep, ],
++				install : true,
++			        install_dir : join_paths(spa_plugindir, 'support'))
++endif
+diff --git a/src/examples/meson.build b/src/examples/meson.build
+index 6af07bc1..7285c959 100644
+--- a/src/examples/meson.build
++++ b/src/examples/meson.build
+@@ -65,7 +65,7 @@ executable('export-spa-device',
+   dependencies : [pipewire_dep, mathlib],
+ )
+ 
+-if alsa_dep.found()
++if alsa_dep.found() and dbus_dep.found()
+   executable('pipewire-media-session',
+     'media-session/access-flatpak.c',
+     'media-session/access-portal.c',
+@@ -91,7 +91,7 @@ if alsa_dep.found()
+     c_args : [ '-D_GNU_SOURCE' ],
+     install: true,
+     dependencies : [dbus_dep, pipewire_dep, alsa_dep, mathlib],
+-)
++  )
+ endif
+ 
+ executable('bluez-session',
