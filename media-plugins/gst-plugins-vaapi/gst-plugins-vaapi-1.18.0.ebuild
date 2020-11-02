@@ -7,7 +7,7 @@ inherit gstreamer-meson multilib-minimal
 
 MY_PN="gstreamer-vaapi"
 DESCRIPTION="Hardware accelerated video decoding through VA-API plugin for GStreamer"
-HOMEPAGE="https://cgit.freedesktop.org/gstreamer/gstreamer-vaapi"
+HOMEPAGE="https://gitlab.freedesktop.org/gstreamer/gstreamer-vaapi"
 SRC_URI="https://gstreamer.freedesktop.org/src/${MY_PN}/${MY_PN}-${PV}.tar.xz"
 
 LICENSE="LGPL-2.1+"
@@ -44,7 +44,7 @@ REQUIRED_USE="
 GST_REQ="${PV}"
 GL_DEPS="
 	>=media-libs/gst-plugins-base-${GST_REQ}:${SLOT}[egl?,gles2?,opengl?,wayland?,X?]
-	media-libs/mesa[gles2?,egl?,X(+),${MULTILIB_USEDEP}]
+	media-libs/mesa[gles2?,egl?,X?,${MULTILIB_USEDEP}]
 "
 RDEPEND="
 	>=dev-libs/glib-2.40:2[${MULTILIB_USEDEP}]
@@ -90,6 +90,9 @@ multilib_src_configure() {
 	else
 		emesonargs+=( -Dwith_glx=no )
 	fi
+
+	# Workaround EGL/eglplatform.h being built with X11 present
+	use X || export CFLAGS="${CFLAGS} -DEGL_NO_X11"
 
 	gstreamer_multilib_src_configure
 }
