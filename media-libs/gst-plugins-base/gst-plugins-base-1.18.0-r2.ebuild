@@ -136,5 +136,8 @@ multilib_src_configure() {
 		)
 	fi
 
+	# Workaround EGL/eglplatform.h being built with X11 present
+	use X || export CFLAGS="${CFLAGS} -DEGL_NO_X11"
+
 	gstreamer_multilib_src_configure
 }
