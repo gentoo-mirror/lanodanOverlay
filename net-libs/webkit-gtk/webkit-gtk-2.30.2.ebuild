@@ -18,7 +18,7 @@ LICENSE="LGPL-2+ BSD"
 SLOT="4/37" # soname version of libwebkit2gtk-4.0
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~amd64-linux ~x86-linux ~x86-macos"
 
-IUSE="aqua debug +egl examples +geolocation gles2-only gnome-keyring +gstreamer gtk4 gtk-doc +introspection +jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell systemd wayland +wpe +X"
+IUSE="aqua debug +egl examples +geolocation gles2-only gnome-keyring +gstreamer gtk4 gtk-doc +introspection +jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell systemd wayland +X"
 
 # gstreamer with opengl/gles2 needs egl
 REQUIRED_USE="
@@ -26,7 +26,6 @@ REQUIRED_USE="
 	gles2-only? ( egl !opengl )
 	gstreamer? ( opengl? ( egl ) )
 	wayland? ( egl )
-	wpe? ( opengl wayland )
 	media-source? ( gstreamer )
 	|| ( aqua wayland X )
 "
@@ -36,6 +35,10 @@ REQUIRED_USE="
 # Various compile-time optionals for gtk+-3.22.0 - ensure it
 # Missing WebRTC support, but ENABLE_MEDIA_STREAM/ENABLE_WEB_RTC is experimental upstream (PRIVATE OFF) and shouldn't be used yet in 2.26
 # >=gst-plugins-opus-1.14.4-r1 for opusparse (required by MSE)
+wpe_depend="
+	>=gui-libs/libwpe-1.3.0:1.0
+	>=gui-libs/wpebackend-fdo-1.3.1:1.0
+"
 RDEPEND="
 	>=x11-libs/cairo-1.16.0:=[X?]
 	>=media-libs/fontconfig-2.13.0:1.0
@@ -85,9 +88,11 @@ RDEPEND="
 	egl? ( media-libs/mesa[egl] )
 	gles2-only? ( media-libs/mesa[gles2] )
 	opengl? ( virtual/opengl )
-	wpe? (
-		>=gui-libs/libwpe-1.3.0:=
-		>=gui-libs/wpebackend-fdo-1.3.1:=
+	wayland? (
+		dev-libs/wayland
+		>=dev-libs/wayland-protocols-1.12
+		opengl? ( ${wpe_depend} )
+		gles2-only? ( ${wpe_depend} )
 	)
 	seccomp? (
 		>=sys-apps/bubblewrap-0.3.1
@@ -96,6 +101,7 @@ RDEPEND="
 	)
 	systemd? ( sys-apps/systemd:= )
 "
+unset wpe_depend
 
 # paxctl needed for bug #407085
 # Need real bison, not yacc
@@ -115,7 +121,7 @@ DEPEND="${RDEPEND}
 	virtual/perl-Carp
 	virtual/perl-JSON-PP
 
-	gtk-doc? ( >=dev-util/gtk-doc-1.10 )
+	gtk-doc? ( >=dev-util/gtk-doc-1.32 )
 	geolocation? ( dev-util/gdbus-codegen )
 	sys-apps/paxctl
 
@@ -225,9 +231,11 @@ src_configure() {
 	#
 	# opengl needs to be explicetly handled, bug #576634
 
+	local use_wpe_renderer=OFF
 	local opengl_enabled
 	if use opengl || use gles2-only; then
 		opengl_enabled=ON
+		use wayland && use_wpe_renderer=ON
 	else
 		opengl_enabled=OFF
 	fi
@@ -262,9 +270,9 @@ src_configure() {
 		$(cmake-utils_use_find_package egl EGL)
 		$(cmake-utils_use_find_package opengl OpenGL)
 		-DENABLE_X11_TARGET=$(usex X)
-		-DENABLE_OPENGL=${opengl_enabled}
+		-DENABLE_GRAPHICS_CONTEXT_GL=${opengl_enabled}
 		-DENABLE_WEBGL=${opengl_enabled}
-		-DUSE_WPE_RENDERER=$(usex wpe)
+		-DUSE_WPE_RENDERER=${use_wpe_renderer}
 		-DENABLE_BUBBLEWRAP_SANDBOX=$(usex seccomp)
 		-DENABLE_MEDIA_SOURCE=$(usex media-source)
 		-DBWRAP_EXECUTABLE="${EPREFIX}"/usr/bin/bwrap # If bubblewrap[suid] then portage makes it go-r and cmake find_program fails with that
