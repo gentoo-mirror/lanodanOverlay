@@ -84,6 +84,7 @@ gnustep-base/gnustep-make:native-exceptions - Enables use of the native Objectiv
 gui-wm/cage:xwayland - Enable ability support native X11 applications
 mail-mta/opensmtpd:mdoc - Use mdoc format for manpages
 mail-mta/opensmtpd:mta - Enable this to install as system-wide MTA
+media-libs/freeglut:wayland-only - Link to wayland & EGL+GLES instead of libX11 & GL/GLX
 media-libs/gst-plugins-bad:bzip2 - Enable bzip2 encoder/decoder plugin
 media-libs/gst-plugins-bad:egl - Enable EGL support
 media-libs/gst-plugins-bad:gles2 - Enable GLES2 support
