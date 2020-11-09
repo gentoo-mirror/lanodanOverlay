@@ -39,8 +39,8 @@ src_configure() {
 	local mycmakeargs=(
 		"-DFREEGLUT_BUILD_DEMOS=OFF"
 		"-DFREEGLUT_BUILD_STATIC_LIBS=$(usex static-libs ON OFF)"
-		$(cmake-utils_use wayland-only FREEGLUT_WAYLAND)
-		$(cmake-utils_use wayland-only FREEGLUT_GLES)
+		"-DFREEGLUT_WAYLAND=$(usex wayland-only )"
+		"-DFREEGLUT_GLES=$(usex wayland-only )"
 	)
 	cmake-multilib_src_configure
 }
