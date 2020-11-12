@@ -92,6 +92,7 @@ games-misc/ponysay 3.0.3: cowsay reimplemention for ponies
 games-sports/vdrift 2014.10.20 9999: A driving simulation made with drift racing in mind
 games-visualnovel/doki-doki-litterature-club 1.1.1: Psychological horror game presented as a romance visual novel
 gnome-base/gvfs 1.32.2: Virtual filesystem implementation for gio
+gnome-base/librsvg 2.40.21: Scalable Vector Graphics (SVG) rendering library
 gnustep-base/gnustep-make 2.7.0: GNUstep Makefile Package
 gui-apps/wayvnc 9999: VNC server for wlroots based Wayland compositors
 gui-libs/libwpe 1.6.0: WebKit port optimized for embedded devices
