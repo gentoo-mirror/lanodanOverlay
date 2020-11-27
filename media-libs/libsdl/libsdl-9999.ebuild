@@ -12,7 +12,8 @@ S="${WORKDIR}/sdl12-compat"
 LICENSE="ZLIB"
 SLOT="0"
 
-IUSE=""
+# Those are fakes and just there for compat with other ebuilds
+IUSE="oss alsa nas X dga xv xinerama fbcon tslib aalib opengl libcaca +sound +video +joystick custom-cflags pulseaudio static-libs"
 
 src_prepare() {
 	cmake_src_prepare
