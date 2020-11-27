@@ -117,6 +117,7 @@ media-libs/gst-plugins-base 1.16.2 1.18.1: Basepack of plugins for gstreamer
 media-libs/gst-plugins-good 1.16.2 1.18.1: Basepack of plugins for GStreamer
 media-libs/gst-plugins-ugly 1.16.2 1.18.1: Basepack of plugins for gstreamer
 media-libs/gstreamer 1.16.2 1.18.1: Open source multimedia framework
+media-libs/libsdl 9999: Simple Direct Media Layer
 media-libs/libsidplay 2.1.1-r5: C64 SID player library
 media-libs/monado 9999: The open source OpenXR runtime.
 media-libs/opencolorio 1.1.0-r1: A color management framework for visual effects and animation
