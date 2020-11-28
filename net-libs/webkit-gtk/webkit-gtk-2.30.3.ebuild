@@ -18,7 +18,7 @@ LICENSE="LGPL-2+ BSD"
 SLOT="4/37" # soname version of libwebkit2gtk-4.0
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~amd64-linux ~x86-linux ~x86-macos"
 
-IUSE="aqua debug +egl examples +geolocation gles2-only gnome-keyring +gstreamer gtk4 gtk-doc +introspection +jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell systemd wayland +X"
+IUSE="aqua debug +egl examples gamepad +geolocation gles2-only gnome-keyring +gstreamer gtk4 gtk-doc +introspection +jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell systemd wayland +X"
 
 # gstreamer with opengl/gles2 needs egl
 REQUIRED_USE="
@@ -100,6 +100,7 @@ RDEPEND="
 		sys-apps/xdg-dbus-proxy
 	)
 	systemd? ( sys-apps/systemd:= )
+	gamepad? ( >=dev-libs/libmanette-0.2.4 )
 "
 unset wpe_depend
 
@@ -246,6 +247,7 @@ src_configure() {
 		-DSHOULD_INSTALL_JS_SHELL=$(usex examples)
 		-DENABLE_GEOLOCATION=$(usex geolocation) # Runtime optional (talks over dbus service)
 		-DENABLE_UNIFIED_BUILDS=$(usex jumbo-build)
+		-DENABLE_GAMEPAD=$(usex gamepad)
 		# end PRIVATE options
 		-DUSE_SYSTEMD=$(usex systemd)
 		-DUSE_GTK4=$(usex gtk4)
