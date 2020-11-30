@@ -20,6 +20,7 @@ RDEPEND="
 	dev-libs/libpcre
 	sys-libs/zlib
 	virtual/opengl
+	media-libs/glew:=
 	x11-libs/libICE
 	x11-libs/libSM
 	x11-libs/libva
