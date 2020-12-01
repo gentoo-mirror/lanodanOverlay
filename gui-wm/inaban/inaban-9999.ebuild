@@ -1,4 +1,4 @@
-# Copyright 2019 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+# Copyright 2019-2020 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -17,7 +17,7 @@ DESCRIPTION="Distrustful Tiling Wayland Compositor"
 HOMEPAGE="https://hacktivis.me/git/inaban/"
 LICENSE="BSD"
 SLOT="0"
-IUSE="suid"
+IUSE=""
 
 # dev-libs/wayland provides wayland-server
 DEPEND="
@@ -42,7 +42,6 @@ src_compile() {
 }
 
 src_install() {
-	use suid && chmod +s inaban
 	emake \
 		DESTDIR="${D}" \
 		PREFIX="/usr" \
