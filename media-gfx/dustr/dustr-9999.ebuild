@@ -18,3 +18,9 @@ DEPEND="
 	media-libs/libsdl2:=
 "
 RDEPEND="${DEPEND}"
+
+src_install() {
+	einstalldocs
+
+	DESTDIR="${ED}" emake install PREFIX="/usr"
+}
