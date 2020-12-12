@@ -37,6 +37,10 @@ src_prepare() {
 		-e '/^db-install:/s:$: base-install:' \
 		Makefile || die
 
+	# Bump Note: Remove -fcommon, fixed in [1] but doesn't applies cleanly
+	# and it looks like no one did the rebasing work.
+	# 1: https://inbox.vuxu.org/mandoc-source/490dd254e5b643b9@mandoc.bsd.lv/
+
 	cat <<-EOF > "configure.local"
 		PREFIX="${EPREFIX}/usr"
 		BINDIR="${EPREFIX}/usr/bin"
@@ -53,7 +57,7 @@ src_prepare() {
 		MANM_EQN=mandoc_eqn
 		MANM_TBL=mandoc_tbl
 		BINM_SOELIM=msoelim
-		CFLAGS="${CFLAGS} ${CPPFLAGS}"
+		CFLAGS="${CFLAGS} ${CPPFLAGS} -fcommon"
 		LDFLAGS="${LDFLAGS} $(usex static -static '')"
 		AR="$(tc-getAR)"
 		CC="$(tc-getCC)"
