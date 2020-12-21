@@ -8,8 +8,6 @@ app-admin/pass:fish-completion - Enable fish completion support.
 app-admin/pass:git - Use dev-vcs/git for password revisions.
 app-admin/pass:importers - Allow importing passwords from other password managers using various contributed scripts.
 app-crypt/acme-sh:standalone - runtime-depend on net-misc/socat used in Standalone mode
-app-editors/vis:lpeg - runtime for syntax highlight using dev-lua/lpeg
-app-editors/vis:tre - more memory efficient regex search using dev-libs/tre
 app-emulation/wine-proton:capi - Enable ISDN support via CAPI
 app-emulation/wine-proton:custom-cflags - Bypass strip-flags; use at your own peril
 app-emulation/wine-proton:dos - Pull in games-emulation/dosbox to run DOS applications
@@ -50,7 +48,6 @@ dev-lang/erlang:pgo - Build erts with profile-guided optimizations
 dev-lang/mono:pax_kernel - Enable if the user plans to run the package under a pax enabled hardened kernel
 dev-lang/mono:xen - Make mono generate code that is considerably faster on xen VMs but slightly slower on for normal systems.
 dev-libs/hts_engine:speech-tools - use memory allocation/free functions of app-accessibility/speech-tools
-dev-lua/luarocks:openssl - 
 dev-vcs/mercurial:bugzilla - Support bugzilla integration.
 dev-vcs/mercurial:chg - Support Mercurial command server client
 dev-vcs/mercurial:gpg - Support signing with GnuPG.
