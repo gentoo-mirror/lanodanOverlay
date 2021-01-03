@@ -3,8 +3,6 @@
 
 EAPI=7
 
-inherit meson
-
 if [[ "${PV}" == "9999" ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://hacktivis.me/git/inaban.git"
