@@ -4,8 +4,6 @@ USE="
 	system-*
 "
 
-CURL_SSL="libressl -openssl"
-
 CFLAGS="-O2 -ggdb -fPIE -fPIC -fstack-protector-strong -pipe -march=native -mtune=native -Wno-conversion -Wsign-conversion -Wno-error=sign-conversion -Wformat -Wformat-security"
 LDFLAGS="-Wl,--as-needed -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now"
 OBJCCFLAGS="${CFLAGS}"
