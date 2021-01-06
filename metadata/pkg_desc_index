@@ -24,7 +24,7 @@ app-text/sshpaste 1.0.1 9999: wgetpaste clone for pushing to your own server
 dev-db/timescaledb 1.2.1 1.6.0: A time-series database optimized for fast ingest and complex queries
 dev-dotnet/dotnetcore-sdk 3.0.100: .NET Core cli utility for building, testing, packaging and running projects
 dev-dotnet/nuget 5.0.2: Nuget - .NET Package Manager
-dev-elixir/hex 0.20.1: 
+dev-elixir/hex 0.20.6: 
 dev-elixir/jose 1.8.4: JSON Object Signing and Encryption (JOSE) for Erlang and Elixir
 dev-elixir/linkify 9999: basic package for turning website names into links
 dev-elixir/mime 1.0.1: MIME type module for Elixir
@@ -61,13 +61,13 @@ dev-python/python-nbxmpp 0.6.10: Python library to use Jabber/XMPP networks in a
 dev-python/slixmpp 1.4.2 9999: Python 3 library for XMPP
 dev-tex/dot2tex 2.11.2: A Graphviz to LaTeX converter
 dev-util/bam 0.5.1: Fast and flexible Lua-based build system
-dev-util/glslang 8.13.3559: Khronos reference front-end for GLSL and ESSL, and sample SPIR-V generator
+dev-util/glslang 11.1.0: Khronos reference front-end for GLSL and ESSL, and sample SPIR-V generator
 dev-util/go-deblob 1.0.0: remove binary blobs from a directory
 dev-util/gtk-doc 1.32-r2: GTK+ Documentation Generator
 dev-util/gtk-doc-am 1.32: Virtual ebuild for ::gentoo compatibility
 dev-util/itstool 2.0.5: Translation tool for XML documents that uses gettext files and ITS rules
 dev-util/pmbootstrap 1.5.1: Sophisticated chroot/build/flash tool to develop and install postmarketOS.
-dev-util/rebar 3.11.1: Sophisticated build-tool for Erlang projects that follows OTP principles
+dev-util/rebar 3.14.2: Erlang build tool that makes it easy to compile and test Erlang applications and releases
 dev-util/xcd 1.2: A colorized hexdump tool
 dev-vcs/git-repair 1.20200102: repairs a damanged git repisitory
 dev-vcs/mercurial 5.0.2: Scalable distributed SCM
