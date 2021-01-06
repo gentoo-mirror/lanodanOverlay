@@ -5,10 +5,11 @@ EAPI=6
 
 inherit bash-completion-r1 rebar3
 
-DESCRIPTION="Sophisticated build-tool for Erlang projects that follows OTP principles"
+DESCRIPTION="Erlang build tool that makes it easy to compile and test Erlang applications and releases"
 HOMEPAGE="https://www.rebar3.org/"
 LICENSE="Apache-2.0"
-SRC_URI="https://github.com/erlang/rebar3/archive/3.11.1.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/erlang/rebar3/archive/${PV}.tar.gz -> ${P}.tar.gz"
+S="${WORKDIR}/${PN}3-${PV}"
 SLOT="3"
 KEYWORDS="~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
@@ -16,8 +17,6 @@ RESTRICT="network-sandbox"
 
 DEPEND="dev-lang/erlang"
 RDEPEND="${DEPEND}"
-
-S="${WORKDIR}/${PN}3-${PV}"
 
 src_compile() {
 	./bootstrap || die
