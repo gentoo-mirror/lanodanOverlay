@@ -33,4 +33,5 @@ src_install() {
 	doman manpages/rebar3.1
 	dodoc rebar.config.sample
 	dobashcomp priv/shell-completion/bash/rebar3
+	newenvd - 98rebar3 <<< 'REBAR3_CMD='${EPREFIX}'/usr/bin/rebar3'
 }
