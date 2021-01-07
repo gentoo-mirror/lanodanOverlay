@@ -1,4 +1,4 @@
-# Copyright 2019 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+# Copyright 2019-2021 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
 # @ECLASS: mix.eclass
@@ -28,6 +28,10 @@ EXPORT_FUNCTIONS src_prepare src_compile src_install
 
 RDEPEND="dev-lang/elixir"
 DEPEND="${RDEPEND}"
+
+# Erlang/Elixir software fails to build when another version with API 
+# differences is present
+BDEPEND="!<${CATEGORY}/${P} !>${CATEGORY}/${P}"
 
 # @ECLASS-VARIABLE: HEX_OFFLINE
 HEX_OFFLINE=1
