@@ -67,7 +67,7 @@ dev-util/gtk-doc 1.32-r2: GTK+ Documentation Generator
 dev-util/gtk-doc-am 1.32: Virtual ebuild for ::gentoo compatibility
 dev-util/itstool 2.0.5: Translation tool for XML documents that uses gettext files and ITS rules
 dev-util/pmbootstrap 1.5.1: Sophisticated chroot/build/flash tool to develop and install postmarketOS.
-dev-util/rebar 3.14.2: Erlang build tool that makes it easy to compile and test Erlang applications and releases
+dev-util/rebar 3.14.2-r1: Erlang build tool that makes it easy to compile and test Erlang applications and releases
 dev-util/xcd 1.2: A colorized hexdump tool
 dev-vcs/git-repair 1.20200102: repairs a damanged git repisitory
 dev-vcs/mercurial 5.0.2: Scalable distributed SCM
