@@ -1,5 +1,5 @@
 # Copyright 1999-2016 Gentoo Foundation
-# Copyright 2019 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+# Copyright 2019-2021 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
 # @ECLASS: rebar3.eclass
@@ -33,6 +33,10 @@ case "${EAPI:-0}" in
 esac
 
 EXPORT_FUNCTIONS src_prepare src_compile src_test src_install
+
+# Erlang/Elixir software fails to build when another version with API 
+# differences is present
+BDEPEND="!<${CATEGORY}/${P} !>${CATEGORY}/${P}"
 
 # @ECLASS-VARIABLE: REBAR3_DEPS
 # @DESCRIPTION:
