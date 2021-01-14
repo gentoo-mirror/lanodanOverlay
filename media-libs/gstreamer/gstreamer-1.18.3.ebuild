@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit bash-completion-r1 multilib-minimal pax-utils
+inherit gstreamer-meson bash-completion-r1 multilib-minimal pax-utils
 
 DESCRIPTION="Open source multimedia framework"
 HOMEPAGE="https://gstreamer.freedesktop.org/"
@@ -34,10 +34,6 @@ DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )
 "
 
-PATCHES=(
-	"${FILESDIR}"/${PN}-1.14.5-make43.patch # remove when bumping and switching to Meson
-)
-
 src_configure() {
 	if [[ ${CHOST} == *-interix* ]] ; then
 		export ac_cv_lib_dl_dladdr=no
@@ -59,47 +55,32 @@ multilib_src_configure() {
 	# helpers from there.
 	# Disable static archives and examples to speed up build time
 	# Disable debug, as it only affects -g passing (debugging symbols), this must done through make.conf in gentoo
-	local myconf=(
-		--libexecdir="${EPREFIX}"/usr/$(get_libdir)
-		--disable-benchmarks
-		--disable-debug
-		--disable-examples
-		--disable-static
-		--disable-valgrind
-		--enable-check
-		$(use_with unwind)
-		$(use_with unwind dw)
-		$(multilib_native_use_enable introspection)
-		$(use_enable nls)
-		$(use_enable test tests)
-		--with-bash-completion-dir="${completiondir%/*}"
-		--with-package-name="GStreamer ebuild for Gentoo"
-		--with-package-origin="https://packages.gentoo.org/package/media-libs/gstreamer"
+	local emesonargs=(
+		-Dbenchmarks=enabled
+		-Dgst_debug=false
+		-Dcheck=enabled
+		$(meson_feature unwind libunwind)
+		$(meson_feature unwind libdw)
+		$(meson_feature test tests)
 	)
+	#	-Dintrospection=$(multilib_native_usex introspection)
 
 	if use caps ; then
-		myconf+=( --with-ptp-helper-permissions=capabilities )
+		emesonargs+=( -Dptp-helper-permissions=capabilities )
 	else
-		myconf+=(
-			--with-ptp-helper-permissions=setuid-root
-			--with-ptp-helper-setuid-user=nobody
-			--with-ptp-helper-setuid-group=nobody
+		emesonargs+=(
+			-Dptp-helper-permissions=setuid-root
+			-Dptp-helper-setuid-user=nobody
+			-Dptp-helper-setuid-group=nobody
 		)
 	fi
 
-	ECONF_SOURCE="${S}" econf "${myconf[@]}"
-
-	if multilib_is_native_abi; then
-		local x
-		for x in gst libs plugins; do
-			ln -s "${S}"/docs/${x}/html docs/${x}/html || die
-		done
-	fi
+	meson_src_configure
 }
 
 multilib_src_install() {
 	# can't do "default", we want to install docs in multilib_src_install_all
-	emake DESTDIR="${D}" install
+	DESTDIR="${D}" eninja install
 
 	# Needed for orc-using gst plugins on hardened/PaX systems, bug #421579
 	use orc && pax-mark -m "${ED}usr/$(get_libdir)/gstreamer-${SLOT}/gst-plugin-scanner"
