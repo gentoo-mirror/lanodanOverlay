@@ -12,7 +12,6 @@ app-editors/2f30-ed 9999: simple ed
 app-editors/vim 1.24: Vi IMitation
 app-emulation/wine-proton 9999: Free implementation of Windows(tm) on Unix, with a bit of extra spice
 app-i18n/unicode-data 13.0.0: Unicode data from unicode.org
-app-misc/anki 2.1.8: A spaced-repetition memory training program (flash cards)
 app-misc/binwalk 2.1.1-r2: A tool for identifying files embedded inside firmware images
 app-misc/kanatest 0.4.8: Visual flashcard tool for memorizing the Japanese Hiragana and Katakana alphabet
 app-shells/mksh 57-r2 9999: MirBSD Korn Shell
@@ -57,7 +56,6 @@ dev-python/misaka 2.1.1: CFFI binding for Hoedown, a markdown parsing library
 dev-python/mkdocs 1.0.4 1.1: Project documentation with Markdown.
 dev-python/pycrypto 9999: Fake ebuild to mask pycrypto in a overlay
 dev-python/pygame_sdl2 7.3.5: Reimplementation of portions of the pygame API using SDL2
-dev-python/python-nbxmpp 0.6.10: Python library to use Jabber/XMPP networks in a non-blocking way
 dev-python/slixmpp 1.4.2 9999: Python 3 library for XMPP
 dev-tex/dot2tex 2.11.2: A Graphviz to LaTeX converter
 dev-util/bam 0.5.1: Fast and flexible Lua-based build system
@@ -66,7 +64,6 @@ dev-util/go-deblob 1.0.0: remove binary blobs from a directory
 dev-util/gtk-doc 1.32-r2: GTK+ Documentation Generator
 dev-util/gtk-doc-am 1.32: Virtual ebuild for ::gentoo compatibility
 dev-util/itstool 2.0.5: Translation tool for XML documents that uses gettext files and ITS rules
-dev-util/pmbootstrap 1.5.1: Sophisticated chroot/build/flash tool to develop and install postmarketOS.
 dev-util/rebar 3.14.2-r1: Erlang build tool that makes it easy to compile and test Erlang applications and releases
 dev-util/xcd 1.2: A colorized hexdump tool
 dev-vcs/git-repair 1.20200102: repairs a damanged git repisitory
@@ -168,9 +165,7 @@ net-libs/serf 1.3.9: HTTP client library
 net-libs/webkit-gtk 2.30.4: Open source web browser engine
 net-libs/wpewebkit 2.28.0 2.28.1: WebKit port optimized for embedded devices
 net-mail/public-inbox 1.0.0: 
-net-misc/cjdns 20.2: encrypted IPv6 using public-key cryptography for allocation and DHT for routing
 net-misc/drawterm 9999: connect to Plan 9 CPU servers from other operating systems
-net-misc/fbxosctrl 2.3.2: Shell tool to control some Freebox OS stuff: wifi, reboot...
 net-misc/geomyidae 0.31.1: A small C-based gopherd.
 net-misc/neatvnc 9999: liberally licensed VNC server library that's intended to be fast and neat
 net-misc/openntpd 6.0_p1: Lightweight NTP server ported from OpenBSD
@@ -196,7 +191,6 @@ sys-libs/zlib 1.2.8.2015.12.26: Standard (de)compression library (Sortix's libz 
 virtual/editor 0-r1: Virtual for editor
 virtual/man 9: Virtual for man
 www-apps/pleroma 1.0.2 9999: Microblogging software federating over OStatus and ActivityPub
-www-apps/searx 0.15.0: Decentralized and privacy-respecting, hackable metasearch engine
 www-apps/stagit 0.9.4: static git page generator
 www-client/lariza 18.07: simple web browser using GTK+ 3, GLib and WebKit2GTK+
 www-plugins/decentraleyes 2.0.10: Local CDN Emulation
