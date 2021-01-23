@@ -9,5 +9,5 @@ RDEPEND=dev-lang/erlang
 RESTRICT=network-sandbox
 SLOT=3
 SRC_URI=https://github.com/erlang/rebar3/archive/3.14.2.tar.gz -> rebar-3.14.2.tar.gz
-_eclasses_=bash-completion-r1	be99724bde4274de21e581204e9d164a	multilib	d410501a125f99ffb560b0c523cd3d1e	rebar3	9ff4060d9ef134fa70065def0af095d4	toolchain-funcs	1a94dc06d324bd0dab754e11abe6d27e
+_eclasses_=bash-completion-r1	be99724bde4274de21e581204e9d164a	multilib	d410501a125f99ffb560b0c523cd3d1e	rebar3	9ff4060d9ef134fa70065def0af095d4	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
 _md5_=a13005ab9fcb0d7b30a16c3056b15024
