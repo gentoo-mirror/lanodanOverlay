@@ -1,10 +1,10 @@
 # Copyright 1999-2015 Gentoo Foundation
-# Copyright 2019 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+# Copyright 2019-2021 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=( python3_{7,8,9} )
 
 inherit python-any-r1 scons-utils
 

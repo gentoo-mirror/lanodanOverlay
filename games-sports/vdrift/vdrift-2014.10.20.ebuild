@@ -1,10 +1,10 @@
 # Copyright 1999-2015 Gentoo Foundation
-# Copyright 2019 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+# Copyright 2019-2021 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=( python3_{7,8,9} )
 
 inherit python-any-r1 scons-utils
 
@@ -32,8 +32,7 @@ DEPEND="${RDEPEND}"
 
 PATCHES=(
 	"${FILESDIR}/${P}-gcc6.patch"
-	"${FILESDIR}/${P}-sconscript.patch"
-	"${FILESDIR}/${P}-sconstruct.patch"
+	"${FILESDIR}/${P}-scons-python3.patch"
 )
 
 src_configure() {
