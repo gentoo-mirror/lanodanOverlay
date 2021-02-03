@@ -28,8 +28,6 @@ app-emulation/wine-proton:sdl - Add support for gamepad detection using SDL
 app-emulation/wine-proton:udev - Use virtual/libudev to provide plug and play support
 app-emulation/wine-proton:vkd3d - Use app-emulation/vkd3d to provide Direct3D 12 support
 app-emulation/wine-proton:vulkan - Enable Vulkan drivers
-app-misc/anki:recording - Enable support for audio recording
-app-misc/anki:sound - Enable support for adding sound to cards
 app-misc/binwalk:graph - Enable support for generating entropy graphs
 app-misc/binwalk:jffs2 - Enable support for JFFS2 filesystem
 app-misc/binwalk:squashfs - Enable support for squashfs filesystem
