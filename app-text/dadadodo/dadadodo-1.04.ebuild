@@ -10,3 +10,8 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 DOCS=( "dodotodo" "README" )
+
+src_install() {
+	einstalldocs
+	dobin dadadodo
+}
