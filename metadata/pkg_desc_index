@@ -15,6 +15,7 @@ app-i18n/unicode-data 13.0.0: Unicode data from unicode.org
 app-misc/kanatest 0.4.8: Visual flashcard tool for memorizing the Japanese Hiragana and Katakana alphabet
 app-shells/mksh 57-r2 9999: MirBSD Korn Shell
 app-text/base91 2.0.0: A Base91 Encoder & Decoder for Haskell
+app-text/dadadodo 1.04: Analyse texts for word probabilities and generate random sentences
 app-text/evince 3.34.2: Simple document viewer for GNOME
 app-text/hoedown 3.0.7 9999: Standards compliant, fast, secure markdown processing library in C
 app-text/mandoc 1.14.5-r1: Suite of tools compiling mdoc and man
