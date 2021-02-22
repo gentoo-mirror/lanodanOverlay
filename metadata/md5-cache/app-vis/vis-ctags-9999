@@ -1,0 +1,11 @@
+BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=install unpack
+DESCRIPTION=vis plugin to provide basic ctags support
+EAPI=7
+HOMEPAGE=https://github.com/kupospelov/vis-ctags
+LICENSE=MIT
+PROPERTIES=live
+RDEPEND=dev-util/ctags >=app-editors/vis-0.7[lua]
+SLOT=0
+_eclasses_=git-r3	3e7ec3d6619213460c85e2aa48398441
+_md5_=61042a4ed8f811689c978e8e40518afe
