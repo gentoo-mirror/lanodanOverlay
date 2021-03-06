@@ -1,9 +1,9 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
 
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=( python3_{7,8,9} )
 
 inherit autotools eutils multilib python-single-r1 toolchain-funcs
 
@@ -15,7 +15,7 @@ SRC_URI="https://ftp.isc.org/isc/inn/${P}.tar.gz"
 LICENSE="ISC GPL-2+ public-domain BSD-4 BSD-2 RSA BSD MIT GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="berkdb innkeywords inntaggedhash ipv6 kerberos perl python sasl libressl ssl"
+IUSE="berkdb innkeywords inntaggedhash ipv6 kerberos perl python sasl ssl"
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
 DEPEND="
@@ -25,10 +25,7 @@ DEPEND="
 	sys-libs/zlib
 	kerberos? ( virtual/krb5 )
 	sasl? ( >=dev-libs/cyrus-sasl-2 )
-	ssl? (
-		!libressl? ( dev-libs/openssl:0= )
-		libressl? ( dev-libs/libressl:= )
-	)
+	ssl? ( dev-libs/openssl:0= )
 	python? ( ${PYTHON_DEPS} )
 	berkdb? ( sys-libs/db:* )
 "
@@ -39,7 +36,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}/inn-2.6.2_LibreSSL_OpenSSL_1.1.0_ifdef.patch"
 	default
 }
 
@@ -62,6 +58,7 @@ src_configure() {
 		--with-gnu-ld \
 		--enable-setgid-inews \
 		--enable-uucp-rnews \
+		--with-sendmail=/usr/sbin/sendmail \
 		$(use_with perl) \
 		$(use_with python) \
 		$(use_with sasl) \
