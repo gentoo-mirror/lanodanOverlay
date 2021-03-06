@@ -104,11 +104,12 @@ RDEPEND="
 "
 unset wpe_depend
 
+BDEPEND="${RUBY_DEPS}"
+
 # paxctl needed for bug #407085
 # Need real bison, not yacc
 DEPEND="${RDEPEND}
 	${PYTHON_DEPS}
-	${RUBY_DEPS}
 	dev-util/glib-utils
 	>=dev-util/gtk-doc-am-1.10
 	>=dev-util/gperf-3.0.1
