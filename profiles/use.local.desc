@@ -28,9 +28,6 @@ app-emulation/wine-proton:sdl - Add support for gamepad detection using SDL
 app-emulation/wine-proton:udev - Use virtual/libudev to provide plug and play support
 app-emulation/wine-proton:vkd3d - Use app-emulation/vkd3d to provide Direct3D 12 support
 app-emulation/wine-proton:vulkan - Enable Vulkan drivers
-app-misc/binwalk:graph - Enable support for generating entropy graphs
-app-misc/binwalk:jffs2 - Enable support for JFFS2 filesystem
-app-misc/binwalk:squashfs - Enable support for squashfs filesystem
 app-shells/mksh:lksh - Builds the POSIX-Compliant arithmetics (host’s long) variant
 app-text/evince:dvi - Enable the built-in DVI viewer
 app-text/evince:nautilus - Enable property page extension in gnome-base/nautilus
@@ -38,11 +35,6 @@ app-text/evince:postscript - Enable support for PostScript and Adobe Illustrator
 app-text/evince:spell - Enable inline spell check for annotations via app-text/gspell
 app-text/evince:t1lib - Enable the Type-1 fonts for the built-in DVI viewer (media-libs/t1lib)
 app-text/evince:xps - Enable XPS viewer using app-text/libgxps
-dev-lang/erlang:compat-ethread - Enable compatibility with pre-pentium 4 CPUs in the ethread library.
-dev-lang/erlang:dirty-schedulers - Enable dirty schedulers
-dev-lang/erlang:hipe - HIgh Performance Erlang extension
-dev-lang/erlang:kpoll - Enable kernel polling support
-dev-lang/erlang:pgo - Build erts with profile-guided optimizations
 dev-lang/mono:pax_kernel - Enable if the user plans to run the package under a pax enabled hardened kernel
 dev-lang/mono:xen - Make mono generate code that is considerably faster on xen VMs but slightly slower on for normal systems.
 dev-libs/hts_engine:speech-tools - use memory allocation/free functions of app-accessibility/speech-tools

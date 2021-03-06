@@ -41,7 +41,6 @@ dev-haskell/hsroots 9999: Haskell bindings for libxkbcommon
 dev-haskell/libinput 9999: Haskell bindings for libinput
 dev-haskell/waymonad-scanner 9999: Haskell bindings for libxkbcommon
 dev-haskell/xkbcommon 0.0.3 9999: Haskell bindings for libxkbcommon (Waymonad)
-dev-lang/erlang 22.1: Erlang programming language, runtime environment and libraries (OTP)
 dev-lang/go 0.20171003: Boostrap Go from C (useful for musl libc)
 dev-lang/mono 6.4.0.198: Mono runtime and class libraries, a C# compiler/interpreter
 dev-libs/aml 9999: Another Main Loop
@@ -50,6 +49,7 @@ dev-libs/libdazzle 3.34.1: Experimental new features for GTK+ and GLib
 dev-libs/libtomcrypt 1.18.2: modular and portable cryptographic toolkit
 dev-libs/libvterm 1.3.4_pre769: An abstract library implementation of a VT220/xterm/ECMA-48 terminal emulator
 dev-libs/socket99 0.2.2: Wrapper library for the BSD sockets API with a nicer C99 interface
+dev-python/firmtool 1.4: Parses, extracts, and builds 3DS firmware files
 dev-python/flask-misaka 1.0.0: Flask interface to Misaka, a markdown parsing library
 dev-python/livereload 2.6.1: Python LiveReload is an awesome tool for web developers
 dev-python/misaka 2.1.1: CFFI binding for Hoedown, a markdown parsing library
@@ -163,6 +163,7 @@ net-libs/webkit-gtk 2.30.4 2.31.1: Open source web browser engine
 net-libs/wpewebkit 2.28.0 2.28.1: WebKit port optimized for embedded devices
 net-mail/public-inbox 1.0.0: 
 net-misc/drawterm 9999: connect to Plan 9 CPU servers from other operating systems
+net-misc/fbxosctrl 2.4.4: Shell tool to control some Freebox OS stuff: wifi, reboot...
 net-misc/geomyidae 0.31.1: A small C-based gopherd.
 net-misc/neatvnc 9999: liberally licensed VNC server library that's intended to be fast and neat
 net-misc/openntpd 6.0_p1: Lightweight NTP server ported from OpenBSD
@@ -170,6 +171,7 @@ net-misc/pussh 9999: Parallel SSH, batch and command line oriented
 net-misc/streamlink 1.5.0: CLI for extracting streams from websites to a video player of your choice
 net-misc/tinyssh 20181206 20190101: A small SSH server with state-of-the-art cryptography
 net-misc/yacy 1.922.20191013.9964: YaCy - p2p based distributed web-search engine
+net-nntp/inn 2.6.4: The Internet News daemon, fully featured NNTP server
 net-nntp/suck 4.3.4: Grab news from a remote NNTP server and feed them to another
 net-p2p/gnunet 0.11.0_pre66: GNUnet is a framework for secure peer-to-peer networking.
 net-p2p/stig 0.10.1a: TUI and CLI for the BitTorrent client Transmission
