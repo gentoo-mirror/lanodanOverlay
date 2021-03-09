@@ -1,9 +1,0 @@
-DEFINED_PHASES=install unpack
-DESCRIPTION=Local CDN Emulation
-EAPI=7
-HOMEPAGE=https://decentraleyes.org/
-KEYWORDS=~amd64 ~x86
-LICENSE=GPL-2
-SLOT=0
-SRC_URI=https://addons.mozilla.org/firefox/downloads/file/1705979/decentraleyes-2.0.10-an+fx.xpi
-_md5_=cda84c34f3cb2a2fd9723f3ad3a1bdb4

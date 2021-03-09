@@ -191,11 +191,6 @@ virtual/man 9: Virtual for man
 www-apps/pleroma 1.0.2 9999: Microblogging software federating over OStatus and ActivityPub
 www-apps/stagit 0.9.4: static git page generator
 www-client/lariza 18.07: simple web browser using GTK+ 3, GLib and WebKit2GTK+
-www-plugins/decentraleyes 2.0.10: Local CDN Emulation
-www-plugins/firefox-user-js 9999: Firefox configuration hardening
-www-plugins/lightspark 0.8.3: High performance flash player
-www-plugins/ublock 1.19.6: An efficient blocker for Chromium and Firefox. Fast and lean
-www-plugins/umatrix 1.3.16: Point and click matrix to filter net requests according to source, destination and type
 x11-libs/gtk+ 3.24.26 3.98.5: Gimp ToolKit +
 x11-misc/gtk3-nocsd 9999: A hack to disable gtk3 client-side decorations
 x11-misc/keynav 9999: Make pointer-driven interfaces easier and faster for users to operate
