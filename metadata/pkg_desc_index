@@ -101,7 +101,7 @@ media-fonts/unifont 13.0.03: GNU Unifont - a Pan-Unicode X11 bitmap iso10646 fon
 media-gfx/dustr 9999: light and interactive tool your crops need
 media-gfx/opentoonz 1.2.0: An open-source full-featured 2D animation creation software
 media-libs/cglm 0.7.9: OpenGL Mathematics (glm) for C
-media-libs/freeglut 3.2.1: A free OpenGL utility toolkit, the open-sourced alternative to the GLUT library
+media-libs/freeglut 3.2.1-r1: A free OpenGL utility toolkit, the open-sourced alternative to the GLUT library
 media-libs/gst-plugins-bad 1.18.3: Less plugins for GStreamer
 media-libs/gst-plugins-base 1.18.3: Basepack of plugins for gstreamer
 media-libs/gst-plugins-good 1.18.3: Basepack of plugins for GStreamer
