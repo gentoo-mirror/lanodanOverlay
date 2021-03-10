@@ -13,6 +13,6 @@
 		<remote-id type="sourceforge">freeglut</remote-id>
 	</upstream>
 	<use>
-		<flag name="wayland-only">Link to wayland &amp; EGL+GLES instead of libX11 &amp; GL/GLX</flag>
+		<flag name="wayland-only">Build wayland version instead of X11 version</flag>
 	</use>
 </pkgmetadata>
