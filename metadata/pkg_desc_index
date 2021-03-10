@@ -87,7 +87,6 @@ gui-apps/wayvnc 9999: VNC server for wlroots based Wayland compositors
 gui-libs/libwpe 1.6.0: WebKit port optimized for embedded devices
 gui-libs/wlrobs 9999: Wayland (wlroots-based) screen capture plugin for obs-studio
 gui-libs/wpebackend-fdo 1.4.2 1.6.0: FreeDesktop.Org backend for WPE WebKit
-gui-wm/cage 0.1.1 9999: Wayland Kiosk
 gui-wm/inaban 9999: Distrustful Tiling Wayland Compositor
 gui-wm/waymonad 9999: wayland compositor based on ideas from and inspired by xmonad
 gui-wm/wio 9999: Wayland Kiosk
