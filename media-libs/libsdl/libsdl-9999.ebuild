@@ -26,7 +26,9 @@ src_unpack() {
 src_prepare() {
 	cmake_src_prepare
 
-	mv "${WORKDIR}/SDL-1.2.15/include" "${WORKDIR}/SDL" || die
+	mkdir -p "${WORKDIR}/SDL" || die
+	mv "${WORKDIR}/SDL-1.2.15/include/"*.h "${WORKDIR}/SDL" || die
+	mv "${WORKDIR}/SDL-1.2.15/include/SDL_config.h.default" "${WORKDIR}/SDL/SDL_config.h" || die
 
 	sed \
 		-e "s;@prefix@;${EROOT}/usr;" \
