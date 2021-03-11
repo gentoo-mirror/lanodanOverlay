@@ -38,10 +38,11 @@ src_install() {
 
 	dolib.so "${BUILD_DIR}/"libSDL-1.2.so*
 
+	dobin "${FILESDIR}/sdl-config"
+
 	doheader -r "${WORKDIR}/SDL"
 
 	mkdir -p "${ED}/usr/lib/pkgconfig"
-
 	sed \
 		-e "s;@prefix@;${EROOT}/usr;" \
 		"${FILESDIR}/sdl.pc.in" > "${ED}/usr/lib/pkgconfig/sdl.pc" || die
