@@ -1,9 +1,9 @@
 #!/bin/sh
 
-prefix=/usr
+prefix=@prefix@
 exec_prefix=${prefix}
 exec_prefix_set=no
-libdir=/usr/lib
+libdir=@libdir@
 
 usage="\
 Usage: sdl-config [--prefix[=DIR]] [--exec-prefix[=DIR]] [--version] [--cflags] [--libs]"
@@ -39,7 +39,7 @@ while test $# -gt 0; do
       echo $exec_prefix
       ;;
     --version)
-      echo 1.2.15
+      echo 1.2.99
       ;;
     --cflags)
       echo -I${prefix}/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT

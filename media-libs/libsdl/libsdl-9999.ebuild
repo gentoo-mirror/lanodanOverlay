@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-inherit git-r3 cmake
+inherit git-r3 cmake multilib
 
 DESCRIPTION="Simple Direct Media Layer (sdl-1.2 compatibility)"
 HOMEPAGE="https://github.com/libsdl-org/sdl12-compat"
@@ -28,6 +28,16 @@ src_prepare() {
 
 	mv "${WORKDIR}/SDL-1.2.15/include" "${WORKDIR}/SDL" || die
 
+	sed \
+		-e "s;@prefix@;${EROOT}/usr;" \
+		-e 's;@libdir@;${prefix}/'"$(get_libdir);" \
+		"${FILESDIR}/sdl-config" > "${WORKDIR}/sdl-config" || die
+
+	sed \
+		-e "s;@prefix@;${EROOT}/usr;" \
+		-e 's;@libdir@;${prefix}/'"$(get_libdir);" \
+		"${FILESDIR}/sdl.pc.in" > "${WORKDIR}/sdl.pc" || die
+
 	sed -i \
 		-e 's;test_program(testsprite;#test_program(testsprite;' \
 		CMakeLists.txt || die
@@ -42,8 +52,6 @@ src_install() {
 
 	doheader -r "${WORKDIR}/SDL"
 
-	mkdir -p "${ED}/usr/lib/pkgconfig"
-	sed \
-		-e "s;@prefix@;${EROOT}/usr;" \
-		"${FILESDIR}/sdl.pc.in" > "${ED}/usr/lib/pkgconfig/sdl.pc" || die
+	mkdir -p "${ED}/usr/$(get_libdir)/pkgconfig"
+	cp "${WORKDIR}/sdl.pc" "${ED}/usr/$(get_libdir)/pkgconfig/sdl.pc"
 }

@@ -2,12 +2,12 @@
 
 prefix=@prefix@
 exec_prefix=${prefix}
-libdir=${prefix}/lib
+libdir=@libdir@
 includedir=${prefix}/include
 
 Name: sdl
 Description: Simple DirectMedia Layer is a cross-platform multimedia library designed to provide low level access to audio, keyboard, mouse, joystick, 3D hardware via OpenGL, and 2D video framebuffer.
-Version: 1.2.9999
+Version: 1.2.99
 Requires: sdl2
 Conflicts:
 Libs: -L${libdir} -lSDL
