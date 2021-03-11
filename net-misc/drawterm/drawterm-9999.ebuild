@@ -23,4 +23,5 @@ src_compile() {
 
 src_install() {
 	dobin drawterm
+	doman drawterm.1
 }
