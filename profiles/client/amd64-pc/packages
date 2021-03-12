@@ -8,10 +8,8 @@ media-fonts/roboto
 media-fonts/source-pro
 media-fonts/unifont
 media-fonts/vlgothic
-media-gfx/feh
+media-gfx/imv
 media-video/mpv
 net-misc/bsdwhois
 net-vpn/iodine
-x11-apps/xev
-x11-misc/redshift
-x11-terms/st
+x11-terms/svte
