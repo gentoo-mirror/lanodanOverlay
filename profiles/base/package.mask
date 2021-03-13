@@ -5,11 +5,6 @@ dev-python/pycrypto
 # =media-gfx/exiv2-0.26_p20180319 -> broken compilation
 media-gfx/exiv2
 
-# Haelwenn (lanodan) Monnier <contact@hacktivis.me> 2018-11-14
-# libutf8proc is undocumented dependency
-# fails to build with a OpenSSL-like error in stable (1.9.7-r1)
-dev-vcs/subversion
-
 # Haelwenn (lanodan) Monnier <contact@hacktivis.me> 2018-12-27
 # Bloated, quite insecure (too much trust in other apps, more than paging)
 # alternative can be sys-apps/most, see virtual/pager for others
