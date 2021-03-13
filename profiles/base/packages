@@ -1,4 +1,5 @@
 -*sys-apps/less
+-*app-arch/tar
 app-admin/rsyslog
 app-crypt/gentoo-keys
 app-editors/vis
