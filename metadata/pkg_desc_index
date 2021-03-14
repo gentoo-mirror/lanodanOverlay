@@ -107,6 +107,7 @@ media-libs/gst-plugins-base 1.18.3: Basepack of plugins for gstreamer
 media-libs/gst-plugins-good 1.18.3: Basepack of plugins for GStreamer
 media-libs/gst-plugins-ugly 1.18.3: Basepack of plugins for gstreamer
 media-libs/gstreamer 1.18.3: Open source multimedia framework
+media-libs/libplacebo 3.104.0: Reusable library for GPU-accelerated image processing primitives
 media-libs/libsdl 9999: Simple Direct Media Layer (sdl-1.2 compatibility)
 media-libs/libsidplay 2.1.1-r5: C64 SID player library
 media-libs/monado 9999: The open source OpenXR runtime.
@@ -190,7 +191,7 @@ virtual/man 9: Virtual for man
 www-apps/pleroma 1.0.2 9999: Microblogging software federating over OStatus and ActivityPub
 www-apps/stagit 0.9.4: static git page generator
 www-client/lariza 18.07: simple web browser using GTK+ 3, GLib and WebKit2GTK+
-x11-libs/gtk+ 3.24.26 3.98.5: Gimp ToolKit +
+x11-libs/gtk+ 3.24.27 4.0.1: Gimp ToolKit +
 x11-misc/gtk3-nocsd 9999: A hack to disable gtk3 client-side decorations
 x11-misc/keynav 9999: Make pointer-driven interfaces easier and faster for users to operate
 x11-misc/qarma 9999: Zenity Clone for Qt5 (lanodan's branch)
