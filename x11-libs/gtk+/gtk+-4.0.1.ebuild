@@ -33,7 +33,7 @@ BDEPEND="
 
 # gstreamer-player-1.0.pc => media-libs/gst-plugins-bad
 DEPEND="
-	>=dev-libs/glib-2.63.1:2[${MULTILIB_USEDEP}]
+	>=dev-libs/glib-2.66.0:2[${MULTILIB_USEDEP}]
 	>=x11-libs/pango-1.45.0[introspection?,${MULTILIB_USEDEP}]
 	>=dev-libs/fribidi-0.19.7[${MULTILIB_USEDEP}]
 	>=dev-libs/atk-2.15.1[introspection?,${MULTILIB_USEDEP}]
@@ -92,14 +92,14 @@ multilib_src_configure() {
 		$(meson_use wayland wayland-backend)
 		$(meson_use broadway broadway-backend)
 
-		-Dvulkan=$(usex vulkan)
-		-Dxinerama=$(usex xinerama)
-		$(meson_use cloudproviders)
+		$(meson_feature vulkan)
+		$(meson_feature xinerama)
+		$(meson_feature cloudproviders)
 		$(meson_use profiler)
 		$(meson_use tracker3)
 
 		-Dprint-backends=file,lpr$(usex cups ,cups '')$(usex cloudprint ,cloudprint '')
-		-Dcolord=$(usex colord)
+		$(meson_feature colord)
 	)
 
 	if use ffmpeg && use gstreamer; then
