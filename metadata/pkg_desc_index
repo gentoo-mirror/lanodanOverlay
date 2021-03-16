@@ -73,7 +73,6 @@ games-arcade/tinymania 9999: A VSRG clone for playing .osu files.
 games-board/cockatrice 2.7.2: An open-source multiplatform software for playing card games over a network
 games-emulation/reicast 8.1: A Dreamcast Emulator
 games-engines/devilutionx 1.0.0 9999: Diablo build for modern operating systems
-games-engines/love 0.7.2-r1 0.8.0 0.10.2 9999: A framework for 2D games in Lua
 games-engines/nxengine-evo 2.6.3: rewrite of the jump-and-run platformer Doukutsu Monogatari(Cave Story)
 games-engines/openmw 0.44.0: Open source reimplementation of TES III: Morrowind
 games-engines/solarus 1.5.3: An open-source Zelda-like 2D game engine
