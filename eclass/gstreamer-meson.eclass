@@ -115,11 +115,11 @@ S="${WORKDIR}/${GST_ORG_MODULE}-${PV}"
 
 RDEPEND="
 	>=dev-libs/glib-2.40.0:2[${MULTILIB_USEDEP}]
-	>=media-libs/gstreamer-${GST_MIN_PV}:${SLOT}[${MULTILIB_USEDEP},test?]
+	>=media-libs/gstreamer-${GST_MIN_PV}:${SLOT}[${MULTILIB_USEDEP}]
 "
 BDEPEND="
 	>=sys-apps/sed-4
-	>=virtual/pkgconfig-0-r1[${MULTILIB_USEDEP}]
+	virtual/pkgconfig
 "
 
 # Export common multilib phases.
@@ -138,7 +138,10 @@ if [[ ${PN} != ${GST_ORG_MODULE} ]]; then
 else
 	IUSE="nls test"
 	RESTRICT="!test? ( test )"
-	BDEPEND="${DEPEND} nls? ( >=sys-devel/gettext-0.17 )"
+	BDEPEND="${DEPEND}
+		nls? ( >=sys-devel/gettext-0.17 )
+		test? ( media-libs/gstreamer[test] )
+	"
 
 	multilib_src_compile() { eninja; }
 	multilib_src_test() { eninja test; }
