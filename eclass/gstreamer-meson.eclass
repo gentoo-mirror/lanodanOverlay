@@ -300,8 +300,7 @@ gstreamer_multilib_src_install() {
 
 # @FUNCTION: gstreamer_multilib_src_install_all
 # @DESCRIPTION:
-# Installs documentation for requested gstreamer plugin, and removes .la
-# files.
+# Installs documentation for requested gstreamer plugin
 gstreamer_multilib_src_install_all() {
 	local plugin_dir
 
@@ -309,6 +308,4 @@ gstreamer_multilib_src_install_all() {
 		local dir=$(gstreamer_get_plugin_dir ${plugin_dir})
 		[[ -e ${dir}/README ]] && dodoc "${dir}"/README
 	done
-
-	prune_libtool_files --modules
 }
