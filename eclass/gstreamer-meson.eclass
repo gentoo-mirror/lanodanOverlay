@@ -70,8 +70,9 @@ esac
 
 # @ECLASS-VARIABLE: GST_PLUGINS_BUILD_DIR
 # @DESCRIPTION:
-# Actual build directory of the plugin.
+# Actual build directories of the plugins.
 # Most often the same as the configure switch name.
+# FIXME: Change into a bash array
 : ${GST_PLUGINS_BUILD_DIR:=${PN/gst-plugins-/}}
 
 # @ECLASS-VARIABLE: GST_TARBALL_SUFFIX
@@ -120,6 +121,7 @@ RDEPEND="
 BDEPEND="
 	>=sys-apps/sed-4
 	virtual/pkgconfig
+	virtual/perl-JSON-PP
 "
 
 # Export common multilib phases.
@@ -174,10 +176,10 @@ gstreamer_get_plugin_dir() {
 			ewarn "No such plugin directory"
 			die
 		fi
-		einfo "Building system plugin in ${build_dir}..." >&2
+		einfo "Got system plugin in ${build_dir}..." >&2
 		echo sys/${build_dir}
 	else
-		einfo "Building external plugin in ${build_dir}..." >&2
+		einfo "Got external plugin in ${build_dir}..." >&2
 		echo ext/${build_dir}
 	fi
 }
@@ -237,26 +239,36 @@ gstreamer_multilib_src_configure() {
 # @FUNCTION: _gstreamer_get_target_filename
 # @INTERNAL
 # @DESCRIPTION:
-# Extracts build and target filenames from meson-data for given submatch
+# Looks for first argument being present as a substring in install targets
+# Got ported from python to perl for greater language-stability
 _gstreamer_get_target_filename() {
-	cat >"${WORKDIR}/_gstreamer_get_target_filename.py" <<"EOF"
-import json
-import sys
+	cat >"${WORKDIR}/_gstreamer_get_target_filename.pl" <<"EOF"
+#!/usr/bin/env perl
+use strict;
+use utf8;
+use JSON::PP;
 
-with open("meson-info/intro-targets.json", "r") as targets_file:
-	data = json.load(targets_file)
+open(my $targets_file, '<:encoding(UTF-8)', 'meson-info/intro-targets.json') || die $!;
+my $data = decode_json <$targets_file>;
+close($targets_file) || die $!;
 
-for i in range(len(data)):
-	target = data[i]
-	if target['installed']:
-		if sys.argv[1] in target['filename'][0]:
-			print(target['filename'][0] + ':' + target['install_filename'][0])
+if(!$ARGV[0]) {
+	die "Requires a target as argument";
+}
+
+foreach my $target (@{$data}) {
+	if($target->{'installed'}
+		and (index($target->{'filename'}[0], $ARGV[0]) != -1)
+	) {
+		printf "%s:%s\n", $target->{'filename'}[0], $target->{'install_filename'}[0];
+	}
+}
 EOF
 
-	chmod +x "${WORKDIR}/_gstreamer_get_target_filename.py" || die
+	chmod +x "${WORKDIR}/_gstreamer_get_target_filename.pl" || die
 
-	${EPYTHON} "${WORKDIR}/_gstreamer_get_target_filename.py" $@ \
-		|| die "Failed to extract target filenames from meson-data"
+	perl "${WORKDIR}/_gstreamer_get_target_filename.pl" $@ \
+		|| die "Failed to extract target filenames from meson-info"
 }
 
 # @FUNCTION: gstreamer_multilib_src_compile
@@ -265,7 +277,7 @@ EOF
 gstreamer_multilib_src_compile() {
 	local plugin_dir plugin
 
-	for plugin_dir in "${GST_PLUGINS_BUILD_DIR}" ; do
+	for plugin_dir in ${GST_PLUGINS_BUILD_DIR} ; do
 		plugin=$(_gstreamer_get_target_filename $(gstreamer_get_plugin_dir ${plugin_dir}))
 		plugin_path="${plugin%%:*}"
 		eninja "${plugin_path/"${BUILD_DIR}/"}"
@@ -289,8 +301,7 @@ gstreamer_multilib_src_install() {
 
 # @FUNCTION: gstreamer_multilib_src_install_all
 # @DESCRIPTION:
-# Installs documentation for requested gstreamer plugin, and removes .la
-# files.
+# Installs documentation for requested gstreamer plugin
 gstreamer_multilib_src_install_all() {
 	local plugin_dir
 
@@ -298,6 +309,4 @@ gstreamer_multilib_src_install_all() {
 		local dir=$(gstreamer_get_plugin_dir ${plugin_dir})
 		[[ -e ${dir}/README ]] && dodoc "${dir}"/README
 	done
-
-	prune_libtool_files --modules
 }
