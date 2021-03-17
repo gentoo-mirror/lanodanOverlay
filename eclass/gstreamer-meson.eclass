@@ -70,8 +70,9 @@ esac
 
 # @ECLASS-VARIABLE: GST_PLUGINS_BUILD_DIR
 # @DESCRIPTION:
-# Actual build directory of the plugin.
+# Actual build directories of the plugins.
 # Most often the same as the configure switch name.
+# FIXME: Change into a bash array
 : ${GST_PLUGINS_BUILD_DIR:=${PN/gst-plugins-/}}
 
 # @ECLASS-VARIABLE: GST_TARBALL_SUFFIX
@@ -175,10 +176,10 @@ gstreamer_get_plugin_dir() {
 			ewarn "No such plugin directory"
 			die
 		fi
-		einfo "Building system plugin in ${build_dir}..." >&2
+		einfo "Got system plugin in ${build_dir}..." >&2
 		echo sys/${build_dir}
 	else
-		einfo "Building external plugin in ${build_dir}..." >&2
+		einfo "Got external plugin in ${build_dir}..." >&2
 		echo ext/${build_dir}
 	fi
 }
@@ -276,7 +277,7 @@ EOF
 gstreamer_multilib_src_compile() {
 	local plugin_dir plugin
 
-	for plugin_dir in "${GST_PLUGINS_BUILD_DIR}" ; do
+	for plugin_dir in ${GST_PLUGINS_BUILD_DIR} ; do
 		plugin=$(_gstreamer_get_target_filename $(gstreamer_get_plugin_dir ${plugin_dir}))
 		plugin_path="${plugin%%:*}"
 		eninja "${plugin_path/"${BUILD_DIR}/"}"
