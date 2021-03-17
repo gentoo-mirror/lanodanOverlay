@@ -9,13 +9,11 @@ LICENSE="ISC"
 SRC_URI="http://netpgp.com/src/${P}.tar.gz"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="libressl"
 
 # OpenSSL 0.9.8 or newer
 # TODO: bzlib ?
 DEPEND="
-	!libressl? ( dev-libs/openssl:= )
-	libressl? ( dev-libs/libressl:= )
+	dev-libs/openssl:=
 	sys-libs/zlib
 "
 RDEPEND="${DEPEND}"

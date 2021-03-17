@@ -20,7 +20,7 @@ SLOT="0"
 IUSE="standalone"
 RDEPEND="
 	net-misc/curl
-	|| ( dev-libs/libressl dev-libs/openssl:0 )
+	|| ( dev-libs/openssl:0 )
 	standalone? ( net-misc/socat )
 	virtual/cron
 "

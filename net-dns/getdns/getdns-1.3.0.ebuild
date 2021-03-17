@@ -10,12 +10,11 @@ SRC_URI="https://getdnsapi.net/releases/getdns-1-3-0/getdns-1.3.0.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="stubby libressl"
+IUSE="stubby"
 
 DEPEND="
 	dev-libs/libyaml:=
-	!libressl? ( >=dev-libs/openssl-1.0.2:= )
-	libressl? ( dev-libs/libressl:= )
+	>=dev-libs/openssl-1.0.2:=
 "
 RDEPEND="${DEPEND}"
 

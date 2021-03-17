@@ -11,7 +11,7 @@ SRC_URI="https://ftp.gnome.org/pub/GNOME/sources/${PN}/$(ver_cut 1-2)/${P}.tar.x
 
 LICENSE="LGPL-2.1+"
 SLOT="0"
-IUSE="gnome gnutls +libproxy libressl +openssl test ssl"
+IUSE="gnome gnutls +libproxy +openssl test ssl"
 KEYWORDS="~amd64"
 
 REQUIRED_USE="ssl? ( || ( gnutls openssl ) )"
@@ -20,10 +20,7 @@ DEPEND="
 	>=dev-libs/glib-2.63.0:2[${MULTILIB_USEDEP}]
 	libproxy? ( >=net-libs/libproxy-0.3.1:=[${MULTILIB_USEDEP}] )
 	gnutls? ( >=net-libs/gnutls-3.4.6:=[${MULTILIB_USEDEP}] )
-	openssl? (
-		!libressl? ( dev-libs/openssl:0=[${MULTILIB_USEDEP}] )
-		libressl? ( dev-libs/libressl:=[${MULTILIB_USEDEP}] )
-	)
+	openssl? ( dev-libs/openssl:0=[${MULTILIB_USEDEP}] )
 "
 
 multilib_src_configure() {

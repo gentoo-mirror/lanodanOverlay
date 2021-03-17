@@ -17,7 +17,7 @@ SRC_URI="https://github.com/teeworlds/teeworlds/releases/download/${PV}/${P}-src
 LICENSE="ZLIB CC-BY-SA-3.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="dedicated libressl test"
+IUSE="dedicated test"
 S="${WORKDIR}/${P}-src"
 
 DEPEND="
@@ -31,8 +31,7 @@ DEPEND="
 		media-sound/wavpack:=
 		x11-libs/libX11:=
 	)
-	libressl? ( dev-libs/libressl:= )
-	!libressl? ( dev-libs/openssl:= )
+	dev-libs/openssl:=
 	test? ( dev-cpp/gtest )
 "
 RDEPEND="${DEPEND}"

@@ -14,11 +14,10 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86 ~x86-fbsd ~amd64-linux"
 IUSE="class-nofakelag curl +extban-stacking +operoverride operoverride-verify +prefixaq
-	showlistmodes shunnotices topicisnuhost +usermod libressl"
+	showlistmodes shunnotices topicisnuhost +usermod"
 
 RDEPEND="
-	!libressl? ( dev-libs/openssl:0= )
-	libressl? ( dev-libs/libressl:= )
+	dev-libs/openssl:0=
 	dev-libs/libpcre2
 	dev-libs/tre
 	>=net-dns/c-ares-1.7:=

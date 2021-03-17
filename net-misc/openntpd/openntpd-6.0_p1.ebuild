@@ -12,11 +12,10 @@ SRC_URI="mirror://openbsd/OpenNTPD/${MY_P}.tar.gz"
 LICENSE="BSD GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
-IUSE="libressl selinux"
+IUSE="selinux"
 
 DEPEND="!<=net-misc/ntp-4.2.0-r2
-	!net-misc/ntp[-openntpd]
-	libressl? ( >=dev-libs/libressl-2.3.2 )"
+	!net-misc/ntp[-openntpd]"
 RDEPEND="${DEPEND}
 	selinux? ( sec-policy/selinux-ntp )"
 
@@ -50,7 +49,7 @@ src_prepare() {
 }
 
 src_configure() {
-	econf --with-privsep-user=ntp --with-privsep-path=${NTP_HOME} $(use_enable libressl https-constraint)
+	econf --with-privsep-user=ntp --with-privsep-path=${NTP_HOME}
 }
 
 src_install() {

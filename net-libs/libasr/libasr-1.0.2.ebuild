@@ -12,14 +12,8 @@ SRC_URI="https://www.opensmtpd.org/archives/${P}.tar.gz"
 LICENSE="ISC BSD BSD-1 BSD-2 BSD-4"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~x86"
-IUSE="libressl"
 
-RDEPEND="libressl? ( dev-libs/libressl:= )"
 DEPEND="
 	${RDEPEND}
 	sys-devel/automake:1.14
 "
-
-src_prepare() {
-	use libressl && epatch "${FILESDIR}/${PV}-Replace-res_randomid_with_arc4random.patch"
-}
