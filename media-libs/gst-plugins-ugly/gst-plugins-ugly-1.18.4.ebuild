@@ -1,7 +1,7 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 GST_ORG_MODULE="gst-plugins-ugly"
 
 GST_PLUGINS_ENABLED="asfdemux dvdlpcmdec dvdsub realmedia xingmux"
@@ -14,16 +14,15 @@ HOMEPAGE="https://gstreamer.freedesktop.org/"
 LICENSE="LGPL-2+" # some split plugins are LGPL but combining with a GPL library
 
 RDEPEND="
-	>=dev-libs/glib-2.40.0:2[${MULTILIB_USEDEP}]
-	>=media-libs/gstreamer-${PV}:${SLOT}[${MULTILIB_USEDEP}]
 	>=media-libs/gst-plugins-base-${PV}:${SLOT}[${MULTILIB_USEDEP}]
 "
 DEPEND="${RDEPEND}
 	>=dev-util/gtk-doc-am-1.12
 "
 
+DOCS="AUTHORS ChangeLog NEWS README RELEASE"
+
 multilib_src_install_all() {
-	DOCS="AUTHORS ChangeLog NEWS README RELEASE"
 	einstalldocs
 	find "${ED}" -name '*.la' -delete || die
 }

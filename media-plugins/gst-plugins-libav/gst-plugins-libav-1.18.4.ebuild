@@ -1,9 +1,9 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-inherit gstreamer-meson multilib-minimal
+inherit gstreamer-meson
 
 MY_PN="gst-libav"
 MY_PV="$(ver_cut 1-3)"
@@ -28,7 +28,6 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}
 	>=dev-util/gtk-doc-am-1.12
-	>=virtual/pkgconfig-0-r1[${MULTILIB_USEDEP}]
 "
 
 S="${WORKDIR}/${MY_P}"
