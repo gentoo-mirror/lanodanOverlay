@@ -101,11 +101,11 @@ media-gfx/dustr 9999: light and interactive tool your crops need
 media-gfx/opentoonz 1.2.0: An open-source full-featured 2D animation creation software
 media-libs/cglm 0.7.9: OpenGL Mathematics (glm) for C
 media-libs/freeglut 3.2.1-r1: A free OpenGL utility toolkit, the open-sourced alternative to the GLUT library
-media-libs/gst-plugins-bad 1.18.3: Less plugins for GStreamer
-media-libs/gst-plugins-base 1.18.3: Basepack of plugins for gstreamer
-media-libs/gst-plugins-good 1.18.3: Basepack of plugins for GStreamer
-media-libs/gst-plugins-ugly 1.18.3: Basepack of plugins for gstreamer
-media-libs/gstreamer 1.18.3: Open source multimedia framework
+media-libs/gst-plugins-bad 1.18.4: Less plugins for GStreamer
+media-libs/gst-plugins-base 1.18.4: Basepack of plugins for gstreamer
+media-libs/gst-plugins-good 1.18.4: Basepack of plugins for GStreamer
+media-libs/gst-plugins-ugly 1.18.4: Basepack of plugins for gstreamer
+media-libs/gstreamer 1.18.4: Open source multimedia framework
 media-libs/libplacebo 3.104.0: Reusable library for GPU-accelerated image processing primitives
 media-libs/libsdl 9999: Simple Direct Media Layer (sdl-1.2 compatibility)
 media-libs/libsidplay 2.1.1-r5: C64 SID player library
@@ -116,27 +116,27 @@ media-libs/portmidi 217-r3: Library for real time MIDI input and output
 media-libs/rtmidi 2.1.1: common C++ API for realtime MIDI input/output
 media-libs/vips 8.9.1: VIPS Image Processing Library
 media-libs/x264 0.0.20170701: A free library for encoding X264/AVC streams
-media-plugins/gst-plugins-aom 1.18.3: HTTP live streaming plugin for GStreamer
-media-plugins/gst-plugins-assrender 1.18.3: ASS/SSA rendering with effects support plugin for GStreamer
-media-plugins/gst-plugins-dash 1.18.3: MPEG-DASH plugin for GStreamer
-media-plugins/gst-plugins-faad 1.18.3: AAC audio decoder plugin.
-media-plugins/gst-plugins-flac 1.18.3: FLAC encoder/decoder/tagger plugin for GStreamer
-media-plugins/gst-plugins-hls 1.18.3: HTTP live streaming plugin for GStreamer
-media-plugins/gst-plugins-libav 1.18.3: FFmpeg based gstreamer plugin
-media-plugins/gst-plugins-meta 1.18.3: Meta ebuild to pull in gst plugins for apps
-media-plugins/gst-plugins-modplug 1.18.3: MOD audio decoder plugin for GStreamer
-media-plugins/gst-plugins-mpeg2dec 1.18.3: MPEG2 decoder plugin for GStreamer
-media-plugins/gst-plugins-mpg123 1.18.3: MP3 decoder plugin for GStreamer
-media-plugins/gst-plugins-opus 1.18.3: Opus audio parser plugin for GStreamer
-media-plugins/gst-plugins-rtmp 1.18.3: RTMP source/sink plugin for GStreamer
-media-plugins/gst-plugins-soup 1.18.3: HTTP client source/sink plugin for GStreamer
-media-plugins/gst-plugins-srtp 1.18.3: SRTP encoder/decoder plugin for GStreamer
-media-plugins/gst-plugins-v4l2 1.18.3: plugin for gstreamer
-media-plugins/gst-plugins-vaapi 1.18.3: Hardware accelerated video decoding through VA-API plugin for GStreamer
-media-plugins/gst-plugins-vpx 1.18.3: VP8/VP9 video encoder/decoder plugin for GStreamer
-media-plugins/gst-plugins-wavpack 1.18.3: Wavpack audio encoder/decoder plugin for GStreamer
-media-plugins/gst-plugins-webrtc 1.18.3: WebRTC plugins for GStreamer
-media-plugins/gst-plugins-x264 1.18.3: H.264 encoder plugin for GStreamer
+media-plugins/gst-plugins-aom 1.18.4: HTTP live streaming plugin for GStreamer
+media-plugins/gst-plugins-assrender 1.18.4: ASS/SSA rendering with effects support plugin for GStreamer
+media-plugins/gst-plugins-dash 1.18.4: MPEG-DASH plugin for GStreamer
+media-plugins/gst-plugins-faad 1.18.4: AAC audio decoder plugin.
+media-plugins/gst-plugins-flac 1.18.4: FLAC encoder/decoder/tagger plugin for GStreamer
+media-plugins/gst-plugins-hls 1.18.4: HTTP live streaming plugin for GStreamer
+media-plugins/gst-plugins-libav 1.18.4: FFmpeg based gstreamer plugin
+media-plugins/gst-plugins-meta 1.18.4: Meta ebuild to pull in gst plugins for apps
+media-plugins/gst-plugins-modplug 1.18.4: MOD audio decoder plugin for GStreamer
+media-plugins/gst-plugins-mpeg2dec 1.18.4: MPEG2 decoder plugin for GStreamer
+media-plugins/gst-plugins-mpg123 1.18.4: MP3 decoder plugin for GStreamer
+media-plugins/gst-plugins-opus 1.18.4: Opus audio parser plugin for GStreamer
+media-plugins/gst-plugins-rtmp 1.18.4: RTMP source/sink plugin for GStreamer
+media-plugins/gst-plugins-soup 1.18.4: HTTP client source/sink plugin for GStreamer
+media-plugins/gst-plugins-srtp 1.18.4: SRTP encoder/decoder plugin for GStreamer
+media-plugins/gst-plugins-v4l2 1.18.4: plugin for gstreamer
+media-plugins/gst-plugins-vaapi 1.18.4: Hardware accelerated video decoding through VA-API plugin for GStreamer
+media-plugins/gst-plugins-vpx 1.18.4: VP8/VP9 video encoder/decoder plugin for GStreamer
+media-plugins/gst-plugins-wavpack 1.18.4: Wavpack audio encoder/decoder plugin for GStreamer
+media-plugins/gst-plugins-webrtc 1.18.4: WebRTC plugins for GStreamer
+media-plugins/gst-plugins-x264 1.18.4: H.264 encoder plugin for GStreamer
 media-sound/aucatctl 0.1: A tool for controlling aucat and/or sndiod volume through MIDI
 media-sound/ibniz 1.18: virtual machine designed for extremely compact low-level audiovisual programs
 media-sound/oss 4.2.2019 4.2.2020 4.2.9999: Open Sound System (OSS)
