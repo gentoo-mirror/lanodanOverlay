@@ -167,7 +167,6 @@ net-libs/webkit-gtk:webgl - Build support for the WebGL HTML API using virtual/o
 net-libs/webkit-gtk:wpe - Enable gui-libs/libwpe rendering
 net-libs/wpewebkit:experimental - Enable experimental features
 net-libs/wpewebkit:qt - Enable support for the Qt API
-net-misc/openntpd:libressl - Enable HTTPS TLS time constraint support using dev-libs/libressl
 net-misc/tinyssh:sodium - Use dev-libs/libsodium for cryptography
 net-nntp/inn:innkeywords - Enable automatic keyword generation support
 net-nntp/inn:inntaggedhash - Use tagged hash table for history (disables large file support)

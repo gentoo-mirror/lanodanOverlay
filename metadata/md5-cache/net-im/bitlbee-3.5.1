@@ -1,14 +1,15 @@
 DEFINED_PHASES=compile configure install postinst prepare setup
-DEPEND=>=dev-libs/glib-2.16 purple? ( net-im/pidgin ) libevent? ( dev-libs/libevent:= ) otr? ( >=net-libs/libotr-4 ) gnutls? ( net-libs/gnutls:= ) !gnutls? ( nss? ( dev-libs/nss ) !nss? ( libressl? ( dev-libs/libressl:= ) !libressl? ( dev-libs/openssl:0= ) ) ) virtual/pkgconfig selinux? ( sec-policy/selinux-bitlbee ) test? ( dev-libs/check ) virtual/pkgconfig
+DEPEND=>=dev-libs/glib-2.16 purple? ( net-im/pidgin ) libevent? ( dev-libs/libevent:= ) otr? ( >=net-libs/libotr-4 ) gnutls? ( net-libs/gnutls:= ) !gnutls? ( nss? ( dev-libs/nss ) !nss? ( dev-libs/openssl:0= ) ) virtual/pkgconfig selinux? ( sec-policy/selinux-bitlbee ) test? ( dev-libs/check ) virtual/pkgconfig
 DESCRIPTION=irc to IM gateway that support multiple IM protocols
 EAPI=6
 HOMEPAGE=https://www.bitlbee.org/
-IUSE=debug +gnutls ipv6 libevent libressl nss otr +plugins selinux test xinetd msn oscar purple twitter +xmpp
+INHERIT=user systemd toolchain-funcs
+IUSE=debug +gnutls ipv6 libevent nss otr +plugins selinux test xinetd msn oscar purple twitter +xmpp
 KEYWORDS=~amd64 ~ppc ~ppc64 ~x86 ~x86-fbsd
 LICENSE=GPL-2
-RDEPEND=>=dev-libs/glib-2.16 purple? ( net-im/pidgin ) libevent? ( dev-libs/libevent:= ) otr? ( >=net-libs/libotr-4 ) gnutls? ( net-libs/gnutls:= ) !gnutls? ( nss? ( dev-libs/nss ) !nss? ( libressl? ( dev-libs/libressl:= ) !libressl? ( dev-libs/openssl:0= ) ) ) virtual/logger xinetd? ( sys-apps/xinetd )
+RDEPEND=>=dev-libs/glib-2.16 purple? ( net-im/pidgin ) libevent? ( dev-libs/libevent:= ) otr? ( >=net-libs/libotr-4 ) gnutls? ( net-libs/gnutls:= ) !gnutls? ( nss? ( dev-libs/nss ) !nss? ( dev-libs/openssl:0= ) ) virtual/logger xinetd? ( sys-apps/xinetd )
 REQUIRED_USE=xmpp? ( !nss ) test? ( plugins )
 SLOT=0
 SRC_URI=https://get.bitlbee.org/src/bitlbee-3.5.1.tar.gz
-_eclasses_=multilib	d410501a125f99ffb560b0c523cd3d1e	systemd	74b223e42834adf09a2d21fe5fe13741	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	user	b0a0d4ca9e3f79c38f8f4143b8d5a2d8	user-info	a2abd4e2f4c3b9b06d64bf1329359a02
-_md5_=48274c3707ba44d5435e25ffdd6ec362
+_eclasses_=user-info	a2abd4e2f4c3b9b06d64bf1329359a02	user	b0a0d4ca9e3f79c38f8f4143b8d5a2d8	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	multilib	d410501a125f99ffb560b0c523cd3d1e	systemd	74b223e42834adf09a2d21fe5fe13741
+_md5_=50966a056894a5dcfd0c1b36f327294b
