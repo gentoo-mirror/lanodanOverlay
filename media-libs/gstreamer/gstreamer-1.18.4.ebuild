@@ -1,9 +1,9 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-inherit gstreamer-meson bash-completion-r1 multilib-minimal pax-utils
+inherit gstreamer-meson bash-completion-r1 pax-utils
 
 DESCRIPTION="Open source multimedia framework"
 HOMEPAGE="https://gstreamer.freedesktop.org/"
@@ -12,11 +12,9 @@ SRC_URI="https://${PN}.freedesktop.org/src/${PN}/${P}.tar.xz"
 LICENSE="LGPL-2+"
 SLOT="1.0"
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
-IUSE="+caps +introspection nls +orc test unwind"
-RESTRICT="!test? ( test )"
+IUSE="+caps +introspection +orc unwind"
 
 RDEPEND="
-	>=dev-libs/glib-2.40.0:2[${MULTILIB_USEDEP}]
 	caps? ( sys-libs/libcap[${MULTILIB_USEDEP}] )
 	introspection? ( >=dev-libs/gobject-introspection-1.31.1:= )
 	unwind? (
@@ -30,8 +28,6 @@ DEPEND="${RDEPEND}
 	>=dev-util/gtk-doc-am-1.12
 	sys-devel/bison
 	sys-devel/flex
-	>=virtual/pkgconfig-0-r1[${MULTILIB_USEDEP}]
-	nls? ( sys-devel/gettext )
 "
 
 src_configure() {
@@ -57,11 +53,9 @@ multilib_src_configure() {
 	# Disable debug, as it only affects -g passing (debugging symbols), this must done through make.conf in gentoo
 	local emesonargs=(
 		-Dbenchmarks=enabled
-		-Dgst_debug=false
 		-Dcheck=enabled
 		$(meson_feature unwind libunwind)
 		$(meson_feature unwind libdw)
-		$(meson_feature test tests)
 	)
 	#	-Dintrospection=$(multilib_native_usex introspection)
 
@@ -75,7 +69,7 @@ multilib_src_configure() {
 		)
 	fi
 
-	meson_src_configure
+	gstreamer_multilib_src_configure
 }
 
 multilib_src_install() {

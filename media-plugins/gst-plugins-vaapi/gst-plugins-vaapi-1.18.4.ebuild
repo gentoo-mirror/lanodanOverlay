@@ -1,9 +1,9 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-inherit gstreamer-meson multilib-minimal
+inherit gstreamer-meson
 
 MY_PN="gstreamer-vaapi"
 DESCRIPTION="Hardware accelerated video decoding through VA-API plugin for GStreamer"
@@ -48,7 +48,6 @@ GL_DEPS="
 "
 RDEPEND="
 	>=dev-libs/glib-2.40:2[${MULTILIB_USEDEP}]
-	>=media-libs/gstreamer-${GST_REQ}:${SLOT}[${MULTILIB_USEDEP}]
 	>=media-libs/gst-plugins-base-${GST_REQ}:${SLOT}[${MULTILIB_USEDEP}]
 	>=media-libs/gst-plugins-bad-${GST_REQ}:${SLOT}[${MULTILIB_USEDEP}]
 	>=x11-libs/libva-1.4.0:=[drm?,wayland?,X?,${MULTILIB_USEDEP}]
@@ -66,7 +65,6 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}
 	>=dev-util/gtk-doc-am-1.12
-	>=virtual/pkgconfig-0-r1[${MULTILIB_USEDEP}]
 "
 
 S="${WORKDIR}/${MY_PN}-${PV}"

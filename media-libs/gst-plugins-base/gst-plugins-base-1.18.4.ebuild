@@ -1,7 +1,7 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 GST_ORG_MODULE="gst-plugins-base"
 GST_PLUGINS_ENABLED="adder app audioconvert audiomixer audiorate audioresample audiotestsrc compositor encoding gio gio-typefinder overlaycomposition pbtypes playback rawparse subparse tcp typefind videoconvert videorate videoscale videotestsrc volume"
 
@@ -64,7 +64,6 @@ GL_DEPS="
 RDEPEND="
 	app-text/iso-codes
 	>=dev-libs/glib-2.40.0:2[${MULTILIB_USEDEP}]
-	>=media-libs/gstreamer-${PV}:1.0[introspection?,${MULTILIB_USEDEP}]
 	>=sys-libs/zlib-1.2.8-r1[${MULTILIB_USEDEP}]
 	alsa? ( >=media-libs/alsa-lib-1.0.27.2[${MULTILIB_USEDEP}] )
 	introspection? ( >=dev-libs/gobject-introspection-1.31.1:= )
@@ -113,6 +112,7 @@ multilib_src_configure() {
 
 	if use opengl || use gles2; then
 		# because meson doesn't likes extraneous commas
+		local gl_api=( $(use opengl && echo opengl) $(use gles2 && echo gles2) )
 		local gl_platform=( $(use X && echo glx) $(use egl && echo egl) )
 		local gl_winsys=(
 			$(use X && echo x11)
@@ -123,7 +123,7 @@ multilib_src_configure() {
 
 		emesonargs+=(
 			-Dgl=enabled
-			-Dgl_api=opengl$(use gles2 && echo ,gles2)
+			-Dgl_api=$(IFS=, ; echo "${gl_api[*]}")
 			-Dgl_platform=$(IFS=, ; echo "${gl_platform[*]}")
 			-Dgl_winsys=$(IFS=, ; echo "${gl_winsys[*]}")
 		)

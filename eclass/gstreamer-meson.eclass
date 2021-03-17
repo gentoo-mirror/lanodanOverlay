@@ -12,7 +12,7 @@
 # zaheerm <zaheerm@gentoo.org>
 # Steven Newbury
 # Haelwenn (lanodan) Monnier <contact@hacktivis.me>
-# @SUPPORTED_EAPIS: 5 6
+# @SUPPORTED_EAPIS: 7
 # @BLURB: Helps building core & split gstreamer plugins.
 # @DESCRIPTION:
 # Eclass to make external gst-plugins emergable on a per-plugin basis
@@ -25,16 +25,13 @@
 # plugin, consider adding media-plugins/gst-plugins-meta dependency, but
 # also list any packages that provide explicitly requested plugins.
 
-inherit eutils multilib meson multilib-minimal toolchain-funcs versionator xdg-utils
+inherit multilib meson toolchain-funcs xdg-utils multilib-minimal
 
 case "${EAPI:-0}" in
-	5|6)
-		;;
-	0|1|2|3|4)
-		die "EAPI=\"${EAPI:-0}\" is not supported anymore"
+	7)
 		;;
 	*)
-		die "EAPI=\"${EAPI}\" is not supported yet"
+		die "EAPI=\"${EAPI}\" is not supported"
 		;;
 esac
 
@@ -85,10 +82,10 @@ esac
 # new releases.
 : ${GST_TARBALL_SUFFIX:="xz"}
 
-# Even though xz-utils are in @system, they must still be added to DEPEND; see
+# Even though xz-utils are in @system, they must still be added to BDEPEND; see
 # https://archives.gentoo.org/gentoo-dev/msg_a0d4833eb314d1be5d5802a3b710e0a4.xml
 if [[ ${GST_TARBALL_SUFFIX} == "xz" ]]; then
-	DEPEND="${DEPEND} app-arch/xz-utils"
+	BDEPEND="${BDEPEND} app-arch/xz-utils"
 fi
 
 # @ECLASS-VARIABLE: GST_ORG_MODULE
@@ -101,7 +98,7 @@ fi
 # @INTERNAL
 # @DESCRIPTION:
 # Major and minor numbers of the version number.
-: ${GST_ORG_PVP:=$(get_version_component_range 1-2)}
+: ${GST_ORG_PVP:=$(ver_cut 1-2)}
 
 
 DESCRIPTION="${BUILD_GST_PLUGINS} plugin for gstreamer"
@@ -117,10 +114,10 @@ esac
 S="${WORKDIR}/${GST_ORG_MODULE}-${PV}"
 
 RDEPEND="
-	>=dev-libs/glib-2.38.2-r1:2[${MULTILIB_USEDEP}]
-	>=media-libs/gstreamer-${GST_MIN_PV}:${SLOT}[${MULTILIB_USEDEP}]
+	>=dev-libs/glib-2.40.0:2[${MULTILIB_USEDEP}]
+	>=media-libs/gstreamer-${GST_MIN_PV}:${SLOT}[${MULTILIB_USEDEP},test?]
 "
-DEPEND="
+BDEPEND="
 	>=sys-apps/sed-4
 	>=virtual/pkgconfig-0-r1[${MULTILIB_USEDEP}]
 "
@@ -139,10 +136,12 @@ if [[ ${PN} != ${GST_ORG_MODULE} ]]; then
 	multilib_src_install() { gstreamer_multilib_src_install; }
 	multilib_src_install_all() { gstreamer_multilib_src_install_all; }
 else
-	IUSE="nls"
-	DEPEND="${DEPEND} nls? ( >=sys-devel/gettext-0.17 )"
+	IUSE="nls test"
+	RESTRICT="!test? ( test )"
+	BDEPEND="${DEPEND} nls? ( >=sys-devel/gettext-0.17 )"
 
 	multilib_src_compile() { eninja; }
+	multilib_src_test() { eninja test; }
 	multilib_src_install() { DESTDIR="${D}" eninja install; }
 fi
 
@@ -184,24 +183,24 @@ gstreamer_get_plugin_dir() {
 # @DESCRIPTION:
 # Handles logic common to configuring gstreamer plugins
 gstreamer_multilib_src_configure() {
-	local plugin emesonargs=() EMESON_SOURCE=${EMESON_SOURCE:-${S}}
+	local plugin gst_conf=( ) EMESON_SOURCE=${EMESON_SOURCE:-${S}}
 
 	gstreamer_environment_reset
 
 	# app-editor/vis regex for meson_options.txt: :x/option\('([^']*)'.*/ c/\1/
 	for plugin in ${GST_PLUGINS_DISABLED} ; do
-		emesonargs+=( -D${plugin}=disabled )
+		gst_conf+=( -D${plugin}=disabled )
 	done
 
 	for plugin in ${GST_PLUGINS_ENABLED} ; do
-		emesonargs+=( -D${plugin}=enabled )
+		gst_conf+=( -D${plugin}=enabled )
 	done
 
-	if grep -q "option(\'orc\'" "${EMESON_SOURCE}"/meson_options.txt ; then
+	if grep -q "option('orc'" "${EMESON_SOURCE}"/meson_options.txt ; then
 		if in_iuse orc ; then
-			emesonargs+=( -Dorc=$(usex orc enabled disabled) )
+			gst_conf+=( -Dorc=$(usex orc enabled disabled) )
 		else
-			emesonargs+=( -Dorc=disabled )
+			gst_conf+=( -Dorc=disabled )
 		fi
 	fi
 
@@ -214,20 +213,28 @@ gstreamer_multilib_src_configure() {
 	fi
 
 	if [[ ${PN} == ${GST_ORG_MODULE} ]]; then
-		emesonargs+=( $(meson_feature nls) )
+		gst_conf+=( $(meson_feature nls) )
 	fi
 
 	einfo "Configuring to build ${GST_PLUGINS_ENABLED} plugin(s) ..."
-	emesonargs+=(
+	gst_conf+=(
 		-Dexamples=disabled
 		-Dpackage-name="Gentoo GStreamer ebuild"
 		-Dpackage-origin="https://www.gentoo.org"
+		-Dgst_debug=false
+		$(meson_feature test tests)
 		"${@}"
 	)
-	meson_src_configure
+	meson_src_configure "${gst_conf[@]}"
 }
 
-read -d '' __MESON_EXTRACT_TARGET_FILENAME <<"EOF"
+
+# @FUNCTION: _gstreamer_get_target_filename
+# @INTERNAL
+# @DESCRIPTION:
+# Extracts build and target filenames from meson-data for given submatch
+_gstreamer_get_target_filename() {
+	cat >"${WORKDIR}/_gstreamer_get_target_filename.py" <<"EOF"
 import json
 import sys
 
@@ -241,12 +248,8 @@ for i in range(len(data)):
 			print(target['filename'][0] + ':' + target['install_filename'][0])
 EOF
 
-# @FUNCTION: _gstreamer_get_target_filename
-# @INTERNAL
-# @DESCRIPTION:
-# Extracts build and target filenames from meson-data for given submatch
-_gstreamer_get_target_filename() {
-	python -c "${__MESON_EXTRACT_TARGET_FILENAME}" "$@"
+	${EPYTHON} "${WORKDIR}/_gstreamer_get_target_filename.py" $@ \
+		|| die "Failed to extract target filenames from meson-data"
 }
 
 # @FUNCTION: gstreamer_multilib_src_compile
@@ -255,7 +258,7 @@ _gstreamer_get_target_filename() {
 gstreamer_multilib_src_compile() {
 	local plugin_dir plugin
 
-	for plugin_dir in ${GST_PLUGINS_BUILD_DIR} ; do
+	for plugin_dir in "${GST_PLUGINS_BUILD_DIR}" ; do
 		plugin=$(_gstreamer_get_target_filename $(gstreamer_get_plugin_dir ${plugin_dir}))
 		plugin_path="${plugin%%:*}"
 		eninja "${plugin_path/"${BUILD_DIR}/"}"

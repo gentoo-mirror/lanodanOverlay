@@ -1,7 +1,7 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 GST_ORG_MODULE="gst-plugins-bad"
 
 GST_PLUGINS_ENABLED="accurip adpcmdec adpcmenc aiff asfmux audiobuffersplit audiofxbad audiolatency audiomixmatrix audiovisualizers autoconvert bayer camerabin2 coloreffects deb ugutils dvbsubenc dvbsuboverlay dvdspu faceoverlay festival fieldanalysis freeverb frei0r gaudieffects gdp geometrictransform id3tag inter interlace ivfpars e ivtc jp2kdecimator jpegformat librfb midi mpegdemux mpegpsmux mpegtsdemux mpegtsmux mxf netsim onvif pcapparse pnm proxy rawparse removesilence rist rtmp2 rtp sdp segmentclip siren smooth speed subenc switchbin timecode videofilters videoframe_audiolevel videoparsers videosignal vmnc y4m"
@@ -19,7 +19,6 @@ IUSE="X bzip2 +egl gles2 gtk +introspection +opengl +orc vnc wayland" # Keep def
 # X11 is automagic for now, upstream #709530 - only used by librfb USE=vnc plugin
 # We mirror opengl/gles2 from -base to ensure no automagic openglmixers plugin (with "opengl?" it'd still get built with USE=-opengl here)
 RDEPEND="
-	>=dev-libs/glib-2.40.0:2[${MULTILIB_USEDEP}]
 	>=media-libs/gstreamer-${PV}:${SLOT}[${MULTILIB_USEDEP},introspection?]
 	>=media-libs/gst-plugins-base-${PV}:${SLOT}[${MULTILIB_USEDEP},egl?,introspection?,gles2=,opengl=]
 	introspection? ( >=dev-libs/gobject-introspection-1.31.1:= )
@@ -66,6 +65,7 @@ multilib_src_configure() {
 }
 
 multilib_src_test() {
+	# TODO: Test on machine where X11 is present
 	unset DISPLAY
 	# Tests are slower than upstream expects
 	CK_DEFAULT_TIMEOUT=300 virtx eninja check
