@@ -206,6 +206,7 @@ gstreamer_multilib_src_configure() {
 			gst_conf+=( -Dorc=$(usex orc enabled disabled) )
 		else
 			gst_conf+=( -Dorc=disabled )
+			eqawarn "QA: IUSE=orc is missing while plugin supports it"
 		fi
 	fi
 
