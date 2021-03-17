@@ -216,7 +216,10 @@ gstreamer_multilib_src_configure() {
 	fi
 
 	if [[ ${PN} == ${GST_ORG_MODULE} ]]; then
-		gst_conf+=( $(meson_feature nls) )
+		gst_conf+=(
+			$(meson_feature nls)
+			$(meson_feature test tests)
+		)
 	fi
 
 	einfo "Configuring to build ${GST_PLUGINS_ENABLED} plugin(s) ..."
@@ -225,7 +228,6 @@ gstreamer_multilib_src_configure() {
 		-Dpackage-name="Gentoo GStreamer ebuild"
 		-Dpackage-origin="https://www.gentoo.org"
 		-Dgst_debug=false
-		$(meson_feature test tests)
 		"${@}"
 	)
 	meson_src_configure "${gst_conf[@]}"
