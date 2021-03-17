@@ -253,6 +253,8 @@ for i in range(len(data)):
 			print(target['filename'][0] + ':' + target['install_filename'][0])
 EOF
 
+	chmod +x "${WORKDIR}/_gstreamer_get_target_filename.py" || die
+
 	${EPYTHON} "${WORKDIR}/_gstreamer_get_target_filename.py" $@ \
 		|| die "Failed to extract target filenames from meson-data"
 }
