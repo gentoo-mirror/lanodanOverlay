@@ -19,7 +19,7 @@ HOMEPAGE="https://www.bitlbee.org/"
 LICENSE="GPL-2"
 SLOT="0"
 IUSE_PROTOCOLS="msn oscar purple twitter +xmpp"
-IUSE="debug +gnutls ipv6 libevent libressl nss otr +plugins selinux test xinetd
+IUSE="debug +gnutls ipv6 libevent nss otr +plugins selinux test xinetd
 	${IUSE_PROTOCOLS}"
 
 REQUIRED_USE="
@@ -35,10 +35,7 @@ COMMON_DEPEND="
 	gnutls? ( net-libs/gnutls:= )
 	!gnutls? (
 		nss? ( dev-libs/nss )
-		!nss? (
-			libressl? ( dev-libs/libressl:= )
-			!libressl? ( dev-libs/openssl:0= )
-		)
+		!nss? ( dev-libs/openssl:0= )
 	)
 "
 DEPEND="${COMMON_DEPEND}

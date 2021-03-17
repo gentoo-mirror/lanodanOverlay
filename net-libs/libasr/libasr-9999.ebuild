@@ -14,12 +14,8 @@ EGIT_REPO_URI="${HOMEPAGE}.git"
 LICENSE="ISC BSD BSD-1 BSD-2 BSD-4"
 SLOT="0"
 KEYWORDS=""
-IUSE="libressl"
 
-RDEPEND="libressl? ( dev-libs/libressl:= )"
-DEPEND="
-	${RDEPEND}
-"
+DEPEND="${RDEPEND}"
 
 src_prepare() {
 	default

@@ -10,14 +10,11 @@ SRC_URI="https://github.com/lazarus-pkgs/suck/archive/${PV}.tar.gz -> ${P}.tar.g
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
-IUSE="perl ssl libressl"
+IUSE="perl ssl"
 
 RDEPEND="
 	sys-libs/gdbm:=
-	ssl? (
-		!libressl? ( dev-libs/openssl:0= )
-		libressl? ( dev-libs/libressl:= )
-	)
+	ssl? ( dev-libs/openssl:0= )
 "
 DEPEND="${RDEPEND}
 	sys-libs/db
