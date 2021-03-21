@@ -4,6 +4,7 @@ DEPEND=x11-libs/gtk+:3 net-libs/webkit-gtk
 DESCRIPTION=simple web browser using GTK+ 3, GLib and WebKit2GTK+
 EAPI=7
 HOMEPAGE=https://uninformativ.de/git/lariza
+INHERIT=git-r3
 KEYWORDS=~amd64
 LICENSE=MIT
 PROPERTIES=live

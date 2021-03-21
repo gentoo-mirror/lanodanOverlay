@@ -3,6 +3,7 @@ DEFINED_PHASES=install unpack
 DESCRIPTION=documentation of similarities and (noteworthy) differencies between Unix systems
 EAPI=7
 HOMEPAGE=https://hacktivis.me/git/cross-unix-documentation/
+INHERIT=git-r3
 KEYWORDS=~amd64
 LICENSE=CC-BY-4.0
 PROPERTIES=live

@@ -4,6 +4,7 @@ DEPEND=app-text/scdoc
 DESCRIPTION=Asynchronous email client for your terminal, written in Go.
 EAPI=7
 HOMEPAGE=https://aerc-mail.org
+INHERIT=git-r3
 IUSE=html
 LICENSE=MIT
 PROPERTIES=live

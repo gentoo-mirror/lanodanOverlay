@@ -4,6 +4,7 @@ DEPEND=>=gui-libs/wlroots-0.6.0:= dev-libs/wayland-protocols:= x11-libs/libxkbco
 DESCRIPTION=Distrustful Tiling Wayland Compositor
 EAPI=7
 HOMEPAGE=https://hacktivis.me/git/inaban/
+INHERIT=git-r3
 LICENSE=BSD
 PROPERTIES=live
 RDEPEND=>=gui-libs/wlroots-0.6.0:= dev-libs/wayland-protocols:= x11-libs/libxkbcommon:= dev-libs/wayland:=

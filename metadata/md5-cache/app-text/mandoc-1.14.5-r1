@@ -3,6 +3,7 @@ DEPEND=!static? ( sys-libs/zlib ) !sys-apps/man-db !sys-apps/man static? ( sys-l
 DESCRIPTION=Suite of tools compiling mdoc and man
 EAPI=6
 HOMEPAGE=https://mandoc.bsd.lv/
+INHERIT=multilib toolchain-funcs
 IUSE=static
 KEYWORDS=~amd64 ~arm ~arm64 ~x86
 LICENSE=ISC

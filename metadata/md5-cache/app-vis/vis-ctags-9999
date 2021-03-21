@@ -3,6 +3,7 @@ DEFINED_PHASES=install unpack
 DESCRIPTION=vis plugin to provide basic ctags support
 EAPI=7
 HOMEPAGE=https://github.com/kupospelov/vis-ctags
+INHERIT=git-r3
 LICENSE=MIT
 PROPERTIES=live
 RDEPEND=dev-util/ctags >=app-editors/vis-0.7[lua]

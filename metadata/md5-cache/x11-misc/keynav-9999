@@ -3,6 +3,7 @@ DEPEND=dev-libs/cairo:=[X] dev-libs/glib:= x11-libs/libXinerama:= >=dev-vcs/git-
 DESCRIPTION=Make pointer-driven interfaces easier and faster for users to operate
 EAPI=6
 HOMEPAGE=https://github.com/jordansissel/keynav
+INHERIT=git-r3
 LICENSE=BSD
 PROPERTIES=live
 RDEPEND=dev-libs/cairo:=[X] dev-libs/glib:= x11-libs/libXinerama:= x11-misc/xdotool

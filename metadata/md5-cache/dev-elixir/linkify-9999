@@ -4,11 +4,12 @@ DEPEND=test? ( >=dev-elixir/credo-1.1.0 ) doc? ( >=dev-elixir/ex_doc-0.20 ) dev-
 DESCRIPTION=basic package for turning website names into links
 EAPI=7
 HOMEPAGE=https://git.pleroma.social/pleroma/linkify
+INHERIT=mix git-r3
 IUSE=test doc
 LICENSE=MIT
 PROPERTIES=live
 RDEPEND=test? ( >=dev-elixir/credo-1.1.0 ) doc? ( >=dev-elixir/ex_doc-0.20 ) dev-lang/elixir
 RESTRICT=!test? ( test )
 SLOT=9999
-_eclasses_=git-r3	3e7ec3d6619213460c85e2aa48398441	mix	02f307ffff83d9a28fd2c1d9f12477ae
+_eclasses_=mix	02f307ffff83d9a28fd2c1d9f12477ae	git-r3	3e7ec3d6619213460c85e2aa48398441
 _md5_=995aa682d5a584ed3defb2e86ef3768e

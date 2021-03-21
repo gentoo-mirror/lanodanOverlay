@@ -4,6 +4,7 @@ DEPEND=x11-libs/vte x11-libs/gtk+:3=
 DESCRIPTION=Simple-ass VTE-based (I know) terminal
 EAPI=7
 HOMEPAGE=https://hacktivis.me/git/svte/
+INHERIT=git-r3
 LICENSE=CC-BY-SA-4.0
 PROPERTIES=live
 RDEPEND=x11-libs/vte x11-libs/gtk+:3=

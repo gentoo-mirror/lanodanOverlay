@@ -3,6 +3,7 @@ DEPEND=virtual/ssh >=dev-vcs/git-1.8.2.1[curl]
 DESCRIPTION=Parallel SSH, batch and command line oriented
 EAPI=6
 HOMEPAGE=https://github.com/bearstech/pussh
+INHERIT=git-r3
 LICENSE=GPL-3
 PROPERTIES=live
 RDEPEND=virtual/ssh
