@@ -23,15 +23,6 @@ app-vis/vis-ctags 9999: vis plugin to provide basic ctags support
 dev-db/timescaledb 1.2.1 1.6.0: A time-series database optimized for fast ingest and complex queries
 dev-dotnet/dotnetcore-sdk 3.0.100: .NET Core cli utility for building, testing, packaging and running projects
 dev-dotnet/nuget 5.0.2: Nuget - .NET Package Manager
-dev-elixir/hex 0.20.6: 
-dev-elixir/jose 1.8.4: JSON Object Signing and Encryption (JOSE) for Erlang and Elixir
-dev-elixir/linkify 9999: basic package for turning website names into links
-dev-elixir/mime 1.0.1: MIME type module for Elixir
-dev-elixir/phoenix 1.4.9: productive web framework that does not compromise speed or maintainability
-dev-elixir/phoenix_pubsub 1.1.2: Distributed PubSub and Presence platform for the Phoenix Framework
-dev-elixir/plug 1.6.1 1.8.2: specification and conveniences for composable modules between web applications
-dev-elixir/plug_crypto 1.0.0: Crypto-related functionality for the web
-dev-erlang/base64url 1.0-r1: URL safe base64-compatible codec
 dev-erlang/telemetry 0.4.0: Dynamic dispatching library for metrics and instrumentations.
 dev-haskell/filepath-bytestring 1.4.2.1.6: repairs a damanged git repisitory
 dev-haskell/hayland 9999: Haskell bindings to Wayland library (Waymonad fork)
@@ -60,7 +51,6 @@ dev-util/glslang 11.2.0: Khronos reference front-end for GLSL and ESSL, and samp
 dev-util/go-deblob 1.0.0: remove binary blobs from a directory
 dev-util/gtk-doc 1.32-r2: GTK+ Documentation Generator
 dev-util/gtk-doc-am 1.32: Virtual ebuild for ::gentoo compatibility
-dev-util/rebar 3.14.2-r1: Erlang build tool that makes it easy to compile and test Erlang applications and releases
 dev-util/xcd 1.2: A colorized hexdump tool
 dev-vcs/git-repair 1.20200102: repairs a damanged git repisitory
 dev-vcs/mercurial 5.0.2: Scalable distributed SCM
@@ -72,7 +62,6 @@ games-arcade/tinymania 9999: A VSRG clone for playing .osu files.
 games-board/cockatrice 2.7.2: An open-source multiplatform software for playing card games over a network
 games-emulation/reicast 8.1: A Dreamcast Emulator
 games-engines/devilutionx 1.0.0 9999: Diablo build for modern operating systems
-games-engines/nxengine-evo 2.6.3: rewrite of the jump-and-run platformer Doukutsu Monogatari(Cave Story)
 games-engines/openmw 0.44.0: Open source reimplementation of TES III: Morrowind
 games-engines/solarus 1.5.3: An open-source Zelda-like 2D game engine
 games-misc/ponysay 3.0.3: cowsay reimplemention for ponies
@@ -186,7 +175,6 @@ sys-libs/libucontext 0.9.0: library which provides the <ucontext.h> API from old
 sys-libs/zlib 1.2.8.2015.12.26: Standard (de)compression library (Sortix's libz fork)
 virtual/editor 0-r1: Virtual for editor
 virtual/man 9: Virtual for man
-www-apps/pleroma 1.0.2 9999: Microblogging software federating over OStatus and ActivityPub
 www-apps/stagit 0.9.4: static git page generator
 www-client/lariza 18.07: simple web browser using GTK+ 3, GLib and WebKit2GTK+
 x11-libs/gtk+ 3.24.27 4.0.1: Gimp ToolKit +
