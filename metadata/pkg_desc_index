@@ -23,7 +23,6 @@ app-vis/vis-ctags 9999: vis plugin to provide basic ctags support
 dev-db/timescaledb 1.2.1 1.6.0: A time-series database optimized for fast ingest and complex queries
 dev-dotnet/dotnetcore-sdk 3.0.100: .NET Core cli utility for building, testing, packaging and running projects
 dev-dotnet/nuget 5.0.2: Nuget - .NET Package Manager
-dev-erlang/telemetry 0.4.0: Dynamic dispatching library for metrics and instrumentations.
 dev-haskell/filepath-bytestring 1.4.2.1.6: repairs a damanged git repisitory
 dev-haskell/hayland 9999: Haskell bindings to Wayland library (Waymonad fork)
 dev-haskell/hfuse 0.2.4.5: Bindings for the FUSE library
