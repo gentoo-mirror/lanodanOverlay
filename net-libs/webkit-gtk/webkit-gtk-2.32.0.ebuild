@@ -1,13 +1,12 @@
 # Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 CMAKE_MAKEFILE_GENERATOR="ninja"
-PYTHON_COMPAT=( python{3_6,3_7} )
-USE_RUBY="ruby24 ruby25 ruby26 ruby27"
-CMAKE_MIN_VERSION=3.10
+PYTHON_COMPAT=( python3_{7..8} )
+USE_RUBY="ruby24 ruby25 ruby26 ruby27 ruby30"
 
-inherit check-reqs cmake-utils flag-o-matic gnome2 pax-utils python-any-r1 ruby-single toolchain-funcs virtualx
+inherit check-reqs cmake flag-o-matic gnome2 pax-utils python-any-r1 ruby-single toolchain-funcs virtualx
 
 MY_P="webkitgtk-${PV}"
 DESCRIPTION="Open source web browser engine"
@@ -16,9 +15,9 @@ SRC_URI="https://www.webkitgtk.org/releases/${MY_P}.tar.xz"
 
 LICENSE="LGPL-2+ BSD"
 SLOT="4/37" # soname version of libwebkit2gtk-4.0
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~amd64-linux ~x86-linux ~x86-macos"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
-IUSE="aqua debug +egl examples gamepad +geolocation gles2-only gnome-keyring +gstreamer gtk4 gtk-doc +introspection +jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell systemd wayland +X"
+IUSE="aqua debug +egl examples gamepad +geolocation gles2-only gnome-keyring +gstreamer gtk-doc +introspection +jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell systemd wayland +X"
 
 # gstreamer with opengl/gles2 needs egl
 REQUIRED_USE="
@@ -33,21 +32,20 @@ REQUIRED_USE="
 # Aqua support in gtk3 is untested
 # Dependencies found at Source/cmake/OptionsGTK.cmake
 # Various compile-time optionals for gtk+-3.22.0 - ensure it
-# Missing WebRTC support, but ENABLE_MEDIA_STREAM/ENABLE_WEB_RTC is experimental upstream (PRIVATE OFF) and shouldn't be used yet in 2.26
+# Missing WebRTC support, but ENABLE_MEDIA_STREAM/ENABLE_WEB_RTC is experimental upstream (PRIVATE OFF) and shouldn't be used yet in 2.30
 # >=gst-plugins-opus-1.14.4-r1 for opusparse (required by MSE)
 wpe_depend="
-	>=gui-libs/libwpe-1.3.0:1.0
-	>=gui-libs/wpebackend-fdo-1.3.1:1.0
+	>=gui-libs/libwpe-1.5.0:1.0
+	>=gui-libs/wpebackend-fdo-1.7.0:1.0
 "
 RDEPEND="
 	>=x11-libs/cairo-1.16.0:=[X?]
 	>=media-libs/fontconfig-2.13.0:1.0
 	>=media-libs/freetype-2.9.0:2
 	>=dev-libs/libgcrypt-1.7.0:0=
-	!gtk4? ( >=x11-libs/gtk+-3.22.0:3[aqua?,introspection?,wayland?,X?] )
-	gtk4? ( x11-libs/gtk+:4[aqua?,introspection?,wayland?,X?] )
+	>=x11-libs/gtk+-3.22.0:3[aqua?,introspection?,wayland?,X?]
 	>=media-libs/harfbuzz-1.4.2:=[icu(+)]
-	>=dev-libs/icu-3.8.1-r1:=
+	>=dev-libs/icu-60.2:=
 	virtual/jpeg:0=
 	>=net-libs/libsoup-2.54:2.4[introspection?]
 	>=dev-libs/libxml2-2.8.0:2
@@ -61,7 +59,7 @@ RDEPEND="
 	>=dev-libs/libxslt-1.1.7
 	media-libs/woff2
 	gnome-keyring? ( app-crypt/libsecret )
-	introspection? ( >=dev-libs/gobject-introspection-1.32.0:= )
+	introspection? ( >=dev-libs/gobject-introspection-1.59.0:= )
 	dev-libs/libtasn1:=
 	spell? ( >=app-text/enchant-0.22:= )
 	gstreamer? (
@@ -125,6 +123,7 @@ DEPEND="${RDEPEND}
 
 	gtk-doc? ( >=dev-util/gtk-doc-1.32 )
 	geolocation? ( dev-util/gdbus-codegen )
+	>=dev-util/cmake-3.10
 	sys-apps/paxctl
 
 "
@@ -174,7 +173,7 @@ pkg_setup() {
 
 src_prepare() {
 	eapply "${FILESDIR}"/2.28.2-opengl-without-X-fixes.patch
-	cmake-utils_src_prepare
+	cmake_src_prepare
 	gnome2_src_prepare
 }
 
@@ -220,7 +219,7 @@ src_configure() {
 	local rubyimpl
 	local ruby_interpreter=""
 	for rubyimpl in ${USE_RUBY}; do
-		if has_version --host-root "virtual/rubygems[ruby_targets_${rubyimpl}]"; then
+		if has_version -b "virtual/rubygems[ruby_targets_${rubyimpl}]"; then
 			ruby_interpreter="-DRUBY_EXECUTABLE=$(type -P ${rubyimpl})"
 		fi
 	done
@@ -251,7 +250,6 @@ src_configure() {
 		-DENABLE_GAMEPAD=$(usex gamepad)
 		# end PRIVATE options
 		-DUSE_SYSTEMD=$(usex systemd)
-		-DUSE_GTK4=$(usex gtk4)
 		-DENABLE_WEBDRIVER=OFF
 		-DENABLE_WEB_CRYPTO=OFF
 		# -DENABLE_TOUCH_EVENTS=OFF
@@ -259,7 +257,7 @@ src_configure() {
 		-DENABLE_MINIBROWSER=$(usex examples)
 		-DENABLE_QUARTZ_TARGET=$(usex aqua)
 		-DENABLE_GTKDOC=$(usex gtk-doc)
-		$(cmake-utils_use_find_package gles2-only OpenGLES2)
+		$(cmake_use_find_package gles2-only OpenGLES2)
 		-DENABLE_GLES2=$(usex gles2-only)
 		-DENABLE_VIDEO=$(usex gstreamer)
 		-DENABLE_WEB_AUDIO=$(usex gstreamer)
@@ -270,36 +268,39 @@ src_configure() {
 		-DUSE_WOFF2=ON
 		-DENABLE_SPELLCHECK=$(usex spell)
 		-DENABLE_WAYLAND_TARGET=$(usex wayland)
-		$(cmake-utils_use_find_package egl EGL)
-		$(cmake-utils_use_find_package opengl OpenGL)
+		$(cmake_use_find_package egl EGL)
+		$(cmake_use_find_package opengl OpenGL)
 		-DENABLE_X11_TARGET=$(usex X)
-		-DENABLE_GRAPHICS_CONTEXT_GL=${opengl_enabled}
 		-DENABLE_WEBGL=${opengl_enabled}
 		-DUSE_WPE_RENDERER=${use_wpe_renderer}
 		-DENABLE_BUBBLEWRAP_SANDBOX=$(usex seccomp)
 		-DENABLE_MEDIA_SOURCE=$(usex media-source)
 		-DBWRAP_EXECUTABLE="${EPREFIX}"/usr/bin/bwrap # If bubblewrap[suid] then portage makes it go-r and cmake find_program fails with that
 		-DUSE_LD_GOLD=ON
+		-DUSE_GTK4=OFF
 		-DPORT=GTK
 		${ruby_interpreter}
 	)
 
-	cmake-utils_src_configure
+	# https://bugs.gentoo.org/761238
+	append-cppflags -DNDEBUG
+
+	cmake_src_configure
 }
 
 src_compile() {
-	cmake-utils_src_compile
+	cmake_src_compile
 }
 
 src_test() {
 	# Prevents test failures on PaX systems
 	pax-mark m $(list-paxables Programs/*[Tt]ests/*) # Programs/unittests/.libs/test*
 
-	cmake-utils_src_test
+	cmake_src_test
 }
 
 src_install() {
-	cmake-utils_src_install
+	cmake_src_install
 
 	# Prevents crashes on PaX systems, bug #522808
 	pax-mark m "${ED}usr/libexec/webkit2gtk-4.0/jsc" "${ED}usr/libexec/webkit2gtk-4.0/WebKitWebProcess"

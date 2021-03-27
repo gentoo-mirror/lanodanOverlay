@@ -15,9 +15,9 @@ SRC_URI="https://www.webkitgtk.org/releases/${MY_P}.tar.xz"
 
 LICENSE="LGPL-2+ BSD"
 SLOT="4/37" # soname version of libwebkit2gtk-4.0
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~amd64-linux ~x86-linux ~x86-macos"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
-IUSE="aqua debug +egl examples gamepad +geolocation gles2-only gnome-keyring +gstreamer gtk4 gtk-doc +introspection +jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell systemd wayland +X"
+IUSE="aqua debug +egl examples gamepad +geolocation gles2-only gnome-keyring +gstreamer gtk-doc +introspection +jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell systemd wayland +X"
 
 # gstreamer with opengl/gles2 needs egl
 REQUIRED_USE="
@@ -43,8 +43,7 @@ RDEPEND="
 	>=media-libs/fontconfig-2.13.0:1.0
 	>=media-libs/freetype-2.9.0:2
 	>=dev-libs/libgcrypt-1.7.0:0=
-	!gtk4? ( >=x11-libs/gtk+-3.22.0:3[aqua?,introspection?,wayland?,X?] )
-	gtk4? ( x11-libs/gtk+:4[aqua?,introspection?,wayland?,X?] )
+	>=x11-libs/gtk+-3.22.0:3[aqua?,introspection?,wayland?,X?]
 	>=media-libs/harfbuzz-1.4.2:=[icu(+)]
 	>=dev-libs/icu-60.2:=
 	virtual/jpeg:0=
@@ -251,7 +250,6 @@ src_configure() {
 		-DENABLE_GAMEPAD=$(usex gamepad)
 		# end PRIVATE options
 		-DUSE_SYSTEMD=$(usex systemd)
-		-DUSE_GTK4=$(usex gtk4)
 		-DENABLE_WEBDRIVER=OFF
 		-DENABLE_WEB_CRYPTO=OFF
 		# -DENABLE_TOUCH_EVENTS=OFF
@@ -280,6 +278,7 @@ src_configure() {
 		-DENABLE_MEDIA_SOURCE=$(usex media-source)
 		-DBWRAP_EXECUTABLE="${EPREFIX}"/usr/bin/bwrap # If bubblewrap[suid] then portage makes it go-r and cmake find_program fails with that
 		-DUSE_LD_GOLD=ON
+		-DUSE_GTK4=OFF
 		-DPORT=GTK
 		${ruby_interpreter}
 	)
