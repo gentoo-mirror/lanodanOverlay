@@ -153,17 +153,13 @@ net-libs/glib-networking:libproxy - Use net-libs/libproxy for getting the HTTP/H
 net-libs/glib-networking:openssl - support for OpenSSL networking configration
 net-libs/libsoup:gssapi - Enable GSSAPI support
 net-libs/libsoup:samba - Use net-fs/samba for NTLM Single Sign-On
-net-libs/webkit-gtk:coverage - Enable code coverage support
 net-libs/webkit-gtk:egl - Enable EGL support
-net-libs/webkit-gtk:experimental - Enable experimental features
+net-libs/webkit-gtk:gamepad - Enable gamepad support via dev-libs/libmanette
 net-libs/webkit-gtk:geolocation - Enable geolocation support through app-misc/geoclue
 net-libs/webkit-gtk:gles2-only - Use GLES 2.0 or later instead of full OpenGL
-net-libs/webkit-gtk:gtk4 - Use x11-libs/gtk+:4 instead of earlier slots
 net-libs/webkit-gtk:jumbo-build - Combine source files to speed up build process
 net-libs/webkit-gtk:media-source - Enable support for Media Sources Extension (requires gstreamer 1.16+)
 net-libs/webkit-gtk:seccomp - Enable sandboxing functionality through sys-apps/bubblewrap
-net-libs/webkit-gtk:webgl - Build support for the WebGL HTML API using virtual/opengl
-net-libs/webkit-gtk:wpe - Enable gui-libs/libwpe rendering
 net-libs/wpewebkit:experimental - Enable experimental features
 net-libs/wpewebkit:qt - Enable support for the Qt API
 net-misc/tinyssh:sodium - Use dev-libs/libsodium for cryptography
