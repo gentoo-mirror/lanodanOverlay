@@ -1,10 +1,10 @@
-# Copyright 1999-2018 Gentoo Authors
-# Copyright 2019 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+# Copyright 2003-2020 Gentoo Authors
+# Copyright 2019-2021 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-inherit font toolchain-funcs xdg-utils
+inherit font toolchain-funcs
 
 DESCRIPTION="GNU Unifont - a Pan-Unicode X11 bitmap iso10646 font"
 HOMEPAGE="http://unifoundry.com/"
@@ -37,26 +37,26 @@ src_prepare() {
 }
 
 src_compile() {
+	buildargs=(
+		BUILDFONT=$(usex fontforge 1 '')
+		CC="$(tc-getCC)"
+		CFLAGS="${CFLAGS}"
+		INSTALL="${INSTALL-install}"
+	)
 	if use fontforge || use utils; then
-		tc-export CC
-		xdg_environment_reset
-		makeargs=(
-			CFLAGS="${CFLAGS}"
-			BUILDFONT=$(usex fontforge 1 '')
-		)
-		emake  "${makeargs[@]}"
+		emake "${buildargs[@]}"
 	fi
 }
 
 src_install() {
-	makeargs+=(
-		DESTDIR="${ED%/}"
-		PCFDEST="${ED%/}${FONTDIR}"
-		TTFDEST="${ED%/}${FONTDIR}"
-		USRDIR=usr
+	local installargs=(
+		COMPRESS=0
+		DESTDIR="${ED}"
+		PCFDEST="${ED}${FONTDIR}"
+		TTFDEST="${ED}${FONTDIR}"
 	)
-	use utils || makeargs+=( -C font )
-	emake "${makeargs[@]}" install
+	use utils || installargs+=( -C font )
+	emake "${buildargs[@]}" "${installargs[@]}" install
 	font_xfont_config
 	font_fontconfig
 }
