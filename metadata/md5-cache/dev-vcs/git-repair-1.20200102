@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=dev-haskell/async:=[profile?] dev-haskell/attoparsec:=[profile?] dev-haskell/data-default:=[profile?] >=dev-haskell/exceptions-0.6:=[profile?] >=dev-haskell/filepath-bytestring-1.4.2.1.0:=[profile?] dev-haskell/hslogger:=[profile?] dev-haskell/ifelse:=[profile?] dev-haskell/mtl:=[profile?] dev-haskell/network:=[profile?] dev-haskell/network-uri:=[profile?] >=dev-haskell/optparse-applicative-0.14.1:=[profile?] dev-haskell/quickcheck:=[profile?] dev-haskell/setenv:=[profile?] dev-haskell/split:=[profile?] dev-haskell/text:=[profile?] >=dev-haskell/unix-compat-0.5:=[profile?] dev-haskell/utf8-string:=[profile?] >=dev-lang/ghc-8.4.1
+DESCRIPTION=repairs a damanged git repisitory
+EAPI=7
+HOMEPAGE=https://git-repair.branchable.com/
+INHERIT=haskell-cabal
+IUSE=doc profile
+KEYWORDS=~amd64
+LICENSE=AGPL-3
+RDEPEND=dev-haskell/async:=[profile?] dev-haskell/attoparsec:=[profile?] dev-haskell/data-default:=[profile?] >=dev-haskell/exceptions-0.6:=[profile?] >=dev-haskell/filepath-bytestring-1.4.2.1.0:=[profile?] dev-haskell/hslogger:=[profile?] dev-haskell/ifelse:=[profile?] dev-haskell/mtl:=[profile?] dev-haskell/network:=[profile?] dev-haskell/network-uri:=[profile?] >=dev-haskell/optparse-applicative-0.14.1:=[profile?] dev-haskell/quickcheck:=[profile?] dev-haskell/setenv:=[profile?] dev-haskell/split:=[profile?] dev-haskell/text:=[profile?] >=dev-haskell/unix-compat-0.5:=[profile?] dev-haskell/utf8-string:=[profile?]
+SLOT=0
+SRC_URI=https://hackage.haskell.org/package/git-repair-1.20200102/git-repair-1.20200102.tar.gz
+_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	l10n	8cdd85e169b835d518bc2fd59f780d8e	wrapper	4251d4c84c25f59094fd557e0063a974	eutils	2d5b3f4b315094768576b6799e4f926e	multiprocessing	cac3169468f893670dac3e7cb940e045	ghc-package	2f31876646b777a7851b22816735765c	multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	haskell-cabal	781f607e5fa6b3d28f694be10c79646b
+_md5_=27746cc8d57afc7e82820af9e14fdbed
