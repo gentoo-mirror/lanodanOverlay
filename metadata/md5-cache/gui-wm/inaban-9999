@@ -9,5 +9,5 @@ LICENSE=BSD
 PROPERTIES=live
 RDEPEND=>=gui-libs/wlroots-0.6.0:= dev-libs/wayland-protocols:= x11-libs/libxkbcommon:= dev-libs/wayland:=
 SLOT=0
-_eclasses_=git-r3	3e7ec3d6619213460c85e2aa48398441
+_eclasses_=git-r3	b8e8c92aa5fe8df7187e466138eb4e52
 _md5_=9392df7baefb5eef37655de0cb26851f

@@ -1,0 +1,13 @@
+BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=install unpack
+DESCRIPTION=pure Unix shell script implementing ACME client protocol
+EAPI=7
+HOMEPAGE=https://acme.sh/
+INHERIT=git-r3
+IUSE=standalone
+LICENSE=GPL-3
+PROPERTIES=live
+RDEPEND=net-misc/curl || ( dev-libs/openssl:0 ) standalone? ( net-misc/socat ) virtual/cron
+SLOT=0
+_eclasses_=git-r3	b8e8c92aa5fe8df7187e466138eb4e52
+_md5_=7600aa2812a44b0444d433fac8271b11
