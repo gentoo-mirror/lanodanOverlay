@@ -3,13 +3,14 @@
 
 EAPI=7
 
-inherit cmake-multilib cmake-utils
+CMAKE_ECLASS="cmake"
+inherit cmake-multilib
 
 # https://bugs.gentoo.org/show_bug.cgi?id=760777
 MYCMAKEARGS="-DENABLE_PCH=OFF"
 
 DESCRIPTION="Khronos reference front-end for GLSL and ESSL, and sample SPIR-V generator"
-HOMEPAGE="https://www.khronos.org/opengles/sdk/tools/Reference-Compiler/"
+HOMEPAGE="https://www.khronos.org/opengles/sdk/tools/Reference-Compiler/ https://github.com/KhronosGroup/glslang"
 SRC_URI="https://github.com/KhronosGroup/glslang/archive/${PV}.tar.gz -> ${P}.tar.gz"
 KEYWORDS="~amd64 ~x86"
 LICENSE="BSD"
