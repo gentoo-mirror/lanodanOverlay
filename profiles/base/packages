@@ -1,7 +1,7 @@
--*sys-apps/less
 -*app-arch/tar
-app-arch/libarchive
+-*sys-apps/less
 app-admin/rsyslog
+app-arch/libarchive
 app-crypt/gentoo-keys
 app-editors/vis
 app-misc/pax-utils
@@ -19,6 +19,7 @@ net-analyzer/tcpdump
 net-dns/ldns-utils
 net-dns/unbound
 sys-apps/ed
+sys-apps/lanodan-utils
 sys-devel/clang
 sys-kernel/gentoo-sources
 sys-process/dcron
