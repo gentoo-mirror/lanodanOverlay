@@ -1,0 +1,11 @@
+BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=install unpack
+DESCRIPTION=Collection of Unix tools, comparable to coreutils
+EAPI=7
+HOMEPAGE=https://hacktivis.me/git/utils
+INHERIT=git-r3
+LICENSE=CC-BY-SA-4.0
+PROPERTIES=live
+SLOT=0
+_eclasses_=git-r3	b8e8c92aa5fe8df7187e466138eb4e52
+_md5_=01058932181dbec01ad150a2916ad42e

@@ -1,0 +1,14 @@
+BDEPEND=X? ( >=x11-apps/mkfontscale-1.2.0 media-fonts/encodings )
+DEFINED_PHASES=install postinst postrm setup
+DESCRIPTION=A IBM 3270 Terminal font in a modern format
+EAPI=7
+HOMEPAGE=https://github.com/rbanffy/3270font/
+INHERIT=font
+IUSE=X
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD CC-BY-SA-3.0 GPL-3 OFL
+RDEPEND=media-gfx/fontforge
+SLOT=0
+SRC_URI=https://github.com/rbanffy/3270font/archive/v2.0.0.tar.gz -> 3270font-2.0.0.tar.gz
+_eclasses_=font	0667878c2b594871023dd1833d05996f
+_md5_=dca688c00ed3b982bbc68b350abae3d0

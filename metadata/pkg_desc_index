@@ -53,8 +53,6 @@ dev-util/gtk-doc-am 1.32: Virtual ebuild for ::gentoo compatibility
 dev-util/xcd 1.2: A colorized hexdump tool
 dev-vcs/git-repair 1.20200102: repairs a damanged git repisitory
 dev-vcs/mercurial 5.0.2: Scalable distributed SCM
-games-action/chickens 0.2.4 0.2.4-r1: Target chickens with rockets and shotguns. Funny
-games-action/teeworlds 0.7.3.1: Online multi-player platform 2D shooter
 games-arcade/osu-lazer 9999.999.9: rhythm is just a *click* away!
 games-arcade/stepmania 5.1.0_beta2: Advanced rhythm game, designed for both home and arcade use
 games-arcade/tinymania 9999: A VSRG clone for playing .osu files.
@@ -79,7 +77,10 @@ gui-wm/wio 9999: Wayland Kiosk
 kde-plasma/breeze 5.17.5: Breeze visual style for the Plasma desktop
 mail-client/aerc 0.2.1 9999: Asynchronous email client for your terminal, written in Go.
 mail-mta/opensmtpd 6.7.1_p1: Lightweight but featured SMTP daemon from OpenBSD
+media-fonts/3270font 2.0.0: A IBM 3270 Terminal font in a modern format
 media-fonts/forkawesome 1.1.4: The iconic font
+media-fonts/inria-fonts 1.200: Inria Serif and Inria Sans Typeface
+media-fonts/opendyslexic 20160623: Opensource font for dyslexics and for high readability
 media-fonts/unifont 13.0.03: GNU Unifont - a Pan-Unicode X11 bitmap iso10646 font
 media-gfx/dustr 9999: light and interactive tool your crops need
 media-gfx/opentoonz 1.2.0: An open-source full-featured 2D animation creation software
@@ -136,7 +137,6 @@ net-im/poezio 0.12.1 9999: Console XMPP client that looks like most famous IRC c
 net-im/slack-libpurple 9999: Slack module for libpurple
 net-im/tootle 0.2.0 9999: GTK3 client for Mastodon API
 net-irc/unrealircd 4.2.0: An advanced Internet Relay Chat daemon
-net-irc/weechat 2.7.1 9999: Portable and multi-interface IRC client
 net-libs/glib-networking 2.66.0: Network-related giomodules for glib
 net-libs/libasr 1.0.2 9999: Async Resolver Library from OpenBSD/OpenSMTPD
 net-libs/libqmatrixclient 0.5.3.2: A Qt5 library to write cross-platfrom clients for Matrix
@@ -161,6 +161,7 @@ net-p2p/gnunet 0.11.0_pre66: GNUnet is a framework for secure peer-to-peer netwo
 net-p2p/stig 0.10.1a: TUI and CLI for the BitTorrent client Transmission
 sci-misc/labview 8.6.0: LabVIEW System Design Software
 sys-apps/bubblewrap 0.4.0: Unprivileged sandboxing tool, namespaces-powered chroot-like solution
+sys-apps/lanodan-utils 9999: Collection of Unix tools, comparable to coreutils
 sys-apps/openrc 0.41.2-r1: OpenRC manages the services, startup and shutdown of a host
 sys-apps/xdg-dbus-proxy 0.1.2: filtering proxy for D-Bus connections
 sys-auth/seatd 0.4.0 9999: Minimal seat management daemon and universal library

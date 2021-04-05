@@ -1,0 +1,13 @@
+BDEPEND=X? ( >=x11-apps/mkfontscale-1.2.0 media-fonts/encodings )
+DEFINED_PHASES=install postinst postrm prepare setup
+DESCRIPTION=Inria Serif and Inria Sans Typeface
+EAPI=7
+HOMEPAGE=https://black-foundry.com/work/inria/
+INHERIT=font
+IUSE=X
+KEYWORDS=~amd64 ~x86
+LICENSE=OFL-1.1
+SLOT=0
+SRC_URI=https://github.com/BlackFoundryCom/InriaFonts/archive/v1.200.tar.gz -> InriaFonts-1.200.tar.gz
+_eclasses_=font	0667878c2b594871023dd1833d05996f
+_md5_=05c0eb89fb2737601a49ecc2c1b51b43
