@@ -154,7 +154,6 @@ net-misc/streamlink 1.5.0: CLI for extracting streams from websites to a video p
 net-misc/tinyssh 20181206 20190101: A small SSH server with state-of-the-art cryptography
 net-misc/yacy 1.922.20191013.9964: YaCy - p2p based distributed web-search engine
 net-news/newsboat 2.13: An RSS/Atom feed reader for text terminals
-net-nntp/inn 2.6.4: The Internet News daemon, fully featured NNTP server
 net-nntp/suck 4.3.4: Grab news from a remote NNTP server and feed them to another
 net-p2p/gnunet 0.11.0_pre66: GNUnet is a framework for secure peer-to-peer networking.
 net-p2p/stig 0.10.1a: TUI and CLI for the BitTorrent client Transmission
