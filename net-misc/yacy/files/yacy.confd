@@ -1,2 +1,0 @@
-# yacy/java options (optional)
-yacy_options="-Xmx600m -Xms180m"
