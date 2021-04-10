@@ -8,7 +8,7 @@ HOMEPAGE="https://www.jwz.org/dadadodo/"
 SRC_URI="https://www.jwz.org/dadadodo/dadadodo-1.04.tar.gz"
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 DOCS=( "dodotodo" "README" )
 
 src_install() {
