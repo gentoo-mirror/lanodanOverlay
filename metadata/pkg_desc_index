@@ -23,15 +23,7 @@ app-vis/vis-ctags 9999: vis plugin to provide basic ctags support
 dev-db/timescaledb 1.2.1 1.6.0: A time-series database optimized for fast ingest and complex queries
 dev-dotnet/dotnetcore-sdk 3.0.100: .NET Core cli utility for building, testing, packaging and running projects
 dev-dotnet/nuget 5.0.2: Nuget - .NET Package Manager
-dev-haskell/filepath-bytestring 1.4.2.1.6: repairs a damanged git repisitory
-dev-haskell/hayland 9999: Haskell bindings to Wayland library (Waymonad fork)
-dev-haskell/hfuse 0.2.4.5: Bindings for the FUSE library
-dev-haskell/hsroots 9999: Haskell bindings for libxkbcommon
-dev-haskell/libinput 9999: Haskell bindings for libinput
-dev-haskell/waymonad-scanner 9999: Haskell bindings for libxkbcommon
-dev-haskell/xkbcommon 0.0.3 9999: Haskell bindings for libxkbcommon (Waymonad)
 dev-lang/go 0.20171003: Boostrap Go from C (useful for musl libc)
-dev-lang/mono 6.4.0.198: Mono runtime and class libraries, a C# compiler/interpreter
 dev-libs/aml 9999: Another Main Loop
 dev-libs/hts_engine 1.10: HMM-based speech synthesis system (HTS) engine and API
 dev-libs/libdazzle 3.34.1: Experimental new features for GTK+ and GLib
@@ -50,7 +42,6 @@ dev-util/glslang 11.2.0: Khronos reference front-end for GLSL and ESSL, and samp
 dev-util/go-deblob 1.0.0: remove binary blobs from a directory
 dev-util/gtk-doc 1.32-r2: GTK+ Documentation Generator
 dev-util/gtk-doc-am 1.32: Virtual ebuild for ::gentoo compatibility
-dev-util/xcd 1.2: A colorized hexdump tool
 dev-vcs/git-repair 1.20200102: repairs a damanged git repisitory
 dev-vcs/mercurial 5.0.2: Scalable distributed SCM
 games-arcade/osu-lazer 9999.999.9: rhythm is just a *click* away!
@@ -71,7 +62,6 @@ gui-libs/libwpe 1.6.0: WebKit port optimized for embedded devices
 gui-libs/wlrobs 9999: Wayland (wlroots-based) screen capture plugin for obs-studio
 gui-libs/wpebackend-fdo 1.4.2 1.6.0: FreeDesktop.Org backend for WPE WebKit
 gui-wm/inaban 9999: Distrustful Tiling Wayland Compositor
-gui-wm/waymonad 9999: wayland compositor based on ideas from and inspired by xmonad
 gui-wm/wio 9999: Wayland Kiosk
 kde-plasma/breeze 5.17.5: Breeze visual style for the Plasma desktop
 mail-client/aerc 0.2.1 9999: Asynchronous email client for your terminal, written in Go.
@@ -143,7 +133,6 @@ net-libs/libsoup 2.68.4 2.70.0: HTTP client/server library for GNOME
 net-libs/serf 1.3.9: HTTP client library
 net-libs/webkit-gtk 2.30.6 2.32.0: Open source web browser engine
 net-libs/wpewebkit 2.28.0 2.28.1: WebKit port optimized for embedded devices
-net-mail/public-inbox 1.0.0: 
 net-misc/drawterm 9999: connect to Plan 9 CPU servers from other operating systems
 net-misc/fbxosctrl 2.4.4: Shell tool to control some Freebox OS stuff: wifi, reboot...
 net-misc/geomyidae 0.31.1: A small C-based gopherd.
@@ -152,12 +141,10 @@ net-misc/openntpd 6.0_p1: Lightweight NTP server ported from OpenBSD
 net-misc/pussh 9999: Parallel SSH, batch and command line oriented
 net-misc/streamlink 1.5.0: CLI for extracting streams from websites to a video player of your choice
 net-misc/tinyssh 20181206 20190101: A small SSH server with state-of-the-art cryptography
-net-misc/yacy 1.922.20191013.9964: YaCy - p2p based distributed web-search engine
 net-news/newsboat 2.13: An RSS/Atom feed reader for text terminals
 net-nntp/suck 4.3.4: Grab news from a remote NNTP server and feed them to another
 net-p2p/gnunet 0.11.0_pre66: GNUnet is a framework for secure peer-to-peer networking.
 net-p2p/stig 0.10.1a: TUI and CLI for the BitTorrent client Transmission
-sci-misc/labview 8.6.0: LabVIEW System Design Software
 sys-apps/bubblewrap 0.4.0: Unprivileged sandboxing tool, namespaces-powered chroot-like solution
 sys-apps/lanodan-utils 9999: Collection of Unix tools, comparable to coreutils
 sys-apps/openrc 0.41.2-r1: OpenRC manages the services, startup and shutdown of a host
