@@ -119,6 +119,7 @@ media-sound/oss 4.2.2019 4.2.2020 4.2.9999: Open Sound System (OSS)
 media-sound/sbagen 1.4.5: Command line sequenced binaural beat generator
 media-video/obs-studio 9999: Software for Recording and Streaming Live Video Content (wayland branch)
 media-video/pipewire 0.3.10: Multimedia processing graphs
+media-video/untrunc 9999: Restore a truncated mp4/mov
 net-dns/getdns 1.3.0: Modern asynchronous DNS API
 net-dns/ldns-utils 1.7.0-r1: Set of utilities to simplify various dns(sec) tasks
 net-im/Quaternion 0.0.9.4e: A Qt5-based IM client for the Matrix protocol

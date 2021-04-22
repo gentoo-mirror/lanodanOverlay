@@ -1,0 +1,14 @@
+BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=install unpack
+DEPEND=media-video/ffmpeg:=
+DESCRIPTION=Restore a truncated mp4/mov
+EAPI=7
+HOMEPAGE=https://github.com/anthwlock/untrunc
+INHERIT=git-r3
+KEYWORDS=~amd64
+LICENSE=GPL-2+
+PROPERTIES=live
+RDEPEND=media-video/ffmpeg:=
+SLOT=0
+_eclasses_=git-r3	b8e8c92aa5fe8df7187e466138eb4e52
+_md5_=4c98d55356b5bb08d537309f04031950
