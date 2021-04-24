@@ -38,7 +38,6 @@ dev-python/livereload 2.6.1: Python LiveReload is an awesome tool for web develo
 dev-python/misaka 2.1.1: CFFI binding for Hoedown, a markdown parsing library
 dev-python/mkdocs 1.0.4 1.1: Project documentation with Markdown.
 dev-python/pycrypto 9999: Fake ebuild to mask pycrypto in a overlay
-dev-python/slixmpp 1.4.2 9999: Python 3 library for XMPP
 dev-util/bam 0.5.1: Fast and flexible Lua-based build system
 dev-util/glslang 11.2.0: Khronos reference front-end for GLSL and ESSL, and sample SPIR-V generator
 dev-util/go-deblob 1.0.0: remove binary blobs from a directory
@@ -125,7 +124,6 @@ net-dns/ldns-utils 1.7.0-r1: Set of utilities to simplify various dns(sec) tasks
 net-im/Quaternion 0.0.9.4e: A Qt5-based IM client for the Matrix protocol
 net-im/bitlbee 3.5.1 9999: irc to IM gateway that support multiple IM protocols
 net-im/gajim 1.0.3 1.1.2: A GTK+ Jabber client
-net-im/poezio 0.12.1 9999: Console XMPP client that looks like most famous IRC clients
 net-im/slack-libpurple 9999: Slack module for libpurple
 net-im/tootle 0.2.0 9999: GTK3 client for Mastodon API
 net-irc/unrealircd 4.2.0: An advanced Internet Relay Chat daemon
