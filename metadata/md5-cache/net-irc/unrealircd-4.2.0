@@ -1,5 +1,5 @@
 DEFINED_PHASES=configure install postinst prepare pretend setup
-DEPEND=dev-libs/openssl:0= dev-libs/libpcre2 dev-libs/tre >=net-dns/c-ares-1.7:= sys-libs/zlib curl? ( net-misc/curl[adns] ) virtual/pkgconfig || ( dev-libs/openssl:0 dev-libs/libressl:0 )
+DEPEND=dev-libs/openssl:0= dev-libs/libpcre2 dev-libs/tre >=net-dns/c-ares-1.7:= sys-libs/zlib curl? ( net-misc/curl[adns] ) virtual/pkgconfig dev-libs/openssl:0
 DESCRIPTION=An advanced Internet Relay Chat daemon
 EAPI=6
 HOMEPAGE=https://www.unrealircd.org/
@@ -10,5 +10,5 @@ LICENSE=GPL-2
 RDEPEND=dev-libs/openssl:0= dev-libs/libpcre2 dev-libs/tre >=net-dns/c-ares-1.7:= sys-libs/zlib curl? ( net-misc/curl[adns] )
 SLOT=0
 SRC_URI=https://www.unrealircd.org/unrealircd4/unrealircd-4.2.0.tar.gz
-_eclasses_=eapi7-ver	f9ec87e93172b25ce65a85303dc06964	ssl-cert	a9ab3ee655f5ee43246ff3999cfedfe6	user-info	a2abd4e2f4c3b9b06d64bf1329359a02	user	26d8ce6329c43cbac965617f1c0627e2
+_eclasses_=eapi7-ver	f9ec87e93172b25ce65a85303dc06964	ssl-cert	f89abc915c0b80c4a66bd4c321169d3d	user-info	a2abd4e2f4c3b9b06d64bf1329359a02	user	26d8ce6329c43cbac965617f1c0627e2
 _md5_=2f3495322301eecf8b7354316a7e5f4c
