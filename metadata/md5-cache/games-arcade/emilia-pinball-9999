@@ -11,4 +11,4 @@ PROPERTIES=live
 RDEPEND=media-libs/libsdl2[joystick,opengl,video,gles1?] virtual/opengl
 SLOT=0
 _eclasses_=git-r3	b8e8c92aa5fe8df7187e466138eb4e52
-_md5_=9117c6125bde88906f10d54f50f0db15
+_md5_=e10bf23bf6d2e77772f95c9a2e987613

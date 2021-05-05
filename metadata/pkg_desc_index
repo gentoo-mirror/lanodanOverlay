@@ -83,6 +83,7 @@ media-libs/gst-plugins-ugly 1.18.4: Basepack of plugins for gstreamer
 media-libs/gstreamer 1.18.4: Open source multimedia framework
 media-libs/libplacebo 3.104.0: Reusable library for GPU-accelerated image processing primitives
 media-libs/libsdl 9999: Simple Direct Media Layer (sdl-1.2 compatibility)
+media-libs/libsdl2 9999: Simple Direct Media Layer
 media-libs/libsidplay 2.1.1-r5: C64 SID player library
 media-libs/monado 9999: The open source OpenXR runtime.
 media-libs/openxr-loader 9999: OpenXR loader
