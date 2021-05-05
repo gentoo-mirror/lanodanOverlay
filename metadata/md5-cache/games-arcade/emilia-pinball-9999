@@ -1,0 +1,14 @@
+BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=configure prepare unpack
+DEPEND=media-libs/libsdl2[joystick,opengl,video,gles1?] virtual/opengl
+DESCRIPTION=SDL OpenGL pinball game
+EAPI=7
+HOMEPAGE=http://pinball.sourceforge.net/ https://github.com/rzr/pinball
+INHERIT=git-r3
+IUSE=gles1
+LICENSE=GPL-2
+PROPERTIES=live
+RDEPEND=media-libs/libsdl2[joystick,opengl,video,gles1?] virtual/opengl
+SLOT=0
+_eclasses_=git-r3	b8e8c92aa5fe8df7187e466138eb4e52
+_md5_=9117c6125bde88906f10d54f50f0db15

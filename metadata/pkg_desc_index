@@ -44,6 +44,7 @@ dev-util/gtk-doc 1.32-r2: GTK+ Documentation Generator
 dev-util/gtk-doc-am 1.32: Virtual ebuild for ::gentoo compatibility
 dev-vcs/git-repair 1.20200102: repairs a damanged git repisitory
 dev-vcs/mercurial 5.0.2: Scalable distributed SCM
+games-arcade/emilia-pinball 9999: SDL OpenGL pinball game
 games-arcade/osu-lazer 9999.999.9: rhythm is just a *click* away!
 games-arcade/stepmania 5.1.0_beta2: Advanced rhythm game, designed for both home and arcade use
 games-arcade/tinymania 9999: A VSRG clone for playing .osu files.
