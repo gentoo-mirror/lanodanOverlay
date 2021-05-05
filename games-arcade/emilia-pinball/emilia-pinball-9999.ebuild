@@ -36,5 +36,5 @@ src_prepare() {
 }
 
 src_configure() {
-	econf $(use_enable gles1 opengles1)
+	econf $(use_enable gles1 gles)
 }
