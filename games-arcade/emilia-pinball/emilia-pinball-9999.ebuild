@@ -17,14 +17,14 @@ fi
 DESCRIPTION="SDL OpenGL pinball game"
 HOMEPAGE="https://github.com/adoptware/pinball"
 
-LICENSE="GPL-2 CC0"
+LICENSE="GPL-2 CC0-1.0"
 SLOT="0"
 IUSE="gles1-only"
 
 # Note: media-libs/libsdl2::gentoo doesn't have USE=gles1 yet
 RDEPEND="
 	media-libs/libsdl2[joystick,opengl,video]
-	gles1-only? ( media-libs/libsdl2[gles1]↵ )
+	gles1-only? ( media-libs/libsdl2[gles1] )
 	virtual/opengl
 "
 DEPEND="
