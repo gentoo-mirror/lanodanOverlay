@@ -46,6 +46,8 @@ dev-vcs/git-repair 1.20200102: repairs a damanged git repisitory
 dev-vcs/mercurial 5.0.2: Scalable distributed SCM
 games-arcade/emilia-pinball 9999: SDL OpenGL pinball game
 games-arcade/osu-lazer 9999.999.9: rhythm is just a *click* away!
+games-arcade/pinball-table-gnu 9999: GNU table for games-arcade/emilia-pinball
+games-arcade/pinball-table-hurd 9999: Hurd table for games-arcade/emilia-pinball
 games-arcade/stepmania 5.1.0_beta2: Advanced rhythm game, designed for both home and arcade use
 games-arcade/tinymania 9999: A VSRG clone for playing .osu files.
 games-board/cockatrice 2.7.2: An open-source multiplatform software for playing card games over a network

@@ -1,0 +1,13 @@
+BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=prepare unpack
+DEPEND=media-libs/libsdl2 >=games-arcade/emilia-pinball-0.3.2020
+DESCRIPTION=Hurd table for games-arcade/emilia-pinball
+EAPI=7
+HOMEPAGE=https://github.com/rzr/pinball-table-hurd
+INHERIT=git-r3
+LICENSE=GPL-2+ Free-Art-1.3 CC-BY-SA-3.0
+PROPERTIES=live
+RDEPEND=media-libs/libsdl2 >=games-arcade/emilia-pinball-0.3.2020
+SLOT=0
+_eclasses_=git-r3	b8e8c92aa5fe8df7187e466138eb4e52
+_md5_=3a40a220e147edd7dcfb07eea57b432f
