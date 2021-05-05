@@ -5,6 +5,6 @@
 	<email>contact@hacktivis.me</email>
 </maintainer>
 <use>
-	<flag name="gles1">include OpenGL ES 1.0 support</flag>
+	<flag name="gles1-only">Use GLES 1.0 instead of OpenGL</flag>
 </use>
 </pkgmetadata>

@@ -15,15 +15,16 @@ else
 fi
 
 DESCRIPTION="SDL OpenGL pinball game"
-HOMEPAGE="http://pinball.sourceforge.net/ https://github.com/rzr/pinball"
+HOMEPAGE="https://github.com/adoptware/pinball"
 
-LICENSE="GPL-2"
+LICENSE="GPL-2 CC0"
 SLOT="0"
-IUSE="gles1"
+IUSE="gles1-only"
 
 # Note: media-libs/libsdl2::gentoo doesn't have USE=gles1 yet
 RDEPEND="
-	media-libs/libsdl2[joystick,opengl,video,gles1?]
+	media-libs/libsdl2[joystick,opengl,video]
+	gles1-only? ( media-libs/libsdl2[gles1]↵ )
 	virtual/opengl
 "
 DEPEND="
@@ -36,5 +37,5 @@ src_prepare() {
 }
 
 src_configure() {
-	econf $(use_enable gles1 gles)
+	econf $(use_enable gles1-only gles)
 }
