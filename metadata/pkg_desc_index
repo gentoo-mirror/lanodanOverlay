@@ -25,6 +25,7 @@ app-vis/vis-ctags 9999: vis plugin to provide basic ctags support
 dev-db/timescaledb 1.2.1 1.6.0: A time-series database optimized for fast ingest and complex queries
 dev-dotnet/dotnetcore-sdk 3.0.100: .NET Core cli utility for building, testing, packaging and running projects
 dev-dotnet/nuget 5.0.2: Nuget - .NET Package Manager
+dev-lang/erlang 24.0: Erlang programming language, runtime environment and libraries (OTP)
 dev-lang/go 0.20171003: Boostrap Go from C (useful for musl libc)
 dev-libs/aml 9999: Another Main Loop
 dev-libs/hts_engine 1.10: HMM-based speech synthesis system (HTS) engine and API
@@ -56,14 +57,13 @@ games-engines/openmw 0.44.0: Open source reimplementation of TES III: Morrowind
 games-engines/solarus 1.5.3: An open-source Zelda-like 2D game engine
 games-misc/ponysay 3.0.3: cowsay reimplemention for ponies
 games-sports/vdrift 2014.10.20 9999: A driving simulation made with drift racing in mind
+games-util/fteqcc 9999: FTE QuakeC compiler
 games-visualnovel/doki-doki-litterature-club 1.1.1: Psychological horror game presented as a romance visual novel
 gnome-base/gvfs 1.32.2: Virtual filesystem implementation for gio
 gnome-base/librsvg 2.40.21: Scalable Vector Graphics (SVG) rendering library
 gnustep-base/gnustep-make 2.7.0: GNUstep Makefile Package
 gui-apps/wayvnc 9999: VNC server for wlroots based Wayland compositors
-gui-libs/libwpe 1.6.0: WebKit port optimized for embedded devices
 gui-libs/wlrobs 9999: Wayland (wlroots-based) screen capture plugin for obs-studio
-gui-libs/wpebackend-fdo 1.4.2 1.6.0: FreeDesktop.Org backend for WPE WebKit
 gui-wm/inaban 9999: Distrustful Tiling Wayland Compositor
 gui-wm/wio 9999: Wayland Kiosk
 kde-plasma/breeze 5.17.5: Breeze visual style for the Plasma desktop
@@ -134,7 +134,7 @@ net-libs/libasr 1.0.2 9999: Async Resolver Library from OpenBSD/OpenSMTPD
 net-libs/libqmatrixclient 0.5.3.2: A Qt5 library to write cross-platfrom clients for Matrix
 net-libs/libsoup 2.68.4 2.70.0: HTTP client/server library for GNOME
 net-libs/serf 1.3.9: HTTP client library
-net-libs/webkit-gtk 2.30.6 2.32.0: Open source web browser engine
+net-libs/webkit-gtk 2.32.0 2.32.1: Open source web browser engine
 net-libs/wpewebkit 2.28.0 2.28.1: WebKit port optimized for embedded devices
 net-misc/drawterm 9999: connect to Plan 9 CPU servers from other operating systems
 net-misc/fbxosctrl 2.4.4: Shell tool to control some Freebox OS stuff: wifi, reboot...
