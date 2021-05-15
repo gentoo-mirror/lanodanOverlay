@@ -3,7 +3,7 @@
 
 EAPI=7
 CMAKE_MAKEFILE_GENERATOR="ninja"
-PYTHON_COMPAT=( python3_{7..8} )
+PYTHON_COMPAT=( python3_{7..9} )
 USE_RUBY="ruby24 ruby25 ruby26 ruby27 ruby30"
 
 inherit check-reqs cmake flag-o-matic gnome2 pax-utils python-any-r1 ruby-single toolchain-funcs virtualx
@@ -28,6 +28,10 @@ REQUIRED_USE="
 	media-source? ( gstreamer )
 	|| ( aqua wayland X )
 "
+
+# Tests fail to link for inexplicable reasons
+# https://bugs.webkit.org/show_bug.cgi?id=148210
+RESTRICT="test"
 
 # Aqua support in gtk3 is untested
 # Dependencies found at Source/cmake/OptionsGTK.cmake
@@ -55,13 +59,13 @@ RDEPEND="
 	>=dev-libs/atk-2.16.0
 	media-libs/libwebp:=
 
-	>=dev-libs/glib-2.44.0:2
+	>=dev-libs/glib-2.67.1:2
 	>=dev-libs/libxslt-1.1.7
 	media-libs/woff2
 	gnome-keyring? ( app-crypt/libsecret )
 	introspection? ( >=dev-libs/gobject-introspection-1.59.1:= )
 	dev-libs/libtasn1:=
-	spell? ( >=app-text/enchant-0.22:= )
+	spell? ( >=app-text/enchant-0.22:2 )
 	gstreamer? (
 		>=media-libs/gstreamer-1.14:1.0
 		>=media-libs/gst-plugins-base-1.14:1.0[egl?,opengl?,X?]
@@ -102,12 +106,13 @@ RDEPEND="
 "
 unset wpe_depend
 
-BDEPEND="${RUBY_DEPS}"
+DEPEND="${RDEPEND}"
 
 # paxctl needed for bug #407085
 # Need real bison, not yacc
-DEPEND="${RDEPEND}
+BDEPEND="
 	${PYTHON_DEPS}
+	${RUBY_DEPS}
 	dev-util/glib-utils
 	>=dev-util/gtk-doc-am-1.10
 	>=dev-util/gperf-3.0.1
@@ -130,11 +135,6 @@ DEPEND="${RDEPEND}
 RDEPEND="${RDEPEND}
 	geolocation? ( >=app-misc/geoclue-2.1.5:2.0 )
 "
-RESTRICT="test"
-# tests are b0rk, PYTHON_USEDEP is as well
-#	test? (
-#		dev-python/pygobject:3[${PYTHON_USEDEP}]
-#		x11-themes/hicolor-icon-theme )
 
 S="${WORKDIR}/${MY_P}"
 
@@ -173,6 +173,7 @@ pkg_setup() {
 
 src_prepare() {
 	eapply "${FILESDIR}"/2.28.2-opengl-without-X-fixes.patch
+	eapply "${FILESDIR}"/${PV}-Properly-use-CompletionHandler-when-USE_OPENGL_OR_ES.patch
 	cmake_src_prepare
 	gnome2_src_prepare
 }
@@ -242,24 +243,21 @@ src_configure() {
 	fi
 
 	local mycmakeargs=(
-		# begin PRIVATE options
-		-DENABLE_API_TESTS=$(usex test)
-		-DSHOULD_INSTALL_JS_SHELL=$(usex examples)
-		-DENABLE_GEOLOCATION=$(usex geolocation) # Runtime optional (talks over dbus service)
 		-DENABLE_UNIFIED_BUILDS=$(usex jumbo-build)
-		-DENABLE_GAMEPAD=$(usex gamepad)
-		# end PRIVATE options
-		-DUSE_SYSTEMD=$(usex systemd)
 		-DENABLE_WEBDRIVER=OFF
 		-DENABLE_WEB_CRYPTO=OFF
 		# -DENABLE_TOUCH_EVENTS=OFF
 		# -DENABLE_DRAG_SUPPORT=OFF
-		-DENABLE_MINIBROWSER=$(usex examples)
 		-DENABLE_QUARTZ_TARGET=$(usex aqua)
+		-DENABLE_API_TESTS=$(usex test)
 		-DENABLE_GTKDOC=$(usex gtk-doc)
+		-DENABLE_GEOLOCATION=$(usex geolocation) # Runtime optional (talks over dbus service)
 		$(cmake_use_find_package gles2-only OpenGLES2)
 		-DENABLE_GLES2=$(usex gles2-only)
+		-DENABLE_MINIBROWSER=$(usex examples)
+		-DSHOULD_INSTALL_JS_SHELL=$(usex examples)
 		-DENABLE_VIDEO=$(usex gstreamer)
+		-DENABLE_MEDIA_SOURCE=$(usex media-source)
 		-DENABLE_WEB_AUDIO=$(usex gstreamer)
 		-DENABLE_INTROSPECTION=$(usex introspection)
 		-DUSE_LIBNOTIFY=$(usex libnotify)
@@ -267,18 +265,24 @@ src_configure() {
 		-DUSE_OPENJPEG=$(usex jpeg2k)
 		-DUSE_WOFF2=ON
 		-DENABLE_SPELLCHECK=$(usex spell)
+		-DUSE_SYSTEMD=$(usex systemd) # Whether to enable journald logging
+		-DENABLE_GAMEPAD=$(usex gamepad)
 		-DENABLE_WAYLAND_TARGET=$(usex wayland)
+		-DUSE_WPE_RENDERER=${use_wpe_renderer} # WPE renderer is used to implement accelerated compositing under wayland
 		$(cmake_use_find_package egl EGL)
 		$(cmake_use_find_package opengl OpenGL)
 		-DENABLE_X11_TARGET=$(usex X)
-		-DENABLE_GRAPHICS_CONTEXT_GL=${opengl_enabled}
+		-DUSE_OPENGL_OR_ES=${opengl_enabled}
 		-DENABLE_WEBGL=${opengl_enabled}
-		-DUSE_WPE_RENDERER=${use_wpe_renderer}
+		# Supported only under ANGLE, see
+		# https://bugs.webkit.org/show_bug.cgi?id=225563
+		# https://bugs.webkit.org/show_bug.cgi?id=224888
+		-DENABLE_WEBGL2=OFF
 		-DENABLE_BUBBLEWRAP_SANDBOX=$(usex seccomp)
-		-DENABLE_MEDIA_SOURCE=$(usex media-source)
-		-DBWRAP_EXECUTABLE="${EPREFIX}"/usr/bin/bwrap # If bubblewrap[suid] then portage makes it go-r and cmake find_program fails with that
 		-DUSE_LD_GOLD=ON
 		-DUSE_GTK4=OFF
+		-DBWRAP_EXECUTABLE:FILEPATH="${EPREFIX}"/usr/bin/bwrap # If bubblewrap[suid] then portage makes it go-r and cmake find_program fails with that
+		-DDBUS_PROXY_EXECUTABLE:FILEPATH="${EPREFIX}"/usr/bin/xdg-dbus-proxy
 		-DPORT=GTK
 		${ruby_interpreter}
 	)
@@ -304,6 +308,6 @@ src_install() {
 	cmake_src_install
 
 	# Prevents crashes on PaX systems, bug #522808
-	pax-mark m "${ED}usr/libexec/webkit2gtk-4.0/jsc" "${ED}usr/libexec/webkit2gtk-4.0/WebKitWebProcess"
-	pax-mark m "${ED}usr/libexec/webkit2gtk-4.0/WebKitPluginProcess"
+	pax-mark m "${ED}/usr/libexec/webkit2gtk-4.0/jsc" "${ED}/usr/libexec/webkit2gtk-4.0/WebKitWebProcess"
+	pax-mark m "${ED}/usr/libexec/webkit2gtk-4.0/WebKitPluginProcess"
 }
