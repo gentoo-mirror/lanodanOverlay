@@ -150,7 +150,7 @@ net-p2p/stig 0.10.1a: TUI and CLI for the BitTorrent client Transmission
 sys-apps/bubblewrap 0.4.0: Unprivileged sandboxing tool, namespaces-powered chroot-like solution
 sys-apps/lanodan-utils 9999: Collection of Unix tools, comparable to coreutils
 sys-apps/openrc 0.41.2-r1: OpenRC manages the services, startup and shutdown of a host
-sys-apps/tcb 1.2: Libraries and tools implementing the tcb password shadowing scheme
+sys-apps/tcb 1.2-r1: Libraries and tools implementing the tcb password shadowing scheme
 sys-apps/xdg-dbus-proxy 0.1.2: filtering proxy for D-Bus connections
 sys-auth/seatd 0.4.0 9999: Minimal seat management daemon and universal library
 sys-fs/zfs-kmod 0.8.4-r1: Linux ZFS kernel module for sys-fs/zfs
