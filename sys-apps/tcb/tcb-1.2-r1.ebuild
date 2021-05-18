@@ -12,6 +12,8 @@ KEYWORDS="~amd64"
 IUSE="pam"
 
 DEPEND="
+	acct-group/chkpwd
+	acct-group/shadow
 	sys-libs/libxcrypt:=
 "
 RDEPEND="${DEPEND}"
