@@ -11,4 +11,4 @@ RDEPEND=!static? ( sys-libs/zlib ) !sys-apps/man-db !sys-apps/man
 SLOT=0
 SRC_URI=https://mandoc.bsd.lv/snapshots/mandoc-1.14.5.tar.gz
 _eclasses_=multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
-_md5_=44d9b0724099c19d9579682c0f46f8ea
+_md5_=4288b7424c986d0b060174e26ba13a08

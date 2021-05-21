@@ -4,7 +4,6 @@ app-accessibility/julius 4.3.1 4.5: Large Vocabulary Continuous Speech Recogniti
 app-accessibility/mimic1 1.2.0.2 9999: Mycroft's TTS engine, based on CMU's Flite (Festival Lite)
 app-admin/pass 1.7.3-r1: Stores, retrieves, generates, and synchronizes passwords securely
 app-admin/pass-update 2.1: pass extension that provides an easy flow for updating passwords
-app-arch/unar 1.10.1: unpacker for various archiving formats, e.g. rar v3
 app-crypt/acme-sh 2.8.1 9999: pure Unix shell script implementing ACME client protocol
 app-crypt/netpgp 20140220: OpenPGP implementation from NetBSD
 app-doc/afaq 15.1: An Anarchist FAQ, scrapped in one collection and a markdown version
@@ -86,7 +85,6 @@ media-libs/gstreamer 1.18.4: Open source multimedia framework
 media-libs/libplacebo 3.104.0: Reusable library for GPU-accelerated image processing primitives
 media-libs/libsdl 9999: Simple Direct Media Layer (sdl-1.2 compatibility)
 media-libs/libsdl2 9999: Simple Direct Media Layer
-media-libs/libsidplay 2.1.1-r5: C64 SID player library
 media-libs/monado 9999: The open source OpenXR runtime.
 media-libs/openxr-loader 9999: OpenXR loader
 media-libs/portaudio 19.06.00-r3: A free, cross-platform, open-source, audio I/O library
