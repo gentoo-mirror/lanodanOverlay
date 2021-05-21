@@ -37,10 +37,6 @@ app-text/evince:xps - Enable XPS viewer using app-text/libgxps
 dev-lang/erlang:hipe - HIgh Performance Erlang extension
 dev-lang/erlang:kpoll - Enable kernel polling support
 dev-libs/hts_engine:speech-tools - use memory allocation/free functions of app-accessibility/speech-tools
-dev-vcs/mercurial:bugzilla - Support bugzilla integration.
-dev-vcs/mercurial:chg - Support Mercurial command server client
-dev-vcs/mercurial:gpg - Support signing with GnuPG.
-dev-vcs/mercurial:tk - Install dev-lang/tk for hgk script.
 games-arcade/emilia-pinball:gles1-only - Use GLES 1.0 instead of OpenGL
 games-arcade/stepmania:crash-handler - Enable the custom crash handler
 games-arcade/stepmania:default-songs - Install the songs that are distributed with the game by default
