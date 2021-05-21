@@ -19,3 +19,4 @@ sys-boot/grub -fonts -nls
 sys-fs/lvm2 -thin
 sys-kernel/genkernel cryptsetup
 sys-kernel/gentoo-sources -symlink
+app-text/mandoc system-man
