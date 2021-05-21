@@ -18,7 +18,6 @@ app-text/base91 2.0.0: A Base91 Encoder & Decoder for Haskell
 app-text/dadadodo 1.04: Analyse texts for word probabilities and generate random sentences
 app-text/evince 3.34.2: Simple document viewer for GNOME
 app-text/hoedown 3.0.7 9999: Standards compliant, fast, secure markdown processing library in C
-app-text/mandoc 1.14.5-r1: Suite of tools compiling mdoc and man
 app-text/sshpaste 1.0.1 9999: wgetpaste clone for pushing to your own server
 app-vis/vis-ctags 9999: vis plugin to provide basic ctags support
 dev-db/timescaledb 1.2.1 1.6.0: A time-series database optimized for fast ingest and complex queries
