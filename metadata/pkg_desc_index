@@ -156,7 +156,7 @@ virtual/editor 0-r1: Virtual for editor
 virtual/man 9: Virtual for man
 www-apps/stagit 0.9.4: static git page generator
 www-client/lariza 18.07: simple web browser using GTK+ 3, GLib and WebKit2GTK+
-x11-libs/gtk+ 3.24.27 4.0.1: Gimp ToolKit +
+x11-libs/gtk+ 3.24.27: Gimp ToolKit +
 x11-misc/gtk3-nocsd 9999: A hack to disable gtk3 client-side decorations
 x11-misc/keynav 9999: Make pointer-driven interfaces easier and faster for users to operate
 x11-misc/qarma 9999: Zenity Clone for Qt5 (lanodan's branch)
