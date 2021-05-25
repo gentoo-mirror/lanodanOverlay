@@ -59,7 +59,6 @@ games-visualnovel/doki-doki-litterature-club 1.1.1: Psychological horror game pr
 gnome-base/gvfs 1.32.2: Virtual filesystem implementation for gio
 gnome-base/librsvg 2.40.21: Scalable Vector Graphics (SVG) rendering library
 gnustep-base/gnustep-make 2.7.0: GNUstep Makefile Package
-gui-apps/wayvnc 9999: VNC server for wlroots based Wayland compositors
 gui-libs/wlrobs 9999: Wayland (wlroots-based) screen capture plugin for obs-studio
 gui-wm/inaban 9999: Distrustful Tiling Wayland Compositor
 gui-wm/wio 9999: Wayland Kiosk
@@ -133,7 +132,6 @@ net-libs/wpewebkit 2.28.0 2.28.1 2.32.1: WebKit port optimized for embedded devi
 net-misc/drawterm 9999: connect to Plan 9 CPU servers from other operating systems
 net-misc/fbxosctrl 2.4.4: Shell tool to control some Freebox OS stuff: wifi, reboot...
 net-misc/geomyidae 0.31.1: A small C-based gopherd.
-net-misc/neatvnc 9999: liberally licensed VNC server library that's intended to be fast and neat
 net-misc/openntpd 6.0_p1: Lightweight NTP server ported from OpenBSD
 net-misc/pussh 9999: Parallel SSH, batch and command line oriented
 net-news/newsboat 2.13: An RSS/Atom feed reader for text terminals
