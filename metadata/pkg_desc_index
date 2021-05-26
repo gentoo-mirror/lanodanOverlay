@@ -38,7 +38,6 @@ dev-python/mkdocs 1.0.4 1.1: Project documentation with Markdown.
 dev-python/pycrypto 9999: Fake ebuild to mask pycrypto in a overlay
 dev-util/bam 0.5.1: Fast and flexible Lua-based build system
 dev-util/glslang 11.2.0: Khronos reference front-end for GLSL and ESSL, and sample SPIR-V generator
-dev-util/go-deblob 1.0.0: remove binary blobs from a directory
 dev-util/gtk-doc 1.32-r2: GTK+ Documentation Generator
 dev-util/gtk-doc-am 1.32: Virtual ebuild for ::gentoo compatibility
 dev-vcs/git-repair 1.20200102: repairs a damanged git repisitory
