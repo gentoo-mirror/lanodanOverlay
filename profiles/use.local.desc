@@ -34,8 +34,6 @@ app-text/evince:postscript - Enable support for PostScript and Adobe Illustrator
 app-text/evince:spell - Enable inline spell check for annotations via app-text/gspell
 app-text/evince:t1lib - Enable the Type-1 fonts for the built-in DVI viewer (media-libs/t1lib)
 app-text/evince:xps - Enable XPS viewer using app-text/libgxps
-dev-lang/erlang:hipe - HIgh Performance Erlang extension
-dev-lang/erlang:kpoll - Enable kernel polling support
 dev-libs/hts_engine:speech-tools - use memory allocation/free functions of app-accessibility/speech-tools
 games-arcade/emilia-pinball:gles1-only - Use GLES 1.0 instead of OpenGL
 games-arcade/stepmania:crash-handler - Enable the custom crash handler
