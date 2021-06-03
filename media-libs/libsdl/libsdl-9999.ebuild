@@ -9,11 +9,17 @@ HOMEPAGE="https://github.com/libsdl-org/sdl12-compat"
 EGIT_REPO_URI="https://github.com/libsdl-org/sdl12-compat"
 LICENSE="ZLIB"
 SLOT="0/sdl12-compat"
+IUSE="test"
+RESTRICT="!test? ( test )"
 
 # Those are fakes and just there for compat with other ebuilds
 IUSE="oss alsa nas X dga xv xinerama fbcon tslib aalib opengl libcaca +sound +video +joystick custom-cflags pulseaudio static-libs"
-IUSE="test"
-RESTRICT="!test? ( test )"
+
+# IUSE inheritance dropped: dga, xv, fbcon, tflib, aalib, libcaca, custom-cflags, static-libs
+DEPEND="
+	media-libs/libsdl2[oss?,alsa?,nas?,X?,xinerama?,opengl?,sound?,video?,joystick?,pulseaudio?]
+"
+RDEPEND="${DEPEND}"
 
 src_unpack() {
 	default
