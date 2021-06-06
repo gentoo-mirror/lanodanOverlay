@@ -19,14 +19,13 @@ IUSE="
 
 # IUSE inheritance dropped: dga, xv, fbcon, tflib, aalib, libcaca, custom-cflags, static-libs
 DEPEND="
-	media-libs/libsdl2[oss?,alsa?,nas?,X?,xinerama?,opengl?,sound?,video?,joystick?,pulseaudio?]
+	media-libs/libsdl2[oss?,alsa?,nas?,xinerama?,opengl?,sound?,video?,joystick?,pulseaudio?]
+	X? ( || (
+		media-libs/libsdl2[X]
+		media-libs/libsdl2[wayland]
+	) )
 "
 RDEPEND="${DEPEND}"
-
-src_unpack() {
-	default
-	git-r3_src_unpack
-}
 
 src_configure() {
 	local mycmakeargs=(
