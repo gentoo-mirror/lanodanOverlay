@@ -27,7 +27,8 @@ src_install() {
 		rm "${D}/opt/lanodan/bin/memsys" || die "Failed removing memsys"
 	fi
 
-	newenvd - 60lanodan <<-EOF
+	# before 50baselayout
+	newenvd - 40lanodan <<-EOF
 		PATH="/opt/lanodan/bin"
 		ROOTPATH="/opt/lanodan/bin"
 		MANPATH="/opt/lanodan/man"
