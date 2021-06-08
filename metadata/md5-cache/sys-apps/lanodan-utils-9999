@@ -1,12 +1,13 @@
-BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
+BDEPEND=test? ( dev-libs/atf dev-util/kyua ) >=dev-vcs/git-1.8.2.1[curl]
 DEFINED_PHASES=install unpack
 DESCRIPTION=Collection of Unix tools, comparable to coreutils
 EAPI=7
 HOMEPAGE=https://hacktivis.me/git/utils
 INHERIT=git-r3
-IUSE=suspend
-LICENSE=CC-BY-SA-4.0
+IUSE=suspend test
+LICENSE=|| ( GPL-2 GPL-3 )
 PROPERTIES=live
+RESTRICT=!test? ( test )
 SLOT=0
 _eclasses_=git-r3	b8e8c92aa5fe8df7187e466138eb4e52
-_md5_=d9b88d792ac59ae1de0fa37a254a5011
+_md5_=ae0a2ab97f141dd9086f0ca8e77fb08f
