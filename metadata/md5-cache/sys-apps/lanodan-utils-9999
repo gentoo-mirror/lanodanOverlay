@@ -10,4 +10,4 @@ PROPERTIES=live
 RESTRICT=!test? ( test )
 SLOT=0
 _eclasses_=git-r3	b8e8c92aa5fe8df7187e466138eb4e52
-_md5_=ae0a2ab97f141dd9086f0ca8e77fb08f
+_md5_=08f6574116286c8d3371e05bebd06703
