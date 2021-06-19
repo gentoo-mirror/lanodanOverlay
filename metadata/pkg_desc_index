@@ -23,6 +23,7 @@ app-vis/vis-ctags 9999: vis plugin to provide basic ctags support
 dev-db/timescaledb 1.2.1 1.6.0: A time-series database optimized for fast ingest and complex queries
 dev-dotnet/dotnetcore-sdk 3.0.100: .NET Core cli utility for building, testing, packaging and running projects
 dev-dotnet/nuget 5.0.2: Nuget - .NET Package Manager
+dev-go/godef 1.1.2: detect licenses used in Go binaries
 dev-lang/go 0.20171003: Boostrap Go from C (useful for musl libc)
 dev-libs/aml 9999: Another Main Loop
 dev-libs/hts_engine 1.10: HMM-based speech synthesis system (HTS) engine and API
