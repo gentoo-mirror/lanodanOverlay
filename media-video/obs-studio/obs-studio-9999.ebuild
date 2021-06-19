@@ -1,12 +1,13 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 CMAKE_REMOVE_MODULES_LIST=( FindFreetype )
-PYTHON_COMPAT=( python3_{6,7} )
+LUA_COMPAT=( luajit )
+PYTHON_COMPAT=( python3_{7..9} )
 
-inherit cmake-utils python-single-r1 xdg-utils
+inherit cmake lua-single python-single-r1 xdg-utils
 
 if [[ ${PV} == *9999 ]]; then
 	inherit git-r3
@@ -20,11 +21,14 @@ HOMEPAGE="https://obsproject.com"
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="+alsa fdk imagemagick jack luajit nvenc pulseaudio python speex +ssl truetype v4l vlc wayland X"
-REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
+IUSE="+alsa decklink fdk imagemagick jack lua nvenc pipewire pulseaudio python speex +ssl truetype v4l vlc wayland X"
+REQUIRED_USE="
+	lua? ( ${LUA_REQUIRED_USE} )
+	python? ( ${PYTHON_REQUIRED_USE} )
+"
 
 BDEPEND="
-	luajit? ( dev-lang/swig )
+	lua? ( dev-lang/swig )
 	python? ( dev-lang/swig )
 "
 DEPEND="
@@ -57,8 +61,9 @@ DEPEND="
 	fdk? ( media-libs/fdk-aac:= )
 	imagemagick? ( media-gfx/imagemagick:= )
 	jack? ( virtual/jack )
-	luajit? ( dev-lang/luajit:2 )
+	lua? ( ${LUA_DEPS} )
 	nvenc? ( >=media-video/ffmpeg-4[video_cards_nvidia] )
+	pipewire? ( media-video/pipewire )
 	pulseaudio? ( media-sound/pulseaudio )
 	python? ( ${PYTHON_DEPS} )
 	speex? ( media-libs/speexdsp )
@@ -73,16 +78,23 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 pkg_setup() {
+	use lua && lua-single_pkg_setup
 	use python && python-single-r1_pkg_setup
 }
 
 src_configure() {
 	local libdir=$(get_libdir)
 	local mycmakeargs=(
+		-DBUILD_BROWSER=no
+		-DBUILD_VST=no
+		-DENABLE_WAYLAND=$(usex wayland)
+		-DENABLE_X11=$(usex X)
 		-DDISABLE_ALSA=$(usex !alsa)
+		-DDISABLE_DECKLINK=$(usex !decklink)
 		-DDISABLE_FREETYPE=$(usex !truetype)
 		-DDISABLE_JACK=$(usex !jack)
 		-DDISABLE_LIBFDK=$(usex !fdk)
+		-DENABLE_PIPEWIRE=$(usex pipewire)
 		-DDISABLE_PULSEAUDIO=$(usex !pulseaudio)
 		-DDISABLE_SPEEXDSP=$(usex !speex)
 		-DDISABLE_V4L2=$(usex !v4l)
@@ -91,19 +103,17 @@ src_configure() {
 		-DOBS_MULTIARCH_SUFFIX=${libdir#lib}
 		-DUNIX_STRUCTURE=1
 		-DWITH_RTMPS=$(usex ssl)
-		-DENABLE_WAYLAND=$(usex wayland)
-		-DENABLE_X11=$(usex X)
 	)
 
-	if [ "${PV}" != "9999" ]; then
+	if [ ${PV} != *9999 ]; then
 		mycmakeargs+=(
 			-DOBS_VERSION_OVERRIDE=${PV}
 		)
 	fi
 
-	if use luajit || use python; then
+	if use lua || use python; then
 		mycmakeargs+=(
-			-DDISABLE_LUA=$(usex !luajit)
+			-DDISABLE_LUA=$(usex !lua)
 			-DDISABLE_PYTHON=$(usex !python)
 			-DENABLE_SCRIPTING=yes
 		)
@@ -111,11 +121,11 @@ src_configure() {
 		mycmakeargs+=( -DENABLE_SCRIPTING=no )
 	fi
 
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_install() {
-	cmake-utils_src_install
+	cmake_src_install
 	#external plugins may need some things not installed by default, install them here
 	insinto /usr/include/obs/UI/obs-frontend-api
 	doins UI/obs-frontend-api/obs-frontend-api.h
