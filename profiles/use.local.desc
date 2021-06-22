@@ -46,7 +46,6 @@ games-board/cockatrice:client - Build with client support
 games-board/cockatrice:oracle - Build with oracle support
 games-board/cockatrice:server - Build with server support
 games-engines/openmw:devtools - Install development tools like bsatool, esmtool and opencs.
-games-visualnovel/doki-doki-litterature-club:system-renpy - Use games-engines/renpy instead of the bundled one (experimental)
 gnome-base/gvfs:afp - Enables support for accessing AFP (Apple Filing Protocol) network shares
 gnome-base/gvfs:archive - Enables support for accessing files in archives transparently via app-arch/libarchive
 gnome-base/gvfs:bluray - Enable playback of Blu-ray filesystems using media-libs/libbluray
