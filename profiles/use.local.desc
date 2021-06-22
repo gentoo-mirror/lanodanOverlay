@@ -46,8 +46,6 @@ games-board/cockatrice:client - Build with client support
 games-board/cockatrice:oracle - Build with oracle support
 games-board/cockatrice:server - Build with server support
 games-engines/openmw:devtools - Install development tools like bsatool, esmtool and opencs.
-games-misc/ponysay:fish-completion - Enable fish completion support
-games-misc/ponysay:non-free - Install non-free ponies (i.e. from the MLP franchise)
 games-visualnovel/doki-doki-litterature-club:system-renpy - Use games-engines/renpy instead of the bundled one (experimental)
 gnome-base/gvfs:afp - Enables support for accessing AFP (Apple Filing Protocol) network shares
 gnome-base/gvfs:archive - Enables support for accessing files in archives transparently via app-arch/libarchive
@@ -95,10 +93,11 @@ media-libs/x264:interlaced - enable interlaced encoding support, this can decrea
 media-libs/x264:opencl - Add support for OpenCL.
 media-libs/x264:pic - disable optimized assembly code that is not PIC friendly
 media-sound/sbagen:sounds - Downloads extra sounds (in Vorbis)
+media-video/obs-studio:decklink - Build the Decklink plugin.
 media-video/obs-studio:fdk - Enable libfdk support for AAC encoding.
 media-video/obs-studio:imagemagick - Use ImageMagick for image loading instead of FFmpeg.
-media-video/obs-studio:luajit - Build support for scripting via Luajit.
 media-video/obs-studio:nvenc - Enable NVENC encoding for nVidia video cards.
+media-video/obs-studio:pipewire - Build with PipeWire support.
 media-video/obs-studio:python - Build support for scripting via Python 3.
 media-video/obs-studio:speex - Enable noise suppression filter support via media-libs/speexdsp.
 media-video/obs-studio:ssl - Build support for TLS/SSL connections (RTMPS) via net-libs/mbedtls.
@@ -116,15 +115,6 @@ net-im/bitlbee:otr - Enable support for encrypted conversations
 net-im/bitlbee:plugins - Enable support for plugins
 net-im/bitlbee:purple - Use libpurple instead of the built-in IM protocol support
 net-im/bitlbee:twitter - Enable Twitter protocol support
-net-irc/unrealircd:class-nofakelag - Enable an unsupported class::options flag called “nofakelag” allowing you to grant fakelag exemption to normal user (instead of just opers).
-net-irc/unrealircd:extban-stacking - Enable extended channel bans (such as +b ~c: and +b ~n:) to contain other extended bans instead of just hostmasks.
-net-irc/unrealircd:operoverride - Enable OperOverride extension
-net-irc/unrealircd:operoverride-verify - Enable requiring opers to invite themselves to +s/+p channels
-net-irc/unrealircd:prefixaq - Enable chanadmin and chanowner prefixes
-net-irc/unrealircd:showlistmodes - Display channel modes in /LIST (only configured at compiletime)
-net-irc/unrealircd:shunnotices - Enable notifying a user when un-shunned
-net-irc/unrealircd:topicisnuhost - Enable displaying nick!user@host as topic setter
-net-irc/unrealircd:usermod - Enable /set* and /chg* commands
 net-libs/glib-networking:gnome - Extract HTTP/HTTPS/SOCKS proxy configuration stored using GSettings
 net-libs/glib-networking:libproxy - Use net-libs/libproxy for getting the HTTP/HTTPS/SOCKS proxy configuration
 net-libs/glib-networking:openssl - support for OpenSSL networking configration
