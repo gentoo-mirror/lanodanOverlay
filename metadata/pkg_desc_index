@@ -35,14 +35,12 @@ dev-python/misaka 2.1.1: CFFI binding for Hoedown, a markdown parsing library
 dev-python/pycrypto 9999: Fake ebuild to mask pycrypto in a overlay
 dev-util/bam 0.5.1: Fast and flexible Lua-based build system
 dev-util/glslang 11.2.0: Khronos reference front-end for GLSL and ESSL, and sample SPIR-V generator
-dev-util/gtk-doc 1.32-r2: GTK+ Documentation Generator
 dev-util/gtk-doc-am 1.32: Virtual ebuild for ::gentoo compatibility
 dev-vcs/git-repair 1.20200102: repairs a damanged git repisitory
 games-arcade/emilia-pinball 9999: SDL OpenGL pinball game
 games-arcade/osu-lazer 9999.999.9: rhythm is just a *click* away!
 games-arcade/pinball-table-gnu 9999: GNU table for games-arcade/emilia-pinball
 games-arcade/pinball-table-hurd 9999: Hurd table for games-arcade/emilia-pinball
-games-arcade/stepmania 5.1.0_beta2: Advanced rhythm game, designed for both home and arcade use
 games-arcade/tinymania 9999: A VSRG clone for playing .osu files.
 games-board/cockatrice 2.7.2: An open-source multiplatform software for playing card games over a network
 games-emulation/reicast 8.1: A Dreamcast Emulator
