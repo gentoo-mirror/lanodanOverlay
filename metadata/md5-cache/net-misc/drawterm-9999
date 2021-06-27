@@ -1,0 +1,13 @@
+BDEPEND=dev-vcs/mercurial
+DEFINED_PHASES=compile install unpack
+DEPEND=x11-base/xorg-server
+DESCRIPTION=connect to Plan 9 CPU servers from other operating systems
+EAPI=7
+HOMEPAGE=http://drawterm.9front.org/
+INHERIT=eutils mercurial
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=9base MIT
+PROPERTIES=live
+SLOT=9front
+_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4251d4c84c25f59094fd557e0063a974	eutils	dab5d8ec471d025b79c9e6906bcf3bff	mercurial	d9b8e6c09ecb32dd80eb36f50f27b157
+_md5_=b57185ef3f70bc71899292670352ebc7
