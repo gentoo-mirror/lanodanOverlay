@@ -26,7 +26,7 @@ RDEPEND="
 	media-libs/libsdl2[X,joystick,video]
 	media-libs/libvorbis
 	media-libs/openal
-	media-libs/opengl
+	virtual/opengl
 	media-libs/sdl2-image[png]
 	media-libs/sdl2-ttf
 	qt5? ( dev-qt/qtgui:5 )
