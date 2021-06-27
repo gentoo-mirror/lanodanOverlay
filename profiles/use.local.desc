@@ -35,17 +35,6 @@ games-board/cockatrice:client - Build with client support
 games-board/cockatrice:oracle - Build with oracle support
 games-board/cockatrice:server - Build with server support
 games-engines/openmw:devtools - Install development tools like bsatool, esmtool and opencs.
-gnome-base/gvfs:afp - Enables support for accessing AFP (Apple Filing Protocol) network shares
-gnome-base/gvfs:archive - Enables support for accessing files in archives transparently via app-arch/libarchive
-gnome-base/gvfs:bluray - Enable playback of Blu-ray filesystems using media-libs/libbluray
-gnome-base/gvfs:elogind - Use sys-auth/elogind for session tracking.
-gnome-base/gvfs:fuse - Enables fuse mount points in $HOME/.gvfs for legacy application access
-gnome-base/gvfs:gnome-online-accounts - Enable configuration panel for net-libs/gnome-online-accounts accounts
-gnome-base/gvfs:google - Enables support for accessing Google accounts via dev-libs/libgdata
-gnome-base/gvfs:http - Enable the HTTP/DAV backend using net-libs/libsoup
-gnome-base/gvfs:nfs - Enable NFS client support via net-fs/libnfs.
-gnome-base/gvfs:sftp - Enable support for accessing SFTP(SSH FTP) remotes
-gnome-base/gvfs:udev - Enable udev base replacement code for cdda feature
 gnome-base/librsvg:tools - Build svg viewer tool
 gnustep-base/gnustep-make:libobjc2 - Enables use of the GNUstep Objective-C runtime (gnustep-base/libobjc2) with non-fragile ABI and sys-devel/clang compiler
 gnustep-base/gnustep-make:native-exceptions - Enables use of the native Objective-C exception support (@try/@catch/@finally) built-in objective-c exceptions with compilers that support it
@@ -94,9 +83,6 @@ media-video/pipewire:jack - Enable SPA JACK plugin and emulation to be able to r
 media-video/pipewire:pulseaudio - Enable emulation to be able to run PulseAudio applications on top of PipeWire
 media-video/pipewire:vulkan - Enable vulkan spa plugin integration
 net-dns/getdns:stubby - Include stubby in getdns
-net-dns/ldns-utils:dane - Enable DNS-based Authentication of Named Entities (DANE) support
-net-dns/ldns-utils:ecdsa - Enable ECDSA support
-net-dns/ldns-utils:gost - Enable GOST support
 net-im/bitlbee:libevent - Use libevent for event handling
 net-im/bitlbee:nss - Use NSS for SSL support in MSN and Jabber
 net-im/bitlbee:otr - Enable support for encrypted conversations

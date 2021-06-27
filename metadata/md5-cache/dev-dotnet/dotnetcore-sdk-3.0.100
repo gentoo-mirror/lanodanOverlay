@@ -1,9 +1,0 @@
-DEFINED_PHASES=compile
-DESCRIPTION=.NET Core cli utility for building, testing, packaging and running projects
-EAPI=7
-HOMEPAGE=https://www.microsoft.com/net/core https://github.com/dotnet/core-sdk
-KEYWORDS=~amd64 ~arm ~arm64
-LICENSE=MIT
-SLOT=0
-SRC_URI=https://github.com/dotnet/core-sdk/archive/v3.0.100.tar.gz -> dotnetcore-sdk-3.0.100.tar.gz
-_md5_=9dc7998f299d1a13c3c4ab9217e64368
