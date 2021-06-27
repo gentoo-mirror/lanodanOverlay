@@ -45,7 +45,7 @@ games-arcade/tinymania 9999: A VSRG clone for playing .osu files.
 games-board/cockatrice 2.7.2: An open-source multiplatform software for playing card games over a network
 games-emulation/reicast 8.1: A Dreamcast Emulator
 games-engines/openmw 0.44.0: Open source reimplementation of TES III: Morrowind
-games-engines/solarus 1.5.3: An open-source Zelda-like 2D game engine
+games-engines/solarus 1.6.5: An open-source Zelda-like 2D game engine
 games-sports/vdrift 2014.10.20 9999: A driving simulation made with drift racing in mind
 games-util/fteqcc 9999: FTE QuakeC compiler
 gnome-base/gvfs 1.32.2: Virtual filesystem implementation for gio
