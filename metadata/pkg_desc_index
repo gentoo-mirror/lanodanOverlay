@@ -57,7 +57,6 @@ gui-libs/wlrobs 9999: Wayland (wlroots-based) screen capture plugin for obs-stud
 gui-wm/inaban 9999: Distrustful Tiling Wayland Compositor
 gui-wm/wio 9999: Wayland Kiosk
 kde-plasma/breeze 5.17.5: Breeze visual style for the Plasma desktop
-mail-client/aerc 0.2.1 9999: Asynchronous email client for your terminal, written in Go.
 mail-mta/opensmtpd 6.7.1_p1: Lightweight but featured SMTP daemon from OpenBSD
 media-fonts/3270font 2.0.0: A IBM 3270 Terminal font in a modern format
 media-fonts/forkawesome 1.1.4: The iconic font
