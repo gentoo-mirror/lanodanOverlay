@@ -102,7 +102,6 @@ sys-apps/lanodan-utils 9999: Collection of Unix tools, comparable to coreutils
 sys-apps/openrc 0.41.2-r1: OpenRC manages the services, startup and shutdown of a host
 sys-apps/tcb 1.2-r1: Libraries and tools implementing the tcb password shadowing scheme
 sys-apps/xdg-dbus-proxy 0.1.2: filtering proxy for D-Bus connections
-sys-fs/zfs-kmod 0.8.4-r1: Linux ZFS kernel module for sys-fs/zfs
 sys-libs/gcompat 0.4.0: The GNU C Library compatibility layer for musl
 sys-libs/libtickit 0.3.3: library for building interactive full-screen terminal programs
 sys-libs/libucontext 0.9.0: library which provides the <ucontext.h> API from older POSIX revisions

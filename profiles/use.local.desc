@@ -125,7 +125,6 @@ sys-apps/openrc:bash - enable the use of bash in service scripts (experimental)
 sys-apps/openrc:init - install as a replacement of sys-apps/sysvinit
 sys-apps/openrc:netifrc - enable Gentoo's network stack (net.* scripts)
 sys-apps/openrc:newnet - enable the new network stack (experimental)
-sys-fs/zfs-kmod:rootfs - Install zfs-shutdown script to support exporting a pool containing rootfs
 sys-libs/gcompat:obstack - Use sys-libs/obstack-standalone for greater compatibility
 sys-libs/libtickit:unibilium - Use dev-libs/unibilium (highly recommended) instead of sys-libs/ncurses
 sys-libs/libucontext:obstack - Use sys-libs/obstack-standalone for greater compatibility
