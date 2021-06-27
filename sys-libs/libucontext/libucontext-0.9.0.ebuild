@@ -7,7 +7,7 @@ inherit multilib-minimal
 
 DESCRIPTION="library which provides the <ucontext.h> API from older POSIX revisions"
 HOMEPAGE="https://code.foxkit.us/adelie/libucontext"
-KEYWORDS="~aarch64 ~amd64 ~arm ~ppc ~ppc64 ~s390x ~x86"
+KEYWORDS=" ~amd64 ~arm ~ppc ~ppc64  ~x86"
 LICENSE="MIT"
 SRC_URI="https://distfiles.adelielinux.org/source/${PN}/${P}.tar.xz"
 SLOT="0"

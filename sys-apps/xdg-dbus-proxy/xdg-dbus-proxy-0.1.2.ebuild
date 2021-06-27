@@ -8,7 +8,7 @@ HOMEPAGE="https://github.com/flatpak/xdg-dbus-proxy"
 LICENSE="LGPL-2.1"
 SRC_URI="https://github.com/flatpak/xdg-dbus-proxy/releases/download/${PV}/${P}.tar.xz"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sh ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390  ~sparc ~x86"
 
 DEPEND="
 	>=dev-libs/glib-2.40
