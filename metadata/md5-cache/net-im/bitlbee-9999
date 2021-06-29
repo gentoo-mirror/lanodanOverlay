@@ -10,5 +10,5 @@ PROPERTIES=live
 RDEPEND=>=dev-libs/glib-2.16 purple? ( net-im/pidgin ) libevent? ( dev-libs/libevent:= ) otr? ( >=net-libs/libotr-4 ) gnutls? ( net-libs/gnutls:= ) !gnutls? ( nss? ( dev-libs/nss ) !nss? ( dev-libs/openssl:0= ) ) virtual/logger xinetd? ( sys-apps/xinetd )
 REQUIRED_USE=xmpp? ( !nss ) test? ( plugins )
 SLOT=0
-_eclasses_=user-info	2e75eaea3582b052ec16d9d5aa74ced3	user	1033b6bed7cf367c4507ea9a3ff503d0	toolchain-funcs	9ea1c67b6f8315fdc2568abb674519aa	multilib	97566c1a256d07b00848aa767e38a352	systemd	fdf0d765c3f11f91fe54f8def9a8c0e6	git-r3	cc875b0c1e9b3bdac1af0f82f3ba29da
+_eclasses_=user-info	2e75eaea3582b052ec16d9d5aa74ced3	user	1033b6bed7cf367c4507ea9a3ff503d0	toolchain-funcs	9ea1c67b6f8315fdc2568abb674519aa	multilib	97566c1a256d07b00848aa767e38a352	systemd	bd82a2f06f5594b2ed0889539a4f9a9f	git-r3	cc875b0c1e9b3bdac1af0f82f3ba29da
 _md5_=24ab7763f4d3404b1d22aed4a6c63b88
