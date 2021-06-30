@@ -1,5 +1,7 @@
 -*app-arch/tar
+-*sys-apps/busybox
 -*sys-apps/less
+-*sys-apps/file
 app-admin/rsyslog
 app-arch/libarchive
 app-crypt/gentoo-keys
