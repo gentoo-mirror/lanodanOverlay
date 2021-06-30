@@ -1,4 +1,5 @@
 -*app-arch/tar
+-*sys-apps/busybox
 -*sys-apps/less
 app-admin/rsyslog
 app-arch/libarchive
