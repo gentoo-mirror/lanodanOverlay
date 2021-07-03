@@ -1,4 +1,4 @@
 lanodanOverlay:platforms/arm64
 lanodanOverlay:server
 lanodanOverlay:base
-gentoo:default/linux/arm64/17.1/musl/hardened
+gentoo:default/linux/arm64/17.0/musl/hardened
