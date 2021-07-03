@@ -13,7 +13,6 @@ net-libs/glib-networking -gnutls
 net-libs/webkit-gtk media-source
 net-misc/curl -imap -pop3 -smtp gopher
 net-wireless/wpa_supplicant ap qt5
-sys-apps/openrc init
 sys-apps/openrc sysv-utils
 sys-boot/grub -fonts -nls
 sys-fs/lvm2 -thin
