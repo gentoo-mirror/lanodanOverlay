@@ -5,7 +5,7 @@ EAPI=7
 
 DESCRIPTION="Analyse texts for word probabilities and generate random sentences"
 HOMEPAGE="https://www.jwz.org/dadadodo/"
-SRC_URI="https://www.jwz.org/dadadodo/dadadodo-1.04.tar.gz"
+SRC_URI="https://www.jwz.org/dadadodo/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"

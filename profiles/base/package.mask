@@ -1,6 +1,3 @@
-# unmaintained, got vulnerability, use pycryptodome
-dev-python/pycrypto
-
 # Lack of backporting for security fixes; no release after CVEs; code copypasta
 # =media-gfx/exiv2-0.26_p20180319 -> broken compilation
 media-gfx/exiv2
@@ -9,7 +6,3 @@ media-gfx/exiv2
 # Bloated, quite insecure (too much trust in other apps, more than paging)
 # alternative can be sys-apps/most, see virtual/pager for others
 sys-apps/less
-
-# Haelwenn (lanodan) Monnier <contact@hacktivis.me> 2019-10-17
-# Vulnerable to CVE-2018-17828 (non-removal of "../" in the paths)
-=dev-libs/zziplib-0.13.69

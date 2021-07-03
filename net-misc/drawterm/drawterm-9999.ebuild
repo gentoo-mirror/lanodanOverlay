@@ -10,7 +10,6 @@ HOMEPAGE="http://drawterm.9front.org/"
 LICENSE="9base MIT"
 SLOT="9front"
 EHG_REPO_URI="https://code.9front.org/hg/drawterm"
-KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 DEPEND="x11-base/xorg-server"

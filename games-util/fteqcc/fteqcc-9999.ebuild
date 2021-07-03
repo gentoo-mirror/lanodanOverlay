@@ -11,7 +11,6 @@ ESVN_REPO_URI="https://svn.code.sf.net/p/fteqw/code/trunk"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
 RESTRICT="test"
 
 src_prepare() {
