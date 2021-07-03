@@ -1,9 +1,9 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=8
 
-inherit eutils toolchain-funcs
+inherit toolchain-funcs
 
 MY_PV="${PV//0./}"
 
@@ -66,7 +66,7 @@ pkg_postinst() {
 	# linker are also checked - so we need to fix them too.
 	ebegin "fixing timestamps to avoid unnecessary rebuilds"
 	tref="usr/lib/go1.4/pkg/*/runtime.a"
-	find "${EROOT}"usr/lib/go1.4 -type f \
-		-exec touch -r "${EROOT}"${tref} {} \;
+	find "${EROOT}/usr/lib/go1.4" -type f \
+		-exec touch -r "${EROOT}/${tref}" {} \;
 	eend $?
 }
