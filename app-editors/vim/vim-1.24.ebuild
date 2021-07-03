@@ -1,10 +1,10 @@
-# Copyright 2019 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+# Copyright 2019-2021 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
 # vim-1.14 can also be found but the first version of vim to work on Unix
 # is version 1.22, which I didn’t found.
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="Vi IMitation"
 HOMEPAGE="https://www.vim.org/ https://ftp.nluug.nl/pub/vim/old/"
