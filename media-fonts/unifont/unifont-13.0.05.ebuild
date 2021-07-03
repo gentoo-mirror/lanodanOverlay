@@ -7,7 +7,7 @@ EAPI=7
 inherit font toolchain-funcs
 
 DESCRIPTION="GNU Unifont - a Pan-Unicode X11 bitmap iso10646 font"
-HOMEPAGE="http://unifoundry.com/"
+HOMEPAGE="https://unifoundry.com/"
 SRC_URI="mirror://gnu/${PN}/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"
