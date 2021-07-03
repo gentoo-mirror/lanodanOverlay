@@ -10,4 +10,4 @@ PROPERTIES=live
 RDEPEND=media-libs/libsdl2 >=games-arcade/emilia-pinball-0.3.2020
 SLOT=0
 _eclasses_=git-r3	cc875b0c1e9b3bdac1af0f82f3ba29da
-_md5_=3a40a220e147edd7dcfb07eea57b432f
+_md5_=47c739cd5c175f71cafbdb14c4c00957

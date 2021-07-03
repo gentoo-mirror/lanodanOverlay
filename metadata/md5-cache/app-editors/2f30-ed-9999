@@ -1,11 +1,11 @@
+BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
 DEFINED_PHASES=compile install unpack
-DEPEND=>=dev-vcs/git-1.8.2.1[curl]
-DESCRIPTION=simple ed
-EAPI=6
+DESCRIPTION=Simple ed(1) implementation from 2f30.org
+EAPI=8
 HOMEPAGE=https://git.2f30.org/ed
 INHERIT=git-r3
 LICENSE=MIT
 PROPERTIES=live
 SLOT=0
 _eclasses_=git-r3	cc875b0c1e9b3bdac1af0f82f3ba29da
-_md5_=5345f05036b0f39dedcac66b47544b11
+_md5_=231b7642352ff747bd2a015c92e78fae

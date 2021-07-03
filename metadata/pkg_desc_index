@@ -1,36 +1,26 @@
 acct-group/chkpwd 0: Group for sys-apps/tcb
 acct-group/shadow 0: Group for sys-apps/tcb
 app-accessibility/julius 4.5: Large Vocabulary Continuous Speech Recognition Engine
-app-accessibility/mimic1 1.2.0.2 9999: Mycroft's TTS engine, based on CMU's Flite (Festival Lite)
 app-admin/pass-update 2.1: pass extension that provides an easy flow for updating passwords
 app-crypt/acme-sh 2.8.1 9999: pure Unix shell script implementing ACME client protocol
 app-doc/afaq 15.1: An Anarchist FAQ, scrapped in one collection and a markdown version
 app-doc/cross-unix-documentation 9999: documentation of similarities and (noteworthy) differencies between Unix systems
 app-doc/single-unix-specification 4_p3-r1: The Single UNIX Specification, Version 4, 2018 Edition
-app-editors/2f30-ed 9999: simple ed
+app-editors/2f30-ed 9999: Simple ed(1) implementation from 2f30.org
 app-editors/vim 1.24: Vi IMitation
 app-emulation/wine-proton 9999: Free implementation of Windows(tm) on Unix, with a bit of extra spice
-app-i18n/unicode-data 13.0.0: Unicode data from unicode.org
 app-misc/kanatest 0.4.8: Visual flashcard tool for memorizing the Japanese Hiragana and Katakana alphabet
-app-text/base91 2.0.0: A Base91 Encoder & Decoder for Haskell
 app-text/dadadodo 1.04: Analyse texts for word probabilities and generate random sentences
 app-text/evince 3.34.2: Simple document viewer for GNOME
-app-text/hoedown 3.0.7 9999: Standards compliant, fast, secure markdown processing library in C
 app-text/sshpaste 1.0.1 9999: wgetpaste clone for pushing to your own server
 app-vis/vis-ctags 9999: vis plugin to provide basic ctags support
-dev-db/timescaledb 1.2.1 1.6.0: A time-series database optimized for fast ingest and complex queries
 dev-dotnet/nuget 5.0.2: Nuget - .NET Package Manager
 dev-go/godef 1.1.2: detect licenses used in Go binaries
 dev-lang/go 0.20171003: Boostrap Go from C (useful for musl libc)
-dev-libs/aml 9999: Another Main Loop
 dev-libs/hts_engine 1.10: HMM-based speech synthesis system (HTS) engine and API
-dev-libs/libdazzle 3.34.1: Experimental new features for GTK+ and GLib
 dev-libs/libtomcrypt 1.18.2: modular and portable cryptographic toolkit
 dev-libs/socket99 0.2.2: Wrapper library for the BSD sockets API with a nicer C99 interface
 dev-python/firmtool 1.4: Parses, extracts, and builds 3DS firmware files
-dev-python/flask-misaka 1.0.0: Flask interface to Misaka, a markdown parsing library
-dev-python/misaka 2.1.1: CFFI binding for Hoedown, a markdown parsing library
-dev-util/bam 0.5.1: Fast and flexible Lua-based build system
 dev-util/glslang 11.2.0: Khronos reference front-end for GLSL and ESSL, and sample SPIR-V generator
 dev-util/gtk-doc-am 1.32: Virtual ebuild for ::gentoo compatibility
 dev-vcs/git-repair 1.20200102: repairs a damanged git repisitory
@@ -39,9 +29,7 @@ games-arcade/osu-lazer 9999.999.9: rhythm is just a *click* away!
 games-arcade/pinball-table-gnu 9999: GNU table for games-arcade/emilia-pinball
 games-arcade/pinball-table-hurd 9999: Hurd table for games-arcade/emilia-pinball
 games-arcade/tinymania 9999: A VSRG clone for playing .osu files.
-games-board/cockatrice 2.7.2: An open-source multiplatform software for playing card games over a network
 games-emulation/reicast 8.1: A Dreamcast Emulator
-games-engines/openmw 0.44.0: Open source reimplementation of TES III: Morrowind
 games-engines/solarus 1.6.5: An open-source Zelda-like 2D game engine
 games-sports/vdrift 2014.10.20 9999: A driving simulation made with drift racing in mind
 games-util/fteqcc 9999: FTE QuakeC compiler
@@ -49,7 +37,6 @@ gnome-base/librsvg 2.40.21: Scalable Vector Graphics (SVG) rendering library
 gnustep-base/gnustep-make 2.7.0: GNUstep Makefile Package
 gui-libs/wlrobs 9999: Wayland (wlroots-based) screen capture plugin for obs-studio
 gui-wm/inaban 9999: Distrustful Tiling Wayland Compositor
-gui-wm/wio 9999: Wayland Kiosk
 mail-mta/opensmtpd 6.7.1_p1: Lightweight but featured SMTP daemon from OpenBSD
 media-fonts/3270font 2.0.0: A IBM 3270 Terminal font in a modern format
 media-fonts/forkawesome 1.1.4: The iconic font
@@ -68,7 +55,6 @@ media-libs/portmidi 217-r3: Library for real time MIDI input and output
 media-libs/rtmidi 2.1.1: common C++ API for realtime MIDI input/output
 media-libs/vips 8.9.1: VIPS Image Processing Library
 media-libs/x264 0.0.20170701: A free library for encoding X264/AVC streams
-media-sound/aucatctl 0.1: A tool for controlling aucat and/or sndiod volume through MIDI
 media-sound/oss 4.2.2019 4.2.2020 4.2.9999: Open Sound System (OSS)
 media-sound/sbagen 1.4.5: Command line sequenced binaural beat generator
 media-video/obs-studio 9999: Software for Recording and Streaming Live Video Content (wayland branch)
@@ -77,7 +63,6 @@ media-video/untrunc 9999: Restore a truncated mp4/mov
 net-dns/getdns 1.3.0: Modern asynchronous DNS API
 net-im/Quaternion 0.0.9.4e: A Qt5-based IM client for the Matrix protocol
 net-im/bitlbee 3.5.1 9999: irc to IM gateway that support multiple IM protocols
-net-im/prosody 0.11.9999: Prosody is a modern XMPP communication server
 net-libs/glib-networking 2.66.0: Network-related giomodules for glib
 net-libs/libqmatrixclient 0.5.3.2: A Qt5 library to write cross-platfrom clients for Matrix
 net-libs/libsoup 2.68.4 2.70.0: HTTP client/server library for GNOME
@@ -85,27 +70,23 @@ net-libs/webkit-gtk 2.32.0 2.32.1 2.33.1: Open source web browser engine
 net-libs/wpewebkit 2.28.0 2.28.1 2.32.1: WebKit port optimized for embedded devices
 net-misc/drawterm 9999: connect to Plan 9 CPU servers from other operating systems
 net-misc/fbxosctrl 2.4.4: Shell tool to control some Freebox OS stuff: wifi, reboot...
-net-misc/geomyidae 0.31.1: A small C-based gopherd.
 net-misc/pussh 9999: Parallel SSH, batch and command line oriented
 net-news/newsboat 2.13: An RSS/Atom feed reader for text terminals
 net-nntp/suck 4.3.4: Grab news from a remote NNTP server and feed them to another
 net-p2p/gnunet 0.11.0_pre66: GNUnet is a framework for secure peer-to-peer networking.
 sys-apps/bubblewrap 0.4.0: Unprivileged sandboxing tool, namespaces-powered chroot-like solution
 sys-apps/lanodan-utils 9999: Collection of Unix tools, comparable to coreutils
-sys-apps/openrc 0.41.2-r1: OpenRC manages the services, startup and shutdown of a host
 sys-apps/tcb 1.2-r1: Libraries and tools implementing the tcb password shadowing scheme
 sys-apps/xdg-dbus-proxy 0.1.2: filtering proxy for D-Bus connections
 sys-libs/gcompat 0.4.0: The GNU C Library compatibility layer for musl
 sys-libs/libtickit 0.3.3: library for building interactive full-screen terminal programs
 sys-libs/libucontext 0.9.0: library which provides the <ucontext.h> API from older POSIX revisions
 sys-libs/zlib 1.2.8.2015.12.26: Standard (de)compression library (Sortix's libz fork)
-virtual/editor 0-r1: Virtual for editor
 virtual/man 9: Virtual for man
 www-apps/stagit 0.9.4: static git page generator
 x11-libs/gtk+ 3.24.27: Gimp ToolKit +
 x11-misc/gtk3-nocsd 9999: A hack to disable gtk3 client-side decorations
 x11-misc/keynav 9999: Make pointer-driven interfaces easier and faster for users to operate
 x11-misc/qarma 9999: Zenity Clone for Qt5 (lanodan's branch)
-x11-misc/tabbed 0.6: Simple generic tabbed fronted to xembed aware applications
 x11-misc/xdg-utils 1.1.3-r1: Portland utils for cross-platform/cross-toolkit/cross-desktop interoperability
 x11-plugins/purple-discord 9999: Pidgin/Purple PRotocol PLugin for Discord

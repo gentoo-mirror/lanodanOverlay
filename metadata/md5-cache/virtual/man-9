@@ -1,7 +1,7 @@
 DEFINED_PHASES=-
 DESCRIPTION=Virtual for man
-EAPI=5
+EAPI=8
 KEYWORDS=~amd64 ~arm
 RDEPEND=|| ( app-text/mandoc sys-apps/man-db sys-apps/man )
 SLOT=0
-_md5_=dc21a82a9487af746a61745d7dbde44c
+_md5_=38bca15d9b80dcea34d614359c122790

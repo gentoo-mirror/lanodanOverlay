@@ -6,4 +6,4 @@ KEYWORDS=~amd64 ~x86
 LICENSE=MIT
 SLOT=0
 SRC_URI=https://www.jwz.org/dadadodo/dadadodo-1.04.tar.gz
-_md5_=fd9955986ca4e101389ed0a5c9c874b3
+_md5_=aa0ae3862e5e709416e3014a621392d6
