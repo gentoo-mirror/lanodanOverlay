@@ -24,7 +24,7 @@ IUSE="gles1-only"
 # Note: media-libs/libsdl2::gentoo doesn't have USE=gles1 yet
 RDEPEND="
 	media-libs/libsdl2[joystick,opengl,video]
-	gles1-only? ( media-libs/libsdl2[gles1] )
+	gles1-only? ( media-libs/libsdl2[gles1(-)] )
 	virtual/opengl
 "
 DEPEND="
