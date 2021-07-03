@@ -13,6 +13,6 @@ SLOT="0"
 
 DEPEND="
 	dev-libs/wayland
-	media-video/obs-studio[wayland]
+	media-video/obs-studio[wayland(-)]
 "
 RDEPEND="${DEPEND}"
