@@ -6,3 +6,7 @@ media-gfx/exiv2
 # Bloated, quite insecure (too much trust in other apps, more than paging)
 # alternative can be sys-apps/most, see virtual/pager for others
 sys-apps/less
+
+# https://www.audacityteam.org/about/desktop-privacy-notice/
+# TL;DR: Audacity is now a Surveillance application
+media-sound/audacity
