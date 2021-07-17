@@ -14,7 +14,7 @@ LICENSE="LGPL-2+ BSD"
 SRC_URI="https://wpewebkit.org/releases/${P}.tar.xz"
 SLOT="1.0" # WPE_API_VERSION
 KEYWORDS="~amd64"
-IUSE="accessibility doc examples experimental jpeg2k qt +gstreamer sandbox +webdriver +webcrypto X"
+IUSE="accessibility doc examples experimental jpeg2k qt +gstreamer sandbox systemd +webdriver +webcrypto X"
 
 RDEPEND="
 	>=x11-libs/cairo-1.16.0:=[X?]
@@ -60,6 +60,7 @@ RDEPEND="
 		app-accessibility/at-spi2-atk:=
 	)
 	sandbox? ( sys-apps/bubblewrap )
+	systemd? ( sys-apps/systemd:= )
 "
 DEPEND="
 	${RDEPEND}
@@ -102,6 +103,7 @@ src_configure() {
 		-DENABLE_WEBDRIVER=$(usex webdriver)
 		-DENABLE_WEB_CRYPTO=$(usex webcrypto)
 		-DENABLE_XSLT=ON
+		-DUSE_SYSTEMD=$(usex systemd) # Whether to enable journald logging
 		${ruby_interpreter}
 	)
 
