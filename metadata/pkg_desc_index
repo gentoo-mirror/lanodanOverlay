@@ -49,8 +49,6 @@ media-libs/freeglut 3.2.1-r1: A free OpenGL utility toolkit, the open-sourced al
 media-libs/libplacebo 3.104.0: Reusable library for GPU-accelerated image processing primitives
 media-libs/libsdl 9999: Simple Direct Media Layer (sdl-1.2 compatibility)
 media-libs/libsdl2 9999: Simple Direct Media Layer
-media-libs/monado 9999: The open source OpenXR runtime.
-media-libs/openxr-loader 9999: OpenXR loader
 media-libs/portaudio 19.06.00-r3: A free, cross-platform, open-source, audio I/O library
 media-libs/portmidi 217-r3: Library for real time MIDI input and output
 media-libs/rtmidi 2.1.1: common C++ API for realtime MIDI input/output
