@@ -25,7 +25,7 @@ x11-wm/xmonad-contrib
 
 # sets:client
 #net-fs/sshfs
-app-admin/gopass
+app-admin/pass
 
 # sets:fonts
 media-fonts/fira-mono
