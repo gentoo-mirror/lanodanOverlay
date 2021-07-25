@@ -173,7 +173,6 @@ pkg_setup() {
 
 src_prepare() {
 	eapply "${FILESDIR}"/2.28.2-opengl-without-X-fixes.patch
-	eapply "${FILESDIR}"/2.32.1-Properly-use-CompletionHandler-when-USE_OPENGL_OR_ES.patch
 	cmake_src_prepare
 	gnome2_src_prepare
 }
