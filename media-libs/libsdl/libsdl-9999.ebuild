@@ -2,12 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-inherit git-r3 cmake multilib
+inherit git-r3 cmake-multilib
 
 DESCRIPTION="Simple Direct Media Layer (sdl-1.2 compatibility)"
 HOMEPAGE="https://github.com/libsdl-org/sdl12-compat"
 EGIT_REPO_URI="https://github.com/libsdl-org/sdl12-compat"
-LICENSE="ZLIB"
+# dr_mp3: MIT-O or Public-Domain
+LICENSE="ZLIB || ( MIT-0 public-domain )"
 SLOT="0/sdl12-compat"
 RESTRICT="!test? ( test )"
 
@@ -32,5 +33,5 @@ src_configure() {
 		-DSDL12TESTS=$(usex test)
 	)
 
-	cmake_src_configure
+	cmake-multilib_src_configure
 }
