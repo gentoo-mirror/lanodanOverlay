@@ -45,7 +45,7 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 src_configure() {
-	local ecmakeargs=(
+	local mycmakeargs=(
 		-DCOG_PLATFORM_DRM=$(usex drm)
 		-DCOG_PLATFORM_HEADLESS=$(usex headless)
 		-DCOG_PLATFORM_FDO=$(usex fdo)
