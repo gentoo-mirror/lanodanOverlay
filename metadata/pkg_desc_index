@@ -66,7 +66,7 @@ net-libs/glib-networking 2.66.0: Network-related giomodules for glib
 net-libs/libqmatrixclient 0.5.3.2: A Qt5 library to write cross-platfrom clients for Matrix
 net-libs/libsoup 2.68.4 2.70.0: HTTP client/server library for GNOME
 net-libs/webkit-gtk 2.32.3: Open source web browser engine
-net-libs/wpewebkit 2.28.0 2.28.1 2.32.1: WebKit port optimized for embedded devices
+net-libs/wpewebkit 2.32.3: WebKit port optimized for embedded devices
 net-misc/drawterm 9999: connect to Plan 9 CPU servers from other operating systems
 net-misc/fbxosctrl 2.4.4: Shell tool to control some Freebox OS stuff: wifi, reboot...
 net-misc/pussh 9999: Parallel SSH, batch and command line oriented
