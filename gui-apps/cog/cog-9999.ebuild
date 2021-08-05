@@ -14,7 +14,7 @@ IUSE="+drm +fdo gtk4 headless X"
 
 DEPEND="
 	net-libs/wpewebkit
-	net-libs/libsoup:2
+	net-libs/libsoup:2.4
 	drm? (
 		media-libs/mesa[egl,gbm]
 		>=gui-libs/wpebackend-fdo-1.4.0
