@@ -3,10 +3,10 @@ DEPEND=acct-group/chkpwd acct-group/shadow sys-libs/libxcrypt:=
 DESCRIPTION=Libraries and tools implementing the tcb password shadowing scheme
 EAPI=7
 HOMEPAGE=http://www.openwall.com/tcb/
-IUSE=pam
+IUSE=pam static-libs
 KEYWORDS=~amd64
 LICENSE=BSD
 RDEPEND=acct-group/chkpwd acct-group/shadow sys-libs/libxcrypt:=
 SLOT=0
 SRC_URI=https://www.openwall.com/tcb/tcb-1.2.tar.gz
-_md5_=61cbde9bd09dd1765ce1f3543732f391
+_md5_=7f52ca70ca44aceb660cb4f8645304d0
