@@ -16,6 +16,7 @@ app-vis/vis-ctags 9999: vis plugin to provide basic ctags support
 dev-dotnet/nuget 5.0.2: Nuget - .NET Package Manager
 dev-go/godef 1.1.2: detect licenses used in Go binaries
 dev-lang/go 0.20171003: Boostrap Go from C (useful for musl libc)
+dev-libs/elfutils 0.186_pre9999: Libraries/utilities to handle ELF objects (drop in replacement for libelf)
 dev-libs/hts_engine 1.10: HMM-based speech synthesis system (HTS) engine and API
 dev-libs/libtomcrypt 1.18.2: modular and portable cryptographic toolkit
 dev-libs/socket99 0.2.2: Wrapper library for the BSD sockets API with a nicer C99 interface
