@@ -76,11 +76,6 @@ media-libs/libsdl2:tslib - Build with tslib support for touchscreen devices
 media-libs/libsdl2:video - Control video support (disable at your own risk)
 media-libs/libsdl2:vulkan - Enable Vulkan support
 media-libs/portmidi:test-programs - Install various example programs
-media-libs/vips:fits - Enable support for the FITS image format through sci-libs/cfitsio
-media-libs/vips:gsf - Enable support for creating image pyramids with dzsave
-media-libs/vips:heif - Enable support for HEIC images
-media-libs/vips:matio - Enable support for reading images from Matlab files through sci-libs/matio
-media-libs/vips:pango - Enable support for text rendering
 media-libs/x264:10bit - Set output bit depth to 10, this may not be compatible with all decoders
 media-libs/x264:interlaced - enable interlaced encoding support, this can decrease encoding speed by up to 2%
 media-libs/x264:opencl - Add support for OpenCL.
