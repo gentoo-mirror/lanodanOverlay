@@ -9,7 +9,7 @@ SRC_URI="https://www.openwall.com/tcb/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="pam"
+IUSE="pam static-libs"
 
 DEPEND="
 	acct-group/chkpwd
@@ -33,4 +33,6 @@ src_install() {
 	einstalldocs
 	emake install DESTDIR="${D}" \
 		SLIBDIR=/$(get_libdir) LIBDIR=/usr/$(get_libdir) MANDIR=/usr/share/man
+
+	use static-libs || find "${D}" -name '*.a' -delete
 }
