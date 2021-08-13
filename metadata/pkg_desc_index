@@ -8,6 +8,7 @@ app-doc/cross-unix-documentation 9999: documentation of similarities and (notewo
 app-doc/single-unix-specification 4_p3-r1: The Single UNIX Specification, Version 4, 2018 Edition
 app-editors/2f30-ed 9999: Simple ed(1) implementation from 2f30.org
 app-editors/vim 1.24: Vi IMitation
+app-emulation/wine-wayland 9999: Free implementation of Windows(tm) on Unix, collabora's wayland branch
 app-misc/kanatest 0.4.8: Visual flashcard tool for memorizing the Japanese Hiragana and Katakana alphabet
 app-text/dadadodo 1.04: Analyse texts for word probabilities and generate random sentences
 app-text/evince 3.34.2: Simple document viewer for GNOME

@@ -3,26 +3,6 @@
 # * generated automatically using pmaint *
 
 app-crypt/acme-sh:standalone - runtime-depend on net-misc/socat used in Standalone mode
-app-emulation/wine-proton:capi - Enable ISDN support via CAPI
-app-emulation/wine-proton:custom-cflags - Bypass strip-flags; use at your own peril
-app-emulation/wine-proton:dos - Pull in games-emulation/dosbox to run DOS applications
-app-emulation/wine-proton:gecko - Add support for the Gecko engine when using iexplore
-app-emulation/wine-proton:gssapi - Use GSSAPI (Kerberos SSP support)
-app-emulation/wine-proton:gstreamer - Use media-libs/gstreamer to provide DirectShow functionality;
-app-emulation/wine-proton:mono - Add support for .NET using Wine's Mono add-on
-app-emulation/wine-proton:netapi - Use libnetapi from net-fs/samba to support Windows networks in netapi32.dll
-app-emulation/wine-proton:opencl - Enable OpenCL support
-app-emulation/wine-proton:osmesa - Add support for OpenGL in bitmaps using libOSMesa
-app-emulation/wine-proton:pcap - Support packet capture software (e.g. wireshark)
-app-emulation/wine-proton:perl - Install helpers written in perl (winedump/winemaker)
-app-emulation/wine-proton:prelink - Run prelink on DLLs during build; For versions before wine-1.7.55 or hardened, do not disable if you do not know what this means as it can break things at runtime
-app-emulation/wine-proton:realtime - Pull in sys-auth/rtkit for low-latency pulseaudio support
-app-emulation/wine-proton:run-exes - Use Wine to open and run .EXE and .MSI files
-app-emulation/wine-proton:samba - Add support for NTLM auth. see http://wiki.winehq.org/NtlmAuthSetupGuide and http://wiki.winehq.org/NtlmSigningAndSealing
-app-emulation/wine-proton:sdl - Add support for gamepad detection using SDL
-app-emulation/wine-proton:udev - Use virtual/libudev to provide plug and play support
-app-emulation/wine-proton:vkd3d - Use app-emulation/vkd3d to provide Direct3D 12 support
-app-emulation/wine-proton:vulkan - Enable Vulkan drivers
 app-emulation/wine-wayland:capi - Enable ISDN support via CAPI
 app-emulation/wine-wayland:custom-cflags - Bypass strip-flags; use at your own peril
 app-emulation/wine-wayland:dos - Pull in games-emulation/dosbox to run DOS applications
