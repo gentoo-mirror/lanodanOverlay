@@ -47,7 +47,6 @@ media-fonts/opendyslexic 20160623: Opensource font for dyslexics and for high re
 media-fonts/unifont 13.0.05: GNU Unifont - a Pan-Unicode X11 bitmap iso10646 font
 media-libs/cglm 0.7.9: OpenGL Mathematics (glm) for C
 media-libs/freeglut 3.2.1-r1: A free OpenGL utility toolkit, the open-sourced alternative to the GLUT library
-media-libs/libid3tag 0.16.0: The MAD id3tag library, Tenacity fork
 media-libs/libplacebo 3.104.0: Reusable library for GPU-accelerated image processing primitives
 media-libs/libsdl 9999: Simple Direct Media Layer (sdl-1.2 compatibility)
 media-libs/libsdl2 9999: Simple Direct Media Layer
