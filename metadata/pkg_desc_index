@@ -24,7 +24,6 @@ dev-libs/socket99 0.2.2: Wrapper library for the BSD sockets API with a nicer C9
 dev-python/firmtool 1.4: Parses, extracts, and builds 3DS firmware files
 dev-util/glslang 11.2.0: Khronos reference front-end for GLSL and ESSL, and sample SPIR-V generator
 dev-util/gtk-doc-am 1.32: Virtual ebuild for ::gentoo compatibility
-dev-vcs/git-repair 1.20200102: repairs a damanged git repisitory
 games-arcade/emilia-pinball 9999: SDL OpenGL pinball game
 games-arcade/osu-lazer 9999.999.9: rhythm is just a *click* away!
 games-arcade/pinball-table-gnu 9999: GNU table for games-arcade/emilia-pinball
