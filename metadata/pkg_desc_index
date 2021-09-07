@@ -51,6 +51,7 @@ media-libs/libsdl 9999: Simple Direct Media Layer (sdl-1.2 compatibility)
 media-libs/libsdl2 9999: Simple Direct Media Layer
 media-libs/portaudio 19.06.00-r3: A free, cross-platform, open-source, audio I/O library
 media-libs/portmidi 217-r3: Library for real time MIDI input and output
+media-libs/portsmf 239: Portable library for reading/writing Standard MIDI Files
 media-libs/x264 0.0.20170701: A free library for encoding X264/AVC streams
 media-sound/oss 4.2.2019 4.2.2020 4.2.9999: Open Sound System (OSS)
 media-sound/sbagen 1.4.5: Command line sequenced binaural beat generator
