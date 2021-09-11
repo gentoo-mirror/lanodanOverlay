@@ -100,9 +100,8 @@ src_test() {
 
 src_install() {
 	_emake DESTDIR="${D}" install
-	dobin nsvi
-	make_desktop_entry "${EPREFIX}"/usr/bin/netsurf-gtk2 \
-		NetSurf-gtk2 \
+	make_desktop_entry "${EPREFIX}"/usr/bin/netsurf-vi \
+		NetSurf-vi \
 		netsurf \
 		"Network;WebBrowser"
 }
