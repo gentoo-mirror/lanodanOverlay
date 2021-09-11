@@ -12,4 +12,4 @@ RDEPEND=>=dev-libs/libcss-9999 >=net-libs/libdom-0.3 >=net-libs/libhubbub-0.3 >=
 REQUIRED_USE=duktape? ( javascript )
 SLOT=0
 _eclasses_=toolchain-funcs	9ea1c67b6f8315fdc2568abb674519aa	multilib	4b66d835ec72e021e359bb81eacfe988	netsurf	af8fe1901b583a379a6a32af919cea05	desktop	c0d27bf73aa08ca05b663dbd31fbef28	git-r3	cc875b0c1e9b3bdac1af0f82f3ba29da
-_md5_=027a518ad48c722d8e42b58e46c26254
+_md5_=4d121480ed9bfcc86357a830598d97bd
