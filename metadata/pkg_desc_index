@@ -19,6 +19,7 @@ dev-go/godef 1.1.2: detect licenses used in Go binaries
 dev-lang/go 0.20171003: Boostrap Go from C (useful for musl libc)
 dev-libs/elfutils 0.186_pre9999: Libraries/utilities to handle ELF objects (drop in replacement for libelf)
 dev-libs/hts_engine 1.10: HMM-based speech synthesis system (HTS) engine and API
+dev-libs/libcss 9999: CSS parser and selection engine, written in C
 dev-libs/libtomcrypt 1.18.2: modular and portable cryptographic toolkit
 dev-libs/socket99 0.2.2: Wrapper library for the BSD sockets API with a nicer C99 interface
 dev-python/firmtool 1.4: Parses, extracts, and builds 3DS firmware files
@@ -83,6 +84,7 @@ sys-libs/libucontext 0.9.0: library which provides the <ucontext.h> API from old
 sys-libs/zlib 1.2.8.2015.12.26: Standard (de)compression library (Sortix's libz fork)
 virtual/man 9: Virtual for man
 www-apps/stagit 0.9.4: static git page generator
+www-client/visurf 9999: power-user frontend for netsurf
 x11-libs/gtk+ 3.24.27: Gimp ToolKit +
 x11-misc/gtk3-nocsd 9999: A hack to disable gtk3 client-side decorations
 x11-misc/keynav 9999: Make pointer-driven interfaces easier and faster for users to operate

@@ -104,3 +104,10 @@ sys-apps/lanodan-utils:suspend - Enable the "memsys" program for suspending the 
 sys-libs/gcompat:obstack - Use sys-libs/obstack-standalone for greater compatibility
 sys-libs/libtickit:unibilium - Use dev-libs/unibilium (highly recommended) instead of sys-libs/ncurses
 sys-libs/libucontext:obstack - Use sys-libs/obstack-standalone for greater compatibility
+www-client/visurf:bmp - BMP bitmap image support (media-libs/libnsbmp)
+www-client/visurf:duktape - Use duktape.org javascript engine
+www-client/visurf:gtk - Build GTK3 GUI
+www-client/visurf:gtk2 - Build GTK2 GUI
+www-client/visurf:psl - Use public suffix list via media-libs/libnspsl
+www-client/visurf:rosprite - RISC OS Sprite bitmap image support (media-libs/librosprite)
+www-client/visurf:svgtiny - SVG image support via media-libs/svgatiny instead of gnome-base/librsvg
