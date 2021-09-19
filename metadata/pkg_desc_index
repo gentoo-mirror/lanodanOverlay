@@ -56,6 +56,7 @@ media-libs/portsmf 239: Portable library for reading/writing Standard MIDI Files
 media-libs/x264 0.0.20170701: A free library for encoding X264/AVC streams
 media-sound/oss 4.2.2019 4.2.2020 4.2.9999: Open Sound System (OSS)
 media-sound/sbagen 1.4.5: Command line sequenced binaural beat generator
+media-sound/tenacity 9999: easy-to-use, cross-platform multi-track audio editor/recorder
 media-video/obs-studio 9999: Software for Recording and Streaming Live Video Content (wayland branch)
 media-video/pipewire 0.3.10: Multimedia processing graphs
 media-video/untrunc 9999: Restore a truncated mp4/mov
