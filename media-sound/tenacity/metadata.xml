@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>contact@hacktivis.me</email>
+		<name>Haelwenn (lanodan) Monnier</name>
+	</maintainer>
+	<use>
+		<flag name="midi">Enable support for MIDI via <pkg>media-libs/portmidi</pkg> and <pkg>media-libs/portsmf</pkg></flag>
+		<flag name="id3tag">Enables ID3 tagging with id3tag library</flag>
+		<flag name="twolame">Enables twolame support (MPEG Audio Layer 2 encoder)</flag>
+		<flag name="sbsms">Enables sbsms library support for slower, more accurate pitch and tempo changing</flag>
+		<flag name="soundtouch">Enable support of <pkg>media-libs/libsoundtouch</pkg> plugin</flag>
+		<flag name="lv2">Add support for Ladspa V2</flag>
+		<flag name="vst2">Enable VST2 plugin support</flag>
+		<flag name="vamp">Enables vamp plugins support (Audio analysing plugins)</flag>
+	</use>
+</pkgmetadata>
