@@ -172,7 +172,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	eapply "${FILESDIR}"/2.28.2-opengl-without-X-fixes.patch
 	cmake_src_prepare
 	gnome2_src_prepare
 }
