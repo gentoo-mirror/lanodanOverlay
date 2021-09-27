@@ -51,7 +51,7 @@ RDEPEND="
 	>=media-libs/harfbuzz-1.4.2:=[icu(+)]
 	>=dev-libs/icu-60.2:=
 	virtual/jpeg:0=
-	>=net-libs/libsoup-2.99.0:3[introspection?]
+	>=net-libs/libsoup-2.99.9:3[introspection?]
 	>=dev-libs/libxml2-2.8.0:2
 	>=media-libs/libpng-1.4:0=
 	dev-db/sqlite:3=
