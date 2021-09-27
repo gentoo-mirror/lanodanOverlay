@@ -15,7 +15,7 @@ SRC_URI="https://www.webkitgtk.org/releases/${MY_P}.tar.xz"
 
 LICENSE="LGPL-2+ BSD"
 SLOT="4/37" # soname version of libwebkit2gtk-4.0
-#KEYWORDS="~amd64 ~arm ~arm64 ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 IUSE="aqua debug +egl examples gamepad +geolocation gles2-only gnome-keyring +gstreamer gtk-doc +introspection +jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell systemd wayland +X"
 
@@ -172,6 +172,7 @@ pkg_setup() {
 }
 
 src_prepare() {
+	eapply "${FILESDIR}"/2.28.2-opengl-without-X-fixes.patch
 	cmake_src_prepare
 	gnome2_src_prepare
 }
@@ -279,10 +280,10 @@ src_configure() {
 		-DENABLE_BUBBLEWRAP_SANDBOX=$(usex seccomp)
 		-DUSE_LD_GOLD=ON
 		-DUSE_GTK4=OFF
+		-DUSE_SOUP2=ON
 		-DBWRAP_EXECUTABLE:FILEPATH="${EPREFIX}"/usr/bin/bwrap # If bubblewrap[suid] then portage makes it go-r and cmake find_program fails with that
 		-DDBUS_PROXY_EXECUTABLE:FILEPATH="${EPREFIX}"/usr/bin/xdg-dbus-proxy
 		-DPORT=GTK
-		-DUSE_SOUP2=ON
 		${ruby_interpreter}
 	)
 
