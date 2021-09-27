@@ -12,8 +12,7 @@ HOMEPAGE="https://wiki.gnome.org/Projects/libsoup"
 LICENSE="LGPL-2.1+"
 SLOT="3.0"
 
-# TODO: Default enable brotli at some point? But in 2.70.0 not advertised to servers yet - https://gitlab.gnome.org/GNOME/libsoup/issues/146
-IUSE="brotli gssapi gtk-doc +introspection samba ssl sysprof test +vala"
+IUSE="+brotli gssapi gtk-doc +introspection samba ssl sysprof test +vala"
 RESTRICT="!test? ( test )"
 REQUIRED_USE="vala? ( introspection )"
 
@@ -21,6 +20,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~riscv ~s390 ~
 
 DEPEND="
 	>=dev-libs/glib-2.69.1:2[${MULTILIB_USEDEP}]
+	net-libs/nghttp2:=[${MULTILIB_USEDEP}]
 	>=dev-db/sqlite-3.8.2:3[${MULTILIB_USEDEP}]
 	>=dev-libs/libxml2-2.9.1-r4:2[${MULTILIB_USEDEP}]
 	brotli? ( >=app-arch/brotli-1.0.6-r1:=[${MULTILIB_USEDEP}] )
@@ -32,7 +32,7 @@ DEPEND="
 	samba? ( net-fs/samba )
 "
 RDEPEND="${DEPEND}
-	>=net-libs/glib-networking-2.38.2[ssl?,${MULTILIB_USEDEP}]
+	>=net-libs/glib-networking-2.70_alpha[ssl?,${MULTILIB_USEDEP}]
 "
 BDEPEND="
 	dev-libs/glib
@@ -42,6 +42,7 @@ BDEPEND="
 	>=sys-devel/gettext-0.19.8
 	virtual/pkgconfig
 	vala? ( $(vala_depend) )
+	test? ( net-libs/gnutls[pkcs11] )
 "
 #	test? (	www-servers/apache[ssl,apache2_modules_auth_digest,apache2_modules_alias,apache2_modules_auth_basic,
 #		apache2_modules_authn_file,apache2_modules_authz_host,apache2_modules_authz_user,apache2_modules_dir,
@@ -65,7 +66,7 @@ src_prepare() {
 src_configure() {
 	# FIXME: we need addpredict to workaround bug #324779 until
 	# root cause (bug #249496) is solved
-	# But necessary while apache tests are disabled
+	# But unnecessary while apache tests are disabled
 	#addpredict /usr/share/snmp/mibs/.index
 
 	multilib-minimal_src_configure
@@ -86,6 +87,7 @@ multilib_src_configure() {
 		$(meson_use test tests)
 		-Dinstalled_tests=false
 		$(meson_feature sysprof)
+		$(meson_feature test pkcs11_tests)
 	)
 	meson_src_configure
 }
