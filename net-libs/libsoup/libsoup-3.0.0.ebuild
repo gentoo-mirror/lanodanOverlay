@@ -10,7 +10,7 @@ DESCRIPTION="HTTP client/server library for GNOME"
 HOMEPAGE="https://wiki.gnome.org/Projects/libsoup"
 
 LICENSE="LGPL-2.1+"
-SLOT="3/3.0"
+SLOT="3.0"
 
 # TODO: Default enable brotli at some point? But in 2.70.0 not advertised to servers yet - https://gitlab.gnome.org/GNOME/libsoup/issues/146
 IUSE="brotli gssapi gtk-doc +introspection samba ssl sysprof test +vala"
