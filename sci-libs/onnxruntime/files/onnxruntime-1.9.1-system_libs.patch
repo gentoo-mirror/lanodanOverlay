@@ -1,0 +1,92 @@
+diff --git a/CMakeLists.txt.old b/CMakeLists.txt
+index 2534b99..d144047 100644
+--- a/CMakeLists.txt.old
++++ b/CMakeLists.txt
+@@ -540,7 +540,7 @@ if (MSVC)
+       set(CMAKE_ASM_MASM_FLAGS "${CMAKE_ASM_MASM_FLAGS} /safeseh")
+     endif()
+   endif()
+-  
++
+ 
+   #Always enable exception handling, even for Windows ARM
+   if(NOT onnxruntime_DISABLE_EXCEPTIONS)
+@@ -833,7 +833,13 @@ get_filename_component(ORTTRAINING_ROOT "${ORTTRAINING_ROOT}" ABSOLUTE)
+ get_filename_component(REPO_ROOT "${REPO_ROOT}" ABSOLUTE)
+ set(ONNXRUNTIME_INCLUDE_DIR ${REPO_ROOT}/include/onnxruntime)
+ 
+-add_subdirectory(external/date EXCLUDE_FROM_ALL)
++if(onnxruntime_PREFER_SYSTEM_LIB)
++  find_package(date REQUIRED)
++  add_library(date_interface ALIAS date::date)
++endif()
++if(NOT TARGET date::date)
++  add_subdirectory(external/date EXCLUDE_FROM_ALL)
++endif()
+ 
+ set(SAFEINT_INCLUDE_DIR ${REPO_ROOT}/cmake/external/SafeInt)
+ add_library(safeint_interface INTERFACE)
+@@ -844,16 +850,33 @@ if(onnxruntime_DISABLE_EXCEPTIONS)
+   add_compile_definitions(optional_CONFIG_NO_EXCEPTIONS=1)
+ endif()
+ 
+-add_subdirectory(external/mp11 EXCLUDE_FROM_ALL)
++if(onnxruntime_PREFER_SYSTEM_LIB)
++  find_package(boost_mp11)
++endif()
++if(NOT TARGET Boost::mp11)
++  add_subdirectory(external/mp11 EXCLUDE_FROM_ALL)
++endif()
+ 
+-set(JSON_BuildTests OFF CACHE INTERNAL "")
+-set(JSON_Install OFF CACHE INTERNAL "")
+-add_subdirectory(external/json EXCLUDE_FROM_ALL)
++if(onnxruntime_PREFER_SYSTEM_LIB)
++  find_package(nlohmann_json REQUIRED)
++endif()
++if(NOT TARGET nlohmann_json::nlohmann_json)
++  set(JSON_BuildTests OFF CACHE INTERNAL "")
++  set(JSON_Install OFF CACHE INTERNAL "")
++  add_subdirectory(external/json EXCLUDE_FROM_ALL)
++endif()
+ 
++find_package(PkgConfig)
+ if(onnxruntime_PREFER_SYSTEM_LIB)
+-  find_package(re2)
++  pkg_check_modules(RE2 re2)
+ endif()
+-if(NOT TARGET re2::re2)
++if(RE2_FOUND)
++  add_library(re2::re2 INTERFACE IMPORTED)
++  set_target_properties(re2::re2 PROPERTIES
++    INTERFACE_COMPILE_OPTIONS "${RE2_CFLAGS}"
++    INTERFACE_LINK_LIBRARIES "${RE2_LDFLAGS}"
++  )
++else()
+   add_subdirectory(external/re2 EXCLUDE_FROM_ALL)
+   set_target_properties(re2 PROPERTIES FOLDER "External/re2")
+   set(RE2_INCLUDE_DIR ${REPO_ROOT}/cmake/external/re2)
+@@ -885,12 +908,12 @@ else()
+         elseif(WINDOWS_STORE OR (WIN32 AND NOT CMAKE_CXX_STANDARD_LIBRARIES MATCHES kernel32.lib))
+             message(WARNING "Cpuinfo not included in Windows Store or WCOS builds")
+             set(CPUINFO_SUPPORTED FALSE)
+-        endif()     
++        endif()
+     elseif(NOT ${onnxruntime_target_platform} MATCHES "^(i[3-6]86|AMD64|x86(_64)?|armv[5-8].*|aarch64|arm64)$")
+         message(WARNING
+         "Target processor architecture \"${onnxruntime_target_platform}\" is not supported in cpuinfo. "
+         "cpuinfo not included.")
+-        set(CPUINFO_SUPPORTED FALSE)    
++        set(CPUINFO_SUPPORTED FALSE)
+     endif()
+ endif()
+ 
+@@ -907,7 +930,7 @@ if(CPUINFO_SUPPORTED)
+       set(IOS ON CACHE INTERNAL "")
+       set(IOS_ARCH "${CMAKE_OSX_ARCHITECTURES}" CACHE INTERNAL "")
+   endif()
+-  
++
+   string(APPEND CMAKE_CXX_FLAGS " -DCPUINFO_SUPPORTED")
+   add_subdirectory(external/pytorch_cpuinfo EXCLUDE_FROM_ALL)
+   if(MSVC)
