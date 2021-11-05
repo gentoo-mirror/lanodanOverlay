@@ -16,18 +16,20 @@ DESCRIPTION="cross-platform, high performance ML inferencing and training accele
 HOMEPAGE="https://github.com/microsoft/onnxruntime"
 SRC_URI="
 	https://github.com/microsoft/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
-	https://github.com/pytorch/cpuinfo/archive/${CPUINFO_COMMIT}.zip -> pytorch-cpuinfo-${CPUINFO_COMMIT:0:10}.zip
-	https://github.com/onnx/onnx/archive/${ONNX_COMMIT}.zip -> onnx-${ONNX_COMMIT:0:10}.zip
-	https://github.com/boostorg/mp11/archive/${MP11_COMMIT}.zip -> boost_mp11-${MP11_COMMIT:0:11}.zip
+	https://github.com/pytorch/cpuinfo/archive/${CPUINFO_COMMIT}.tar.gz -> pytorch-cpuinfo-${CPUINFO_COMMIT:0:10}.tar.gz
+	https://github.com/onnx/onnx/archive/${ONNX_COMMIT}.tar.gz -> onnx-${ONNX_COMMIT:0:10}.tar.gz
+	https://github.com/boostorg/mp11/archive/${MP11_COMMIT}.tar.gz -> boost_mp11-${MP11_COMMIT:0:11}.tar.gz
 	https://github.com/google/flatbuffers/archive/v${FLATBUFFERS_PV}.tar.gz -> flatbuffers-${FLATBUFFERS_PV}.tar.gz
-	https://github.com/martinmoene/optional-lite/archive/${OPTIONAL_LITE_COMMIT}.zip -> optional-lite-${OPTIONAL_LITE_COMMIT:0:10}.zip
-	https://github.com/dcleblanc/SafeInt/archive/${SAFEINT_COMMIT}.zip -> SafeInt-${SAFEINT_COMMIT:0:10}.zip
+	https://github.com/martinmoene/optional-lite/archive/${OPTIONAL_LITE_COMMIT}.tar.gz -> optional-lite-${OPTIONAL_LITE_COMMIT:0:10}.tar.gz
+	https://github.com/dcleblanc/SafeInt/archive/${SAFEINT_COMMIT}.tar.gz -> SafeInt-${SAFEINT_COMMIT:0:10}.tar.gz
 "
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="benchmark test"
-RESTRICT="!test ( test )"
+
+# libonnxruntime_framework.so: undefined reference to `onnx::AttributeProto_AttributeType_Name[abi:cxx11](onnx::AttributeProto_AttributeType)'
+RESTRICT="test"
 
 S="${WORKDIR}/${P}/cmake"
 
