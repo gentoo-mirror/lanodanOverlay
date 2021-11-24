@@ -67,7 +67,7 @@ net-dns/getdns 1.3.0: Modern asynchronous DNS API
 net-im/bitlbee 3.5.1 9999: irc to IM gateway that support multiple IM protocols
 net-libs/glib-networking 2.66.0: Network-related giomodules for glib
 net-libs/libsoup 3.0.0: HTTP client/server library for GNOME
-net-libs/webkit-gtk 2.24.2 2.24.2-r100 2.24.2-r200: Open source web browser engine
+net-libs/webkit-gtk 2.34.2 2.34.2-r100 2.34.2-r200: Open source web browser engine
 net-libs/wpewebkit 2.32.3: WebKit port optimized for embedded devices
 net-misc/ap-client 9999: CLI-based client / toolbox for ActivityPub Client-to-Server
 net-misc/cve-client 9999: CLI-based client / toolbox for CVE.org
