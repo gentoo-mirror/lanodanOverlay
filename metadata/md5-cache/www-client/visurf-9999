@@ -11,5 +11,5 @@ PROPERTIES=live
 RDEPEND=>=dev-libs/libcss-9999 >=net-libs/libdom-0.3 >=net-libs/libhubbub-0.3 >=dev-libs/libnsutils-0.1.0 dev-libs/libxml2:2 net-misc/curl dev-libs/wayland x11-libs/cairo x11-libs/pango x11-libs/libxkbcommon bmp? ( >=media-libs/libnsbmp-0.1 ) gif? ( >=media-libs/libnsgif-0.1 ) javascript? ( >=dev-libs/nsgenbind-0.7 duktape? ( dev-lang/duktape:= ) !duktape? ( dev-lang/spidermonkey:0= ) ) jpeg? ( >=virtual/jpeg-0-r2:0 ) mng? ( >=media-libs/libmng-1.0.10-r2 ) png? ( >=media-libs/libpng-1.2.51:0 ) psl? ( media-libs/libnspsl ) rosprite? ( >=media-libs/librosprite-0.1.2-r1 ) svg? ( svgtiny? ( >=media-libs/libsvgtiny-0.1.3-r1 ) !svgtiny? ( gnome-base/librsvg:2 ) ) webp? ( >=media-libs/libwebp-0.3.0 )
 REQUIRED_USE=duktape? ( javascript )
 SLOT=0
-_eclasses_=toolchain-funcs	9ea1c67b6f8315fdc2568abb674519aa	multilib	4b66d835ec72e021e359bb81eacfe988	netsurf	af8fe1901b583a379a6a32af919cea05	desktop	c0d27bf73aa08ca05b663dbd31fbef28	git-r3	cc875b0c1e9b3bdac1af0f82f3ba29da
+_eclasses_=toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	multilib	4b66d835ec72e021e359bb81eacfe988	netsurf	af8fe1901b583a379a6a32af919cea05	desktop	c0d27bf73aa08ca05b663dbd31fbef28	git-r3	cc875b0c1e9b3bdac1af0f82f3ba29da
 _md5_=4d121480ed9bfcc86357a830598d97bd
