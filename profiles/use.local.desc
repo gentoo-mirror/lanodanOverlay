@@ -132,6 +132,8 @@ net-libs/wpewebkit:qt - Enable support for the Qt API
 net-p2p/gnunet:experimental - enable experimental options
 net-p2p/gnunet:http - enable embedded http server support
 sys-apps/lanodan-utils:suspend - Enable the "memsys" program for suspending the machine
+sys-apps/shadow:bcrypt - build the bcrypt password encryption algorithm
+sys-apps/shadow:su - build the su program
 sys-libs/gcompat:obstack - Use sys-libs/obstack-standalone for greater compatibility
 sys-libs/libtickit:unibilium - Use dev-libs/unibilium (highly recommended) instead of sys-libs/ncurses
 sys-libs/libucontext:obstack - Use sys-libs/obstack-standalone for greater compatibility
