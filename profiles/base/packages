@@ -18,7 +18,7 @@ dev-util/go-deblob
 net-analyzer/mtr
 net-analyzer/nmap
 net-analyzer/tcpdump
-net-dns/ldns-utils
+net-dns/ldns
 net-dns/unbound
 sys-apps/ed
 sys-apps/lanodan-utils
