@@ -1,7 +1,7 @@
 -*app-arch/tar
 -*sys-apps/busybox
--*sys-apps/less
 -*sys-apps/file
+-*sys-apps/less
 app-admin/rsyslog
 app-arch/libarchive
 app-crypt/gentoo-keys
@@ -18,8 +18,8 @@ dev-util/go-deblob
 net-analyzer/mtr
 net-analyzer/nmap
 net-analyzer/tcpdump
-net-dns/ldns-utils
 net-dns/unbound
+net-libs/ldns
 sys-apps/ed
 sys-apps/lanodan-utils
 sys-devel/clang
