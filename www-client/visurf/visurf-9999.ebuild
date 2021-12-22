@@ -28,6 +28,7 @@ RDEPEND="
 	x11-libs/cairo
 	x11-libs/pango
 	x11-libs/libxkbcommon
+	dev-libs/libutf8proc:=
 	bmp? ( >=media-libs/libnsbmp-0.1 )
 	gif? ( >=media-libs/libnsgif-0.1 )
 	javascript? (
@@ -42,7 +43,9 @@ RDEPEND="
 	rosprite? ( >=media-libs/librosprite-0.1.2-r1 )
 	svg? ( svgtiny? ( >=media-libs/libsvgtiny-0.1.3-r1 )
 		!svgtiny? ( gnome-base/librsvg:2 ) )
-	webp? ( >=media-libs/libwebp-0.3.0 )"
+	webp? ( >=media-libs/libwebp-0.3.0 )
+"
+DEPEND="${RDEPEND}"
 BDEPEND="
 	duktape? ( app-editors/vim-core )
 	dev-libs/check
