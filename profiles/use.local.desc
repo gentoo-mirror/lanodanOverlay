@@ -40,6 +40,18 @@ games-arcade/emilia-pinball:gles1-only - Use GLES 1.0 instead of OpenGL
 gnome-base/librsvg:tools - Build svg viewer tool
 gnustep-base/gnustep-make:libobjc2 - Enables use of the GNUstep Objective-C runtime (gnustep-base/libobjc2) with non-fragile ABI and sys-devel/clang compiler
 gnustep-base/gnustep-make:native-exceptions - Enables use of the native Objective-C exception support (@try/@catch/@finally) built-in objective-c exceptions with compilers that support it
+gui-libs/wlroots:X - Enable support for X11 applications (XWayland)
+gui-libs/wlroots:vulkan - Enable support for the vulkan backend renderer
+gui-libs/wlroots:x11-backend - Enable support for handling input/output devices through x11-libs/libxcb
+gui-wm/sway:X - Enable support for X11 applications (XWayland)
+gui-wm/sway:swaybar - Install 'swaybar': sway's status bar component
+gui-wm/sway:swaybg - Install 'swaybg': allows to set a desktop background image
+gui-wm/sway:swayidle - Install 'swayidle': idle manager to run commands when user is inactive
+gui-wm/sway:swaylock - Install 'swaylock': sway's screen locker
+gui-wm/sway:swaymsg - Install 'swaymsg': tool for communicating with a running sway instance
+gui-wm/sway:swaynag - Install 'swaynag': shows a message with buttons
+gui-wm/sway:tray - Enable support for StatusNotifierItem tray specification
+gui-wm/sway:wallpapers - Install sway's default wallpaper image
 mail-mta/opensmtpd:mdoc - Use mdoc format for manpages
 mail-mta/opensmtpd:mta - Enable this to install as system-wide MTA
 media-libs/freeglut:wayland-only - Build wayland version instead of X11 version
