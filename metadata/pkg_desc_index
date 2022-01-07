@@ -36,6 +36,7 @@ games-engines/love 0.10.2: A framework for 2D games in Lua
 games-engines/solarus 1.6.5: An open-source Zelda-like 2D game engine
 games-sports/vdrift 2014.10.20 9999: A driving simulation made with drift racing in mind
 games-util/fteqcc 9999: FTE QuakeC compiler
+games-util/steamcontroller 9999: Standalone Steam Controller Driver
 gnome-base/librsvg 2.40.21: Scalable Vector Graphics (SVG) rendering library
 gnustep-base/gnustep-make 2.7.0: GNUstep Makefile Package
 gui-apps/cog 9999: Single Window Launcher for WPE WebKit
