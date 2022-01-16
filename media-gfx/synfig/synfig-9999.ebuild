@@ -10,8 +10,8 @@ HOMEPAGE="https://www.synfig.org/"
 EGIT_REPO_URI="https://github.com/synfig/synfig/"
 LICENSE="GPL-2+ GPL-3+"
 SLOT="0"
-KEYWORDS="~amd64"
-IUSE="imagemagick jack"
+KEYWORDS=""
+IUSE="imagemagick jack mlt"
 
 RDEPEND="
 	dev-cpp/glibmm:2=
@@ -25,7 +25,6 @@ RDEPEND="
 	media-libs/harfbuzz:=
 	media-libs/libjpeg-turbo:=
 	media-libs/libpng:=
-	media-libs/mlt:=
 	media-libs/openexr:=
 	media-libs/sdl2-mixer:=
 	sci-libs/fftw:3.0=
@@ -33,6 +32,7 @@ RDEPEND="
 	x11-libs/pango:=
 	imagemagick? ( media-gfx/imagemagick:=[cxx] )
 	jack? ( virtual/jack:= )
+	mlt? ( media-libs/mlt:= )
 "
 DEPEND="
 	${RDEPEND}
