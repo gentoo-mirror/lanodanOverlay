@@ -87,7 +87,7 @@ RDEPEND="
 	dev-libs/hyphen
 	jpeg2k? ( >=media-libs/openjpeg-2.2.0:2= )
 
-	egl? ( media-libs/mesa[egl] )
+	egl? ( media-libs/mesa[egl(+)] )
 	gles2-only? ( media-libs/mesa[gles2] )
 	opengl? ( virtual/opengl )
 	wayland? (
