@@ -7,8 +7,8 @@ inherit git-r3 cmake-multilib
 DESCRIPTION="Simple Direct Media Layer (sdl-1.2 compatibility)"
 HOMEPAGE="https://github.com/libsdl-org/sdl12-compat"
 EGIT_REPO_URI="https://github.com/libsdl-org/sdl12-compat"
-# dr_mp3: MIT-O or Public-Domain
-LICENSE="ZLIB || ( MIT-0 public-domain )"
+# dr_mp3: MIT-O or Unlicense
+LICENSE="ZLIB || ( MIT-0 Unlicense )"
 SLOT="0/sdl12-compat"
 RESTRICT="!test? ( test )"
 
