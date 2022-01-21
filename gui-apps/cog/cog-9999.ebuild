@@ -16,7 +16,7 @@ DEPEND="
 	net-libs/wpewebkit
 	net-libs/libsoup:2.4
 	drm? (
-		media-libs/mesa[egl,gbm]
+		media-libs/mesa[egl(+),gbm(+)]
 		>=gui-libs/wpebackend-fdo-1.4.0
 		>=x11-libs/libdrm-2.4.71
 		dev-libs/libinput:=
@@ -25,7 +25,7 @@ DEPEND="
 	)
 	fdo? (
 		x11-libs/cairo
-		media-libs/mesa[egl]
+		media-libs/mesa[egl(+)]
 		>=gui-libs/wpebackend-fdo-1.6.0
 		dev-libs/wayland
 		x11-libs/libxkbcommon
@@ -37,7 +37,7 @@ DEPEND="
 	headless? ( >=gui-libs/wpebackend-fdo-1.8.0 )
 	X? (
 		>=gui-libs/wpebackend-fdo-1.6.0
-		media-libs/mesa[egl]
+		media-libs/mesa[egl(+)]
 		x11-libs/libxcb
 		x11-libs/libxkbcommon[X]
 	)
