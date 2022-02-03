@@ -43,6 +43,6 @@ DEPEND="
 src_prepare() {
 	cmake_src_prepare
 
-	sed -i ';DESTINATION lib;;' synfig-studio/src/synfigapp/CMakeLists.txt || die
-	sed -i ';DESTINATION lib;;' synfig-core/src/synfig/CMakeLists.txt || die
+	sed -i 's;DESTINATION lib;;' synfig-studio/src/synfigapp/CMakeLists.txt || die
+	sed -i 's;DESTINATION lib;;' synfig-core/src/synfig/CMakeLists.txt || die
 }

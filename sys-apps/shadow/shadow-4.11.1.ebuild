@@ -1,16 +1,17 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-inherit autotools pam
+inherit libtool pam
 
 DESCRIPTION="Utilities to deal with user accounts"
 HOMEPAGE="https://github.com/shadow-maint/shadow"
 SRC_URI="https://github.com/shadow-maint/shadow/releases/download/v${PV}/${P}.tar.xz"
 
 LICENSE="BSD GPL-2"
-SLOT="0"
+# Subslot is for libsubid's SONAME.
+SLOT="0/4"
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 IUSE="acl audit bcrypt cracklib nls pam selinux skey split-usr +su tcb xattr"
 # Taken from the man/Makefile.am file.
@@ -55,23 +56,18 @@ RDEPEND="${COMMON_DEPEND}
 
 PATCHES=(
 	"${FILESDIR}/${PN}-4.1.3-dots-in-usernames.patch"
-	"${FILESDIR}/${P}-libsubid_pam_linking.patch"
-	"${FILESDIR}/${P}-libsubid_oot_build.patch"
-	"${FILESDIR}/shadow-4.9-libcrack.patch"
-	"${FILESDIR}/shadow-4.9-SHA-rounds.patch"
-	"${FILESDIR}/${P}-gpasswd-double-free.patch"
-	"${FILESDIR}/${P}-configure-typo.patch"
 )
 
 src_prepare() {
 	default
-	eautoreconf
-	#elibtoolize
+	#eautoreconf
+	elibtoolize
 }
 
 src_configure() {
 	local myeconfargs=(
 		--disable-account-tools-setuid
+		--disable-static
 		--with-btrfs
 		--without-group-name-max-length
 		$(use_enable nls)
@@ -88,8 +84,6 @@ src_configure() {
 		$(use_with xattr attr)
 	)
 	econf "${myeconfargs[@]}"
-
-	has_version 'sys-libs/uclibc[-rpc]' && sed -i '/RLOGIN/d' config.h #425052
 
 	if use nls ; then
 		local l langs="po" # These are the pot files.
@@ -206,7 +200,7 @@ src_install() {
 		# and/or don't apply when using pam
 		find "${ED}"/usr/share/man -type f \
 			'(' -name 'limits.5*' -o -name 'suauth.5*' ')' \
-			-delete
+			-delete || die
 
 		# Remove pam.d files provided by pambase.
 		rm "${ED}"/etc/pam.d/{login,passwd} || die
@@ -218,7 +212,11 @@ src_install() {
 	# Remove manpages that are handled by other packages
 	find "${ED}"/usr/share/man -type f \
 		'(' -name id.1 -o -name getspnam.3 ')' \
-		-delete
+		-delete || die
+
+	if ! use su ; then
+		find "${ED}"/usr/share/man -type f -name su.1 -delete || die
+	fi
 
 	cd "${S}" || die
 	dodoc ChangeLog NEWS TODO
@@ -233,20 +231,26 @@ pkg_preinst() {
 }
 
 pkg_postinst() {
+	# Missing entries from /etc/passwd can cause odd system blips.
+	# See bug #829872.
+	if ! pwck -r -q -R "${EROOT:-/}" &>/dev/null ; then
+		ewarn "Running 'pwck' returned errors. Please run it manually to fix any errors."
+	fi
+
 	# Enable shadow groups.
 	if [ ! -f "${EROOT}"/etc/gshadow ] ; then
-		if grpck -r -R "${EROOT}" 2>/dev/null ; then
-			grpconv -R "${EROOT}"
+		if grpck -r -R "${EROOT:-/}" 2>/dev/null ; then
+			grpconv -R "${EROOT:-/}"
 		else
-			ewarn "Running 'grpck' returned errors.  Please run it by hand, and then"
+			ewarn "Running 'grpck' returned errors. Please run it by hand, and then"
 			ewarn "run 'grpconv' afterwards!"
 		fi
 	fi
 
 	[[ ! -f "${EROOT}"/etc/subgid ]] &&
-		touch "${EROOT}"/etc/subgid
+		touch "${EROOT}"/etc/subgid || die
 	[[ ! -f "${EROOT}"/etc/subuid ]] &&
-		touch "${EROOT}"/etc/subuid
+		touch "${EROOT}"/etc/subuid || die
 
 	einfo "The 'adduser' symlink to 'useradd' has been dropped."
 }
