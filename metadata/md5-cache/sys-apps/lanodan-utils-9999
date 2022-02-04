@@ -1,7 +1,7 @@
 BDEPEND=test? ( dev-libs/atf dev-util/kyua ) >=dev-vcs/git-1.8.2.1[curl]
-DEFINED_PHASES=install unpack
+DEFINED_PHASES=configure install unpack
 DESCRIPTION=Collection of Unix tools, comparable to coreutils
-EAPI=7
+EAPI=8
 HOMEPAGE=https://hacktivis.me/git/utils
 INHERIT=git-r3
 IUSE=suspend test
@@ -10,4 +10,4 @@ PROPERTIES=live
 RESTRICT=!test? ( test )
 SLOT=0
 _eclasses_=git-r3	cc875b0c1e9b3bdac1af0f82f3ba29da
-_md5_=08f6574116286c8d3371e05bebd06703
+_md5_=1bd4938e9e6f0983d038bad3b1c0f0a1
