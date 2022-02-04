@@ -1,7 +1,7 @@
-# Copyright 2021 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+# Copyright 2021-2022 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 inherit git-r3
 
@@ -20,17 +20,21 @@ BDEPEND="
 	)
 "
 
+src_configure() {
+	./configure PREFIX='/opt/lanodan'
+}
+
 src_install() {
-	emake install DESTDIR="${D}" PREFIX=/opt/lanodan BINDIR=/opt/lanodan/bin MANDIR=/opt/lanodan/man
+	emake install DESTDIR="${D}"
 
 	if use !suspend; then
-		rm "${D}/opt/lanodan/bin/memsys" || die "Failed removing memsys"
+		rm "${D}/opt/lanodan/sbin/memsys" || die "Failed removing memsys"
 	fi
 
 	# before 50baselayout
 	newenvd - 40lanodan <<-EOF
-		PATH="/opt/lanodan/bin"
-		ROOTPATH="/opt/lanodan/bin"
+		PATH="/opt/lanodan/bin:/opt/lanodan/sbin"
+		ROOTPATH="/opt/lanodan/bin:/opt/lanodan/sbin"
 		MANPATH="/opt/lanodan/man"
 	EOF
 }
