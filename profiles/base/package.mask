@@ -10,3 +10,9 @@ sys-apps/less
 # https://www.audacityteam.org/about/desktop-privacy-notice/
 # TL;DR: Audacity is now a Surveillance application
 media-sound/audacity
+
+# Haelwenn (lanodan) Monnier - 2022-02-05
+# Unmaintained, last update in 2016, 2021 is because Arthur Zamarin of gentoo
+# made a small fork with few patches on top.
+# Also: https://zaitcev.livejournal.com/263602.html - PyPI is not trustworthy
+dev-python/nose
