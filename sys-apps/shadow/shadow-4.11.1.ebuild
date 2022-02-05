@@ -247,10 +247,13 @@ pkg_postinst() {
 		fi
 	fi
 
-	[[ ! -f "${EROOT}"/etc/subgid ]] &&
+	if [[ ! -f "${EROOT}"/etc/subgid ]]; then
 		touch "${EROOT}"/etc/subgid || die
-	[[ ! -f "${EROOT}"/etc/subuid ]] &&
+	fi
+
+	if [[ ! -f "${EROOT}"/etc/subuid ]]; then
 		touch "${EROOT}"/etc/subuid || die
+	fi
 
 	einfo "The 'adduser' symlink to 'useradd' has been dropped."
 }
