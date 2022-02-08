@@ -80,7 +80,7 @@ net-misc/drawterm 9999: connect to Plan 9 CPU servers from other operating syste
 net-misc/fbxosctrl 2.4.4: Shell tool to control some Freebox OS stuff: wifi, reboot...
 net-misc/pussh 9999: Parallel SSH, batch and command line oriented
 net-misc/streamlink 3.0.3: CLI for extracting streams from websites to a video player of your choice
-net-news/newsboat 2.13: An RSS/Atom feed reader for text terminals
+net-news/newsboat 2.13-r1: An RSS/Atom feed reader for text terminals
 net-nntp/suck 4.3.4: Grab news from a remote NNTP server and feed them to another
 net-p2p/gnunet 0.11.0_pre66: GNUnet is a framework for secure peer-to-peer networking.
 sci-libs/onnxruntime 1.9.1: cross-platform, high performance ML inferencing and training accelerator
