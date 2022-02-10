@@ -17,6 +17,8 @@ BDEPEND="
 	test? (
 		dev-libs/atf
 		dev-util/kyua
+		app-text/mandoc
+		dev-util/shellcheck
 	)
 "
 
