@@ -37,6 +37,6 @@ src_install() {
 	newenvd - 40lanodan <<-EOF
 		PATH="/opt/lanodan/bin:/opt/lanodan/sbin"
 		ROOTPATH="/opt/lanodan/bin:/opt/lanodan/sbin"
-		MANPATH="/opt/lanodan/man"
+		MANPATH="/opt/lanodan/share/man"
 	EOF
 }
