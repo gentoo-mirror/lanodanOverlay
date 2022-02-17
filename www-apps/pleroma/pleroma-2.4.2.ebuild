@@ -11,14 +11,14 @@ SRC_URI="https://git.pleroma.social/pleroma/pleroma/-/archive/v${PV}/${PN}-v${PV
 S="${WORKDIR}/${PN}-v${PV}"
 LICENSE="AGPL-3 CC-BY-SA-4.0 CC-BY-4.0"
 SLOT="otp"
-KEYWORDS="~aarch64 ~amd64 ~arm"
+KEYWORDS="~amd64"
 IUSE="imagemagick ffmpeg exiftool"
 
 BDEPEND="
 	dev-lang/erlang:=
 	dev-lang/elixir:=
 	dev-util/cmake
-	dev-erlang/rebar
+	dev-util/rebar
 	dev-elixir/hex
 "
 DEPEND="
