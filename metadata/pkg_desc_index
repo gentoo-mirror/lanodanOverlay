@@ -14,6 +14,7 @@ app-text/evince 3.34.2: Simple document viewer for GNOME
 app-text/sshpaste 1.0.1 9999: wgetpaste clone for pushing to your own server
 app-vis/vis-ctags 9999: vis plugin to provide basic ctags support
 dev-dotnet/nuget 5.0.2: Nuget - .NET Package Manager
+dev-elixir/hex 1.0.1: Package manager for the Erlang VM
 dev-go/godef 1.1.2: detect licenses used in Go binaries
 dev-lang/elixir 1.13.0: Elixir programming language
 dev-lang/erlang 24.0.6: Erlang programming language, runtime environment and libraries (OTP)
@@ -26,6 +27,7 @@ dev-libs/socket99 0.2.2: Wrapper library for the BSD sockets API with a nicer C9
 dev-python/firmtool 1.4: Parses, extracts, and builds 3DS firmware files
 dev-util/glslang 11.2.0: Khronos reference front-end for GLSL and ESSL, and sample SPIR-V generator
 dev-util/gtk-doc-am 1.32: Virtual ebuild for ::gentoo compatibility
+dev-util/rebar 3.18.0: Erlang build tool that makes it easy to compile and test Erlang applications and releases
 games-arcade/emilia-pinball 9999: SDL OpenGL pinball game
 games-arcade/osu-lazer 9999.999.9: rhythm is just a *click* away!
 games-arcade/pinball-table-gnu 9999: GNU table for games-arcade/emilia-pinball
@@ -95,6 +97,7 @@ sys-libs/libtickit 0.3.3: library for building interactive full-screen terminal 
 sys-libs/libucontext 0.9.0: library which provides the <ucontext.h> API from older POSIX revisions
 sys-libs/zlib 1.2.8.2015.12.26: Standard (de)compression library (Sortix's libz fork)
 virtual/man 9: Virtual for man
+www-apps/pleroma 2.4.2: ActivityPub social networking software compatible with other Fediverse software
 www-apps/stagit 0.9.4: static git page generator
 www-client/visurf 9999: power-user frontend for netsurf
 www-client/woob-qt 9999: Web outside of Browsers (Qt applications)

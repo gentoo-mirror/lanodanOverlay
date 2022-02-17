@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile install prepare test
+DEPEND=dev-lang/erlang
+DESCRIPTION=Erlang build tool that makes it easy to compile and test Erlang applications and releases
+EAPI=6
+HOMEPAGE=https://www.rebar3.org/
+INHERIT=bash-completion-r1 rebar3
+KEYWORDS=~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86
+LICENSE=Apache-2.0
+RDEPEND=dev-lang/erlang
+RESTRICT=network-sandbox
+SLOT=3
+SRC_URI=https://github.com/erlang/rebar3/archive/3.18.0.tar.gz -> rebar-3.18.0.tar.gz
+_eclasses_=toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	multilib	de4beb52bfa93c4c5d96792a6b5e1784	bash-completion-r1	d3a60385655d9b402be765a6de333245	rebar3	2bf98d537bb5078a043fc29362c41ae5
+_md5_=f66b91e33f9c58f1a9daa05a775b2ec2
