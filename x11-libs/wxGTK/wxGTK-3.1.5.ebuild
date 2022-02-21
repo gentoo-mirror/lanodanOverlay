@@ -53,7 +53,10 @@ BDEPEND="
 src_prepare() {
 	default
 
-	use X || sed -i 's;-lGL\b;-lOpenGL;' configure || die
+	use X || sed -i \
+		-e 's;-lGL\b;-lOpenGL;' \
+		-e 's;-lX11;;g' \
+		configure || die
 }
 
 multilib_src_configure() {
@@ -108,7 +111,7 @@ multilib_src_install_all() {
 	pushd "${ED}"/usr/share/bakefile/presets >/dev/null || die
 	local f
 	for f in wx*; do
-		mv "${f}" "${f/wx/wx30gtk3}" || die
+		mv "${f}" "${f/wx/wx31}" || die
 	done
 	popd >/dev/null || die
 }
