@@ -103,6 +103,7 @@ www-client/visurf 9999: power-user frontend for netsurf
 www-client/woob-qt 9999: Web outside of Browsers (Qt applications)
 x11-base/xwayland 9999: Standalone X server running under Wayland
 x11-libs/gtk+ 3.24.27: Gimp ToolKit +
+x11-libs/wxGTK 3.1.5: GTK+ version of wxWidgets, a cross-platform C++ GUI toolkit
 x11-misc/gtk3-nocsd 9999: A hack to disable gtk3 client-side decorations
 x11-misc/keynav 9999: Make pointer-driven interfaces easier and faster for users to operate
 x11-misc/qarma 9999: Zenity Clone for Qt5 (lanodan's branch)
