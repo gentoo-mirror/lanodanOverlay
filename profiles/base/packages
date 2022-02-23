@@ -14,7 +14,6 @@ app-shells/mksh
 app-text/mandoc
 app-text/sshpaste
 dev-perl/rename
-dev-util/go-deblob
 net-analyzer/mtr
 net-analyzer/nmap
 net-analyzer/tcpdump
