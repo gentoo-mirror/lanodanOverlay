@@ -13,5 +13,6 @@
 		<flag name="jumbo-build">Combine source files to speed up build process</flag>
 		<flag name="media-source">Enable support for Media Sources Extension (requires gstreamer 1.16+)</flag>
 		<flag name="seccomp">Enable sandboxing functionality through <pkg>sys-apps/bubblewrap</pkg></flag>
+		<flag name="sanitizers">Enable undefined and leak sanitizers (low performance overhead)</flag>
 	</use>
 </pkgmetadata>
