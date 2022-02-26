@@ -17,7 +17,7 @@ LICENSE="LGPL-2+ BSD"
 SLOT="4/37" # soname version of libwebkit2gtk-4.0
 KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
-IUSE="aqua debug +egl examples gamepad +geolocation gles2-only gnome-keyring +gstreamer gtk-doc +introspection +jpeg2k +jumbo-build libnotify media-source +opengl +sanitizers seccomp spell systemd wayland +X"
+IUSE="aqua debug +egl examples gamepad +geolocation gles2-only gnome-keyring +gstreamer gtk-doc +introspection +jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell systemd wayland +X"
 
 # gstreamer with opengl/gles2 needs egl
 REQUIRED_USE="
@@ -282,7 +282,6 @@ src_configure() {
 		-DUSE_SOUP2=ON
 		-DBWRAP_EXECUTABLE:FILEPATH="${EPREFIX}"/usr/bin/bwrap # If bubblewrap[suid] then portage makes it go-r and cmake find_program fails with that
 		-DDBUS_PROXY_EXECUTABLE:FILEPATH="${EPREFIX}"/usr/bin/xdg-dbus-proxy
-		-DENABLE_SANITIZERS="$(usex sanitizers "undefined,leak" "")"
 		-DPORT=GTK
 		${ruby_interpreter}
 	)
