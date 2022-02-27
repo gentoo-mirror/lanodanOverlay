@@ -26,6 +26,13 @@ RDEPEND="
 		virtual/glu[${MULTILIB_USEDEP}]
 		virtual/opengl[${MULTILIB_USEDEP}]
 	)
+	wayland? (
+		x11-libs/libxkbcommon[${MULTILIB_USEDEP}]
+		x11-libs/pango
+		dev-libs/wayland
+		gui-libs/libdecor
+		opengl? ( media-libs/glew:0 )
+	)
 	X? (
 		x11-libs/libICE[${MULTILIB_USEDEP}]
 		x11-libs/libSM[${MULTILIB_USEDEP}]
@@ -40,6 +47,7 @@ RDEPEND="
 DEPEND="
 	${RDEPEND}
 	virtual/pkgconfig
+	wayland? ( dev-libs/wayland-protocols )
 	X? ( x11-base/xorg-proto )
 	doc? ( app-doc/doxygen )
 "
@@ -83,6 +91,7 @@ multilib_src_configure() {
 		-DOPTION_USE_SYSTEM_ZLIB=ON
 		-DOPTION_USE_SYSTEM_LIBJPEG=ON
 		-DOPTION_USE_SYSTEM_LIBPNG=ON
+		-DOPTION_USE_SYSTEM_LIBDECOR=ON
 		-DOPTION_USE_WAYLAND=$(usex wayland)
 	)
 
