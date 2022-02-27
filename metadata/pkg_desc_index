@@ -42,6 +42,7 @@ games-util/steamcontroller 9999: Standalone Steam Controller Driver
 gnome-base/librsvg 2.40.21: Scalable Vector Graphics (SVG) rendering library
 gnustep-base/gnustep-make 2.7.0: GNUstep Makefile Package
 gui-apps/cog 9999: Single Window Launcher for WPE WebKit
+gui-libs/libdecor 0.1.0: A client-side decorations library for Wayland clients
 gui-libs/wlrobs 9999: Wayland (wlroots-based) screen capture plugin for obs-studio
 gui-libs/wlroots 0.15.0: Pluggable, composable, unopinionated modules for building a Wayland compositor
 gui-wm/inaban 9999: Distrustful Tiling Wayland Compositor
@@ -102,6 +103,7 @@ www-apps/stagit 0.9.4: static git page generator
 www-client/visurf 9999: power-user frontend for netsurf
 www-client/woob-qt 9999: Web outside of Browsers (Qt applications)
 x11-base/xwayland 9999: Standalone X server running under Wayland
+x11-libs/fltk 1.4.9999: C++ user interface toolkit for X and OpenGL
 x11-libs/gtk+ 3.24.27: Gimp ToolKit +
 x11-libs/wxGTK 3.1.5: GTK+ version of wxWidgets, a cross-platform C++ GUI toolkit
 x11-misc/gtk3-nocsd 9999: A hack to disable gtk3 client-side decorations

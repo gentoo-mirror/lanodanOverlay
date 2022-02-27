@@ -158,3 +158,4 @@ www-client/visurf:rosprite - RISC OS Sprite bitmap image support (media-libs/lib
 www-client/visurf:svgtiny - SVG image support via media-libs/svgatiny instead of gnome-base/librsvg
 x11-base/xwayland:unwind - Enable libunwind usage for backtraces
 x11-base/xwayland:xcsecurity - Build Security extension
+x11-libs/fltk:games - Builds and installs some extra games
