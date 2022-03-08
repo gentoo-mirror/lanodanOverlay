@@ -1,7 +1,6 @@
 acct-group/chkpwd 0: Group for sys-apps/tcb
 acct-group/shadow 0: Group for sys-apps/tcb
 app-accessibility/julius 4.5: Large Vocabulary Continuous Speech Recognition Engine
-app-crypt/acme-sh 2.8.1 9999: pure Unix shell script implementing ACME client protocol
 app-doc/afaq 15.1: An Anarchist FAQ, scrapped in one collection and a markdown version
 app-doc/cross-unix-documentation 9999: documentation of similarities and (noteworthy) differencies between Unix systems
 app-doc/single-unix-specification 4_p3-r1: The Single UNIX Specification, Version 4, 2018 Edition
