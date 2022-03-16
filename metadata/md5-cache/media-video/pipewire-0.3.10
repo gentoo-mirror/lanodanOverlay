@@ -1,4 +1,4 @@
-BDEPEND=app-doc/xmltoman doc? ( app-doc/doxygen media-gfx/graphviz ) >=dev-util/meson-0.58.2-r1 >=dev-util/ninja-1.8.2 dev-util/meson-format-array
+BDEPEND=app-doc/xmltoman doc? ( app-doc/doxygen media-gfx/graphviz ) >=dev-util/meson-0.59.4 >=dev-util/ninja-1.8.2 dev-util/meson-format-array
 DEFINED_PHASES=compile configure install postinst prepare test
 DEPEND=>=media-libs/alsa-lib-1.1.7 media-libs/libsdl2 >=media-libs/libsndfile-1.0.20 virtual/libudev dbus? ( sys-apps/dbus ) bluetooth? ( media-libs/sbc net-wireless/bluez:= ) ffmpeg? ( media-video/ffmpeg:= ) gstreamer? ( >=dev-libs/glib-2.32.0:2 >=media-libs/gstreamer-1.10.0:1.0 media-libs/gst-plugins-base:1.0 ) jack? ( >=media-sound/jack2-1.9.10:2 ) pulseaudio? ( dev-libs/glib:2 >=media-sound/pulseaudio-11.1 ) systemd? ( sys-apps/systemd ) vulkan? ( media-libs/vulkan-loader ) X? ( x11-libs/libX11 ) vulkan? ( dev-util/vulkan-headers )
 DESCRIPTION=Multimedia processing graphs
@@ -12,5 +12,5 @@ RDEPEND=>=media-libs/alsa-lib-1.1.7 media-libs/libsdl2 >=media-libs/libsndfile-1
 RESTRICT=!test? ( test )
 SLOT=0/0.3
 SRC_URI=https://github.com/PipeWire/pipewire/archive/0.3.10.tar.gz -> pipewire-0.3.10.tar.gz
-_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ninja-utils	a4dab848a4490e8e48cf0baab3e61bc2	eapi8-dosym	cd7d420bb5be5ee079f27239ce76b8f5	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	multilib	de4beb52bfa93c4c5d96792a6b5e1784	python-utils-r1	d3d7da5aff94a677154819e0cb95ee36	meson	9f3e84959ae1d60e19bc91f212774dcc
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ninja-utils	a4dab848a4490e8e48cf0baab3e61bc2	eapi8-dosym	cd7d420bb5be5ee079f27239ce76b8f5	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	multilib	de4beb52bfa93c4c5d96792a6b5e1784	python-utils-r1	d3d7da5aff94a677154819e0cb95ee36	meson	96bca76bf96533b38e3d4e09d1306490
 _md5_=53e6b00f9df48a6601c32436366416d4
