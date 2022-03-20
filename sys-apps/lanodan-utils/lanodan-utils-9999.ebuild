@@ -23,6 +23,8 @@ BDEPEND="
 "
 
 src_configure() {
+	export NO_BWRAP=1
+
 	./configure PREFIX='/opt/lanodan'
 }
 
