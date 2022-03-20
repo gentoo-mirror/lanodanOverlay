@@ -13,5 +13,5 @@ KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~ppc ~ppc64 ~riscv ~sparc ~x86 ~
 
 S="${WORKDIR}"
 
-RDEPEND="~net-libs/libnice-${PV}[${MULTILIB_USEDEP}]"
+RDEPEND="~net-libs/libnice-${PV}[${MULTILIB_USEDEP},gstreamer]"
 DEPEND="${RDEPEND}"
