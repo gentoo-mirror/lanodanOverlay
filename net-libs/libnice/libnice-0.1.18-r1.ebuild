@@ -21,8 +21,8 @@ RDEPEND="
 		dev-libs/openssl:0=[${MULTILIB_USEDEP}] )
 	upnp? ( >=net-libs/gupnp-igd-0.2.4:=[${MULTILIB_USEDEP}] )
 	gstreamer? (
-		media-libs/gstreamer:${SLOT}[${MULTILIB_USEDEP}]
-		media-libs/gst-plugins-base:${SLOT}[${MULTILIB_USEDEP}]
+		media-libs/gstreamer:1.0[${MULTILIB_USEDEP}]
+		media-libs/gst-plugins-base:1.0[${MULTILIB_USEDEP}]
 	)
 "
 DEPEND="${RDEPEND}"
