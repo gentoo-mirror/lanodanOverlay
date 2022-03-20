@@ -23,6 +23,7 @@ RDEPEND="
 	gstreamer? (
 		media-libs/gstreamer:1.0[${MULTILIB_USEDEP}]
 		media-libs/gst-plugins-base:1.0[${MULTILIB_USEDEP}]
+		!<media-plugins/gst-plugins-libnice-0.1.18-r1
 	)
 "
 DEPEND="${RDEPEND}"
