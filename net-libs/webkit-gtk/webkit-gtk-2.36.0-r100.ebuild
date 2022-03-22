@@ -262,7 +262,7 @@ src_configure() {
 		-DUSE_OPENJPEG=$(usex jpeg2k)
 		-DUSE_WOFF2=ON
 		-DENABLE_SPELLCHECK=$(usex spell)
-		-DUSE_SYSTEMD=$(usex systemd) # Whether to enable journald logging
+		-DENABLE_JOURNALD_LOG=$(usex systemd)
 		-DENABLE_GAMEPAD=$(usex gamepad)
 		-DENABLE_WAYLAND_TARGET=$(usex wayland)
 		-DUSE_WPE_RENDERER=${use_wpe_renderer} # WPE renderer is used to implement accelerated compositing under wayland
@@ -276,7 +276,6 @@ src_configure() {
 		# https://bugs.webkit.org/show_bug.cgi?id=224888
 		-DENABLE_WEBGL2=OFF
 		-DENABLE_BUBBLEWRAP_SANDBOX=$(usex seccomp)
-		-DUSE_LD_GOLD=ON
 		-DUSE_GTK4=OFF
 		-DUSE_SOUP2=OFF
 		-DBWRAP_EXECUTABLE:FILEPATH="${EPREFIX}"/usr/bin/bwrap # If bubblewrap[suid] then portage makes it go-r and cmake find_program fails with that
