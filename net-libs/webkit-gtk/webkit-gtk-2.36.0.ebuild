@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -14,7 +14,7 @@ HOMEPAGE="https://www.webkitgtk.org"
 SRC_URI="https://www.webkitgtk.org/releases/${MY_P}.tar.xz"
 
 LICENSE="LGPL-2+ BSD"
-SLOT="5.0/0" # soname version of libwebkit2gtk-5.0
+SLOT="4/37" # soname version of libwebkit2gtk-4.0
 KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 IUSE="aqua debug +egl examples gamepad +geolocation gles2-only gnome-keyring +gstreamer gtk-doc +introspection +jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell systemd wayland +X"
@@ -33,7 +33,7 @@ REQUIRED_USE="
 # https://bugs.webkit.org/show_bug.cgi?id=148210
 RESTRICT="test"
 
-# Aqua support in gtk4 is untested
+# Aqua support in gtk3 is untested
 # Dependencies found at Source/cmake/OptionsGTK.cmake
 # Various compile-time optionals for gtk+-3.22.0 - ensure it
 # Missing WebRTC support, but ENABLE_MEDIA_STREAM/ENABLE_WEB_RTC is experimental upstream (PRIVATE OFF) and shouldn't be used yet in 2.30
@@ -47,16 +47,15 @@ RDEPEND="
 	>=media-libs/fontconfig-2.13.0:1.0
 	>=media-libs/freetype-2.9.0:2
 	>=dev-libs/libgcrypt-1.7.0:0=
-	>=gui-libs/gtk-3.98.5:4[aqua?,introspection?,wayland?,X?]
+	>=x11-libs/gtk+-3.22.0:3[aqua?,introspection?,wayland?,X?]
 	>=media-libs/harfbuzz-1.4.2:=[icu(+)]
 	>=dev-libs/icu-60.2:=
 	virtual/jpeg:0=
-	>=net-libs/libsoup-2.99.9:3.0[introspection?]
+	>=net-libs/libsoup-2.54:2.4[introspection?]
 	>=dev-libs/libxml2-2.8.0:2
 	>=media-libs/libpng-1.4:0=
 	dev-db/sqlite:3=
 	sys-libs/zlib:0
-	>=dev-libs/atk-2.16.0
 	media-libs/libwebp:=
 
 	>=dev-libs/glib-2.67.1:2
@@ -278,8 +277,8 @@ src_configure() {
 		-DENABLE_WEBGL2=OFF
 		-DENABLE_BUBBLEWRAP_SANDBOX=$(usex seccomp)
 		-DUSE_LD_GOLD=ON
-		-DUSE_GTK4=ON
-		-DUSE_SOUP2=OFF
+		-DUSE_GTK4=OFF
+		-DUSE_SOUP2=ON
 		-DBWRAP_EXECUTABLE:FILEPATH="${EPREFIX}"/usr/bin/bwrap # If bubblewrap[suid] then portage makes it go-r and cmake find_program fails with that
 		-DDBUS_PROXY_EXECUTABLE:FILEPATH="${EPREFIX}"/usr/bin/xdg-dbus-proxy
 		-DPORT=GTK
@@ -307,6 +306,6 @@ src_install() {
 	cmake_src_install
 
 	# Prevents crashes on PaX systems, bug #522808
-	pax-mark m "${ED}/usr/libexec/webkit2gtk-5.0/jsc" "${ED}/usr/libexec/webkit2gtk-4.0/WebKitWebProcess"
-	pax-mark m "${ED}/usr/libexec/webkit2gtk-5.0/WebKitPluginProcess"
+	pax-mark m "${ED}/usr/libexec/webkit2gtk-4.0/jsc" "${ED}/usr/libexec/webkit2gtk-4.0/WebKitWebProcess"
+	pax-mark m "${ED}/usr/libexec/webkit2gtk-4.0/WebKitPluginProcess"
 }
