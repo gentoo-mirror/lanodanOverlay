@@ -17,7 +17,7 @@ LICENSE="LGPL-2+ BSD"
 SLOT="4.1/0" # soname version of libwebkit2gtk-4.1
 KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
-IUSE="aqua debug +egl examples gamepad +geolocation gles2-only gnome-keyring +gstreamer gtk-doc +introspection +jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell systemd wayland +X"
+IUSE="+avif aqua debug +egl examples gamepad +geolocation gles2-only gnome-keyring +gstreamer gtk-doc +introspection +jpeg2k +jumbo-build libnotify media-source +opengl seccomp spell systemd wayland +X"
 
 # gstreamer with opengl/gles2 needs egl
 REQUIRED_USE="
@@ -61,6 +61,7 @@ RDEPEND="
 	>=dev-libs/glib-2.67.1:2
 	>=dev-libs/libxslt-1.1.7
 	media-libs/woff2
+	avif? ( >=media-libs/libavif-0.9.0:= )
 	gnome-keyring? ( app-crypt/libsecret )
 	introspection? ( >=dev-libs/gobject-introspection-1.59.1:= )
 	dev-libs/libtasn1:=
@@ -260,6 +261,7 @@ src_configure() {
 		-DUSE_LIBNOTIFY=$(usex libnotify)
 		-DUSE_LIBSECRET=$(usex gnome-keyring)
 		-DUSE_OPENJPEG=$(usex jpeg2k)
+		-DUSE_AVIF=$(usex avif)
 		-DUSE_WOFF2=ON
 		-DENABLE_SPELLCHECK=$(usex spell)
 		-DENABLE_JOURNALD_LOG=$(usex systemd)

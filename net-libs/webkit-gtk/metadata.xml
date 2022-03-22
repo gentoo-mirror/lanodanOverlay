@@ -6,6 +6,7 @@
 		<name>Haelwenn (lanodan) Monnier</name>
 	</maintainer>
 	<use>
+		<flag name="avif">Enable AVIF support via <pkg>media-libs/libavif</pkg></flag>
 		<flag name="egl">Enable EGL support</flag>
 		<flag name="gamepad">Enable gamepad support via <pkg>dev-libs/libmanette</pkg></flag>
 		<flag name="geolocation">Enable geolocation support through <pkg>app-misc/geoclue</pkg></flag>
