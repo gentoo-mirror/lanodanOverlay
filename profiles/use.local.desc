@@ -131,6 +131,7 @@ net-libs/glib-networking:libproxy - Use net-libs/libproxy for getting the HTTP/H
 net-libs/glib-networking:openssl - support for OpenSSL networking configration
 net-libs/libsoup:gssapi - Enable GSSAPI support
 net-libs/libsoup:samba - Use net-fs/samba for NTLM Single Sign-On
+net-libs/webkit-gtk:avif - Enable AVIF support via media-libs/libavif
 net-libs/webkit-gtk:egl - Enable EGL support
 net-libs/webkit-gtk:gamepad - Enable gamepad support via dev-libs/libmanette
 net-libs/webkit-gtk:geolocation - Enable geolocation support through app-misc/geoclue
