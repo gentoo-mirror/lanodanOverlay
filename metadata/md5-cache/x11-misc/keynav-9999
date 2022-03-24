@@ -8,5 +8,5 @@ LICENSE=BSD
 PROPERTIES=live
 RDEPEND=dev-libs/cairo:=[X] dev-libs/glib:= x11-libs/libXinerama:= x11-misc/xdotool
 SLOT=0
-_eclasses_=git-r3	cc875b0c1e9b3bdac1af0f82f3ba29da
+_eclasses_=git-r3	b9ac6f96d2a88edb5b351df634dc5e53
 _md5_=513ef42dfbe5d6d1b715bae5a06ebd22
