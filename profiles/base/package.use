@@ -16,6 +16,5 @@ net-wireless/wpa_supplicant ap qt5
 sys-apps/openrc sysv-utils
 sys-boot/grub -fonts -nls
 sys-fs/lvm2 -thin
-sys-kernel/genkernel cryptsetup
 sys-kernel/gentoo-sources -symlink
 app-text/mandoc system-man

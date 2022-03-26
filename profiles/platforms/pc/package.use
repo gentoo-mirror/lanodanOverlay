@@ -1,1 +1,1 @@
-sys-fs/cryptsetup luks1_default reencrypt
+sys-fs/cryptsetup reencrypt
