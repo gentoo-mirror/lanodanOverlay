@@ -57,7 +57,7 @@ media-libs/cglm 0.7.9: OpenGL Mathematics (glm) for C
 media-libs/freeglut 3.2.1-r1: A free OpenGL utility toolkit, the open-sourced alternative to the GLUT library
 media-libs/libplacebo 3.104.0: Reusable library for GPU-accelerated image processing primitives
 media-libs/libsbsms 2.3.0: A library for high quality time and pitch scale modification
-media-libs/libsdl 9999: Simple Direct Media Layer (sdl-1.2 compatibility)
+media-libs/libsdl 1.2.52 9999: Simple Direct Media Layer (sdl-1.2 compatibility)
 media-libs/libsdl2 9999: Simple Direct Media Layer
 media-libs/portaudio 19.06.00-r3: A free, cross-platform, open-source, audio I/O library
 media-libs/portmidi 217-r3: Library for real time MIDI input and output
