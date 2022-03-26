@@ -16,3 +16,9 @@ media-sound/audacity
 # made a small fork with few patches on top.
 # Also: https://zaitcev.livejournal.com/263602.html - PyPI is not trustworthy
 dev-python/nose
+
+# Haelwenn (lanodan) Monnier - 2022-03-26
+# Ugly non-upstreamable patches that have the potential to fail.
+# I instead favor deprecating the splitting.
+>=net-libs/libnice-0.1.18::gentoo
+>=media-plugins/gst-plugins-libnice-0.1.18::gentoo
