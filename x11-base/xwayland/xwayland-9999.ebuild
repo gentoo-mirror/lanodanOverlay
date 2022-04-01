@@ -49,6 +49,16 @@ BDEPEND="
 	dev-util/wayland-scanner
 "
 
+src_prepare() {
+	default
+
+	sed -i '/install_man(/,/))/d' meson.build \
+	|| die "Failed to remove Xserver.1 install target"
+
+	sed -i '/install_data/,/)/d' dix/meson.build \
+	|| die "Failed to remove protocols.txt install target"
+}
+
 src_configure() {
 	local emesonargs=(
 		$(meson_use selinux xselinux)
