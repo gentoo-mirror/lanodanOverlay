@@ -12,7 +12,6 @@
 		<flag name="geolocation">Enable geolocation support through <pkg>app-misc/geoclue</pkg></flag>
 		<flag name="gles2-only">Use GLES 2.0 or later instead of full OpenGL</flag>
 		<flag name="jumbo-build">Combine source files to speed up build process</flag>
-		<flag name="media-source">Enable support for Media Sources Extension (requires gstreamer 1.16+)</flag>
 		<flag name="seccomp">Enable sandboxing functionality through <pkg>sys-apps/bubblewrap</pkg></flag>
 	</use>
 </pkgmetadata>
