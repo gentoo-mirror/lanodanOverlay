@@ -7,7 +7,7 @@ PYTHON_REQ_USE="xml(+)"
 PYTHON_COMPAT=( python3_{8..10} )
 USE_RUBY="ruby27 ruby30 ruby31"
 
-inherit check-reqs cmake flag-o-matic gnome2 python-any-r1 ruby-single toolchain-funcs
+inherit check-reqs flag-o-matic gnome2 python-any-r1 ruby-single toolchain-funcs cmake
 
 MY_P="webkitgtk-${PV}"
 DESCRIPTION="Open source web browser engine"
