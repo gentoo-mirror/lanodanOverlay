@@ -14,7 +14,7 @@ KEYWORDS="~amd64"
 
 DEPEND="
 	media-libs/alsa-lib
-	media-libs/mesa[egl,gles2]
+	media-libs/mesa[egl(+),gles2]
 "
 
 S="${WORKDIR}/reicast-emulator-r${PV}/shell/linux"
