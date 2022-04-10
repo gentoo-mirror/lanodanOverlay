@@ -24,7 +24,7 @@ RDEPEND="
 		>=x11-libs/libXxf86vm-1.1.3[${MULTILIB_USEDEP}]
 	)
 	wayland-only? (
-		media-libs/mesa[egl,${MULTILIB_USEDEP}]
+		media-libs/mesa[egl(+),${MULTILIB_USEDEP}]
 		dev-libs/wayland[${MULTILIB_USEDEP}]
 		x11-libs/libxkbcommon[${MULTILIB_USEDEP}]
 	)

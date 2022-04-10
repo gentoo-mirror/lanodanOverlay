@@ -27,7 +27,7 @@ DEPEND="
 	examples? (
 		virtual/opengl
 		dev-libs/wayland
-		media-libs/mesa[egl]
+		media-libs/mesa[egl(+)]
 		x11-libs/libxkbcommon
 	)
 "
