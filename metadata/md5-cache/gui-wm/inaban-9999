@@ -1,5 +1,5 @@
 BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
-DEFINED_PHASES=compile configure install unpack
+DEFINED_PHASES=compile install unpack
 DEPEND=>=gui-libs/wlroots-0.6.0:= dev-libs/wayland-protocols:= x11-libs/libxkbcommon:= dev-libs/wayland:=
 DESCRIPTION=Distrustful Tiling Wayland Compositor
 EAPI=7
@@ -10,4 +10,4 @@ PROPERTIES=live
 RDEPEND=>=gui-libs/wlroots-0.6.0:= dev-libs/wayland-protocols:= x11-libs/libxkbcommon:= dev-libs/wayland:=
 SLOT=0
 _eclasses_=git-r3	b9ac6f96d2a88edb5b351df634dc5e53
-_md5_=9392df7baefb5eef37655de0cb26851f
+_md5_=83abc4f24e841d3aa53bac74b3234a05

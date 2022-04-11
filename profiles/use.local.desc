@@ -72,6 +72,8 @@ media-libs/libsdl2:sound - Control audio support (disable at your own risk)
 media-libs/libsdl2:tslib - Build with tslib support for touchscreen devices
 media-libs/libsdl2:video - Control video support (disable at your own risk)
 media-libs/libsdl2:vulkan - Enable Vulkan support
+media-libs/portaudio:sndio - Enable support for sndio
+media-libs/portmidi:sndio - Enable support for sndio
 media-libs/portmidi:test-programs - Install various example programs
 media-libs/x264:10bit - Set output bit depth to 10, this may not be compatible with all decoders
 media-libs/x264:interlaced - enable interlaced encoding support, this can decrease encoding speed by up to 2%
@@ -103,6 +105,7 @@ media-video/mpv:opengl - Enable support for various OpenGL-based video backends
 media-video/mpv:raspberry-pi - Enable support for the Raspberry Pi
 media-video/mpv:rubberband - Enable high quality pitch correction via media-libs/rubberband
 media-video/mpv:sdl - Enable media-libs/libsdl2 based video and audio outputs (Note: these outputs exist for compatibility reasons only, avoid if possible)
+media-video/mpv:sndio - Enable support for sndio
 media-video/mpv:tools - Install extra tools: mpv_identify.sh, mpv_idet.sh, and umpv
 media-video/mpv:uchardet - Enable subtitles charset discovery via app-i18n/uchardet
 media-video/mpv:vulkan - Enable support for various Vulkan-based video backends
