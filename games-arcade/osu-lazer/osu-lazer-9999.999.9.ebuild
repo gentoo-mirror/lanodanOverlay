@@ -13,7 +13,7 @@ SRC_URI=""
 
 LICENSE="MIT CC-BY-NC-4.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
 EGIT_REPO_URI="https://github.com/ppy/osu.git"

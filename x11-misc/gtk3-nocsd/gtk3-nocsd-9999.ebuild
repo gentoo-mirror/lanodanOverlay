@@ -11,7 +11,7 @@ HOMEPAGE="https://github.com/naufalfachrian/gtk3-nocsd"
 EGIT_REPO_URI="https://github.com/naufalfachrian/gtk3-nocsd.git"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
 IUSE=""
 LICENSE="GPL-2"
 
