@@ -1,4 +1,4 @@
-# Copyright 2019-2020 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+# Copyright 2019-2022 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -26,11 +26,6 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 
-src_configure() {
-	restore_config config.h
-	default
-}
-
 src_compile() {
 	emake \
 		CC="${CC:-cc}" \
@@ -45,6 +40,5 @@ src_install() {
 		PREFIX="/usr" \
 		install
 
-	save_config config.h
 	einstalldocs
 }
