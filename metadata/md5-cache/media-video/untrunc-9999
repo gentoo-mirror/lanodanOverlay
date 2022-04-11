@@ -5,10 +5,9 @@ DESCRIPTION=Restore a truncated mp4/mov
 EAPI=7
 HOMEPAGE=https://github.com/anthwlock/untrunc
 INHERIT=git-r3
-KEYWORDS=~amd64
 LICENSE=GPL-2+
 PROPERTIES=live
 RDEPEND=media-video/ffmpeg:=
 SLOT=0
 _eclasses_=git-r3	b9ac6f96d2a88edb5b351df634dc5e53
-_md5_=4c98d55356b5bb08d537309f04031950
+_md5_=96ea9fff4767fd1aac308022f46c46b6

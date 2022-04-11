@@ -111,7 +111,6 @@ x11-libs/fltk 1.4.9999: C++ user interface toolkit for X and OpenGL
 x11-libs/gtk+ 3.24.27: Gimp ToolKit +
 x11-libs/wxGTK 3.1.5: GTK+ version of wxWidgets, a cross-platform C++ GUI toolkit
 x11-misc/gtk3-nocsd 9999: A hack to disable gtk3 client-side decorations
-x11-misc/keynav 9999: Make pointer-driven interfaces easier and faster for users to operate
 x11-misc/qarma 9999: Zenity Clone for Qt5 (lanodan's branch)
 x11-misc/xdg-utils 1.1.3-r1: Portland utils for cross-platform/cross-toolkit/cross-desktop interoperability
 x11-plugins/purple-discord 9999: Pidgin/Purple PRotocol PLugin for Discord
