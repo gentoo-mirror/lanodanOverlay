@@ -10,7 +10,7 @@ HOMEPAGE="https://github.com/anthwlock/untrunc"
 EGIT_REPO_URI="https://github.com/anthwlock/untrunc"
 LICENSE="GPL-2+"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
 IUSE=""
 
 DEPEND="

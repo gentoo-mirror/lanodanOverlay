@@ -11,7 +11,7 @@ EGIT_REPO_URI="https://git.sr.ht/~sircmpwn/visurf"
 
 LICENSE="GPL-2 MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm64 ~ppc64"
+KEYWORDS=""
 IUSE="bmp duktape truetype +gif javascript +jpeg mng
 	+png +psl rosprite +svg +svgtiny +webp"
 
