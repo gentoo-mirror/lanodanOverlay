@@ -3,6 +3,7 @@
 <pkgmetadata>
   <use>
     <flag name="test-programs">Install various example programs</flag>
+    <flag name="sndio">Enable support for sndio</flag>
   </use>
   <upstream>
     <remote-id type="sourceforge">portmedia</remote-id>
