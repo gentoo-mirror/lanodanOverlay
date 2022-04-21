@@ -78,7 +78,7 @@ net-im/bitlbee 3.5.1 9999: irc to IM gateway that support multiple IM protocols
 net-libs/glib-networking 2.66.0: Network-related giomodules for glib
 net-libs/libnice 0.1.18-r1: An implementation of the Interactice Connectivity Establishment standard (ICE)
 net-libs/libsoup 3.0.5: HTTP client/server library for GNOME
-net-libs/webkit-gtk 2.36.0 2.36.0-r100 2.36.0-r200: Open source web browser engine
+net-libs/webkit-gtk 2.36.1 2.36.1-r100 2.36.1-r200: Open source web browser engine
 net-libs/wpewebkit 2.32.3: WebKit port optimized for embedded devices
 net-misc/ap-client 9999: CLI-based client / toolbox for ActivityPub Client-to-Server
 net-misc/cve-client 9999: CLI-based client / toolbox for CVE.org
