@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>sam@gentoo.org</email>
+		<name>Sam James</name>
+	</maintainer>
+	<use>
+		<flag name="shim">
+			Install libintl library. Not suitable on glibc systems.
+			On musl systems, passes contents through and translates
+			via musl's libintl.
+			On other systems, provides a no-op library (returns
+			input text with no changes/translations).
+		</flag>
+	</use>
+	<upstream>
+		<remote-id type="github">sabotage-linux/gettext-tiny</remote-id>
+	</upstream>
+</pkgmetadata>
