@@ -1,0 +1,11 @@
+DEFINED_PHASES=install
+DESCRIPTION=Adobe Flash Player standalone projector
+EAPI=7
+HOMEPAGE=https://www.adobe.com/support/flashplayer/debug_downloads.html
+IUSE=debugger
+KEYWORDS=~amd64
+LICENSE=Adobe
+RDEPEND=media-libs/libglvnd[X] x11-libs/libX11 x11-libs/libXcursor x11-libs/libXrender dev-libs/nss dev-libs/nspr x11-libs/gtk+:2 x11-libs/gdk-pixbuf:2 x11-libs/pango media-libs/fontconfig dev-libs/glib media-libs/freetype
+SLOT=32
+SRC_URI=!debugger? ( https://fpdownload.macromedia.com/pub/flashplayer/updaters/32/flash_player_sa_linux.x86_64.tar.gz ) debugger? ( https://fpdownload.macromedia.com/pub/flashplayer/updaters/32/flash_player_sa_linux_debug.x86_64.tar.gz )
+_md5_=68c82733b33775c523dcb40080150b94
