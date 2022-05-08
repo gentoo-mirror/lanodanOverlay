@@ -18,3 +18,4 @@ sys-boot/grub -fonts -nls
 sys-fs/lvm2 -thin
 sys-kernel/gentoo-sources -symlink
 app-text/mandoc system-man
+net-misc/openssh -scp -ssl
