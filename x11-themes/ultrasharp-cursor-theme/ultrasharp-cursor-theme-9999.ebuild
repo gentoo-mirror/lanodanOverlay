@@ -11,3 +11,13 @@ EGIT_REPO_URI="https://hacktivis.me/git/ultrasharp-cursor-theme.git"
 EGIT_MIN_CLONE_TYPE="single+tags"
 LICENSE="CC-BY-SA-4.0"
 SLOT="0"
+
+src_prepare() {
+	default
+
+	sed -i 's/^install: all/install:/' Makefile || die
+}
+
+src_compile() {
+	:
+}
