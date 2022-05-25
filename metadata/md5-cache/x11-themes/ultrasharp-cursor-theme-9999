@@ -1,0 +1,11 @@
+BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=compile prepare unpack
+DESCRIPTION=Precision and speed oriented cursor theme
+EAPI=8
+HOMEPAGE=https://hacktivis.me/projects/ultrasharp-cursor-theme
+INHERIT=git-r3
+LICENSE=CC-BY-SA-4.0
+PROPERTIES=live
+SLOT=0
+_eclasses_=git-r3	b9ac6f96d2a88edb5b351df634dc5e53
+_md5_=255cca45de62f2d0c2f0fd2379f12cd9
