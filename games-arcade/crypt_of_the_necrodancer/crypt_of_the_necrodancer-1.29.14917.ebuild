@@ -25,7 +25,7 @@ BDEPEND="app-arch/unzip"
 
 DEPEND="
 	media-libs/openal[abi_x86_32]
-	media-libs/glfw[abi_x86_32]
+	media-libs/glfw:2[abi_x86_32]
 	media-libs/libogg[abi_x86_32]
 	media-libs/libvorbis[abi_x86_32]
 "
