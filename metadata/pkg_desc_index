@@ -30,6 +30,7 @@ dev-python/firmtool 1.4: Parses, extracts, and builds 3DS firmware files
 dev-util/glslang 11.2.0: Khronos reference front-end for GLSL and ESSL, and sample SPIR-V generator
 dev-util/gtk-doc-am 1.32: Virtual ebuild for ::gentoo compatibility
 dev-util/rebar 3.18.0: Erlang build tool that makes it easy to compile and test Erlang applications and releases
+games-arcade/crypt_of_the_necrodancer 1.29.14917: Crypt of the Necrodancer (GOG)
 games-arcade/emilia-pinball 9999: SDL OpenGL pinball game
 games-arcade/osu-lazer 9999.999.9: rhythm is just a *click* away!
 games-arcade/pinball-table-gnu 9999: GNU table for games-arcade/emilia-pinball
@@ -57,8 +58,9 @@ media-fonts/opendyslexic 20160623: Opensource font for dyslexics and for high re
 media-fonts/unifont 13.0.05: GNU Unifont - a Pan-Unicode X11 bitmap iso10646 font
 media-gfx/synfig 9999: Open-source 2D Animation Software
 media-libs/cglm 0.7.9: OpenGL Mathematics (glm) for C
-media-libs/freeglut 3.2.1-r1: A free OpenGL utility toolkit, the open-sourced alternative to the GLUT library
+media-libs/freeglut 3.2.1-r1 3.2.2: A free OpenGL utility toolkit, the open-sourced alternative to the GLUT library
 media-libs/glew 2.1.0: The OpenGL Extension Wrangler Library
+media-libs/glfw 2.7.9: The Portable OpenGL FrameWork
 media-libs/libplacebo 3.104.0: Reusable library for GPU-accelerated image processing primitives
 media-libs/libsbsms 2.3.0: A library for high quality time and pitch scale modification
 media-libs/libsdl 1.2.52 9999: Simple Direct Media Layer (sdl-1.2 compatibility)
