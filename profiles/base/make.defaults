@@ -11,7 +11,7 @@ CXXFLAGS="${CFLAGS}"
 OBJCXXFLAGS="${CFLAGS}"
 
 CONFIG_PROTECT="${CONFIG_PROTECT} /lib/udev/rules.d/"
-INSTALL_MASK="/usr/lib/systemd /usr/lib64/systemd /lib/systemd /etc/systemd /etc/sudoers /etc/sudoers.d /usr/share/bash-completion /usr/share/zsh/site-functions /etc/xdg/autostart /usr/bin/gunzip /usr/bin/unpigz /usr/share/git-core/templates/hooks /usr/share/man/man1/builtins.1"
+INSTALL_MASK="/usr/lib/systemd /usr/lib64/systemd /lib/systemd /etc/systemd /etc/sudoers /etc/sudoers.d /usr/share/bash-completion /usr/share/zsh/site-functions /etc/xdg/autostart /usr/bin/gunzip /usr/bin/unpigz /usr/share/git-core/templates/hooks /usr/share/man/man1/builtins.1 /etc/skel /var/empty"
 
 # --binpkg-changed-deps=y → Silence binpkg USE-matching warning
 EMERGE_DEFAULT_OPTS="--keep-going --usepkg --binpkg-changed-deps=y"
