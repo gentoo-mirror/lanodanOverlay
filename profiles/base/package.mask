@@ -16,3 +16,8 @@ media-sound/audacity
 # made a small fork with few patches on top.
 # Also: https://zaitcev.livejournal.com/263602.html - PyPI is not trustworthy
 dev-python/nose
+
+# Haelwenn (lanodan) Monnier - 2022-06-02
+# Unmaintained, last tarball in 2010, last git update in 2015
+# Contains data like IANA which should be kept up-to-date regularly
+sys-apps/miscfiles
