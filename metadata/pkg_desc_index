@@ -39,6 +39,7 @@ games-arcade/tinymania 9999: A VSRG clone for playing .osu files.
 games-emulation/reicast 8.1: A Dreamcast Emulator
 games-engines/love 0.10.2: A framework for 2D games in Lua
 games-engines/solarus 1.6.5: An open-source Zelda-like 2D game engine
+games-roguelike/cataclysm-dda 0.6.3: Post-apocalyptic roguelike
 games-sports/vdrift 2014.10.20 9999: A driving simulation made with drift racing in mind
 games-util/fteqcc 9999: FTE QuakeC compiler
 games-util/steamcontroller 9999: Standalone Steam Controller Driver
