@@ -1,0 +1,15 @@
+BDEPEND=dev-python/cython[python_targets_python3_8(-)?,python_targets_python3_9(-)?] python_targets_python3_8? ( >=dev-lang/python-3.8.12_p1-r1:3.8 ) python_targets_python3_9? ( >=dev-lang/python-3.9.9-r1:3.9 ) >=dev-python/setuptools-42.0.2[python_targets_python3_8(-)?,python_targets_python3_9(-)?]
+DEFINED_PHASES=compile configure install prepare test
+DEPEND=dev-python/numpy[python_targets_python3_8(-)?,python_targets_python3_9(-)?] media-libs/libpng:0= media-libs/libsdl2:=[video] media-libs/sdl2-image:=[png,jpeg] >=media-libs/sdl2-mixer-2.0.2:= media-libs/sdl2-ttf:= virtual/jpeg:0
+DESCRIPTION=Reimplementation of portions of the pygame API using SDL2
+EAPI=7
+HOMEPAGE=https://github.com/renpy/pygame_sdl2
+INHERIT=distutils-r1
+IUSE=python_targets_python3_8 python_targets_python3_9
+LICENSE=LGPL-2.1 ZLIB
+RDEPEND=dev-python/numpy[python_targets_python3_8(-)?,python_targets_python3_9(-)?] media-libs/libpng:0= media-libs/libsdl2:=[video] media-libs/sdl2-image:=[png,jpeg] >=media-libs/sdl2-mixer-2.0.2:= media-libs/sdl2-ttf:= virtual/jpeg:0 python_targets_python3_8? ( >=dev-lang/python-3.8.12_p1-r1:3.8 ) python_targets_python3_9? ( >=dev-lang/python-3.9.9-r1:3.9 )
+REQUIRED_USE=|| ( python_targets_python3_8 python_targets_python3_9 )
+SLOT=0
+SRC_URI=https://www.renpy.org/dl/8.0.0/pygame_sdl2-2.1.0-for-renpy-8.0.0.tar.gz
+_eclasses_=multibuild	d26d81f242cb193d899a72bca423d0bd	multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	toolchain-funcs	fd9cde67030b26e479eeadaced488253	multilib	4fbbbc98f236f1b43acd99476bc3cd85	eapi8-dosym	cd7d420bb5be5ee079f27239ce76b8f5	python-utils-r1	648fe6a039e87233d7f48da72cadb76f	python-r1	8638751691200e941f26fe0ac3aef1d1	distutils-r1	197b6711aac35c87e9536c55ad3b909d
+_md5_=7b438b2e01434c809105eab8441be60c
