@@ -32,6 +32,13 @@ BDEPEND="
 	virtual/pkgconfig
 "
 
+src_prepare() {
+	default
+
+	# https://bugs.gentoo.org/847844 https://bugs.gentoo.org/678142
+	sed -i '/test-set-port-range/d' tests/meson.build || die
+}
+
 multilib_src_configure() {
 	local emesonargs=(
 		-Dcrypto-library=$(usex gnutls gnutls openssl)
