@@ -1,4 +1,4 @@
-# Copyright 2021 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+# Copyright 2022 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
