@@ -3,7 +3,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 command="/usr/sbin/chronyd"
-command_user="chrony"
+command_user="ntp"
 command_args="-f \"${CFGFILE}\" ${ARGS}"
 pidfile="/run/chrony/chrony.pid"
 capabilities="^cap_sys_time"

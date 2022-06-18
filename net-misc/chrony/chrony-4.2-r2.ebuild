@@ -131,6 +131,7 @@ src_configure() {
 		--sysconfdir="${EPREFIX}/etc/chrony"
 		--with-hwclockfile="${EPREFIX}/etc/adjtime"
 		--with-pidfile="${EPREFIX}/run/chrony/chronyd.pid"
+		--with-user="ntp"
 
 		${EXTRA_ECONF}
 	)
