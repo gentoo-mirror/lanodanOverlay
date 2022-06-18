@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+# Copyright 1999-2022 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+command="/usr/sbin/chronyd"
+command_user="ntp"
+command_args="-f \"${CFGFILE}\" ${ARGS}"
+pidfile="/run/chrony/chrony.pid"
+capabilities="^cap_sys_time"
+no_new_privs="yes"
+
+depend() {
+	use dns
+}
+
+start_pre() {
+	if [ -c /dev/rtc ]; then
+		grep -q '^rtcfile' "${CFGFILE}" && ARGS="${ARGS} -s"
+	fi
+	grep -q '^dumponexit$' "${CFGFILE}" && ARGS="${ARGS} -r"
+	grep -q '^cmdport *0$' "${CFGFILE}" || capabilities="${capabilities},^cap_net_bind_service"
+
+	checkpath -d -o "${command_user}" /run/chrony || return $?
+}
