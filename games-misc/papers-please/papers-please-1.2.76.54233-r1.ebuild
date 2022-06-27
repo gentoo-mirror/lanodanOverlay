@@ -36,11 +36,10 @@ src_unpack() {
 }
 
 src_install() {
+	insinto ${dir}
+	doins -r data/noarch/game/*
+
 	exeinto "${dir}"
 	doexe data/noarch/game/PapersPlease
 	dosym "${dir}/PapersPlease" "/usr/bin/${PN}"
-
-	insinto ${dir}
-	doins -r data/noarch/game/loc/
-	doins -r data/noarch/game/assets/
 }
