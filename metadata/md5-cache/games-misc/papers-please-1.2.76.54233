@@ -9,5 +9,5 @@ LICENSE=PAPERS-PLEASE
 RESTRICT=bindist fetch strip
 SLOT=0
 SRC_URI=papers_please_1_2_76_54233.sh
-_eclasses_=toolchain-funcs	fd9cde67030b26e479eeadaced488253	multilib	4fbbbc98f236f1b43acd99476bc3cd85	unpacker	697382d119fd3d195f110b7979184285
+_eclasses_=toolchain-funcs	e9da88162e7a3c60376e80c2c2adcdfb	multilib	4fbbbc98f236f1b43acd99476bc3cd85	unpacker	697382d119fd3d195f110b7979184285
 _md5_=91b4499cf1e28db5bb2b35d721197d21
