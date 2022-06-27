@@ -1,0 +1,13 @@
+BDEPEND=app-arch/unzip
+DEFINED_PHASES=install nofetch unpack
+DESCRIPTION=A Dystopian Document Thriller
+EAPI=7
+HOMEPAGE=https://www.gog.com/game/papers_please https://papersplea.se/
+INHERIT=unpacker
+KEYWORDS=~amd64
+LICENSE=PAPERS-PLEASE
+RESTRICT=bindist fetch strip
+SLOT=0
+SRC_URI=papers_please_1_2_76_54233.sh
+_eclasses_=toolchain-funcs	fd9cde67030b26e479eeadaced488253	multilib	4fbbbc98f236f1b43acd99476bc3cd85	unpacker	697382d119fd3d195f110b7979184285
+_md5_=91b4499cf1e28db5bb2b35d721197d21
