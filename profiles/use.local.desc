@@ -168,6 +168,4 @@ www-client/visurf:gtk2 - Build GTK2 GUI
 www-client/visurf:psl - Use public suffix list via media-libs/libnspsl
 www-client/visurf:rosprite - RISC OS Sprite bitmap image support (media-libs/librosprite)
 www-client/visurf:svgtiny - SVG image support via media-libs/svgatiny instead of gnome-base/librsvg
-x11-base/xwayland:unwind - Enable libunwind usage for backtraces
-x11-base/xwayland:xcsecurity - Build Security extension
 x11-libs/fltk:games - Builds and installs some extra games
