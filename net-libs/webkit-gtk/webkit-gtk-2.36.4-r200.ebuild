@@ -44,7 +44,7 @@ RDEPEND="
 	>=gui-libs/gtk-3.98.5:4[aqua?,introspection?,wayland?,X?]
 	>=media-libs/harfbuzz-1.4.2:=[icu(+)]
 	>=dev-libs/icu-61.2:=
-	virtual/jpeg:0=
+	media-libs/libjpeg-turbo:0=
 	>=net-libs/libsoup-2.99.9:3.0[introspection?]
 	>=dev-libs/libxml2-2.8.0:2
 	>=media-libs/libpng-1.4:0=
