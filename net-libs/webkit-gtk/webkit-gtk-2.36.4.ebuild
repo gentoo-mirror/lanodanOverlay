@@ -172,6 +172,9 @@ src_configure() {
 	# Respect CC, otherwise fails on prefix #395875
 	tc-export CC
 
+	# WebkitGTK doesn't likes -D_FORTIFY_SOURCE=2
+	strip-flags
+
 	# It does not compile on alpha without this in LDFLAGS
 	# https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=648761
 	use alpha && append-ldflags "-Wl,--no-relax"
