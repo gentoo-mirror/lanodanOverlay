@@ -21,3 +21,8 @@ dev-python/nose
 # Unmaintained, last tarball in 2010, last git update in 2015
 # Contains data like IANA which should be kept up-to-date regularly
 sys-apps/miscfiles
+
+# Haelwenn (lanodan) Monnier - 2022-07-11
+# Dead upsteam, last updated in 2003
+# Known security bugs, effectively vague fork by distros
+media-libs/id3lib
