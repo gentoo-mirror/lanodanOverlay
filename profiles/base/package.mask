@@ -26,3 +26,7 @@ sys-apps/miscfiles
 # Dead upsteam, last updated in 2003
 # Known security bugs, effectively vague fork by distros
 media-libs/id3lib
+
+# Haelwenn (lanodan) Monnier - 2022-07-11
+# Dead upsteam, last release in 2016
+media-sound/easytag
