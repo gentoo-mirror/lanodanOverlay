@@ -17,13 +17,14 @@ SRC_URI="https://www.webkitgtk.org/releases/${MY_P}.tar.xz"
 LICENSE="LGPL-2+ BSD"
 SLOT="5.0/0" # soname version of libwebkit2gtk-5.0
 
-IUSE="aqua +avif debug +egl examples gamepad +geolocation gles2-only gnome-keyring +gstreamer gtk-doc +introspection +jpeg2k +jumbo-build lcms libnotify +seccomp spell systemd test wayland +X"
+IUSE="aqua +avif debug doc +egl examples gamepad +geolocation gles2-only gnome-keyring +gstreamer +introspection +jpeg2k +jumbo-build lcms libnotify +seccomp spell systemd test wayland +X"
 
 # gstreamer with opengl/gles2 needs egl
 REQUIRED_USE="
 	gles2-only? ( egl )
 	gstreamer? ( egl )
 	wayland? ( egl )
+	doc? ( introspection )
 	|| ( aqua wayland X )
 "
 
@@ -106,7 +107,6 @@ BDEPEND="
 	${PYTHON_DEPS}
 	${RUBY_DEPS}
 	dev-util/glib-utils
-	>=dev-util/gtk-doc-am-1.10
 	>=dev-util/gperf-3.0.1
 	>=sys-devel/bison-2.4.3
 	|| ( >=sys-devel/gcc-7.3 >=sys-devel/clang-5 )
@@ -118,7 +118,7 @@ BDEPEND="
 	virtual/perl-Carp
 	virtual/perl-JSON-PP
 
-	gtk-doc? ( >=dev-util/gtk-doc-1.32 )
+	doc? ( dev-util/gi-docgen )
 	geolocation? ( dev-util/gdbus-codegen )
 	>=dev-util/cmake-3.10
 
@@ -160,12 +160,6 @@ src_prepare() {
 src_configure() {
 	if use debug; then
 		CMAKE_BUILD_TYPE="Debug"
-	fi
-
-	# gtk-doc fails to generate docs when ld.lld is used, force binutils
-	if use gtk-doc; then
-		export CC_LD="ld"
-		export LD="ld"
 	fi
 
 	# Respect CC, otherwise fails on prefix #395875
@@ -241,7 +235,7 @@ src_configure() {
 
 		# Source/cmake/OptionsGTK.cmake
 		-DENABLE_GLES2=$(usex gles2-only)
-		-DENABLE_GTKDOC=$(usex gtk-doc)
+		-DENABLE_DOCUMENTATION=$(usex doc)
 		-DENABLE_INTROSPECTION=$(usex introspection)
 		-DENABLE_JOURNALD_LOG=$(usex systemd)
 		-DENABLE_QUARTZ_TARGET=$(usex aqua)
