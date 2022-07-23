@@ -12,10 +12,10 @@ S="${WORKDIR}/${MY_P}"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+network +sdl"
+IUSE="http +sdl"
 
 DEPEND="
-	network? (
+	http? (
 		net-misc/curl
 		dev-libs/openssl:=
 	)
@@ -35,7 +35,7 @@ src_prepare() {
 }
 
 src_configure() {
-	if use !network; then sed -i '/^CONFIG_FS_NET/s;^;#;' Makefile || die; fi
+	if use !http; then sed -i '/^CONFIG_FS_NET/s;^;#;' Makefile || die; fi
 	if use !sdl; then sed -i '/^CONFIG_SDL/s;^;#;' Makefile || die; fi
 }
 
