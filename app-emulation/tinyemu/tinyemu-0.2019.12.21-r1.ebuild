@@ -23,6 +23,8 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 
+DOCS=( readme.txt )
+
 src_prepare() {
 	default
 
