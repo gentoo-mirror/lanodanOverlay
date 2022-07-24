@@ -1,10 +1,10 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2021-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 WX_GTK_VER="3.1"
-PYTHON_COMPAT=( python3_{7,8,9} )
+PYTHON_COMPAT=( python3_{7..11} )
 
 inherit git-r3 cmake python-single-r1 wxwidgets xdg
 
@@ -21,6 +21,8 @@ LICENSE="GPL-2 CC-BY-3.0 CC-BY-4.0 Nyquist BSD"
 SLOT="0"
 
 IUSE="+midi id3tag mp3 ogg +vorbis +flac sbsms soundtouch ffmpeg +lv2 twolame +vst2 vamp"
+
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 # vst2 dep on GTK+3[X]: https://github.com/tenacityteam/tenacity/issues/614
 RDEPEND="
