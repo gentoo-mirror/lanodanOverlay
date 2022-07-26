@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit git-r3
+inherit git-r3 qmake-utils
 
 DESCRIPTION="Font viewer with character table"
 HOMEPAGE="http://qfontviewer.sourceforge.net/"
@@ -13,6 +13,10 @@ SLOT="0"
 
 DEPEND="dev-qt/qtwidgets:5"
 RDEPEND="${DEPEND}"
+
+src_configure() {
+	PATH="${PATH}:$(qt5_get_bindir)" ./configure
+}
 
 src_install() {
        einstalldocs
