@@ -1,0 +1,13 @@
+BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=install unpack
+DEPEND=dev-qt/qtwidgets:5
+DESCRIPTION=Font viewer with character table
+EAPI=7
+HOMEPAGE=http://qfontviewer.sourceforge.net/
+INHERIT=git-r3
+LICENSE=GPL-3+
+PROPERTIES=live
+RDEPEND=dev-qt/qtwidgets:5
+SLOT=0
+_eclasses_=git-r3	b9ac6f96d2a88edb5b351df634dc5e53
+_md5_=cb587a3465bbb1faac3991bbc7aebabe
