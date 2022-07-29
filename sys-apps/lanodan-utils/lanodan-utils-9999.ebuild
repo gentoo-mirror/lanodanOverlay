@@ -12,13 +12,13 @@ EGIT_MIN_CLONE_TYPE="single+tags"
 LICENSE="|| ( GPL-2 GPL-3 )"
 SLOT="0"
 IUSE="suspend test"
+
 RESTRICT="!test? ( test )"
+
 BDEPEND="
 	test? (
 		dev-libs/atf
 		dev-util/kyua
-		app-text/mandoc
-		dev-util/shellcheck
 	)
 "
 
