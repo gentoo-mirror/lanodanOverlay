@@ -1,4 +1,4 @@
-BDEPEND=test? ( dev-libs/atf dev-util/kyua app-text/mandoc dev-util/shellcheck ) >=dev-vcs/git-1.8.2.1[curl]
+BDEPEND=test? ( dev-libs/atf dev-util/kyua ) >=dev-vcs/git-1.8.2.1[curl]
 DEFINED_PHASES=configure install unpack
 DESCRIPTION=Collection of Unix tools, comparable to coreutils
 EAPI=8
@@ -10,4 +10,4 @@ PROPERTIES=live
 RESTRICT=!test? ( test )
 SLOT=0
 _eclasses_=git-r3	b9ac6f96d2a88edb5b351df634dc5e53
-_md5_=7c32d51409f07f328da719d2e1868c35
+_md5_=cbb0c82892ec03fe3e9c125b8f850e8c
