@@ -17,7 +17,7 @@ app-vis/vis-ctags 9999: vis plugin to provide basic ctags support
 dev-dotnet/nuget 5.0.2: Nuget - .NET Package Manager
 dev-elixir/hex 1.0.1: Package manager for the Erlang VM
 dev-go/godef 1.1.2: detect licenses used in Go binaries
-dev-lang/elixir 1.13.4: Elixir programming language
+dev-lang/elixir 1.13.4 1.14_rc0: Elixir programming language
 dev-lang/erlang 24.0.6: Erlang programming language, runtime environment and libraries (OTP)
 dev-lang/go 0.20171003: Boostrap Go from C (useful for musl libc)
 dev-libs/elfutils 0.186_pre9999: Libraries/utilities to handle ELF objects (drop in replacement for libelf)
