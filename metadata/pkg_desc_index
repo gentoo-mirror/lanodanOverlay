@@ -110,6 +110,7 @@ sys-libs/libtickit 0.3.3: library for building interactive full-screen terminal 
 sys-libs/libucontext 0.9.0: library which provides the <ucontext.h> API from older POSIX revisions
 sys-libs/zlib 1.2.8.2015.12.26: Standard (de)compression library (Sortix's libz fork)
 virtual/man 9: Virtual for man
+virtual/wine 0-r8: Virtual for Wine that supports multiple variants and slotting
 www-apps/pleroma 2.4.2: ActivityPub social networking software compatible with other Fediverse software
 www-apps/stagit 0.9.4: static git page generator
 www-client/visurf 9999: power-user frontend for netsurf

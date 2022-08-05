@@ -161,6 +161,7 @@ sys-apps/shadow:su - build the su program
 sys-libs/gcompat:obstack - Use sys-libs/obstack-standalone for greater compatibility
 sys-libs/libtickit:unibilium - Use dev-libs/unibilium (highly recommended) instead of sys-libs/ncurses
 sys-libs/libucontext:obstack - Use sys-libs/obstack-standalone for greater compatibility
+virtual/wine:staging - Enable Wine-Staging's Patchset
 www-client/visurf:bmp - BMP bitmap image support (media-libs/libnsbmp)
 www-client/visurf:duktape - Use duktape.org javascript engine
 www-client/visurf:gtk - Build GTK3 GUI
