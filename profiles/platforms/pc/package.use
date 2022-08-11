@@ -1,1 +1,2 @@
 sys-fs/cryptsetup reencrypt
+sys-kernel/linux-firmware initramfs
