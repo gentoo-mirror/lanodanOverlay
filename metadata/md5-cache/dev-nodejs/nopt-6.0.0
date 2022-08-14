@@ -1,0 +1,15 @@
+BDEPEND=net-libs/nodejs app-misc/jq
+DEFINED_PHASES=install test
+DESCRIPTION=ion parsing for Node, supporting types, shorthands, etc
+EAPI=8
+HOMEPAGE=https://github.com/npm/nopt
+INHERIT=nodejs
+IUSE=test
+KEYWORDS=~amd64
+LICENSE=ISC
+RDEPEND=dev-nodejs/abbrev dev-nodejs/node_path
+RESTRICT=test
+SLOT=0
+SRC_URI=https://github.com/npm/nopt/archive/refs/tags/v6.0.0.tar.gz -> nopt-6.0.0.tar.gz
+_eclasses_=nodejs	c71806a62616bfcef6dcb8248a1b888d
+_md5_=2f4cce08da2445abcbd34eb665e08312

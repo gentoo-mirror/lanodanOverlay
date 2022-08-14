@@ -33,6 +33,7 @@ dev-nodejs/graceful-fs 4.2.10: drop-in replacement for fs, making various improv
 dev-nodejs/isexe 2.0.0: Minimal module to check if a file is executable
 dev-nodejs/mkdirp 1.0.4: Recursively mkdir, like 'mkdir -p', but in node.js
 dev-nodejs/node_path 0: Define NODE_PATH to /usr/share/nodejs/
+dev-nodejs/nopt 6.0.0: ion parsing for Node, supporting types, shorthands, etc
 dev-nodejs/which 2.0.2: Like which(1) unix command. Find the first instance of an executable in the PATH.
 dev-python/firmtool 1.4: Parses, extracts, and builds 3DS firmware files
 dev-python/pygame_sdl2 8.0.0: Reimplementation of portions of the pygame API using SDL2
