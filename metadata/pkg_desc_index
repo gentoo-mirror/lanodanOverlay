@@ -113,7 +113,6 @@ sys-libs/zlib 1.2.8.2015.12.26: Standard (de)compression library (Sortix's libz 
 virtual/man 9: Virtual for man
 virtual/wine 0-r8: Virtual for Wine that supports multiple variants and slotting
 www-apps/pleroma 2.4.2: ActivityPub social networking software compatible with other Fediverse software
-www-apps/stagit 0.9.4: static git page generator
 www-client/visurf 9999: power-user frontend for netsurf
 www-client/woob-qt 9999: Web outside of Browsers (Qt applications)
 x11-libs/fltk 1.4.9999: C++ user interface toolkit for X and OpenGL
