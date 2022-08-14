@@ -26,8 +26,10 @@ dev-libs/libbulletml 0.0.6: A Library of Bullet Markup Language
 dev-libs/libcss 9999: CSS parser and selection engine, written in C
 dev-libs/libtomcrypt 1.18.2: modular and portable cryptographic toolkit
 dev-libs/socket99 0.2.2: Wrapper library for the BSD sockets API with a nicer C99 interface
+dev-nodejs/abbrev 1.1.1: Get unique abbreviations for a set of strings
 dev-nodejs/color-name 1.1.4: JSON with CSS color names and its values
 dev-nodejs/isexe 2.0.0: Minimal module to check if a file is executable
+dev-nodejs/mkdirp 1.0.4: Recursively mkdir, like 'mkdir -p', but in node.js
 dev-nodejs/node_path 0: Define NODE_PATH to /usr/share/nodejs/
 dev-nodejs/which 2.0.2: Like which(1) unix command. Find the first instance of an executable in the PATH.
 dev-python/firmtool 1.4: Parses, extracts, and builds 3DS firmware files
