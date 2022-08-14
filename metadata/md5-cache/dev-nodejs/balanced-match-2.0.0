@@ -1,0 +1,15 @@
+BDEPEND=net-libs/nodejs app-misc/jq
+DEFINED_PHASES=install test
+DESCRIPTION=Match balanced character pairs, like { and }
+EAPI=8
+HOMEPAGE=https://github.com/juliangruber/balanced-match
+INHERIT=nodejs
+IUSE=test
+KEYWORDS=~amd64
+LICENSE=MIT
+RDEPEND=dev-nodejs/node_path
+RESTRICT=test
+SLOT=0
+SRC_URI=https://github.com/juliangruber/balanced-match/archive/refs/tags/v2.0.0.tar.gz -> balanced-match-2.0.0.tar.gz
+_eclasses_=nodejs	c71806a62616bfcef6dcb8248a1b888d
+_md5_=7e8d7ee3627c822f3efa11a7e23128bc
