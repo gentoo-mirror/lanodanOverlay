@@ -25,6 +25,7 @@ BDEPEND="
 	net-libs/nodejs
 	app-misc/jq
 "
+RDEPEND="dev-nodejs/node_path"
 
 NODEJS_SITELIB="/usr/share/nodejs/"
 
