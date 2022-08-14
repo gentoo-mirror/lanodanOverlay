@@ -28,6 +28,8 @@ dev-libs/libtomcrypt 1.18.2: modular and portable cryptographic toolkit
 dev-libs/socket99 0.2.2: Wrapper library for the BSD sockets API with a nicer C99 interface
 dev-nodejs/abbrev 1.1.1: Get unique abbreviations for a set of strings
 dev-nodejs/color-name 1.1.4: JSON with CSS color names and its values
+dev-nodejs/env-paths 3.0.0: Get paths for storing things like data, config, cache, etc
+dev-nodejs/graceful-fs 4.2.10: drop-in replacement for fs, making various improvements
 dev-nodejs/isexe 2.0.0: Minimal module to check if a file is executable
 dev-nodejs/mkdirp 1.0.4: Recursively mkdir, like 'mkdir -p', but in node.js
 dev-nodejs/node_path 0: Define NODE_PATH to /usr/share/nodejs/

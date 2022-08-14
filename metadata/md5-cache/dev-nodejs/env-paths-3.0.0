@@ -1,0 +1,14 @@
+BDEPEND=net-libs/nodejs app-misc/jq
+DEFINED_PHASES=install test
+DESCRIPTION=Get paths for storing things like data, config, cache, etc
+EAPI=8
+HOMEPAGE=https://github.com/sindresorhus/env-paths
+INHERIT=nodejs
+KEYWORDS=~amd64
+LICENSE=MIT
+RDEPEND=dev-nodejs/node_path
+RESTRICT=test
+SLOT=0
+SRC_URI=https://github.com/sindresorhus/env-paths/archive/refs/tags/v3.0.0.tar.gz -> env-paths-3.0.0.tar.gz
+_eclasses_=nodejs	c71806a62616bfcef6dcb8248a1b888d
+_md5_=eac287bd1a2a91d474f671f1c1c16a2d
