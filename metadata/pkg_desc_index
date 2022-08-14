@@ -27,6 +27,7 @@ dev-libs/libcss 9999: CSS parser and selection engine, written in C
 dev-libs/libtomcrypt 1.18.2: modular and portable cryptographic toolkit
 dev-libs/socket99 0.2.2: Wrapper library for the BSD sockets API with a nicer C99 interface
 dev-nodejs/color-name 1.1.4: JSON with CSS color names and its values
+dev-nodejs/node_path 0: Define NODE_PATH to /usr/share/nodejs/
 dev-python/firmtool 1.4: Parses, extracts, and builds 3DS firmware files
 dev-python/pygame_sdl2 8.0.0: Reimplementation of portions of the pygame API using SDL2
 dev-util/glslang 11.10.0: Khronos reference front-end for GLSL and ESSL, and sample SPIR-V generator

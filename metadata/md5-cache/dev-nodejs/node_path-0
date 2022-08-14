@@ -1,0 +1,8 @@
+DEFINED_PHASES=install
+DESCRIPTION=Define NODE_PATH to /usr/share/nodejs/
+EAPI=8
+HOMEPAGE=https://wiki.gentoo.org/wiki/No_homepage
+KEYWORDS=~amd64
+LICENSE=CC0-1.0
+SLOT=0
+_md5_=af52ad9cd2f79f1175fbfa441cccf7e7
