@@ -1,0 +1,14 @@
+BDEPEND=net-libs/nodejs app-misc/jq
+DEFINED_PHASES=install test
+DESCRIPTION=Minimal module to check if a file is executable
+EAPI=8
+HOMEPAGE=https://github.com/isaacs/isexe
+INHERIT=nodejs
+KEYWORDS=~amd64
+LICENSE=ISC
+RDEPEND=dev-nodejs/node_path
+RESTRICT=test
+SLOT=0
+SRC_URI=https://github.com/isaacs/isexe/archive/refs/tags/v2.0.0.tar.gz -> isexe-2.0.0.tar.gz
+_eclasses_=nodejs	c71806a62616bfcef6dcb8248a1b888d
+_md5_=7017f03dee0ba196ddad344abb72e0cf
