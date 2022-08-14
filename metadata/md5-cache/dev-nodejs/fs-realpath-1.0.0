@@ -1,0 +1,15 @@
+BDEPEND=net-libs/nodejs app-misc/jq
+DEFINED_PHASES=install test
+DESCRIPTION=Use node's fs.realpath, but fall back to the JS implementation if the native one fails
+EAPI=8
+HOMEPAGE=https://github.com/isaacs/fs.realpath
+INHERIT=nodejs
+IUSE=test
+KEYWORDS=~amd64
+LICENSE=ISC
+RDEPEND=dev-nodejs/node_path
+RESTRICT=test
+SLOT=0
+SRC_URI=https://github.com/isaacs/fs.realpath/archive/refs/tags/v1.0.0.tar.gz -> fs-realpath-1.0.0.tar.gz
+_eclasses_=nodejs	c71806a62616bfcef6dcb8248a1b888d
+_md5_=298a0834f44030c6db26f88eb4d23595

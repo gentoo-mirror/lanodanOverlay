@@ -1,0 +1,15 @@
+BDEPEND=net-libs/nodejs app-misc/jq
+DEFINED_PHASES=install test
+DESCRIPTION=Run a function exactly one time
+EAPI=8
+HOMEPAGE=https://github.com/isaacs/once
+INHERIT=nodejs
+IUSE=test
+KEYWORDS=~amd64
+LICENSE=ISC
+RDEPEND=dev-nodejs/wrappy dev-nodejs/node_path
+RESTRICT=test
+SLOT=0
+SRC_URI=https://github.com/isaacs/once/archive/refs/tags/v1.4.0.tar.gz -> once-1.4.0.tar.gz
+_eclasses_=nodejs	c71806a62616bfcef6dcb8248a1b888d
+_md5_=6506a39779683b8c9aa9cc2cc97b7797
