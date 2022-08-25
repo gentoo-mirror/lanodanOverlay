@@ -51,7 +51,7 @@ dev-python/pygame_sdl2 8.0.0: Reimplementation of portions of the pygame API usi
 dev-util/glslang 11.10.0: Khronos reference front-end for GLSL and ESSL, and sample SPIR-V generator
 dev-util/gtk-doc-am 1.32: Virtual ebuild for ::gentoo compatibility
 dev-util/gyp-next 0.13.0: fork of the GYP (Generate Your Projects) build system for use in the Node.js projects
-dev-util/rebar 3.18.0: Erlang build tool that makes it easy to compile and test Erlang applications and releases
+dev-util/rebar 3.19.0: Erlang build tool that makes it easy to compile and test Erlang applications and releases
 games-arcade/crypt_of_the_necrodancer 1.29.14917: Crypt of the Necrodancer (GOG)
 games-arcade/emilia-pinball 9999: SDL OpenGL pinball game
 games-arcade/osu-lazer 9999.999.9: rhythm is just a *click* away!
