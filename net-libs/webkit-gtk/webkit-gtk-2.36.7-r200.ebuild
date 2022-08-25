@@ -18,7 +18,7 @@ LICENSE="LGPL-2+ BSD"
 SLOT="5.0/0" # soname version of libwebkit2gtk-5.0
 KEYWORDS="~amd64 ~arm ~arm64 ~ppc64 ~riscv ~x86"
 
-IUSE="aqua +avif debug +egl examples gamepad +geolocation gles2-only gnome-keyring +gstreamer gtk-doc +introspection +jpeg2k +jumbo-build lcms libnotify +seccomp spell systemd test wayland +X"
+IUSE="aqua +avif debug +egl examples gamepad +geolocation gles2-only gnome-keyring +gstreamer gtk-doc +introspection +jpeg2k +jumbo-build lcms libnotify +seccomp spell systemd test wayland +webgl +X"
 
 # gstreamer with opengl/gles2 needs egl
 REQUIRED_USE="
@@ -229,7 +229,7 @@ src_configure() {
 		-DENABLE_SPELLCHECK=$(usex spell)
 		-DENABLE_UNIFIED_BUILDS=$(usex jumbo-build)
 		-DENABLE_VIDEO=$(usex gstreamer)
-		-DENABLE_WEBGL=ON
+		-DENABLE_WEBGL=$(usex webgl)
 		# Supported only under ANGLE, see
 		# https://bugs.webkit.org/show_bug.cgi?id=225563
 		# https://bugs.webkit.org/show_bug.cgi?id=224888

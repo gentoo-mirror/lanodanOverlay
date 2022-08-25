@@ -13,5 +13,6 @@
 		<flag name="gles2-only">Use GLES 2.0 or later instead of full OpenGL</flag>
 		<flag name="jumbo-build">Combine source files to speed up build process</flag>
 		<flag name="seccomp">Enable sandboxing functionality through <pkg>sys-apps/bubblewrap</pkg></flag>
+		<flag name="webgl">Enable WebGL support</flag>
 	</use>
 </pkgmetadata>

@@ -38,6 +38,9 @@ EXPORT_FUNCTIONS src_prepare src_compile src_test src_install
 # differences is present
 BDEPEND="!<${CATEGORY}/${P} !>${CATEGORY}/${P}"
 
+# @ECLASS-VARIABLE: REBAR_OFFLINE
+REBAR_OFFLINE=1
+
 # @ECLASS-VARIABLE: REBAR3_DEPS
 # @DESCRIPTION:
 # This is an eclass-generated dependency string for required dependencies
