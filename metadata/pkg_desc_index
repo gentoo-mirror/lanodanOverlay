@@ -43,6 +43,7 @@ dev-nodejs/mkdirp 1.0.4: Recursively mkdir, like 'mkdir -p', but in node.js
 dev-nodejs/node_path 0: Define NODE_PATH to /usr/share/nodejs/
 dev-nodejs/nopt 6.0.0: ion parsing for Node, supporting types, shorthands, etc
 dev-nodejs/once 1.4.0: Run a function exactly one time
+dev-nodejs/rimraf 3.0.2: deep deletion module for node (like 'rm -rf')
 dev-nodejs/semver 7.3.7: semantic version parser used by npm
 dev-nodejs/which 2.0.2: Like which(1) unix command. Find the first instance of an executable in the PATH.
 dev-nodejs/wrappy 1.0.2: Callback wrapping utility
@@ -127,6 +128,8 @@ sys-apps/sdate 0.7: never ending September date
 sys-apps/shadow 4.11.1: Utilities to deal with user accounts
 sys-apps/tcb 1.2-r1: Libraries and tools implementing the tcb password shadowing scheme
 sys-apps/xdg-dbus-proxy 0.1.2: filtering proxy for D-Bus connections
+sys-devel/gettext 0.3.2-r1: Stub and/or lightweight replacements of the GNU gettext suite
+sys-devel/qbe 9999: Pure C embeddable compiler backend
 sys-libs/gcompat 0.4.0: The GNU C Library compatibility layer for musl
 sys-libs/libtickit 0.3.3: library for building interactive full-screen terminal programs
 sys-libs/libucontext 0.9.0: library which provides the <ucontext.h> API from older POSIX revisions

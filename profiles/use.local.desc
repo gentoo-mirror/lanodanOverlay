@@ -159,6 +159,7 @@ net-p2p/gnunet:http - enable embedded http server support
 sys-apps/lanodan-utils:suspend - Enable the "memsys" program for suspending the machine
 sys-apps/shadow:bcrypt - build the bcrypt password encryption algorithm
 sys-apps/shadow:su - build the su program
+sys-devel/gettext:shim - Install libintl library. Not suitable on glibc systems. On musl systems, passes contents through and translates via musl's libintl. On other systems, provides a no-op library (returns input text with no changes/translations).
 sys-libs/gcompat:obstack - Use sys-libs/obstack-standalone for greater compatibility
 sys-libs/libtickit:unibilium - Use dev-libs/unibilium (highly recommended) instead of sys-libs/ncurses
 sys-libs/libucontext:obstack - Use sys-libs/obstack-standalone for greater compatibility

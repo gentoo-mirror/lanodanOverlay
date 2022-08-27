@@ -1,0 +1,8 @@
+DEFINED_PHASES=-
+DESCRIPTION=Pure C embeddable compiler backend
+EAPI=7
+HOMEPAGE=https://c9x.me/compile/
+KEYWORDS=-amd64 -arm64
+LICENSE=MIT
+SLOT=0
+_md5_=248f05ca5b73a5c759a1922e5b99daac
