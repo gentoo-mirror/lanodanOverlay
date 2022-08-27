@@ -1,0 +1,17 @@
+https://github.com/sabotage-linux/gettext-tiny/commit/06a18283262b851e6f5965bcdfa3bf2724495728
+
+From: Ariadne Conill <ariadne@dereferenced.org>
+Date: Tue, 13 Apr 2021 18:59:13 -0800
+Subject: [PATCH] build: respect cflags (#58)
+
+--- a/Makefile
++++ b/Makefile
+@@ -32,7 +32,7 @@ ALL_TOOLS=msgfmt msgmerge xgettext autopoint
+ ALL_M4S=$(sort $(wildcard m4/*.m4))
+ ALL_DATA=$(sort $(wildcard data/*))
+ 
+-CFLAGS=-O0 -fPIC
++CFLAGS  ?= -O0 -fPIC
+ 
+ AR      ?= $(CROSS_COMPILE)ar
+ RANLIB  ?= $(CROSS_COMPILE)ranlib
