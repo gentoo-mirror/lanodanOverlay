@@ -22,6 +22,8 @@ PATCHES=(
 	"${FILESDIR}"/${P}-xgettext-version-output.patch
 )
 
+DOCS=( README.md docs )
+
 src_compile() {
 	tc-export AR RANLIB CC
 
