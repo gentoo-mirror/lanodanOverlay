@@ -27,3 +27,4 @@ L10N="en en-US en-GB fr fr-CA ja is jbo de de-DE ru" # profiles/desc/l10n.desc
 
 EGIT_CLONE_TYPE="shallow" # --depth=1
 CMAKE_MAKEFILE_GENERATOR="ninja"
+NINJA="samu"
