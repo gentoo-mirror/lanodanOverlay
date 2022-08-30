@@ -30,3 +30,8 @@ media-libs/id3lib
 # Haelwenn (lanodan) Monnier - 2022-07-11
 # Dead upsteam, last release in 2016
 media-sound/easytag
+
+# Haelwenn (lanodan) Monnier - 2022-08-30
+# Open-Core
+# https://github.com/danmar/cppcheck/commit/8f386e15fdedff37486c683d933ccc9a1e307388
+dev-util/cppcheck
