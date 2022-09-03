@@ -35,6 +35,13 @@ RDEPEND="
 "
 RDEPEND="${DEPEND}"
 
+PATCHES=(
+	# The build directory (where dependencies are usually stored) gets
+	# cleared before each build.  Make the fetch function first look in
+	# a _checkouts directory before going out over the net.
+	"${FILESDIR}"/${PN}-3.18.0-bootstrap-vendored.patch
+)
+
 src_unpack() {
 	# Unpack the rebar sources like normal, but extract the hex.pm
 	# dependencies separately.  The outer tarball contains another
@@ -81,8 +88,8 @@ src_install() {
 	newenvd - 98rebar3 <<< 'REBAR3_CMD='${EPREFIX}'/usr/bin/rebar3'
 
 	insinto /usr/share/fish/completion
-	newins priv/shell-completion/fish/${MY_PN}.fish ${MY_PN}
+	newins priv/shell-completion/fish/rebar3.fish rebar3
 
 	insinto /usr/share/zsh/site-functions
-	doins priv/shell-completion/zsh/_${MY_PN}
+	doins priv/shell-completion/zsh/_rebar3
 }
