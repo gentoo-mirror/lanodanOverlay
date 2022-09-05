@@ -36,6 +36,7 @@ dev-libs/elfutils:utils - Install command-line utilities (all the eu-* programs)
 dev-libs/elfutils:valgrind - Add support for memory debugging using dev-util/valgrind
 dev-libs/hts_engine:speech-tools - use memory allocation/free functions of app-accessibility/speech-tools
 games-arcade/emilia-pinball:gles1-only - Use GLES 1.0 instead of OpenGL
+games-engines/renpy:development - Install IDE for game developers and an empty game template
 gnome-base/librsvg:tools - Build svg viewer tool
 gnustep-base/gnustep-make:libobjc2 - Enables use of the GNUstep Objective-C runtime (gnustep-base/libobjc2) with non-fragile ABI and sys-devel/clang compiler
 gnustep-base/gnustep-make:native-exceptions - Enables use of the native Objective-C exception support (@try/@catch/@finally) built-in objective-c exceptions with compilers that support it

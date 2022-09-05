@@ -47,7 +47,7 @@ dev-nodejs/semver 7.3.7: semantic version parser used by npm
 dev-nodejs/which 2.0.2: Like which(1) unix command. Find the first instance of an executable in the PATH.
 dev-nodejs/wrappy 1.0.2: Callback wrapping utility
 dev-python/firmtool 1.4: Parses, extracts, and builds 3DS firmware files
-dev-python/pygame_sdl2 8.0.0: Reimplementation of portions of the pygame API using SDL2
+dev-python/pygame_sdl2 8.0.3: Reimplementation of portions of the pygame API using SDL2
 dev-util/glslang 11.10.0: Khronos reference front-end for GLSL and ESSL, and sample SPIR-V generator
 dev-util/gtk-doc-am 1.32: Virtual ebuild for ::gentoo compatibility
 dev-util/gyp-next 0.13.0: fork of the GYP (Generate Your Projects) build system for use in the Node.js projects
@@ -60,6 +60,7 @@ games-arcade/pinball-table-hurd 9999: Hurd table for games-arcade/emilia-pinball
 games-arcade/tinymania 9999: A VSRG clone for playing .osu files.
 games-emulation/reicast 8.1: A Dreamcast Emulator
 games-engines/love 0.10.2: A framework for 2D games in Lua
+games-engines/renpy 8.0.3: Visual novel engine written in python
 games-engines/solarus 1.6.5: An open-source Zelda-like 2D game engine
 games-misc/papers-please 1.2.76.54233-r1: A Dystopian Document Thriller
 games-roguelike/cataclysm-dda 0.6.3: Post-apocalyptic roguelike
