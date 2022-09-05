@@ -14,7 +14,7 @@ SRC_URI="https://www.renpy.org/dl/${PV}/${PYSDL}-for-renpy-${PV}.tar.gz"
 
 LICENSE="LGPL-2.1 ZLIB"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64"
 IUSE=""
 
 BDEPEND="
