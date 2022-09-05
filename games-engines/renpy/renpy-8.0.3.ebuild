@@ -3,8 +3,8 @@
 
 EAPI=7
 PYTHON_COMPAT=( python3_{8,9,10} )
-DISTUTILS_IN_SOURCE_BUILD=1
-DISTUTILS_USE_SETUPTOOLS=no
+DISTUTILS_SINGLE_IMPL=1
+DISTUTILS_USE_PEP517=setuptools
 inherit gnome2-utils distutils-r1
 
 DESCRIPTION="Visual novel engine written in python"
@@ -19,12 +19,14 @@ IUSE="development doc examples"
 REQUIRED_USE="examples? ( development )"
 
 BDEPEND="
-	dev-python/cython[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep 'dev-python/cython[${PYTHON_USEDEP}]')
 	virtual/pkgconfig"
 DEPEND="
 	dev-libs/fribidi
-	~dev-python/pygame_sdl2-${PV}[${PYTHON_USEDEP}]
-	>=dev-lang/python-exec-0.3[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '
+		'~dev-python/pygame_sdl2-${PV}'[${PYTHON_USEDEP}]
+		>=dev-lang/python-exec-0.3[${PYTHON_USEDEP}]
+	')
 	media-libs/glew:0
 	media-libs/libpng:0
 	media-libs/libsdl2[video]
@@ -91,6 +93,15 @@ pkg_preinst() {
 
 pkg_postinst() {
 	use development && gnome2_icon_cache_update
+
+	local v
+	for v in ${REPLACING_VERSIONS}; do
+		ver_test "${v}" -ge 7 && continue
+		einfo "Starting from ${PN}-7 slots are dropped."
+		einfo "RenPy natively supports compatibility with games made for older versions."
+		einfo "Report bugs upstream on such problems, usually they are easy to fix."
+		break
+	done
 }
 
 pkg_postrm() {
