@@ -14,7 +14,7 @@ S="${WORKDIR}/${P}-source"
 
 LICENSE="MIT"
 SLOT=0
-KEYWORDS=""
+KEYWORDS="~amd64"
 IUSE="development doc examples"
 REQUIRED_USE="examples? ( development )"
 
