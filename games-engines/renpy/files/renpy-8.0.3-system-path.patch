@@ -1,0 +1,13 @@
+diff --git a/renpy.py.old b/renpy.py
+index c00d46456f..29046c5335 100755
+--- a/renpy.py.old
++++ b/renpy.py
+@@ -209,7 +209,7 @@ def path_to_renpy_base():
+     Returns the absolute path to thew Ren'Py base directory.
+     """
+ 
+-    renpy_base = os.path.dirname(os.path.realpath(sys.argv[0]))
++    renpy_base = get_python_lib()
+     renpy_base = os.path.abspath(renpy_base)
+ 
+     return renpy_base
