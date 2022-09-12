@@ -17,7 +17,7 @@ SRC_URI="https://www.webkitgtk.org/releases/${MY_P}.tar.xz"
 LICENSE="LGPL-2+ BSD"
 SLOT="4.1/0" # soname version of libwebkit2gtk-4.1
 
-IUSE="aqua +avif debug doc +egl examples gamepad +geolocation gles2-only gnome-keyring +gstreamer +introspection +jpeg2k +jumbo-build lcms libnotify +seccomp spell systemd test wayland webrtc +X"
+IUSE="aqua +avif debug doc +egl examples gamepad +geolocation gles2-only gnome-keyring +gstreamer +introspection +jpeg2k +jumbo-build lcms +seccomp spell systemd test wayland webrtc +X"
 
 # gstreamer with opengl/gles2 needs egl
 REQUIRED_USE="
@@ -76,7 +76,6 @@ RDEPEND="
 		x11-libs/libXrender
 		x11-libs/libXt )
 
-	libnotify? ( x11-libs/libnotify )
 	dev-libs/hyphen
 	jpeg2k? ( >=media-libs/openjpeg-2.2.0:2= )
 	avif? ( >=media-libs/libavif-0.9.0:= )
@@ -248,7 +247,6 @@ src_configure() {
 		-DUSE_JPEGXL=OFF
 		-DUSE_LCMS=$(usex lcms)
 		-DUSE_LIBHYPHEN=ON
-		-DUSE_LIBNOTIFY=$(usex libnotify)
 		-DUSE_LIBSECRET=$(usex gnome-keyring)
 		-DUSE_OPENGL_OR_ES=ON
 		-DUSE_OPENJPEG=$(usex jpeg2k)
