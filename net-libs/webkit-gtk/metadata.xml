@@ -8,6 +8,7 @@
 	<use>
 		<flag name="avif">Enable AVIF support via <pkg>media-libs/libavif</pkg></flag>
 		<flag name="egl">Enable EGL support</flag>
+		<flag name="experimental">Enable experimental features</flag>
 		<flag name="gamepad">Enable gamepad support via <pkg>dev-libs/libmanette</pkg></flag>
 		<flag name="geolocation">Enable geolocation support through <pkg>app-misc/geoclue</pkg></flag>
 		<flag name="gles2-only">Use GLES 2.0 or later instead of full OpenGL</flag>
