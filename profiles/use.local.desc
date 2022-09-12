@@ -140,6 +140,7 @@ net-libs/webkit-gtk:gles2-only - Use GLES 2.0 or later instead of full OpenGL
 net-libs/webkit-gtk:jumbo-build - Combine source files to speed up build process
 net-libs/webkit-gtk:seccomp - Enable sandboxing functionality through sys-apps/bubblewrap
 net-libs/webkit-gtk:webgl - Enable WebGL support
+net-libs/webkit-gtk:webrtc - Enable WebRTC support
 net-libs/wpewebkit:experimental - Enable experimental features
 net-libs/wpewebkit:qt - Enable support for the Qt API
 net-misc/chrony:cmdmon - Support for command and monitoring
