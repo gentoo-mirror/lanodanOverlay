@@ -17,7 +17,7 @@ SRC_URI="https://www.webkitgtk.org/releases/${MY_P}.tar.xz"
 LICENSE="LGPL-2+ BSD"
 SLOT="4/37" # soname version of libwebkit2gtk-4.0
 
-IUSE="aqua +avif debug doc +egl examples experimental gamepad +geolocation gles2-only gnome-keyring +gstreamer +introspection +jpeg2k +jumbo-build lcms libnotify +seccomp spell systemd test wayland +X"
+IUSE="aqua +avif debug doc +egl examples gamepad +geolocation gles2-only gnome-keyring +gstreamer +introspection +jpeg2k +jumbo-build lcms libnotify +seccomp spell systemd test wayland webrtc +X"
 
 # gstreamer with opengl/gles2 needs egl
 REQUIRED_USE="
@@ -34,7 +34,6 @@ RESTRICT="test"
 
 # Dependencies found at Source/cmake/OptionsGTK.cmake
 # Various compile-time optionals for gtk+-3.22.0 - ensure it
-# Missing WebRTC support, but ENABLE_MEDIA_STREAM/ENABLE_WEB_RTC is experimental upstream (PRIVATE OFF) and shouldn't be used yet in 2.30
 # >=gst-plugins-opus-1.14.4-r1 for opusparse (required by MSE)
 RDEPEND="
 	>=x11-libs/cairo-1.16.0:=[X?]
@@ -63,10 +62,11 @@ RDEPEND="
 	gstreamer? (
 		>=media-libs/gstreamer-1.14:1.0
 		>=media-libs/gst-plugins-base-1.14:1.0[egl?,X?]
-		gles2-only? ( media-libs/gst-plugins-base:1.0[gles2] )
-		!gles2-only? ( media-libs/gst-plugins-base:1.0[opengl] )
 		>=media-plugins/gst-plugins-opus-1.14.4-r1:1.0
 		>=media-libs/gst-plugins-bad-1.14:1.0[X?]
+		gles2-only? ( media-libs/gst-plugins-base:1.0[gles2] )
+		!gles2-only? ( media-libs/gst-plugins-base:1.0[opengl] )
+		webrtc? ( media-plugins/gst-plugins-webrtc:1.0 )
 	)
 
 	X? (
@@ -215,7 +215,6 @@ src_configure() {
 		# Source/cmake/WebKitFeatures.cmake
 		-DENABLE_API_TESTS=$(usex test)
 		-DENABLE_BUBBLEWRAP_SANDBOX=$(usex seccomp)
-		-DENABLE_EXPERIMENTAL_FEATURES=$(usex experimental)
 		-DENABLE_GAMEPAD=$(usex gamepad)
 		-DENABLE_GEOLOCATION=$(usex geolocation) # Runtime optional (talks over dbus service)
 		-DENABLE_MINIBROWSER=$(usex examples)
@@ -241,6 +240,7 @@ src_configure() {
 		-DENABLE_JOURNALD_LOG=$(usex systemd)
 		-DENABLE_QUARTZ_TARGET=$(usex aqua)
 		-DENABLE_WAYLAND_TARGET=$(usex wayland)
+		-DENABLE_EXPERIMENTAL_FEATURES=$(usex experimental)
 		-DENABLE_X11_TARGET=$(usex X)
 		-DUSE_ANGLE_WEBGL=OFF
 		-DUSE_AVIF=$(usex avif)
