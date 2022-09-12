@@ -17,7 +17,7 @@ SRC_URI="https://www.webkitgtk.org/releases/${MY_P}.tar.xz"
 LICENSE="LGPL-2+ BSD"
 SLOT="4/37" # soname version of libwebkit2gtk-4.0
 
-IUSE="aqua +avif debug doc +egl examples gamepad +geolocation gles2-only gnome-keyring +gstreamer +introspection +jpeg2k +jumbo-build lcms libnotify +seccomp spell systemd test wayland +X"
+IUSE="aqua +avif debug doc +egl examples experimental gamepad +geolocation gles2-only gnome-keyring +gstreamer +introspection +jpeg2k +jumbo-build lcms libnotify +seccomp spell systemd test wayland +X"
 
 # gstreamer with opengl/gles2 needs egl
 REQUIRED_USE="
@@ -215,6 +215,7 @@ src_configure() {
 		# Source/cmake/WebKitFeatures.cmake
 		-DENABLE_API_TESTS=$(usex test)
 		-DENABLE_BUBBLEWRAP_SANDBOX=$(usex seccomp)
+		-DENABLE_EXPERIMENTAL_FEATURES=$(usex experimental)
 		-DENABLE_GAMEPAD=$(usex gamepad)
 		-DENABLE_GEOLOCATION=$(usex geolocation) # Runtime optional (talks over dbus service)
 		-DENABLE_MINIBROWSER=$(usex examples)
