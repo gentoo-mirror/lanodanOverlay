@@ -1,7 +1,7 @@
 # Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 VALA_MIN_API_VERSION="0.54" # requires gio-2.0.vapi generated from glib-2.70+
 
 inherit gnome.org meson-multilib vala xdg
@@ -56,8 +56,9 @@ PATCHES=(
 )
 
 src_prepare() {
-	use vala && vala_src_prepare
-	xdg_src_prepare
+	default
+	use vala && vala_setup
+	xdg_environment_reset
 	# https://gitlab.gnome.org/GNOME/libsoup/issues/159 - could work with libnss-myhostname
 	sed -e '/hsts/d' -i tests/meson.build || die
 }
@@ -73,6 +74,9 @@ src_configure() {
 
 multilib_src_configure() {
 	local emesonargs=(
+		# Avoid auto-magic, built-in feature of meson
+		-Dauto_features=enabled
+
 		$(meson_feature gssapi)
 		-Dkrb5_config="${CHOST}-krb5-config"
 		$(meson_feature samba ntlm)
@@ -84,6 +88,8 @@ multilib_src_configure() {
 		$(meson_native_use_bool gtk-doc gtk_doc)
 		$(meson_use test tests)
 		-Dinstalled_tests=false
+		-Dhttp2_tests=disabled # quart is absent from gentoo repo
+		-Dautobahn=disabled # autobahn depends on py-cryptography which depends on Rust
 		$(meson_feature sysprof)
 		$(meson_feature test pkcs11_tests)
 	)
