@@ -1,4 +1,6 @@
 app-admin/pass
+app-doc/single-unix-specification
+gui-apps/foot
 media-fonts/fira-mono
 media-fonts/fira-sans
 media-fonts/noto-emoji
@@ -9,6 +11,6 @@ media-fonts/source-pro
 media-fonts/vlgothic
 media-gfx/imv
 media-video/mpv
+net-fs/sshfs
 net-misc/bsdwhois
 net-vpn/iodine
-gui-apps/foot
