@@ -21,10 +21,10 @@ IUSE="aqua +avif debug doc +egl examples gamepad +geolocation gles2-only gnome-k
 
 # gstreamer with opengl/gles2 needs egl
 REQUIRED_USE="
+	doc? ( introspection )
 	gles2-only? ( egl )
 	gstreamer? ( egl )
 	wayland? ( egl )
-	doc? ( introspection )
 	|| ( aqua wayland X )
 "
 
