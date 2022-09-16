@@ -18,10 +18,11 @@ LICENSE="LGPL-2+ BSD"
 SLOT="4/37" # soname version of libwebkit2gtk-4.0
 KEYWORDS="~amd64 ~arm ~arm64 ~ppc64 ~riscv ~x86"
 
-IUSE="aqua +avif debug +egl examples gamepad +geolocation gles2-only gnome-keyring +gstreamer gtk-doc +introspection +jpeg2k +jumbo-build lcms libnotify +seccomp spell systemd test wayland +webgl +X"
+IUSE="aqua +avif debug doc +egl examples gamepad +geolocation gles2-only gnome-keyring +gstreamer +introspection +jpeg2k +jumbo-build lcms +seccomp spell systemd test wayland webrtc +X"
 
 # gstreamer with opengl/gles2 needs egl
 REQUIRED_USE="
+	doc? ( introspection )
 	gles2-only? ( egl )
 	gstreamer? ( egl )
 	wayland? ( egl )
@@ -34,7 +35,6 @@ RESTRICT="test"
 
 # Dependencies found at Source/cmake/OptionsGTK.cmake
 # Various compile-time optionals for gtk+-3.22.0 - ensure it
-# Missing WebRTC support, but ENABLE_MEDIA_STREAM/ENABLE_WEB_RTC is experimental upstream (PRIVATE OFF) and shouldn't be used yet in 2.30
 # >=gst-plugins-opus-1.14.4-r1 for opusparse (required by MSE)
 RDEPEND="
 	>=x11-libs/cairo-1.16.0:=[X?]
@@ -63,10 +63,11 @@ RDEPEND="
 	gstreamer? (
 		>=media-libs/gstreamer-1.14:1.0
 		>=media-libs/gst-plugins-base-1.14:1.0[egl?,X?]
-		gles2-only? ( media-libs/gst-plugins-base:1.0[gles2] )
-		!gles2-only? ( media-libs/gst-plugins-base:1.0[opengl] )
 		>=media-plugins/gst-plugins-opus-1.14.4-r1:1.0
 		>=media-libs/gst-plugins-bad-1.14:1.0[X?]
+		gles2-only? ( media-libs/gst-plugins-base:1.0[gles2] )
+		!gles2-only? ( media-libs/gst-plugins-base:1.0[opengl] )
+		webrtc? ( media-plugins/gst-plugins-webrtc:1.0 )
 	)
 
 	X? (
@@ -76,7 +77,6 @@ RDEPEND="
 		x11-libs/libXrender
 		x11-libs/libXt )
 
-	libnotify? ( x11-libs/libnotify )
 	dev-libs/hyphen
 	jpeg2k? ( >=media-libs/openjpeg-2.2.0:2= )
 	avif? ( >=media-libs/libavif-0.9.0:= )
@@ -107,7 +107,6 @@ BDEPEND="
 	${PYTHON_DEPS}
 	${RUBY_DEPS}
 	dev-util/glib-utils
-	>=dev-util/gtk-doc-am-1.10
 	>=dev-util/gperf-3.0.1
 	>=sys-devel/bison-2.4.3
 	|| ( >=sys-devel/gcc-7.3 >=sys-devel/clang-5 )
@@ -119,7 +118,7 @@ BDEPEND="
 	virtual/perl-Carp
 	virtual/perl-JSON-PP
 
-	gtk-doc? ( >=dev-util/gtk-doc-1.32 )
+	doc? ( dev-util/gi-docgen )
 	geolocation? ( dev-util/gdbus-codegen )
 	>=dev-util/cmake-3.10
 
@@ -161,12 +160,6 @@ src_prepare() {
 src_configure() {
 	if use debug; then
 		CMAKE_BUILD_TYPE="Debug"
-	fi
-
-	# gtk-doc fails to generate docs when ld.lld is used, force binutils
-	if use gtk-doc; then
-		export CC_LD="ld"
-		export LD="ld"
 	fi
 
 	# Respect CC, otherwise fails on prefix #395875
@@ -229,11 +222,8 @@ src_configure() {
 		-DENABLE_SPELLCHECK=$(usex spell)
 		-DENABLE_UNIFIED_BUILDS=$(usex jumbo-build)
 		-DENABLE_VIDEO=$(usex gstreamer)
-		-DENABLE_WEBGL=$(usex webgl)
-		# Supported only under ANGLE, see
-		# https://bugs.webkit.org/show_bug.cgi?id=225563
-		# https://bugs.webkit.org/show_bug.cgi?id=224888
-		-DENABLE_WEBGL2=OFF
+		-DENABLE_WEBGL=ON
+		-DENABLE_WEBGL2=ON
 		-DENABLE_WEB_AUDIO=$(usex gstreamer)
 		-DENABLE_WEBDRIVER=OFF
 		-DENABLE_WEB_CRYPTO=OFF
@@ -242,11 +232,13 @@ src_configure() {
 
 		# Source/cmake/OptionsGTK.cmake
 		-DENABLE_GLES2=$(usex gles2-only)
-		-DENABLE_GTKDOC=$(usex gtk-doc)
+		-DENABLE_DOCUMENTATION=$(usex doc)
 		-DENABLE_INTROSPECTION=$(usex introspection)
 		-DENABLE_JOURNALD_LOG=$(usex systemd)
+		-DENABLE_PDFJS=OFF # gentoo has www-plugins/pdfjs
 		-DENABLE_QUARTZ_TARGET=$(usex aqua)
 		-DENABLE_WAYLAND_TARGET=$(usex wayland)
+		-DENABLE_WEB_RTC=$(usex webrtc)
 		-DENABLE_X11_TARGET=$(usex X)
 		-DUSE_ANGLE_WEBGL=OFF
 		-DUSE_AVIF=$(usex avif)
@@ -254,7 +246,6 @@ src_configure() {
 		-DUSE_JPEGXL=OFF
 		-DUSE_LCMS=$(usex lcms)
 		-DUSE_LIBHYPHEN=ON
-		-DUSE_LIBNOTIFY=$(usex libnotify)
 		-DUSE_LIBSECRET=$(usex gnome-keyring)
 		-DUSE_OPENGL_OR_ES=ON
 		-DUSE_OPENJPEG=$(usex jpeg2k)
