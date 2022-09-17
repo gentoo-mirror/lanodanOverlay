@@ -7,7 +7,9 @@ media-fonts/noto-emoji
 media-fonts/open-sans
 media-fonts/quivira
 media-fonts/roboto
-media-fonts/source-pro
+media-fonts/source-code-pro
+media-fonts/source-sans
+media-fonts/source-serif
 media-fonts/vlgothic
 media-gfx/imv
 media-video/mpv
