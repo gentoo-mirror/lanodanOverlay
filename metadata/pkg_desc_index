@@ -113,7 +113,6 @@ net-libs/libsoup 3.0.8: HTTP client/server library for GNOME
 net-libs/webkit-gtk 2.37.91 2.37.91-r100 2.37.91-r200 2.38.0 2.38.0-r100 2.38.0-r200: Open source web browser engine
 net-libs/wpewebkit 2.32.3: WebKit port optimized for embedded devices
 net-misc/ap-client 9999: CLI-based client / toolbox for ActivityPub Client-to-Server
-net-misc/chrony 4.2-r2: NTP client and server programs
 net-misc/cve-client 9999: CLI-based client / toolbox for CVE.org
 net-misc/drawterm 9999: connect to Plan 9 CPU servers from other operating systems
 net-misc/fbxosctrl 2.4.4: Shell tool to control some Freebox OS stuff: wifi, reboot...
