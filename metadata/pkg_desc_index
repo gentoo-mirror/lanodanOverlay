@@ -12,6 +12,7 @@ app-emulation/uxn 9999: Assembler and emulator for the Uxn stack-machine, writte
 app-emulation/wine-wayland 9999: Free implementation of Windows(tm) on Unix, collabora's wayland branch
 app-i18n/fcitx 5.0.19: Fcitx (Flexible Context-aware Input Tool with eXtension) input method framework
 app-i18n/fcitx-anthy 5.0.12: Japanese Anthy input methods for Fcitx5
+app-i18n/fcitx-qt 5.0.15: Qt library and IM module for fcitx5
 app-misc/kanatest 0.4.8: Visual flashcard tool for memorizing the Japanese Hiragana and Katakana alphabet
 app-text/dadadodo 1.04: Analyse texts for word probabilities and generate random sentences
 app-text/evince 3.34.2: Simple document viewer for GNOME
