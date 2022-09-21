@@ -1,0 +1,74 @@
+From 2912d6fa4bbd0bda774ed82e77e3ce48671533e7 Mon Sep 17 00:00:00 2001
+From: "Haelwenn (lanodan) Monnier" <contact@hacktivis.me>
+Date: Wed, 21 Sep 2022 08:59:30 +0200
+Subject: [PATCH 2/2] CMake: Add option to disable DBus support
+
+---
+ CMakeLists.txt     | 13 ++++++++++---
+ qt5/CMakeLists.txt | 10 +++++++---
+ 2 files changed, 17 insertions(+), 6 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 83c96fd..1c963cb 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -10,6 +10,7 @@ find_package(ECM 1.4.0 REQUIRED)
+ 
+ set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+ 
++option(ENABLE_DBUS "Enable DBus" On)
+ option(ENABLE_QT4 "Enable Qt 4" On)
+ option(ENABLE_QT5 "Enable Qt 5" On)
+ option(ENABLE_QT6 "Enable Qt 6" Off)
+@@ -76,19 +77,25 @@ if(ENABLE_QT4)
+ endif()
+ 
+ if(ENABLE_QT5)
+-  find_package(Qt5 ${REQUIRED_QT5_VERSION} CONFIG REQUIRED Core DBus Widgets)
++  find_package(Qt5 ${REQUIRED_QT5_VERSION} CONFIG REQUIRED Core Widgets)
+   find_package(Qt5Gui ${REQUIRED_QT5_VERSION} REQUIRED Private)
++  if(ENABLE_DBUS)
++    find_package(Qt5 ${REQUIRED_QT5_VERSION} CONFIG REQUIRED DBus)
++  endif()
+   add_subdirectory(qt5)
+ endif()
+ 
+ if(ENABLE_QT6)
+-  find_package(Qt6 ${REQUIRED_QT6_VERSION} CONFIG REQUIRED Core DBus)
++  find_package(Qt6 ${REQUIRED_QT6_VERSION} CONFIG REQUIRED Core)
+   find_package(Qt6Gui ${REQUIRED_QT6_VERSION} REQUIRED Private)
++  if (ENABLE_DBUS)
++    find_package(Qt6 ${REQUIRED_QT6_VERSION} CONFIG REQUIRED DBus)
++  endif()
+   add_subdirectory(qt6)
+ endif()
+ 
+ if(NOT BUILD_ONLY_PLUGIN)
+-add_subdirectory(po)
++  add_subdirectory(po)
+ endif()
+ 
+ enable_testing()
+diff --git a/qt5/CMakeLists.txt b/qt5/CMakeLists.txt
+index f9ada81..c54d0a1 100644
+--- a/qt5/CMakeLists.txt
++++ b/qt5/CMakeLists.txt
+@@ -1,8 +1,12 @@
+-add_subdirectory(dbusaddons)
+-add_subdirectory(platforminputcontext)
++if (ENABLE_DBUS)
++  add_subdirectory(dbusaddons)
++  add_subdirectory(platforminputcontext)
++endif()
+ 
+ if(NOT BUILD_ONLY_PLUGIN)
+-  add_subdirectory(guiwrapper)
++  if (ENABLE_DBUS)
++    add_subdirectory(guiwrapper)
++  endif()
+   add_subdirectory(widgetsaddons)
+   add_subdirectory(quickphrase-editor)
+ endif()
+-- 
+2.35.1
+
