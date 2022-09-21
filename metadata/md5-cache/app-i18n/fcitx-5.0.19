@@ -1,0 +1,17 @@
+BDEPEND=doc? ( app-doc/doxygen ) kde-frameworks/extra-cmake-modules virtual/pkgconfig >=dev-util/ninja-1.8.2 >=dev-util/cmake-3.20.5
+DEFINED_PHASES=compile configure install postinst postrm prepare test
+DEPEND=X? ( dev-libs/glib:2 x11-libs/cairo[X] x11-libs/gdk-pixbuf:2 x11-libs/libxcb[xkb] x11-libs/libxkbfile x11-libs/pango[X] ~x11-libs/xcb-imdkit-1.0.3 x11-libs/xcb-util x11-libs/xcb-util-keysyms x11-libs/xcb-util-wm ) dev-libs/libfmt emoji? ( app-i18n/unicode-cldr dev-libs/expat ) enchant? ( app-text/enchant:2 ) keyboard? ( app-text/iso-codes dev-libs/expat dev-libs/json-c x11-libs/libxkbcommon[X?] x11-misc/xkeyboard-config ) libuuid? ( sys-apps/util-linux ) sys-devel/gettext systemd? ( sys-apps/systemd ) !systemd? ( dbus? ( sys-apps/dbus ) dev-libs/libevent ) virtual/libintl wayland? ( dev-libs/glib:2 dev-libs/wayland dev-libs/wayland-protocols dev-util/wayland-scanner x11-libs/cairo x11-libs/gdk-pixbuf:2 x11-libs/pango )
+DESCRIPTION=Fcitx (Flexible Context-aware Input Tool with eXtension) input method framework
+EAPI=8
+HOMEPAGE=https://fcitx-im.org/ https://github.com/fcitx/fcitx5
+INHERIT=cmake xdg-utils
+IUSE=X coverage dbus doc +emoji +enchant +keyboard +libuuid +server systemd test wayland
+KEYWORDS=~amd64 ~x86
+LICENSE=LGPL-2.1+
+RDEPEND=X? ( dev-libs/glib:2 x11-libs/cairo[X] x11-libs/gdk-pixbuf:2 x11-libs/libxcb[xkb] x11-libs/libxkbfile x11-libs/pango[X] ~x11-libs/xcb-imdkit-1.0.3 x11-libs/xcb-util x11-libs/xcb-util-keysyms x11-libs/xcb-util-wm ) dev-libs/libfmt emoji? ( app-i18n/unicode-cldr dev-libs/expat ) enchant? ( app-text/enchant:2 ) keyboard? ( app-text/iso-codes dev-libs/expat dev-libs/json-c x11-libs/libxkbcommon[X?] x11-misc/xkeyboard-config ) libuuid? ( sys-apps/util-linux ) sys-devel/gettext systemd? ( sys-apps/systemd ) !systemd? ( dbus? ( sys-apps/dbus ) dev-libs/libevent ) virtual/libintl wayland? ( dev-libs/glib:2 dev-libs/wayland dev-libs/wayland-protocols dev-util/wayland-scanner x11-libs/cairo x11-libs/gdk-pixbuf:2 x11-libs/pango )
+REQUIRED_USE=coverage? ( test )
+RESTRICT=!test? ( test )
+SLOT=5
+SRC_URI=https://github.com/fcitx/fcitx5/archive/refs/tags/5.0.19.tar.gz -> fcitx-5.0.19.tar.gz https://download.fcitx-im.org/data/en_dict-20121020.tar.gz -> fcitx-data-en_dict-20121020.tar.gz
+_eclasses_=toolchain-funcs	1542e649be915f43f6908a9e93909961	multilib	5ca4e49abed8e3a2f7b56920eadee157	flag-o-matic	29a755b1291d64133634d80b0328f153	multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ninja-utils	58ec4e54962bf45d065fb95030701514	xdg-utils	fffb53a53cf17c9c0c998a3c0a590c7e	cmake	44afbf15c35884f7c840470f1cf05d0d
+_md5_=e32d786460bbd00695ae1a7f29a0b809
