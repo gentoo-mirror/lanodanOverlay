@@ -72,9 +72,8 @@ BDEPEND="
 "
 
 S="${WORKDIR}/${MY_PN}-${PV}"
-PATCHES=(
-	"${FILESDIR}/${PN}-5.0.8-fix-conflicts-with-fcitx4.diff"
-)
+#	"${FILESDIR}/${PN}-5.0.8-fix-conflicts-with-fcitx4.diff"
+PATCHES=( )
 
 src_prepare() {
 	cp "${DISTDIR}/fcitx-data-en_dict-${DV}.tar.gz" src/modules/spell/en_dict-${DV}.tar.gz || die
