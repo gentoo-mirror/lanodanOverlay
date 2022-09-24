@@ -32,7 +32,7 @@ src_install() {
 	emake install DESTDIR="${D}"
 
 	if use !suspend; then
-		rm "${D}/opt/lanodan/sbin/memsys" || die "Failed removing memsys"
+		rm "${D}/opt/lanodan/bin/memsys" || die "Failed removing memsys"
 	fi
 
 	# before 50baselayout
