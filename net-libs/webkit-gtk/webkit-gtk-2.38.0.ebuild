@@ -26,6 +26,7 @@ REQUIRED_USE="
 	gles2-only? ( egl )
 	gstreamer? ( egl )
 	wayland? ( egl )
+	webrtc? ( gstreamer )
 	|| ( aqua wayland X )
 "
 
@@ -67,7 +68,10 @@ RDEPEND="
 		>=media-libs/gst-plugins-bad-1.14:1.0[X?]
 		gles2-only? ( media-libs/gst-plugins-base:1.0[gles2] )
 		!gles2-only? ( media-libs/gst-plugins-base:1.0[opengl] )
-		webrtc? ( media-plugins/gst-plugins-webrtc:1.0 )
+	)
+	webrtc? (
+		media-plugins/gst-plugins-webrtc:1.0
+		dev-libs/openssl:=
 	)
 
 	X? (
@@ -239,6 +243,7 @@ src_configure() {
 		-DENABLE_QUARTZ_TARGET=$(usex aqua)
 		-DENABLE_WAYLAND_TARGET=$(usex wayland)
 		-DENABLE_WEB_RTC=$(usex webrtc)
+		-DENABLE_MEDIA_STREAM=$(usex webrtc)
 		-DENABLE_X11_TARGET=$(usex X)
 		-DUSE_ANGLE_WEBGL=OFF
 		-DUSE_AVIF=$(usex avif)
