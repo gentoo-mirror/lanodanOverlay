@@ -239,6 +239,7 @@ src_configure() {
 		-DENABLE_QUARTZ_TARGET=$(usex aqua)
 		-DENABLE_WAYLAND_TARGET=$(usex wayland)
 		-DENABLE_WEB_RTC=$(usex webrtc)
+		-DENABLE_MEDIA_STREAM=$(usex webrtc)
 		-DENABLE_X11_TARGET=$(usex X)
 		-DUSE_ANGLE_WEBGL=OFF
 		-DUSE_AVIF=$(usex avif)
