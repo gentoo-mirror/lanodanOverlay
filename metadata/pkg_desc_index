@@ -8,7 +8,6 @@ app-doc/single-unix-specification 4_p3-r1: The Single UNIX Specification, Versio
 app-editors/2f30-ed 9999: Simple ed(1) implementation from 2f30.org
 app-editors/vim 1.24: Vi IMitation
 app-emulation/tinyemu 0.2019.12.21-r1: small and simple system emulator for the RISC-V and x86 architectures
-app-emulation/uxn 9999: Assembler and emulator for the Uxn stack-machine, written in ANSI C
 app-emulation/wine-wayland 9999: Free implementation of Windows(tm) on Unix, collabora's wayland branch
 app-i18n/fcitx 5.0.19: Fcitx (Flexible Context-aware Input Tool with eXtension) input method framework
 app-i18n/fcitx-anthy 5.0.12: Japanese Anthy input methods for Fcitx5
