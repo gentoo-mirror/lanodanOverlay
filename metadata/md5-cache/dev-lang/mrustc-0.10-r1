@@ -1,4 +1,4 @@
-DEFINED_PHASES=install prepare
+DEFINED_PHASES=compile install prepare
 DESCRIPTION=Alternative rust compiler (re-implementation)
 EAPI=8
 HOMEPAGE=https://github.com/thepowersgang/mrustc
@@ -6,4 +6,4 @@ KEYWORDS=~amd64
 LICENSE=MIT
 SLOT=0
 SRC_URI=https://github.com/thepowersgang/mrustc/archive/refs/tags/v0.10.tar.gz -> mrustc-0.10.tar.gz
-_md5_=14edae945c7e4e859f77c3bb29f91781
+_md5_=2cff127ff0b5c63cb3ed9eca448a4714
