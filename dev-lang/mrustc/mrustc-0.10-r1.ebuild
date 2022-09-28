@@ -23,9 +23,16 @@ src_prepare() {
 		Makefile || die
 
 	sed -i '/objcopy --only-keep-debug/,/strip/d' Makefile || die
+	sed -i '/objcopy --only-keep-debug/,/strip/d' tools/minicargo/Makefile || die
+}
+
+src_compile() {
+	emake all
+	emake -C tools/minicargo
 }
 
 src_install() {
 	einstalldocs
 	dobin bin/mrustc
+	dobin bin/minicargo
 }
