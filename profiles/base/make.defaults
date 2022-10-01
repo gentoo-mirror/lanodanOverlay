@@ -23,7 +23,7 @@ PORTAGE_GPG_DIR="/var/lib/gentoo/gkeys/keyrings/gentoo/release/"
 RESUMECOMMAND="${FETCHCOMMAND} -C -"
 
 ACCEPT_LICENSE="-* @FREE"
-L10N="en en-US en-GB fr fr-CA ja is jbo de de-DE ru" # profiles/desc/l10n.desc
+L10N="en en-US en-GB fr fr-CA ja is jbo de de-DE ru br" # profiles/desc/l10n.desc
 
 EGIT_CLONE_TYPE="shallow" # --depth=1
 CMAKE_MAKEFILE_GENERATOR="ninja"
