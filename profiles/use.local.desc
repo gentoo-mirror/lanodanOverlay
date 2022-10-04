@@ -84,10 +84,6 @@ media-libs/libsdl2:vulkan - Enable Vulkan support
 media-libs/portaudio:sndio - Enable support for sndio
 media-libs/portmidi:sndio - Enable support for sndio
 media-libs/portmidi:test-programs - Install various example programs
-media-libs/x264:10bit - Set output bit depth to 10, this may not be compatible with all decoders
-media-libs/x264:interlaced - enable interlaced encoding support, this can decrease encoding speed by up to 2%
-media-libs/x264:opencl - Add support for OpenCL.
-media-libs/x264:pic - disable optimized assembly code that is not PIC friendly
 media-sound/sbagen:sounds - Downloads extra sounds (in Vorbis)
 media-sound/tenacity:id3tag - Enables ID3 tagging with id3tag library
 media-sound/tenacity:lv2 - Add support for Ladspa V2
@@ -129,12 +125,6 @@ media-video/obs-studio:speex - Enable noise suppression filter support via media
 media-video/obs-studio:ssl - Build support for TLS/SSL connections (RTMPS) via net-libs/mbedtls.
 media-video/obs-studio:vlc - Build support for using media-video/vlc as a media source.
 net-dns/getdns:stubby - Include stubby in getdns
-net-im/bitlbee:libevent - Use libevent for event handling
-net-im/bitlbee:nss - Use NSS for SSL support in MSN and Jabber
-net-im/bitlbee:otr - Enable support for encrypted conversations
-net-im/bitlbee:plugins - Enable support for plugins
-net-im/bitlbee:purple - Use libpurple instead of the built-in IM protocol support
-net-im/bitlbee:twitter - Enable Twitter protocol support
 net-libs/glib-networking:gnome - Extract HTTP/HTTPS/SOCKS proxy configuration stored using GSettings
 net-libs/glib-networking:libproxy - Use net-libs/libproxy for getting the HTTP/HTTPS/SOCKS proxy configuration
 net-libs/glib-networking:openssl - support for OpenSSL networking configration

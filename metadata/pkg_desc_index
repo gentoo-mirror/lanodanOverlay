@@ -57,7 +57,6 @@ dev-util/gyp-next 0.13.0: fork of the GYP (Generate Your Projects) build system 
 dev-util/rebar 3.19.0: Erlang build tool that makes it easy to compile and test Erlang applications and releases
 games-arcade/crypt_of_the_necrodancer 1.29.14917: Crypt of the Necrodancer (GOG)
 games-arcade/emilia-pinball 9999: SDL OpenGL pinball game
-games-arcade/osu-lazer 9999.999.9: rhythm is just a *click* away!
 games-arcade/pinball-table-gnu 9999: GNU table for games-arcade/emilia-pinball
 games-arcade/pinball-table-hurd 9999: Hurd table for games-arcade/emilia-pinball
 games-arcade/tinymania 9999: A VSRG clone for playing .osu files.
@@ -98,7 +97,6 @@ media-libs/libsdl2 9999: Simple Direct Media Layer
 media-libs/portaudio 19.06.00-r3: A free, cross-platform, open-source, audio I/O library
 media-libs/portmidi 217-r3: Library for real time MIDI input and output
 media-libs/portsmf 239: Portable library for reading/writing Standard MIDI Files
-media-libs/x264 0.0.20170701: A free library for encoding X264/AVC streams
 media-plugins/gst-plugins-libnice 0.1.18-r1: GStreamer plugin for ICE (RFC 5245) support
 media-sound/oss 4.2.2019 4.2.2020 4.2.9999: Open Sound System (OSS)
 media-sound/sbagen 1.4.5: Command line sequenced binaural beat generator
@@ -108,7 +106,6 @@ media-video/mpv 0.33.1-r2 0.34.1-r2: Media player based on MPlayer and mplayer2
 media-video/obs-studio 9999: Software for Recording and Streaming Live Video Content (wayland branch)
 media-video/untrunc 9999: Restore a truncated mp4/mov
 net-dns/getdns 1.3.0: Modern asynchronous DNS API
-net-im/bitlbee 3.5.1 9999: irc to IM gateway that support multiple IM protocols
 net-libs/glib-networking 2.72.0: Network-related giomodules for glib
 net-libs/libnice 0.1.18-r1: An implementation of the Interactice Connectivity Establishment standard (ICE)
 net-libs/libsoup 3.0.8: HTTP client/server library for GNOME
@@ -118,7 +115,6 @@ net-misc/ap-client 9999: CLI-based client / toolbox for ActivityPub Client-to-Se
 net-misc/cve-client 9999: CLI-based client / toolbox for CVE.org
 net-misc/drawterm 9999: connect to Plan 9 CPU servers from other operating systems
 net-misc/fbxosctrl 2.4.4: Shell tool to control some Freebox OS stuff: wifi, reboot...
-net-misc/pussh 9999: Parallel SSH, batch and command line oriented
 net-news/newsboat 2.13-r1: An RSS/Atom feed reader for text terminals
 net-nntp/suck 4.3.4: Grab news from a remote NNTP server and feed them to another
 net-p2p/gnunet 0.11.0_pre66: GNUnet is a framework for secure peer-to-peer networking.
