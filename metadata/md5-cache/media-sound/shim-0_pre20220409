@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install
+DEPEND=media-libs/portmidi
+DESCRIPTION=Pipe 3-bytes packets (channel, note, velocity) to a MIDI device
+EAPI=8
+HOMEPAGE=https://git.sr.ht/~rabbits/shim/
+KEYWORDS=~amd64 ~arm64
+LICENSE=MIT
+RDEPEND=media-libs/portmidi
+SLOT=0
+SRC_URI=https://git.sr.ht/~rabbits/shim/archive/4248690cecc249ab825753bae6ce25c7f4ac4cd1.tar.gz -> shim-4248690cecc249ab825753bae6ce25c7f4ac4cd1.tar.gz
+_md5_=d06452ba0691a79698373df4929f79dd

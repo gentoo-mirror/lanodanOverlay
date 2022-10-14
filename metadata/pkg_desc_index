@@ -101,6 +101,7 @@ media-libs/portsmf 239: Portable library for reading/writing Standard MIDI Files
 media-plugins/gst-plugins-libnice 0.1.18-r1: GStreamer plugin for ICE (RFC 5245) support
 media-sound/oss 4.2.2019 4.2.2020 4.2.9999: Open Sound System (OSS)
 media-sound/sbagen 1.4.5: Command line sequenced binaural beat generator
+media-sound/shim 0_pre20220409 9999: Pipe 3-bytes packets (channel, note, velocity) to a MIDI device
 media-sound/tenacity 9999: easy-to-use, cross-platform multi-track audio editor/recorder
 media-video/adobe-flashplayer-projector 32.0.0.465: Adobe Flash Player standalone projector
 media-video/mpv 0.33.1-r2 0.34.1-r2: Media player based on MPlayer and mplayer2

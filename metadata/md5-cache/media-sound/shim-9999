@@ -1,0 +1,13 @@
+BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=compile install unpack
+DEPEND=media-libs/portmidi
+DESCRIPTION=Pipe 3-bytes packets (channel, note, velocity) to a MIDI device
+EAPI=8
+HOMEPAGE=https://git.sr.ht/~rabbits/shim/
+INHERIT=git-r3
+LICENSE=MIT
+PROPERTIES=live
+RDEPEND=media-libs/portmidi
+SLOT=0
+_eclasses_=git-r3	b9ac6f96d2a88edb5b351df634dc5e53
+_md5_=d06452ba0691a79698373df4929f79dd
