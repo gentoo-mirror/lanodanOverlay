@@ -12,5 +12,6 @@ KEYWORDS="~amd64"
 
 src_configure() {
 	export prefix=/usr
+	export libdir="/usr/$(get_libdir)"
 	default
 }
