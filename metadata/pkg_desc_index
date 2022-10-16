@@ -105,7 +105,6 @@ media-sound/sbagen 1.4.5: Command line sequenced binaural beat generator
 media-sound/shim 0_pre20220409 9999: Pipe 3-bytes packets (channel, note, velocity) to a MIDI device
 media-sound/tenacity 9999: easy-to-use, cross-platform multi-track audio editor/recorder
 media-video/adobe-flashplayer-projector 32.0.0.465: Adobe Flash Player standalone projector
-media-video/mpv 0.33.1-r2 0.34.1-r2: Media player based on MPlayer and mplayer2
 media-video/obs-studio 9999: Software for Recording and Streaming Live Video Content (wayland branch)
 media-video/untrunc 9999: Restore a truncated mp4/mov
 net-dns/getdns 1.3.0: Modern asynchronous DNS API
