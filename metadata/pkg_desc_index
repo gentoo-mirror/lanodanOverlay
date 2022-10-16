@@ -21,6 +21,7 @@ dev-dotnet/nuget 5.0.2: Nuget - .NET Package Manager
 dev-elixir/hex 1.0.1: Package manager for the Erlang VM
 dev-lang/erlang 24.0.6: Erlang programming language, runtime environment and libraries (OTP)
 dev-lang/go 0.20171003: Boostrap Go from C (useful for musl libc)
+dev-lang/kuroko 1.3.0: Dynamic, bytecode-compiled programming language and a dialect of Python
 dev-lang/mrustc 0.10-r1: Alternative rust compiler (re-implementation)
 dev-libs/elfutils 0.186_pre9999: Libraries/utilities to handle ELF objects (drop in replacement for libelf)
 dev-libs/hts_engine 1.10: HMM-based speech synthesis system (HTS) engine and API

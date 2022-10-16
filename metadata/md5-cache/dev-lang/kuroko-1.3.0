@@ -1,0 +1,9 @@
+DEFINED_PHASES=configure
+DESCRIPTION=Dynamic, bytecode-compiled programming language and a dialect of Python
+EAPI=8
+HOMEPAGE=https://kuroko-lang.github.io/
+KEYWORDS=~amd64
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/kuroko-lang/kuroko/archive/refs/tags/v1.3.0.tar.gz -> kuroko-1.3.0.tar.gz
+_md5_=497e60cb102baea47a933a26b19dfe0d
