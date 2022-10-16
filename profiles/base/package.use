@@ -21,3 +21,4 @@ app-text/mandoc system-man
 net-misc/openssh -scp -ssl
 sys-auth/seatd server
 dev-lang/python -ensurepip # Bundled pip shit for venv
+dev-libs/libxml2 -ftp
