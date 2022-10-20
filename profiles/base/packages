@@ -21,6 +21,7 @@ net-dns/unbound
 net-libs/ldns
 sys-apps/ed
 sys-apps/lanodan-utils
+sys-apps/man-pages-posix
 sys-devel/clang
 sys-kernel/gentoo-sources
 sys-process/dcron
