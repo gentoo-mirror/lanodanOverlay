@@ -28,7 +28,7 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 RDEPEND="
 	${PYTHON_DEPS}
 	virtual/opengl
-	sys-libs/zlib
+	sys-libs/zlib:=
 	dev-libs/expat
 	media-sound/lame
 	media-libs/libsndfile
@@ -46,10 +46,10 @@ RDEPEND="
 	twolame? ( media-sound/twolame )
 	ogg? ( media-libs/libogg )
 	vorbis? ( media-libs/libvorbis )
-	flac? ( media-libs/flac[cxx] )
+	flac? ( media-libs/flac:=[cxx] )
 	sbsms? ( media-libs/libsbsms )
-	soundtouch? ( media-libs/libsoundtouch )
-	ffmpeg? ( media-video/ffmpeg )
+	soundtouch? ( media-libs/libsoundtouch:= )
+	ffmpeg? ( media-video/ffmpeg:= )
 	lv2? (
 		media-libs/lv2
 		media-libs/lilv
