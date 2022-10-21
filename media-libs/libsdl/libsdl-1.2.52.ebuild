@@ -29,7 +29,7 @@ IUSE="
 
 # IUSE inheritance dropped: dga, xv, fbcon, tflib, aalib, libcaca, custom-cflags, static-libs, X
 DEPEND="
-	media-libs/libsdl2[oss?,alsa?,nas?,xinerama?,opengl?,sound?,video?,joystick?,pulseaudio?]
+	media-libs/libsdl2[oss?,alsa?,nas?,xinerama(+)?,opengl?,sound?,video?,joystick?,pulseaudio?]
 "
 RDEPEND="${DEPEND}"
 
