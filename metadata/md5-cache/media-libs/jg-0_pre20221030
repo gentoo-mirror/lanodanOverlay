@@ -1,0 +1,9 @@
+DEFINED_PHASES=configure
+DESCRIPTION=Jolly Good API, an API for Emulators
+EAPI=8
+HOMEPAGE=https://gitlab.com/jgemu/jg
+KEYWORDS=~amd64
+LICENSE=ZLIB
+SLOT=0
+SRC_URI=https://gitlab.com/jgemu/jg/-/archive/136dfb998b77d475baaa33370deb4f5f8a5d1503/jg-136dfb998b77d475baaa33370deb4f5f8a5d1503.tar.gz
+_md5_=29909303ae54565582c79255293aedb2

@@ -92,6 +92,7 @@ media-libs/fmod 4.44.64: Libraries of the fmodex audio engine
 media-libs/freeglut 3.2.1-r1 3.2.2: A free OpenGL utility toolkit, the open-sourced alternative to the GLUT library
 media-libs/glew 2.1.0: The OpenGL Extension Wrangler Library
 media-libs/glfw 2.7.9: The Portable OpenGL FrameWork
+media-libs/jg 0_pre20221030: Jolly Good API, an API for Emulators
 media-libs/libplacebo 3.104.0: Reusable library for GPU-accelerated image processing primitives
 media-libs/libsbsms 2.3.0: A library for high quality time and pitch scale modification
 media-libs/libsdl 1.2.52 9999: Simple Direct Media Layer (sdl-1.2 compatibility)
