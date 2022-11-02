@@ -1,0 +1,15 @@
+BDEPEND=test? ( dev-libs/atf dev-util/kyua ) >=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=install unpack
+DEPEND=virtual/libcrypt
+DESCRIPTION=Simple and portable utilities to deal with user accounts (su, login)
+EAPI=8
+HOMEPAGE=https://hacktivis.me/git/skeud
+INHERIT=git-r3
+IUSE=test
+LICENSE=AGPL-3
+PROPERTIES=live
+RDEPEND=virtual/libcrypt
+RESTRICT=!test? ( test )
+SLOT=0
+_eclasses_=git-r3	b9ac6f96d2a88edb5b351df634dc5e53
+_md5_=0ed76b98299ea53239547f5f384b363f

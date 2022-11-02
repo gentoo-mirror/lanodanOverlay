@@ -129,6 +129,7 @@ sys-apps/sdate 0.7: never ending September date
 sys-apps/shadow 4.11.1: Utilities to deal with user accounts
 sys-apps/tcb 1.2-r1: Libraries and tools implementing the tcb password shadowing scheme
 sys-apps/xdg-dbus-proxy 0.1.2: filtering proxy for D-Bus connections
+sys-auth/skeud 9999: Simple and portable utilities to deal with user accounts (su, login)
 sys-devel/gettext 0.3.2-r1: Stub and/or lightweight replacements of the GNU gettext suite
 sys-libs/gcompat 0.4.0: The GNU C Library compatibility layer for musl
 sys-libs/libtickit 0.3.3: library for building interactive full-screen terminal programs
