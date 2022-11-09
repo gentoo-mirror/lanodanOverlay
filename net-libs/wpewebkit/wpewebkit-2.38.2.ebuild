@@ -12,9 +12,11 @@ DESCRIPTION="WebKit port optimized for embedded devices"
 HOMEPAGE="https://wpewebkit.org/"
 LICENSE="LGPL-2+ BSD"
 SRC_URI="https://wpewebkit.org/releases/${P}.tar.xz"
-SLOT="1.0" # WPE_API_VERSION
+SLOT="1.1" # WPE_API_VERSION
 KEYWORDS="~amd64"
-IUSE="accessibility doc examples experimental jpeg2k qt +gstreamer sandbox systemd +webdriver +webcrypto X"
+IUSE="accessibility doc examples experimental gamepad jpeg2k qt +gstreamer sandbox systemd +webdriver +webcrypto webrtc X"
+
+REQUIRED_USE="webrtc? ( gstreamer )"
 
 RDEPEND="
 	>=x11-libs/cairo-1.16.0:=[X?]
@@ -26,7 +28,7 @@ RDEPEND="
 	virtual/jpeg:0=
 	>=media-libs/libepoxy-1.4.0:=
 	>=dev-libs/libgcrypt-1.7.0:=
-	>=net-libs/libsoup-2.54.0:=
+	net-libs/libsoup:3.0=
 	>=dev-libs/libxml2-2.8.0:=
 	media-libs/libpng:=
 	dev-db/sqlite:3=
@@ -55,12 +57,17 @@ RDEPEND="
 		>=media-plugins/gst-plugins-opus-1.16:1.0
 		>=media-libs/gst-plugins-bad-1.16:1.0
 	)
+	webrtc? (
+		media-plugins/gst-plugins-webrtc:1.0
+		dev-libs/openssl:=
+	)
 	accessibility? (
 		>=dev-libs/atk-2.16.0:=
 		app-accessibility/at-spi2-atk:=
 	)
 	sandbox? ( sys-apps/bubblewrap )
 	systemd? ( sys-apps/systemd:= )
+	gamepad? ( >=dev-libs/libmanette-0.2.4 )
 "
 DEPEND="
 	${RDEPEND}
@@ -90,11 +97,11 @@ src_configure() {
 		"-DPORT=WPE"
 		-DENABLE_ACCESSIBILITY=$(usex accessibility)
 		-DENABLE_BUBBLEWRAP_SANDBOX=$(usex sandbox)
+		-DENABLE_GAMEPAD=$(usex gamepad)
 		-DUSE_WOFF2=ON
 		-DSHOULD_INSTALL_JS_SHELL=ON
 		-DENABLE_ENCRYPTED_MEDIA=OFF
 		-DENABLE_EXPERIMENTAL_FEATURES=$(usex experimental)
-		-DENABLE_GTKDOC=$(usex doc)
 		-DUSE_OPENJPEG=$(usex jpeg2k)
 		-DENABLE_WPE_QT_API=$(usex qt)
 		-DENABLE_MINIBROWSER=$(usex examples)
@@ -103,7 +110,9 @@ src_configure() {
 		-DENABLE_WEBDRIVER=$(usex webdriver)
 		-DENABLE_WEB_CRYPTO=$(usex webcrypto)
 		-DENABLE_XSLT=ON
-		-DUSE_SYSTEMD=$(usex systemd) # Whether to enable journald logging
+		-DENABLE_JOURNALD_LOG=$(usex systemd)
+		-DENABLE_WEB_RTC=$(usex webrtc)
+		-DENABLE_MEDIA_STREAM=$(usex webrtc)
 		${ruby_interpreter}
 	)
 
