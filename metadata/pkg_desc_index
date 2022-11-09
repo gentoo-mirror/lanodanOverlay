@@ -113,7 +113,7 @@ net-libs/glib-networking 2.72.0: Network-related giomodules for glib
 net-libs/libnice 0.1.18-r1: An implementation of the Interactice Connectivity Establishment standard (ICE)
 net-libs/libsoup 3.0.8: HTTP client/server library for GNOME
 net-libs/webkit-gtk 2.37.91 2.37.91-r100 2.37.91-r200 2.38.2 2.38.2-r100 2.38.2-r200: Open source web browser engine
-net-libs/wpewebkit 2.32.3: WebKit port optimized for embedded devices
+net-libs/wpewebkit 2.38.2: WebKit port optimized for embedded devices
 net-misc/ap-client 9999: CLI-based client / toolbox for ActivityPub Client-to-Server
 net-misc/cve-client 9999: CLI-based client / toolbox for CVE.org
 net-misc/drawterm 9999: connect to Plan 9 CPU servers from other operating systems
