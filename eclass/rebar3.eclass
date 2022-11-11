@@ -1,5 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
-# Copyright 2019-2022 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 # @ECLASS: rebar3.eclass
@@ -8,7 +7,7 @@
 # @AUTHOR:
 # Amadeusz Żołnowski <aidecoe@gentoo.org>
 # Haelwenn (lanodan) Monnier <contact@hacktivis.me>
-# @SUPPORTED_EAPIS: 6
+# @SUPPORTED_EAPIS: 6 7
 # @BLURB: Build Erlang/OTP projects using dev-util/rebar3.
 # @DESCRIPTION:
 # An eclass providing functions to build Erlang/OTP projects using
@@ -25,7 +24,7 @@ case "${EAPI:-0}" in
 	0|1|2|3|4|5)
 		die "Unsupported EAPI=${EAPI:-0} (too old) for ${ECLASS}"
 		;;
-	6)
+	6|7)
 		;;
 	*)
 		die "Unsupported EAPI=${EAPI} (unknown) for ${ECLASS}"
