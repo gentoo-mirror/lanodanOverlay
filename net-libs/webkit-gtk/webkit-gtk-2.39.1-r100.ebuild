@@ -16,15 +16,17 @@ SRC_URI="https://www.webkitgtk.org/releases/${MY_P}.tar.xz"
 
 LICENSE="LGPL-2+ BSD"
 SLOT="4.1/0" # soname version of libwebkit2gtk-4.1
+KEYWORDS=""
 
 IUSE="aqua +avif debug doc +egl examples gamepad +geolocation gles2-only gnome-keyring +gstreamer +introspection +jpeg2k +jumbo-build lcms +seccomp spell systemd test wayland webrtc +X"
 
 # gstreamer with opengl/gles2 needs egl
 REQUIRED_USE="
+	doc? ( introspection )
 	gles2-only? ( egl )
 	gstreamer? ( egl )
 	wayland? ( egl )
-	doc? ( introspection )
+	webrtc? ( gstreamer )
 	|| ( aqua wayland X )
 "
 
@@ -66,7 +68,10 @@ RDEPEND="
 		>=media-libs/gst-plugins-bad-1.14:1.0[X?]
 		gles2-only? ( media-libs/gst-plugins-base:1.0[gles2] )
 		!gles2-only? ( media-libs/gst-plugins-base:1.0[opengl] )
-		webrtc? ( media-plugins/gst-plugins-webrtc:1.0 )
+	)
+	webrtc? (
+		media-plugins/gst-plugins-webrtc:1.0
+		dev-libs/openssl:=
 	)
 
 	X? (
@@ -222,13 +227,9 @@ src_configure() {
 		-DENABLE_UNIFIED_BUILDS=$(usex jumbo-build)
 		-DENABLE_VIDEO=$(usex gstreamer)
 		-DENABLE_WEBGL=ON
-		# Supported only under ANGLE, see
-		# https://bugs.webkit.org/show_bug.cgi?id=225563
-		# https://bugs.webkit.org/show_bug.cgi?id=224888
-		-DENABLE_WEBGL2=OFF
+		-DENABLE_WEBGL2=ON
 		-DENABLE_WEB_AUDIO=$(usex gstreamer)
 		-DENABLE_WEBDRIVER=OFF
-		-DENABLE_WEB_CRYPTO=OFF
 		# -DENABLE_TOUCH_EVENTS=OFF
 		# -DENABLE_DRAG_SUPPORT=OFF
 
@@ -237,9 +238,11 @@ src_configure() {
 		-DENABLE_DOCUMENTATION=$(usex doc)
 		-DENABLE_INTROSPECTION=$(usex introspection)
 		-DENABLE_JOURNALD_LOG=$(usex systemd)
+		-DENABLE_PDFJS=OFF # gentoo has www-plugins/pdfjs
 		-DENABLE_QUARTZ_TARGET=$(usex aqua)
 		-DENABLE_WAYLAND_TARGET=$(usex wayland)
 		-DENABLE_WEB_RTC=$(usex webrtc)
+		-DENABLE_MEDIA_STREAM=$(usex webrtc)
 		-DENABLE_X11_TARGET=$(usex X)
 		-DUSE_ANGLE_WEBGL=OFF
 		-DUSE_AVIF=$(usex avif)
