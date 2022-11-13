@@ -34,12 +34,16 @@ src_install() {
 	doman manpages/rebar3.1
 	dodoc rebar.config.sample
 
-	dobashcomp priv/shell-completion/bash/rebar3
-	newenvd - 98rebar3 <<< 'REBAR3_CMD='${EPREFIX}'/usr/bin/rebar3'
+	newenvd - 98rebar3 <<EOF
+REBAR3_CMD=${EPREFIX}/usr/bin/rebar3
+MIX_REBAR3=${EPREFIX}/usr/bin/rebar3
+EOF
+
+	dobashcomp apps/rebar/priv/shell-completion/bash/rebar3
 
 	insinto /usr/share/fish/completion
-	newins priv/shell-completion/fish/rebar3.fish rebar3
+	newins apps/rebar/priv/shell-completion/fish/rebar3.fish rebar3
 
 	insinto /usr/share/zsh/site-functions
-	doins priv/shell-completion/zsh/_rebar3
+	doins apps/rebar/priv/shell-completion/zsh/_rebar3
 }
