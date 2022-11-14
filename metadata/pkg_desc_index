@@ -116,7 +116,7 @@ net-libs/webkit-gtk 2.38.2 2.38.2-r100 2.38.2-r200 2.39.1 2.39.1-r100 2.39.1-r20
 net-libs/wpewebkit 2.38.2: WebKit port optimized for embedded devices
 net-misc/ap-client 9999: CLI-based client / toolbox for ActivityPub Client-to-Server
 net-misc/cve-client 9999: CLI-based client / toolbox for CVE.org
-net-misc/drawterm 9999: connect to Plan 9 CPU servers from other operating systems
+net-misc/drawterm 0_p20221013 9999: Connect to Plan 9 CPU servers from other operating systems
 net-misc/fbxosctrl 2.4.4: Shell tool to control some Freebox OS stuff: wifi, reboot...
 net-news/newsboat 2.13-r1: An RSS/Atom feed reader for text terminals
 net-nntp/suck 4.3.4: Grab news from a remote NNTP server and feed them to another

@@ -1,15 +1,14 @@
-BDEPEND=virtual/pkgconfig wayland? ( dev-util/wayland-scanner ) >=dev-vcs/git-1.8.2.1[curl]
-DEFINED_PHASES=compile configure install unpack
+BDEPEND=virtual/pkgconfig wayland? ( dev-util/wayland-scanner )
+DEFINED_PHASES=compile configure install
 DEPEND=alsa? ( media-libs/alsa-lib ) pipewire? ( media-video/pipewire:= ) sndio? ( media-sound/sndio:= ) wayland? ( dev-libs/wayland dev-libs/wayland-protocols x11-libs/libxkbcommon[wayland] ) X? ( x11-libs/libX11 )
 DESCRIPTION=Connect to Plan 9 CPU servers from other operating systems
 EAPI=8
 HOMEPAGE=https://drawterm.9front.org/
-INHERIT=git-r3
 IUSE=alsa pipewire sndio fbdev wayland X
+KEYWORDS=~amd64 ~arm ~arm64 ~mips ~ppc ~riscv ~sparc ~x86
 LICENSE=MIT
-PROPERTIES=live
 RDEPEND=alsa? ( media-libs/alsa-lib ) pipewire? ( media-video/pipewire:= ) sndio? ( media-sound/sndio:= ) wayland? ( dev-libs/wayland dev-libs/wayland-protocols x11-libs/libxkbcommon[wayland] ) X? ( x11-libs/libX11 )
 REQUIRED_USE=?? ( alsa pipewire sndio ) ^^ ( fbdev wayland X )
 SLOT=0
-_eclasses_=git-r3	2347f8fe2d392b2a091191f94be37e6f
+SRC_URI=http://git.9front.org/git/plan9front/drawterm/65e8a26e1dac4a0f589f615126ad87a92c9c11ab/snap.tar.gz -> drawterm-65e8a26e1dac4a0f589f615126ad87a92c9c11ab.tar.gz
 _md5_=f1064d4547d751d274f5b8e44cbb9b4d
