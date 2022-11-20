@@ -7,5 +7,5 @@ IUSE=X
 LICENSE=BitstreamVera
 SLOT=0
 SRC_URI=https://github.com/antijingoist/open-dyslexic/archive/20160623-Stable.tar.gz -> opendyslexic-20160623.tar.gz
-_eclasses_=font	9cdfddf092c05c7c4efd70cc30dea046
+_eclasses_=font	5e03cb70902daa9ff8967c61130f0f60
 _md5_=c02f5b0424b188f5992e70da4e33c75e
