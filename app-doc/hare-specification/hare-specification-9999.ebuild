@@ -14,7 +14,7 @@ KEYWORDS=""
 IUSE=""
 
 BDEPEND="
-	app-text/texlive[xetext]
+	app-text/texlive[xetex]
 	dev-texlive/texlive-fontsextra
 	dev-texlive/texlive-latexextra
 "
