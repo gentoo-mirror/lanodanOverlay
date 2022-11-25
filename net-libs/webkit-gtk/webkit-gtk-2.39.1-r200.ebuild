@@ -52,6 +52,7 @@ RDEPEND="
 	dev-db/sqlite:3=
 	sys-libs/zlib:0
 	>=dev-libs/atk-2.16.0
+	<dev-libs/atk-2.46.0
 	media-libs/libwebp:=
 
 	>=dev-libs/glib-2.67.1:2
@@ -71,7 +72,7 @@ RDEPEND="
 	)
 	webrtc? (
 		media-plugins/gst-plugins-webrtc:1.0
-		dev-libs/openssl:=
+		>=dev-libs/openssl-3.0.0:=
 	)
 
 	X? (
@@ -125,6 +126,7 @@ BDEPEND="
 	doc? ( dev-util/gi-docgen )
 	geolocation? ( dev-util/gdbus-codegen )
 	>=dev-util/cmake-3.10
+	dev-util/unifdef
 
 "
 RDEPEND="${RDEPEND}
