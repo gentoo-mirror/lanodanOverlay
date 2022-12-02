@@ -11,5 +11,5 @@ RDEPEND=sys-libs/libseccomp sys-libs/libcap selinux? ( >=sys-libs/libselinux-2.1
 RESTRICT=test
 SLOT=0
 SRC_URI=https://github.com/containers/bubblewrap/releases/download/v0.4.0/bubblewrap-0.4.0.tar.xz
-_eclasses_=toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	multilib	5ca4e49abed8e3a2f7b56920eadee157	bash-completion-r1	f5e7a020fd9c741740756aac61bf75ff	linux-info	bbfa385d6907d7948d49a5e107bd654d
+_eclasses_=toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	multilib	5ca4e49abed8e3a2f7b56920eadee157	bash-completion-r1	f5e7a020fd9c741740756aac61bf75ff	linux-info	7a3f8b289bc442b8151fb29bfefe3b76
 _md5_=bdff56f704673bd44372d14ec18cef93
