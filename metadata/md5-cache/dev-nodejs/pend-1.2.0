@@ -1,0 +1,13 @@
+BDEPEND=net-libs/nodejs app-misc/jq
+DEFINED_PHASES=install test
+DESCRIPTION=dead-simple optimistic async helper in javascript
+EAPI=8
+HOMEPAGE=https://github.com/andrewrk/node-pend
+INHERIT=nodejs
+KEYWORDS=~amd64
+LICENSE=MIT
+RDEPEND=dev-nodejs/node_path
+SLOT=0
+SRC_URI=https://github.com/andrewrk/node-pend/archive/refs/tags/1.2.0.tar.gz -> pend-1.2.0.tar.gz
+_eclasses_=nodejs	c71806a62616bfcef6dcb8248a1b888d
+_md5_=0855c419c407e0b025a4f77ef3c33756
