@@ -34,6 +34,7 @@ dev-nodejs/abbrev 1.1.1: Get unique abbreviations for a set of strings
 dev-nodejs/balanced-match 2.0.0: Match balanced character pairs, like { and }
 dev-nodejs/brace-expansion 2.0.1: Brace expansion, as known from sh/bash, in JavaScript
 dev-nodejs/browserify-lite 0.5.1: browserify, minus some of the advanced features and heavy dependencies
+dev-nodejs/chem 4.1.1: 2d canvas-based rapid prototyping game engine
 dev-nodejs/color-name 1.1.4: JSON with CSS color names and its values
 dev-nodejs/env-paths 3.0.0: Get paths for storing things like data, config, cache, etc
 dev-nodejs/fs-realpath 1.0.0: Use node's fs.realpath, but fall back to the JS implementation if the native one fails
@@ -51,6 +52,7 @@ dev-nodejs/once 1.4.0: Run a function exactly one time
 dev-nodejs/pend 1.2.0: dead-simple optimistic async helper in javascript
 dev-nodejs/rimraf 3.0.2: deep deletion module for node (like 'rm -rf')
 dev-nodejs/semver 7.3.7: semantic version parser used by npm
+dev-nodejs/vec2d 0.3.0: 2d vector math with good unit tests
 dev-nodejs/which 2.0.2: Like which(1) unix command. Find the first instance of an executable in the PATH.
 dev-nodejs/wrappy 1.0.2: Callback wrapping utility
 dev-python/firmtool 1.4: Parses, extracts, and builds 3DS firmware files
