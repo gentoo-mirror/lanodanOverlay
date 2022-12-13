@@ -122,7 +122,7 @@ DEPEND="${COMMON_DEPEND}
 	sys-devel/flex
 	>=sys-kernel/linux-headers-2.6
 	virtual/pkgconfig
-	virtual/yacc
+	app-alternatives/yacc
 	wayland? (
 		dev-util/wayland-scanner
 		dev-libs/wayland-protocols
