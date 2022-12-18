@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit meson optfeature
+inherit fcaps meson optfeature
 
 DESCRIPTION="i3-compatible Wayland window manager"
 HOMEPAGE="https://swaywm.org"
@@ -97,6 +97,9 @@ src_install() {
 		doman contrib/grimshot.1
 		dobin contrib/grimshot
 	fi
+
+	# For realtime
+	fcaps cap_sys_nice usr/bin/sway
 }
 
 pkg_postinst() {
