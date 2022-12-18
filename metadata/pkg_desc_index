@@ -82,7 +82,7 @@ gui-libs/libdecor 0.1.0: A client-side decorations library for Wayland clients
 gui-libs/wlrobs 9999: Wayland (wlroots-based) screen capture plugin for obs-studio
 gui-libs/wlroots 0.15.0: Pluggable, composable, unopinionated modules for building a Wayland compositor
 gui-wm/inaban 9999: Distrustful Tiling Wayland Compositor
-gui-wm/sway 1.7_rc1: i3-compatible Wayland window manager
+gui-wm/sway 1.8_rc3: i3-compatible Wayland window manager
 mail-mta/opensmtpd 6.7.1_p1: Lightweight but featured SMTP daemon from OpenBSD
 media-fonts/3270font 2.0.0: A IBM 3270 Terminal font in a modern format
 media-fonts/forkawesome 1.1.4: The iconic font
