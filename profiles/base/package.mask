@@ -35,3 +35,8 @@ media-sound/easytag
 # Open-Core
 # https://github.com/danmar/cppcheck/commit/8f386e15fdedff37486c683d933ccc9a1e307388
 dev-util/cppcheck
+
+# Haelwenn (lanodan) Monnier - 2022-12-20
+# Non-conformant code in version 2022.3 (C++11 errors in Clang)
+# Requires full-copyight assignment for contributions
+media-libs/shaderc
