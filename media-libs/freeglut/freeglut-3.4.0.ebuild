@@ -1,7 +1,7 @@
 # Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 CMAKE_ECLASS=cmake
 inherit cmake-multilib
@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86"
+KEYWORDS="~alpha amd64 arm arm64 ~hppa ~ia64 ~loong ~mips ppc ppc64 ~riscv ~s390 sparc x86 ~amd64-linux ~x86-linux ~ppc-macos"
 IUSE="debug static-libs wayland-only gles2-only"
 
 RDEPEND="
@@ -37,10 +37,8 @@ DEPEND="${RDEPEND}
 BDEPEND="virtual/pkgconfig"
 
 PATCHES=(
-	"${FILESDIR}"/${PN}-3.2.1-gcc10-fno-common.patch
 	"${FILESDIR}"/${PN}-3.2.1-opengl-cmake.patch
 )
-HTML_DOCS=( doc/. )
 
 src_configure() {
 	local mycmakeargs=(
@@ -54,5 +52,5 @@ src_configure() {
 
 multilib_src_install() {
 	cmake_src_install
-	cp "${D}"/usr/$(get_libdir)/pkgconfig/{,free}glut.pc
+	cp "${ED}"/usr/$(get_libdir)/pkgconfig/{,free}glut.pc || die
 }
