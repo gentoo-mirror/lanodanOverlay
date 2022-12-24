@@ -1,5 +1,5 @@
-# Copyright 1999-2020 Gentoo Authors
-# Copyright 2018-2020 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+# Copyright 1999-2022 Gentoo Authors
+# Copyright 2018-2022 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -13,19 +13,21 @@ SRC_URI="https://www.opensmtpd.org/archives/${P/_}.tar.gz"
 LICENSE="ISC BSD BSD-1 BSD-2 BSD-4"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="pam +mta"
+IUSE="berkdb +mta pam"
 
+# < openssl 3 for bug #881701
 DEPEND="
 	acct-user/smtpd
 	acct-user/smtpq
+	<dev-libs/openssl-3:=
 	>=dev-libs/openssl-1.1.0:0=
 	sys-libs/zlib
 	pam? ( sys-libs/pam )
+	berkdb? ( sys-libs/db:= )
 	elibc_musl? (
 		sys-libs/fts-standalone
 		sys-libs/queue-standalone
 	)
-	sys-libs/db:=
 	dev-libs/libevent
 	app-misc/ca-certificates
 	net-mail/mailbase
@@ -48,7 +50,7 @@ S=${WORKDIR}/${P/_}
 
 src_configure() {
 	econf \
-		--sysconfdir=/etc/opensmtpd \
+		--sysconfdir=/etc/smtpd \
 		--with-path-mbox=/var/spool/mail \
 		--with-path-empty=/var/empty \
 		--with-path-socket=/run \
@@ -57,7 +59,8 @@ src_configure() {
 		--with-user-queue=smtpq \
 		--with-group-queue=smtpq \
 		--with-mantype=doc \
-		$(use_with pam auth-pam)
+		$(use_with pam auth-pam) \
+		$(use_with berkdb table-db)
 }
 
 src_install() {
