@@ -63,10 +63,6 @@ gui-wm/sway:wallpapers - Install sway's default wallpaper image
 mail-mta/opensmtpd:mdoc - Use mdoc format for manpages
 mail-mta/opensmtpd:mta - Enable this to install as system-wide MTA
 media-libs/freeglut:wayland-only - Build wayland version instead of X11 version
-media-libs/libplacebo:glslang - Use dev-util/glslang to compile GLSL
-media-libs/libplacebo:lcms - Add support for color management via media-libs/lcms
-media-libs/libplacebo:shaderc - Use media-libs/shaderc to compile GLSL
-media-libs/libplacebo:vulkan - Add support for the vulkan graphics API
 media-libs/libsdl:joystick - Control joystick support (disable at your own risk)
 media-libs/libsdl:sound - Control audio support (disable at your own risk)
 media-libs/libsdl:tslib - Build with tslib support for touchscreen devices
