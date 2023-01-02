@@ -19,10 +19,8 @@ IUSE="berkdb +mta pam"
 DEPEND="
 	acct-user/smtpd
 	acct-user/smtpq
-	|| (
-		dev-libs/openssl:0/1.1
-		dev-libs/openssl-compat:1.1.1
-	)
+	<dev-libs/openssl-3:=
+	>=dev-libs/openssl-1.1.0:0=
 	sys-libs/zlib
 	pam? ( sys-libs/pam )
 	berkdb? ( sys-libs/db:= )
