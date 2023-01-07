@@ -7,7 +7,7 @@ index c00d46456f..29046c5335 100755
      """
  
 -    renpy_base = os.path.dirname(os.path.realpath(sys.argv[0]))
-+    renpy_base = get_python_lib()
++    renpy_base = sysconfig.get_path('platlib')
      renpy_base = os.path.abspath(renpy_base)
  
      return renpy_base

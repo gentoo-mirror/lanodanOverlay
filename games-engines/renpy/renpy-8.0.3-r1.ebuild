@@ -37,10 +37,11 @@ RDEPEND="${DEPEND}
 	!app-eselect/eselect-renpy"
 
 PATCHES=(
-	"${FILESDIR}"/${P}-system-path.patch
-	"${FILESDIR}"/${PN}-6.99.12.4-compat-style.patch
-	"${FILESDIR}"/${PN}-6.99.12.4-compat-infinite-loop.patch
-	"${FILESDIR}"/${P}-use-system-fribidi.patch
+	"${FILESDIR}/${P}-system-path.patch"
+	"${FILESDIR}/renpy-6.99.12.4-compat-style.patch"
+	"${FILESDIR}/renpy-6.99.12.4-compat-infinite-loop.patch"
+	"${FILESDIR}/${P}-use-system-fribidi.patch"
+	"${FILESDIR}/renpy-8.0.3-ignore_rpyc_errors.patch"
 )
 
 python_prepare_all() {
