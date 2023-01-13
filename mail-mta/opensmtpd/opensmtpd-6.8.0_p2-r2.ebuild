@@ -1,5 +1,5 @@
 # Copyright 1999-2022 Gentoo Authors
-# Copyright 2018-2022 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+# Copyright 2018-2023 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -45,6 +45,9 @@ DEPEND="
 	!mail-mta/ssmtp[mta]
 "
 RDEPEND="${DEPEND}"
+
+# Broken build when libbsd is present at configure time
+BDEPEND="!dev-libs/libbsd"
 
 S=${WORKDIR}/${P/_}
 
