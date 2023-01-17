@@ -1,0 +1,25 @@
+--- openjdk.orig/hotspot/src/share/vm/memory/dump.cpp   2021-12-06 19:02:27.037014756 +0000
++++ openjdk/hotspot/src/share/vm/memory/dump.cpp        2021-12-06 19:03:01.597850811 +0000
+@@ -1426,7 +1426,11 @@
+             /* Skip spaces and control characters */
+             continue;
+         }
+-        h = 31 * h + c;
++        jlong h0 = h;
++        for(int i = 0; i < 5; i++) {
++            h += h;
++        }
++        h += c - h0;
+     }
+     return h;
+ }
+--- openjdk/hotspot/src/share/vm/memory/dump.cpp.orig   2021-12-07 00:12:44.969219667 +0000
++++ openjdk/hotspot/src/share/vm/memory/dump.cpp        2021-12-07 00:12:54.219429310 +0000
+@@ -1554,7 +1554,6 @@
+     if (computed_jsum != file_jsum) {
+       tty->cr();
+       tty->print_cr("Preload failed: checksum of class list was incorrect.");
+-      exit(1);
+     }
+ 
+     tty->print_cr("done. ");

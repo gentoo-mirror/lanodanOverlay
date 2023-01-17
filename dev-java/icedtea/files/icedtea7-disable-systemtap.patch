@@ -1,0 +1,20 @@
+--- a/Makefile.am	2020-07-16 14:34:04.759855943 +0000
++++ b/Makefile.am	2020-07-16 14:34:29.151797650 +0000
+@@ -3156,7 +3156,6 @@
+ 	${mkinstalldirs} $(DESTDIR)${prefix}/jre/bin $(DESTDIR)${prefix}/jre/lib
+ 	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/$(INSTALL_ARCH_DIR)/{.,headless,jli,xawt}
+ 	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/ext
+-	${mkinstalldirs} $(DESTDIR)${prefix}/tapset
+ if SPLIT_DEBUGINFO
+ 	${mkinstalldirs} $(DESTDIR)$(DEBUG_PREFIX)/$(bindir) $(DESTDIR)$(DEBUG_PREFIX)/${exec_prefix}/lib
+ 	${mkinstalldirs} $(DESTDIR)$(DEBUG_PREFIX)/${exec_prefix}/lib/$(INSTALL_ARCH_DIR)
+@@ -3256,9 +3255,6 @@
+ 	for files in $(BUILD_SDK_DIR)/jre/lib/ext/*.jar; do \
+ 	  $(call install_file,$${files},$(DESTDIR)${prefix}/jre/lib/ext,$(INSTALL_DATA));\
+ 	done
+-	for files in $(BUILD_SDK_DIR)/tapset/*.stp; do \
+-	  $(call install_file,$${files},$(DESTDIR)${prefix}/tapset,$(INSTALL_DATA));\
+-	done
+ 	$(abs_top_builddir)/pax-mark-vm $(DESTDIR)${prefix} false
+ 
+ install-data-local:

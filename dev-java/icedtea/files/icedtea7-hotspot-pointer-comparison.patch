@@ -1,0 +1,31 @@
+--- openjdk.orig/hotspot/src/share/vm/opto/lcm.cpp      2021-12-06 12:25:52.743843656 +0000
++++ openjdk/hotspot/src/share/vm/opto/lcm.cpp           2021-12-06 12:26:05.814241520 +0000
+@@ -60,7 +60,7 @@
+ // Check whether val is not-null-decoded compressed oop,
+ // i.e. will grab into the base of the heap if it represents NULL.
+ static bool accesses_heap_base_zone(Node *val) {
+-  if (UseCompressedOops && Universe::narrow_oop_base() > 0) {
++  if (UseCompressedOops && (Universe::narrow_oop_base() != 0)) {
+     if (val && val->is_Mach()) {
+         if (val->as_Mach()->ideal_Opcode() == Op_DecodeN) {
+           // This assumes all Decodes with TypePtr::NotNull are matched to nodes that
+--- openjdk.orig/hotspot/src/share/vm/runtime/virtualspace.cpp  2021-12-06 13:08:11.976366383 +0000
++++ openjdk/hotspot/src/share/vm/runtime/virtualspace.cpp       2021-12-06 13:08:34.377048681 +0000
+@@ -527,7 +527,7 @@
+                 (UseCompressedOops && (Universe::narrow_oop_base() != NULL) &&
+                  Universe::narrow_oop_use_implicit_null_checks()) ?
+                   lcm(os::vm_page_size(), alignment) : 0) {
+-  if (base() > 0) {
++  if (base() != 0) {
+     MemTracker::record_virtual_memory_type((address)base(), mtJavaHeap);
+   }
+ 
+@@ -546,7 +546,7 @@
+                 (UseCompressedOops && (Universe::narrow_oop_base() != NULL) &&
+                  Universe::narrow_oop_use_implicit_null_checks()) ?
+                   lcm(os::vm_page_size(), prefix_align) : 0) {
+-  if (base() > 0) {
++  if (base() != 0) {
+     MemTracker::record_virtual_memory_type((address)base(), mtJavaHeap);
+   }
+ 
