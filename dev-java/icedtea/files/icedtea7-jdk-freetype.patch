@@ -1,0 +1,11 @@
+--- openjdk.orig/jdk/make/common/shared/Defs-versions.gmk  2011-04-11 15:03:04.000000000 +0100
++++ openjdk/jdk/make/common/shared/Defs-versions.gmk       2021-12-06 00:33:27.338540213 +0000
+@@ -213,7 +213,7 @@
+ # Generic
+ REQUIRED_ANT_VER          = 1.7.1
+ REQUIRED_BOOT_VER         = 1.6
+-REQUIRED_FREETYPE_VERSION = 2.2.1
++REQUIRED_FREETYPE_VERSION = 2.10.1
+ REQUIRED_MAKE_VER         = 3.81
+ REQUIRED_UNZIP_VER        = 5.12
+ REQUIRED_ZIP_VER          = 2.2

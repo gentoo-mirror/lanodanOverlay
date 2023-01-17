@@ -1,0 +1,11 @@
+--- openjdk.orig/jdk/make/common/Defs-linux.gmk 2021-12-06 17:35:01.291049716 +0000
++++ openjdk/jdk/make/common/Defs-linux.gmk      2021-12-06 17:35:28.811707263 +0000
+@@ -271,7 +271,7 @@
+ #
+ # Misc compiler options
+ #
+-CFLAGS_COMMON   = -fno-strict-aliasing
++CFLAGS_COMMON   = -fno-strict-aliasing -fcommon
+ PIC_CODE_LARGE = -fPIC
+ PIC_CODE_SMALL = -fpic
+ GLOBAL_KPIC = $(PIC_CODE_LARGE)
