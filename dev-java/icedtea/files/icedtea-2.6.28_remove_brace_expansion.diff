@@ -1,7 +1,25 @@
 diff --git a/Makefile.am b/Makefile.am
-index 964cbb38..60816d85 100644
+index 964cbb3..75f0838 100644
 --- a/Makefile.am
 +++ b/Makefile.am
+@@ -1645,7 +1645,7 @@ clean-generated:
+ 	rm -f stamps/generated.stamp
+ 
+ stamps/fonts.stamp: stamps/extract.stamp
+-	cp $(FONTCONFIG_PATH)/linux.fontconfig.Gentoo.properties{,.old}
++	cp $(FONTCONFIG_PATH)/linux.fontconfig.Gentoo.properties $(FONTCONFIG_PATH)/linux.fontconfig.Gentoo.properties.old
+ 	cp linux.fontconfig.Gentoo.properties $(FONTCONFIG_PATH)
+ 	mkdir -p stamps
+ 	touch $@
+@@ -1653,7 +1653,7 @@ stamps/fonts.stamp: stamps/extract.stamp
+ clean-fonts:
+ 	rm -f $(FONTCONFIG_PATH)/linux.fontconfig.Gentoo.properties
+ 	if [ -e $(FONTCONFIG_PATH)/linux.fontconfig.Gentoo.properties.old ] ; then \
+-	  mv $(FONTCONFIG_PATH)/linux.fontconfig.Gentoo.properties{.old,} ; \
++	  mv $(FONTCONFIG_PATH)/linux.fontconfig.Gentoo.properties.old $(FONTCONFIG_PATH)/linux.fontconfig.Gentoo.properties ; \
+ 	fi
+ 	rm -f stamps/fonts.stamp
+ 
 @@ -2544,7 +2544,7 @@ clean-rewriter:
  
  stamps/rewrite-rhino.stamp: stamps/rewriter.stamp $(RHINO_JAR)
@@ -11,11 +29,79 @@ index 964cbb38..60816d85 100644
  	(cd rhino/rhino.old && $(BOOT_DIR)/bin/jar xf $(RHINO_JAR)) && \
  	$(BOOT_DIR)/bin/java -cp $(REWRITER_BUILD_DIR) \
  	  com.redhat.rewriter.ClassRewriter \
+@@ -3147,7 +3147,10 @@ install-exec-local:
+ 	${mkinstalldirs} $(DESTDIR)$(includedir)/$(BUILD_OS_DIR) $(DESTDIR)${exec_prefix}/lib/$(INSTALL_ARCH_DIR)
+ 	${mkinstalldirs} $(DESTDIR)${exec_prefix}/lib/$(INSTALL_ARCH_DIR)/jli
+ 	${mkinstalldirs} $(DESTDIR)${prefix}/jre/bin $(DESTDIR)${prefix}/jre/lib
+-	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/$(INSTALL_ARCH_DIR)/{.,headless,jli,xawt}
++	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/$(INSTALL_ARCH_DIR)/.
++	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/$(INSTALL_ARCH_DIR)/headless
++	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/$(INSTALL_ARCH_DIR)/jli
++	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/$(INSTALL_ARCH_DIR)/xawt
+ 	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/ext
+ 	${mkinstalldirs} $(DESTDIR)${prefix}/tapset
+ if SPLIT_DEBUGINFO
+@@ -3155,7 +3158,10 @@ if SPLIT_DEBUGINFO
+ 	${mkinstalldirs} $(DESTDIR)$(DEBUG_PREFIX)/${exec_prefix}/lib/$(INSTALL_ARCH_DIR)
+ 	${mkinstalldirs} $(DESTDIR)$(DEBUG_PREFIX)/${exec_prefix}/lib/$(INSTALL_ARCH_DIR)/jli
+ 	${mkinstalldirs} $(DESTDIR)$(DEBUG_PREFIX)/${prefix}/jre/bin $(DESTDIR)${prefix}/jre/lib
+-	${mkinstalldirs} $(DESTDIR)$(DEBUG_PREFIX)/${prefix}/jre/lib/$(INSTALL_ARCH_DIR)/{.,headless,jli,xawt}
++	${mkinstalldirs} $(DESTDIR)$(DEBUG_PREFIX)/${prefix}/jre/lib/$(INSTALL_ARCH_DIR)/.
++	${mkinstalldirs} $(DESTDIR)$(DEBUG_PREFIX)/${prefix}/jre/lib/$(INSTALL_ARCH_DIR)/headless
++	${mkinstalldirs} $(DESTDIR)$(DEBUG_PREFIX)/${prefix}/jre/lib/$(INSTALL_ARCH_DIR)/jli
++	${mkinstalldirs} $(DESTDIR)$(DEBUG_PREFIX)/${prefix}/jre/lib/$(INSTALL_ARCH_DIR)/xawt
+ endif
+ 	for files in $(BUILD_SDK_DIR)/bin/*; do \
+ 	  name=$$(basename $${files}) ; \
+@@ -3268,8 +3274,14 @@ install-data-local:
+ 	${mkinstalldirs} $(DESTDIR)${prefix}/jre/.systemPrefs
+ 	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib
+ 	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/$(INSTALL_ARCH_DIR)
+-	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/{cmm,ext,images/cursors,management,security,zi}
+-	${mkinstalldirs} $(DESTDIR)$(mandir)/{man1,ja_JP.UTF-8/man1}
++	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/cmm
++	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/ext
++	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/images/cursors
++	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/management
++	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/security
++	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/zi
++	${mkinstalldirs} $(DESTDIR)$(mandir)/man1
++	${mkinstalldirs} $(DESTDIR)$(mandir)/ja_JP.UTF-8/man1
+ 	${mkinstalldirs} $(DESTDIR)${prefix}/demo
+ 	${mkinstalldirs} $(DESTDIR)${prefix}/sample
+ 	${mkinstalldirs} $(DESTDIR)$(docdir)
+@@ -3278,7 +3290,7 @@ install-data-local:
+ 	for files in $(BUILD_SDK_DIR)/jre/lib/*.properties; do \
+ 	  $(call install_file,$${files},$(DESTDIR)${prefix}/jre/lib,$(INSTALL_DATA)) ; \
+ 	done
+-	for files in $(BUILD_SDK_DIR)/jre/lib/fontconfig*.{properties.src,bfc}; do \
++	for files in $(BUILD_SDK_DIR)/jre/lib/fontconfig*.properties.src $(BUILD_SDK_DIR)/jre/lib/fontconfig*.bfc; do \
+ 	  $(call install_file,$${files},$(DESTDIR)${prefix}/jre/lib,$(INSTALL_DATA)) ; \
+ 	done
+ 	$(INSTALL_DATA) $(BUILD_SDK_DIR)/release $(DESTDIR)${prefix}
 diff --git a/Makefile.in b/Makefile.in
-index 977fa378..fe2edb1a 100644
+index 01d58a4..b733fb0 100644
 --- a/Makefile.in
 +++ b/Makefile.in
-@@ -2919,7 +2919,7 @@ clean-rewriter:
+@@ -1984,7 +1984,7 @@ clean-generated:
+ 	rm -f stamps/generated.stamp
+ 
+ stamps/fonts.stamp: stamps/extract.stamp
+-	cp $(FONTCONFIG_PATH)/linux.fontconfig.Gentoo.properties{,.old}
++	cp $(FONTCONFIG_PATH)/linux.fontconfig.Gentoo.properties $(FONTCONFIG_PATH)/linux.fontconfig.Gentoo.properties.old
+ 	cp linux.fontconfig.Gentoo.properties $(FONTCONFIG_PATH)
+ 	mkdir -p stamps
+ 	touch $@
+@@ -1992,7 +1992,7 @@ stamps/fonts.stamp: stamps/extract.stamp
+ clean-fonts:
+ 	rm -f $(FONTCONFIG_PATH)/linux.fontconfig.Gentoo.properties
+ 	if [ -e $(FONTCONFIG_PATH)/linux.fontconfig.Gentoo.properties.old ] ; then \
+-	  mv $(FONTCONFIG_PATH)/linux.fontconfig.Gentoo.properties{.old,} ; \
++	  mv $(FONTCONFIG_PATH)/linux.fontconfig.Gentoo.properties.old $(FONTCONFIG_PATH)/linux.fontconfig.Gentoo.properties ; \
+ 	fi
+ 	rm -f stamps/fonts.stamp
+ 
+@@ -2801,7 +2801,7 @@ clean-rewriter:
  	rm -f stamps/rewriter.stamp
  
  stamps/rewrite-rhino.stamp: stamps/rewriter.stamp $(RHINO_JAR)
@@ -24,31 +110,84 @@ index 977fa378..fe2edb1a 100644
  @WITH_RHINO_TRUE@	(cd rhino/rhino.old && $(BOOT_DIR)/bin/jar xf $(RHINO_JAR)) && \
  @WITH_RHINO_TRUE@	$(BOOT_DIR)/bin/java -cp $(REWRITER_BUILD_DIR) \
  @WITH_RHINO_TRUE@	  com.redhat.rewriter.ClassRewriter \
-diff --git a/openjdk/hotspot/make/bsd/makefiles/universal.gmk b/openjdk/hotspot/make/bsd/makefiles/universal.gmk
-index 0cc92758..94d966cb 100644
---- a/openjdk/hotspot/make/bsd/makefiles/universal.gmk
-+++ b/openjdk/hotspot/make/bsd/makefiles/universal.gmk
-@@ -75,9 +75,9 @@ $(UNIVERSAL_COPY_LIST):
- 
- # Replace arch specific binaries with universal binaries
- export_universal:
--	$(RM) -r $(EXPORT_PATH)/jre/lib/{i386,amd64}
--	$(RM) -r $(JDK_IMAGE_DIR)/jre/lib/{i386,amd64}
--	$(RM) $(JDK_IMAGE_DIR)/jre/lib/{client,server}/libjsig.$(LIBRARY_SUFFIX)
-+	$(RM) -r $(EXPORT_PATH)/jre/lib/i386 $(EXPORT_PATH)/jre/lib/amd64
-+	$(RM) -r $(JDK_IMAGE_DIR)/jre/lib/i386 $(JDK_IMAGE_DIR)/jre/lib/amd64
-+	$(RM) $(JDK_IMAGE_DIR)/jre/lib/client/libjsig.$(LIBRARY_SUFFIX) $(JDK_IMAGE_DIR)/jre/lib/server/libjsig.$(LIBRARY_SUFFIX)
- 	($(CD) $(EXPORT_PATH) && \
- 	  $(TAR) -cf - *) | \
- 	  ($(CD) $(JDK_IMAGE_DIR) && $(TAR) -xpf -)
-@@ -85,8 +85,8 @@ export_universal:
- 
- # Overlay universal binaries
- copy_universal:
--	$(RM) -r $(JDK_IMAGE_DIR)$(COPY_SUBDIR)/jre/lib/{i386,amd64}
--	$(RM) $(JDK_IMAGE_DIR)$(COPY_SUBDIR)/jre/lib/{client,server}/libjsig.$(LIBRARY_SUFFIX)
-+	$(RM) -r $(JDK_IMAGE_DIR)$(COPY_SUBDIR)/jre/lib/i386 $(JDK_IMAGE_DIR)$(COPY_SUBDIR)/jre/lib/amd64
-+	$(RM) $(JDK_IMAGE_DIR)$(COPY_SUBDIR)/jre/lib/client/libjsig.$(LIBRARY_SUFFIX) $(JDK_IMAGE_DIR)$(COPY_SUBDIR)/jre/lib/server/libjsig.$(LIBRARY_SUFFIX)
- 	($(CD) $(EXPORT_PATH)$(COPY_SUBDIR) && \
- 	  $(TAR) -cf - *) | \
- 	  ($(CD) $(JDK_IMAGE_DIR)$(COPY_SUBDIR) && $(TAR) -xpf -)
+@@ -3320,14 +3320,20 @@ install-exec-local:
+ 	${mkinstalldirs} $(DESTDIR)$(includedir)/$(BUILD_OS_DIR) $(DESTDIR)${exec_prefix}/lib/$(INSTALL_ARCH_DIR)
+ 	${mkinstalldirs} $(DESTDIR)${exec_prefix}/lib/$(INSTALL_ARCH_DIR)/jli
+ 	${mkinstalldirs} $(DESTDIR)${prefix}/jre/bin $(DESTDIR)${prefix}/jre/lib
+-	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/$(INSTALL_ARCH_DIR)/{.,headless,jli,xawt}
++	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/$(INSTALL_ARCH_DIR)/.
++	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/$(INSTALL_ARCH_DIR)/headless
++	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/$(INSTALL_ARCH_DIR)/jli
++	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/$(INSTALL_ARCH_DIR)/xawt
+ 	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/ext
+ 	${mkinstalldirs} $(DESTDIR)${prefix}/tapset
+ @SPLIT_DEBUGINFO_TRUE@	${mkinstalldirs} $(DESTDIR)$(DEBUG_PREFIX)/$(bindir) $(DESTDIR)$(DEBUG_PREFIX)/${exec_prefix}/lib
+ @SPLIT_DEBUGINFO_TRUE@	${mkinstalldirs} $(DESTDIR)$(DEBUG_PREFIX)/${exec_prefix}/lib/$(INSTALL_ARCH_DIR)
+ @SPLIT_DEBUGINFO_TRUE@	${mkinstalldirs} $(DESTDIR)$(DEBUG_PREFIX)/${exec_prefix}/lib/$(INSTALL_ARCH_DIR)/jli
+ @SPLIT_DEBUGINFO_TRUE@	${mkinstalldirs} $(DESTDIR)$(DEBUG_PREFIX)/${prefix}/jre/bin $(DESTDIR)${prefix}/jre/lib
+-@SPLIT_DEBUGINFO_TRUE@	${mkinstalldirs} $(DESTDIR)$(DEBUG_PREFIX)/${prefix}/jre/lib/$(INSTALL_ARCH_DIR)/{.,headless,jli,xawt}
++@SPLIT_DEBUGINFO_TRUE@	${mkinstalldirs} $(DESTDIR)$(DEBUG_PREFIX)/${prefix}/jre/lib/$(INSTALL_ARCH_DIR)/.
++@SPLIT_DEBUGINFO_TRUE@	${mkinstalldirs} $(DESTDIR)$(DEBUG_PREFIX)/${prefix}/jre/lib/$(INSTALL_ARCH_DIR)/headless
++@SPLIT_DEBUGINFO_TRUE@	${mkinstalldirs} $(DESTDIR)$(DEBUG_PREFIX)/${prefix}/jre/lib/$(INSTALL_ARCH_DIR)/jli
++@SPLIT_DEBUGINFO_TRUE@	${mkinstalldirs} $(DESTDIR)$(DEBUG_PREFIX)/${prefix}/jre/lib/$(INSTALL_ARCH_DIR)/xawt
+ 	for files in $(BUILD_SDK_DIR)/bin/*; do \
+ 	  name=$$(basename $${files}) ; \
+ 	  if test "x$(enable_split_debuginfo)" = "xyes" -a ! -h $${files} -a "x$${name}" != "xjava-rmi.cgi" ; then \
+@@ -3435,8 +3441,14 @@ install-data-local:
+ 	${mkinstalldirs} $(DESTDIR)${prefix}/jre/.systemPrefs
+ 	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib
+ 	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/$(INSTALL_ARCH_DIR)
+-	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/{cmm,ext,images/cursors,management,security,zi}
+-	${mkinstalldirs} $(DESTDIR)$(mandir)/{man1,ja_JP.UTF-8/man1}
++	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/cmm
++	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/ext
++	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/images/cursors
++	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/management
++	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/security
++	${mkinstalldirs} $(DESTDIR)${prefix}/jre/lib/zi
++	${mkinstalldirs} $(DESTDIR)$(mandir)/man1
++	${mkinstalldirs} $(DESTDIR)$(mandir)/ja_JP.UTF-8/man1
+ 	${mkinstalldirs} $(DESTDIR)${prefix}/demo
+ 	${mkinstalldirs} $(DESTDIR)${prefix}/sample
+ 	${mkinstalldirs} $(DESTDIR)$(docdir)
+@@ -3445,7 +3457,7 @@ install-data-local:
+ 	for files in $(BUILD_SDK_DIR)/jre/lib/*.properties; do \
+ 	  $(call install_file,$${files},$(DESTDIR)${prefix}/jre/lib,$(INSTALL_DATA)) ; \
+ 	done
+-	for files in $(BUILD_SDK_DIR)/jre/lib/fontconfig*.{properties.src,bfc}; do \
++	for files in $(BUILD_SDK_DIR)/jre/lib/fontconfig*.properties.src $(BUILD_SDK_DIR)/jre/lib/fontconfig*.bfc; do \
+ 	  $(call install_file,$${files},$(DESTDIR)${prefix}/jre/lib,$(INSTALL_DATA)) ; \
+ 	done
+ 	$(INSTALL_DATA) $(BUILD_SDK_DIR)/release $(DESTDIR)${prefix}
+diff --git a/acinclude.m4 b/acinclude.m4
+index 62dc853..516e392 100644
+--- a/acinclude.m4
++++ b/acinclude.m4
+@@ -374,7 +374,10 @@ AC_DEFUN_ONCE([IT_FIND_ECJ_JAR],
+   if test -z "${ECJ_JAR}"; then
+     for jar in /usr/share/java/eclipse-ecj.jar \
+       /usr/share/java/ecj.jar \
+-      /usr/share/eclipse-ecj-3.{2,3,4,5}/lib/ecj.jar; do
++      /usr/share/eclipse-ecj-3.2/lib/ecj.jar \
++      /usr/share/eclipse-ecj-3.3/lib/ecj.jar \
++      /usr/share/eclipse-ecj-3.4/lib/ecj.jar \
++      /usr/share/eclipse-ecj-3.5/lib/ecj.jar; do
+         if test -e $jar; then
+           ECJ_JAR=$jar
+ 	  break
+diff --git a/configure b/configure
+index d7931a5..f2a1047 100755
+--- a/configure
++++ b/configure
+@@ -10371,7 +10371,10 @@ fi
+   if test -z "${ECJ_JAR}"; then
+     for jar in /usr/share/java/eclipse-ecj.jar \
+       /usr/share/java/ecj.jar \
+-      /usr/share/eclipse-ecj-3.{2,3,4,5}/lib/ecj.jar; do
++      /usr/share/eclipse-ecj-3.2/lib/ecj.jar \
++      /usr/share/eclipse-ecj-3.3/lib/ecj.jar \
++      /usr/share/eclipse-ecj-3.4/lib/ecj.jar \
++      /usr/share/eclipse-ecj-3.5/lib/ecj.jar ; do
+         if test -e $jar; then
+           ECJ_JAR=$jar
+ 	  break
