@@ -178,6 +178,7 @@ src_unpack() {
 	ln -s "${FILESDIR}/${PN}${SLOT}-hotspot-miscompile.patch" "${S}/patches" || die
 	ln -s "${FILESDIR}/${PN}-hotspot-musl.patch" "${S}/patches" || die
 	ln -s "${FILESDIR}/${PN}-os_linux-remove-glibc-dependencies.patch" "${S}/patches" || die
+	ln -s "${FILESDIR}/icedtea-2.6.28_remove_brace_expansion.diff" "${S}/patches" || die
 }
 
 src_prepare() {
@@ -219,6 +220,7 @@ src_configure() {
 	DISTRIBUTION_PATCHES+="patches/${PN}${SLOT}-hotspot-miscompile.patch "
 	DISTRIBUTION_PATCHES+="patches/${PN}-hotspot-musl.patch "
 	DISTRIBUTION_PATCHES+="patches/${PN}-os_linux-remove-glibc-dependencies.patch "
+	DISTRIBUTION_PATCHES+="patches/icedtea-2.6.28_remove_brace_expansion.diff "
 
 	export DISTRIBUTION_PATCHES
 
