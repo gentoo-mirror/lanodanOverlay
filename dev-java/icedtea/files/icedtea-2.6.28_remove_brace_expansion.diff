@@ -1,0 +1,54 @@
+diff --git a/Makefile.am b/Makefile.am
+index 964cbb38..60816d85 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -2544,7 +2544,7 @@ clean-rewriter:
+ 
+ stamps/rewrite-rhino.stamp: stamps/rewriter.stamp $(RHINO_JAR)
+ if WITH_RHINO
+-	mkdir -p rhino/rhino.{old,new} && \
++	mkdir -p rhino/rhino.old rhino/rhino.new && \
+ 	(cd rhino/rhino.old && $(BOOT_DIR)/bin/jar xf $(RHINO_JAR)) && \
+ 	$(BOOT_DIR)/bin/java -cp $(REWRITER_BUILD_DIR) \
+ 	  com.redhat.rewriter.ClassRewriter \
+diff --git a/Makefile.in b/Makefile.in
+index 977fa378..fe2edb1a 100644
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -2919,7 +2919,7 @@ clean-rewriter:
+ 	rm -f stamps/rewriter.stamp
+ 
+ stamps/rewrite-rhino.stamp: stamps/rewriter.stamp $(RHINO_JAR)
+-@WITH_RHINO_TRUE@	mkdir -p rhino/rhino.{old,new} && \
++@WITH_RHINO_TRUE@	mkdir -p rhino/rhino.old rhino/rhino.new && \
+ @WITH_RHINO_TRUE@	(cd rhino/rhino.old && $(BOOT_DIR)/bin/jar xf $(RHINO_JAR)) && \
+ @WITH_RHINO_TRUE@	$(BOOT_DIR)/bin/java -cp $(REWRITER_BUILD_DIR) \
+ @WITH_RHINO_TRUE@	  com.redhat.rewriter.ClassRewriter \
+diff --git a/openjdk/hotspot/make/bsd/makefiles/universal.gmk b/openjdk/hotspot/make/bsd/makefiles/universal.gmk
+index 0cc92758..94d966cb 100644
+--- a/openjdk/hotspot/make/bsd/makefiles/universal.gmk
++++ b/openjdk/hotspot/make/bsd/makefiles/universal.gmk
+@@ -75,9 +75,9 @@ $(UNIVERSAL_COPY_LIST):
+ 
+ # Replace arch specific binaries with universal binaries
+ export_universal:
+-	$(RM) -r $(EXPORT_PATH)/jre/lib/{i386,amd64}
+-	$(RM) -r $(JDK_IMAGE_DIR)/jre/lib/{i386,amd64}
+-	$(RM) $(JDK_IMAGE_DIR)/jre/lib/{client,server}/libjsig.$(LIBRARY_SUFFIX)
++	$(RM) -r $(EXPORT_PATH)/jre/lib/i386 $(EXPORT_PATH)/jre/lib/amd64
++	$(RM) -r $(JDK_IMAGE_DIR)/jre/lib/i386 $(JDK_IMAGE_DIR)/jre/lib/amd64
++	$(RM) $(JDK_IMAGE_DIR)/jre/lib/client/libjsig.$(LIBRARY_SUFFIX) $(JDK_IMAGE_DIR)/jre/lib/server/libjsig.$(LIBRARY_SUFFIX)
+ 	($(CD) $(EXPORT_PATH) && \
+ 	  $(TAR) -cf - *) | \
+ 	  ($(CD) $(JDK_IMAGE_DIR) && $(TAR) -xpf -)
+@@ -85,8 +85,8 @@ export_universal:
+ 
+ # Overlay universal binaries
+ copy_universal:
+-	$(RM) -r $(JDK_IMAGE_DIR)$(COPY_SUBDIR)/jre/lib/{i386,amd64}
+-	$(RM) $(JDK_IMAGE_DIR)$(COPY_SUBDIR)/jre/lib/{client,server}/libjsig.$(LIBRARY_SUFFIX)
++	$(RM) -r $(JDK_IMAGE_DIR)$(COPY_SUBDIR)/jre/lib/i386 $(JDK_IMAGE_DIR)$(COPY_SUBDIR)/jre/lib/amd64
++	$(RM) $(JDK_IMAGE_DIR)$(COPY_SUBDIR)/jre/lib/client/libjsig.$(LIBRARY_SUFFIX) $(JDK_IMAGE_DIR)$(COPY_SUBDIR)/jre/lib/server/libjsig.$(LIBRARY_SUFFIX)
+ 	($(CD) $(EXPORT_PATH)$(COPY_SUBDIR) && \
+ 	  $(TAR) -cf - *) | \
+ 	  ($(CD) $(JDK_IMAGE_DIR)$(COPY_SUBDIR) && $(TAR) -xpf -)
