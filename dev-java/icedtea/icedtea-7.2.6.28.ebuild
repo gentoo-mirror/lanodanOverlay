@@ -55,7 +55,7 @@ LICENSE="Apache-1.1 Apache-2.0 GPL-1 GPL-2 GPL-2-with-linking-exception LGPL-2 M
 KEYWORDS="amd64 arm64"
 
 IUSE="+alsa cacao +cups debug doc examples +gtk headless-awt
-	jamvm +jbootstrap kerberos libressl nss pax_kernel
+	jamvm +jbootstrap kerberos nss pax_kernel
 	sctp selinux smartcard source test zero"
 
 REQUIRED_USE="gtk? ( !headless-awt )"
@@ -127,8 +127,7 @@ DEPEND="${COMMON_DEP} ${ALSA_COMMON_DEP} ${CUPS_COMMON_DEP} ${X_COMMON_DEP} ${X_
 	dev-java/ant-core:bootstrap
 	dev-lang/perl
 	>=dev-libs/libxslt-1.1.26
-	!libressl? ( dev-libs/openssl )
-	libressl? ( dev-libs/libressl )
+	dev-libs/openssl
 	sys-apps/attr
 	sys-apps/lsb-release
 	virtual/pkgconfig
