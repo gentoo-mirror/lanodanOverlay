@@ -41,3 +41,4 @@ dev-util/cppcheck
 # Non-conformant code in version 2022.3 (C++11 errors in Clang)
 # Requires full-copyight assignment for contributions
 media-libs/shaderc
+=games-action/supertuxkart-1.4-r1
