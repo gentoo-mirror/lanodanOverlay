@@ -1,3 +1,8 @@
+# Haelwenn (lanodan) Monnier <contact@hacktivis.me> 2023-01-30
+# No bootstrapping, you're supposed to download the blobs from npmjs.org
+# which isn't trustworthy
+dev-lang/typescript
+
 # Haelwenn (lanodan) Monnier <contact@hacktivis.me> 2018-12-27
 # Bloated, quite insecure (too much trust in other apps, more than paging)
 # alternative can be sys-apps/most, see virtual/pager for others
