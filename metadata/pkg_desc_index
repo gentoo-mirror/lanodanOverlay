@@ -101,7 +101,6 @@ media-libs/libsbsms 2.3.0: A library for high quality time and pitch scale modif
 media-libs/libsdl 1.2.52 9999: Simple Direct Media Layer (sdl-1.2 compatibility)
 media-libs/libsdl2 9999: Simple Direct Media Layer
 media-libs/portaudio 19.06.00-r3: A free, cross-platform, open-source, audio I/O library
-media-libs/portsmf 239: Portable library for reading/writing Standard MIDI Files
 media-plugins/gst-plugins-libnice 0.1.18-r1: GStreamer plugin for ICE (RFC 5245) support
 media-sound/oss 4.2.2019 4.2.2020 4.2.9999: Open Sound System (OSS)
 media-sound/sbagen 1.4.5: Command line sequenced binaural beat generator
