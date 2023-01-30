@@ -1,0 +1,15 @@
+BDEPEND=>=dev-util/ninja-1.8.2 >=dev-util/cmake-3.20.5
+DEFINED_PHASES=compile configure install prepare test
+DEPEND=media-libs/alsa-lib doc? ( app-doc/doxygen )
+DESCRIPTION=Library for real time MIDI input and output
+EAPI=8
+HOMEPAGE=http://portmedia.sourceforge.net/
+INHERIT=cmake
+IUSE=doc test-programs
+KEYWORDS=~amd64
+LICENSE=MIT
+RDEPEND=media-libs/alsa-lib
+SLOT=0
+SRC_URI=https://github.com/PortMidi/portmidi/archive/refs/tags/v2.0.4.tar.gz -> portmidi-2.0.4.tar.gz
+_eclasses_=toolchain-funcs	ec8bbc28394c7305b43ea07164bd8f5f	multilib	5ca4e49abed8e3a2f7b56920eadee157	flag-o-matic	69394e25812406faa1f90edaf4969395	multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ninja-utils	38c85b725d0467e51954ea921b6c104b	xdg-utils	ac0e315a3688929e34ac75b139e7349a	cmake	449b4785acace35308fe747fc939bde1
+_md5_=9a8bd48602f202b3e79f97d31fbb5972
