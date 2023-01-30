@@ -9,7 +9,7 @@ DESCRIPTION="Free runtime and development kit using SDL and Squirrel"
 HOMEPAGE="https://github.com/KelvinShadewing/brux-gdk"
 EGIT_REPO_URI="https://github.com/lanodan/brux-gdk"
 S="${WORKDIR}/${P}/rte"
-LICENSE="AGPL-3.0"
+LICENSE="AGPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
