@@ -11,11 +11,15 @@ LICENSE="Apache-2.0 MIT BSD"
 SRC_URI="https://github.com/erlang/rebar3/archive/${PV}.tar.gz -> ${P}.tar.gz"
 S="${WORKDIR}/${PN}3-${PV}"
 SLOT="3"
-KEYWORDS="~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~amd64 ~arm ~ia64 ~ppc ~sparc ~x86"
+IUSE="test"
+
+RESTRICT="!test? ( test )"
 
 DEPEND="
 	dev-lang/erlang[ssl]
 	!dev-util/rebar-bin
+	test? ( dev-erlang/meck )
 "
 RDEPEND="${DEPEND}"
 
