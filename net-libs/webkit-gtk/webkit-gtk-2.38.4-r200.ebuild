@@ -227,7 +227,6 @@ src_configure() {
 		-DENABLE_UNIFIED_BUILDS=$(usex jumbo-build)
 		-DENABLE_VIDEO=$(usex gstreamer)
 		-DENABLE_WEBGL=ON
-		-DENABLE_WEBGL2=ON
 		-DENABLE_WEB_AUDIO=$(usex gstreamer)
 		-DENABLE_WEBDRIVER=OFF
 		# -DENABLE_TOUCH_EVENTS=OFF
