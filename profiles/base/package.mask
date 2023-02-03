@@ -1,3 +1,7 @@
+# Haelwenn (lanodan) Monnier <contact@hacktivis.me> 2023-02-03
+# No bootstrapping, would need a way to bootstrap dev-lang/fpc
+dev-lang/nim
+
 # Haelwenn (lanodan) Monnier <contact@hacktivis.me> 2023-01-30
 # No bootstrapping, you're supposed to download the blobs from npmjs.org
 # which isn't trustworthy
