@@ -1,0 +1,15 @@
+DEFINED_PHASES=compile install prepare test
+DEPEND=>=dev-erlang/color-1.0.0 >=dev-erlang/tdiff-0.1.2
+DESCRIPTION=Pretty EUnit test formatters
+EAPI=7
+HOMEPAGE=https://github.com/eproxus/meck
+INHERIT=rebar3
+IUSE=test
+KEYWORDS=~amd64 ~arm ~ia64 ~ppc ~sparc ~x86
+LICENSE=MIT
+RDEPEND=>=dev-erlang/color-1.0.0 >=dev-erlang/tdiff-0.1.2
+RESTRICT=!test? ( test )
+SLOT=0
+SRC_URI=https://github.com/eproxus/unite/archive/v0.4.0.tar.gz -> unite-0.4.0.tar.gz
+_eclasses_=rebar3	4b56900686bef711812c805c7e3937e9
+_md5_=361e0d4d2ff60f6ec4b31f84f00bdf14

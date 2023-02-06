@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install prepare test
+DESCRIPTION=ANSI colors for your Erlang
+EAPI=7
+HOMEPAGE=https://github.com/julianduque/erlang-color
+INHERIT=rebar3
+KEYWORDS=~amd64 ~arm ~ia64 ~ppc ~sparc ~x86
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/julianduque/erlang-color/archive/v1.0.0.tar.gz -> erlang-color-1.0.0.tar.gz
+_eclasses_=rebar3	4b56900686bef711812c805c7e3937e9
+_md5_=a4a6e6475628a482840fe4021a6fc563
