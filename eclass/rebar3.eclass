@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 # @ECLASS: rebar3.eclass
@@ -8,7 +8,7 @@
 # Amadeusz Żołnowski <aidecoe@gentoo.org>
 # Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # @SUPPORTED_EAPIS: 6 7
-# @BLURB: Build Erlang/OTP projects using dev-util/rebar3.
+# @BLURB: Build Erlang/OTP projects using dev-util/rebar:3.
 # @DESCRIPTION:
 # An eclass providing functions to build Erlang/OTP projects using
 # dev-util/rebar:3.
@@ -32,10 +32,6 @@ case "${EAPI:-0}" in
 esac
 
 EXPORT_FUNCTIONS src_prepare src_compile src_test src_install
-
-# Erlang/Elixir software fails to build when another version with API 
-# differences is present
-BDEPEND="!<${CATEGORY}/${P} !>${CATEGORY}/${P}"
 
 # @ECLASS-VARIABLE: REBAR_OFFLINE
 REBAR_OFFLINE=1
@@ -217,9 +213,17 @@ rebar3_src_prepare() {
 
 	default
 	rebar3_set_vsn
+
+	if [[ -f rebar.lock ]]; then
+		rm rebar.lock || die
+	fi
+
 	if [[ -f rebar3.config ]]; then
 		rebar3_disable_coverage
 		rebar3_remove_deps
+	elif [[ -f rebar.config ]]; then
+		rebar3_disable_coverage rebar.config
+		rebar3_remove_deps rebar.config
 	fi
 }
 
