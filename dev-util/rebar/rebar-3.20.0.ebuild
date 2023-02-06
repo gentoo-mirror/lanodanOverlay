@@ -23,6 +23,11 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 
+src_prepare() {
+	rebar3_src_prepare
+	sed -i 's;{deps, \[{meck, "[^"]*"}\]};{deps, []};' rebar.config || die
+}
+
 src_compile() {
 	./bootstrap || die
 }
