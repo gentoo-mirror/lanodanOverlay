@@ -78,7 +78,6 @@ gnome-base/librsvg 2.40.21: Scalable Vector Graphics (SVG) rendering library
 gnustep-base/gnustep-make 2.7.0: GNUstep Makefile Package
 gui-apps/cog 9999: Single Window Launcher for WPE WebKit
 gui-libs/libdecor 0.1.0: A client-side decorations library for Wayland clients
-gui-libs/wlrobs 9999: Wayland (wlroots-based) screen capture plugin for obs-studio
 gui-libs/wlroots 0.15.0: Pluggable, composable, unopinionated modules for building a Wayland compositor
 gui-wm/inaban 9999: Distrustful Tiling Wayland Compositor
 gui-wm/sway 1.8_rc3: i3-compatible Wayland window manager
