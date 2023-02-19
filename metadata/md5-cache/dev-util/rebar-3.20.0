@@ -11,5 +11,5 @@ RDEPEND=dev-lang/erlang[ssl] !dev-util/rebar-bin test? ( dev-erlang/meck )
 RESTRICT=!test? ( test )
 SLOT=3
 SRC_URI=https://github.com/erlang/rebar3/archive/3.20.0.tar.gz -> rebar-3.20.0.tar.gz
-_eclasses_=toolchain-funcs	cf009a3ed4e5bef503e7a9f215791a78	multilib	5ca4e49abed8e3a2f7b56920eadee157	bash-completion-r1	f5e7a020fd9c741740756aac61bf75ff	rebar3	4b56900686bef711812c805c7e3937e9
+_eclasses_=toolchain-funcs	6001248ef162a5fa2a21ce132a212f6b	multilib	5ca4e49abed8e3a2f7b56920eadee157	bash-completion-r1	f5e7a020fd9c741740756aac61bf75ff	rebar3	4b56900686bef711812c805c7e3937e9
 _md5_=ae625de3c66c464ea1d0a446a737c8f8
