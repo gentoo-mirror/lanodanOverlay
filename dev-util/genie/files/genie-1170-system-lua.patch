@@ -13,7 +13,8 @@ index 371360e..28aea12 100644
    ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -Os -m64 -Wno-implicit-fallthrough
 @@ -60,7 +60,7 @@ ifeq ($(config),release)
    ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-   ALL_LDFLAGS        += $(LDFLAGS) -L"." -s -rdynamic
+-  ALL_LDFLAGS        += $(LDFLAGS) -L"." -s -rdynamic
++  ALL_LDFLAGS        += $(LDFLAGS) -L"." -rdynamic
    LIBDEPS            +=
 -  LDDEPS             +=
 +  LDDEPS             += `pkg-config --libs lua`
