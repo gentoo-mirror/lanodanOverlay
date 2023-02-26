@@ -1,0 +1,127 @@
+#!/bin/bash
+# gentoo-infra: infra/githooks.git:postrecv-bugs
+# Copyright 2017 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2 or later
+
+# Author: Michał Górny <mgorny@gentoo.org>
+
+export LANG=en_US.UTF-8
+export LC_MESSAGES=C
+export TZ=UTC
+
+shopt -o -s noglob
+
+ALLOWED_BRANCHES=$(git config --get gentoo.bugs.allowed-branches)
+
+declare -A COMMENT_BUGS=()
+declare -A CLOSE_BUGS=()
+
+while read -r oldrev newrev refname; do
+    # operate only on branches in gentoo.bugs.allowed-branches
+    # (or 'master' if unset)
+    allowed=0
+    for allowed_branch in ${ALLOWED_BRANCHES:-master}; do
+        if [[ ${refname#refs/heads/} == ${allowed_branch} ]]; then
+            allowed=1
+            break
+        fi
+    done
+    [[ ${allowed} == 0 ]] && continue
+
+    while read -r commithash; do
+        while read -r l; do
+            is_fixes=0
+            case ${l} in
+                # kinda-like github/gitlab/bitbucket but:
+                # 1. we accept only -s forms for simplicity,
+                # 2. we accept only footer-style to avoid false positives,
+                # 3. we have to scan the whole commit message because
+                # developers still fail to have just one footer.
+                Closes:*|Resolves:*)
+                    close=1;;
+                # normally used to reference commit ids
+                Fixes:*)
+                    is_fixes=1
+                    close=1;;
+                # alternate form to ref without closing
+                Bug:*)
+                    close=0;;
+                *)
+                    continue;;
+            esac
+
+            # strip whitespace, split words
+            bugref=( ${l#*:} )
+            if [[ ${is_fixes} == 1 ]]; then
+                case ${bugref} in
+                    # commit ref
+                    [0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]*)
+                        continue;;
+                    *)
+                        echo "WARNING: 'Fixes' tag should reference commit id, not: ${bugref[*]}"
+                        ;;
+                esac
+            fi
+            for bug in "${bugref[@]}"; do
+                case ${bug} in
+                    # long bugzilla URL
+                    http://bugs.gentoo.org/show_bug.cgi\?*|https://bugs.gentoo.org/show_bug.cgi\?*)
+                        bugno=${bug#*[?&]id=}
+                        bugno=${bugno%%[&#]*}
+                        ;;
+                    # short bugzilla URL
+                    http://bugs.gentoo.org/[0-9]*|https://bugs.gentoo.org/[0-9]*)
+                        bugno=${bug##*/}
+                        bugno=${bugno%%[?#]*}
+                        ;;
+                    # silently ignore github, mirror hook will handle it
+                    http://github.com/*|https://github.com/*)
+                        continue;;
+                    *)
+                        echo "WARNING: invalid/unsupported bug ref: ${bug}"
+                        continue;;
+                esac
+
+                if [[ -n ${bugno//[0-9]} ]]; then
+                    echo "WARNING: invalid Gentoo Bugzilla URL: ${bug}"
+                    continue
+                fi
+
+                newmsg="
+
+https://gitweb.gentoo.org/${GL_REPO}.git/commit/?id=${commithash}
+
+$(git show --pretty=fuller --date=iso-local --stat "${commithash}")"
+# TODO: --show-signature with some nice short output
+
+                if [[ ${close} == 1 ]]; then
+                    CLOSE_BUGS[${bugno}]+=${newmsg}
+                else
+                    COMMENT_BUGS[${bugno}]+=${newmsg}
+                fi
+            done
+        done < <(git show -q --pretty=format:'%B' "${commithash}")
+    done < <(git rev-list "${oldrev}..${newrev}")
+done
+
+for bug in "${!CLOSE_BUGS[@]}"; do
+    msg="The bug has been closed via the following commit(s):${CLOSE_BUGS[${bug}]}"
+
+    if [[ -n ${COMMENT_BUGS[${bug}]} ]]; then
+        msg+="
+
+Additionally, it has been referenced in the following commit(s):${COMMENT_BUGS[${bug}]}"
+    fi
+
+    bugz modify -s RESOLVED -r FIXED -c "${msg}" "${bug}"
+done
+
+for bug in "${!COMMENT_BUGS[@]}"; do
+    [[ -n ${CLOSE_BUGS[${bug}]} ]] && continue
+
+    msg="The bug has been referenced in the following commit(s):${COMMENT_BUGS[${bug}]}"
+
+    bugz modify -c "${msg}" "${bug}"
+done
+
+exit 0
