@@ -89,7 +89,8 @@ while read -r oldrev newrev refname; do
 
                 newmsg="
 
-https://gitweb.gentoo.org/${GL_REPO}.git/commit/?id=${commithash}
+https://hacktivis.me/git/overlay/commit/${commithash}.html
+
 
 $(git show --pretty=fuller --date=iso-local --stat "${commithash}")"
 # TODO: --show-signature with some nice short output
