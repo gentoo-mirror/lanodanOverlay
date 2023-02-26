@@ -95,7 +95,6 @@ media-fonts/opendyslexic 20160623: Opensource font for dyslexics and for high re
 media-fonts/unifont 13.0.05: GNU Unifont - a Pan-Unicode X11 bitmap iso10646 font
 media-gfx/qfontviewer 9999: Font viewer with character table
 media-gfx/synfig 9999: Open-source 2D Animation Software
-media-libs/cglm 0.7.9: OpenGL Mathematics (glm) for C
 media-libs/fmod 4.44.64: Libraries of the fmodex audio engine
 media-libs/freeglut 3.4.0: A free OpenGL utility toolkit, the open-sourced alternative to the GLUT library
 media-libs/glew 2.1.0: The OpenGL Extension Wrangler Library
