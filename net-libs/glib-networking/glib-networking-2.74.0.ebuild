@@ -17,7 +17,7 @@ KEYWORDS="~amd64"
 REQUIRED_USE="ssl? ( || ( gnutls openssl ) )"
 
 RDEPEND="
-	>=dev-libs/glib-2.69.0:2[${MULTILIB_USEDEP}]
+	>=dev-libs/glib-2.73.3:2[${MULTILIB_USEDEP}]
 	libproxy? ( >=net-libs/libproxy-0.4.11-r1:=[${MULTILIB_USEDEP}] )
 	gnutls? ( >=net-libs/gnutls-3.7.2:=[${MULTILIB_USEDEP}] )
 	ssl? ( app-misc/ca-certificates )
@@ -50,6 +50,9 @@ src_prepare() {
 
 multilib_src_configure() {
 	local emesonargs=(
+		# Avoid automagic, built-in feature of meson
+		-Dauto_features=disabled
+
 		$(meson_feature gnutls)
 		$(meson_feature openssl)
 		$(meson_feature libproxy)
