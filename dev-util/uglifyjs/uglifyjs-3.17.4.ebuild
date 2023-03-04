@@ -22,6 +22,9 @@ RESTRICT="!test? ( test )"
 
 DEPEND="test? ( dev-nodejs/semver )"
 RDEPEND="net-libs/nodejs"
+BDEPEND="sys-apps/help2man"
+
+DOCS=( README.md )
 
 NPM_FLAGS=(
 	--audit false
@@ -42,10 +45,13 @@ src_prepare() {
 }
 
 src_compile() {
+	help2man -s1 -o uglifyjs.1 -N ./bin/uglifyjs || die
 	npm "${NPM_FLAGS[@]}" pack || die
 }
 
 src_install() {
+	einstalldocs
+	doman uglifyjs.1
 	npm "${NPM_FLAGS[@]}" \
 		--prefix "${ED}"/usr \
 		install \
