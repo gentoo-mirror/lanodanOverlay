@@ -65,6 +65,7 @@ dev-util/glslang 11.10.0: Khronos reference front-end for GLSL and ESSL, and sam
 dev-util/gtk-doc-am 1.32: Virtual ebuild for ::gentoo compatibility
 dev-util/gyp-next 0.13.0: fork of the GYP (Generate Your Projects) build system for use in the Node.js projects
 dev-util/rebar 3.20.0: Erlang build tool that makes it easy to compile and test Erlang applications and releases
+dev-util/uglifyjs 3.17.4: JavaScript parser, minifier, compressor and beautifier toolkit
 games-arcade/crypt_of_the_necrodancer 1.29.14917: Crypt of the Necrodancer (GOG)
 games-arcade/emilia-pinball 9999: SDL OpenGL pinball game
 games-arcade/pinball-table-gnu 9999: GNU table for games-arcade/emilia-pinball
@@ -83,9 +84,7 @@ gnome-base/librsvg 2.40.21: Scalable Vector Graphics (SVG) rendering library
 gnustep-base/gnustep-make 2.7.0: GNUstep Makefile Package
 gui-apps/cog 9999: Single Window Launcher for WPE WebKit
 gui-libs/libdecor 0.1.1: A client-side decorations library for Wayland clients
-gui-libs/wlroots 0.15.0: Pluggable, composable, unopinionated modules for building a Wayland compositor
 gui-wm/inaban 9999: Distrustful Tiling Wayland Compositor
-gui-wm/sway 1.8_rc3: i3-compatible Wayland window manager
 mail-mta/opensmtpd 6.8.0_p2-r2: Lightweight but featured SMTP daemon from OpenBSD
 media-fonts/3270font 2.0.0: A IBM 3270 Terminal font in a modern format
 media-fonts/forkawesome 1.1.4: The iconic font
@@ -114,7 +113,7 @@ media-video/adobe-flashplayer-projector 32.0.0.465: Adobe Flash Player standalon
 media-video/obs-studio 9999: Software for Recording and Streaming Live Video Content (wayland branch)
 media-video/untrunc 9999: Restore a truncated mp4/mov
 net-dns/getdns 1.3.0: Modern asynchronous DNS API
-net-libs/glib-networking 2.74.0: Network-related giomodules for glib
+net-libs/glib-networking 2.74.0 9999: Network-related giomodules for glib
 net-libs/libnice 0.1.18-r1: An implementation of the Interactice Connectivity Establishment standard (ICE)
 net-libs/libsoup 3.0.8: HTTP client/server library for GNOME
 net-libs/webkit-gtk 2.38.5 2.38.5-r100 2.38.5-r200 2.39.1 2.39.1-r100 2.39.1-r200: Open source web browser engine

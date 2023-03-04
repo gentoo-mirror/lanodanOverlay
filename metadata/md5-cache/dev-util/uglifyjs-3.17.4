@@ -1,0 +1,16 @@
+BDEPEND=net-libs/nodejs app-misc/jq
+DEFINED_PHASES=compile install prepare test
+DEPEND=test? ( dev-nodejs/semver )
+DESCRIPTION=JavaScript parser, minifier, compressor and beautifier toolkit
+EAPI=8
+HOMEPAGE=https://lisperator.net/uglifyjs/
+INHERIT=nodejs
+IUSE=test
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD-2
+RDEPEND=net-libs/nodejs dev-nodejs/node_path
+RESTRICT=!test? ( test )
+SLOT=0
+SRC_URI=https://github.com/mishoo/UglifyJS/archive/refs/tags/v3.17.4.tar.gz -> uglifyjs-3.17.4.tar.gz
+_eclasses_=nodejs	c71806a62616bfcef6dcb8248a1b888d
+_md5_=bb08bd53e614afedda9ad728166aa689
