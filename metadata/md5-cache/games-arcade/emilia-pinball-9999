@@ -10,5 +10,5 @@ LICENSE=GPL-2 CC0-1.0
 PROPERTIES=live
 RDEPEND=media-libs/libsdl2[joystick,opengl,video] gles1-only? ( media-libs/libsdl2[gles1(-)] ) virtual/opengl
 SLOT=0
-_eclasses_=git-r3	2347f8fe2d392b2a091191f94be37e6f
+_eclasses_=git-r3	c57c50c922e121043788de0b40ada60a
 _md5_=86f6da31955fecb0bbd91a975c5bc181

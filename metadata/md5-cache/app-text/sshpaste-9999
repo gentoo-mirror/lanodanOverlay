@@ -9,5 +9,5 @@ LICENSE=ISC
 PROPERTIES=live
 RDEPEND=virtual/ssh X? ( x11-misc/xclip )
 SLOT=0
-_eclasses_=git-r3	2347f8fe2d392b2a091191f94be37e6f
+_eclasses_=git-r3	c57c50c922e121043788de0b40ada60a
 _md5_=706d01fb65190478af1502b22cbbf27d
