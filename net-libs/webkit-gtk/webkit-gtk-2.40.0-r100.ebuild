@@ -15,7 +15,7 @@ HOMEPAGE="https://www.webkitgtk.org"
 SRC_URI="https://www.webkitgtk.org/releases/${MY_P}.tar.xz"
 
 LICENSE="LGPL-2+ BSD"
-SLOT="5.0/0" # soname version of libwebkit2gtk-5.0
+SLOT="4.1/0" # soname version of libwebkit2gtk-4.1
 KEYWORDS="~amd64 ~arm ~arm64 ~ppc64 ~riscv ~x86"
 
 IUSE="aqua +avif debug doc +egl examples gamepad +geolocation gles2-only gnome-keyring +gstreamer +introspection +jpeg2k +jumbo-build lcms +seccomp spell systemd test wayland webrtc +X"
@@ -42,7 +42,7 @@ RDEPEND="
 	>=media-libs/fontconfig-2.13.0:1.0
 	>=media-libs/freetype-2.9.0:2
 	>=dev-libs/libgcrypt-1.7.0:0=
-	>=gui-libs/gtk-3.98.5:4[aqua?,introspection?,wayland?,X?]
+	>=x11-libs/gtk+-3.22.0:3[aqua?,introspection?,wayland?,X?]
 	>=media-libs/harfbuzz-1.4.2:=[icu(+)]
 	>=dev-libs/icu-61.2:=
 	media-libs/libjpeg-turbo:0=
@@ -125,7 +125,7 @@ BDEPEND="
 	doc? ( dev-util/gi-docgen )
 	geolocation? ( dev-util/gdbus-codegen )
 	>=dev-util/cmake-3.10
-
+	dev-util/unifdef
 "
 RDEPEND="${RDEPEND}
 	geolocation? ( >=app-misc/geoclue-2.1.5:2.0 )
@@ -243,9 +243,9 @@ src_configure() {
 		-DENABLE_WEB_RTC=$(usex webrtc)
 		-DENABLE_MEDIA_STREAM=$(usex webrtc)
 		-DENABLE_X11_TARGET=$(usex X)
-		-DUSE_ANGLE_WEBGL=OFF
+		#-DUSE_ANGLE_WEBGL=OFF
 		-DUSE_AVIF=$(usex avif)
-		-DUSE_GTK4=ON
+		-DUSE_GTK4=OFF
 		-DUSE_JPEGXL=OFF
 		-DUSE_LCMS=$(usex lcms)
 		-DUSE_LIBHYPHEN=ON
