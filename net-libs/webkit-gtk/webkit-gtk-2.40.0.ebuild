@@ -125,7 +125,7 @@ BDEPEND="
 	doc? ( dev-util/gi-docgen )
 	geolocation? ( dev-util/gdbus-codegen )
 	>=dev-util/cmake-3.10
-
+	dev-util/unifdef
 "
 RDEPEND="${RDEPEND}
 	geolocation? ( >=app-misc/geoclue-2.1.5:2.0 )
@@ -243,7 +243,7 @@ src_configure() {
 		-DENABLE_WEB_RTC=$(usex webrtc)
 		-DENABLE_MEDIA_STREAM=$(usex webrtc)
 		-DENABLE_X11_TARGET=$(usex X)
-		-DUSE_ANGLE_WEBGL=OFF
+		#-DUSE_ANGLE_WEBGL=OFF
 		-DUSE_AVIF=$(usex avif)
 		-DUSE_GTK4=OFF
 		-DUSE_JPEGXL=OFF
