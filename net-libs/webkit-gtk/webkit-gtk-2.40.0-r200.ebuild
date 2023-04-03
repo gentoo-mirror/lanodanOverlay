@@ -71,7 +71,7 @@ RDEPEND="
 	)
 	webrtc? (
 		media-plugins/gst-plugins-webrtc:1.0
-		dev-libs/openssl:=
+		>=dev-libs/openssl-3:=
 	)
 
 	X? (
