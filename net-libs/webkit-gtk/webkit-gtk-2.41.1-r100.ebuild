@@ -15,7 +15,7 @@ HOMEPAGE="https://www.webkitgtk.org"
 SRC_URI="https://www.webkitgtk.org/releases/${MY_P}.tar.xz"
 
 LICENSE="LGPL-2+ BSD"
-SLOT="4/37" # soname version of libwebkit2gtk-4.0
+SLOT="4.1/0" # soname version of libwebkit2gtk-4.1
 KEYWORDS=""
 
 IUSE="aqua +avif debug doc +egl examples gamepad +geolocation gles2-only gnome-keyring +gstreamer +introspection +jpeg2k +jumbo-build lcms +seccomp spell systemd test wayland webrtc +X"
@@ -46,13 +46,12 @@ RDEPEND="
 	>=media-libs/harfbuzz-1.4.2:=[icu(+)]
 	>=dev-libs/icu-61.2:=
 	media-libs/libjpeg-turbo:0=
-	>=net-libs/libsoup-2.54:2.4[introspection?]
+	>=net-libs/libsoup-2.99.9:3.0[introspection?]
 	>=dev-libs/libxml2-2.8.0:2
 	>=media-libs/libpng-1.4:0=
 	dev-db/sqlite:3=
 	sys-libs/zlib:0
 	>=dev-libs/atk-2.16.0
-	<dev-libs/atk-2.46.0
 	media-libs/libwebp:=
 
 	>=dev-libs/glib-2.67.1:2
@@ -72,7 +71,7 @@ RDEPEND="
 	)
 	webrtc? (
 		media-plugins/gst-plugins-webrtc:1.0
-		>=dev-libs/openssl-3.0.0:=
+		>=dev-libs/openssl-3:=
 	)
 
 	X? (
@@ -127,7 +126,6 @@ BDEPEND="
 	geolocation? ( dev-util/gdbus-codegen )
 	>=dev-util/cmake-3.10
 	dev-util/unifdef
-
 "
 RDEPEND="${RDEPEND}
 	geolocation? ( >=app-misc/geoclue-2.1.5:2.0 )
@@ -229,7 +227,6 @@ src_configure() {
 		-DENABLE_UNIFIED_BUILDS=$(usex jumbo-build)
 		-DENABLE_VIDEO=$(usex gstreamer)
 		-DENABLE_WEBGL=ON
-		-DENABLE_WEBGL2=ON
 		-DENABLE_WEB_AUDIO=$(usex gstreamer)
 		-DENABLE_WEBDRIVER=OFF
 		# -DENABLE_TOUCH_EVENTS=OFF
@@ -246,7 +243,7 @@ src_configure() {
 		-DENABLE_WEB_RTC=$(usex webrtc)
 		-DENABLE_MEDIA_STREAM=$(usex webrtc)
 		-DENABLE_X11_TARGET=$(usex X)
-		-DUSE_ANGLE_WEBGL=OFF
+		#-DUSE_ANGLE_WEBGL=OFF
 		-DUSE_AVIF=$(usex avif)
 		-DUSE_GTK4=OFF
 		-DUSE_JPEGXL=OFF
@@ -255,7 +252,7 @@ src_configure() {
 		-DUSE_LIBSECRET=$(usex gnome-keyring)
 		-DUSE_OPENGL_OR_ES=ON
 		-DUSE_OPENJPEG=$(usex jpeg2k)
-		-DUSE_SOUP2=ON
+		-DUSE_SOUP2=OFF
 		-DUSE_WOFF2=ON
 		-DUSE_WPE_RENDERER=$(usex wayland) # WPE renderer is used to implement accelerated compositing under wayland
 	)
