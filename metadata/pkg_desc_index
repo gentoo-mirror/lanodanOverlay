@@ -24,6 +24,7 @@ dev-erlang/color 1.0.0: ANSI colors for your Erlang
 dev-erlang/meck 0.9.2: Mocking library for Erlang
 dev-erlang/tdiff 0.1.2: Difference library
 dev-erlang/unite 0.4.0: Pretty EUnit test formatters
+dev-hare/madeline 9999: tiny readline-alike with some batteries included
 dev-java/icedtea 7.2.6.28: A harness to build OpenJDK using Free Software build tools and dependencies
 dev-lang/erlang 26.0_rc2: Erlang programming language, runtime environment and libraries (OTP)
 dev-lang/go 0.20171003: Boostrap Go from C (useful for musl libc)

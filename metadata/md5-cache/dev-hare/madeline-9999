@@ -1,0 +1,13 @@
+BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=install unpack
+DEPEND=dev-lang/hare
+DESCRIPTION=tiny readline-alike with some batteries included
+EAPI=8
+HOMEPAGE=https://git.d2evs.net/~ecs/madeline/
+INHERIT=git-r3
+LICENSE=WTFPL-2
+PROPERTIES=live
+RDEPEND=dev-lang/hare
+SLOT=0
+_eclasses_=git-r3	27e13c09a4c7e4c78ac812f74727e676
+_md5_=20cc998b8e67d516cf7860ece74d9a9e
