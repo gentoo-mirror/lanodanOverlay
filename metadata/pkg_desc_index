@@ -125,6 +125,7 @@ net-misc/drawterm 0_p20221013 9999: Connect to Plan 9 CPU servers from other ope
 net-misc/fbxosctrl 2.4.4: Shell tool to control some Freebox OS stuff: wifi, reboot...
 net-news/newsboat 2.13-r1: An RSS/Atom feed reader for text terminals
 net-nntp/suck 4.3.4: Grab news from a remote NNTP server and feed them to another
+sci-calculators/pc 0.4: 9front's pc(1) (Programmer's Calculator) for Unix
 sci-libs/onnxruntime 1.9.1: cross-platform, high performance ML inferencing and training accelerator
 sys-apps/lanodan-utils 9999: Collection of Unix tools, comparable to coreutils
 sys-apps/rc-status-page 9999: Basic HTML status page based on OpenRC
