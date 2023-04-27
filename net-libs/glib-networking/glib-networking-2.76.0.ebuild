@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -18,8 +18,8 @@ REQUIRED_USE="ssl? ( || ( gnutls openssl ) )"
 
 RDEPEND="
 	>=dev-libs/glib-2.73.3:2[${MULTILIB_USEDEP}]
-	libproxy? ( >=net-libs/libproxy-0.4.11-r1:=[${MULTILIB_USEDEP}] )
-	gnutls? ( >=net-libs/gnutls-3.7.2:=[${MULTILIB_USEDEP}] )
+	libproxy? ( >=net-libs/libproxy-0.4.16[${MULTILIB_USEDEP}] )
+	gnutls? ( >=net-libs/gnutls-3.7.4:=[${MULTILIB_USEDEP}] )
 	ssl? ( app-misc/ca-certificates )
 	openssl? ( dev-libs/openssl:0=[${MULTILIB_USEDEP}] )
 	gnome? ( gnome-base/gsettings-desktop-schemas )
@@ -58,7 +58,7 @@ multilib_src_configure() {
 		$(meson_feature libproxy)
 		$(meson_feature gnome gnome_proxy)
 		-Dinstalled_tests=false
-		-Dstatic_modules=false
+		-Ddebug_logs=false
 	)
 
 	meson_src_configure
