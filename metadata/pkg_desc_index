@@ -40,9 +40,11 @@ dev-nodejs/balanced-match 2.0.0: Match balanced character pairs, like { and }
 dev-nodejs/brace-expansion 2.0.1: Brace expansion, as known from sh/bash, in JavaScript
 dev-nodejs/browserify-lite 0.5.1: browserify, minus some of the advanced features and heavy dependencies
 dev-nodejs/chem 4.1.1: 2d canvas-based rapid prototyping game engine
+dev-nodejs/cli 1.0.1: toolkit for rapidly building command line apps
 dev-nodejs/color-name 1.1.4: JSON with CSS color names and its values
 dev-nodejs/env-paths 3.0.0: Get paths for storing things like data, config, cache, etc
-dev-nodejs/fs-realpath 1.0.0: Use node's fs.realpath, but fall back to the JS implementation if the native one fails
+dev-nodejs/exit 0.1.2: replacement for process.exit that ensures stdio are fully drained before exiting
+dev-nodejs/fs-realpath 1.0.0-r1: Use node's fs.realpath, but fall back to the JS implementation if the native one fails
 dev-nodejs/glob 8.0.3: little globber
 dev-nodejs/graceful-fs 4.2.10: drop-in replacement for fs, making various improvements
 dev-nodejs/inflight 1.0.6: Add callbacks to requests in flight to avoid async duplication
