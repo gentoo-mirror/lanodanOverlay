@@ -1,4 +1,4 @@
-# Copyright 2022 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+# Copyright 2023 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -22,7 +22,7 @@ IUSE="test"
 RESTRICT="test"
 
 src_install() {
-	insinto "${NODEJS_SITELIB}${PN}"
+	insinto "${NODEJS_SITELIB}fs.realpath"
 	doins package.json
 
 	cat package.json | jq -r .files[] | while read pkg
