@@ -83,7 +83,6 @@ games-util/fteqcc 9999: FTE QuakeC compiler
 games-util/steamcontroller 9999: Standalone Steam Controller Driver
 gnome-base/librsvg 2.40.21: Scalable Vector Graphics (SVG) rendering library
 gnustep-base/gnustep-make 2.7.0: GNUstep Makefile Package
-gui-apps/cog 9999: Single Window Launcher for WPE WebKit
 gui-libs/libdecor 0.1.1: A client-side decorations library for Wayland clients
 gui-wm/inaban 9999: Distrustful Tiling Wayland Compositor
 mail-mta/opensmtpd 6.8.0_p2-r2: Lightweight but featured SMTP daemon from OpenBSD

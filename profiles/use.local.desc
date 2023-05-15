@@ -70,15 +70,6 @@ media-sound/tenacity:soundtouch - Enable support of media-libs/libsoundtouch plu
 media-sound/tenacity:twolame - Enables twolame support (MPEG Audio Layer 2 encoder)
 media-sound/tenacity:vamp - Enables vamp plugins support (Audio analysing plugins)
 media-sound/tenacity:vst2 - Enable VST2 plugin support
-media-video/obs-studio:decklink - Build the Decklink plugin.
-media-video/obs-studio:fdk - Enable libfdk support for AAC encoding.
-media-video/obs-studio:imagemagick - Use ImageMagick for image loading instead of FFmpeg.
-media-video/obs-studio:nvenc - Enable NVENC encoding for nVidia video cards.
-media-video/obs-studio:pipewire - Build with PipeWire support.
-media-video/obs-studio:python - Build support for scripting via Python 3.
-media-video/obs-studio:speex - Enable noise suppression filter support via media-libs/speexdsp.
-media-video/obs-studio:ssl - Build support for TLS/SSL connections (RTMPS) via net-libs/mbedtls.
-media-video/obs-studio:vlc - Build support for using media-video/vlc as a media source.
 net-dns/getdns:stubby - Include stubby in getdns
 net-libs/glib-networking:gnome - Extract HTTP/HTTPS/SOCKS proxy configuration stored using GSettings
 net-libs/glib-networking:libproxy - Use net-libs/libproxy for getting the HTTP/HTTPS/SOCKS proxy configuration
@@ -93,8 +84,6 @@ net-libs/webkit-gtk:gles2-only - Use GLES 2.0 or later instead of full OpenGL
 net-libs/webkit-gtk:jumbo-build - Combine source files to speed up build process
 net-libs/webkit-gtk:seccomp - Enable sandboxing functionality through sys-apps/bubblewrap
 net-libs/webkit-gtk:webrtc - Enable WebRTC support
-net-libs/wpewebkit:experimental - Enable experimental features
-net-libs/wpewebkit:qt - Enable support for the Qt API
 sys-apps/lanodan-utils:suspend - Enable the "memsys" program for suspending the machine
 sys-apps/shadow:bcrypt - build the bcrypt password encryption algorithm
 sys-apps/shadow:su - build the su program
