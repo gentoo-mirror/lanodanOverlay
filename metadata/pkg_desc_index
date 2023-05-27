@@ -33,6 +33,7 @@ dev-lang/mrustc 0.10-r1: Alternative rust compiler (re-implementation)
 dev-libs/hts_engine 1.10: HMM-based speech synthesis system (HTS) engine and API
 dev-libs/libbulletml 0.0.6: A Library of Bullet Markup Language
 dev-libs/libcss 9999: CSS parser and selection engine, written in C
+dev-libs/libkqueue 2.6.1: kqueue(2) compatibility library
 dev-libs/libtomcrypt 1.18.2: modular and portable cryptographic toolkit
 dev-libs/socket99 0.2.2: Wrapper library for the BSD sockets API with a nicer C99 interface
 dev-nodejs/abbrev 1.1.1: Get unique abbreviations for a set of strings
@@ -59,6 +60,7 @@ dev-nodejs/once 1.4.0: Run a function exactly one time
 dev-nodejs/pend 1.2.0: dead-simple optimistic async helper in javascript
 dev-nodejs/rimraf 3.0.2: deep deletion module for node (like 'rm -rf')
 dev-nodejs/semver 7.3.7: semantic version parser used by npm
+dev-nodejs/strip-json-comments 5.0.0: Strip comments from JSON
 dev-nodejs/vec2d 0.3.0: 2d vector math with good unit tests
 dev-nodejs/which 2.0.2: Like which(1) unix command. Find the first instance of an executable in the PATH.
 dev-nodejs/wrappy 1.0.2: Callback wrapping utility

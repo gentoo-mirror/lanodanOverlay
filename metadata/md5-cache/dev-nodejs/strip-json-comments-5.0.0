@@ -1,0 +1,14 @@
+BDEPEND=net-libs/nodejs app-misc/jq
+DEFINED_PHASES=install test
+DESCRIPTION=Strip comments from JSON
+EAPI=8
+HOMEPAGE=https://github.com/sindresorhus/strip-json-comments
+INHERIT=nodejs
+KEYWORDS=~amd64
+LICENSE=MIT
+RDEPEND=dev-nodejs/node_path
+RESTRICT=test
+SLOT=0
+SRC_URI=https://github.com/sindresorhus/strip-json-comments/archive/refs/tags/v5.0.0.tar.gz -> strip-json-comments-5.0.0.tar.gz
+_eclasses_=nodejs	c71806a62616bfcef6dcb8248a1b888d
+_md5_=866a908bb45cdf48f75c55f6ea05be1b
