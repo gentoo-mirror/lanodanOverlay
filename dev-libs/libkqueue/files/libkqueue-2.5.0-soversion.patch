@@ -1,0 +1,25 @@
+From 742f1c3e763e291df70c4c551c4bdbc303394138 Mon Sep 17 00:00:00 2001
+From: Arran Cudbard-Bell <a.cudbardb@freeradius.org>
+Date: Thu, 21 Oct 2021 21:32:20 -0400
+Subject: [PATCH] Set SOVERSION to 0 Closes #100
+
+---
+ CMakeLists.txt | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index cbb76267..1b6e5d1d 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -212,7 +212,10 @@ else()
+ endif()
+ 
+ add_library(kqueue ${LIBRARY_TYPE} ${LIBKQUEUE_SOURCES} ${LIBKQUEUE_HEADERS})
+-set_target_properties(kqueue PROPERTIES SOVERSION ${PROJECT_VERSION})
++
++# We should have absolute ABI compatibility between versions as none 
++# of the public function signatures of variables will change.
++set_target_properties(kqueue PROPERTIES SOVERSION 0)
+ 
+ if(WIN32)
+   target_compile_definitions(kqueue PRIVATE _USRDLL;_WINDLL)
