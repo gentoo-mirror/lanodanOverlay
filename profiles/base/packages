@@ -4,7 +4,6 @@
 -*sys-apps/less
 app-admin/rsyslog
 app-arch/libarchive
-app-crypt/gentoo-keys
 app-editors/vis
 app-misc/pax-utils
 app-misc/tmux
