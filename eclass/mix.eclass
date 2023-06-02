@@ -1,4 +1,4 @@
-# Copyright 2019-2022 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+# Copyright 2019-2023 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
 # @ECLASS: mix.eclass
@@ -6,7 +6,7 @@
 # Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # @AUTHOR:
 # Haelwenn (lanodan) Monnier <contact@hacktivis.me>
-# @SUPPORTED_EAPIS: 6 7
+# @SUPPORTED_EAPIS: 6 7 8
 # @BLURB: Build Elixir projects using dev-util/mix.
 # @DESCRIPTION:
 # An eclass providing functions to build Elixir projects using dev-util/mix.
