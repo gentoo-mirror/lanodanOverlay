@@ -38,12 +38,6 @@ app-text/evince:t1lib - Enable the Type-1 fonts for the built-in DVI viewer (med
 app-text/evince:xps - Enable XPS viewer using app-text/libgxps
 dev-libs/hts_engine:speech-tools - use memory allocation/free functions of app-accessibility/speech-tools
 games-arcade/emilia-pinball:gles1-only - Use GLES 1.0 instead of OpenGL
-games-arcade/stepmania:crash-handler - Enable the custom crash handler
-games-arcade/stepmania:default-songs - Install the songs that are distributed with the game by default
-games-arcade/stepmania:gles2 - Enable support for OpenGL ES 2
-games-arcade/stepmania:networking - Enable network-related functionality
-games-arcade/stepmania:parport - Enable support for lights connected to the parallel port
-games-arcade/stepmania:wav - Enable support for WAV audio files
 gnome-base/librsvg:tools - Build svg viewer tool
 gnustep-base/gnustep-make:libobjc2 - Enables use of the GNUstep Objective-C runtime (gnustep-base/libobjc2) with non-fragile ABI and sys-devel/clang compiler
 gnustep-base/gnustep-make:native-exceptions - Enables use of the native Objective-C exception support (@try/@catch/@finally) built-in objective-c exceptions with compilers that support it
