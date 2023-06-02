@@ -1,5 +1,6 @@
 acct-group/chkpwd 0: Group for sys-apps/tcb
 acct-group/shadow 0: Group for sys-apps/tcb
+acct-user/pleroma 0: User for www-apps/pleroma
 app-accessibility/julius 4.5: Large Vocabulary Continuous Speech Recognition Engine
 app-containers/lxc-templates 9999: Old style template scripts for LXC
 app-doc/afaq 15.1: An Anarchist FAQ, scrapped in one collection and a markdown version
