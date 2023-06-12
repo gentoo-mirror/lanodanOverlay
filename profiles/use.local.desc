@@ -81,6 +81,7 @@ net-libs/webkit-gtk:egl - Enable EGL support
 net-libs/webkit-gtk:gamepad - Enable gamepad support via dev-libs/libmanette
 net-libs/webkit-gtk:geolocation - Enable geolocation support through app-misc/geoclue
 net-libs/webkit-gtk:gles2-only - Use GLES 2.0 or later instead of full OpenGL
+net-libs/webkit-gtk:jpegxl - Enable JPEG-XL support via media-libs/libjxl
 net-libs/webkit-gtk:jumbo-build - Combine source files to speed up build process
 net-libs/webkit-gtk:seccomp - Enable sandboxing functionality through sys-apps/bubblewrap
 net-libs/webkit-gtk:webrtc - Enable WebRTC support
