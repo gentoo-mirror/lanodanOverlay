@@ -12,6 +12,7 @@
 		<flag name="geolocation">Enable geolocation support through <pkg>app-misc/geoclue</pkg></flag>
 		<flag name="gles2-only">Use GLES 2.0 or later instead of full OpenGL</flag>
 		<flag name="jumbo-build">Combine source files to speed up build process</flag>
+		<flag name="jpegxl">Enable JPEG-XL support via <pkg>media-libs/libjxl</pkg></flag>
 		<flag name="seccomp">Enable sandboxing functionality through <pkg>sys-apps/bubblewrap</pkg></flag>
 		<flag name="webrtc">Enable WebRTC support</flag>
 	</use>

@@ -18,7 +18,7 @@ LICENSE="LGPL-2+ BSD"
 SLOT="5.0/0" # soname version of libwebkit2gtk-5.0
 KEYWORDS="~amd64 ~arm ~arm64 ~ppc64 ~riscv ~x86"
 
-IUSE="aqua +avif debug doc +egl examples gamepad +geolocation gles2-only gnome-keyring +gstreamer +introspection +jpeg2k +jumbo-build lcms +seccomp spell systemd test wayland webrtc +X"
+IUSE="aqua +avif debug doc +egl examples gamepad +geolocation gles2-only gnome-keyring +gstreamer +introspection +jpeg2k jpegxl +jumbo-build lcms +seccomp spell systemd test wayland webrtc +X"
 
 # gstreamer with opengl/gles2 needs egl
 REQUIRED_USE="
@@ -83,6 +83,7 @@ RDEPEND="
 
 	dev-libs/hyphen
 	jpeg2k? ( >=media-libs/openjpeg-2.2.0:2= )
+	jpegxl? ( media-libs/libjxl )
 	avif? ( >=media-libs/libavif-0.9.0:= )
 	lcms? ( media-libs/lcms:2 )
 
@@ -246,7 +247,7 @@ src_configure() {
 		#-DUSE_ANGLE_WEBGL=OFF
 		-DUSE_AVIF=$(usex avif)
 		-DUSE_GTK4=ON
-		-DUSE_JPEGXL=OFF
+		-DUSE_JPEGXL=$(usex jpegxl)
 		-DUSE_LCMS=$(usex lcms)
 		-DUSE_LIBHYPHEN=ON
 		-DUSE_LIBSECRET=$(usex gnome-keyring)
