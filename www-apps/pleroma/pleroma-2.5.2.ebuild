@@ -39,6 +39,7 @@ DEPEND="
 RDEPEND="
 	${DEPEND}
 	acct-user/pleroma
+	acct-group/pleroma
 	imagemagick? ( media-gfx/imagemagick )
 	ffmpeg? ( media-video/ffmpeg )
 	exiftool? ( media-libs/exiftool )
@@ -68,7 +69,10 @@ src_prepare() {
 		-e 's;update "$@";echo "Unsupported, check the '"${CATEGORY}/${PN}"' package instead.";' \
 		rel/files/bin/pleroma_ctl || die
 
-	echo "import Mix.Config" > config/prod.secret.exs || die
+	# Default ends up being inside /opt/pleroma which should be kept read-only to pleroma
+	echo 'config :tzdata, :data_dir, "/var/lib/pleroma/tzdata"' >> config/prod.exs || die
+
+	echo "import Config" > config/prod.secret.exs || die
 }
 
 src_compile() {
@@ -77,6 +81,21 @@ src_compile() {
 }
 
 src_install() {
-	insinto /opt/
-	doins -r pleroma
+	# doins doesn't seems to preserve permissions
+	mkdir -p "${ED}/opt" || die
+	cp -pr ./pleroma "${ED}/opt/pleroma" || die
+	fperms 0750 /opt/pleroma
+	fowners 0:pleroma /opt/pleroma
+
+	# This file controls console access
+	fperms 0750 /opt/pleroma/releases/COOKIE
+	fowners 0:pleroma /opt/pleroma/releases/COOKIE
+
+	keepdir /etc/pleroma
+	fperms 0750 /etc/pleroma
+	fowners 0:pleroma /etc/pleroma
+
+	keepdir /var/lib/pleroma
+	fperms 0750 /var/lib/pleroma
+	fowners pleroma:pleroma /var/lib/pleroma
 }
