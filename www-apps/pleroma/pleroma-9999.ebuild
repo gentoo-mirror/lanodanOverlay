@@ -77,6 +77,6 @@ src_compile() {
 }
 
 src_install() {
-	insinto /opt/
-	doins -r pleroma
+	mkdir -p "${ED}/opt" || die
+	cp -pr ./pleroma "${ED}/opt/pleroma" || die
 }
