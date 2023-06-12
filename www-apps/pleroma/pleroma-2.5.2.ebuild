@@ -63,6 +63,11 @@ src_prepare() {
 
 	sed -i -e '/include_executables_for:/a\          strip_beams: false,\n\          include_erts: false,' mix.exs || die
 
+	sed -i \
+		-e '/update \[OPTIONS\]/,/--tmp-dir/d' \
+		-e 's;update "$@";echo "Unsupported, check the '"${CATEGORY}/${PN}"' package instead.";' \
+		rel/files/bin/pleroma_ctl || die
+
 	echo "import Mix.Config" > config/prod.secret.exs || die
 }
 
@@ -72,6 +77,6 @@ src_compile() {
 }
 
 src_install() {
-	insinto /opt/
-	doins -r pleroma
+	mkdir -p "${ED}/opt" || die
+	cp -pr ./pleroma "${ED}/opt/pleroma" || die
 }
