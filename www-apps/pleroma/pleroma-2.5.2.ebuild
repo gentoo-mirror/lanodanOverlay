@@ -14,6 +14,10 @@ SLOT="otp"
 KEYWORDS="~amd64"
 IUSE="imagemagick ffmpeg exiftool"
 
+# Requires network access (https) as long as elixir dependencies aren't packaged
+# said dependencies have their checksum verified via `mix.lock`
+RESTRICT="network-sandbox"
+
 BDEPEND="
 	dev-lang/erlang:=
 	dev-lang/elixir:=
