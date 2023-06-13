@@ -40,6 +40,7 @@ RDEPEND="
 	${DEPEND}
 	acct-user/pleroma
 	acct-group/pleroma
+	dev-db/postgresql[uuid]
 	imagemagick? ( media-gfx/imagemagick )
 	ffmpeg? ( media-video/ffmpeg )
 	exiftool? ( media-libs/exiftool )
