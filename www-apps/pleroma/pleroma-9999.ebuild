@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit mix
+inherit mix optfeature
 
 DESCRIPTION="ActivityPub social networking software compatible with other Fediverse software"
 HOMEPAGE="https://pleroma.social/"
@@ -19,7 +19,7 @@ fi
 LICENSE="AGPL-3 CC-BY-SA-4.0 CC-BY-4.0"
 SLOT="otp"
 KEYWORDS="~amd64"
-IUSE="imagemagick ffmpeg exiftool"
+IUSE=""
 
 # Requires network access (https) as long as elixir dependencies aren't packaged
 # said dependencies have their checksum verified via `mix.lock`
@@ -41,9 +41,6 @@ RDEPEND="
 	acct-user/pleroma
 	acct-group/pleroma
 	dev-db/postgresql[uuid]
-	imagemagick? ( media-gfx/imagemagick )
-	ffmpeg? ( media-video/ffmpeg )
-	exiftool? ( media-libs/exiftool )
 "
 
 src_unpack() {
@@ -99,4 +96,10 @@ src_install() {
 	keepdir /var/lib/pleroma
 	fperms 0750 /var/lib/pleroma
 	fowners pleroma:pleroma /var/lib/pleroma
+}
+
+pkg_postinst() {
+	optfeature "For Pleroma.Upload.Filters.{Mogrify,Mogrifun} and still image support in Media Preview Proxy" media-gfx/imagemagick
+	optfeature "For video support in Media Preview Proxy" media-video/ffmpeg
+	optfeature "For Pleroma.Upload.Filters.Exiftool.* filters" media-libs/exiftool
 }
