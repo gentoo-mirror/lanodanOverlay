@@ -9,8 +9,8 @@ IUSE=imagemagick ffmpeg exiftool
 KEYWORDS=~amd64
 LICENSE=AGPL-3 CC-BY-SA-4.0 CC-BY-4.0
 PROPERTIES=live
-RDEPEND=sys-libs/ncurses:= sys-apps/file acct-user/pleroma imagemagick? ( media-gfx/imagemagick ) ffmpeg? ( media-video/ffmpeg ) exiftool? ( media-libs/exiftool ) dev-lang/elixir
+RDEPEND=sys-libs/ncurses:= sys-apps/file acct-user/pleroma acct-group/pleroma imagemagick? ( media-gfx/imagemagick ) ffmpeg? ( media-video/ffmpeg ) exiftool? ( media-libs/exiftool ) dev-lang/elixir
 RESTRICT=network-sandbox
 SLOT=otp
 _eclasses_=mix	f3e0c3adc2b6ba8220f51d8b1524197d	git-r3	27e13c09a4c7e4c78ac812f74727e676
-_md5_=4df82047c0ae8d87a6d2e2ca95da7591
+_md5_=9f151d48ea2bd8ae335462f7355974d8
