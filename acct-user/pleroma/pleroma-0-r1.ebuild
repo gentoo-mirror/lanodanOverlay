@@ -9,6 +9,6 @@ DESCRIPTION="User for www-apps/pleroma"
 
 ACCT_USER_ID=-1
 ACCT_USER_HOME="/opt/pleroma"
-ACCT_USER_GROUPS=( postgres )
+ACCT_USER_GROUPS=( pleroma postgres )
 
 acct-user_add_deps
