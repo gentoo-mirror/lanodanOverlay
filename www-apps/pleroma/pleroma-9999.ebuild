@@ -85,6 +85,9 @@ src_install() {
 	fperms 0750 /opt/pleroma
 	fowners 0:pleroma /opt/pleroma
 
+	dosym /opt/pleroma/bin/pleroma /usr/bin/pleroma
+	dosym /opt/pleroma/bin/pleroma_ctl /usr/bin/pleroma_ctl
+
 	# This file controls console access
 	fperms 0750 /opt/pleroma/releases/COOKIE
 	fowners 0:pleroma /opt/pleroma/releases/COOKIE
