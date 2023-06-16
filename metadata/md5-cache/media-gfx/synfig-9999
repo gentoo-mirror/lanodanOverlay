@@ -10,5 +10,5 @@ LICENSE=GPL-2+ GPL-3+
 PROPERTIES=live
 RDEPEND=dev-cpp/glibmm:2= dev-cpp/gtkmm:3.0= dev-cpp/libxmlpp:2.6= dev-libs/boost:= dev-libs/fribidi:= dev-libs/libsigc++:2= media-libs/fontconfig:= media-libs/freetype:2= media-libs/harfbuzz:= media-libs/libjpeg-turbo:= media-libs/libpng:= media-libs/openexr:= media-libs/sdl2-mixer:= sci-libs/fftw:3.0= sys-libs/zlib:= x11-libs/pango:= imagemagick? ( media-gfx/imagemagick:=[cxx] ) jack? ( virtual/jack:= ) mlt? ( media-libs/mlt:= )
 SLOT=0
-_eclasses_=git-r3	27e13c09a4c7e4c78ac812f74727e676	toolchain-funcs	513c31b3346458ed1f3878b57da6d61c	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	16483e58fadb0d47b4528f0aa7e171f6	multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ninja-utils	76050953ad5b70d7e09a6ca55558db92	xdg-utils	baea6080dd821f5562d715887954c9d3	cmake	7fb5980de96325cbab639f5b2187357c
+_eclasses_=git-r3	27e13c09a4c7e4c78ac812f74727e676	toolchain-funcs	513c31b3346458ed1f3878b57da6d61c	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	ad475baa777c9978fa035216c8264a10	multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ninja-utils	76050953ad5b70d7e09a6ca55558db92	xdg-utils	baea6080dd821f5562d715887954c9d3	cmake	7fb5980de96325cbab639f5b2187357c
 _md5_=aba2bb286e06dac1e555e2fda36d2bb3
