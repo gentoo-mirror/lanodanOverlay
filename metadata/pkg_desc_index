@@ -145,7 +145,6 @@ virtual/checkpassword 1: Virtual for checkpassword compatible applications
 virtual/man 9: Virtual for man
 virtual/wine 0-r8: Virtual for Wine that supports multiple variants and slotting
 www-apps/bloat 9999: Web client for Pleroma and Mastodon
-www-apps/pleroma 2.5.2 9999: ActivityPub social networking software compatible with other Fediverse software
 www-client/visurf 9999: power-user frontend for netsurf
 x11-libs/fltk 1.4.9999: C++ user interface toolkit for X and OpenGL
 x11-libs/wxGTK 3.1.5: GTK+ version of wxWidgets, a cross-platform C++ GUI toolkit
