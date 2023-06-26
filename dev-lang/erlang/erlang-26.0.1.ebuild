@@ -9,11 +9,11 @@ inherit elisp-common flag-o-matic java-pkg-opt-2 systemd toolchain-funcs wxwidge
 # NOTE: If you need symlinks for binaries please tell maintainers or
 # open up a bug to let it be created.
 
-UPSTREAM_V="$(ver_rs 2 -)"
+UPSTREAM_V="$(ver_cut 1-2)"
 
 DESCRIPTION="Erlang programming language, runtime environment and libraries (OTP)"
 HOMEPAGE="https://www.erlang.org/"
-SRC_URI="https://github.com/erlang/otp/archive/OTP-${UPSTREAM_V}.tar.gz -> ${PN}-${UPSTREAM_V}.tar.gz
+SRC_URI="https://github.com/erlang/otp/archive/OTP-${PV}.tar.gz -> ${P}.tar.gz
 	https://github.com/erlang/otp/releases/download/OTP-${UPSTREAM_V}/otp_doc_man_${UPSTREAM_V}.tar.gz -> ${PN}_doc_man_${UPSTREAM_V}.tar.gz
 	doc? ( https://github.com/erlang/otp/releases/download/OTP-${UPSTREAM_V}/otp_doc_html_${UPSTREAM_V}.tar.gz -> ${PN}_doc_html_${UPSTREAM_V}.tar.gz )"
 
@@ -22,7 +22,7 @@ LICENSE="Apache-2.0"
 # same build of ERTS that was used when compiling the code.  See
 # http://erlang.org/doc/system_principles/misc.html for more information.
 SLOT="0/${PV}"
-#KEYWORDS="~amd64 ~arm ~arm64 ~hppa ~ia64 ~ppc ~ppc64 ~riscv ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x64-solaris"
+KEYWORDS="~amd64 ~arm ~arm64 ~hppa ~ia64 ~ppc ~ppc64 ~riscv ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x64-solaris"
 IUSE="doc emacs java +kpoll odbc sctp ssl systemd tk wxwidgets"
 
 RDEPEND="
@@ -42,7 +42,7 @@ DEPEND="${RDEPEND}
 	dev-lang/perl
 "
 
-S="${WORKDIR}/otp-OTP-${UPSTREAM_V}"
+S="${WORKDIR}/otp-OTP-${PV}"
 
 PATCHES=(
 	"${FILESDIR}"/${PN}-22.0-dont-ignore-LDFLAGS.patch
