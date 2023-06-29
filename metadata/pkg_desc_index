@@ -121,7 +121,7 @@ net-dns/getdns 1.3.0: Modern asynchronous DNS API
 net-libs/glib-networking 2.76.0: Network-related giomodules for glib
 net-libs/libnice 0.1.18-r1: An implementation of the Interactice Connectivity Establishment standard (ICE)
 net-libs/libsoup 3.0.8: HTTP client/server library for GNOME
-net-libs/webkit-gtk 2.40.2 2.40.2-r100 2.40.2-r200 2.41.1 2.41.1-r100 2.41.1-r200: Open source web browser engine
+net-libs/webkit-gtk 2.40.3 2.40.3-r410 2.40.3-r600 2.41.1 2.41.1-r100 2.41.1-r200: Open source web browser engine
 net-mail/checkpassword-ng 9999: Uniform password checking interface for applications
 net-misc/ap-client 9999: CLI-based client / toolbox for ActivityPub Client-to-Server
 net-misc/cve-client 9999: CLI-based client / toolbox for CVE.org
