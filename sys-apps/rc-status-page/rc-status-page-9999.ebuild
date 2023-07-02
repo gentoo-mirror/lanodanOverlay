@@ -6,7 +6,6 @@ EAPI=8
 inherit git-r3
 
 EGIT_REPO_URI="https://hacktivis.me/git/rc-status-page.git"
-EGIT_MIN_CLONE_TYPE="single+tags"
 
 DESCRIPTION="Basic HTML status page based on OpenRC"
 HOMEPAGE="https://hacktivis.me/git/rc-status-page.git"

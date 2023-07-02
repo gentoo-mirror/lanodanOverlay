@@ -8,7 +8,6 @@ inherit git-r3
 DESCRIPTION="Simple and portable utilities to deal with user accounts (su, login)"
 HOMEPAGE="https://hacktivis.me/git/skeud"
 EGIT_REPO_URI="https://hacktivis.me/git/skeud.git"
-EGIT_MIN_CLONE_TYPE="single+tags"
 LICENSE="AGPL-3"
 SLOT="0"
 IUSE="test"
