@@ -6,7 +6,6 @@ EAPI=7
 if [[ "${PV}" == "9999" ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://hacktivis.me/git/inaban.git"
-	EGIT_MIN_CLONE_TYPE="single+tags"
 else
 	KEYWORDS="~amd64"
 fi
