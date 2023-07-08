@@ -72,7 +72,6 @@ dev-util/genie 1170: GENie project generator tool (a fork of premake by Branimir
 dev-util/glslang 11.10.0: Khronos reference front-end for GLSL and ESSL, and sample SPIR-V generator
 dev-util/gtk-doc-am 1.32: Virtual ebuild for ::gentoo compatibility
 dev-util/gyp-next 0.13.0: fork of the GYP (Generate Your Projects) build system for use in the Node.js projects
-dev-util/rebar 3.20.0: Erlang build tool that makes it easy to compile and test Erlang applications and releases
 dev-util/uglifyjs 3.17.4: JavaScript parser, minifier, compressor and beautifier toolkit
 games-arcade/crypt_of_the_necrodancer 1.29.14917: Crypt of the Necrodancer (GOG)
 games-arcade/emilia-pinball 9999: SDL OpenGL pinball game
