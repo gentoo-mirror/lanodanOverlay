@@ -8,4 +8,4 @@ LICENSE=BSD
 SLOT=0
 SRC_URI=https://dl.google.com/go/go1.4-bootstrap-20171003.tar.gz
 _eclasses_=toolchain-funcs	513c31b3346458ed1f3878b57da6d61c	multilib	c19072c3cd7ac5cb21de013f7e9832e0
-_md5_=1394d70d49132ccfbddccdabea0b1a0e
+_md5_=e54fe9aedd644873aaf9ec3d61d37b60
