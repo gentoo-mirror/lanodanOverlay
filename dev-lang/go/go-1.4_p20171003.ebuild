@@ -77,6 +77,6 @@ pkg_postinst() {
 	ebegin "fixing timestamps to avoid unnecessary rebuilds"
 	tref="usr/lib/go/pkg/*/runtime.a"
 	find "${EROOT}/usr/lib/go" -type f \
-		-exec touch -r "${EROOT}/${tref}" {} \;
+		-exec touch -r "${EROOT}/"${tref} {} \;
 	eend $?
 }
