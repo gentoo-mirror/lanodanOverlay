@@ -61,6 +61,7 @@ src_test() {
 src_install() {
 	einstalldocs
 
+	insinto /usr/lib/go
 	doins -r doc include lib pkg src
 	fperms -R +x /usr/lib/go/pkg/tool
 
