@@ -24,7 +24,7 @@ QA_MULTILIB_PATHS="usr/lib/go/pkg/tool/.*/.*"
 
 # The go language uses *.a files which are _NOT_ libraries and should not be
 # stripped. The test data objects should also be left alone and unstripped.
-STRIP_MASK="/usr/lib/go/pkg/*.a
+STRIP_MASK="/usr/lib/go/pkg/*/*.a
 	/usr/lib/go/src/debug/elf/testdata/*
 	/usr/lib/go/src/debug/dwarf/testdata/*
 	/usr/lib/go/src/runtime/race/*.syso
