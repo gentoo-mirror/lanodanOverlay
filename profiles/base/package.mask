@@ -1,3 +1,7 @@
+# Haelwenn (lanodan) Monnier - 2023-07-09
+# Binaries
+dev-lang/go-bootstrap
+
 # Haelwenn (lanodan) Monnier <contact@hacktivis.me> 2023-02-03
 # No bootstrapping, would need a way to bootstrap dev-lang/fpc
 dev-lang/nim

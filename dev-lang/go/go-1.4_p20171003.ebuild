@@ -5,14 +5,14 @@ EAPI=8
 
 inherit toolchain-funcs
 
-MY_PV="${PV//0./}"
+MY_PV="${PV//1.4_p/}"
 
 DESCRIPTION="Boostrap Go from C (useful for musl libc)"
 HOMEPAGE="https://golang.org/doc/install/source"
 SRC_URI="https://dl.google.com/go/go1.4-bootstrap-${MY_PV}.tar.gz"
 
 LICENSE="BSD"
-SLOT="bootstrap"
+SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
@@ -32,14 +32,16 @@ STRIP_MASK="/usr/lib/go1.4/pkg/*.a
 
 S="${WORKDIR}/go"
 
+DOCS=( AUTHORS CONTRIBUTORS PATENTS README )
+
 src_prepare() {
-	sed -i -e 's/"-Werror",//g' src/cmd/dist/build.c
+	sed -i -e 's/"-Werror",//g' src/cmd/dist/build.c || die
 
 	default
 }
 
 src_compile() {
-	export GOROOT_FINAL="${EPREFIX}/usr/lib/go1.4"
+	export GOROOT_FINAL="${EPREFIX}/usr/lib/go"
 	export GOROOT="$(pwd)"
 	export GOBIN="${GOROOT}/bin"
 	export CGO_ENABLED=0
@@ -50,13 +52,20 @@ src_compile() {
 	./make.bash || die "build failed"
 }
 
+src_test() {
+	cd src
+	PATH="${GOBIN}:${PATH}" \
+		./run.bash --no-rebuild --banner || die "tests failed"
+}
+
 src_install() {
-	dodir /usr/lib/go1.4
-	exeinto /usr/lib/go1.4/bin
+	einstalldocs
+
+	doins -r doc include lib pkg src
+	fperms -R +x /usr/lib/go/pkg/tool
+
+	exeinto /usr/lib/go/bin
 	doexe bin/*
-	insinto /usr/lib/go1.4
-	doins -r lib pkg src
-	fperms -R +x /usr/lib/go1.4/pkg/tool
 }
 
 pkg_postinst() {
