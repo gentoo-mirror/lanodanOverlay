@@ -20,14 +20,14 @@ DEPEND=""
 RDEPEND=""
 
 # The go tools should not cause the multilib-strict check to fail.
-QA_MULTILIB_PATHS="usr/lib/go1.4/pkg/tool/.*/.*"
+QA_MULTILIB_PATHS="usr/lib/go/pkg/tool/.*/.*"
 
 # The go language uses *.a files which are _NOT_ libraries and should not be
 # stripped. The test data objects should also be left alone and unstripped.
-STRIP_MASK="/usr/lib/go1.4/pkg/*.a
-	/usr/lib/go1.4/src/debug/elf/testdata/*
-	/usr/lib/go1.4/src/debug/dwarf/testdata/*
-	/usr/lib/go1.4/src/runtime/race/*.syso
+STRIP_MASK="/usr/lib/go/pkg/*.a
+	/usr/lib/go/src/debug/elf/testdata/*
+	/usr/lib/go/src/debug/dwarf/testdata/*
+	/usr/lib/go/src/runtime/race/*.syso
 "
 
 S="${WORKDIR}/go"
@@ -61,6 +61,7 @@ src_test() {
 src_install() {
 	einstalldocs
 
+	insinto /usr/lib/go
 	doins -r doc include lib pkg src
 	fperms -R +x /usr/lib/go/pkg/tool
 
@@ -74,8 +75,8 @@ pkg_postinst() {
 	# packages for every build we need to fix the timestamps.  The compiler and
 	# linker are also checked - so we need to fix them too.
 	ebegin "fixing timestamps to avoid unnecessary rebuilds"
-	tref="usr/lib/go1.4/pkg/*/runtime.a"
-	find "${EROOT}/usr/lib/go1.4" -type f \
-		-exec touch -r "${EROOT}/${tref}" {} \;
+	tref="usr/lib/go/pkg/*/runtime.a"
+	find "${EROOT}/usr/lib/go" -type f \
+		-exec touch -r "${EROOT}/"${tref} {} \;
 	eend $?
 }
