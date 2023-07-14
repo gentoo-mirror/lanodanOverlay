@@ -1,4 +1,4 @@
-# Copyright 2021 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+# Copyright 2021-2023 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -12,8 +12,15 @@ LICENSE="AGPL-3"
 SLOT="0"
 KEYWORDS=""
 
-DEPEND="
-	dev-perl/JSON-MaybeXS
+IUSE="test"
+
+RESTRICT="!test? ( test )"
+
+RDEPEND="
+	dev-perl/JSON
 	dev-perl/LWP-Protocol-https
 "
-RDEPEND="${DEPEND}"
+DEPEND="
+	${RDEPEND}
+	test? ( dev-perl/Test-Output )
+"
