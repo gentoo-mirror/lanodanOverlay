@@ -9,5 +9,5 @@ LICENSE=GPL-2+ Free-Art-1.3 CC-BY-SA-3.0
 PROPERTIES=live
 RDEPEND=media-libs/libsdl2 >=games-arcade/emilia-pinball-0.3.2020
 SLOT=0
-_eclasses_=git-r3	27e13c09a4c7e4c78ac812f74727e676
+_eclasses_=git-r3	97f7f638070d17e4c2b6542589bb4575
 _md5_=47c739cd5c175f71cafbdb14c4c00957

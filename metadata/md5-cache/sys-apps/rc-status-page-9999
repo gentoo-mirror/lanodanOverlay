@@ -9,5 +9,5 @@ LICENSE=BSD-2
 PROPERTIES=live
 RDEPEND=sys-apps/openrc:=
 SLOT=0
-_eclasses_=git-r3	27e13c09a4c7e4c78ac812f74727e676
+_eclasses_=git-r3	97f7f638070d17e4c2b6542589bb4575
 _md5_=2a55976082e0c83ea822ba217770c7aa
