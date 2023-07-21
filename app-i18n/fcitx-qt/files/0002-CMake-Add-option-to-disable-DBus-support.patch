@@ -1,4 +1,4 @@
-From 2912d6fa4bbd0bda774ed82e77e3ce48671533e7 Mon Sep 17 00:00:00 2001
+From 76db7740c646dfcc5738696c974ae385fd2ed773 Mon Sep 17 00:00:00 2001
 From: "Haelwenn (lanodan) Monnier" <contact@hacktivis.me>
 Date: Wed, 21 Sep 2022 08:59:30 +0200
 Subject: [PATCH 2/2] CMake: Add option to disable DBus support
@@ -9,7 +9,7 @@ Subject: [PATCH 2/2] CMake: Add option to disable DBus support
  2 files changed, 17 insertions(+), 6 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 83c96fd..1c963cb 100644
+index 144884d..f0830ba 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -10,6 +10,7 @@ find_package(ECM 1.4.0 REQUIRED)
@@ -20,7 +20,7 @@ index 83c96fd..1c963cb 100644
  option(ENABLE_QT4 "Enable Qt 4" On)
  option(ENABLE_QT5 "Enable Qt 5" On)
  option(ENABLE_QT6 "Enable Qt 6" Off)
-@@ -76,19 +77,25 @@ if(ENABLE_QT4)
+@@ -75,19 +76,25 @@ if(ENABLE_QT4)
  endif()
  
  if(ENABLE_QT5)
@@ -34,8 +34,8 @@ index 83c96fd..1c963cb 100644
  endif()
  
  if(ENABLE_QT6)
--  find_package(Qt6 ${REQUIRED_QT6_VERSION} CONFIG REQUIRED Core DBus)
-+  find_package(Qt6 ${REQUIRED_QT6_VERSION} CONFIG REQUIRED Core)
+-  find_package(Qt6 ${REQUIRED_QT6_VERSION} CONFIG REQUIRED Core DBus Widgets)
++  find_package(Qt6 ${REQUIRED_QT6_VERSION} CONFIG REQUIRED Core Widgets)
    find_package(Qt6Gui ${REQUIRED_QT6_VERSION} REQUIRED Private)
 +  if (ENABLE_DBUS)
 +    find_package(Qt6 ${REQUIRED_QT6_VERSION} CONFIG REQUIRED DBus)
@@ -50,7 +50,7 @@ index 83c96fd..1c963cb 100644
  
  enable_testing()
 diff --git a/qt5/CMakeLists.txt b/qt5/CMakeLists.txt
-index f9ada81..c54d0a1 100644
+index 9defa3d..f2c207b 100644
 --- a/qt5/CMakeLists.txt
 +++ b/qt5/CMakeLists.txt
 @@ -1,8 +1,12 @@
@@ -68,7 +68,7 @@ index f9ada81..c54d0a1 100644
 +  endif()
    add_subdirectory(widgetsaddons)
    add_subdirectory(quickphrase-editor)
- endif()
+   add_subdirectory(immodule-probing)
 -- 
-2.35.1
+2.41.0
 
