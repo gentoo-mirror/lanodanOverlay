@@ -9,7 +9,7 @@ app-doc/cross-unix-documentation 9999: documentation of similarities and (notewo
 app-doc/hare-specification 9999: Hare programming language specification
 app-doc/single-unix-specification 4_p3-r1: The Single UNIX Specification, Version 4, 2018 Edition
 app-editors/2f30-ed 9999: Simple ed(1) implementation from 2f30.org
-app-editors/vim 1.24: Vi IMitation
+app-editors/vim 1.24-r1: Vi IMitation
 app-emulation/tinyemu 0.2019.12.21-r1: small and simple system emulator for the RISC-V and x86 architectures
 app-emulation/wine-wayland 9999: Free implementation of Windows(tm) on Unix, collabora's wayland branch
 app-i18n/fcitx 5.0.23: Fcitx (Flexible Context-aware Input Tool with eXtension) input method framework

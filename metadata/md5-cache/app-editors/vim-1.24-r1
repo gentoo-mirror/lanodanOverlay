@@ -6,4 +6,4 @@ KEYWORDS=~amd64 ~x86
 LICENSE=public-domain
 SLOT=1.24
 SRC_URI=https://ftp.nluug.nl/pub/vim/old/vim-1.24.tar.gz
-_md5_=db622f93705403d5fa4dac9eb73000da
+_md5_=6cbdc156467a527821366a7a272364aa
