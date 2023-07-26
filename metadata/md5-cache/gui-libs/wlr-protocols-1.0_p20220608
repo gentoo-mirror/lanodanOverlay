@@ -1,0 +1,9 @@
+DEFINED_PHASES=compile
+DESCRIPTION=Wayland protocols designed for use in wlroots (and other compositors)
+EAPI=8
+HOMEPAGE=https://gitlab.freedesktop.org/wlroots/wlr-protocols
+KEYWORDS=~amd64
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://gitlab.freedesktop.org/wlroots/wlr-protocols/-/archive/4264185db3b7e961e7f157e1cc4fd0ab75137568/wlr-protocols-4264185db3b7e961e7f157e1cc4fd0ab75137568.tar.gz
+_md5_=5a7a1d24ad15b871f08f8e277dcc2e94
