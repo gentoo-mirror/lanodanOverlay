@@ -30,8 +30,8 @@ REQUIRED_USE="
 	|| ( aqua wayland X )
 "
 
-# Tests fail to link for inexplicable reasons
-# https://bugs.webkit.org/show_bug.cgi?id=148210
+# Tests are currently unsupported in release tarballs
+# https://bugs.webkit.org/show_bug.cgi?id=215986
 RESTRICT="test"
 
 # Dependencies found at Source/cmake/OptionsGTK.cmake
