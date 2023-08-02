@@ -66,7 +66,7 @@ dev-nodejs/nopt 6.0.0: ion parsing for Node, supporting types, shorthands, etc
 dev-nodejs/once 1.4.0: Run a function exactly one time
 dev-nodejs/pend 1.2.0: dead-simple optimistic async helper in javascript
 dev-nodejs/rimraf 3.0.2: deep deletion module for node (like 'rm -rf')
-dev-nodejs/semver 7.3.7: semantic version parser used by npm
+dev-nodejs/semver 7.5.4: semantic version parser used by npm
 dev-nodejs/strip-json-comments 5.0.0: Strip comments from JSON
 dev-nodejs/vec2d 0.3.0: 2d vector math with good unit tests
 dev-nodejs/which 2.0.2: Like which(1) unix command. Find the first instance of an executable in the PATH.
