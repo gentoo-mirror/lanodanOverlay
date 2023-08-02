@@ -1,0 +1,14 @@
+BDEPEND=net-libs/nodejs app-misc/jq
+DEFINED_PHASES=install test
+DESCRIPTION=ANSI escape codes for manipulating the terminal
+EAPI=8
+HOMEPAGE=https://github.com/sindresorhus/ansi-escapes
+INHERIT=nodejs
+KEYWORDS=~amd64
+LICENSE=MIT
+RDEPEND=dev-nodejs/node_path
+RESTRICT=test
+SLOT=0
+SRC_URI=https://github.com/sindresorhus/ansi-escapes/archive/refs/tags/v6.2.0.tar.gz -> ansi-escapes-6.2.0.tar.gz
+_eclasses_=nodejs	c71806a62616bfcef6dcb8248a1b888d
+_md5_=35545ff52739d74ae90cb331e16bd2a0
