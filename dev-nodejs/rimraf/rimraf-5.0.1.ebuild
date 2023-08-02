@@ -1,4 +1,4 @@
-# Copyright 2022 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+# Copyright 2022-2023 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -16,7 +16,7 @@ IUSE="test"
 #RESTRICT="!test? ( test )"
 #DEPEND="test? ( dev-nodejs/tap dev-nodejs/mkdirp )"
 
-RDEPEND="dev-nodejs/glob"
+RDEPEND=">=dev-nodejs/glob-10.2.5"
 
 RESTRICT="test"
 
