@@ -1,7 +1,5 @@
 acct-group/chkpwd 0: Group for sys-apps/tcb
-acct-group/pleroma 0: Group for www-apps/pleroma
 acct-group/shadow 0: Group for sys-apps/tcb
-acct-user/pleroma 0-r1: User for www-apps/pleroma
 app-accessibility/julius 4.5: Large Vocabulary Continuous Speech Recognition Engine
 app-containers/lxc-templates 9999: Old style template scripts for LXC
 app-doc/afaq 15.1: An Anarchist FAQ, scrapped in one collection and a markdown version
@@ -48,12 +46,10 @@ dev-nodejs/balanced-match 2.0.0: Match balanced character pairs, like { and }
 dev-nodejs/brace-expansion 2.0.1: Brace expansion, as known from sh/bash, in JavaScript
 dev-nodejs/browserify-lite 0.5.1: browserify, minus some of the advanced features and heavy dependencies
 dev-nodejs/chem 4.1.1: 2d canvas-based rapid prototyping game engine
-dev-nodejs/cli 1.0.1: toolkit for rapidly building command line apps
 dev-nodejs/color-name 1.1.4: JSON with CSS color names and its values
 dev-nodejs/env-paths 3.0.0: Get paths for storing things like data, config, cache, etc
 dev-nodejs/exit 0.1.2: replacement for process.exit that ensures stdio are fully drained before exiting
 dev-nodejs/fs-realpath 1.0.0-r1: Use node's fs.realpath, but fall back to the JS implementation if the native one fails
-dev-nodejs/glob 8.0.3: little globber
 dev-nodejs/graceful-fs 4.2.10: drop-in replacement for fs, making various improvements
 dev-nodejs/inflight 1.0.6: Add callbacks to requests in flight to avoid async duplication
 dev-nodejs/inherits 2.0.4: Browser-friendly inheritance fully compatible with standard node.js inherits()
@@ -65,7 +61,6 @@ dev-nodejs/node_path 0: Define NODE_PATH to /usr/share/nodejs/
 dev-nodejs/nopt 7.2.0: ion parsing for Node, supporting types, shorthands, etc
 dev-nodejs/once 1.4.0: Run a function exactly one time
 dev-nodejs/pend 1.2.0: dead-simple optimistic async helper in javascript
-dev-nodejs/rimraf 5.0.1: deep deletion module for node (like 'rm -rf')
 dev-nodejs/semver 7.5.4: semantic version parser used by npm
 dev-nodejs/strip-json-comments 5.0.1: Strip comments from JSON
 dev-nodejs/vec2d 0.3.0: 2d vector math with good unit tests
