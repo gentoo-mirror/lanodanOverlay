@@ -19,6 +19,7 @@ DEPEND="
 	dev-go/x-sys
 	test? ( net-libs/nodejs )
 "
+BDEPEND="sys-apps/help2man"
 
 RESTRICT="!test? ( test ) strip"
 QA_FLAGS_IGNORED='.*'
@@ -59,4 +60,7 @@ src_install() {
 	set -- env GOBIN="${ED}/usr/bin" go install -v -work -x ${EGO_BUILD_FLAGS} ./cmd/esbuild
 	echo "$@"
 	"$@" || die
+
+	help2man -s1 -o esbuild.1 -N "${ED}/usr/bin/esbuild" || die
+	doman esbuild.1
 }
