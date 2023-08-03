@@ -14,7 +14,7 @@ SRC_URI="https://download.fcitx-im.org/fcitx5/fcitx5-anthy/${MY_P}.tar.xz"
 S="${WORKDIR}/${MY_P}"
 LICENSE="GPL-2+"
 SLOT="5"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~riscv ~x86"
+KEYWORDS="~amd64 ~ppc64 ~riscv ~x86"
 IUSE=""
 
 BDEPEND="virtual/pkgconfig"
