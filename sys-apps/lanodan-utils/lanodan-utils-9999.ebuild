@@ -8,7 +8,7 @@ inherit git-r3
 DESCRIPTION="Collection of Unix tools, comparable to coreutils"
 HOMEPAGE="https://hacktivis.me/git/utils"
 EGIT_REPO_URI="https://hacktivis.me/git/utils.git"
-LICENSE="|| ( GPL-2 GPL-3 )"
+LICENSE="MPL-2.0"
 SLOT="0"
 IUSE="suspend test"
 

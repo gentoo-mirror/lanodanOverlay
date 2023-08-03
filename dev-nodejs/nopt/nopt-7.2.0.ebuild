@@ -16,7 +16,7 @@ IUSE="test"
 #RESTRICT="!test? ( test )"
 #DEPEND="test? ( dev-nodejs/tap )"
 
-RDEPEND="dev-nodejs/abbrev"
+RDEPEND=">=dev-nodejs/abbrev-2.0.0"
 
 RESTRICT="test"
 
