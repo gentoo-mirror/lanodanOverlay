@@ -10,6 +10,6 @@ LICENSE=ISC
 RDEPEND=dev-nodejs/node_path
 RESTRICT=test
 SLOT=0
-SRC_URI=https://github.com/npm/abbrev-js/archive/refs/tags/v1.1.1.tar.gz -> abbrev-1.1.1.tar.gz
+SRC_URI=https://github.com/npm/abbrev-js/archive/refs/tags/v2.0.0.tar.gz -> abbrev-2.0.0.tar.gz
 _eclasses_=nodejs	c71806a62616bfcef6dcb8248a1b888d
 _md5_=95ea021d97ef9d1cf42a759b83c0f3aa
