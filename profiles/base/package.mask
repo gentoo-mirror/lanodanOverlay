@@ -1,3 +1,7 @@
+# Haelwenn (lanodan) Monnier <contact@hacktivis.me> (2023-08-08)
+# https://www.roguelazer.com/blog/surprising-behavior-in-gnu-tar/
+app-arch/tar
+
 # Haelwenn (lanodan) Monnier <contact@hacktivis.me> (2023-07-25)
 # Dead upstream, known vulnerabilities (CVE-2021-42260)
 # Author switched to tinyxml2
