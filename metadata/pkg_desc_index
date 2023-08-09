@@ -53,6 +53,7 @@ dev-nodejs/graceful-fs 4.2.10: drop-in replacement for fs, making various improv
 dev-nodejs/inflight 1.0.6: Add callbacks to requests in flight to avoid async duplication
 dev-nodejs/inherits 2.0.4: Browser-friendly inheritance fully compatible with standard node.js inherits()
 dev-nodejs/isexe 2.0.0: Minimal module to check if a file is executable
+dev-nodejs/konami 1.6.3: An easter-egg script for adding the Konami Code to your website or project
 dev-nodejs/lru-cache 7.13.2: cache object that deletes the least-recently-used items
 dev-nodejs/minimatch 5.1.0: glob matcher in javascript
 dev-nodejs/mkdirp 1.0.4: Recursively mkdir, like 'mkdir -p', but in node.js
