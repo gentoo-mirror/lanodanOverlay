@@ -26,7 +26,11 @@ src_install() {
 
 	cat package.json | jq -r .files[] | while read pkg
 	do
-		doins -r "$pkg"
+		if test -e "$pkg"; then
+			doins -r "$pkg"
+		else
+			echo "Warning: package.json references '$pkg' but it wasn't found"
+		fi
 	done
 
 	fperms 755 "${NODEJS_SITELIB}${PN}/bin/semver.js"
