@@ -1,4 +1,4 @@
-BDEPEND=test? ( dev-libs/atf dev-util/kyua ) >=dev-vcs/git-1.8.2.1[curl]
+BDEPEND=test? ( dev-libs/atf dev-util/kyua dev-util/cram ) >=dev-vcs/git-1.8.2.1[curl]
 DEFINED_PHASES=configure install unpack
 DESCRIPTION=Collection of Unix tools, comparable to coreutils
 EAPI=8
@@ -10,4 +10,4 @@ PROPERTIES=live
 RESTRICT=!test? ( test )
 SLOT=0
 _eclasses_=git-r3	2358a7b20091609e24bd3a83b3ac5991
-_md5_=9ab846a20e9ec50bffae3903f1006ef7
+_md5_=a7bf7b4520ad4dd173281f52208944bf
