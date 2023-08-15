@@ -1,0 +1,12 @@
+BDEPEND=sys-apps/help2man
+DEFINED_PHASES=compile install prepare
+DEPEND=sys-apps/util-linux
+DESCRIPTION=tools for processing UEFI firmware content (EfiRom, GenFfs, ...)
+EAPI=8
+HOMEPAGE=https://github.com/tianocore/edk2
+KEYWORDS=-* ~amd64
+LICENSE=BSD-2 MIT
+RDEPEND=sys-apps/util-linux
+SLOT=0
+SRC_URI=https://github.com/tianocore/edk2/archive/edk2-stable202305.tar.gz
+_md5_=4112bc63e810deac68c31017febfe312

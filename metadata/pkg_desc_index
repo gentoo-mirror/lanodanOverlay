@@ -138,6 +138,7 @@ sys-auth/skeud 9999: Simple and portable utilities to deal with user accounts (s
 sys-devel/binutils-x86_64-helios 9999: Tools necessary to build programs
 sys-devel/gettext 0.3.2-r1: Stub and/or lightweight replacements of the GNU gettext suite
 sys-devel/ipcgen 9999: IPC code generation for Mercury
+sys-firmware/edk2-tools 202305: tools for processing UEFI firmware content (EfiRom, GenFfs, ...)
 sys-libs/gcompat 0.4.0: The GNU C Library compatibility layer for musl
 sys-libs/libtickit 0.3.3: library for building interactive full-screen terminal programs
 sys-libs/zlib 1.2.8.2015.12.26: Standard (de)compression library (Sortix's libz fork)
