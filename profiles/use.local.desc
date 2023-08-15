@@ -90,6 +90,12 @@ net-libs/webkit-gtk:webrtc - Enable WebRTC support
 sys-apps/lanodan-utils:suspend - Enable the "memsys" program for suspending the machine
 sys-apps/shadow:bcrypt - build the bcrypt password encryption algorithm
 sys-apps/shadow:su - build the su program
+sys-devel/binutils-x86_64-helios:cet - Enable Intel Control-flow Enforcement Technology.
+sys-devel/binutils-x86_64-helios:default-gold - Set ld to point to ld.gold instead of ld.bfd
+sys-devel/binutils-x86_64-helios:gold - Build ld.gold linker
+sys-devel/binutils-x86_64-helios:gprofng - Enable the next-generation gprofng profiler
+sys-devel/binutils-x86_64-helios:multitarget - Adds support to binutils for cross compiling (does not work with gas)
+sys-devel/binutils-x86_64-helios:plugins - Enable plugin support in tools
 sys-devel/gettext:shim - Install libintl library. Not suitable on glibc systems. On musl systems, passes contents through and translates via musl's libintl. On other systems, provides a no-op library (returns input text with no changes/translations).
 sys-libs/gcompat:obstack - Use sys-libs/obstack-standalone for greater compatibility
 sys-libs/libtickit:unibilium - Use dev-libs/unibilium (highly recommended) instead of sys-libs/ncurses

@@ -135,6 +135,7 @@ sys-apps/shadow 4.11.1: Utilities to deal with user accounts
 sys-apps/tcb 1.2-r1: Libraries and tools implementing the tcb password shadowing scheme
 sys-apps/xdg-dbus-proxy 0.1.2: filtering proxy for D-Bus connections
 sys-auth/skeud 9999: Simple and portable utilities to deal with user accounts (su, login)
+sys-devel/binutils-x86_64-helios 9999: Tools necessary to build programs
 sys-devel/gettext 0.3.2-r1: Stub and/or lightweight replacements of the GNU gettext suite
 sys-devel/ipcgen 9999: IPC code generation for Mercury
 sys-libs/gcompat 0.4.0: The GNU C Library compatibility layer for musl
