@@ -1,0 +1,20 @@
+# Copyright 2023 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+inherit git-r3
+
+DESCRIPTION="IPC code generation for Mercury"
+HOMEPAGE="https://git.sr.ht/~sircmpwn/ipcgen"
+EGIT_REPO_URI="https://git.sr.ht/~sircmpwn/ipcgen"
+LICENSE="GPL-3"
+SLOT="0"
+KEYWORDS="~amd64 ~arm64"
+
+DEPEND=">=dev-lang/hare-0_pre20230813:="
+RDEPEND=""
+
+src_install() {
+	dobin ipcgen
+}
