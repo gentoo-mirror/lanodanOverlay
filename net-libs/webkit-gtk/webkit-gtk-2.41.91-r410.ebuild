@@ -212,9 +212,6 @@ src_configure() {
 
 	local mycmakeargs=(
 		${ruby_interpreter}
-		$(cmake_use_find_package gles2-only OpenGLES2)
-		$(cmake_use_find_package egl EGL)
-		$(cmake_use_find_package !gles2-only OpenGL)
 		-DBWRAP_EXECUTABLE:FILEPATH="${EPREFIX}"/usr/bin/bwrap # If bubblewrap[suid] then portage makes it go-r and cmake find_program fails with that
 		-DDBUS_PROXY_EXECUTABLE:FILEPATH="${EPREFIX}"/usr/bin/xdg-dbus-proxy
 		-DPORT=GTK
@@ -232,11 +229,8 @@ src_configure() {
 		-DENABLE_WEBGL=ON
 		-DENABLE_WEB_AUDIO=$(usex gstreamer)
 		-DENABLE_WEBDRIVER=OFF
-		# -DENABLE_TOUCH_EVENTS=OFF
-		# -DENABLE_DRAG_SUPPORT=OFF
 
 		# Source/cmake/OptionsGTK.cmake
-		-DENABLE_GLES2=$(usex gles2-only)
 		-DENABLE_DOCUMENTATION=$(usex doc)
 		-DENABLE_INTROSPECTION=$(usex introspection)
 		-DENABLE_JOURNALD_LOG=$(usex systemd)
