@@ -30,7 +30,7 @@ dev-hare/madeline 9999: tiny readline-alike with some batteries included
 dev-java/icedtea 7.2.6.28: A harness to build OpenJDK using Free Software build tools and dependencies
 dev-lang/erlang 26.0.1: Erlang programming language, runtime environment and libraries (OTP)
 dev-lang/go 1.4_p20171003: Boostrap Go from C (useful for musl libc)
-dev-lang/kuroko 1.3.1: Dynamic, bytecode-compiled programming language and a dialect of Python
+dev-lang/kuroko 1.4.0: Dynamic, bytecode-compiled programming language and a dialect of Python
 dev-lang/mrustc 0.10-r1: Alternative rust compiler (re-implementation)
 dev-libs/PlatformFolders 4.2.0: C++ library to look for special directories like ~/.config and %APPDATA%
 dev-libs/hts_engine 1.10: HMM-based speech synthesis system (HTS) engine and API
