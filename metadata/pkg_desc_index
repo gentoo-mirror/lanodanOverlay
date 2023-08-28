@@ -66,6 +66,7 @@ dev-nodejs/strip-json-comments 5.0.1: Strip comments from JSON
 dev-nodejs/vec2d 0.3.0: 2d vector math with good unit tests
 dev-nodejs/which 2.0.2: Like which(1) unix command. Find the first instance of an executable in the PATH.
 dev-nodejs/wrappy 1.0.2: Callback wrapping utility
+dev-nodejs/ws 8.13.0: Simple to use, blazing fast and thoroughly tested WebSocket client and server for Node.js
 dev-util/esbuild 0.18.19: extremely fast bundler for the web
 dev-util/genie 1170: GENie project generator tool (a fork of premake by Branimir Karadžić)
 dev-util/glslang 11.10.0: Khronos reference front-end for GLSL and ESSL, and sample SPIR-V generator

@@ -1,0 +1,14 @@
+BDEPEND=net-libs/nodejs app-misc/jq
+DEFINED_PHASES=install postinst test
+DESCRIPTION=Simple to use, blazing fast and thoroughly tested WebSocket client and server for Node.js
+EAPI=8
+HOMEPAGE=https://github.com/websockets/ws
+INHERIT=nodejs optfeature
+KEYWORDS=~amd64
+LICENSE=MIT
+RDEPEND=dev-nodejs/node_path
+RESTRICT=test
+SLOT=0
+SRC_URI=https://github.com/websockets/ws/archive/refs/tags/8.13.0.tar.gz -> ws-8.13.0.tar.gz
+_eclasses_=nodejs	c71806a62616bfcef6dcb8248a1b888d	optfeature	222cb475c5a4f7ae7cfb0bf510a6fe54
+_md5_=713588c4677683af5cf7848c9b6cc141
