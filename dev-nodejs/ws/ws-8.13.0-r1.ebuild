@@ -22,7 +22,7 @@ src_install() {
 	doins package.json
 
 	# Taken from package.json .files manually due to lib/*.js
-	doins -r browser.js index.js lib/*.js wrapper.mjs
+	doins -r browser.js index.js lib/ wrapper.mjs
 }
 
 pkg_postinst() {
