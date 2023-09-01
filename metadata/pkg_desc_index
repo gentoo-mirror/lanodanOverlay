@@ -86,6 +86,7 @@ games-misc/papers-please 1.2.76.54233-r1: A Dystopian Document Thriller
 games-roguelike/cataclysm-dda 0.6.3: Post-apocalyptic roguelike
 games-util/fteqcc 9999: FTE QuakeC compiler
 games-util/steamcontroller 9999: Standalone Steam Controller Driver
+gnome-base/librsvg 2.40.21: Scalable Vector Graphics (SVG) rendering library
 gnustep-base/gnustep-make 2.7.0: GNUstep Makefile Package
 gui-libs/libdecor 0.1.1: A client-side decorations library for Wayland clients
 gui-libs/wlr-protocols 1.0_p20220608 9999: Wayland protocols designed for use in wlroots (and other compositors)
