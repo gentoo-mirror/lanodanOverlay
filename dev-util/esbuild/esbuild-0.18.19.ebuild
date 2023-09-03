@@ -16,7 +16,7 @@ IUSE="test"
 
 DEPEND="
 	>=dev-lang/go-1.13
-	dev-go/x-sys
+	dev-go/sys
 	test? ( net-libs/nodejs )
 "
 BDEPEND="sys-apps/help2man"
