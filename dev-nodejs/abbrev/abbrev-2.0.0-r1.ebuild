@@ -1,4 +1,4 @@
-# Copyright 2022 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+# Copyright 2022-2023 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -14,10 +14,9 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="test"
 
-#RESTRICT="!test? ( test )"
-#DEPEND="test? ( dev-nodejs/tap )"
-
-RESTRICT="test"
+PATCHES=(
+	"${FILESDIR}/abbrev-2.0.0-node_test.patch"
+)
 
 src_install() {
 	insinto "${NODEJS_SITELIB}${PN}"
@@ -25,6 +24,6 @@ src_install() {
 
 	cat package.json | jq -r .files[] | while read pkg
 	do
-		doins "$pkg"
+		test -e "$pkg" && doins -r "$pkg"
 	done
 }
