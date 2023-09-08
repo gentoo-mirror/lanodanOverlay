@@ -5,7 +5,7 @@ EAPI=8
 
 inherit nodejs
 
-DESCRIPTION="ion parsing for Node, supporting types, shorthands, etc"
+DESCRIPTION="Option parsing for Node, supporting types, shorthands, etc"
 HOMEPAGE="https://github.com/npm/nopt"
 SRC_URI="https://github.com/npm/nopt/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="ISC"
