@@ -32,7 +32,8 @@ NODEJS_SITELIB="/usr/share/nodejs/"
 nodejs_src_test() {
 	if jq -e '.scripts | has("test")' <package.json >/dev/null
 	then
-		npm run test || die
+		# --ignore-scripts: do not run pretest and posttest
+		npm test --ignore-scripts || die
 	else
 		die 'No "test" command defined in package.json'
 	fi
