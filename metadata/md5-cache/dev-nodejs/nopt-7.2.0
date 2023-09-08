@@ -1,6 +1,6 @@
 BDEPEND=net-libs/nodejs app-misc/jq
 DEFINED_PHASES=install test
-DESCRIPTION=ion parsing for Node, supporting types, shorthands, etc
+DESCRIPTION=Option parsing for Node, supporting types, shorthands, etc
 EAPI=8
 HOMEPAGE=https://github.com/npm/nopt
 INHERIT=nodejs
@@ -11,5 +11,5 @@ RDEPEND=>=dev-nodejs/abbrev-2.0.0 dev-nodejs/node_path
 RESTRICT=test
 SLOT=0
 SRC_URI=https://github.com/npm/nopt/archive/refs/tags/v7.2.0.tar.gz -> nopt-7.2.0.tar.gz
-_eclasses_=nodejs	c71806a62616bfcef6dcb8248a1b888d
-_md5_=4b97386c5bde5ebec71a13b76f42a95d
+_eclasses_=nodejs	c1bd94a2ca5af2b72a161510e31cd65d
+_md5_=7a16dbeff09ee598778249f11c594e8e

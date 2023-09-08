@@ -10,5 +10,5 @@ RDEPEND=dev-nodejs/node_path
 RESTRICT=test
 SLOT=0
 SRC_URI=https://github.com/websockets/ws/archive/refs/tags/8.13.0.tar.gz -> ws-8.13.0.tar.gz
-_eclasses_=nodejs	c71806a62616bfcef6dcb8248a1b888d	optfeature	222cb475c5a4f7ae7cfb0bf510a6fe54
+_eclasses_=nodejs	c1bd94a2ca5af2b72a161510e31cd65d	optfeature	222cb475c5a4f7ae7cfb0bf510a6fe54
 _md5_=e554de3e2e27a3f0e474084e485a5c42
