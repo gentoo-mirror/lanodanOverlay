@@ -14,7 +14,7 @@ IUSE="test"
 
 RESTRICT="!test? ( test )"
 
-RDEPEND="virtual/libcrypt"
+RDEPEND="virtual/libcrypt:="
 DEPEND="${RDEPEND}"
 BDEPEND="
 	test? (
