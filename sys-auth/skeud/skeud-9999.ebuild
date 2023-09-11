@@ -14,7 +14,7 @@ IUSE="test"
 
 RESTRICT="!test? ( test )"
 
-RDEPEND="virtual/libcrypt"
+RDEPEND="virtual/libcrypt:="
 DEPEND="${RDEPEND}"
 BDEPEND="
 	test? (
@@ -24,5 +24,11 @@ BDEPEND="
 "
 
 src_install() {
-	emake install DESTDIR="${D}" PREFIX='/usr'
+	emake install DESTDIR="${D}" PREFIX='/opt/lanodan' SYS_BINDIR='/opt/lanodan/bin'
+
+	# before 50baselayout
+	newenvd - 40skeud <<-EOF
+		PATH="/opt/lanodan/bin"
+		MANPATH="/opt/lanodan/share/man"
+	EOF
 }
