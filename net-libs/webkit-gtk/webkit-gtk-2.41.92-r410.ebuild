@@ -254,5 +254,8 @@ src_configure() {
 		-DUSE_WPE_RENDERER=$(usex wayland) # WPE renderer is used to implement accelerated compositing under wayland
 	)
 
+	# https://bugs.gentoo.org/761238
+	append-cppflags -DNDEBUG
+
 	cmake_src_configure
 }

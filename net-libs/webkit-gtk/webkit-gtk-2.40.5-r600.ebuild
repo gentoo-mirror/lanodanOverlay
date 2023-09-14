@@ -17,7 +17,7 @@ SRC_URI="https://www.webkitgtk.org/releases/${MY_P}.tar.xz"
 # Apache-2.0 for fast_float, ANGLE (also pdfjs but disabled)
 # See https://bugs.webkit.org/show_bug.cgi?id=254717
 LICENSE="LGPL-2+ BSD Apache-2.0"
-SLOT="6.0/0" # soname version of libwebkit2gtk-6.0
+SLOT="6/0" # soname version of libwebkit2gtk-6.0
 KEYWORDS="~amd64 ~arm ~arm64 ~ppc64 ~riscv ~x86"
 
 IUSE="aqua +avif debug doc +egl examples gamepad +geolocation gles2-only gnome-keyring +gstreamer +introspection +jpeg2k jpegxl +jumbo-build lcms +seccomp spell systemd test wayland webrtc +X"
