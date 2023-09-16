@@ -59,6 +59,15 @@ nodejs_src_compile() {
 	fi
 }
 
+# Install files in nodejs hierarchy with preserving path of source files
+nodejs_install_path() {
+	for file in "$@"; do
+		target_dir="${ED}/${NODEJS_SITELIB}${PN}/$(dirname "${file}")/"
+		mkdir -p "${target_dir}" || die "Failed to create directory for ${file}"
+		cp -r "${file}" "${target_dir}" || die "Failed to copy ${file}"
+	done
+}
+
 nodejs_src_install() {
 	einstalldocs
 
@@ -71,7 +80,7 @@ nodejs_src_install() {
 		jq -r .files[] <package.json \
 		| xargs -d '\n' glob -m \
 		| while read file; do
-			doins -r "${file}"
+			nodejs_install_path "${file}"
 		done
 	else
 		doins -r .
@@ -81,19 +90,19 @@ nodejs_src_install() {
 	then
 		main="$(jq -r -e '.main' <package.json)"
 		if test -e "${main}"; then
-			doins "${main}"
+			nodejs_install_path "${main}"
 		else
-			doins "${main}.js"
+			nodejs_install_path "${main}.js"
 		fi
 	else
-		test -e index.js && doins index.js
+		test -e index.js && nodejs_install_path index.js
 	fi
 
 	if jq -e 'has("bin")' <package.json >/dev/null
 	then
 		jq -r '.bin | to_entries | .[] | .key + " " + .value' <package.json \
 		| while read bin file; do
-			doins "${file}"
+			nodejs_install_path "${file}"
 			fperms 755 "${NODEJS_SITELIB}${PN}/${file#./}"
 			dosym "${NODEJS_SITELIB}${PN}/${file#./}" "/usr/bin/${bin}"
 		done
