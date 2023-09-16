@@ -22,12 +22,3 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 
 DOCS=( doc README.md )
-
-src_install() {
-	einstalldocs
-
-	insinto "${NODEJS_SITELIB}${PN}"
-	doins package.json
-	doins index.js
-	doins -r lib
-}
