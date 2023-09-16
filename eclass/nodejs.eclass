@@ -60,6 +60,8 @@ nodejs_src_compile() {
 }
 
 nodejs_src_install() {
+	einstalldocs
+
 	# https://docs.npmjs.com/cli/v6/configuring-npm/package-json/#files
 	insinto "${NODEJS_SITELIB}${PN}"
 	doins package.json
