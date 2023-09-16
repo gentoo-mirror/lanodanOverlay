@@ -130,6 +130,7 @@ net-nntp/suck 4.3.4: Grab news from a remote NNTP server and feed them to anothe
 sci-calculators/pc 0.4: 9front's pc(1) (Programmer's Calculator) for Unix
 sci-libs/onnxruntime 1.9.1: cross-platform, high performance ML inferencing and training accelerator
 sys-apps/9utils 9999: Collection of utilities inspired by Plan9
+sys-apps/cmd-glob 1.0.0: glob(1) wrapper around glob(3), inspired by https://github.com/isaacs/node-glob
 sys-apps/lanodan-utils 9999: Collection of Unix tools, comparable to coreutils
 sys-apps/rc-status-page 9999: Basic HTML status page based on OpenRC
 sys-apps/sdate 0.7: never ending September date
