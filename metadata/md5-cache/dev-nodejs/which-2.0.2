@@ -1,5 +1,5 @@
-BDEPEND=net-libs/nodejs app-misc/jq
-DEFINED_PHASES=install test
+BDEPEND=net-libs/nodejs app-misc/jq sys-apps/cmd-glob
+DEFINED_PHASES=compile install test
 DEPEND=dev-nodejs/isexe
 DESCRIPTION=Like which(1) unix command. Find the first instance of an executable in the PATH.
 EAPI=8
@@ -11,5 +11,5 @@ RDEPEND=dev-nodejs/isexe dev-nodejs/node_path
 RESTRICT=test
 SLOT=0
 SRC_URI=https://github.com/isaacs/node-which/archive/refs/tags/v2.0.2.tar.gz -> which-2.0.2.tar.gz
-_eclasses_=nodejs	c1bd94a2ca5af2b72a161510e31cd65d
-_md5_=c268b87fb933315972ab52f664764476
+_eclasses_=nodejs	fcc495ccfbc66625a7da2afdc2afe288
+_md5_=bcb939123c09c4c2ab550cd1396febe5

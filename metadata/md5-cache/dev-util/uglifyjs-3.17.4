@@ -1,4 +1,4 @@
-BDEPEND=sys-apps/help2man net-libs/nodejs app-misc/jq
+BDEPEND=sys-apps/help2man net-libs/nodejs app-misc/jq sys-apps/cmd-glob
 DEFINED_PHASES=compile install prepare test
 DEPEND=test? ( dev-nodejs/semver )
 DESCRIPTION=JavaScript parser, minifier, compressor and beautifier toolkit
@@ -12,5 +12,5 @@ RDEPEND=net-libs/nodejs dev-nodejs/node_path
 RESTRICT=!test? ( test )
 SLOT=0
 SRC_URI=https://github.com/mishoo/UglifyJS/archive/refs/tags/v3.17.4.tar.gz -> uglifyjs-3.17.4.tar.gz
-_eclasses_=nodejs	c1bd94a2ca5af2b72a161510e31cd65d
+_eclasses_=nodejs	fcc495ccfbc66625a7da2afdc2afe288
 _md5_=99e383c420fdf8c2da46bc3df32227f7

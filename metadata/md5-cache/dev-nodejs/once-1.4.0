@@ -1,5 +1,5 @@
-BDEPEND=net-libs/nodejs app-misc/jq
-DEFINED_PHASES=install test
+BDEPEND=net-libs/nodejs app-misc/jq sys-apps/cmd-glob
+DEFINED_PHASES=compile install test
 DESCRIPTION=Run a function exactly one time
 EAPI=8
 HOMEPAGE=https://github.com/isaacs/once
@@ -11,5 +11,5 @@ RDEPEND=dev-nodejs/wrappy dev-nodejs/node_path
 RESTRICT=test
 SLOT=0
 SRC_URI=https://github.com/isaacs/once/archive/refs/tags/v1.4.0.tar.gz -> once-1.4.0.tar.gz
-_eclasses_=nodejs	c1bd94a2ca5af2b72a161510e31cd65d
-_md5_=6506a39779683b8c9aa9cc2cc97b7797
+_eclasses_=nodejs	fcc495ccfbc66625a7da2afdc2afe288
+_md5_=36e2e791540362a3ade02012ef094638

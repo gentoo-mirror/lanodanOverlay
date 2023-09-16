@@ -1,5 +1,5 @@
-BDEPEND=net-libs/nodejs app-misc/jq
-DEFINED_PHASES=install test
+BDEPEND=net-libs/nodejs app-misc/jq sys-apps/cmd-glob
+DEFINED_PHASES=compile install test
 DESCRIPTION=Option parsing for Node, supporting types, shorthands, etc
 EAPI=8
 HOMEPAGE=https://github.com/npm/nopt
@@ -11,5 +11,5 @@ RDEPEND=>=dev-nodejs/abbrev-2.0.0 dev-nodejs/node_path
 RESTRICT=test
 SLOT=0
 SRC_URI=https://github.com/npm/nopt/archive/refs/tags/v7.2.0.tar.gz -> nopt-7.2.0.tar.gz
-_eclasses_=nodejs	c1bd94a2ca5af2b72a161510e31cd65d
-_md5_=7a16dbeff09ee598778249f11c594e8e
+_eclasses_=nodejs	fcc495ccfbc66625a7da2afdc2afe288
+_md5_=23757c069ec2784097490e1d4fdad61a

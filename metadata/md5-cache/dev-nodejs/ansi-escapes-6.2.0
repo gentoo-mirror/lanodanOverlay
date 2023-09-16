@@ -1,5 +1,5 @@
-BDEPEND=net-libs/nodejs app-misc/jq
-DEFINED_PHASES=install test
+BDEPEND=net-libs/nodejs app-misc/jq sys-apps/cmd-glob
+DEFINED_PHASES=compile install test
 DESCRIPTION=ANSI escape codes for manipulating the terminal
 EAPI=8
 HOMEPAGE=https://github.com/sindresorhus/ansi-escapes
@@ -10,5 +10,5 @@ RDEPEND=dev-nodejs/node_path
 RESTRICT=test
 SLOT=0
 SRC_URI=https://github.com/sindresorhus/ansi-escapes/archive/refs/tags/v6.2.0.tar.gz -> ansi-escapes-6.2.0.tar.gz
-_eclasses_=nodejs	c1bd94a2ca5af2b72a161510e31cd65d
-_md5_=35545ff52739d74ae90cb331e16bd2a0
+_eclasses_=nodejs	fcc495ccfbc66625a7da2afdc2afe288
+_md5_=0936e5e4f570436fa499295972cb19e5

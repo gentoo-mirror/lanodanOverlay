@@ -1,5 +1,5 @@
-BDEPEND=net-libs/nodejs app-misc/jq
-DEFINED_PHASES=install test
+BDEPEND=net-libs/nodejs app-misc/jq sys-apps/cmd-glob
+DEFINED_PHASES=compile install test
 DESCRIPTION=Use node's fs.realpath, but fall back to the JS implementation if the native one fails
 EAPI=8
 HOMEPAGE=https://github.com/isaacs/fs.realpath
@@ -11,5 +11,5 @@ RDEPEND=dev-nodejs/node_path
 RESTRICT=test
 SLOT=0
 SRC_URI=https://github.com/isaacs/fs.realpath/archive/refs/tags/v1.0.0.tar.gz -> fs-realpath-1.0.0.tar.gz
-_eclasses_=nodejs	c1bd94a2ca5af2b72a161510e31cd65d
-_md5_=b36224b50ca6153472a8a230dcb78206
+_eclasses_=nodejs	fcc495ccfbc66625a7da2afdc2afe288
+_md5_=70f787dd37fb76461c619423843602eb

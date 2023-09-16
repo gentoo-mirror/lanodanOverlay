@@ -1,5 +1,5 @@
-BDEPEND=net-libs/nodejs app-misc/jq
-DEFINED_PHASES=install postinst test
+BDEPEND=net-libs/nodejs app-misc/jq sys-apps/cmd-glob
+DEFINED_PHASES=compile install postinst test
 DESCRIPTION=Simple to use, blazing fast and thoroughly tested WebSocket client and server for Node.js
 EAPI=8
 HOMEPAGE=https://github.com/websockets/ws
@@ -10,5 +10,5 @@ RDEPEND=dev-nodejs/node_path
 RESTRICT=test
 SLOT=0
 SRC_URI=https://github.com/websockets/ws/archive/refs/tags/8.13.0.tar.gz -> ws-8.13.0.tar.gz
-_eclasses_=nodejs	c1bd94a2ca5af2b72a161510e31cd65d	optfeature	222cb475c5a4f7ae7cfb0bf510a6fe54
-_md5_=e554de3e2e27a3f0e474084e485a5c42
+_eclasses_=nodejs	fcc495ccfbc66625a7da2afdc2afe288	optfeature	222cb475c5a4f7ae7cfb0bf510a6fe54
+_md5_=6ad0c038294fc6a60572742cb987cc59
