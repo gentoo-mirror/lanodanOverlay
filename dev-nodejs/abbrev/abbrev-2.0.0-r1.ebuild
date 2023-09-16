@@ -17,13 +17,3 @@ IUSE="test"
 PATCHES=(
 	"${FILESDIR}/abbrev-2.0.0-node_test.patch"
 )
-
-src_install() {
-	insinto "${NODEJS_SITELIB}${PN}"
-	doins package.json
-
-	cat package.json | jq -r .files[] | while read pkg
-	do
-		test -e "$pkg" && doins -r "$pkg"
-	done
-}
