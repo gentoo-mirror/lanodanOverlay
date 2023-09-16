@@ -15,10 +15,3 @@ KEYWORDS="~amd64"
 
 # Has no tests
 RESTRICT="test"
-
-src_install() {
-	insinto "${NODEJS_SITELIB}${PN}"
-	doins package.json
-	doins konami.js
-	dodoc README.md
-}
