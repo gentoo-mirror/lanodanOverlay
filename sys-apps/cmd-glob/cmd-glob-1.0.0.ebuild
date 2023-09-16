@@ -6,6 +6,7 @@ EAPI=8
 DESCRIPTION="glob(1) wrapper around glob(3), inspired by https://github.com/isaacs/node-glob"
 HOMEPAGE="https://hacktivis.me/git/cmd-glob"
 SRC_URI="https://hacktivis.me/releases/${P}.tar.gz"
+KEYWORDS="~amd64"
 LICENSE="MPL-2.0"
 SLOT="0"
 
