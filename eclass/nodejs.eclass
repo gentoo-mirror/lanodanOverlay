@@ -98,13 +98,27 @@ nodejs_src_install() {
 		test -e index.js && nodejs_install_path index.js
 	fi
 
-	if jq -e 'has("bin")' <package.json >/dev/null
-	then
-		jq -r '.bin | to_entries | .[] | .key + " " + .value' <package.json \
-		| while read bin file; do
+	bin_type="$(jq -r '.bin | type' <package.json)"
+	case "${bin_type}" in
+		null)
+		;;
+		object)
+			jq -r '.bin | to_entries | .[] | .key + " " + .value' <package.json \
+			| while read bin file; do
+				nodejs_install_path "${file}"
+				fperms 755 "${NODEJS_SITELIB}${PN}/${file#./}"
+				dosym "${NODEJS_SITELIB}${PN}/${file#./}" "/usr/bin/${bin}"
+			done
+		;;
+		string)
+			file="$(jq -r '.bin' <package.json)"
+			bin="$(basename "${file}")"
 			nodejs_install_path "${file}"
 			fperms 755 "${NODEJS_SITELIB}${PN}/${file#./}"
 			dosym "${NODEJS_SITELIB}${PN}/${file#./}" "/usr/bin/${bin}"
-		done
-	fi
+		;;
+		*)
+			die "Unhandled package.json#bin type: ${bin_type}"
+		;;
+	esac
 }
