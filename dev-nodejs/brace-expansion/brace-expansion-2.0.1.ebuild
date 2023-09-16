@@ -22,9 +22,3 @@ IUSE="test"
 RDEPEND="dev-nodejs/balanced-match"
 
 RESTRICT="test"
-
-src_install() {
-	insinto "${NODEJS_SITELIB}${PN}"
-	doins package.json
-	doins index.js
-}
