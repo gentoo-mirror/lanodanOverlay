@@ -14,14 +14,3 @@ KEYWORDS="~amd64"
 
 RDEPEND=">=dev-nodejs/pend-1.2.0"
 DEPEND="${RDEPEND}"
-
-src_install() {
-	insinto "${NODEJS_SITELIB}${PN}"
-	doins package.json
-	doins index.js
-	doins cli.js
-	dodoc README.md
-
-	fperms 755 "${NODEJS_SITELIB}${PN}/cli.js"
-	dosym "${NODEJS_SITELIB}${PN}/cli.js" "${EPREFIX}/usr/bin/${PN}"
-}

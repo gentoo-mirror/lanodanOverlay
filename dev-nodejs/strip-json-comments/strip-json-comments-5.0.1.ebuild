@@ -16,10 +16,3 @@ KEYWORDS="~amd64"
 RESTRICT="test"
 
 DOCS=( readme.md )
-
-src_install() {
-	einstalldocs
-	insinto "${NODEJS_SITELIB}${PN}"
-	doins package.json
-	doins index.js
-}

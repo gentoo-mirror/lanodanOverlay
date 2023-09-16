@@ -26,15 +26,3 @@ KEYWORDS="~amd64"
 RESTRICT="test"
 
 DOCS=( example.js readme.md )
-
-src_install() {
-	einstalldocs
-
-	insinto "${NODEJS_SITELIB}${PN}"
-	doins package.json
-
-	cat package.json | jq -r .files[] | while read pkg
-	do
-		doins -r "$pkg"
-	done
-}

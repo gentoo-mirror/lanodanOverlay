@@ -19,20 +19,3 @@ IUSE="test"
 RDEPEND="dev-nodejs/lru-cache"
 
 RESTRICT="test"
-
-src_install() {
-	insinto "${NODEJS_SITELIB}${PN}"
-	doins package.json
-
-	cat package.json | jq -r .files[] | while read pkg
-	do
-		if test -e "$pkg"; then
-			doins -r "$pkg"
-		else
-			echo "Warning: package.json references '$pkg' but it wasn't found"
-		fi
-	done
-
-	fperms 755 "${NODEJS_SITELIB}${PN}/bin/semver.js"
-	dosym "${NODEJS_SITELIB}${PN}/bin/semver.js" "${EPREFIX}/usr/bin/semver"
-}

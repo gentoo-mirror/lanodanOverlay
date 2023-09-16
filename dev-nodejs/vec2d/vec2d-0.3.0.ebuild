@@ -15,10 +15,3 @@ KEYWORDS="~amd64"
 
 RESTRICT="test"
 # BDEPEND="test? ( dev-nodejs/mocha )"
-
-src_install() {
-	insinto "${NODEJS_SITELIB}${PN}"
-	doins package.json
-	doins index.js
-	dodoc README.md
-}

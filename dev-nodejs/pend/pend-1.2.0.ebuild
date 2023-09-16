@@ -12,10 +12,3 @@ S="${WORKDIR}/node-pend-${PV}"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-
-src_install() {
-	insinto "${NODEJS_SITELIB}${PN}"
-	doins package.json
-	doins index.js
-	dodoc README.md
-}

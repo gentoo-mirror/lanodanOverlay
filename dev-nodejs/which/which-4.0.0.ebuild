@@ -25,17 +25,3 @@ DEPEND="${RDEPEND}"
 #RESTRICT="!test? ( test )"
 
 RESTRICT="test"
-
-src_install() {
-	insinto "${NODEJS_SITELIB}${PN}"
-	doins package.json
-
-	cat package.json | jq -r .files[] | while read pkg
-	do
-		insinto "${NODEJS_SITELIB}${PN}/$(dirname "$pkg")"
-		doins -r "$pkg"
-	done
-
-	fperms 755 "${NODEJS_SITELIB}${PN}/bin/node-which"
-	dosym "${NODEJS_SITELIB}${PN}/bin/node-which" "${EPREFIX}/usr/bin/node-which"
-}

@@ -19,13 +19,3 @@ IUSE="test"
 RDEPEND=">=dev-nodejs/abbrev-2.0.0"
 
 RESTRICT="test"
-
-src_install() {
-	insinto "${NODEJS_SITELIB}${PN}"
-	doins package.json
-
-	cat package.json | jq -r .files[] | while read pkg
-	do
-		doins -r "$pkg"
-	done
-}

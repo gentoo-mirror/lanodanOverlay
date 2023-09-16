@@ -14,16 +14,7 @@ KEYWORDS="~amd64"
 
 RESTRICT="test"
 
-src_install() {
-	einstalldocs
-	dodoc -r doc/* examples
-
-	insinto "${NODEJS_SITELIB}${PN}"
-	doins package.json
-
-	# Taken from package.json .files manually due to lib/*.js
-	doins -r browser.js index.js lib/ wrapper.mjs
-}
+DOCS=( SECURITY.md README.md doc examples )
 
 pkg_postinst() {
 	if has_version '<dev-lang/nodejs-18.14.0'; then

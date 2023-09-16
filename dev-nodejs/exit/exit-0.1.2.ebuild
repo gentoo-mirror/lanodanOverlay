@@ -24,9 +24,3 @@ KEYWORDS="~amd64"
 #)"
 
 RESTRICT="test"
-
-src_install() {
-	insinto "${NODEJS_SITELIB}${PN}"
-	doins package.json
-	doins -r lib
-}

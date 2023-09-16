@@ -5,13 +5,12 @@ EAPI=8
 
 inherit nodejs
 
-DESCRIPTION="Callback wrapping utility"
-HOMEPAGE="https://github.com/npm/wrappy"
-SRC_URI="https://github.com/npm/wrappy/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
-LICENSE="ISC"
+DESCRIPTION="JSON.parse with context information on error"
+HOMEPAGE="https://github.com/npm/json-parse-even-better-errors"
+SRC_URI="https://github.com/npm/json-parse-even-better-errors/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="test"
 
 #RESTRICT="!test? ( test )"
 #DEPEND="test? ( dev-nodejs/tap )"
