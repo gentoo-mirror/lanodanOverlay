@@ -24,19 +24,3 @@ KEYWORDS="~amd64"
 #)"
 
 RESTRICT="test"
-
-src_prepare() {
-	default
-
-	sed -i '/fs.js/d' package.json || die
-}
-
-src_install() {
-	insinto "${NODEJS_SITELIB}${PN}"
-	doins package.json
-
-	cat package.json | jq -r .files[] | while read pkg
-	do
-		doins -r "$pkg"
-	done
-}
