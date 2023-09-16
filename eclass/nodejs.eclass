@@ -79,7 +79,12 @@ nodejs_src_install() {
 
 	if jq -e 'has("main")' <package.json >/dev/null
 	then
-		doins "$(jq -r -e '.main' <package.json)"
+		main="$(jq -r -e '.main' <package.json)"
+		if test -e "${main}"; then
+			doins "${main}"
+		else
+			doins "${main}.js"
+		fi
 	else
 		test -e index.js && doins index.js
 	fi
