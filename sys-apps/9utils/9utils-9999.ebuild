@@ -17,3 +17,7 @@ RESTRICT="!test? ( test )"
 RDEPEND="dev-lang/hare:="
 DEPEND="${RDEPEND}"
 BDEPEND="test? ( dev-util/cram )"
+
+src_install() {
+	PREFIX=/usr default
+}
