@@ -1,5 +1,5 @@
 BDEPEND=test? ( dev-util/cram ) >=dev-vcs/git-1.8.2.1[curl]
-DEFINED_PHASES=unpack
+DEFINED_PHASES=install unpack
 DEPEND=dev-lang/hare:=
 DESCRIPTION=Collection of utilities inspired by Plan9
 EAPI=8
@@ -12,4 +12,4 @@ RDEPEND=dev-lang/hare:=
 RESTRICT=!test? ( test )
 SLOT=0
 _eclasses_=git-r3	2358a7b20091609e24bd3a83b3ac5991
-_md5_=1979d4c11a8d1f2997bd4c045d9ef8b1
+_md5_=bfef7f48258cdf6c5a4d3d4585f43a06
