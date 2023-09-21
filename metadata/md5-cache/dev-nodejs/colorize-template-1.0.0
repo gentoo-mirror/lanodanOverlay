@@ -1,0 +1,16 @@
+BDEPEND=net-libs/nodejs app-misc/jq sys-apps/cmd-glob
+DEFINED_PHASES=compile install test
+DEPEND=test? ( dev-nodejs/picocolors )
+DESCRIPTION=Tagged template literal for ANSI colors
+EAPI=8
+HOMEPAGE=https://github.com/usmanyunusov/colorize-template
+INHERIT=nodejs
+IUSE=test
+KEYWORDS=~amd64
+LICENSE=MIT
+RDEPEND=dev-nodejs/node_path
+RESTRICT=!test? ( test )
+SLOT=0
+SRC_URI=https://github.com/usmanyunusov/colorize-template/archive/refs/tags/1.0.0.tar.gz -> colorize-template-1.0.0.tar.gz
+_eclasses_=nodejs	fcc495ccfbc66625a7da2afdc2afe288
+_md5_=b389674ca98f613acb08718451355602

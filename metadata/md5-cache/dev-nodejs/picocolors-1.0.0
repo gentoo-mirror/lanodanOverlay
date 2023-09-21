@@ -1,0 +1,13 @@
+BDEPEND=net-libs/nodejs app-misc/jq sys-apps/cmd-glob
+DEFINED_PHASES=compile install test
+DESCRIPTION=tiniest and the fastest library for terminal output formatting with ANSI colors
+EAPI=8
+HOMEPAGE=https://github.com/alexeyraspopov/picocolors
+INHERIT=nodejs
+KEYWORDS=~amd64
+LICENSE=ISC
+RDEPEND=dev-nodejs/node_path
+SLOT=0
+SRC_URI=https://github.com/alexeyraspopov/picocolors/archive/refs/tags/v1.0.0.tar.gz -> picocolors-1.0.0.tar.gz
+_eclasses_=nodejs	fcc495ccfbc66625a7da2afdc2afe288
+_md5_=f76a5711471acf5d4e946f6b1b0e6d2d
