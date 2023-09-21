@@ -76,8 +76,6 @@ net-dns/getdns:stubby - Include stubby in getdns
 net-libs/glib-networking:gnome - Extract HTTP/HTTPS/SOCKS proxy configuration stored using GSettings
 net-libs/glib-networking:libproxy - Use net-libs/libproxy for getting the HTTP/HTTPS/SOCKS proxy configuration
 net-libs/glib-networking:openssl - support for OpenSSL networking configration
-net-libs/libsoup:gssapi - Enable GSSAPI support
-net-libs/libsoup:samba - Use net-fs/samba for NTLM Single Sign-On
 net-libs/webkit-gtk:avif - Enable AVIF support via media-libs/libavif
 net-libs/webkit-gtk:egl - Enable EGL support
 net-libs/webkit-gtk:gamepad - Enable gamepad support via dev-libs/libmanette
