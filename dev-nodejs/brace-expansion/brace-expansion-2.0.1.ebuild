@@ -1,4 +1,4 @@
-# Copyright 2022 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+# Copyright 2022-2023 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -13,12 +13,21 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="test"
 
-#RESTRICT="!test? ( test )"
-#DEPEND="test? (
-#	dev-nodejs/at-c4312-matcha
-#	dev-nodejs/test
-#)"
+RESTRICT="!test? ( test )"
 
 RDEPEND="dev-nodejs/balanced-match"
+DEPEND="
+	${RDEPEND}
+	test? ( dev-nodejs/tape-lite )
+"
 
-RESTRICT="test"
+# Note: [PR60] switches to node:test, but doesn't cleanly applies on 2.0.1
+# PR60: https://github.com/juliangruber/brace-expansion/pull/60
+
+src_prepare() {
+	default
+
+	sed -i 's;tape test/\*.js;node --test;' package.json || die
+	sed -i "s;require('tape');require('tape-lite');" test/*.js || die
+	rm test/perf/bench.js || die
+}
