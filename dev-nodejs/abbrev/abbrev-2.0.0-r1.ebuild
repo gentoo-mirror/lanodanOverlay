@@ -9,10 +9,9 @@ DESCRIPTION="Get unique abbreviations for a set of strings"
 HOMEPAGE="https://github.com/npm/abbrev-js"
 SRC_URI="https://github.com/npm/abbrev-js/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 S="${WORKDIR}/abbrev-js-${PV}"
-LICENSE="ISC" # ISC OR MIT
+LICENSE="|| ( ISC MIT )"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="test"
 
 PATCHES=(
 	"${FILESDIR}/abbrev-2.0.0-node_test.patch"
