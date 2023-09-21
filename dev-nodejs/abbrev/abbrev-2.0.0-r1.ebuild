@@ -12,7 +12,6 @@ S="${WORKDIR}/abbrev-js-${PV}"
 LICENSE="|| ( ISC MIT )"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="test"
 
 PATCHES=(
 	"${FILESDIR}/abbrev-2.0.0-node_test.patch"
