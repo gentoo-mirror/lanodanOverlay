@@ -10,3 +10,6 @@ HOMEPAGE="https://hacktivis.me/git/tape-lite"
 EGIT_REPO_URI="https://hacktivis.me/git/tape-lite.git"
 LICENSE="MIT"
 SLOT="0"
+
+# Maintained by myself anyway
+KEYWORDS="~amd64"
