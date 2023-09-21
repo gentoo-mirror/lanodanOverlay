@@ -65,6 +65,7 @@ dev-nodejs/once 1.4.0: Run a function exactly one time
 dev-nodejs/pend 1.2.0: dead-simple optimistic async helper in javascript
 dev-nodejs/semver 7.5.4: semantic version parser used by npm
 dev-nodejs/strip-json-comments 5.0.1: Strip comments from JSON
+dev-nodejs/tape-lite 9999: tape shim based on node:test+node:assert with no dependencies
 dev-nodejs/vec2d 0.3.0: 2d vector math with good unit tests
 dev-nodejs/which 2.0.2 4.0.0: Like which(1) unix command. Find the first instance of an executable in the PATH.
 dev-nodejs/wrappy 1.0.2: Callback wrapping utility

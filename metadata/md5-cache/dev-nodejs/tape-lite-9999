@@ -1,0 +1,12 @@
+BDEPEND=net-libs/nodejs app-misc/jq sys-apps/cmd-glob >=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=compile install test unpack
+DESCRIPTION=tape shim based on node:test+node:assert with no dependencies
+EAPI=8
+HOMEPAGE=https://hacktivis.me/git/tape-lite
+INHERIT=nodejs git-r3
+LICENSE=MIT
+PROPERTIES=live
+RDEPEND=dev-nodejs/node_path
+SLOT=0
+_eclasses_=nodejs	fcc495ccfbc66625a7da2afdc2afe288	git-r3	2358a7b20091609e24bd3a83b3ac5991
+_md5_=7a0084c2b765f5825a7d752e20054020
