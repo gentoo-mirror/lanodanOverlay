@@ -167,6 +167,9 @@ src_prepare() {
 src_configure() {
 	if use debug; then
 		CMAKE_BUILD_TYPE="Debug"
+	else
+		# TODO: Release type if -g* is unspecified
+		CMAKE_BUILD_TYPE="RelWithDebInfo"
 	fi
 
 	# Respect CC, otherwise fails on prefix #395875
@@ -255,7 +258,7 @@ src_configure() {
 	)
 
 	# https://bugs.gentoo.org/761238
-	append-cppflags -DNDEBUG
+	#append-cppflags -DNDEBUG
 
 	cmake_src_configure
 }
