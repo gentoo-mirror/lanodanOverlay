@@ -4,6 +4,7 @@ app-accessibility/julius 4.5: Large Vocabulary Continuous Speech Recognition Eng
 app-containers/lxc-templates 9999: Old style template scripts for LXC
 app-doc/afaq 15.1: An Anarchist FAQ, scrapped in one collection and a markdown version
 app-doc/cross-unix-documentation 9999: documentation of similarities and (noteworthy) differencies between Unix systems
+app-doc/execline-man-pages 2.9.3.0.5: mdoc(7) versions of the documentation for the execline suite
 app-doc/hare-specification 9999: Hare programming language specification
 app-doc/single-unix-specification 4_p3-r1: The Single UNIX Specification, Version 4, 2018 Edition
 app-editors/2f30-ed 9999: Simple ed(1) implementation from 2f30.org
