@@ -5,12 +5,12 @@ EAPI=8
 
 inherit git-r3
 
-DESCRIPTION="Collection of Unix tools, comparable to coreutils"
-HOMEPAGE="https://hacktivis.me/git/utils"
-EGIT_REPO_URI="https://hacktivis.me/git/utils.git"
+DESCRIPTION="Collection of commonly available Unix tools"
+HOMEPAGE="https://hacktivis.me/git/utils-std"
+EGIT_REPO_URI="https://hacktivis.me/git/utils-std.git"
 LICENSE="MPL-2.0"
 SLOT="0"
-IUSE="suspend test"
+IUSE="test"
 
 RESTRICT="!test? ( test )"
 
@@ -30,10 +30,6 @@ src_configure() {
 
 src_install() {
 	emake install DESTDIR="${D}"
-
-	if use !suspend; then
-		rm "${D}/opt/lanodan/bin/memsys" || die "Failed removing memsys"
-	fi
 
 	# before 50baselayout
 	newenvd - 40lanodan <<-EOF
