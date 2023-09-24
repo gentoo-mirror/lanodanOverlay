@@ -1,13 +1,13 @@
 BDEPEND=test? ( dev-libs/atf dev-util/kyua dev-util/cram ) >=dev-vcs/git-1.8.2.1[curl]
 DEFINED_PHASES=configure install unpack
-DESCRIPTION=Collection of Unix tools, comparable to coreutils
+DESCRIPTION=Collection of commonly available Unix tools
 EAPI=8
-HOMEPAGE=https://hacktivis.me/git/utils
+HOMEPAGE=https://hacktivis.me/git/utils-std
 INHERIT=git-r3
-IUSE=suspend test
+IUSE=test
 LICENSE=MPL-2.0
 PROPERTIES=live
 RESTRICT=!test? ( test )
 SLOT=0
 _eclasses_=git-r3	2358a7b20091609e24bd3a83b3ac5991
-_md5_=a7bf7b4520ad4dd173281f52208944bf
+_md5_=34d6d18a0df8a1a4cea9a92ebf02bbf5

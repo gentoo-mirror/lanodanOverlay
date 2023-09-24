@@ -85,9 +85,9 @@ net-libs/webkit-gtk:jpegxl - Enable JPEG-XL support via media-libs/libjxl
 net-libs/webkit-gtk:jumbo-build - Combine source files to speed up build process
 net-libs/webkit-gtk:seccomp - Enable sandboxing functionality through sys-apps/bubblewrap
 net-libs/webkit-gtk:webrtc - Enable WebRTC support
-sys-apps/lanodan-utils:suspend - Enable the "memsys" program for suspending the machine
 sys-apps/shadow:bcrypt - build the bcrypt password encryption algorithm
 sys-apps/shadow:su - build the su program
+sys-apps/utils-std:suspend - Enable the "memsys" program for suspending the machine
 sys-devel/binutils-x86_64-helios:cet - Enable Intel Control-flow Enforcement Technology.
 sys-devel/binutils-x86_64-helios:default-gold - Set ld to point to ld.gold instead of ld.bfd
 sys-devel/binutils-x86_64-helios:gold - Build ld.gold linker
