@@ -11,5 +11,5 @@ RDEPEND=dev-nodejs/brace-expansion dev-nodejs/node_path
 RESTRICT=test
 SLOT=0
 SRC_URI=https://github.com/isaacs/minimatch/archive/refs/tags/v5.1.0.tar.gz -> minimatch-5.1.0.tar.gz
-_eclasses_=nodejs	fcc495ccfbc66625a7da2afdc2afe288
+_eclasses_=nodejs	c5bf41a930bc62ccce9ef7a2224a0c06
 _md5_=461047ae7fb26f0ad35b4ffd6c7f2d29

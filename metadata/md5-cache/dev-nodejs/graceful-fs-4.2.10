@@ -10,5 +10,5 @@ RDEPEND=dev-nodejs/node_path
 RESTRICT=test
 SLOT=0
 SRC_URI=https://github.com/isaacs/node-graceful-fs/archive/refs/tags/v4.2.10.tar.gz -> graceful-fs-4.2.10.tar.gz
-_eclasses_=nodejs	fcc495ccfbc66625a7da2afdc2afe288
+_eclasses_=nodejs	c5bf41a930bc62ccce9ef7a2224a0c06
 _md5_=ce5b3416271bb120bfacee2c96430270

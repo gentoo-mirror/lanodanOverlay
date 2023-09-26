@@ -11,5 +11,5 @@ RDEPEND=dev-nodejs/wrappy dev-nodejs/node_path
 RESTRICT=test
 SLOT=0
 SRC_URI=https://github.com/isaacs/once/archive/refs/tags/v1.4.0.tar.gz -> once-1.4.0.tar.gz
-_eclasses_=nodejs	fcc495ccfbc66625a7da2afdc2afe288
+_eclasses_=nodejs	c5bf41a930bc62ccce9ef7a2224a0c06
 _md5_=36e2e791540362a3ade02012ef094638

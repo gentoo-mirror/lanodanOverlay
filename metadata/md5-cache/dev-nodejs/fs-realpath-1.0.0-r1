@@ -11,5 +11,5 @@ RDEPEND=dev-nodejs/node_path
 RESTRICT=test
 SLOT=0
 SRC_URI=https://github.com/isaacs/fs.realpath/archive/refs/tags/v1.0.0.tar.gz -> fs-realpath-1.0.0.tar.gz
-_eclasses_=nodejs	fcc495ccfbc66625a7da2afdc2afe288
+_eclasses_=nodejs	c5bf41a930bc62ccce9ef7a2224a0c06
 _md5_=70f787dd37fb76461c619423843602eb
