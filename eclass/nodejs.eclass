@@ -32,11 +32,17 @@ RDEPEND="dev-nodejs/node_path"
 
 NODEJS_SITELIB="/usr/share/nodejs/"
 
+NPM_FLAGS=(
+	--audit false
+	--offline
+	--verbose
+)
+
 nodejs_src_test() {
 	if jq -e '.scripts | has("test")' <package.json >/dev/null
 	then
 		# --ignore-scripts: do not run pretest and posttest
-		npm test --ignore-scripts || die
+		npm "${NPM_FLAGS[@]}" test --ignore-scripts || die
 	else
 		die 'No "test" command defined in package.json'
 	fi
@@ -46,7 +52,7 @@ nodejs_src_compile() {
 	# https://docs.npmjs.com/cli/v10/configuring-npm/package-json/#default-values
 	if jq -e '.scripts | has("install")' <package.json >/dev/null
 	then
-		npm run install || die
+		npm "${NPM_FLAGS[@]}" run install || die
 	else
 		if test -e binding.gyp; then
 			if has_version -b dev-nodejs/node-gyp; then
