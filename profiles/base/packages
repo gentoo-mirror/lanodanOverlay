@@ -19,7 +19,7 @@ net-analyzer/tcpdump
 net-dns/unbound
 net-libs/ldns
 sys-apps/ed
-sys-apps/lanodan-utils
+sys-apps/utils-std
 sys-apps/man-pages-posix
 sys-devel/clang
 sys-kernel/gentoo-sources

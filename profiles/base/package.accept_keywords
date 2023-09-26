@@ -2,6 +2,6 @@
 app-admin/pass-otp ~*
 app-editors/vis ~*
 games-arcade/oshu ~*
-sys-apps/lanodan-utils **
+sys-apps/utils-std **
 www-plugins/passff ~*
 www-plugins/passff-host ~*
