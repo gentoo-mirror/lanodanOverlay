@@ -1,0 +1,13 @@
+BDEPEND=test? ( dev-libs/atf dev-util/kyua ) >=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=configure install unpack
+DESCRIPTION=Collection of extra tools for Unixes
+EAPI=8
+HOMEPAGE=https://hacktivis.me/git/utils-extra
+INHERIT=git-r3
+IUSE=test
+LICENSE=MPL-2.0
+PROPERTIES=live
+RESTRICT=!test? ( test )
+SLOT=0
+_eclasses_=git-r3	2358a7b20091609e24bd3a83b3ac5991
+_md5_=d9f89ecdc29c96f847e65d726c35a46e

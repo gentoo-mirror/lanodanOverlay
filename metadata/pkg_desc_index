@@ -139,6 +139,7 @@ sys-apps/rc-status-page 9999: Basic HTML status page based on OpenRC
 sys-apps/sdate 0.7: never ending September date
 sys-apps/shadow 4.11.1: Utilities to deal with user accounts
 sys-apps/tcb 1.2-r1: Libraries and tools implementing the tcb password shadowing scheme
+sys-apps/utils-extra 9999: Collection of extra tools for Unixes
 sys-apps/utils-std 9999: Collection of commonly available Unix tools
 sys-apps/xdg-dbus-proxy 0.1.2: filtering proxy for D-Bus connections
 sys-auth/skeud 9999: Simple and portable utilities to deal with user accounts (su, login)
