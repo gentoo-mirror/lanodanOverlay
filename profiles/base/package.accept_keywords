@@ -3,5 +3,6 @@ app-admin/pass-otp ~*
 app-editors/vis ~*
 games-arcade/oshu ~*
 sys-apps/utils-std **
+sys-apps/utils-extra **
 www-plugins/passff ~*
 www-plugins/passff-host ~*
