@@ -28,3 +28,4 @@ app-alternatives/cpio -gnu libarchive
 app-alternatives/gzip -reference pigz
 app-alternatives/bzip2 -reference pbzip2
 net-libs/libsoup brotli
+app-shells/bash -net -readline
