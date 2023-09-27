@@ -1,5 +1,5 @@
 DEFINED_PHASES=install prepare
-DEPEND=media-libs/libsdl media-libs/sdl-image media-libs/openal media-libs/libvorbis net-misc/curl system-enet? ( net-libs/enet )
+DEPEND=media-libs/libsdl media-libs/sdl-image media-libs/openal media-libs/libvorbis net-misc/curl virtual/opengl X? ( x11-libs/libX11 ) system-enet? ( net-libs/enet )
 DESCRIPTION=AssaultCube Reloaded
 EAPI=8
 HOMEPAGE=https://acr.victorz.ca/
@@ -7,8 +7,8 @@ INHERIT=flag-o-matic
 IUSE=system-enet +X
 KEYWORDS=~amd64
 LICENSE=ZLIB
-RDEPEND=media-libs/libsdl media-libs/sdl-image media-libs/openal media-libs/libvorbis net-misc/curl system-enet? ( net-libs/enet )
+RDEPEND=media-libs/libsdl media-libs/sdl-image media-libs/openal media-libs/libvorbis net-misc/curl virtual/opengl X? ( x11-libs/libX11 ) system-enet? ( net-libs/enet )
 SLOT=0
 SRC_URI=https://github.com/acreloaded/acr/archive/refs/tags/v2.18.2.tar.gz -> assaultcube-reloaded-2.18.2.tar.gz https://github.com/acreloaded/acr/pull/201/commits/7dad5c8a1a66ade36ca9d8612b3f0b93f6c990a4.patch -> assaultcube-reloaded-PR201-system-enet.patch
 _eclasses_=toolchain-funcs	862d337d98edb576796827be2c6b11ca	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	be27a904c614cb93ae037762dc69bcc2
-_md5_=6f67359bd5675e40be54c66cffef6846
+_md5_=f797c9bba753d4c0730c9f692b4fc079

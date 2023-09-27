@@ -87,7 +87,7 @@ games-emulation/reicast 8.1: A Dreamcast Emulator
 games-engines/brux-gdk 9999: Free runtime and development kit using SDL and Squirrel
 games-engines/love 0.10.2: A framework for 2D games in Lua
 games-engines/solarus 1.6.5: An open-source Zelda-like 2D game engine
-games-fps/assaultcube-reloaded 2.18.2: AssaultCube Reloaded
+games-fps/assaultcube-reloaded 2.18.2-r1: AssaultCube Reloaded
 games-misc/papers-please 1.2.76.54233-r1: A Dystopian Document Thriller
 games-roguelike/cataclysm-dda 0.6.3: Post-apocalyptic roguelike
 games-util/fteqcc 9999: FTE QuakeC compiler
