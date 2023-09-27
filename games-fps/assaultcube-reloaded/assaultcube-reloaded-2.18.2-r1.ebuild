@@ -23,7 +23,9 @@ DEPEND="
 	media-libs/openal
 	media-libs/libvorbis
 	net-misc/curl
-	system-enet? ( net-libs/enet )
+	virtual/opengl
+	X? ( x11-libs/libX11 )
+	system-enet? ( net-libs/enet:= )
 "
 RDEPEND="${DEPEND}"
 
@@ -69,5 +71,25 @@ src_prepare() {
 
 src_install() {
 	default
-	dobin ac_server ac_client
+
+	newbin - ${PN}_client <<EOF
+#!/bin/sh
+cd "/usr/share/${PN}" || exit 1
+
+"/usr/libexec/${PN}/ac_client" "\$@"
+EOF
+
+	newbin - ${PN}_server <<EOF
+#!/bin/sh
+cd "/usr/share/${PN}" || exit 1
+
+"/usr/libexec/${PN}/ac_server" "\$@"
+EOF
+
+	exeinto "/usr/libexec/${PN}"
+	doexe ac_server ac_client
+
+	cd "${WORKDIR}/acr-${PV}" || die
+	insinto "/usr/share/${PN}"
+	doins -r bot config packages acr/packages
 }
