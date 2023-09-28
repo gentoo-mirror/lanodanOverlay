@@ -25,7 +25,7 @@ DEPEND="
 	net-misc/curl
 	virtual/opengl
 	X? ( x11-libs/libX11 )
-	system-enet? ( net-libs/enet )
+	system-enet? ( net-libs/enet:= )
 "
 RDEPEND="${DEPEND}"
 
@@ -76,7 +76,10 @@ src_install() {
 #!/bin/sh
 cd "/usr/share/${PN}" || exit 1
 
-"/usr/libexec/${PN}/ac_client" "\$@"
+"/usr/libexec/${PN}/ac_client" \
+	--home="\${XDG_CONFIG_HOME:-\$HOME/.config}/${PN}" \
+	--init="\${XDG_CONFIG_HOME:-\$HOME/.config}/${PN}/init.cfg" \
+	"\$@"
 EOF
 
 	newbin - ${PN}_server <<EOF
