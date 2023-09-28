@@ -5,7 +5,7 @@ EAPI=8
 
 inherit git-r3 cmake
 
-DESCRIPTION="Unofficial open-source OpenGL/SDL2 reimplementation of Sid Meier's Alpha Centauri (+Alien Crossfire)"
+DESCRIPTION="Open-source reimplementation of Sid Meier's Alpha Centauri (+ Alien Crossfire)"
 HOMEPAGE="https://github.com/afwbkbc/glsmac"
 EGIT_REPO_URI="https://github.com/afwbkbc/glsmac"
 LICENSE="AGPL-3"
@@ -19,14 +19,21 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}"
 
+CMAKE_BUILD_TYPE="Release"
+
 src_prepare() {
-	default
+	cmake_src_prepare
 
 	# Should only be active for Windows but better be sure
 	rm -r dependencies || die
 }
 
+src_install() {
+	einstalldocs
+	dobin "${BUILD_DIR}/bin/GLSMAC"
+}
+
 pkg_postinst() {
-	einfo "You'll need to point GLSMAC to an unpacked version of Alpha Centauri, for example:"
+	einfo "You'll need to run GLSMAC in an unpacked version of Alpha Centauri, or point to it for example:"
 	einfo " $ GLSMAC --smacpath ~/Games/GOG/sid_meiers_alpha_centauri/app/"
 }
