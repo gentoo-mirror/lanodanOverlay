@@ -90,6 +90,7 @@ games-engines/solarus 1.6.5: An open-source Zelda-like 2D game engine
 games-fps/assaultcube-reloaded 2.18.2-r1: AssaultCube Reloaded
 games-misc/papers-please 1.2.76.54233-r1: A Dystopian Document Thriller
 games-roguelike/cataclysm-dda 0.6.3: Post-apocalyptic roguelike
+games-strategy/glsmac 9999: Unofficial open-source OpenGL/SDL2 reimplementation of Sid Meier's Alpha Centauri (+Alien Crossfire)
 games-util/fteqcc 9999: FTE QuakeC compiler
 games-util/steamcontroller 9999: Standalone Steam Controller Driver
 gnome-base/librsvg 2.40.21: Scalable Vector Graphics (SVG) rendering library
