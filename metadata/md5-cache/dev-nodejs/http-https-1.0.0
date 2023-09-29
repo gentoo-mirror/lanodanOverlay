@@ -1,0 +1,13 @@
+BDEPEND=net-libs/nodejs app-misc/jq sys-apps/cmd-glob
+DEFINED_PHASES=compile install test
+DESCRIPTION=A wrapper that chooses http or https for requests
+EAPI=8
+HOMEPAGE=https://github.com/isaacs/http-https
+INHERIT=nodejs
+KEYWORDS=~amd64
+LICENSE=ISC
+RDEPEND=dev-nodejs/node_path
+SLOT=0
+SRC_URI=https://github.com/isaacs/http-https/archive/refs/tags/v1.0.0.tar.gz -> http-https-1.0.0.tar.gz
+_eclasses_=nodejs	c5bf41a930bc62ccce9ef7a2224a0c06
+_md5_=dc7567b1b518a0366bff77457b84d14f

@@ -53,6 +53,7 @@ dev-nodejs/eventemitter3 5.0.1: EventEmitter3 focuses on performance while maint
 dev-nodejs/exit 0.1.2: replacement for process.exit that ensures stdio are fully drained before exiting
 dev-nodejs/fs-realpath 1.0.0-r1: Use node's fs.realpath, but fall back to the JS implementation if the native one fails
 dev-nodejs/graceful-fs 4.2.10: drop-in replacement for fs, making various improvements
+dev-nodejs/http-https 1.0.0: A wrapper that chooses http or https for requests
 dev-nodejs/inflight 1.0.6: Add callbacks to requests in flight to avoid async duplication
 dev-nodejs/inherits 2.0.4: Browser-friendly inheritance fully compatible with standard node.js inherits()
 dev-nodejs/isexe 2.0.0: Minimal module to check if a file is executable
