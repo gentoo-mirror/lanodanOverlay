@@ -10,5 +10,5 @@ RDEPEND=dev-nodejs/node_path
 RESTRICT=test
 SLOT=0
 SRC_URI=https://github.com/andrewrk/node-vec2d/archive/refs/tags/0.3.0.tar.gz -> vec2d-0.3.0.tar.gz
-_eclasses_=nodejs	c5bf41a930bc62ccce9ef7a2224a0c06
+_eclasses_=nodejs	3f97dda4868f32ffc04ecd1fdbea581a
 _md5_=54fe3cda008d2ecf4c61f92b775ae745

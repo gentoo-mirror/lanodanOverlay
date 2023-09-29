@@ -12,5 +12,5 @@ RDEPEND=dev-nodejs/node_path
 RESTRICT=!test? ( test )
 SLOT=0
 SRC_URI=https://github.com/usmanyunusov/colorize-template/archive/refs/tags/1.0.0.tar.gz -> colorize-template-1.0.0.tar.gz
-_eclasses_=nodejs	c5bf41a930bc62ccce9ef7a2224a0c06
+_eclasses_=nodejs	3f97dda4868f32ffc04ecd1fdbea581a
 _md5_=b389674ca98f613acb08718451355602
