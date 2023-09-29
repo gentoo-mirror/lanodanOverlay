@@ -52,7 +52,17 @@ nodejs_src_compile() {
 	# https://docs.npmjs.com/cli/v10/configuring-npm/package-json/#default-values
 	if jq -e '.scripts | has("install")' <package.json >/dev/null
 	then
+		if jq -e '.scripts | has("preinstall")' <package.json >/dev/null
+		then
+			npm "${NPM_FLAGS[@]}" run postinstall || die
+		fi
+
 		npm "${NPM_FLAGS[@]}" run install || die
+
+		if jq -e '.scripts | has("postinstall")' <package.json >/dev/null
+		then
+			npm "${NPM_FLAGS[@]}" run postinstall || die
+		fi
 	else
 		if test -e binding.gyp; then
 			if has_version -b dev-nodejs/node-gyp; then
@@ -62,6 +72,11 @@ nodejs_src_compile() {
 				die "binding.gyp found but dev-nodejs/node-gyp is not available as BDEPEND"
 			fi
 		fi
+	fi
+
+	if jq -e '.scripts | has("prepare")' <package.json >/dev/null
+	then
+		npm "${NPM_FLAGS[@]}" run prepare || die
 	fi
 }
 
