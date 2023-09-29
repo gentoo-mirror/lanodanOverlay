@@ -49,6 +49,7 @@ dev-nodejs/chipmunk 6.1.2: Port of slembcke/Chipmunk-Physics to Javascript
 dev-nodejs/color-name 1.1.4: JSON with CSS color names and its values
 dev-nodejs/colorize-template 1.0.0: Tagged template literal for ANSI colors
 dev-nodejs/env-paths 3.0.0: Get paths for storing things like data, config, cache, etc
+dev-nodejs/eventemitter3 5.0.1: EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface
 dev-nodejs/exit 0.1.2: replacement for process.exit that ensures stdio are fully drained before exiting
 dev-nodejs/fs-realpath 1.0.0-r1: Use node's fs.realpath, but fall back to the JS implementation if the native one fails
 dev-nodejs/graceful-fs 4.2.10: drop-in replacement for fs, making various improvements
