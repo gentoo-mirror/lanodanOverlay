@@ -21,7 +21,6 @@ app-text/grammalecte 2.1.1: Correcteur grammatical et typographique open source 
 app-text/sshpaste 1.0.1 9999: wgetpaste clone for pushing to your own server
 app-text/xbel-dtd 1.0: XML Bookmark Exchange Language (XBEL), DTD
 app-vis/vis-ctags 9999: vis plugin to provide basic ctags support
-dev-dotnet/nuget 5.0.2: Nuget - .NET Package Manager
 dev-erlang/color 1.0.0: ANSI colors for your Erlang
 dev-erlang/meck 0.9.2: Mocking library for Erlang
 dev-erlang/tdiff 0.1.2: Difference library
