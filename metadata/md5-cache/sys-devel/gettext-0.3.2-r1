@@ -9,5 +9,5 @@ LICENSE=BSD-1
 RDEPEND=!sys-devel/gettext:0
 SLOT=tiny
 SRC_URI=https://github.com/sabotage-linux/gettext-tiny/archive/refs/tags/v0.3.2.tar.gz -> gettext-tiny-0.3.2.tar.gz
-_eclasses_=toolchain-funcs	862d337d98edb576796827be2c6b11ca	multilib	c19072c3cd7ac5cb21de013f7e9832e0
+_eclasses_=toolchain-funcs	fbbbc99d10168de2926e06da7169b8dc	multilib	c19072c3cd7ac5cb21de013f7e9832e0
 _md5_=faef15393f5733ea2ec5a43fb66d057f
