@@ -13,8 +13,32 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
 
+IUSE="test"
+
+RESTRICT="!test? ( test )"
+
+DEPEND="test? ( dev-lang/go )"
+
+src_prepare() {
+	default
+
+	mkdir -p "$(dirname "${WORKDIR}/src/${EGO_PN}")" || die
+	mv "${S}/${P}" "${WORKDIR}/src/${EGO_PN}" || die
+}
+
+src_test() {
+	# disable module-aware mode
+	export GO111MODULE=off
+
+	# With GO111MODULE=off WORKDIR needs to be included
+	export GOPATH="${WORKDIR}:${EPREFIX}/usr/lib/go-gentoo"
+
+	# `go test` doesn't recurses in directories by itself
+	go test "${EGO_PN}/cpu" "${EGO_PN}/execabs" "${EGO_PN}/unix" || die
+}
+
 src_install() {
-	mkdir -p "$(dirname "${ED}/usr/lib/go-gentoo/src/${EGO_PN}")" || die
-	cp -r "${P}" "${ED}/usr/lib/go-gentoo/src/${EGO_PN}" || die
+	mkdir -p "${ED}/usr/lib/go-gentoo/" || die
+	cp -r "${WORKDIR}/src" "${ED}/usr/lib/go-gentoo/src" || die
 	test -f "${ED}/usr/lib/go-gentoo/src/${EGO_PN}/go.mod" || die
 }
