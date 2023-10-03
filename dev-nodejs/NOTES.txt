@@ -1,0 +1,5 @@
+## Don't package
+- request: deprecated / maintenance-only
+- cross-env, cross-spawn: archived / maintenance-only, useless on Unixes, done because Windows
+- node-ipc, peacenotwar, oneday-test and bunch of others by Brandon Nozaki Miller aka RIAEvangelist: <https://www.bleepingcomputer.com/news/security/big-sabotage-famous-npm-package-deletes-files-to-protest-ukraine-war/>
+- colors, fakers and others by marak: <https://www.bleepingcomputer.com/news/security/dev-corrupts-npm-libs-colors-and-faker-breaking-thousands-of-apps/>
