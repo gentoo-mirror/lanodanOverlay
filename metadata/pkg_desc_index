@@ -50,6 +50,7 @@ dev-nodejs/colorize-template 1.0.0: Tagged template literal for ANSI colors
 dev-nodejs/env-paths 3.0.0: Get paths for storing things like data, config, cache, etc
 dev-nodejs/eventemitter3 5.0.1: EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface
 dev-nodejs/exit 0.1.2: replacement for process.exit that ensures stdio are fully drained before exiting
+dev-nodejs/file-uri-to-path 2.0.0: Convert a file: URI to a file path
 dev-nodejs/fs-realpath 1.0.0-r1: Use node's fs.realpath, but fall back to the JS implementation if the native one fails
 dev-nodejs/graceful-fs 4.2.10: drop-in replacement for fs, making various improvements
 dev-nodejs/http-https 1.0.0: A wrapper that chooses http or https for requests
@@ -61,6 +62,7 @@ dev-nodejs/konami 1.6.3: An easter-egg script for adding the Konami Code to your
 dev-nodejs/lru-cache 7.13.2: cache object that deletes the least-recently-used items
 dev-nodejs/minimatch 5.1.0: glob matcher in javascript
 dev-nodejs/mkdirp 1.0.4: Recursively mkdir, like 'mkdir -p', but in node.js
+dev-nodejs/node-bindings 1.5.0: Helper module for loading your native module's .node file
 dev-nodejs/node_path 0: Define NODE_PATH to /usr/share/nodejs/
 dev-nodejs/nopt 7.2.0: Option parsing for Node, supporting types, shorthands, etc
 dev-nodejs/once 1.4.0: Run a function exactly one time

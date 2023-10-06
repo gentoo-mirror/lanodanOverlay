@@ -1,0 +1,14 @@
+BDEPEND=dev-util/esbuild net-libs/nodejs app-misc/jq sys-apps/cmd-glob
+DEFINED_PHASES=compile install test
+DESCRIPTION=Convert a file: URI to a file path
+EAPI=8
+HOMEPAGE=https://github.com/TooTallNate/file-uri-to-path
+INHERIT=nodejs
+KEYWORDS=~amd64
+LICENSE=MIT
+RDEPEND=dev-nodejs/node_path
+RESTRICT=test
+SLOT=0
+SRC_URI=https://github.com/TooTallNate/file-uri-to-path/archive/refs/tags/2.0.0.tar.gz -> file-uri-to-path-2.0.0.tar.gz
+_eclasses_=nodejs	3f97dda4868f32ffc04ecd1fdbea581a
+_md5_=495e086bd4a6d69e733db57afc0cabac

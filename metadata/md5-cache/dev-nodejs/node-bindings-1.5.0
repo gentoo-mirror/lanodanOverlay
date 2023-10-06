@@ -1,0 +1,14 @@
+BDEPEND=net-libs/nodejs app-misc/jq sys-apps/cmd-glob
+DEFINED_PHASES=compile install test
+DESCRIPTION=Helper module for loading your native module's .node file
+EAPI=8
+HOMEPAGE=https://github.com/TooTallNate/node-bindings
+INHERIT=nodejs
+KEYWORDS=~amd64
+LICENSE=MIT
+RDEPEND=dev-nodejs/file-uri-to-path dev-nodejs/node_path
+RESTRICT=test
+SLOT=0
+SRC_URI=https://github.com/TooTallNate/node-bindings/archive/refs/tags/1.5.0.tar.gz -> node-bindings-1.5.0.tar.gz
+_eclasses_=nodejs	3f97dda4868f32ffc04ecd1fdbea581a
+_md5_=b034f80b82d4c6e2e934de53570d7ec6
