@@ -1,1 +1,2 @@
 move sys-apps/lanodan-utils sys-apps/utils-std
+move dev-nodejs/node-bindings dev-nodejs/bindings
