@@ -23,4 +23,7 @@ src_prepare() {
 
 	# 'test' is just a port of 'node:test' from NodeJS 18+
 	sed -i "s;import test from 'test';import test from 'node:test';" test/test.js || die
+
+	# https://github.com/juliangruber/balanced-match/pull/50
+	sed -i 's!"main": "index.js"!"exports": "./index.js"!' package.json || die
 }
