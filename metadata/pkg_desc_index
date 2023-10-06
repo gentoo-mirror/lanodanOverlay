@@ -40,7 +40,7 @@ dev-libs/libkqueue 2.6.1: kqueue(2) compatibility library
 dev-libs/libtomcrypt 1.18.2: modular and portable cryptographic toolkit
 dev-libs/socket99 0.2.2: Wrapper library for the BSD sockets API with a nicer C99 interface
 dev-nodejs/abbrev 2.0.0-r1: Get unique abbreviations for a set of strings
-dev-nodejs/balanced-match 2.0.0: Match balanced character pairs, like { and }
+dev-nodejs/balanced-match 3.0.0: Match balanced character pairs, like { and }
 dev-nodejs/brace-expansion 2.0.1: Brace expansion, as known from sh/bash, in JavaScript
 dev-nodejs/browserify-lite 0.5.1: browserify, minus some of the advanced features and heavy dependencies
 dev-nodejs/chem 4.1.1: 2d canvas-based rapid prototyping game engine
