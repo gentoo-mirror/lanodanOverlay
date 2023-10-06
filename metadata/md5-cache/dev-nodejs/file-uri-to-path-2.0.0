@@ -10,5 +10,5 @@ RDEPEND=dev-nodejs/node_path
 RESTRICT=test
 SLOT=0
 SRC_URI=https://github.com/TooTallNate/file-uri-to-path/archive/refs/tags/2.0.0.tar.gz -> file-uri-to-path-2.0.0.tar.gz
-_eclasses_=nodejs	3f97dda4868f32ffc04ecd1fdbea581a
+_eclasses_=nodejs	a2f91cbaef6e829a6067d4bac4d45817
 _md5_=495e086bd4a6d69e733db57afc0cabac

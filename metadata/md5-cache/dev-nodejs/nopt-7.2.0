@@ -11,5 +11,5 @@ RDEPEND=>=dev-nodejs/abbrev-2.0.0 dev-nodejs/node_path
 RESTRICT=test
 SLOT=0
 SRC_URI=https://github.com/npm/nopt/archive/refs/tags/v7.2.0.tar.gz -> nopt-7.2.0.tar.gz
-_eclasses_=nodejs	3f97dda4868f32ffc04ecd1fdbea581a
+_eclasses_=nodejs	a2f91cbaef6e829a6067d4bac4d45817
 _md5_=23757c069ec2784097490e1d4fdad61a

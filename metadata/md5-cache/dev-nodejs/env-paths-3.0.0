@@ -10,5 +10,5 @@ RDEPEND=dev-nodejs/node_path
 RESTRICT=test
 SLOT=0
 SRC_URI=https://github.com/sindresorhus/env-paths/archive/refs/tags/v3.0.0.tar.gz -> env-paths-3.0.0.tar.gz
-_eclasses_=nodejs	3f97dda4868f32ffc04ecd1fdbea581a
+_eclasses_=nodejs	a2f91cbaef6e829a6067d4bac4d45817
 _md5_=40c098cf798e3bfb0cec8af44083da9c

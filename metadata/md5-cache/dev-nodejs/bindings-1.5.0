@@ -10,5 +10,5 @@ RDEPEND=dev-nodejs/file-uri-to-path dev-nodejs/node_path
 RESTRICT=test
 SLOT=0
 SRC_URI=https://github.com/TooTallNate/node-bindings/archive/refs/tags/1.5.0.tar.gz -> node-bindings-1.5.0.tar.gz
-_eclasses_=nodejs	3f97dda4868f32ffc04ecd1fdbea581a
+_eclasses_=nodejs	a2f91cbaef6e829a6067d4bac4d45817
 _md5_=5b760a7162587ba45001f39878db53ce
