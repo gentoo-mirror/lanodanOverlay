@@ -38,11 +38,19 @@ NPM_FLAGS=(
 	--verbose
 )
 
+enpm() {
+	debug-print-function ${FUNCNAME} "$@"
+
+	set -- npm "${NPM_FLAGS[@]}" "$@"
+	echo "$@" >&2
+	"$@" || die
+}
+
 nodejs_src_test() {
 	if jq -e '.scripts | has("test")' <package.json >/dev/null
 	then
 		# --ignore-scripts: do not run pretest and posttest
-		npm "${NPM_FLAGS[@]}" test --ignore-scripts || die
+		enpm run test --ignore-scripts
 	else
 		die 'No "test" command defined in package.json'
 	fi
@@ -54,14 +62,14 @@ nodejs_src_compile() {
 	then
 		if jq -e '.scripts | has("preinstall")' <package.json >/dev/null
 		then
-			npm "${NPM_FLAGS[@]}" run postinstall || die
+			enpm run preinstall
 		fi
 
 		npm "${NPM_FLAGS[@]}" run install || die
 
 		if jq -e '.scripts | has("postinstall")' <package.json >/dev/null
 		then
-			npm "${NPM_FLAGS[@]}" run postinstall || die
+			enpm run postinstall
 		fi
 	else
 		if test -e binding.gyp; then
@@ -76,7 +84,7 @@ nodejs_src_compile() {
 
 	if jq -e '.scripts | has("prepare")' <package.json >/dev/null
 	then
-		npm "${NPM_FLAGS[@]}" run prepare || die
+		enpm run prepare
 	fi
 }
 
