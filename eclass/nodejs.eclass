@@ -91,7 +91,7 @@ nodejs_src_compile() {
 # Install files in nodejs hierarchy with preserving path of source files
 nodejs_install_path() {
 	for file in "$@"; do
-		target_dir="${ED}/${NODEJS_SITELIB}${PN}/$(dirname "${file}")/"
+		target_dir="${ED}/${NODEJS_MODULE_DIR}/$(dirname "${file}")/"
 		mkdir -p "${target_dir}" || die "Failed to create directory for ${file}"
 		cp -r "${file}" "${target_dir}" || die "Failed to copy ${file}"
 	done
@@ -101,7 +101,15 @@ nodejs_src_install() {
 	einstalldocs
 
 	# https://docs.npmjs.com/cli/v6/configuring-npm/package-json/#files
-	insinto "${NODEJS_SITELIB}${PN}"
+	if jq -e '.type == "module"' <package.json >/dev/null
+	then
+		# Assume that everything on NPM is using semver
+		NODEJS_MODULE_DIR="${NODEJS_SITELIB}${PN}@$(ver_cut 1)"
+		[[ "${SLOT}" != "$(ver_cut 1)" ]] && eqawarn "Got SLOT value ${SLOT} while ES Module would expect $(ver_cut 1)"
+	else
+		NODEJS_MODULE_DIR="${NODEJS_SITELIB}${PN}"
+	fi
+	insinto "${NODEJS_MODULE_DIR}"
 	doins package.json
 
 	if jq -e 'has("files")' <package.json >/dev/null
@@ -135,16 +143,16 @@ nodejs_src_install() {
 			jq -r '.bin | to_entries | .[] | .key + " " + .value' <package.json \
 			| while read bin file; do
 				nodejs_install_path "${file}"
-				fperms 755 "${NODEJS_SITELIB}${PN}/${file#./}"
-				dosym "${NODEJS_SITELIB}${PN}/${file#./}" "/usr/bin/${bin}"
+				fperms 755 "${NODEJS_MODULE_DIR}/${file#./}"
+				dosym "${NODEJS_MODULE_DIR}/${file#./}" "/usr/bin/${bin}"
 			done
 		;;
 		string)
 			file="$(jq -r '.bin' <package.json)"
 			bin="$(basename "${file}")"
 			nodejs_install_path "${file}"
-			fperms 755 "${NODEJS_SITELIB}${PN}/${file#./}"
-			dosym "${NODEJS_SITELIB}${PN}/${file#./}" "/usr/bin/${bin}"
+			fperms 755 "${NODEJS_MODULE_DIR}/${file#./}"
+			dosym "${NODEJS_MODULE_DIR}/${file#./}" "/usr/bin/${bin}"
 		;;
 		*)
 			die "Unhandled package.json#bin type: ${bin_type}"
