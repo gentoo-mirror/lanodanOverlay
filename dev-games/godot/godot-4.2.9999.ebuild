@@ -24,7 +24,7 @@ IUSE="
 # TODO: tests still need more figuring out
 RESTRICT="test"
 
-REQUIRED_USE="gui? ( ||( wayland X ) )"
+REQUIRED_USE="gui? ( || ( wayland X ) )"
 
 # dlopen: libglvnd
 RDEPEND="
