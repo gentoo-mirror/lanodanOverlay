@@ -25,6 +25,7 @@ dev-erlang/color 1.0.0: ANSI colors for your Erlang
 dev-erlang/meck 0.9.2: Mocking library for Erlang
 dev-erlang/tdiff 0.1.2: Difference library
 dev-erlang/unite 0.4.0: Pretty EUnit test formatters
+dev-games/godot 4.2.9999: Multi-platform 2D and 3D game engine with a feature-rich editor (wayland PR)
 dev-go/sys 0.12.0: supplemental Go packages for low-level interactions with the operating system
 dev-hare/madeline 9999: tiny readline-alike with some batteries included
 dev-java/icedtea 7.2.6.28: A harness to build OpenJDK using Free Software build tools and dependencies
