@@ -98,7 +98,7 @@ src_prepare() {
 
 	# use of builtin_ switches can be messy (see below), delete to be sure
 	local unbundle=(
-		brotli doctest embree freetype graphite harfbuzz icu4c libdecor libogg
+		brotli doctest embree freetype graphite harfbuzz icu4c libogg
 		libpng libtheora libvorbis libwebp linuxbsd_headers mbedtls
 		miniupnpc pcre2 recastnavigation volk wayland wayland-protocols wslay
 		zlib zstd
@@ -130,8 +130,8 @@ src_compile() {
 		udev=$(usex udev)
 		use_volk=no # unnecessary when linking directly to libvulkan
 		vulkan=$(usex gui $(usex vulkan))
-		x11=$(usex X)
-		wayland=$(usex wayland)
+		x11=$(usex gui $(usex X))
+		wayland=$(usex gui $(usex wayland))
 
 		system_certs_path="${EPREFIX}"/etc/ssl/certs/ca-certificates.crt
 
