@@ -16,7 +16,6 @@ LICENSE="
 	Apache-2.0 BSD Boost-1.0 CC0-1.0 Unlicense ZLIB
 	gui? ( CC-BY-4.0 ) tools? ( OFL-1.1 )"
 SLOT="4"
-KEYWORDS="~amd64"
 # Enable roughly same as upstream by default so it works as expected,
 # except raycast (tools-only heavy dependency), and deprecated.
 IUSE="
