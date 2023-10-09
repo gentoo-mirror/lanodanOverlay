@@ -9,5 +9,5 @@ LICENSE=MIT
 RDEPEND=dev-nodejs/node_path
 SLOT=0
 SRC_URI=https://github.com/andrewrk/node-pend/archive/refs/tags/1.2.0.tar.gz -> pend-1.2.0.tar.gz
-_eclasses_=nodejs	a2f91cbaef6e829a6067d4bac4d45817
+_eclasses_=nodejs	4a1d78aff67ad16baf1939f139db0059
 _md5_=173314f8eca9508626dfdf5737d0eb4e

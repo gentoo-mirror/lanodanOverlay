@@ -11,5 +11,5 @@ RDEPEND=dev-nodejs/isexe dev-nodejs/node_path
 RESTRICT=test
 SLOT=0
 SRC_URI=https://github.com/isaacs/node-which/archive/refs/tags/v4.0.0.tar.gz -> which-4.0.0.tar.gz
-_eclasses_=nodejs	a2f91cbaef6e829a6067d4bac4d45817
+_eclasses_=nodejs	4a1d78aff67ad16baf1939f139db0059
 _md5_=bcb939123c09c4c2ab550cd1396febe5
