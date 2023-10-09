@@ -65,8 +65,10 @@ dev-nodejs/konami 1.6.3: An easter-egg script for adding the Konami Code to your
 dev-nodejs/lru-cache 7.13.2: cache object that deletes the least-recently-used items
 dev-nodejs/minimatch 5.1.0: glob matcher in javascript
 dev-nodejs/mkdirp 1.0.4: Recursively mkdir, like 'mkdir -p', but in node.js
+dev-nodejs/nanoid 5.0.1: tiny, secure, URL-friendly, unique string ID generator for JavaScript
 dev-nodejs/node_path 0: Define NODE_PATH to /usr/share/nodejs/
 dev-nodejs/nopt 7.2.0: Option parsing for Node, supporting types, shorthands, etc
+dev-nodejs/normalize-range 0.1.2: Utility for normalizing a numeric range, including a wrapping function
 dev-nodejs/once 1.4.0: Run a function exactly one time
 dev-nodejs/pend 1.2.0: dead-simple optimistic async helper in javascript
 dev-nodejs/picocolors 1.0.0: tiniest and the fastest library for terminal output formatting with ANSI colors
