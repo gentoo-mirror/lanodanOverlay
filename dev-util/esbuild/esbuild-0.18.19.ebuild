@@ -17,7 +17,10 @@ IUSE="test"
 DEPEND="
 	>=dev-lang/go-1.13
 	dev-go/sys
-	test? ( net-libs/nodejs )
+	test? (
+		net-libs/nodejs
+		dev-nodejs/source-map-js
+	)
 "
 BDEPEND="sys-apps/help2man"
 
@@ -29,6 +32,19 @@ src_unpack() {
 
 	mkdir -p "$(dirname "${S}")" || die
 	mv "${WORKDIR}/${P}" "${S}" || die
+}
+
+src_prepare() {
+	default
+
+	# complex: Depends on fuse.js + react
+	sed -i \
+		-e "s;require('source-map');require('source-map-js');" \
+		-e "/check('complex'/,/}),/d" \
+		scripts/verify-source-map.js || die
+
+	# No need to fetch dependencies via npm
+	sed -i -e 's;cd scripts && npm ci;true;' Makefile || die
 }
 
 src_configure() {
@@ -43,13 +59,6 @@ src_configure() {
 	export GOPATH="${WORKDIR}:${EPREFIX}/usr/lib/go-gentoo"
 
 	export EGO_BUILD_FLAGS="${EGO_BUILD_FLAGS} -trimpath"
-
-	# Depends on external node libraries
-	sed -i \
-		-e '/^test-common:/s;verify-source-map;;' \
-		-e '/^test-common:/s;register-test;;' \
-		-e '/^test-common:/s;node-unref-tests;;' \
-		Makefile || die
 }
 
 src_test() {
