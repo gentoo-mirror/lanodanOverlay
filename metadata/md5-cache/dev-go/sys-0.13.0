@@ -8,5 +8,5 @@ KEYWORDS=~amd64
 LICENSE=BSD
 RESTRICT=!test? ( test )
 SLOT=0
-SRC_URI=https://github.com/golang/sys/archive/refs/tags/v0.12.0.tar.gz -> sys-0.12.0.tar.gz
+SRC_URI=https://github.com/golang/sys/archive/refs/tags/v0.13.0.tar.gz -> sys-0.13.0.tar.gz
 _md5_=29bfd5906724bc7f0c9dd65c6cbe3655
