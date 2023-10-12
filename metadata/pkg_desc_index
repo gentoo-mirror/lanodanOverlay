@@ -97,6 +97,7 @@ games-engines/solarus 1.6.5: An open-source Zelda-like 2D game engine
 games-fps/assaultcube-reloaded 2.18.2-r1: AssaultCube Reloaded
 games-misc/papers-please 1.2.76.54233-r1: A Dystopian Document Thriller
 games-roguelike/cataclysm-dda 0.6.3: Post-apocalyptic roguelike
+games-rpg/amnesia-tdd 0.3.2: Amnesia: The Dark Descent
 games-sports/xmoto 0.6.2: A challenging 2D motocross platform game, where physics play an important role
 games-strategy/glsmac 9999: Open-source reimplementation of Sid Meier's Alpha Centauri (+ Alien Crossfire)
 games-util/fteqcc 9999: FTE QuakeC compiler
