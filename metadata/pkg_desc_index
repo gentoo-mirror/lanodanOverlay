@@ -139,7 +139,6 @@ net-libs/glib-networking 2.76.0: Network-related giomodules for glib
 net-libs/webkit-gtk 2.40.5 2.40.5-r410 2.40.5-r600 2.41.92 2.41.92-r410 2.41.92-r600 2.42.1 2.42.1-r410 2.42.1-r600: Open source web browser engine
 net-mail/checkpassword-ng 9999: Uniform password checking interface for applications
 net-misc/ap-client 9999: CLI-based client / toolbox for ActivityPub Client-to-Server
-net-misc/cve-client 9999: CLI-based client / toolbox for CVE.org
 net-misc/drawterm 0_p20221013 9999: Connect to Plan 9 CPU servers from other operating systems
 net-news/newsboat 2.13-r1: An RSS/Atom feed reader for text terminals
 net-nntp/suck 4.3.4: Grab news from a remote NNTP server and feed them to another
