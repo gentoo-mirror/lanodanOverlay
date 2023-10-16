@@ -12,9 +12,9 @@ EGIT_COMMIT="d3abfdd93bb650b12aa224ecc6f6aace42424189"
 SRC_URI="https://github.com/shamazmazum/AmnesiaTheDarkDescent/archive/${EGIT_COMMIT}.tar.gz -> AmnesiaTheDarkDescent-${EGIT_COMMIT}.tar.gz"
 S="${WORKDIR}/AmnesiaTheDarkDescent-${EGIT_COMMIT}"
 
-# GPLv3+: amnesia-tdd
+# GPL-3+: amnesia-tdd
 # zlib: AngelScript, Newton Dynamics and OALWrapper
-LICENSE="GPL3+ ZLIB"
+LICENSE="GPL-3+ ZLIB"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
