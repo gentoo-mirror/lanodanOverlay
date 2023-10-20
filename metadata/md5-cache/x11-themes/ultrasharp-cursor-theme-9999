@@ -1,11 +1,11 @@
-BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
-DEFINED_PHASES=compile prepare unpack
+BDEPEND=|| ( x11-apps/xcursorgen x11-apps/xcursorgen-nox ) >=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=compile configure install unpack
 DESCRIPTION=Precision and speed oriented cursor theme
 EAPI=8
 HOMEPAGE=https://hacktivis.me/projects/ultrasharp-cursor-theme
-INHERIT=git-r3
+INHERIT=git-r3 ninja-utils
 LICENSE=CC-BY-SA-4.0
 PROPERTIES=live
 SLOT=0
-_eclasses_=git-r3	2358a7b20091609e24bd3a83b3ac5991
-_md5_=a78cdf93122240fb8b8f1fd02f7c271e
+_eclasses_=git-r3	2358a7b20091609e24bd3a83b3ac5991	multiprocessing	30ead54fa2e2b5f9cd4e612ffc34d0fe	ninja-utils	39e7a84b06eff4efd9f2e0c3d1668b98
+_md5_=a3957275118d5ba333016faa982fbf86
