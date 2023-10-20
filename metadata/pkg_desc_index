@@ -167,6 +167,7 @@ virtual/man 9: Virtual for man
 virtual/wine 0-r8: Virtual for Wine that supports multiple variants and slotting
 www-apps/bloat 9999: Web client for Pleroma and Mastodon
 www-client/visurf 9999: power-user frontend for netsurf
+x11-apps/xcursorgen-nox 0.0.1: create an X cursor file from a collection of PNG images (no libX11)
 x11-libs/fltk 1.4.9999: C++ user interface toolkit for X and OpenGL
 x11-libs/wxGTK 3.1.5: GTK+ version of wxWidgets, a cross-platform C++ GUI toolkit
 x11-misc/gtk3-nocsd 9999: A hack to disable gtk3 client-side decorations
