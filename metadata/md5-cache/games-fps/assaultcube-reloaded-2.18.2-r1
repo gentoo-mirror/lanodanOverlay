@@ -10,5 +10,5 @@ LICENSE=ZLIB
 RDEPEND=media-libs/libsdl media-libs/sdl-image media-libs/openal media-libs/libvorbis net-misc/curl virtual/opengl X? ( x11-libs/libX11 ) system-enet? ( net-libs/enet:= )
 SLOT=0
 SRC_URI=https://github.com/acreloaded/acr/archive/refs/tags/v2.18.2.tar.gz -> assaultcube-reloaded-2.18.2.tar.gz https://github.com/acreloaded/acr/pull/201/commits/7dad5c8a1a66ade36ca9d8612b3f0b93f6c990a4.patch -> assaultcube-reloaded-PR201-system-enet.patch
-_eclasses_=toolchain-funcs	fbbbc99d10168de2926e06da7169b8dc	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	a8a780499c9c10fd029517489dc182fb
+_eclasses_=toolchain-funcs	fbbbc99d10168de2926e06da7169b8dc	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	5f250f8d967fc24a6490b549586670fa
 _md5_=90a96a38f35325ccce39d8f0d3288ac8
