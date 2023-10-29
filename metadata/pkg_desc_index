@@ -33,6 +33,7 @@ dev-lang/erlang 26.0.1: Erlang programming language, runtime environment and lib
 dev-lang/go 1.4_p20171003: Boostrap Go from C (useful for musl libc)
 dev-lang/kuroko 1.4.0: Dynamic, bytecode-compiled programming language and a dialect of Python
 dev-lang/mrustc 0.10-r1: Alternative rust compiler (re-implementation)
+dev-lang/wasm3 0.5.0: A fast WebAssembly interpreter and the most universal WASM runtime
 dev-libs/PlatformFolders 4.2.0: C++ library to look for special directories like ~/.config and %APPDATA%
 dev-libs/hts_engine 1.10: HMM-based speech synthesis system (HTS) engine and API
 dev-libs/libbulletml 0.0.6: A Library of Bullet Markup Language
@@ -62,6 +63,7 @@ dev-nodejs/inherits 2.0.4: Browser-friendly inheritance fully compatible with st
 dev-nodejs/isexe 2.0.0: Minimal module to check if a file is executable
 dev-nodejs/json-parse-even-better-errors 2.3.1: JSON.parse with context information on error
 dev-nodejs/konami 1.6.3: An easter-egg script for adding the Konami Code to your website or project
+dev-nodejs/kuroshiro 1.2.0: Convert Japanese to Hiragana, Katakana or Romaji with furigana and okurigana modes
 dev-nodejs/lru-cache 7.13.2: cache object that deletes the least-recently-used items
 dev-nodejs/minimatch 5.1.0: glob matcher in javascript
 dev-nodejs/mkdirp 1.0.4: Recursively mkdir, like 'mkdir -p', but in node.js
