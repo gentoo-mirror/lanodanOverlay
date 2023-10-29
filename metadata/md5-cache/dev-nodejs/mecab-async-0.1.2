@@ -1,0 +1,16 @@
+BDEPEND=net-libs/nodejs app-misc/jq sys-apps/cmd-glob
+DEFINED_PHASES=compile install test
+DEPEND=test? ( dev-nodejs/shell-quote app-text/mecab )
+DESCRIPTION=Asynchronous japanese morphological analyser using MeCab
+EAPI=8
+HOMEPAGE=https://github.com/hecomi/node-mecab-async
+INHERIT=nodejs
+IUSE=test
+KEYWORDS=~amd64
+LICENSE=MIT
+RDEPEND=dev-nodejs/shell-quote app-text/mecab dev-nodejs/node_path
+RESTRICT=!test? ( test )
+SLOT=0
+SRC_URI=https://github.com/hecomi/node-mecab-async/archive/f3b2b9ce10914c7b3ff3b69cc09991d8df2e4aee.tar.gz -> node-mecab-async-f3b2b9ce10914c7b3ff3b69cc09991d8df2e4aee.tar.gz
+_eclasses_=nodejs	4a1d78aff67ad16baf1939f139db0059
+_md5_=1d328611cd96cc0cf194f48edc2b9889

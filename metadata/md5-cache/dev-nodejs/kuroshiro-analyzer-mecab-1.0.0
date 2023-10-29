@@ -1,0 +1,14 @@
+BDEPEND=dev-util/esbuild net-libs/nodejs app-misc/jq sys-apps/cmd-glob
+DEFINED_PHASES=compile install test
+DESCRIPTION=Mecab morphological analyzer for kuroshiro
+EAPI=8
+HOMEPAGE=https://github.com/hexenq/kuroshiro-analyzer-mecab
+INHERIT=nodejs
+KEYWORDS=~amd64
+LICENSE=MIT
+RDEPEND=dev-nodejs/mecab-async dev-nodejs/node_path
+RESTRICT=test
+SLOT=0
+SRC_URI=https://github.com/hexenq/kuroshiro-analyzer-mecab/archive/refs/tags/1.0.0.tar.gz -> kuroshiro-analyzer-mecab-1.0.0.tar.gz
+_eclasses_=nodejs	4a1d78aff67ad16baf1939f139db0059
+_md5_=f18606f208270cc13033265645b9c221

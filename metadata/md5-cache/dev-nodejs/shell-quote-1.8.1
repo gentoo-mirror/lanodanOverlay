@@ -1,0 +1,16 @@
+BDEPEND=dev-util/esbuild net-libs/nodejs app-misc/jq sys-apps/cmd-glob
+DEFINED_PHASES=compile install prepare test
+DEPEND=test? ( dev-nodejs/tape-lite )
+DESCRIPTION=quote and parse shell commands
+EAPI=8
+HOMEPAGE=https://github.com/ljharb/shell-quote
+INHERIT=nodejs
+IUSE=test
+KEYWORDS=~amd64
+LICENSE=MIT
+RDEPEND=dev-nodejs/node_path
+RESTRICT=!test? ( test )
+SLOT=0
+SRC_URI=https://github.com/ljharb/shell-quote/archive/refs/tags/v1.8.1.tar.gz -> shell-quote-1.8.1.tar.gz
+_eclasses_=nodejs	4a1d78aff67ad16baf1939f139db0059
+_md5_=acf4816b44bd7fe1fb16d33320eb896b
