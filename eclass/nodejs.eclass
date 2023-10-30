@@ -158,4 +158,19 @@ nodejs_src_install() {
 			die "Unhandled package.json#bin type: ${bin_type}"
 		;;
 	esac
+
+	man_type="$(jq -r '.man | type' <package.json)"
+	case "${man_type}" in
+		null)
+		;;
+		string)
+			doman "$(jq -r '.man' <package.json)"
+		;;
+		array)
+			jq -r '.man[]' <package.json \
+			| while read file; do
+				doman "$file"
+			done
+		;;
+	esac
 }
