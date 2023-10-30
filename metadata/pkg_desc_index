@@ -18,6 +18,7 @@ app-i18n/fcitx-qt 5.0.17: Qt library and IM module for fcitx5
 app-text/dadadodo 1.04: Analyse texts for word probabilities and generate random sentences
 app-text/evince 3.34.2: Simple document viewer for GNOME
 app-text/grammalecte 2.1.1: Correcteur grammatical et typographique open source dédié à la langue française
+app-text/kanaconv 9999: Command to convert Japanese from/to Kana/Kanji/Romaji with furigana option
 app-text/sshpaste 1.0.1 9999: wgetpaste clone for pushing to your own server
 app-text/xbel-dtd 1.0: XML Bookmark Exchange Language (XBEL), DTD
 app-vis/vis-ctags 9999: vis plugin to provide basic ctags support

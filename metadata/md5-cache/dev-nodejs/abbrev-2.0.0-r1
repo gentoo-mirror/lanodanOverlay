@@ -9,5 +9,5 @@ LICENSE=|| ( ISC MIT )
 RDEPEND=dev-nodejs/node_path
 SLOT=0
 SRC_URI=https://github.com/npm/abbrev-js/archive/refs/tags/v2.0.0.tar.gz -> abbrev-2.0.0.tar.gz
-_eclasses_=nodejs	4a1d78aff67ad16baf1939f139db0059
+_eclasses_=nodejs	e3259e0e9ce0994a4f3f9791cba63a2a
 _md5_=1ecac59d6b900a432cafed379ce06fc0
