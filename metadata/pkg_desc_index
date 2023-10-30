@@ -68,6 +68,7 @@ dev-nodejs/kuroshiro-analyzer-mecab 1.0.0: Mecab morphological analyzer for kuro
 dev-nodejs/lru-cache 7.13.2: cache object that deletes the least-recently-used items
 dev-nodejs/mecab-async 0.1.2: Asynchronous japanese morphological analyser using MeCab
 dev-nodejs/minimatch 5.1.0: glob matcher in javascript
+dev-nodejs/minimist 1.2.8: parse argument options
 dev-nodejs/mkdirp 1.0.4: Recursively mkdir, like 'mkdir -p', but in node.js
 dev-nodejs/nanoid 5.0.1: tiny, secure, URL-friendly, unique string ID generator for JavaScript
 dev-nodejs/node_path 0: Define NODE_PATH to /usr/share/nodejs/

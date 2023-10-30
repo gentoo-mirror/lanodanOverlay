@@ -1,5 +1,5 @@
 BDEPEND=dev-util/esbuild net-libs/nodejs app-misc/jq sys-apps/cmd-glob
-DEFINED_PHASES=compile install test
+DEFINED_PHASES=compile install prepare test
 DESCRIPTION=Convert Japanese to Hiragana, Katakana or Romaji with furigana and okurigana modes
 EAPI=8
 HOMEPAGE=https://kuroshiro.org/
@@ -8,7 +8,7 @@ KEYWORDS=~amd64
 LICENSE=MIT
 RDEPEND=dev-nodejs/node_path
 RESTRICT=test
-SLOT=0
+SLOT=1
 SRC_URI=https://github.com/hexenq/kuroshiro/archive/refs/tags/1.2.0.tar.gz -> kuroshiro-1.2.0.tar.gz
 _eclasses_=nodejs	4a1d78aff67ad16baf1939f139db0059
-_md5_=5cb2b3a8ef902d4ad7d3526c913a69bb
+_md5_=81ac4d491042aae051d1d7b8457b853d

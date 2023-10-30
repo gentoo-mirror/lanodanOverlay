@@ -1,0 +1,16 @@
+BDEPEND=net-libs/nodejs app-misc/jq sys-apps/cmd-glob
+DEFINED_PHASES=compile install prepare test
+DEPEND=test? ( dev-nodejs/tape-lite )
+DESCRIPTION=parse argument options
+EAPI=8
+HOMEPAGE=https://github.com/minimistjs/minimist
+INHERIT=nodejs
+IUSE=test
+KEYWORDS=~amd64
+LICENSE=MIT
+RDEPEND=dev-nodejs/node_path
+RESTRICT=!test? ( test )
+SLOT=0
+SRC_URI=https://github.com/minimistjs/minimist/archive/refs/tags/v1.2.8.tar.gz -> minimist-1.2.8.tar.gz
+_eclasses_=nodejs	4a1d78aff67ad16baf1939f139db0059
+_md5_=71d31fa62f2f4cbc9dc3aa9f754f208b
