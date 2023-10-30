@@ -9,7 +9,7 @@ DESCRIPTION="Convert Japanese to Hiragana, Katakana or Romaji with furigana and 
 HOMEPAGE="https://kuroshiro.org/"
 SRC_URI="https://github.com/hexenq/kuroshiro/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
-SLOT="0"
+SLOT="1"
 KEYWORDS="~amd64"
 IUSE=""
 
@@ -17,7 +17,12 @@ BDEPEND="dev-util/esbuild"
 
 RESTRICT="test" # Uses jest
 
+src_prepare() {
+	default
+	sed -i '/"module":/a"type": "module",' package.json || die
+}
+
 src_compile() {
 	# Uses babel by default, let's use esbuild for now instead to create a similar result
-	esbuild --bundle src/index.js --outdir=lib --minify --sourcemap || die
+	esbuild --bundle src/index.js --outdir=lib --minify --sourcemap --format=esm || die
 }
