@@ -18,6 +18,18 @@ RDEPEND="dev-nodejs/mecab-async"
 
 RESTRICT="test" # Uses jest
 
+src_prepare() {
+	default
+	#sed -i '/"module":/a"type": "module",' package.json || die
+
+	# Can't import node:child_process, only require()
+	sed -i \
+		-e 's;^import Mecab from "mecab-async";const Mecab = require("mecab-async");' \
+		-e 's;export default ;module.exports = ;' \
+		src/index.js || die
+}
+
+
 src_compile() {
 	# Uses babel by default, let's use esbuild for now instead to create a similar result
 	esbuild --bundle src/index.js --outdir=lib --minify --sourcemap --platform=node || die
