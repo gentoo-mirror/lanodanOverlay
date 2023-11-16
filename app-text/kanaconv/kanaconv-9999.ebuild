@@ -14,7 +14,7 @@ SLOT="0"
 RESTRICT="test" # Has no tests
 
 RDEPEND="
-	dev-nodejs/kuroshiro
+	dev-nodejs/kuroshiro:0
 	dev-nodejs/kuroshiro-analyzer-mecab
 	dev-nodejs/minimist
 "
