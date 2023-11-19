@@ -247,7 +247,7 @@ src_configure() {
 	)
 
 	# https://bugs.gentoo.org/761238
-	append-flags -DNDEBUG
+	append-cppflags -DNDEBUG
 
 	WK_USE_CCACHE=NO cmake_src_configure
 }
