@@ -1,0 +1,32 @@
+From 9e05696bcb54853cb53d763acbb3eed7ec39f1ed Mon Sep 17 00:00:00 2001
+From: ChangSeok Oh <changseok@webkit.org>
+Date: Fri, 25 Aug 2023 01:24:09 -0700
+Subject: [PATCH] Build fix after 160450@main by guarding showRenderTree
+ https://bugs.webkit.org/show_bug.cgi?id=260702
+
+Unreviewed build fix.
+
+Where LOG_DISABLED is disabled, the build fails due to missing showRenderTree().
+The showRenderTree() is guarded by ENABLE(TREE_DEBUGGING).
+
+* Source/WebCore/page/LocalFrameViewLayoutContext.cpp:
+(WebCore::LocalFrameViewLayoutContext::performLayout):
+
+Canonical link: https://commits.webkit.org/267268@main
+---
+ Source/WebCore/page/LocalFrameViewLayoutContext.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Source/WebCore/page/LocalFrameViewLayoutContext.cpp b/Source/WebCore/page/LocalFrameViewLayoutContext.cpp
+index bd98c8403226..16bb037a9950 100644
+--- a/Source/WebCore/page/LocalFrameViewLayoutContext.cpp
++++ b/Source/WebCore/page/LocalFrameViewLayoutContext.cpp
+@@ -240,7 +240,7 @@ void LocalFrameViewLayoutContext::performLayout()
+ #endif
+         clearSubtreeLayoutRoot();
+ 
+-#if !LOG_DISABLED
++#if !LOG_DISABLED && ENABLE(TREE_DEBUGGING)
+         auto layoutLogEnabled = [] {
+             return LogLayout.state == WTFLogChannelState::On;
+         };
