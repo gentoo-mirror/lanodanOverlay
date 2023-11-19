@@ -126,10 +126,6 @@ BDEPEND="
 
 S="${WORKDIR}/${MY_P}"
 
-PATCHES=(
-	"${FILESDIR}/webkit-gtk-2.42.2_tree_debugging.patch"
-)
-
 CHECKREQS_DISK_BUILD="18G" # and even this might not be enough, bug #417307
 
 pkg_pretend() {
