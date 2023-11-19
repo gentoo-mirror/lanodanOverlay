@@ -154,6 +154,7 @@ pkg_setup() {
 }
 
 src_prepare() {
+	eapply "${FILESDIR}/webkit-gtk-2.42.2_tree_debugging.patch"
 	cmake_src_prepare
 	gnome2_src_prepare
 }
