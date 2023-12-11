@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install postinst postrm prepare
+DEPEND=virtual/opengl media-libs/libsdl2 games-fps/rtcw-data-gog
+DESCRIPTION=Return to Castle Wolfenstein with ioquake3 improvements
+EAPI=8
+HOMEPAGE=https://github.com/iortcw/iortcw/
+INHERIT=xdg-utils
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-3
+RDEPEND=virtual/opengl media-libs/libsdl2 games-fps/rtcw-data-gog
+SLOT=0
+SRC_URI=https://github.com/iortcw/iortcw/archive/1.51c.tar.gz -> iortcw-1.51c.tar.gz https://github.com/iortcw/iortcw/releases/download/1.51c/patch-data-141.zip
+_eclasses_=xdg-utils	baea6080dd821f5562d715887954c9d3
+_md5_=ba005333e992e2f5e0754bd9f42bf827
