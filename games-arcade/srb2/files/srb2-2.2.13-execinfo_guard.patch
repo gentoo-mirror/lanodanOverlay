@@ -1,0 +1,25 @@
+From 2e8dba054533e4a0c7e685a934e7f220db69a331 Mon Sep 17 00:00:00 2001
+From: "Haelwenn (lanodan) Monnier" <contact@hacktivis.me>
+Date: Thu, 14 Dec 2023 17:52:55 +0100
+Subject: [PATCH] src/sdl/i_system.c: Guard backtrace(3) behind glibc and *BSD
+
+Present in NetBSD 7.0+, OpenBSD 7.0+, FreeBSD 10.0+, DragonFlyBSD, GNU glibc 2.1+
+
+Absent in POSIX and musl libc.
+---
+ src/sdl/i_system.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/sdl/i_system.c b/src/sdl/i_system.c
+index 2a26f3f501..2158b60ee9 100644
+--- a/src/sdl/i_system.c
++++ b/src/sdl/i_system.c
+@@ -137,7 +137,7 @@ typedef LPVOID (WINAPI *p_MapViewOfFile) (HANDLE, DWORD, DWORD, DWORD, SIZE_T);
+ #include <errno.h>
+ #endif
+ 
+-#if defined (__unix__) || defined(__APPLE__) || defined (UNIXCOMMON)
++#if defined(__APPLE__) || defined (__GLIBC__) || defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__DragonFly__)
+ #include <execinfo.h>
+ #include <time.h>
+ #define UNIXBACKTRACE
