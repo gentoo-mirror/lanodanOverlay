@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install prepare
+DEPEND=media-libs/game-music-emu media-libs/libopenmpt media-libs/libpng:= media-libs/libsdl2 media-libs/sdl2-mixer net-misc/curl sys-libs/zlib
+DESCRIPTION=3D Sonic fan game based off of Doom Legacy
+EAPI=8
+HOMEPAGE=https://srb2.org
+KEYWORDS=~amd64
+LICENSE=GPL-2
+RDEPEND=media-libs/game-music-emu media-libs/libopenmpt media-libs/libpng:= media-libs/libsdl2 media-libs/sdl2-mixer net-misc/curl sys-libs/zlib
+SLOT=0
+SRC_URI=https://github.com/STJr/SRB2/archive/refs/tags/SRB2_release_2.2.13.tar.gz https://github.com/STJr/SRB2/releases/download/SRB2_release_2.2.13/SRB2-v2213-Full.zip
+_md5_=0e777d3f6242a6649d86b5160037c76c
