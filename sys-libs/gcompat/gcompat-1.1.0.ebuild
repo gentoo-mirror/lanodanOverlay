@@ -6,7 +6,7 @@ EAPI=7
 inherit multilib-minimal flag-o-matic
 
 DESCRIPTION="The GNU C Library compatibility layer for musl"
-HOMEPAGE="https://code.foxkit.us/adelie/gcompat"
+HOMEPAGE="https://git.adelielinux.org/adelie/gcompat"
 KEYWORDS="~amd64 ~x86"
 LICENSE="UoI-NCSA"
 IUSE="libucontext obstack"
