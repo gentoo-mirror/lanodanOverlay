@@ -135,6 +135,7 @@ media-libs/jg 0_pre20221030: Jolly Good API, an API for Emulators
 media-libs/libsbsms 2.3.0: A library for high quality time and pitch scale modification
 media-libs/libsdl 1.2.52 9999: Simple Direct Media Layer (sdl-1.2 compatibility)
 media-libs/libsdl2 9999: Simple Direct Media Layer
+media-libs/libvgm 0_pre20230814: more modular rewrite of most components from VGMPlay
 media-libs/portaudio 19.06.00-r3: A free, cross-platform, open-source, audio I/O library
 media-libs/portmidi 2.0.4: Library for real time MIDI input and output
 media-libs/smpeg2 2.0.0_p20230121: SDL MPEG Player Library

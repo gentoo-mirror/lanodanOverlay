@@ -1,0 +1,15 @@
+BDEPEND=app-alternatives/ninja >=dev-util/cmake-3.20.5
+DEFINED_PHASES=compile configure install prepare test
+DEPEND=media-libs/alsa-lib sys-libs/zlib
+DESCRIPTION=more modular rewrite of most components from VGMPlay
+EAPI=8
+HOMEPAGE=https://github.com/ValleyBell/libvgm
+INHERIT=cmake
+KEYWORDS=~amd64
+LICENSE=all-rights-reserved GPL-2
+RDEPEND=media-libs/alsa-lib sys-libs/zlib
+RESTRICT=bindist
+SLOT=0
+SRC_URI=https://github.com/ValleyBell/libvgm/archive/91b6542a25a754f985181921331bdcbb2699c03c.tar.gz -> libvgm-91b6542a25a754f985181921331bdcbb2699c03c.tar.gz
+_eclasses_=toolchain-funcs	eed10cf5e5a06916e654d31f5a1925cc	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	c816c598969cbaf38cc02d2496ad2e98	multiprocessing	30ead54fa2e2b5f9cd4e612ffc34d0fe	ninja-utils	c8951c1dfcc1d43e3f967f61fd0ec59c	xdg-utils	baea6080dd821f5562d715887954c9d3	cmake	0f2e0c197fad0312f3c4765c9cf36271
+_md5_=a8def0602f665f58eea943c474a4162c
