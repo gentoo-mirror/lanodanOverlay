@@ -1,7 +1,9 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
+
+inherit toolchain-funcs
 
 if [ "${PV}" == "9999" ]; then
 	inherit git-r3
@@ -75,7 +77,7 @@ src_configure() {
 
 src_compile() {
 	emake \
-		AS="${AS}" AR="${AR}" RANLIB="${RANLIB}" \
+		AS="$(tc-getAS)" AR="$(tc-getAR)" RANLIB="$(tc-getRANLIB)" \
 		CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
 		LDADD="${LDADD}" GUI="${GUI}" AUDIO="${AUDIO}"
 }
