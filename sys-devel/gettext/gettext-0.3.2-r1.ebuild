@@ -10,7 +10,7 @@ HOMEPAGE="https://github.com/sabotage-linux/gettext-tiny"
 SRC_URI="https://github.com/sabotage-linux/gettext-tiny/archive/refs/tags/v${PV}.tar.gz -> gettext-tiny-${PV}.tar.gz"
 S="${WORKDIR}/gettext-tiny-${PV}/"
 
-LICENSE="BSD-1"
+LICENSE="MIT"
 SLOT="tiny"
 KEYWORDS="~amd64"
 IUSE="shim"
