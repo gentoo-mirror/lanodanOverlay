@@ -7,5 +7,5 @@ INHERIT=git-r3 ninja-utils
 LICENSE=CC-BY-SA-4.0
 PROPERTIES=live
 SLOT=0
-_eclasses_=git-r3	86fa1f157b70b9d2ff340c4633b1cf4b	multiprocessing	30ead54fa2e2b5f9cd4e612ffc34d0fe	ninja-utils	c8951c1dfcc1d43e3f967f61fd0ec59c
+_eclasses_=git-r3	86fa1f157b70b9d2ff340c4633b1cf4b	multiprocessing	30ead54fa2e2b5f9cd4e612ffc34d0fe	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6
 _md5_=a3957275118d5ba333016faa982fbf86
