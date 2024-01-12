@@ -29,3 +29,6 @@ app-alternatives/gzip -reference pigz
 app-alternatives/bzip2 -reference pbzip2
 net-libs/libsoup brotli
 app-shells/bash -net -readline
+sys-apps/utils-extra static
+sys-apps/utils-std static
+app-shells/mksh static
