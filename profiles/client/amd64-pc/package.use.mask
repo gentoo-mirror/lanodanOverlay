@@ -1,0 +1,2 @@
+sys-apps/utils-extra static
+sys-apps/utils-std static

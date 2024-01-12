@@ -10,7 +10,7 @@ HOMEPAGE="https://hacktivis.me/git/utils-extra"
 EGIT_REPO_URI="https://hacktivis.me/git/utils-extra.git"
 LICENSE="MPL-2.0"
 SLOT="0"
-IUSE="test"
+IUSE="test static"
 
 RESTRICT="!test? ( test )"
 
@@ -23,6 +23,8 @@ BDEPEND="
 
 src_configure() {
 	export NO_BWRAP=1
+
+	use static && export CFLAGS="${CFLAGS} -static"
 
 	./configure PREFIX='/usr'
 }
