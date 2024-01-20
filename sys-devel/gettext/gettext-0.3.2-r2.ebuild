@@ -1,4 +1,4 @@
-# Copyright 2022 Gentoo Authors
+# Copyright 2022-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -24,6 +24,13 @@ PATCHES=(
 
 DOCS=( README.md docs )
 
+src_prepare() {
+	default
+
+	# Needs to be set early, otherwise scripts like autopoint have a wrong prefix value
+	sed -i "s;^prefix=.*;prefix=${EPREFIX}/usr;" Makefile || die
+}
+
 src_compile() {
 	tc-export AR RANLIB CC
 
@@ -45,5 +52,5 @@ src_install() {
 		libintl_type=NONE
 	fi
 
-	emake LIBINTL="${libintl_type}" DESTDIR="${D}" prefix="${EPREFIX}/usr" install
+	emake LIBINTL="${libintl_type}" DESTDIR="${D}" install
 }
