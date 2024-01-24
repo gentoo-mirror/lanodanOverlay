@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 2021-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -23,7 +23,9 @@ IUSE="gles1-only"
 
 # Note: media-libs/libsdl2::gentoo doesn't have USE=gles1 yet
 RDEPEND="
+	dev-libs/libltdl
 	media-libs/libsdl2[joystick,opengl,video]
+	media-libs/sdl2-image
 	gles1-only? ( media-libs/libsdl2[gles1(-)] )
 	virtual/opengl
 "
