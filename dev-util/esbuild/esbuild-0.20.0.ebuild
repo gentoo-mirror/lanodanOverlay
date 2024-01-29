@@ -62,7 +62,8 @@ src_configure() {
 }
 
 src_test() {
-	emake test
+	# test target wraps around test-common target with -j6
+	emake test-common
 }
 
 src_install() {
