@@ -1,4 +1,9 @@
-# Haelwenn (lanodan) Monnier <contact@hacktivis.me> (2023-01-18)
+# Haelwenn (lanodan) Monnier <contact@hacktivis.me> (2024-01-30)
+# Non-uniform small-keyspace crackable passwords by default
+# See https://www.openwall.com/lists/oss-security/2012/01/17/5
+app-admin/pwgen
+
+# Haelwenn (lanodan) Monnier <contact@hacktivis.me> (2024-01-18)
 # Nobody should use imake anymore, X moved off from it in 2005.
 # https://lists.x.org/archives/xorg-announce/2024-January/003440.html
 x11-misc/imake
