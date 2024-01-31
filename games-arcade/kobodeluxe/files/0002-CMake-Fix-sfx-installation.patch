@@ -1,0 +1,27 @@
+From 42f117811cfa8c5c02fc83b4faef57b6857e3b5e Mon Sep 17 00:00:00 2001
+From: "Haelwenn (lanodan) Monnier" <contact@hacktivis.me>
+Date: Wed, 31 Jan 2024 17:16:15 +0100
+Subject: [PATCH 2/2] CMake: Fix sfx installation
+
+---
+ CMakeLists.txt | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 01355d8..ac291ac 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -73,8 +73,8 @@ install(DIRECTORY data/gfx
+ install(DIRECTORY data/sfx
+ 	DESTINATION "${KOBO_SHARE_DIR}"
+ 	FILES_MATCHING
+-	PATTERN "*.a2s"
+-	PATTERN "*.theme")
++	PATTERN "*.h"
++	PATTERN "*.agw")
+ 
+ # Documentation
+ file(GLOB doc_files
+-- 
+2.43.0
+

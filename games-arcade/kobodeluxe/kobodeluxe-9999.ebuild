@@ -18,5 +18,6 @@ DEPEND="${RDEPEND}"
 
 # https://github.com/olofson/kobodeluxe/pull/8
 PATCHES=(
-	"${FILESDIR}/CMake-Fix-desktop-icon-installation.patch"
+	"${FILESDIR}/0001-CMake-Fix-desktop-icon-installation.patch"
+	"${FILESDIR}/0002-CMake-Fix-sfx-installation.patch"
 )
