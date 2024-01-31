@@ -10,7 +10,11 @@ HOMEPAGE="http://www.olofson.net/kobodl/ https://github.com/olofson/kobodeluxe/"
 EGIT_REPO_URI="https://github.com/olofson/kobodeluxe"
 SLOT="0"
 
-DEPEND="media-libs/libsdl"
+RDEPEND="
+	media-libs/libsdl
+	media-libs/sdl-image
+"
+DEPEND="${RDEPEND}"
 
 # https://github.com/olofson/kobodeluxe/pull/8
 PATCHES=(
