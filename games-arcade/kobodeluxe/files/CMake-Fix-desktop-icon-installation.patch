@@ -1,0 +1,29 @@
+From f45b765c9f005c7f8b5327a1cbce3b67f3a9b89c Mon Sep 17 00:00:00 2001
+From: "Haelwenn (lanodan) Monnier" <contact@hacktivis.me>
+Date: Wed, 31 Jan 2024 16:58:38 +0100
+Subject: [PATCH] CMake: Fix desktop icon installation
+
+Also .desktop file refers to kobodl as icon-name so should be left unchanged
+---
+ CMakeLists.txt | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 29fa1b7..01355d8 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -87,9 +87,8 @@ install(FILES ${doc_files}
+ # Desktop entry
+ if(NOT WIN32)
+ 	set(KOBO_DE_FILE "net.olofson.${KOBO_PACKAGE_NAME}.desktop")
+-	install(FILES "${KOBODELUXE_SOURCE_DIR}/icons/kobodeluxe.png"
+-		DESTINATION "share/pixmaps"
+-		RENAME "${KOBO_PACKAGE_NAME}.png")
++	install(FILES "${KOBODELUXE_SOURCE_DIR}/icons/kobodl.png"
++		DESTINATION "share/pixmaps")
+ 	install(FILES "${KOBODELUXE_SOURCE_DIR}/icons/${KOBO_DE_FILE}"
+ 		DESTINATION "share/applications")
+ endif(NOT WIN32)
+-- 
+2.43.0
+
