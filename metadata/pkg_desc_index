@@ -94,6 +94,7 @@ dev-util/gyp-next 0.13.0: fork of the GYP (Generate Your Projects) build system 
 dev-util/uglifyjs 3.17.4: JavaScript parser, minifier, compressor and beautifier toolkit
 games-arcade/crypt_of_the_necrodancer 1.29.14917: Crypt of the Necrodancer (GOG)
 games-arcade/emilia-pinball 9999: SDL OpenGL pinball game
+games-arcade/kobodeluxe 9999: An SDL port of xkobo, a addictive space shoot-em-up
 games-arcade/pinball-table-gnu 9999: GNU table for games-arcade/emilia-pinball
 games-arcade/pinball-table-hurd 9999: Hurd table for games-arcade/emilia-pinball
 games-arcade/srb2 2.2.13: 3D Sonic fan game based off of Doom Legacy
