@@ -30,7 +30,6 @@ dev-games/godot 4.2.9999: Multi-platform 2D and 3D game engine with a feature-ri
 dev-go/sys 0.13.0: supplemental Go packages for low-level interactions with the operating system
 dev-hare/madeline 9999: tiny readline-alike with some batteries included
 dev-java/icedtea 7.2.6.28: A harness to build OpenJDK using Free Software build tools and dependencies
-dev-lang/erlang 26.0.1: Erlang programming language, runtime environment and libraries (OTP)
 dev-lang/go 1.4_p20171003: Boostrap Go from C (useful for musl libc)
 dev-lang/kuroko 1.4.0: Dynamic, bytecode-compiled programming language and a dialect of Python
 dev-lang/wasm3 0.5.0: A fast WebAssembly interpreter and the most universal WASM runtime
