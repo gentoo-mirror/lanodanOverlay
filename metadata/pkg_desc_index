@@ -27,7 +27,7 @@ dev-erlang/meck 0.9.2: Mocking library for Erlang
 dev-erlang/tdiff 0.1.2: Difference library
 dev-erlang/unite 0.4.0: Pretty EUnit test formatters
 dev-games/godot 4.2.9999: Multi-platform 2D and 3D game engine with a feature-rich editor (wayland PR)
-dev-go/sys 0.13.0: supplemental Go packages for low-level interactions with the operating system
+dev-go/sys 0.17.0: supplemental Go packages for low-level interactions with the operating system
 dev-hare/madeline 9999: tiny readline-alike with some batteries included
 dev-java/icedtea 7.2.6.28: A harness to build OpenJDK using Free Software build tools and dependencies
 dev-lang/go 1.4_p20171003: Boostrap Go from C (useful for musl libc)
@@ -86,7 +86,7 @@ dev-nodejs/which 2.0.2 4.0.0: Like which(1) unix command. Find the first instanc
 dev-nodejs/wrappy 1.0.2: Callback wrapping utility
 dev-nodejs/ws 8.13.0-r1: Simple to use, blazing fast and thoroughly tested WebSocket client and server for Node.js
 dev-perl/Net-CVE 0.006: Fetch CVE (Common Vulnerabilities and Exposures) information from cve.org
-dev-util/esbuild 0.20.0: extremely fast bundler for the web
+dev-util/esbuild 0.20.1: extremely fast bundler for the web
 dev-util/genie 1170: GENie project generator tool (a fork of premake by Branimir Karadžić)
 dev-util/glslang 11.10.0: Khronos reference front-end for GLSL and ESSL, and sample SPIR-V generator
 dev-util/gyp-next 0.13.0: fork of the GYP (Generate Your Projects) build system for use in the Node.js projects
