@@ -18,7 +18,7 @@ SRC_URI="https://www.webkitgtk.org/releases/${MY_P}.tar.xz"
 # See https://bugs.webkit.org/show_bug.cgi?id=254717
 LICENSE="LGPL-2+ BSD Apache-2.0"
 SLOT="4.1/0" # soname version of libwebkit2gtk-4.1
-KEYWORDS="~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~sparc ~x86"
+KEYWORDS="~amd64 ~arm64"
 
 IUSE="aqua +avif dbus doc examples gamepad keyring +gstreamer +introspection pdf +jpeg2k jpegxl +jumbo-build lcms +seccomp spell systemd wayland webrtc +X"
 
