@@ -1,3 +1,15 @@
+# Haelwenn (lanodan) Monnier <contact@hacktivis.me> (2024-02-29)
+# Screw language-specific package managers, none of them do proper reviews
+# Only exceptions so far are the ones where packaging in gentoo is
+# either insane or incomplete such as:
+# - npm and others using npmjs.org
+# - dev-elixir/hex
+dev-python/pip
+dev-lua/luarocks
+dev-ml/opam
+dev-scheme/akku
+dev-util/conan
+
 # Haelwenn (lanodan) Monnier <contact@hacktivis.me> (2024-02-14)
 # Qt release pace for a chromium fork, effectively a forever:
 #   Has security bugs don't use
