@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare
+DEPEND=x11-libs/libX11
+DESCRIPTION=Dave Gilbert's Acorn Archimedes emulator
+EAPI=8
+HOMEPAGE=https://arcem.sourceforge.net/
+INHERIT=toolchain-funcs
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2
+RDEPEND=x11-libs/libX11
+SLOT=0
+SRC_URI=mirror://sourceforge/arcem/arcem-1.50-src.zip
+_eclasses_=toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0
+_md5_=b73a534e0959fa6776717dd1856efed4
