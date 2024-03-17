@@ -20,7 +20,7 @@ LICENSE="LGPL-2+ BSD Apache-2.0"
 SLOT="6/0" # soname version of libwebkit2gtk-6.0
 KEYWORDS="~amd64 ~arm64"
 
-IUSE="aqua +avif dbus doc examples gamepad keyring +gstreamer +introspection pdf +jpeg2k jpegxl +jumbo-build lcms +seccomp spell systemd wayland webrtc +X"
+IUSE="aqua +avif dbus doc examples gamepad keyring +gstreamer +introspection pdf jpegxl +jumbo-build lcms +seccomp spell systemd wayland webrtc +X"
 
 REQUIRED_USE="
 	doc? ( introspection )
@@ -79,7 +79,6 @@ RDEPEND="
 	)
 
 	dev-libs/hyphen
-	jpeg2k? ( >=media-libs/openjpeg-2.2.0:2= )
 	jpegxl? ( media-libs/libjxl )
 	avif? ( >=media-libs/libavif-0.9.0:= )
 	lcms? ( media-libs/lcms:2 )
@@ -89,8 +88,6 @@ RDEPEND="
 	wayland? (
 		>=dev-libs/wayland-1.15
 		>=dev-libs/wayland-protocols-1.15
-		>=gui-libs/libwpe-1.5.0:1.0
-		>=gui-libs/wpebackend-fdo-1.7.0:1.0
 	)
 	seccomp? (
 		>=sys-apps/bubblewrap-0.3.1
@@ -150,7 +147,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	eapply "${FILESDIR}/webkit-gtk-2.42.2_tree_debugging.patch"
 	cmake_src_prepare
 	gnome2_src_prepare
 }
@@ -225,6 +221,7 @@ src_configure() {
 		-DENABLE_WEBDRIVER=OFF
 
 		# Source/cmake/OptionsGTK.cmake
+		-DUSE_LIBBACKTRACE=OFF
 		-DENABLE_DOCUMENTATION=$(usex doc)
 		-DENABLE_INTROSPECTION=$(usex introspection)
 		-DENABLE_JOURNALD_LOG=$(usex systemd)
@@ -241,8 +238,6 @@ src_configure() {
 		-DUSE_LCMS=$(usex lcms)
 		-DUSE_LIBHYPHEN=ON
 		-DUSE_LIBSECRET=$(usex keyring)
-		-DUSE_OPENGL_OR_ES=ON
-		-DUSE_OPENJPEG=$(usex jpeg2k)
 		-DUSE_SOUP2=OFF
 		-DUSE_WOFF2=ON
 	)
