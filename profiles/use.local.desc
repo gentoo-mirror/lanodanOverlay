@@ -90,7 +90,6 @@ sys-firmware/ipxe:qemu - Build the required PXE ROM images for app-emulation/qem
 sys-firmware/ipxe:undi - Build a Universal Network Device Interface driver chainloading your existing PXE NIC into iPXE
 sys-firmware/ipxe:usb - Build a bootable USB image for using PXE
 sys-firmware/ipxe:vmware - Build the PXE ROM images that VMWare uses
-sys-libs/gcompat:obstack - Use sys-libs/obstack-standalone for greater compatibility
 sys-libs/libtickit:unibilium - Use dev-libs/unibilium (highly recommended) instead of sys-libs/ncurses
 virtual/wine:staging - Enable Wine-Staging's Patchset
 www-client/visurf:bmp - BMP bitmap image support (media-libs/libnsbmp)

@@ -149,7 +149,6 @@ net-mail/checkpassword-ng 9999: Uniform password checking interface for applicat
 net-misc/ap-client 9999: CLI-based client / toolbox for ActivityPub Client-to-Server
 net-misc/drawterm 0_p20221013 9999: Connect to Plan 9 CPU servers from other operating systems
 net-news/newsboat 2.13-r1: An RSS/Atom feed reader for text terminals
-net-nntp/suck 4.3.4: Grab news from a remote NNTP server and feed them to another
 sci-calculators/pc 0.4: 9front's pc(1) (Programmer's Calculator) for Unix
 sci-libs/onnxruntime 1.9.1: cross-platform, high performance ML inferencing and training accelerator
 sys-apps/9utils 9999: Collection of utilities inspired by Plan9
@@ -167,7 +166,6 @@ sys-devel/gettext 0.3.2-r2: Stub and/or lightweight replacements of the GNU gett
 sys-devel/ipcgen 9999: IPC code generation for Mercury
 sys-firmware/edk2-tools 202305: tools for processing UEFI firmware content (EfiRom, GenFfs, ...)
 sys-firmware/ipxe 1.21.1_p20230601-r1: Open source network boot (PXE) firmware
-sys-libs/gcompat 1.1.0: The GNU C Library compatibility layer for musl
 sys-libs/libtickit 0.3.3: library for building interactive full-screen terminal programs
 sys-libs/zlib 1.2.8.2015.12.26: Standard (de)compression library (Sortix's libz fork)
 virtual/checkpassword 1: Virtual for checkpassword compatible applications
