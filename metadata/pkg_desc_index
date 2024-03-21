@@ -1,4 +1,5 @@
 acct-group/chkpwd 0: Group for sys-apps/tcb
+acct-group/proc 0: Group for non-root /proc full-view
 acct-group/shadow 0: Group for sys-apps/tcb
 app-accessibility/julius 4.5: Large Vocabulary Continuous Speech Recognition Engine
 app-containers/lxc-templates 9999: Old style template scripts for LXC
