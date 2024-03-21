@@ -18,6 +18,7 @@ app-text/evince:postscript - Enable support for PostScript and Adobe Illustrator
 app-text/evince:spell - Enable inline spell check for annotations via app-text/gspell
 app-text/evince:t1lib - Enable the Type-1 fonts for the built-in DVI viewer (media-libs/t1lib)
 app-text/evince:xps - Enable XPS viewer using app-text/libgxps
+dev-db/redict:tcmalloc - Use tcmalloc from dev-util/google-perftools for allocations.
 dev-games/godot:bullet - Enable the sci-physics/bullet module
 dev-games/godot:deprecated - Enable support for deprecated features
 dev-games/godot:raycast - Enable the raycast Editor module using media-libs/embree
