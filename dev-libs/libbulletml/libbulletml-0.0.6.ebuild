@@ -44,6 +44,7 @@ src_prepare() {
 
 src_configure() {
 	tc-export AR CXX
+	export CXXFLAGS="-std=c++14 ${CXXFLAGS}"
 }
 
 src_install() {
