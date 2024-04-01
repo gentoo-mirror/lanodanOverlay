@@ -1,0 +1,14 @@
+BDEPEND=net-libs/nodejs app-misc/jq sys-apps/cmd-glob
+DEFINED_PHASES=compile install test
+DESCRIPTION=Command to convert Japanese from/to Kana/Kanji/Romaji with furigana option
+EAPI=8
+HOMEPAGE=https://hacktivis.me/git/kanaconv/
+INHERIT=nodejs
+KEYWORDS=~amd64
+LICENSE=MIT
+RDEPEND=dev-nodejs/kuroshiro:0 dev-nodejs/kuroshiro-analyzer-mecab dev-nodejs/minimist dev-nodejs/node_path
+RESTRICT=test
+SLOT=0
+SRC_URI=https://hacktivis.me/releases/kanaconv-1.0.0.tar.gz
+_eclasses_=nodejs	e3259e0e9ce0994a4f3f9791cba63a2a
+_md5_=bf7a6da843e9f632a1529e792d21eadc
