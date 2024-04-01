@@ -9,5 +9,5 @@ LICENSE=MIT
 PROPERTIES=live
 RDEPEND=dev-nodejs/node_path
 SLOT=0
-_eclasses_=nodejs	e3259e0e9ce0994a4f3f9791cba63a2a	git-r3	86fa1f157b70b9d2ff340c4633b1cf4b
+_eclasses_=nodejs	e3259e0e9ce0994a4f3f9791cba63a2a	git-r3	fbb2889c81f3a05910c1524db69425c1
 _md5_=5d4c58780d948f1d92342e72a185d39d
