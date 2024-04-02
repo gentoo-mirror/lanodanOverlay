@@ -5,7 +5,7 @@ EAPI=8
 
 inherit autotools multilib-minimal
 
-EGIT_COMMIT="5e143472353d0936e06497bc06839ac7c52b1c7a"
+EGIT_COMMIT="868a1e43a69044cd6f346ab897da557c59d11c8c"
 
 DESCRIPTION="SDL MPEG Player Library"
 HOMEPAGE="https://icculus.org/smpeg/ https://github.com/icculus/smpeg"
@@ -30,9 +30,6 @@ src_prepare() {
 }
 
 multilib_src_configure() {
-	#  error: ISO C++17 does not allow 'register' storage class specifier [-Wregister]
-	#export CXXFLAGS="${CXXFLAGS} -std=c++11"
-
 	local myeconfargs=(
 		--disable-rpath
 		--disable-sdltest
