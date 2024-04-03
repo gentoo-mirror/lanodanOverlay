@@ -1,0 +1,41 @@
+From 86d9b993d0e09d8f8788dcd18c308206a199a82a Mon Sep 17 00:00:00 2001
+From: "Haelwenn (lanodan) Monnier" <contact@hacktivis.me>
+Date: Sun, 21 Jan 2024 08:57:33 +0100
+Subject: [PATCH] =?UTF-8?q?autopoint:=20Fix=20unescaped=20parenthesis=20in?=
+ =?UTF-8?q?=20${=E2=80=A6}?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+Upstream: https://github.com/sabotage-linux/gettext-tiny/commit/86d9b993d0e09d8f8788dcd18c308206a199a82a
+
+Tested against mksh 59c, dash 0.5.12 and bash 5.1_p16 on Gentoo Linux while
+in zbar-0.23.92 working directory.
+
+A quick `git grep '${.*('` doesn't leads to other scripts with similar issues.
+
+Closes: https://github.com/sabotage-linux/gettext-tiny/issues/65
+---
+ src/autopoint.in | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/src/autopoint.in b/src/autopoint.in
+index ce41116..fd00afd 100755
+--- a/src/autopoint.in
++++ b/src/autopoint.in
+@@ -15,13 +15,13 @@ dirprefix=""
+ while read line
+ do
+   if [ "${line##*AC_CONFIG_AUX_DIR}" != "$line" ]; then
+-    dirprefix="${line##*([}"
+-    dirprefix="${dirprefix%%])*}"
++    dirprefix="${line##*'(['}"
++    dirprefix="${dirprefix%%'])'*}"
+     mkdir -p "${dirprefix}"
+   fi
+   
+   if [ "${line##*po/Makefile.in}" != "$line" ]; then
+-    poprefix="${line##*[}"
++    poprefix="${line##*'['}"
+     poprefix="${poprefix%%po/Makefile.in*}"
+     install -D -m 644 @datadir@/data/autopoint_Makefile.in "./${poprefix}/po/Makefile.in.in"
+   fi

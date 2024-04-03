@@ -18,8 +18,9 @@ IUSE="shim"
 RDEPEND="!sys-devel/gettext:0"
 
 PATCHES=(
-	"${FILESDIR}"/${P}-respect-CFLAGS.patch
-	"${FILESDIR}"/${P}-xgettext-version-output.patch
+	"${FILESDIR}"/gettext-0.3.2-respect-CFLAGS.patch
+	"${FILESDIR}"/gettext-0.3.2-xgettext-version-output.patch
+	"${FILESDIR}"/gettext-0.3.2-autopoint-parenthesis.patch
 )
 
 DOCS=( README.md docs )
