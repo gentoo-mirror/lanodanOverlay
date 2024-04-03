@@ -1,0 +1,12 @@
+BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=configure install unpack
+DESCRIPTION=A Library of Bullet Markup Language
+EAPI=8
+HOMEPAGE=https://hacktivis.me/git/libbulletml https://shinh.skr.jp/libbulletml/index_en.html
+INHERIT=toolchain-funcs git-r3
+KEYWORDS=~amd64 ~ppc ~x86
+LICENSE=BSD
+PROPERTIES=live
+SLOT=0/9999
+_eclasses_=toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	git-r3	fbb2889c81f3a05910c1524db69425c1
+_md5_=67eed9346dd98de1b1487abdab1b9f18

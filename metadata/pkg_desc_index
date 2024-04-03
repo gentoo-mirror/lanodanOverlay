@@ -38,7 +38,7 @@ dev-lang/kuroko 1.4.0: Dynamic, bytecode-compiled programming language and a dia
 dev-lang/wasm3 0.5.0: A fast WebAssembly interpreter and the most universal WASM runtime
 dev-libs/PlatformFolders 4.2.0: C++ library to look for special directories like ~/.config and %APPDATA%
 dev-libs/hts_engine 1.10: HMM-based speech synthesis system (HTS) engine and API
-dev-libs/libbulletml 0.0.6: A Library of Bullet Markup Language
+dev-libs/libbulletml 9999: A Library of Bullet Markup Language
 dev-libs/libcss 9999: CSS parser and selection engine, written in C
 dev-libs/libkqueue 2.6.1: kqueue(2) compatibility library
 dev-libs/libtomcrypt 1.18.2: modular and portable cryptographic toolkit
@@ -132,8 +132,6 @@ media-libs/glew 2.1.0: The OpenGL Extension Wrangler Library
 media-libs/glfw 2.7.9: The Portable OpenGL FrameWork
 media-libs/jg 0_pre20221030: Jolly Good API, an API for Emulators
 media-libs/libsbsms 2.3.0: A library for high quality time and pitch scale modification
-media-libs/libsdl 1.2.52 9999: Simple Direct Media Layer (sdl-1.2 compatibility)
-media-libs/libsdl2 9999: Simple Direct Media Layer
 media-libs/libvgm 0_pre20230814: more modular rewrite of most components from VGMPlay
 media-libs/portaudio 19.06.00-r3: A free, cross-platform, open-source, audio I/O library
 media-libs/portmidi 2.0.4: Library for real time MIDI input and output

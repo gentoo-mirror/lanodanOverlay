@@ -34,20 +34,6 @@ gnustep-base/gnustep-make:native-exceptions - Enables use of the native Objectiv
 mail-mta/opensmtpd:mdoc - Use mdoc format for manpages
 mail-mta/opensmtpd:mta - Enable this to install as system-wide MTA
 media-libs/freeglut:wayland-only - Build wayland version instead of X11 version
-media-libs/libsdl:joystick - Control joystick support (disable at your own risk)
-media-libs/libsdl:sound - Control audio support (disable at your own risk)
-media-libs/libsdl:tslib - Build with tslib support for touchscreen devices
-media-libs/libsdl:video - Control video support (disable at your own risk)
-media-libs/libsdl2:fcitx4 - Enable support for app-i18n/fcitx 4
-media-libs/libsdl2:gles2 - include OpenGL ES 2.0 support
-media-libs/libsdl2:haptic - Enable the haptic (force feedback) subsystem
-media-libs/libsdl2:ibus - Enable support for app-i18n/ibus
-media-libs/libsdl2:joystick - Control joystick support (disable at your own risk)
-media-libs/libsdl2:kms - Build the KMSDRM video driver
-media-libs/libsdl2:sound - Control audio support (disable at your own risk)
-media-libs/libsdl2:tslib - Build with tslib support for touchscreen devices
-media-libs/libsdl2:video - Control video support (disable at your own risk)
-media-libs/libsdl2:vulkan - Enable Vulkan support
 media-libs/portaudio:sndio - Enable support for sndio
 media-libs/portmidi:sndio - Enable support for sndio
 media-libs/portmidi:test-programs - Install various example programs
