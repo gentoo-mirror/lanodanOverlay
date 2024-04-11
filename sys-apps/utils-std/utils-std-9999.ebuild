@@ -1,4 +1,4 @@
-# Copyright 2021-2023 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+# Copyright 2021-2024 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -14,6 +14,8 @@ IUSE="test static"
 
 RESTRICT="!test? ( test )"
 
+# atf is both needed as a library and a test framework
+DEPEND="test? ( dev-libs/atf )"
 BDEPEND="
 	test? (
 		dev-libs/atf
