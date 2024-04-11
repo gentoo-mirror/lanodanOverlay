@@ -1,7 +1,7 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 GNOME2_EAUTORECONF="yes"
 
 inherit gnome2 multilib-minimal vala
@@ -43,6 +43,7 @@ RESTRICT="test" # Lots of issues due to freetype changes and more; ever since ne
 PATCHES=(
 	# https://bugzilla.gnome.org/show_bug.cgi?id=653323
 	"${FILESDIR}/${PN}-2.40.12-gtk-optional.patch"
+	"${FILESDIR}/librsvg-2.40.21-xmlError-function-pointer-type.patch"
 )
 
 src_prepare() {
