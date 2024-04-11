@@ -112,7 +112,7 @@ games-rpg/amnesia-tdd 0.3.2: Amnesia: The Dark Descent
 games-sports/xmoto 0.6.2: A challenging 2D motocross platform game, where physics play an important role
 games-strategy/glsmac 9999: Open-source reimplementation of Sid Meier's Alpha Centauri (+ Alien Crossfire)
 games-util/fteqcc 9999: FTE QuakeC compiler
-gnome-base/librsvg 2.40.21: Scalable Vector Graphics (SVG) rendering library
+gnome-base/librsvg 2.40.21-r1: Scalable Vector Graphics (SVG) rendering library
 gui-libs/libdecor 0.1.1: A client-side decorations library for Wayland clients
 gui-libs/wlr-protocols 1.0_p20220608 9999: Wayland protocols designed for use in wlroots (and other compositors)
 gui-wm/inaban 9999: Distrustful Tiling Wayland Compositor
