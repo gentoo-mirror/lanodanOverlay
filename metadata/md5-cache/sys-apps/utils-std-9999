@@ -1,5 +1,6 @@
 BDEPEND=test? ( dev-libs/atf dev-util/kyua dev-util/cram ) >=dev-vcs/git-1.8.2.1[curl]
 DEFINED_PHASES=configure install unpack
+DEPEND=test? ( dev-libs/atf )
 DESCRIPTION=Collection of commonly available Unix tools
 EAPI=8
 HOMEPAGE=https://hacktivis.me/git/utils-std
@@ -10,4 +11,4 @@ PROPERTIES=live
 RESTRICT=!test? ( test )
 SLOT=0
 _eclasses_=git-r3	fbb2889c81f3a05910c1524db69425c1
-_md5_=3cefcd33020c181cd70aa4170b237590
+_md5_=1196cc840aa851d42ce867c5556449c4
