@@ -31,7 +31,7 @@ BDEPEND="
 	dev-libs/gobject-introspection-common
 	dev-libs/vala-common
 	dev-util/glib-utils
-	>=dev-util/gtk-doc-am-1.13
+	>=dev-build/gtk-doc-am-1.13
 	virtual/pkgconfig
 	x11-libs/gdk-pixbuf
 	vala? ( $(vala_depend) )
