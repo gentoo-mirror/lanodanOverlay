@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit toolchain-funcs
+inherit toolchain-funcs multilib-minimal
 
 DESCRIPTION="Stub and/or lightweight replacements of the GNU gettext suite"
 HOMEPAGE="https://github.com/sabotage-linux/gettext-tiny"
@@ -30,15 +30,17 @@ src_prepare() {
 
 	# Needs to be set early, otherwise scripts like autopoint have a wrong prefix value
 	sed -i "s;^prefix=.*;prefix=${EPREFIX}/usr;" Makefile || die
+
+	multilib_copy_sources
 }
 
-src_compile() {
+multilib_src_compile() {
 	tc-export AR RANLIB CC
 
 	emake
 }
 
-src_install() {
+multilib_src_install() {
 	local libintl_type
 
 	if use shim ; then
@@ -53,5 +55,5 @@ src_install() {
 		libintl_type=NONE
 	fi
 
-	emake LIBINTL="${libintl_type}" DESTDIR="${D}" install
+	emake LIBINTL="${libintl_type}" DESTDIR="${D}" libdir="${EPREFIX}/usr/$(get_libdir)" install
 }
