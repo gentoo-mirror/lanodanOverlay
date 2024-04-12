@@ -27,4 +27,3 @@ sys-devel/clang
 sys-kernel/gentoo-sources
 sys-process/dcron
 sys-kernel/installkernel
-app-admin/sudo
