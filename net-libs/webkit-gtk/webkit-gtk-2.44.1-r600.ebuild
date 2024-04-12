@@ -5,7 +5,7 @@ EAPI=8
 CMAKE_MAKEFILE_GENERATOR="ninja"
 PYTHON_REQ_USE="xml(+)"
 PYTHON_COMPAT=( python3_{10..12} )
-USE_RUBY="ruby30 ruby31 ruby32"
+USE_RUBY="ruby30 ruby31 ruby32 ruby33"
 
 inherit check-reqs flag-o-matic gnome2 optfeature python-any-r1 ruby-single toolchain-funcs cmake
 
@@ -38,7 +38,7 @@ RDEPEND="
 	>=media-libs/fontconfig-2.13.0:1.0
 	>=media-libs/freetype-2.9.0:2
 	>=dev-libs/libgcrypt-1.7.0:0=
-	>=x11-libs/gtk+-3.22.0:3[aqua?,introspection?,wayland?,X?]
+	>=gui-libs/gtk-4.4.0:4[introspection?]
 	>=media-libs/harfbuzz-1.4.2:=[icu(+)]
 	>=dev-libs/icu-61.2:=
 	media-libs/libjpeg-turbo:0=
