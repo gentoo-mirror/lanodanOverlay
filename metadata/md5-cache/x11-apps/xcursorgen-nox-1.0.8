@@ -1,0 +1,15 @@
+BDEPEND=verify-sig? ( sec-keys/signify-keys-lanodan:2024 ) verify-sig? ( app-crypt/signify )
+DEFINED_PHASES=unpack
+DEPEND=media-libs/libpng:=
+DESCRIPTION=create an X cursor file from a collection of PNG images (no libX11)
+EAPI=8
+HOMEPAGE=https://hacktivis.me/git/xcursorgen-nox/
+INHERIT=verify-sig
+IUSE=verify-sig
+KEYWORDS=~amd64
+LICENSE=MIT
+RDEPEND=media-libs/libpng:=
+SLOT=0
+SRC_URI=https://hacktivis.me/releases/xcursorgen-nox-1.0.8.tar.gz verify-sig? ( https://hacktivis.me/releases/xcursorgen-nox-1.0.8.tar.gz.sign )
+_eclasses_=verify-sig	a79ba011daaf532d71a219182474d150
+_md5_=2d8b4d0399f56ce717eb71af0546ffa6
