@@ -47,7 +47,7 @@ PATCHES=(
 )
 
 src_prepare() {
-	use vala && vala_src_prepare
+	use vala && vala_setup
 	gnome2_src_prepare
 }
 
