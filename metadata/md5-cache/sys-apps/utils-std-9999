@@ -1,4 +1,4 @@
-BDEPEND=test? ( dev-libs/atf dev-util/kyua dev-util/cram ) >=dev-vcs/git-1.8.2.1[curl]
+BDEPEND=app-alternatives/yacc test? ( dev-libs/atf dev-util/kyua dev-util/cram ) >=dev-vcs/git-1.8.2.1[curl]
 DEFINED_PHASES=configure install unpack
 DEPEND=test? ( dev-libs/atf )
 DESCRIPTION=Collection of commonly available Unix tools
@@ -11,4 +11,4 @@ PROPERTIES=live
 RESTRICT=!test? ( test )
 SLOT=0
 _eclasses_=git-r3	fbb2889c81f3a05910c1524db69425c1
-_md5_=1196cc840aa851d42ce867c5556449c4
+_md5_=46be06d06bc254e0d617a03f5c6060a4
