@@ -17,6 +17,7 @@ RESTRICT="!test? ( test )"
 # atf is both needed as a library and a test framework
 DEPEND="test? ( dev-libs/atf )"
 BDEPEND="
+	app-alternatives/yacc
 	test? (
 		dev-libs/atf
 		dev-util/kyua
