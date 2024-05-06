@@ -14,8 +14,6 @@ IUSE="test static"
 
 RESTRICT="!test? ( test )"
 
-# atf is both needed as a library and a test framework
-DEPEND="test? ( dev-libs/atf )"
 BDEPEND="
 	app-alternatives/yacc
 	test? (
@@ -28,7 +26,7 @@ BDEPEND="
 src_configure() {
 	export NO_BWRAP=1
 
-	use static && export CFLAGS="${CFLAGS} -static"
+	use static && export LDSTATIC="-static"
 
 	./configure PREFIX='/opt/lanodan'
 }
