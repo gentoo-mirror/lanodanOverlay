@@ -1,0 +1,10 @@
+DEFINED_PHASES=install
+DESCRIPTION=data files for calendar(1) utility
+EAPI=8
+HOMEPAGE=https://github.com/freebsd/calendar-data
+KEYWORDS=~amd64
+LICENSE=BSD BSD-2
+RDEPEND=!app-misc/calendar
+SLOT=0
+SRC_URI=https://github.com/freebsd/calendar-data/archive/refs/tags/v2022.11.tar.gz -> calendar-data-2022.11.tar.gz
+_md5_=3bbde72b79b1011c20662dce5897eb24

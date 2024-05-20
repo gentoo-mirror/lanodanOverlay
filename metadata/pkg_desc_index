@@ -16,6 +16,7 @@ app-i18n/fcitx 5.0.23: Fcitx (Flexible Context-aware Input Tool with eXtension) 
 app-i18n/fcitx-anthy 5.0.14: Japanese Anthy input methods for Fcitx5
 app-i18n/fcitx-configtool 5.0.17: GUI configuration tool for Fcitx
 app-i18n/fcitx-qt 5.0.17: Qt library and IM module for fcitx5
+app-misc/calendar-data 2022.11: data files for calendar(1) utility
 app-text/Text-Reflow 1.17: Perl module for reflowing text files using Knuth's paragraphing algorithm.
 app-text/dadadodo 1.04: Analyse texts for word probabilities and generate random sentences
 app-text/evince 3.34.2: Simple document viewer for GNOME
