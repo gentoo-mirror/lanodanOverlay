@@ -21,7 +21,8 @@ PATCHES=(
 	"${FILESDIR}"/gettext-0.3.2-respect-CFLAGS.patch
 	"${FILESDIR}"/gettext-0.3.2-xgettext-version-output.patch
 	"${FILESDIR}"/gettext-0.3.2-autopoint-parenthesis.patch
-	"${FILESDIR}"/gettext-0.3.2-m4_cleanup.patch
+	"${FILESDIR}"/gettext-0.3.2-autopoint_serial.patch
+	"${FILESDIR}"/gettext-0.3.2-autopoint_mkdir.patch
 )
 
 DOCS=( README.md docs )

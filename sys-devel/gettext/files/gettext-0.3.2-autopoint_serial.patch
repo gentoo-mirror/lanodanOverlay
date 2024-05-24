@@ -1,0 +1,40 @@
+From 3407c90cacb976838b174b661f49f7565f77c5e5 Mon Sep 17 00:00:00 2001
+From: "Haelwenn (lanodan) Monnier" <contact@hacktivis.me>
+Date: Fri, 24 May 2024 23:41:10 +0200
+Subject: [PATCH] autopoint.in: Skip overwriting on >= serial at destination
+
+Closes: https://github.com/sabotage-linux/gettext-tiny/issues/63
+---
+ src/autopoint.in | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+diff --git a/src/autopoint.in b/src/autopoint.in
+index fd00afd..c88e1c9 100755
+--- a/src/autopoint.in
++++ b/src/autopoint.in
+@@ -1,6 +1,10 @@
+ #!/bin/sh
+ m4src=@datadir@/m4
+ 
++get_m4_serial() {
++	sed -n -e '/^#.* serial /s;^#.* serial \([^ ]*\).*;\1;p' "$@"
++}
++
+ if ! test -e configure.ac ; then
+ 	echo "$0: error: configure.ac not found" >&2
+ 	exit 1
+@@ -8,6 +12,14 @@ fi
+ 
+ mkdir -p m4 intl po
+ for i in $m4src/*.m4 ; do
++	dest="m4/$(basename "$i")"
++	if test -f "$dest"; then
++		serial_dest="$(get_m4_serial "$dest")"
++		serial_gettext="$(get_m4_serial "$i")"
++
++		test "$serial_dest" -ge "$serial_gettext" && continue
++	fi
++
+ 	cp -f $i m4/
+ done
+ 
