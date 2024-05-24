@@ -1,0 +1,41 @@
+From b756522f75009e01f79804bba1d1866434446faf Mon Sep 17 00:00:00 2001
+From: "Haelwenn (lanodan) Monnier" <contact@hacktivis.me>
+Date: Fri, 24 May 2024 23:45:19 +0200
+Subject: [PATCH 2/2] autopoint.in: Use `mkdir -p` instead of `install -D`
+
+Unlike BusyBox, coreutils, and OpenBSD where `install -D` takes no argument,
+in NetBSD and FreeBSD `install -D` takes a `destdir` argument.
+
+I picked `mkdir -p` in preference of `install -d` simply because mkdir is a defined standard.
+---
+ src/autopoint.in | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+diff --git a/src/autopoint.in b/src/autopoint.in
+index c88e1c9..ef44810 100755
+--- a/src/autopoint.in
++++ b/src/autopoint.in
+@@ -35,15 +35,17 @@ do
+   if [ "${line##*po/Makefile.in}" != "$line" ]; then
+     poprefix="${line##*'['}"
+     poprefix="${poprefix%%po/Makefile.in*}"
+-    install -D -m 644 @datadir@/data/autopoint_Makefile.in "./${poprefix}/po/Makefile.in.in"
++    mkdir -p "./${poprefix}/po"
++    install -m 644 @datadir@/data/autopoint_Makefile.in "./${poprefix}/po/Makefile.in.in"
+   fi
+ done < "configure.ac"
+ 
+ touch "./${dirprefix}/config.rpath" ABOUT-NLS
+ 
++mkdir -p intl po
+ for i in intl/Makefile.in po/Makefile.in.in ; do
+-	install -D -m 644 @datadir@/data/autopoint_Makefile.in "$i"
++	install -m 644 @datadir@/data/autopoint_Makefile.in "$i"
+ done
+ 
+-install -D -m 644 @datadir@/data/Makevars.template po/Makevars.template
++install -m 644 @datadir@/data/Makevars.template po/Makevars.template
+ true
+-- 
+2.44.1
+
