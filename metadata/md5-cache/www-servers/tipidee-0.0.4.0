@@ -1,5 +1,5 @@
 DEFINED_PHASES=configure prepare
-DEPEND=>=dev-libs/skalibs-2.14.1.1
+DEPEND=>=dev-libs/skalibs-2.14.1.1:=
 DESCRIPTION=HTTP 1.1 webserver, serving static files and CGI/NPH
 EAPI=8
 HOMEPAGE=https://www.skarnet.org/software/tipidee/
@@ -7,8 +7,8 @@ INHERIT=toolchain-funcs edo
 IUSE=static
 KEYWORDS=~amd64
 LICENSE=ISC
-RDEPEND=>=dev-libs/skalibs-2.14.1.1
+RDEPEND=>=dev-libs/skalibs-2.14.1.1:=
 SLOT=0
 SRC_URI=https://www.skarnet.org/software/tipidee/tipidee-0.0.4.0.tar.gz
 _eclasses_=toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	edo	367e103a74bf77e6a8da7894d999fa3c
-_md5_=429a063d0368b26af038f1a2748082b4
+_md5_=94f3156b90ad0b7f76f5c74199ed6ce3
