@@ -27,7 +27,7 @@ app-alternatives/sh -bash lksh
 app-alternatives/tar -gnu libarchive
 app-alternatives/cpio -gnu libarchive
 app-alternatives/gzip -reference pigz
-app-alternatives/bzip2 -reference pbzip2
+app-alternatives/bzip2 reference
 net-libs/libsoup brotli
 app-shells/bash -net -readline
 sys-apps/utils-extra static
