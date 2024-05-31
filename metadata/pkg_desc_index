@@ -170,6 +170,7 @@ virtual/man 9: Virtual for man
 virtual/wine 0-r8: Virtual for Wine that supports multiple variants and slotting
 www-apps/bloat 9999: Web client for Pleroma and Mastodon
 www-client/visurf 9999: power-user frontend for netsurf
+www-servers/tipidee 0.0.4.0: HTTP 1.1 webserver, serving static files and CGI/NPH
 x11-apps/xcursorgen-nox 1.0.8: create an X cursor file from a collection of PNG images (no libX11)
 x11-libs/fltk 1.4.9999: C++ user interface toolkit for X and OpenGL
 x11-misc/gtk3-nocsd 9999: A hack to disable gtk3 client-side decorations
