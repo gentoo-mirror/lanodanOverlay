@@ -13,8 +13,10 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="static"
 
-DEPEND=">=dev-libs/skalibs-2.14.1.1"
+DEPEND=">=dev-libs/skalibs-2.14.1.1:="
 RDEPEND="${DEPEND}"
+
+DOCS=( doc examples )
 
 src_prepare() {
 	default
@@ -29,6 +31,7 @@ src_configure() {
 		${CTARGET:+--target=${CTARGET}} \
 		--host="${CHOST}" \
 		--prefix="${EPREFIX}"/usr \
+		--sysconfdir="${EPREFIX}"/etc \
 		--with-sysdeps="/usr/$(get_libdir)/skalibs" \
 		--disable-static \
 		$(use_enable static static-libc)
