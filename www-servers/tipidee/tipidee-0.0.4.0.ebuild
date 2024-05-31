@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="static"
 
-DEPEND=">=dev-libs/skalibs-2.14.1.1"
+DEPEND=">=dev-libs/skalibs-2.14.1.1:="
 RDEPEND="${DEPEND}"
 
 DOCS=( doc examples )
