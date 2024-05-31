@@ -34,7 +34,6 @@ media-libs/freeglut:wayland-only - Build wayland version instead of X11 version
 media-libs/portaudio:sndio - Enable support for sndio
 media-libs/portmidi:sndio - Enable support for sndio
 media-libs/portmidi:test-programs - Install various example programs
-media-sound/sbagen:sounds - Downloads extra sounds (in Vorbis)
 net-dns/getdns:stubby - Include stubby in getdns
 net-libs/glib-networking:gnome - Extract HTTP/HTTPS/SOCKS proxy configuration stored using GSettings
 net-libs/glib-networking:libproxy - Use net-libs/libproxy for getting the HTTP/HTTPS/SOCKS proxy configuration
