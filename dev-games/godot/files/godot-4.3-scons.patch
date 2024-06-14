@@ -1,0 +1,31 @@
+commit 70b4027ff97fe5aa0c9792020795cab38645a354
+Author: Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+Date:   2024-06-14 13:13:14 +0200
+
+    scons: $AR, disable stripping
+
+diff --git a/SConstruct b/SConstruct
+index f4b8f03519..4b2bee8ee8 100644
+--- a/SConstruct
++++ b/SConstruct
+@@ -292,6 +292,7 @@ opts.Add(BoolVariable("builtin_zstd", "Use the built-in Zstd library", True))
+ # be overridden for a specific platform), the lowercase ones are appended.
+ opts.Add("CXX", "C++ compiler binary")
+ opts.Add("CC", "C compiler binary")
++opts.Add("AR", "Archiver binary")
+ opts.Add("LINK", "Linker binary")
+ opts.Add("cppdefines", "Custom defines for the pre-processor")
+ opts.Add("ccflags", "Custom flags for both the C and C++ compilers")
+@@ -720,12 +721,6 @@ else:
+             # Remap absolute paths to relative paths for debug symbols.
+             project_path = Dir("#").abspath
+             env.Append(CCFLAGS=[f"-ffile-prefix-map={project_path}=."])
+-    else:
+-        if methods.using_clang(env) and not methods.is_vanilla_clang(env):
+-            # Apple Clang, its linker doesn't like -s.
+-            env.Append(LINKFLAGS=["-Wl,-S", "-Wl,-x", "-Wl,-dead_strip"])
+-        else:
+-            env.Append(LINKFLAGS=["-s"])
+ 
+     if env["optimize"] == "speed":
+         env.Append(CCFLAGS=["-O3"])
