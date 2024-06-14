@@ -1,15 +1,14 @@
-# Copyright 2022-2023 Gentoo Authors
+# Copyright 2022-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9..11} )
+PYTHON_COMPAT=( python3_{9..12} )
 inherit bash-completion-r1 desktop python-any-r1 scons-utils toolchain-funcs xdg git-r3
 
-DESCRIPTION="Multi-platform 2D and 3D game engine with a feature-rich editor (wayland PR)"
-HOMEPAGE="https://godotengine.org/ https://github.com/godotengine/godot/pull/57025"
-EGIT_REPO_URI="https://github.com/Riteo/godot.git"
-EGIT_BRANCH="wayland"
+DESCRIPTION="Multi-platform 2D and 3D game engine with a feature-rich editor"
+HOMEPAGE="https://godotengine.org/"
+EGIT_REPO_URI="https://github.com/godotengine/godot.git"
 
 LICENSE="
 	MIT
@@ -72,8 +71,8 @@ RDEPEND="
 	webp? ( media-libs/libwebp:= )"
 DEPEND="
 	${RDEPEND}
-	X? ( x11-base/xorg-proto )
 	wayland? ( dev-libs/wayland-protocols )
+	X? ( x11-base/xorg-proto )
 	tools? ( test? ( dev-cpp/doctest ) )"
 BDEPEND="
 	virtual/pkgconfig
@@ -81,9 +80,8 @@ BDEPEND="
 "
 
 PATCHES=(
-	"${FILESDIR}"/${PN}-4.0_beta3-headless-header.patch
-	"${FILESDIR}"/${PN}-4.0_rc2-musl.patch
-	"${FILESDIR}"/${PN}-4.0_rc3-scons.patch
+	"${FILESDIR}"/godot-4.0_beta3-headless-header.patch
+	"${FILESDIR}"/godot-4.3-scons.patch
 )
 
 src_prepare() {
@@ -100,11 +98,16 @@ src_prepare() {
 	local unbundle=(
 		brotli doctest embree freetype graphite harfbuzz icu4c libogg
 		libpng libtheora libvorbis libwebp linuxbsd_headers mbedtls
-		miniupnpc pcre2 recastnavigation volk wayland wayland-protocols wslay
+		miniupnpc pcre2 recastnavigation volk wslay
 		zlib zstd
 		# certs: unused by generated header, but scons panics if not found
 	)
 	rm -r "${unbundle[@]/#/thirdparty/}" || die
+
+	# FIXME
+	sed -i "s;#thirdparty/wayland/protocol/wayland.xml;$(pkg-config --variable=pkgdatadir wayland-scanner)/wayland.xml;" platform/linuxbsd/wayland/SCsub || die
+
+	rm -r "platform/linuxbsd/wayland/dynwrappers/" || die
 
 	ln -s "${ESYSROOT}"/usr/include/doctest thirdparty/ || die
 }
@@ -132,6 +135,8 @@ src_compile() {
 		vulkan=$(usex gui $(usex vulkan))
 		x11=$(usex gui $(usex X))
 		wayland=$(usex gui $(usex wayland))
+		libdecor=$(usex gui $(usex wayland))
+		openxr=no # Whatever
 
 		system_certs_path="${EPREFIX}"/etc/ssl/certs/ca-certificates.crt
 
@@ -147,7 +152,7 @@ src_compile() {
 		builtin_graphite=no
 		builtin_harfbuzz=no
 		builtin_icu4c=no
-		builtin_libdecor=no
+		#builtin_libdecor=no FIXME
 		builtin_libogg=no
 		builtin_libpng=no
 		builtin_libtheora=$(usex !theora)
@@ -160,7 +165,6 @@ src_compile() {
 		builtin_recastnavigation=no
 		builtin_rvo2=yes # bundled copy has godot-specific changes
 		builtin_squish=yes # ^ likewise, may not be safe to unbundle
-		builtin_wayland=no
 		builtin_wslay=no
 		builtin_xatlas=yes # not wired for unbundling nor packaged
 		builtin_zlib=no
