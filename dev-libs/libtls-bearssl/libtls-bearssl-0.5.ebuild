@@ -9,7 +9,8 @@ DESCRIPTION="libtls implemented with bearssl"
 HOMEPAGE="https://sr.ht/~mcf/libtls-bearssl"
 SRC_URI="https://git.sr.ht/~mcf/libtls-bearssl/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="ISC"
-SLOT="0"
+# See shlib_version
+SLOT="0/20.3"
 KEYWORDS="~amd64"
 IUSE=""
 
