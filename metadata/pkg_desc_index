@@ -36,11 +36,12 @@ dev-lang/go 1.4_p20171003: Boostrap Go from C (useful for musl libc)
 dev-lang/kuroko 1.4.0: Dynamic, bytecode-compiled programming language and a dialect of Python
 dev-lang/wasm3 0.5.0: A fast WebAssembly interpreter and the most universal WASM runtime
 dev-libs/PlatformFolders 4.2.0: C++ library to look for special directories like ~/.config and %APPDATA%
-dev-libs/bearssl 0.6: Implementation of the SSL/TLS protocol in C
+dev-libs/bearssl 0.6-r1: Implementation of the SSL/TLS protocol in C
 dev-libs/hts_engine 1.10: HMM-based speech synthesis system (HTS) engine and API
 dev-libs/libbulletml 9999: A Library of Bullet Markup Language
 dev-libs/libcss 9999: CSS parser and selection engine, written in C
 dev-libs/libkqueue 2.6.1: kqueue(2) compatibility library
+dev-libs/libtls-bearssl 0.5: libtls implemented with bearssl
 dev-libs/libtomcrypt 1.18.2: modular and portable cryptographic toolkit
 dev-libs/socket99 0.2.2: Wrapper library for the BSD sockets API with a nicer C99 interface
 dev-nodejs/abbrev 2.0.0-r1: Get unique abbreviations for a set of strings
