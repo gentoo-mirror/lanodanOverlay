@@ -9,7 +9,7 @@ DESCRIPTION="Implementation of the SSL/TLS protocol in C"
 HOMEPAGE="https://bearssl.org/"
 SRC_URI="https://bearssl.org/${P}.tar.gz"
 LICENSE="MIT"
-SLOT="0"
+SLOT="0/${PV%%.*}"
 KEYWORDS="~amd64"
 
 IUSE="static-libs"
