@@ -1,6 +1,11 @@
 # Haelwenn (lanodan) Monnier <contact@hacktivis.me> (2024-06-04)
 # Last release (0.8.0) in 2009 with several known bugs
 # leading Gentoo to maintain a patchset.
+#
+# Also no releases since CVE-2016-8859 <https://www.openwall.com/lists/oss-security/2016/10/19/1>
+# > Multiple integer overflows in the TRE library and musl libc allow attackers
+# > to cause memory corruption via a large number of (1) states or (2) tags,
+# > which triggers an out-of-bounds write.
 dev-libs/tre
 
 # Haelwenn (lanodan) Monnier <contact@hacktivis.me> (2024-05-23)
