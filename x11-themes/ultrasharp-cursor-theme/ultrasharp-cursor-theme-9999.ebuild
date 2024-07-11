@@ -1,4 +1,4 @@
-# Copyright 2022-2023 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
+# Copyright 2022-2024 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -16,6 +16,7 @@ BDEPEND="
 		x11-apps/xcursorgen
 		x11-apps/xcursorgen-nox
 	)
+	media-gfx/imagemagick
 "
 
 src_configure() {
