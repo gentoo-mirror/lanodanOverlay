@@ -1,0 +1,12 @@
+DEFINED_PHASES=install prepare test
+DEPEND=test? ( dev-lang/go )
+DESCRIPTION=supplemental Go packages for low-level interactions with the operating system
+EAPI=8
+HOMEPAGE=https://golang.org/x/sys
+IUSE=test
+KEYWORDS=~amd64
+LICENSE=BSD
+RESTRICT=!test? ( test )
+SLOT=0
+SRC_URI=https://github.com/golang/sys/archive/refs/tags/v0.22.0.tar.gz -> sys-0.22.0.tar.gz
+_md5_=d44c97781ee2aa00efc12649b4d27b57
