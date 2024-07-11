@@ -10,5 +10,5 @@ LICENSE=AGPL-3
 PROPERTIES=live
 RDEPEND=dev-lang/squirrel media-libs/libsdl2 media-libs/sdl2-image media-libs/sdl2-gfx media-libs/sdl2-mixer media-libs/sdl2-net
 SLOT=0
-_eclasses_=git-r3	fbb2889c81f3a05910c1524db69425c1
+_eclasses_=git-r3	875eb471682d3e1f18da124be97dcc81
 _md5_=e59f02179c9a7d46cc9b723baff3e560

@@ -11,5 +11,5 @@ PROPERTIES=live
 RDEPEND=dev-lang/hare:=
 RESTRICT=!test? ( test )
 SLOT=0
-_eclasses_=git-r3	fbb2889c81f3a05910c1524db69425c1
+_eclasses_=git-r3	875eb471682d3e1f18da124be97dcc81
 _md5_=bfef7f48258cdf6c5a4d3d4585f43a06
