@@ -1,0 +1,32 @@
+From c5324d88c77ca2f40606149209558a06475e9d98 Mon Sep 17 00:00:00 2001
+From: Ian Lance Taylor <iant@golang.org>
+Date: Wed, 10 Jul 2024 10:50:10 -0700
+Subject: [PATCH] unix: skip TestIoctlFileDedupeRange on EOPNOTSUPP error
+
+Fixes golang/go#68372
+
+Change-Id: Id3b8fb920b1458e39e7370195591183ee7e450ff
+---
+
+diff --git a/unix/syscall_linux_test.go b/unix/syscall_linux_test.go
+index 69c42b5..53e6445 100644
+--- a/sys-0.22.0/unix/syscall_linux_test.go
++++ b/sys-0.22.0/unix/syscall_linux_test.go
+@@ -1087,7 +1087,7 @@
+ 	// The first Info should be equal
+ 	if dedupe.Info[0].Status < 0 {
+ 		errno := unix.Errno(-dedupe.Info[0].Status)
+-		if errno == unix.EINVAL {
++		if errno == unix.EINVAL || errno == unix.EOPNOTSUPP {
+ 			t.Skip("deduplication not supported on this filesystem")
+ 		}
+ 		t.Errorf("Unexpected error in FileDedupeRange: %s", unix.ErrnoName(errno))
+@@ -1102,7 +1102,7 @@
+ 	// The second Info should be different
+ 	if dedupe.Info[1].Status < 0 {
+ 		errno := unix.Errno(-dedupe.Info[1].Status)
+-		if errno == unix.EINVAL {
++		if errno == unix.EINVAL || errno == unix.EOPNOTSUPP {
+ 			t.Skip("deduplication not supported on this filesystem")
+ 		}
+ 		t.Errorf("Unexpected error in FileDedupeRange: %s", unix.ErrnoName(errno))
