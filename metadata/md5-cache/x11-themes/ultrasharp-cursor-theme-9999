@@ -1,4 +1,4 @@
-BDEPEND=|| ( x11-apps/xcursorgen x11-apps/xcursorgen-nox ) >=dev-vcs/git-1.8.2.1[curl]
+BDEPEND=|| ( x11-apps/xcursorgen x11-apps/xcursorgen-nox ) media-gfx/imagemagick >=dev-vcs/git-1.8.2.1[curl]
 DEFINED_PHASES=compile configure install unpack
 DESCRIPTION=Precision and speed oriented cursor theme
 EAPI=8
@@ -8,4 +8,4 @@ LICENSE=CC-BY-SA-4.0
 PROPERTIES=live
 SLOT=0
 _eclasses_=git-r3	fbb2889c81f3a05910c1524db69425c1	multiprocessing	30ead54fa2e2b5f9cd4e612ffc34d0fe	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6
-_md5_=a3957275118d5ba333016faa982fbf86
+_md5_=5d0bb7300f23ee9331a51c4f55bb3f5d
