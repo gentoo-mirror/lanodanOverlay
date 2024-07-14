@@ -16,6 +16,7 @@ RDEPEND="
 	media-libs/sdl2-image
 	media-libs/freetype
 	media-libs/glew
+	dev-libs/ossp-uuid
 "
 DEPEND="${RDEPEND}"
 
