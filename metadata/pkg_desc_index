@@ -19,7 +19,6 @@ app-i18n/fcitx-qt 5.0.17: Qt library and IM module for fcitx5
 app-misc/calendar-data 2022.11: data files for calendar(1) utility
 app-text/Text-Reflow 1.17: Perl module for reflowing text files using Knuth's paragraphing algorithm.
 app-text/dadadodo 1.04: Analyse texts for word probabilities and generate random sentences
-app-text/evince 3.34.2: Simple document viewer for GNOME
 app-text/grammalecte 2.1.1: Correcteur grammatical et typographique open source dédié à la langue française
 app-text/kanaconv 1.0.0: Command to convert Japanese from/to Kana/Kanji/Romaji with furigana option
 app-text/sshpaste 1.0.1 9999: wgetpaste clone for pushing to your own server
