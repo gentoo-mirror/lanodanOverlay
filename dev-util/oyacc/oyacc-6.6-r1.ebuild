@@ -19,7 +19,7 @@ src_configure() {
 	# --disable-yacc: Installs as oyacc+oyyfix rather than yacc+yyfix
 	./configure \
 		--prefix="${EPREFIX}/usr" \
-		--mandir="${EPREFIX}/usr/share/man" \
+		--mandir="${EPREFIX}/usr/share/man/man1" \
 		--disable-yacc \
 		$(use_enable static) \
 		|| die
