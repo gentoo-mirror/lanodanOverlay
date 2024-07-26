@@ -7,4 +7,4 @@ KEYWORDS=~amd64
 LICENSE=BSD ISC public-domain
 SLOT=0
 SRC_URI=https://github.com/ibara/yacc/archive/refs/tags/oyacc-6.6.tar.gz
-_md5_=9ffc7b16de08a7e49242510b77f575d0
+_md5_=aa83272a4190b1d87e6ce8a1f1c6c1cd
