@@ -12,5 +12,5 @@ RDEPEND=alsa? ( media-libs/alsa-lib ) pipewire? ( media-video/pipewire:= ) sndio
 REQUIRED_USE=?? ( alsa pipewire sndio ) ^^ ( fbdev wayland X )
 SLOT=0
 SRC_URI=http://git.9front.org/git/plan9front/drawterm/65e8a26e1dac4a0f589f615126ad87a92c9c11ab/snap.tar.gz -> drawterm-65e8a26e1dac4a0f589f615126ad87a92c9c11ab.tar.gz
-_eclasses_=toolchain-funcs	e7e7331166166e7a516d19e264b098c2	multilib	c19072c3cd7ac5cb21de013f7e9832e0
+_eclasses_=toolchain-funcs	0c713337f7872f1a002cecaaea9bef73	multilib	c19072c3cd7ac5cb21de013f7e9832e0
 _md5_=afc10aff69477332aa7fa2f41774fb95
