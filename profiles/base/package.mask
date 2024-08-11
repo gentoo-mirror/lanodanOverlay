@@ -1,3 +1,7 @@
+# Haelwenn (lanodan) Monnier <contact@hacktivis.me> (2024-08-11)
+# https://www.gnu.org/software/gawk/manual/gawkinet/gawkinet.html
+sys-apps/gawk
+
 # Haelwenn (lanodan) Monnier <contact@hacktivis.me> (2024-06-04)
 # Last release (0.8.0) in 2009 with several known bugs
 # leading Gentoo to maintain a patchset.
