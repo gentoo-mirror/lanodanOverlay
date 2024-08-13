@@ -17,7 +17,7 @@ SRC_URI="https://www.webkitgtk.org/releases/${MY_P}.tar.xz"
 # Apache-2.0 for fast_float, ANGLE (also pdfjs but disabled)
 # See https://bugs.webkit.org/show_bug.cgi?id=254717
 LICENSE="LGPL-2+ BSD Apache-2.0"
-SLOT="6/0" # soname version of libwebkit2gtk-6.0
+SLOT="4.1/0" # soname version of libwebkit2gtk-4.1
 KEYWORDS="~amd64 ~arm64"
 
 IUSE="aqua +avif dbus doc examples gamepad keyring +gstreamer +introspection pdf jpegxl +jumbo-build lcms +seccomp spell systemd wayland webrtc +X"
@@ -30,6 +30,7 @@ REQUIRED_USE="
 
 # Tests are currently unsupported in release tarballs
 # https://bugs.webkit.org/show_bug.cgi?id=215986
+# Tools/Scripts/run-gtk-tests: Command not found
 RESTRICT="test"
 
 # Dependencies found at Source/cmake/OptionsGTK.cmake
@@ -38,7 +39,7 @@ RDEPEND="
 	>=media-libs/fontconfig-2.13.0:1.0
 	>=media-libs/freetype-2.9.0:2
 	>=dev-libs/libgcrypt-1.7.0:0=
-	>=gui-libs/gtk-4.4.0:4[introspection?]
+	>=x11-libs/gtk+-3.22.0:3[aqua?,introspection?,wayland?,X?]
 	>=media-libs/harfbuzz-1.4.2:=[icu(+)]
 	>=dev-libs/icu-61.2:=
 	media-libs/libjpeg-turbo:0=
@@ -233,7 +234,7 @@ src_configure() {
 		-DUSE_GBM=ON
 		#-DUSE_ANGLE_WEBGL=OFF
 		-DUSE_AVIF=$(usex avif)
-		-DUSE_GTK4=ON
+		-DUSE_GTK4=OFF
 		-DUSE_JPEGXL=$(usex jpegxl)
 		-DUSE_LCMS=$(usex lcms)
 		-DUSE_LIBHYPHEN=ON
