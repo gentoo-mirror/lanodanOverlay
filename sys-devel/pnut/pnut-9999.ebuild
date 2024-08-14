@@ -18,6 +18,10 @@ src_prepare() {
 	sed -i 's;gcc;$(CC);' Makefile || die
 }
 
+src_compile() {
+	emake pnut-sh pnut.sh
+}
+
 src_install() {
 	einstalldocs
 	newbin build/pnut-sh pnut
