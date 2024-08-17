@@ -1,0 +1,15 @@
+BDEPEND=test? ( dev-util/dejagnu sys-devel/bc ) sys-devel/flex app-alternatives/yacc >=app-portage/elt-patches-20240116 sys-devel/gnuconfig >=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=compile configure install postinst postrm prepare test unpack
+DEPEND=>=sys-devel/binutils-config-3 sys-libs/zlib
+DESCRIPTION=Tools necessary to build programs
+EAPI=7
+HOMEPAGE=https://git.sr.ht/~sircmpwn/binutils
+INHERIT=libtool flag-o-matic gnuconfig strip-linguas toolchain-funcs git-r3
+IUSE=cet gold gprofng hardened +plugins static-libs test vanilla
+LICENSE=GPL-3+
+PROPERTIES=live
+RDEPEND=>=sys-devel/binutils-config-3 sys-libs/zlib
+RESTRICT=test
+SLOT=9999
+_eclasses_=toolchain-funcs	5f8f1dc0c94e007fa08af4e98a19d0e5	multilib	c19072c3cd7ac5cb21de013f7e9832e0	libtool	5f49a16f67f81bdf873e3d1f10b10001	flag-o-matic	e503ea5acc20410237ba33ec3f7c857d	gnuconfig	a397adda6984a4c423e28ac274c1ba98	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	git-r3	875eb471682d3e1f18da124be97dcc81
+_md5_=cdf1f0df4b42bcbfe135f0b3366df28f
