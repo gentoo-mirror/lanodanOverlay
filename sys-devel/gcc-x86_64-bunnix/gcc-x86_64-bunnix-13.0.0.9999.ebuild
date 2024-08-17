@@ -3,6 +3,7 @@
 
 EAPI=8
 
+PYTHON_COMPAT=( python3_{10..12} )
 inherit toolchain
 
 EGIT_REPO_URI="https://git.sr.ht/~sircmpwn/gcc"
@@ -18,6 +19,8 @@ BDEPEND=">=sys-devel/binutils-x86_64-bunnix-2.30"
 #	DEPEND="${RDEPEND}"
 #	BDEPEND=">=${CATEGORY}/binutils-2.30[cet(-)?]"
 #fi
+
+RESTRICT="test"
 
 export CTARGET="x86_64-bunnix"
 
