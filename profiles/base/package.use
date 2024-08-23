@@ -33,6 +33,7 @@ app-shells/bash -net -readline
 sys-apps/utils-extra static
 sys-apps/utils-std static
 app-shells/mksh static
+sys-apps/busybox static
 sys-apps/shadow su
 sys-apps/util-linux -su
 app-admin/testdisk -sudo
