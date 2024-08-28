@@ -30,7 +30,6 @@ DEPEND="
 		x11-libs/libxcb[xkb]
 		x11-libs/libxkbfile
 		x11-libs/pango[X]
-		~x11-libs/xcb-imdkit-1.0.3
 		x11-libs/xcb-util
 		x11-libs/xcb-util-keysyms
 		x11-libs/xcb-util-wm
