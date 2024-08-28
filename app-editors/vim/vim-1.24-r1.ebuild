@@ -9,11 +9,11 @@ EAPI=8
 DESCRIPTION="Vi IMitation"
 HOMEPAGE="https://www.vim.org/ https://ftp.nluug.nl/pub/vim/old/"
 SRC_URI="https://ftp.nluug.nl/pub/vim/old/${P}.tar.gz"
-SLOT="${PV}"
-KEYWORDS="~amd64 ~x86"
-LICENSE="public-domain"
-
 S="${WORKDIR}/${P}/src"
+LICENSE="public-domain"
+SLOT="${PV}"
+
+KEYWORDS="~amd64 ~x86"
 
 src_prepare() {
 	default
