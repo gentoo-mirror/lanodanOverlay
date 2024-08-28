@@ -7,4 +7,4 @@ LICENSE=sus4-copyright
 RESTRICT=mirror
 SLOT=4
 SRC_URI=https://pubs.opengroup.org/onlinepubs/9699919799/download/susv4-2018.tgz
-_md5_=af3c34ba2d190a72f0df8e4dd11825de
+_md5_=7e0663a825b5f723f797790b1ad7f15b

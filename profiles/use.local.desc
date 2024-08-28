@@ -2,6 +2,7 @@
 # Please add your descriptions to your package's metadata.xml ONLY.
 # * generated automatically using pmaint *
 
+app-emulation/tinyemu:http - Support fetching disks over HTTP using
 app-i18n/fcitx:coverage - Build the project with gcov support
 app-i18n/fcitx:emoji - Enable emoji loading for CLDR
 app-i18n/fcitx:enchant - Enable Enchant backend (using app-text/enchant) for spelling hinting
