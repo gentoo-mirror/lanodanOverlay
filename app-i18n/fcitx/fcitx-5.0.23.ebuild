@@ -9,8 +9,11 @@ DV="20121020"
 MY_PN="fcitx5"
 DESCRIPTION="Fcitx (Flexible Context-aware Input Tool with eXtension) input method framework"
 HOMEPAGE="https://fcitx-im.org/ https://github.com/fcitx/fcitx5"
-SRC_URI="https://github.com/fcitx/fcitx5/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
-	https://download.fcitx-im.org/data/en_dict-${DV}.tar.gz -> fcitx-data-en_dict-${DV}.tar.gz"
+SRC_URI="
+	https://github.com/fcitx/fcitx5/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
+	https://download.fcitx-im.org/data/en_dict-${DV}.tar.gz -> fcitx-data-en_dict-${DV}.tar.gz
+"
+S="${WORKDIR}/${MY_PN}-${PV}"
 
 LICENSE="LGPL-2.1+"
 SLOT="5"
@@ -27,7 +30,6 @@ DEPEND="
 		x11-libs/libxcb[xkb]
 		x11-libs/libxkbfile
 		x11-libs/pango[X]
-		~x11-libs/xcb-imdkit-1.0.3
 		x11-libs/xcb-util
 		x11-libs/xcb-util-keysyms
 		x11-libs/xcb-util-wm
@@ -66,12 +68,11 @@ DEPEND="
 RDEPEND="${DEPEND}
 "
 BDEPEND="
-	doc? ( app-doc/doxygen )
+	doc? ( app-text/doxygen )
 	kde-frameworks/extra-cmake-modules
 	virtual/pkgconfig
 "
 
-S="${WORKDIR}/${MY_PN}-${PV}"
 #	"${FILESDIR}/${PN}-5.0.8-fix-conflicts-with-fcitx4.diff"
 PATCHES=( )
 
