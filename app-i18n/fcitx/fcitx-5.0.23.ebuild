@@ -68,7 +68,7 @@ DEPEND="
 RDEPEND="${DEPEND}
 "
 BDEPEND="
-	doc? ( app-doc/doxygen )
+	doc? ( app-text/doxygen )
 	kde-frameworks/extra-cmake-modules
 	virtual/pkgconfig
 "
