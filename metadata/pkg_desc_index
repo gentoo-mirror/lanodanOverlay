@@ -39,10 +39,8 @@ dev-libs/PlatformFolders 4.2.0: C++ library to look for special directories like
 dev-libs/bearssl 0.6-r1: Implementation of the SSL/TLS protocol in C
 dev-libs/hts_engine 1.10: HMM-based speech synthesis system (HTS) engine and API
 dev-libs/libbulletml 9999: A Library of Bullet Markup Language
-dev-libs/libcss 9999: CSS parser and selection engine, written in C
 dev-libs/libkqueue 2.6.1: kqueue(2) compatibility library
 dev-libs/libtls-bearssl 0.5: libtls implemented with bearssl
-dev-libs/socket99 0.2.2: Wrapper library for the BSD sockets API with a nicer C99 interface
 dev-nodejs/abbrev 2.0.0-r1: Get unique abbreviations for a set of strings
 dev-nodejs/balanced-match 2.0.0 3.0.1: Match balanced character pairs, like { and }
 dev-nodejs/bindings 1.5.0: Helper module for loading your native module's .node file
@@ -115,7 +113,6 @@ games-strategy/glsmac 9999: Open-source reimplementation of Sid Meier's Alpha Ce
 games-util/fteqcc 9999: FTE QuakeC compiler
 gnome-base/librsvg 2.40.21-r1: Scalable Vector Graphics (SVG) rendering library
 gui-libs/wlr-protocols 1.0_p20220608 9999: Wayland protocols designed for use in wlroots (and other compositors)
-gui-wm/inaban 9999: Distrustful Tiling Wayland Compositor
 mail-mta/opensmtpd 6.8.0_p2-r2: Lightweight but featured SMTP daemon from OpenBSD
 media-fonts/3270font 2.0.0: A IBM 3270 Terminal font in a modern format
 media-fonts/forkawesome 1.1.4: The iconic font
@@ -131,10 +128,8 @@ media-libs/glfw 2.7.9: The Portable OpenGL FrameWork
 media-libs/jg 0_pre20221030: Jolly Good API, an API for Emulators
 media-libs/libsbsms 2.3.0: A library for high quality time and pitch scale modification
 media-libs/libvgm 0_pre20230814: more modular rewrite of most components from VGMPlay
-media-libs/portaudio 19.06.00-r3: A free, cross-platform, open-source, audio I/O library
 media-libs/portmidi 2.0.4: Library for real time MIDI input and output
 media-libs/smpeg2 2.0.0_p20230817: SDL MPEG Player Library
-media-sound/oss 4.2.2019 4.2.2020 4.2.9999: Open Sound System (OSS)
 media-sound/shim 0_pre20220409 9999: Pipe 3-bytes packets (channel, note, velocity) to a MIDI device
 media-video/adobe-flashplayer-projector 32.0.0.465: Adobe Flash Player standalone projector
 media-video/untrunc 9999: Restore a truncated mp4/mov
@@ -170,12 +165,9 @@ sys-libs/libtickit 0.3.3: library for building interactive full-screen terminal 
 sys-libs/zlib 1.2.8.2015.12.26: Standard (de)compression library (Sortix's libz fork)
 virtual/checkpassword 1: Virtual for checkpassword compatible applications
 virtual/man 9: Virtual for man
-virtual/wine 0-r8: Virtual for Wine that supports multiple variants and slotting
 www-apps/bloat 9999: Web client for Pleroma and Mastodon
-www-client/visurf 9999: power-user frontend for netsurf
 www-servers/tipidee 0.0.5.0: HTTP 1.1 webserver, serving static files and CGI/NPH
 x11-apps/xcursorgen-nox 1.0.8: create an X cursor file from a collection of PNG images (no libX11)
-x11-libs/fltk 1.4.9999: C++ user interface toolkit for X and OpenGL
 x11-misc/qarma 9999: Zenity Clone for Qt5 (lanodan's branch)
 x11-misc/xdg-utils 1.1.3-r1: Portland utils for cross-platform/cross-toolkit/cross-desktop interoperability
 x11-themes/adwaita-qt 1.4.2-r1: A style to bend Qt applications to look like they belong into GNOME Shell

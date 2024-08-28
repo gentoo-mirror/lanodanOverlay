@@ -26,7 +26,6 @@ gnome-base/librsvg:tools - Build svg viewer tool
 mail-mta/opensmtpd:mdoc - Use mdoc format for manpages
 mail-mta/opensmtpd:mta - Enable this to install as system-wide MTA
 media-libs/freeglut:wayland-only - Build wayland version instead of X11 version
-media-libs/portaudio:sndio - Enable support for sndio
 media-libs/portmidi:sndio - Enable support for sndio
 media-libs/portmidi:test-programs - Install various example programs
 net-libs/glib-networking:gnome - Extract HTTP/HTTPS/SOCKS proxy configuration stored using GSettings
@@ -66,12 +65,3 @@ sys-firmware/ipxe:undi - Build a Universal Network Device Interface driver chain
 sys-firmware/ipxe:usb - Build a bootable USB image for using PXE
 sys-firmware/ipxe:vmware - Build the PXE ROM images that VMWare uses
 sys-libs/libtickit:unibilium - Use dev-libs/unibilium (highly recommended) instead of sys-libs/ncurses
-virtual/wine:staging - Enable Wine-Staging's Patchset
-www-client/visurf:bmp - BMP bitmap image support (media-libs/libnsbmp)
-www-client/visurf:duktape - Use duktape.org javascript engine
-www-client/visurf:gtk - Build GTK3 GUI
-www-client/visurf:gtk2 - Build GTK2 GUI
-www-client/visurf:psl - Use public suffix list via media-libs/libnspsl
-www-client/visurf:rosprite - RISC OS Sprite bitmap image support (media-libs/librosprite)
-www-client/visurf:svgtiny - SVG image support via media-libs/svgatiny instead of gnome-base/librsvg
-x11-libs/fltk:games - Builds and installs some extra games
