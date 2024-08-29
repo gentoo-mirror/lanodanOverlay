@@ -26,7 +26,7 @@ BDEPEND="
 src_configure() {
 	export NO_BWRAP=1
 
-	use static && export LDSTATIC="-static"
+	use static && export LDSTATIC="-static-pie"
 
 	./configure PREFIX='/opt/lanodan'
 }
