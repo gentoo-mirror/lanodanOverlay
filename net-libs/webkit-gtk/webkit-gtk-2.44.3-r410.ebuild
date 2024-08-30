@@ -160,6 +160,9 @@ src_configure() {
 	#strip-flags
 	#filter-flags "-D_FORTIFY_SOURCE=*"
 
+	# https://bugs.webkit.org/show_bug.cgi?id=278883
+	filter-flags '-ftrapv'
+
 	# It does not compile on alpha without this in LDFLAGS
 	# https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=648761
 	use alpha && append-ldflags "-Wl,--no-relax"
