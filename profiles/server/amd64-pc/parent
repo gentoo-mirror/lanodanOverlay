@@ -1,4 +1,4 @@
-lanodanOverlay:platforms/pc
-lanodanOverlay:server
-lanodanOverlay:base
 gentoo:default/linux/amd64/23.0/musl/hardened
+lanodanOverlay:base
+lanodanOverlay:server
+lanodanOverlay:platforms/pc
