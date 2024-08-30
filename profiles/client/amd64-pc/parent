@@ -1,4 +1,4 @@
-lanodanOverlay:platforms/pc
-lanodanOverlay:client
-lanodanOverlay:base
 gentoo:default/linux/amd64/23.0/hardened
+lanodanOverlay:base
+lanodanOverlay:client
+lanodanOverlay:platforms/pc
