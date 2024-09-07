@@ -4,7 +4,7 @@ USE="
 "
 
 COMMON_FLAGS="-O2 -pipe -march=native -mtune=native -ggdb -Wall -fPIC -ftrapv"
-CFLAGS="${COMMON_FLAGS} -Wwrite-strings"
+CFLAGS="${COMMON_FLAGS}"
 OBJCCFLAGS="${COMMON_FLAGS}"
 CXXFLAGS="${COMMON_FLAGS}"
 OBJCXXFLAGS="${COMMON_FLAGS}"
