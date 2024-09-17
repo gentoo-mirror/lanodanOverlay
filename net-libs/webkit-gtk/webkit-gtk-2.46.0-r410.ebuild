@@ -17,10 +17,10 @@ SRC_URI="https://www.webkitgtk.org/releases/${MY_P}.tar.xz"
 # Apache-2.0 for fast_float, ANGLE (also pdfjs but disabled)
 # See https://bugs.webkit.org/show_bug.cgi?id=254717
 LICENSE="LGPL-2+ BSD Apache-2.0"
-SLOT="4/37" # soname version of libwebkit2gtk-4.0
+SLOT="4.1/0" # soname version of libwebkit2gtk-4.1
 KEYWORDS="~amd64 ~arm64"
 
-IUSE="aqua +avif dbus doc examples gamepad keyring +gstreamer +introspection pdf jpegxl +jumbo-build lcms +seccomp spell systemd wayland webrtc +X"
+IUSE="aqua +avif dbus doc examples gamepad keyring +gstreamer +introspection pdf jpegxl +jumbo-build lcms +seccomp spell sysprof systemd wayland webrtc +X"
 
 REQUIRED_USE="
 	doc? ( introspection )
@@ -30,6 +30,7 @@ REQUIRED_USE="
 
 # Tests are currently unsupported in release tarballs
 # https://bugs.webkit.org/show_bug.cgi?id=215986
+# Tools/Scripts/run-gtk-tests: Command not found
 RESTRICT="test"
 
 # Dependencies found at Source/cmake/OptionsGTK.cmake
@@ -43,7 +44,7 @@ RDEPEND="
 	>=dev-libs/icu-61.2:=
 	media-libs/libjpeg-turbo:0=
 	>=media-libs/libepoxy-1.4.0
-	>=net-libs/libsoup-2.54:2.4[introspection?]
+	>=net-libs/libsoup-2.99.9:3.0[introspection?]
 	>=dev-libs/libxml2-2.8.0:2
 	>=media-libs/libpng-1.4:0=
 	dev-db/sqlite:3=
@@ -94,6 +95,7 @@ RDEPEND="
 		sys-libs/libseccomp
 		sys-apps/xdg-dbus-proxy
 	)
+	sysprof? ( dev-util/sysprof-capture:4 )
 	systemd? ( sys-apps/systemd:= )
 	gamepad? ( >=dev-libs/libmanette-0.2.4 )
 "
@@ -235,8 +237,9 @@ src_configure() {
 		-DUSE_LCMS=$(usex lcms)
 		-DUSE_LIBHYPHEN=ON
 		-DUSE_LIBSECRET=$(usex keyring)
-		-DUSE_SOUP2=ON
+		-DUSE_SOUP2=OFF
 		-DUSE_WOFF2=ON
+		-DUSE_SYSTEM_SYSPROF_CAPTURE=$(usex sysprof)
 	)
 
 	# https://bugs.gentoo.org/761238
