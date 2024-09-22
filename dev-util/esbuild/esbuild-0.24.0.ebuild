@@ -45,6 +45,9 @@ src_prepare() {
 
 	# No need to fetch dependencies via npm
 	sed -i -e 's;cd scripts && npm ci;true;' Makefile || die
+
+	# Not a dev repo
+	sed -i -e '/git diff/d' Makefile || die
 }
 
 src_configure() {
