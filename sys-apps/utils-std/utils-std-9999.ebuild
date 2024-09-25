@@ -16,11 +16,7 @@ RESTRICT="!test? ( test )"
 
 BDEPEND="
 	app-alternatives/yacc
-	test? (
-		dev-libs/atf
-		dev-util/kyua
-		dev-util/cram
-	)
+	test? ( dev-util/cram )
 "
 
 src_configure() {

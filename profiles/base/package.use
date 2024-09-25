@@ -37,3 +37,4 @@ sys-apps/busybox static
 sys-apps/shadow su
 sys-apps/util-linux -su
 app-admin/testdisk -sudo
+net-libs/ngtcp2 -gnutls openssl
