@@ -1,4 +1,4 @@
-BDEPEND=app-alternatives/yacc test? ( dev-libs/atf dev-util/kyua dev-util/cram ) >=dev-vcs/git-1.8.2.1[curl]
+BDEPEND=app-alternatives/yacc test? ( dev-util/cram ) >=dev-vcs/git-1.8.2.1[curl]
 DEFINED_PHASES=configure install unpack
 DESCRIPTION=Collection of commonly available Unix tools
 EAPI=8
@@ -10,4 +10,4 @@ PROPERTIES=live
 RESTRICT=!test? ( test )
 SLOT=0
 _eclasses_=git-r3	875eb471682d3e1f18da124be97dcc81
-_md5_=37b9e240c361a310f5418c87fa4818a8
+_md5_=6f4047254a54f2dba9f84cd91d27606f
