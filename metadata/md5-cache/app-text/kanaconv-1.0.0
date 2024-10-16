@@ -11,5 +11,5 @@ RDEPEND=dev-nodejs/kuroshiro:0 dev-nodejs/kuroshiro-analyzer-mecab dev-nodejs/mi
 RESTRICT=test
 SLOT=0
 SRC_URI=https://hacktivis.me/releases/kanaconv-1.0.0.tar.gz verify-sig? ( https://hacktivis.me/releases/kanaconv-1.0.0.tar.gz.sign )
-_eclasses_=nodejs	e3259e0e9ce0994a4f3f9791cba63a2a	verify-sig	a79ba011daaf532d71a219182474d150
+_eclasses_=nodejs	e3259e0e9ce0994a4f3f9791cba63a2a	verify-sig	745dccb7d4656514f1e966cce314d7db
 _md5_=0fe2618f114a208f37201e88bcfd6456
