@@ -38,3 +38,6 @@ sys-apps/shadow su
 sys-apps/util-linux -su
 app-admin/testdisk -sudo
 net-libs/ngtcp2 -gnutls openssl
+
+# don't want something screwing with resolv.conf and nftables
+net-vpn/wireguard-tools -wg-quick
