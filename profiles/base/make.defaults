@@ -3,7 +3,7 @@ USE="
 	cacert cjk dane idn mandoc jumbo-build smp threads urandom iproute2 caps pic metric syslog
 "
 
-COMMON_FLAGS="-O2 -pipe -march=native -mtune=native -ggdb -Wall -fPIC -ftrapv"
+COMMON_FLAGS="-O2 -pipe -march=native -mtune=native -ggdb -Wall -fPIC"
 CFLAGS="${COMMON_FLAGS}"
 OBJCCFLAGS="${COMMON_FLAGS}"
 CXXFLAGS="${COMMON_FLAGS}"
