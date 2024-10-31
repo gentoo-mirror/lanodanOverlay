@@ -1,0 +1,12 @@
+BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=install unpack
+DESCRIPTION=OpenGL-compatible linear algebra library for Hare
+EAPI=8
+HOMEPAGE=https://sr.ht/~vladh/hare-glm
+INHERIT=git-r3
+LICENSE=MIT
+PROPERTIES=live
+RDEPEND=dev-lang/hare
+SLOT=0
+_eclasses_=git-r3	875eb471682d3e1f18da124be97dcc81
+_md5_=f65636e3e512bf3d8e914305cab078dc
