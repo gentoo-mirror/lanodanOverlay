@@ -124,7 +124,6 @@ media-fonts/opendyslexic 20160623: Opensource font for dyslexics and for high re
 media-gfx/qfontviewer 9999: Font viewer with character table
 media-gfx/synfig 9999: Open-source 2D Animation Software
 media-libs/fmod 4.44.64: Libraries of the fmodex audio engine
-media-libs/freeglut 3.4.0: A free OpenGL utility toolkit, the open-sourced alternative to the GLUT library
 media-libs/glew 2.1.0: The OpenGL Extension Wrangler Library
 media-libs/glfw 2.7.9: The Portable OpenGL FrameWork
 media-libs/jg 0_pre20221030: Jolly Good API, an API for Emulators
