@@ -38,6 +38,7 @@ net-libs/webkit-gtk:seccomp - Enable sandboxing functionality through sys-apps/b
 net-libs/webkit-gtk:webrtc - Enable WebRTC support
 sys-apps/shadow:bcrypt - build the bcrypt password encryption algorithm
 sys-apps/shadow:su - build the su program
+sys-apps/utils-std:system - Install utils-std as system utilities in /usr
 sys-devel/binutils-x86_64-bunnix:cet - Enable Intel Control-flow Enforcement Technology.
 sys-devel/binutils-x86_64-bunnix:default-gold - Set ld to point to ld.gold instead of ld.bfd
 sys-devel/binutils-x86_64-bunnix:gold - Build ld.gold linker
