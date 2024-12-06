@@ -10,10 +10,16 @@ HOMEPAGE="https://hacktivis.me/git/utils-std"
 EGIT_REPO_URI="https://hacktivis.me/git/utils-std.git"
 LICENSE="MPL-2.0"
 SLOT="0"
-IUSE="test static"
+IUSE="test static system"
 
 RESTRICT="!test? ( test )"
 
+RDEPEND="
+	system? (
+		!sys-apps/coreutils[system(+)]
+		!sys-apps/diffutils[system(+)]
+	)
+"
 BDEPEND="
 	app-alternatives/yacc
 	test? ( dev-util/cram )
@@ -24,14 +30,14 @@ src_configure() {
 
 	use static && export LDSTATIC="-static-pie"
 
-	./configure PREFIX='/opt/lanodan'
+	./configure PREFIX=$(usex system '/usr' '/opt/lanodan')
 }
 
 src_install() {
 	emake install DESTDIR="${D}"
 
 	# before 50baselayout
-	newenvd - 40lanodan <<-EOF
+	use system || newenvd - 40lanodan <<-EOF
 		PATH="/opt/lanodan/bin:/opt/lanodan/sbin"
 		ROOTPATH="/opt/lanodan/bin:/opt/lanodan/sbin"
 		MANPATH="/opt/lanodan/share/man"
