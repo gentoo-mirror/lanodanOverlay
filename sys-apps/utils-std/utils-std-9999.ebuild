@@ -15,7 +15,7 @@ IUSE="test static system"
 RESTRICT="!test? ( test )"
 
 RDEPEND="
-	system? ( !sys-apps/coreutils[-system(+)] )
+	system? ( !sys-apps/coreutils[system(+)] )
 "
 BDEPEND="
 	app-alternatives/yacc
