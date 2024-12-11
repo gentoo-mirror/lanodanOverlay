@@ -7,7 +7,7 @@ inherit git-r3
 
 DESCRIPTION="Collection of extra tools for Unixes"
 HOMEPAGE="https://hacktivis.me/git/utils-extra"
-EGIT_REPO_URI="https://hacktivis.me/git/utils-extra.git"
+EGIT_REPO_URI="https://anongit.hacktivis.me/git/utils-extra.git"
 LICENSE="MPL-2.0"
 SLOT="0"
 IUSE="test static"

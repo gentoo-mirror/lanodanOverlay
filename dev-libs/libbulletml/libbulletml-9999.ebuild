@@ -7,7 +7,7 @@ inherit toolchain-funcs git-r3
 
 DESCRIPTION="A Library of Bullet Markup Language"
 HOMEPAGE="https://hacktivis.me/git/libbulletml https://shinh.skr.jp/libbulletml/index_en.html"
-EGIT_REPO_URI="https://hacktivis.me/git/libbulletml.git"
+EGIT_REPO_URI="https://anongit.hacktivis.me/git/libbulletml.git"
 S="${WORKDIR}/${P}/src"
 
 LICENSE="BSD"

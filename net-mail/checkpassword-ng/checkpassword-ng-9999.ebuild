@@ -7,7 +7,7 @@ inherit git-r3
 
 DESCRIPTION="Uniform password checking interface for applications"
 HOMEPAGE="https://hacktivis.me/git/checkpassword-ng/"
-EGIT_REPO_URI="https://hacktivis.me/git/checkpassword-ng.git"
+EGIT_REPO_URI="https://anongit.hacktivis.me/git/checkpassword-ng.git"
 LICENSE="GPL-2 GPL-3"
 SLOT="0"
 IUSE="suid"

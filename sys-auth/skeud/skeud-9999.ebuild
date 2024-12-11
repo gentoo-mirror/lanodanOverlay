@@ -7,7 +7,7 @@ inherit git-r3
 
 DESCRIPTION="Simple and portable utilities to deal with user accounts (su, login)"
 HOMEPAGE="https://hacktivis.me/git/skeud"
-EGIT_REPO_URI="https://hacktivis.me/git/skeud.git"
+EGIT_REPO_URI="https://anongit.hacktivis.me/git/skeud.git"
 LICENSE="MPL-2.0"
 SLOT="0"
 IUSE="test"

@@ -7,7 +7,7 @@ inherit perl-module git-r3
 
 DESCRIPTION="CLI-based client / toolbox for ActivityPub Client-to-Server"
 HOMEPAGE="https://hacktivis.me/git/ap-client/"
-EGIT_REPO_URI="https://hacktivis.me/git/ap-client.git"
+EGIT_REPO_URI="https://anongit.hacktivis.me/git/ap-client.git"
 LICENSE="AGPL-3"
 SLOT="0"
 KEYWORDS=""

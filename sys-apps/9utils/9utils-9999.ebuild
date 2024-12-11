@@ -7,7 +7,7 @@ inherit git-r3
 
 DESCRIPTION="Collection of utilities inspired by Plan9"
 HOMEPAGE="https://hacktivis.me/git/9utils"
-EGIT_REPO_URI="https://hacktivis.me/git/9utils.git"
+EGIT_REPO_URI="https://anongit.hacktivis.me/git/9utils.git"
 LICENSE="MPL-2.0"
 SLOT="0"
 IUSE="test"
