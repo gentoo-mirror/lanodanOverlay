@@ -7,7 +7,7 @@ inherit git-r3 ninja-utils
 
 DESCRIPTION="Precision and speed oriented cursor theme"
 HOMEPAGE="https://hacktivis.me/projects/ultrasharp-cursor-theme"
-EGIT_REPO_URI="https://hacktivis.me/git/ultrasharp-cursor-theme.git"
+EGIT_REPO_URI="https://anongit.hacktivis.me/git/ultrasharp-cursor-theme.git"
 LICENSE="CC-BY-SA-4.0"
 SLOT="0"
 

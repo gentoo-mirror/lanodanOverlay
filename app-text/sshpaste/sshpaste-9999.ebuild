@@ -9,7 +9,7 @@ DESCRIPTION="wgetpaste clone for pushing to your own server"
 HOMEPAGE="https://hacktivis.me/git/sshpaste/"
 SRC_URI=""
 
-EGIT_REPO_URI="https://hacktivis.me/git/sshpaste.git"
+EGIT_REPO_URI="https://anongit.hacktivis.me/git/sshpaste.git"
 
 LICENSE="ISC"
 SLOT="0"

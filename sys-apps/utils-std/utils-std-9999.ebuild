@@ -7,7 +7,7 @@ inherit git-r3
 
 DESCRIPTION="Collection of commonly available Unix tools"
 HOMEPAGE="https://hacktivis.me/git/utils-std"
-EGIT_REPO_URI="https://hacktivis.me/git/utils-std.git"
+EGIT_REPO_URI="https://anongit.hacktivis.me/git/utils-std.git"
 LICENSE="MPL-2.0"
 SLOT="0"
 IUSE="test static system"
