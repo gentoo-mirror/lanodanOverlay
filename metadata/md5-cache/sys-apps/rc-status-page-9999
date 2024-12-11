@@ -10,4 +10,4 @@ PROPERTIES=live
 RDEPEND=sys-apps/openrc:=
 SLOT=0
 _eclasses_=git-r3	875eb471682d3e1f18da124be97dcc81
-_md5_=2a55976082e0c83ea822ba217770c7aa
+_md5_=fc0f5d19e844b6bac45a0bc42f0518ba
