@@ -23,7 +23,7 @@ sys-apps/ed
 sys-apps/utils-std
 sys-apps/utils-extra
 sys-apps/man-pages-posix
-sys-devel/clang
+llvm-core/clang
 sys-kernel/gentoo-sources
 sys-process/dcron
 sys-kernel/installkernel
