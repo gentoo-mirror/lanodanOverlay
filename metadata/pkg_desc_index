@@ -164,6 +164,7 @@ sys-libs/libudev-zero 1.0.3: Daemonless replacement for libudev
 sys-libs/wasi-libc 24: WASI libc implementation for WebAssembly
 sys-libs/zlib 1.2.8.2015.12.26: Standard (de)compression library (Sortix's libz fork)
 virtual/checkpassword 1: Virtual for checkpassword compatible applications
+virtual/dev-manager 1: Virtual for the device filesystem manager
 virtual/man 9: Virtual for man
 virtual/tmpfiles 1: Virtual to select between different tmpfiles.d handlers
 www-apps/bloat 9999: Web client for Pleroma and Mastodon
