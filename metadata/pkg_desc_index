@@ -87,7 +87,7 @@ dev-nodejs/which 2.0.2 4.0.0: Like which(1) unix command. Find the first instanc
 dev-nodejs/wrappy 1.0.2: Callback wrapping utility
 dev-nodejs/ws 8.13.0-r1: Simple to use, blazing fast and thoroughly tested WebSocket client and server for Node.js
 dev-perl/Net-CVE 0.006: Fetch CVE (Common Vulnerabilities and Exposures) information from cve.org
-dev-util/esbuild 0.24.0: extremely fast bundler for the web
+dev-util/esbuild 0.24.1: extremely fast bundler for the web
 dev-util/genie 1170: GENie project generator tool (a fork of premake by Branimir Karadžić)
 dev-util/gyp-next 0.16.2: fork of the GYP (Generate Your Projects) build system for use in the Node.js projects
 dev-util/oyacc 6.6-r1: Portable OpenBSD Yacc
