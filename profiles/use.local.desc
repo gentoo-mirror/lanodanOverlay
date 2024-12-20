@@ -3,12 +3,6 @@
 # * generated automatically using pmaint *
 
 app-emulation/tinyemu:http - Support fetching disks over HTTP using
-app-i18n/fcitx:coverage - Build the project with gcov support
-app-i18n/fcitx:emoji - Enable emoji loading for CLDR
-app-i18n/fcitx:enchant - Enable Enchant backend (using app-text/enchant) for spelling hinting
-app-i18n/fcitx:keyboard - Enable key event translation with XKB and build keyboard engine
-app-i18n/fcitx:libuuid - Use libuuid for uuid generation
-app-i18n/fcitx:server - Build a fcitx as server, disable this option if you want to use fcitx as an embedded library
 app-i18n/fcitx-configtool:config-qt - Enable fcitx5-config-qt
 app-i18n/fcitx-configtool:kcm - Enable KDE Config Module
 app-i18n/fcitx-qt:only-plugin - Build only plugin

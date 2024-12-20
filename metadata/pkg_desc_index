@@ -12,8 +12,6 @@ app-editors/2f30-ed 9999: Simple ed(1) implementation from 2f30.org
 app-editors/vim 1.24-r1: Vi IMitation
 app-emulation/arcem 1.50: Dave Gilbert's Acorn Archimedes emulator
 app-emulation/tinyemu 0.2019.12.21-r1: small and simple system emulator for the RISC-V and x86 architectures
-app-i18n/fcitx 5.0.23: Fcitx (Flexible Context-aware Input Tool with eXtension) input method framework
-app-i18n/fcitx-anthy 5.0.14: Japanese Anthy input methods for Fcitx5
 app-i18n/fcitx-configtool 5.0.17: GUI configuration tool for Fcitx
 app-i18n/fcitx-qt 5.0.17: Qt library and IM module for fcitx5
 app-misc/calendar-data 2022.11: data files for calendar(1) utility
