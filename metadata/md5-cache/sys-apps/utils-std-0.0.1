@@ -1,0 +1,15 @@
+BDEPEND=app-alternatives/yacc test? ( dev-util/cram ) verify-sig? ( sec-keys/signify-keys-lanodan:2024 ) verify-sig? ( app-crypt/signify )
+DEFINED_PHASES=configure install unpack
+DESCRIPTION=Collection of commonly available Unix tools
+EAPI=8
+HOMEPAGE=https://hacktivis.me/git/utils-std
+INHERIT=verify-sig
+IUSE=test static system verify-sig
+KEYWORDS=~amd64 ~arm64 ~riscv
+LICENSE=MPL-2.0
+RDEPEND=system? ( !sys-apps/coreutils[system(+)] !sys-apps/diffutils[system(+)] )
+RESTRICT=!test? ( test )
+SLOT=0
+SRC_URI=https://hacktivis.me/releases/utils-std/utils-std-0.0.1.tar.gz verify-sig? ( https://hacktivis.me/releases/utils-std/utils-std-0.0.1.tar.gz.sign )
+_eclasses_=verify-sig	745dccb7d4656514f1e966cce314d7db
+_md5_=82069c71fb63f2561e718a022d3f8799

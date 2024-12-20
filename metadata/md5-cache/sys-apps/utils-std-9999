@@ -11,4 +11,4 @@ RDEPEND=system? ( !sys-apps/coreutils[system(+)] !sys-apps/diffutils[system(+)] 
 RESTRICT=!test? ( test )
 SLOT=0
 _eclasses_=git-r3	875eb471682d3e1f18da124be97dcc81
-_md5_=8470c254e7f8fd6cd29be626902823e5
+_md5_=82069c71fb63f2561e718a022d3f8799
