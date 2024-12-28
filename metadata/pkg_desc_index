@@ -111,6 +111,7 @@ games-strategy/glsmac 9999: Open-source reimplementation of Sid Meier's Alpha Ce
 games-util/fteqcc 9999: FTE QuakeC compiler
 gnome-base/librsvg 2.40.21-r1: Scalable Vector Graphics (SVG) rendering library
 gui-libs/wlr-protocols 1.0_p20220608 9999: Wayland protocols designed for use in wlroots (and other compositors)
+mail-filter/opensmtpd-filter-rspamd 0.1.8: OpenSMTPD filter for putting emails through rspamd
 mail-mta/opensmtpd 6.8.0_p2-r2: Lightweight but featured SMTP daemon from OpenBSD
 media-fonts/3270font 2.0.0: A IBM 3270 Terminal font in a modern format
 media-fonts/forkawesome 1.1.4: The iconic font
