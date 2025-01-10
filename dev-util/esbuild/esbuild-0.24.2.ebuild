@@ -18,7 +18,7 @@ DEPEND="
 	>=dev-lang/go-1.13
 	dev-go/sys
 	test? (
-		net-libs/nodejs
+		net-libs/nodejs[npm]
 		dev-nodejs/source-map-js
 	)
 "
