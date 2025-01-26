@@ -1,0 +1,2 @@
+# Doesn't supports riscv yet (not makes sense yet)
+-app-portage/cpuid2cpuflags

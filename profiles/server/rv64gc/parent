@@ -1,4 +1,4 @@
 gentoo:default/linux/riscv/23.0/rv64/lp64d/musl
 lanodanOverlay:base
 lanodanOverlay:server
-#lanodanOverlay:platforms/riscv64
+lanodanOverlay:platforms/riscv
