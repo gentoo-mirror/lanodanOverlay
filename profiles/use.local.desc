@@ -16,6 +16,7 @@ dev-games/godot:tools - Enable the Godot Editor for game development
 dev-games/godot:webm - Enable the WebM module
 dev-libs/hts_engine:speech-tools - use memory allocation/free functions of app-accessibility/speech-tools
 games-arcade/emilia-pinball:gles1-only - Use GLES 1.0 instead of OpenGL
+games-emulation/flycast:vulkan - Compile vulkan backend
 gnome-base/librsvg:tools - Build svg viewer tool
 mail-mta/opensmtpd:mdoc - Use mdoc format for manpages
 mail-mta/opensmtpd:mta - Enable this to install as system-wide MTA
