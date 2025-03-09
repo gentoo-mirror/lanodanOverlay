@@ -1,0 +1,3 @@
+# How to setup: git config gpg.ssh.allowedSignersFile authorized_keys.git
+contact@hacktivis.me ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKAxeQh6KJGg89yivTtmUtjxp80inHBrL5sMdt+Kg1ed haelwenn@NightmareMoon
+contact@hacktivis.me ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC6LRxSNagh9NlEYLUqA8o/4HiUStEymeyvjFtNZeEIe haelwenn@cloudchaser
