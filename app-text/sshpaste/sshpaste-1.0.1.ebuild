@@ -5,7 +5,7 @@ EAPI=7
 
 DESCRIPTION="wgetpaste clone for pushing to your own server"
 HOMEPAGE="https://hacktivis.me/git/sshpaste/"
-SRC_URI="https://hacktivis.me/releases/${P}.tar.gz"
+SRC_URI="https://distfiles.hacktivis.me/releases/${P}.tar.gz"
 
 LICENSE="ISC"
 SLOT="0"

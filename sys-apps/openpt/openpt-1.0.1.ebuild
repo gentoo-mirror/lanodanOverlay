@@ -5,7 +5,7 @@ EAPI=8
 
 DESCRIPTION="start program in a new pseudo-terminal"
 HOMEPAGE="https://hacktivis.me/git/openpt"
-SRC_URI="https://hacktivis.me/releases/${PN}/${P}.tar.gz"
+SRC_URI="https://distfiles.hacktivis.me/releases/${PN}/${P}.tar.gz"
 KEYWORDS="~amd64"
 LICENSE="MPL-2.0"
 SLOT="0"

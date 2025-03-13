@@ -9,8 +9,8 @@ inherit verify-sig
 DESCRIPTION="create an X cursor file from a collection of PNG images (no libX11)"
 HOMEPAGE="https://hacktivis.me/git/xcursorgen-nox/"
 SRC_URI="
-	https://hacktivis.me/releases/${P}.tar.gz
-	verify-sig? ( https://hacktivis.me/releases/${P}.tar.gz.sign )
+	https://distfiles.hacktivis.me/releases/${P}.tar.gz
+	verify-sig? ( https://distfiles.hacktivis.me/releases/${P}.tar.gz.sign )
 "
 LICENSE="MIT"
 SLOT="0"
