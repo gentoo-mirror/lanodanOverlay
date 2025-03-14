@@ -20,7 +20,7 @@ LICENSE="LGPL-2+ BSD Apache-2.0"
 SLOT="4.1/0" # soname version of libwebkit2gtk-4.1
 KEYWORDS="~amd64 ~arm64"
 
-IUSE="aqua +avif dbus doc examples gamepad keyring +gstreamer +introspection pdf jpegxl +jumbo-build lcms +seccomp spell sysprof systemd wayland webrtc +X"
+IUSE="aqua +avif dbus doc examples gamepad keyring +gstreamer +introspection pdf jpegxl +jumbo-build lcms +seccomp +speech spell sysprof systemd wayland webrtc +X"
 
 REQUIRED_USE="
 	doc? ( introspection )
@@ -58,6 +58,7 @@ RDEPEND="
 	keyring? ( app-crypt/libsecret )
 	introspection? ( >=dev-libs/gobject-introspection-1.59.1:= )
 	dev-libs/libtasn1:=
+	speech? ( app-accessibility/flite )
 	spell? ( >=app-text/enchant-0.22:2 )
 	gstreamer? (
 		>=media-libs/gstreamer-1.20:1.0
@@ -240,6 +241,7 @@ src_configure() {
 		-DUSE_SOUP2=OFF
 		-DUSE_WOFF2=ON
 		-DUSE_SYSTEM_SYSPROF_CAPTURE=$(usex sysprof)
+		-DENABLE_SPEECH_SYNTHESIS=$(usex speech)
 	)
 
 	# https://bugs.gentoo.org/761238
