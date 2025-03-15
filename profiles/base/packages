@@ -2,6 +2,7 @@
 -*sys-apps/busybox
 -*sys-apps/file
 -*sys-apps/less
+-*sys-apps/which
 acct-group/proc
 app-admin/rsyslog
 app-arch/libarchive
