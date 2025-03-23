@@ -2,7 +2,7 @@ BDEPEND=app-alternatives/yacc test? ( dev-util/cram ) >=dev-vcs/git-1.8.2.1[curl
 DEFINED_PHASES=configure install unpack
 DESCRIPTION=Collection of commonly available Unix tools
 EAPI=8
-HOMEPAGE=https://hacktivis.me/git/utils-std
+HOMEPAGE=https://hacktivis.me/projects/utils-std
 INHERIT=git-r3
 IUSE=test static system
 LICENSE=MPL-2.0
@@ -11,4 +11,4 @@ RDEPEND=system? ( !sys-apps/coreutils[system(+)] !sys-apps/diffutils[system(+)] 
 RESTRICT=!test? ( test )
 SLOT=0
 _eclasses_=git-r3	875eb471682d3e1f18da124be97dcc81
-_md5_=a79522b84dea024ae681c1fd53f4cb1f
+_md5_=85aa43f9e04c194ea7398f4efe0e71f4
