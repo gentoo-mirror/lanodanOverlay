@@ -20,7 +20,7 @@ fi
 
 
 DESCRIPTION="Collection of commonly available Unix tools"
-HOMEPAGE="https://hacktivis.me/git/utils-std"
+HOMEPAGE="https://hacktivis.me/projects/utils-std"
 LICENSE="MPL-2.0"
 SLOT="0"
 IUSE="test static system"
