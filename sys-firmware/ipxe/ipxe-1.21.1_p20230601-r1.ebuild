@@ -16,7 +16,7 @@ S="${WORKDIR}/${PN}-${COMMIT_SHA1}/src"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="efi efi64 ipv6 iso lkrn +qemu undi usb vmware"
+IUSE="uefi32 uefi64 ipv6 iso lkrn +qemu undi usb vmware"
 
 BDEPEND="
 	app-arch/xz-utils
@@ -104,8 +104,8 @@ src_compile() {
 		ipxemake bin/15ad07b0.rom # vmxnet3
 	fi
 
-	use efi && ipxemake PLATFORM=efi BIN=bin-i386-efi bin-i386-efi/ipxe.efi
-	use efi64 && ipxemake PLATFORM=efi BIN=bin-x86_64-efi bin-x86_64-efi/ipxe.efi
+	use uefi32 && ipxemake PLATFORM=efi BIN=bin-i386-efi bin-i386-efi/ipxe.efi
+	use uefi64 && ipxemake PLATFORM=efi BIN=bin-x86_64-efi bin-x86_64-efi/ipxe.efi
 	use iso && ipxemake bin/ipxe.iso
 	use undi && ipxemake bin/undionly.kpxe
 	use usb && ipxemake bin/ipxe.usb
@@ -119,12 +119,12 @@ src_install() {
 		doins bin/*.rom
 	fi
 	use vmware && doins bin/*.mrom
-	use efi && newins bin-i386-efi/ipxe.efi ipxe-i386.efi
-	use efi64 && newins bin-x86_64-efi/ipxe.efi ipxe-x86_64.efi
+	use uefi32 && newins bin-i386-efi/ipxe.efi ipxe-i386.efi
+	use uefi64 && newins bin-x86_64-efi/ipxe.efi ipxe-x86_64.efi
 	# Add a symlink for backwards compatiblity, in case both variants are
 	# enabled the x86_64 bit variant takes presedence.
-	use efi && dosym ipxe-i386.efi /usr/share/ipxe/ipxe.efi
-	use efi64 && dosym ipxe-x86_64.efi /usr/share/ipxe/ipxe.efi
+	use uefi32 && dosym ipxe-i386.efi /usr/share/ipxe/ipxe.efi
+	use uefi64 && dosym ipxe-x86_64.efi /usr/share/ipxe/ipxe.efi
 
 	use iso && doins bin/*.iso
 	use undi && doins bin/*.kpxe
