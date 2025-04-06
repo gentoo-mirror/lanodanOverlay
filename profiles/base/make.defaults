@@ -29,3 +29,7 @@ L10N="en en-US en-GB fr fr-CA ja is jbo de de-DE ru br" # profiles/desc/l10n.des
 EGIT_CLONE_TYPE="shallow" # --depth=1
 CMAKE_MAKEFILE_GENERATOR="ninja"
 NINJA="samu"
+
+# This way it doesn't ends up filtering only to GNU or BusyBox
+# implementations, while it's due to a Solaris 10 bug (racy mkdir -p)
+ac_cv_path_mkdir="mkdir"
