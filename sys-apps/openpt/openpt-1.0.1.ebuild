@@ -10,6 +10,13 @@ KEYWORDS="~amd64"
 LICENSE="MPL-2.0"
 SLOT="0"
 
+IUSE="static"
+
+src_compile() {
+	use static && export LDFLAGS="${LDFLAGS} -static"
+	default
+}
+
 src_install() {
 	PREFIX='/usr' default
 }
