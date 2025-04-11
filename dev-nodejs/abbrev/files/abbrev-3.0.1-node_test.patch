@@ -1,19 +1,19 @@
-From 08f0f108ece47624da15a77a6f1aeb3016946201 Mon Sep 17 00:00:00 2001
+From 8f8b90eb0c9cda32c77fa2114e63c6b64c5a22e0 Mon Sep 17 00:00:00 2001
 From: "Haelwenn (lanodan) Monnier" <contact@hacktivis.me>
 Date: Fri, 8 Sep 2023 10:11:49 +0200
-Subject: [PATCH] Depend on node:test instead of npm:tap
+Subject: [PATCH] Use builtin node:test instead of npm:tap dependency
 
 ---
- package.json | 15 ++++-----------
- test/test.js | 23 +++++++++++------------
- 2 files changed, 15 insertions(+), 23 deletions(-)
+ package.json | 13 +++----------
+ test/test.js | 29 ++++++++++++++---------------
+ 2 files changed, 17 insertions(+), 25 deletions(-)
 
 diff --git a/package.json b/package.json
-index e264004..4123322 100644
+index 077d4bc..622ee50 100644
 --- a/package.json
 +++ b/package.json
 @@ -3,9 +3,9 @@
-   "version": "2.0.0",
+   "version": "3.0.1",
    "description": "Like ruby's abbrev module, but in js",
    "author": "GitHub Inc.",
 -  "main": "lib/index.js",
@@ -21,14 +21,14 @@ index e264004..4123322 100644
    "scripts": {
 -    "test": "tap",
 +    "test": "node test/test.js",
-     "lint": "eslint \"**/*.js\"",
+     "lint": "npm run eslint",
      "postlint": "template-oss-check",
      "template-oss-apply": "template-oss-apply --force",
-@@ -20,21 +20,14 @@
+@@ -21,14 +21,7 @@
    "license": "ISC",
    "devDependencies": {
-     "@npmcli/eslint-config": "^4.0.0",
--    "@npmcli/template-oss": "4.8.0",
+     "@npmcli/eslint-config": "^5.0.0",
+-    "@npmcli/template-oss": "4.24.3",
 -    "tap": "^16.3.0"
 -  },
 -  "tap": {
@@ -36,23 +36,15 @@ index e264004..4123322 100644
 -      "--exclude",
 -      "tap-snapshots/**"
 -    ]
-+    "@npmcli/template-oss": "4.8.0"
++    "@npmcli/template-oss": "4.24.3"
    },
    "files": [
      "bin/",
-     "lib/"
-   ],
-   "engines": {
--    "node": "^14.17.0 || ^16.13.0 || >=18.0.0"
-+    "node": ">=18.0.0"
-   },
-   "templateOSS": {
-     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
 diff --git a/test/test.js b/test/test.js
-index 6192f3d..a4db824 100644
+index b82a839..ea2a289 100644
 --- a/test/test.js
 +++ b/test/test.js
-@@ -1,17 +1,16 @@
+@@ -1,28 +1,27 @@
 -const abbrev = require('../')
 -const t = require('tap')
 +const abbrev = require('abbrev')
@@ -66,20 +58,34 @@ index 6192f3d..a4db824 100644
 -    'abbrev(' + util.inspect(list) + ') === ' + util.inspect(expect) + '\n' +
 -    'actual: ' + util.inspect(actual))
 +  t.test(() => {
-+    let actual = abbrev(list);
-+    assert.deepStrictEqual(actual, expect);
++    let actual = abbrev(list)
++    assert.deepStrictEqual(actual, expect)
  
 -  actual = abbrev(...list)
 -  t.same(abbrev(...list), expect,
 -    'abbrev(' + list.map(JSON.stringify).join(',') + ') === ' + util.inspect(expect) + '\n' +
 -    'actual: ' + util.inspect(actual))
-+    actual = abbrev(...list);
-+    assert.deepStrictEqual(actual, expect);
-+  });
++    actual = abbrev(...list)
++    assert.deepStrictEqual(actual, expect)
++  })
  }
  
+ t.test('single string input', t => {
+   const result = abbrev('asdf')
+-  t.same(result, {
++  let expect = {
+     a: 'asdf',
+     as: 'asdf',
+     asd: 'asdf',
+     asdf: 'asdf',
+-  }, 'correctly abbreviates a single string')
+-  t.end()
++  }
++  assert.deepStrictEqual(result, expect)
+ })
+ 
  test(['ruby', 'ruby', 'rules', 'rules', 'rules'],
-@@ -50,5 +49,5 @@ test(['a', 'ab', 'abc', 'abcd', 'abcde', 'acde'].reverse(),
+@@ -61,5 +60,5 @@ test(['a', 'ab', 'abc', 'abcd', 'abcde', 'acde'].reverse(),
      acde: 'acde',
    })
  
@@ -88,5 +94,5 @@ index 6192f3d..a4db824 100644
 +t.test(() => assert(![].abbrev))
 +t.test(() => assert(!{}.abbrev))
 -- 
-2.41.0
+2.49.0
 

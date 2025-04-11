@@ -14,5 +14,5 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 PATCHES=(
-	"${FILESDIR}/abbrev-2.0.0-node_test.patch"
+	"${FILESDIR}/abbrev-3.0.1-node_test.patch"
 )
