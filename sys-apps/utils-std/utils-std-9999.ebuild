@@ -41,9 +41,9 @@ BDEPEND="
 
 if [[ "${PV}" != 9999* ]]
 then
-	BDEPEND="${BDEPEND} verify-sig? ( sec-keys/signify-keys-lanodan:2024 )"
+	BDEPEND="${BDEPEND} verify-sig? ( sec-keys/signify-keys-lanodan:2025 )"
 
-	VERIFY_SIG_OPENPGP_KEY_PATH="/usr/share/signify-keys/signify-keys-lanodan-2024.pub"
+	VERIFY_SIG_OPENPGP_KEY_PATH="/usr/share/signify-keys/signify-keys-lanodan-2025.pub"
 
 	src_unpack() {
 		if use verify-sig; then
