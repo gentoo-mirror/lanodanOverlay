@@ -1,4 +1,4 @@
-gentoo:default/linux/arm64/23.0/musl/hardened
+gentoo:default/linux/arm64/23.0/split-usr/musl/hardened
 lanodanOverlay:base
 lanodanOverlay:server
 lanodanOverlay:platforms/arm64
