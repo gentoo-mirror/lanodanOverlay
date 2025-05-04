@@ -27,3 +27,5 @@ llvm-core/clang
 sys-process/dcron
 sys-kernel/installkernel
 dev-util/deblob
+net-misc/tinyssh
+-*virtual/ssh
