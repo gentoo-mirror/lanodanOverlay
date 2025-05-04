@@ -41,3 +41,8 @@ net-libs/ngtcp2 -gnutls openssl
 
 # don't want something screwing with resolv.conf and nftables
 net-vpn/wireguard-tools -wg-quick
+
+# musl crypt() ought to be enough and libxcrypt should be kept separated instead of overriding libcrypt.{a,so} and <crypt.h>
+# https://www.openwall.com/lists/musl/2025/05/03/1
+sys-libs/musl crypt
+sys-libs/libxcrypt -system
