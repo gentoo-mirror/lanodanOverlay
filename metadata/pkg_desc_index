@@ -34,7 +34,7 @@ dev-hare/madeline 9999: tiny readline-alike with some batteries included
 dev-lang/go 1.4_p20171003: Boostrap Go from C (useful for musl libc)
 dev-lang/kuroko 1.4.0: Dynamic, bytecode-compiled programming language and a dialect of Python
 dev-libs/PlatformFolders 4.2.0: C++ library to look for special directories like ~/.config and %APPDATA%
-dev-libs/bearssl 0.6-r1: Implementation of the SSL/TLS protocol in C
+dev-libs/bearssl 0.6_p20241009: Implementation of the SSL/TLS protocol in C
 dev-libs/hts_engine 1.10: HMM-based speech synthesis system (HTS) engine and API
 dev-libs/libbulletml 9999: A Library of Bullet Markup Language
 dev-libs/libkqueue 2.6.1: kqueue(2) compatibility library
