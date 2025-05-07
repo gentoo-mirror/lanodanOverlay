@@ -2,7 +2,7 @@ prefix=@PREFIX@
 exec_prefix=${prefix}
 includedir=${prefix}/include
 libdir=${prefix}/lib
-Name: libbearssl
+Name: bearssl
 Version: @VERSION@
 Description: The BearSSL implementation of the SSL/TLS protocol
 Cflags: -I${includedir}
