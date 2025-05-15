@@ -20,7 +20,7 @@ LICENSE="LGPL-2+ BSD Apache-2.0"
 SLOT="4.1/0" # soname version of libwebkit2gtk-4.1
 KEYWORDS="~amd64 ~arm64"
 
-IUSE="aqua +avif dbus doc examples gamepad keyring +gstreamer +introspection pdf jpegxl +jumbo-build lcms +seccomp +speech spell sysprof systemd wayland webrtc +X"
+IUSE="aqua +avif dbus doc examples gamepad keyring +gstreamer +introspection pdf jpegxl +jumbo-build lcms +seccomp +skia +speech spell sysprof systemd wayland webrtc +X"
 
 REQUIRED_USE="
 	doc? ( introspection )
@@ -204,6 +204,7 @@ src_configure() {
 		-DBWRAP_EXECUTABLE:FILEPATH="${EPREFIX}"/usr/bin/bwrap
 		-DDBUS_PROXY_EXECUTABLE:FILEPATH="${EPREFIX}"/usr/bin/xdg-dbus-proxy
 		-DPORT=GTK
+		-DUSE_SKIA=$(usex skia)
 
 		# Source/cmake/WebKitFeatures.cmake
 		-DENABLE_API_TESTS=OFF
