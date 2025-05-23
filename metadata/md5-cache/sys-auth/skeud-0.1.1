@@ -1,0 +1,16 @@
+BDEPEND=test? ( dev-libs/atf dev-util/kyua ) verify-sig? ( sec-keys/signify-keys-lanodan:2025 ) verify-sig? ( app-crypt/signify )
+DEFINED_PHASES=compile install unpack
+DEPEND=virtual/libcrypt:=
+DESCRIPTION=Simple and portable utilities to deal with user accounts (su, login)
+EAPI=8
+HOMEPAGE=https://hacktivis.me/git/skeud
+INHERIT=verify-sig
+IUSE=static test verify-sig
+KEYWORDS=~amd64 ~arm64 ~riscv
+LICENSE=MPL-2.0
+RDEPEND=virtual/libcrypt:=
+RESTRICT=!test? ( test )
+SLOT=0
+SRC_URI=https://distfiles.hacktivis.me/releases/skeud/skeud-0.1.1.tar.gz verify-sig? ( https://distfiles.hacktivis.me/releases/skeud/skeud-0.1.1.tar.gz.sign )
+_eclasses_=eapi9-pipestatus	d2c134036ac31c3085aebc9147f572bd	verify-sig	7433426b6b28bf2737ba4b82c8aa8c53
+_md5_=604eb56235476516ab6e087797ac039f
