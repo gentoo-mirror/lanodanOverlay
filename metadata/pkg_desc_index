@@ -132,7 +132,7 @@ media-libs/smpeg2 2.0.0_p20230817: SDL MPEG Player Library
 media-sound/shim 0_pre20220409 9999: Pipe 3-bytes packets (channel, note, velocity) to a MIDI device
 media-video/adobe-flashplayer-projector 32.0.0.465: Adobe Flash Player standalone projector
 media-video/untrunc 9999: Restore a truncated mp4/mov
-net-libs/webkit-gtk 2.48.2 2.48.2-r410 2.48.2-r600: Open source web browser engine
+net-libs/webkit-gtk 2.48.2-r410 2.48.2-r600: Open source web browser engine
 net-mail/checkpassword-ng 9999: Uniform password checking interface for applications
 net-misc/ap-client 9999: CLI-based client / toolbox for ActivityPub Client-to-Server
 net-misc/drawterm 0_p20221013 9999: Connect to Plan 9 CPU servers from other operating systems
