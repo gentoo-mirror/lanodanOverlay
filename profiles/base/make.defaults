@@ -23,7 +23,8 @@ PORTAGE_COMPRESS="true" # mandoc
 PORTAGE_GPG_DIR="/var/lib/gentoo/gkeys/keyrings/gentoo/release/"
 RESUMECOMMAND="${FETCHCOMMAND} -C -"
 
-ACCEPT_LICENSE="-* @FREE"
+# AGPL3: Article 13 means you need to make sure to link to the proper source if there's any modification, better to accept it per-software
+ACCEPT_LICENSE="-* @FREE -AGPL-3 -AGPL-3+"
 L10N="en en-US en-GB fr fr-CA ja is jbo de de-DE ru br" # profiles/desc/l10n.desc
 
 EGIT_CLONE_TYPE="shallow" # --depth=1
