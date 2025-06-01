@@ -31,6 +31,7 @@ RDEPEND="
 	system? (
 		!sys-apps/coreutils[system(+)]
 		!sys-apps/diffutils[system(+)]
+		!sys-process/time[system(+)]
 		!sys-apps/which
 	)
 "
