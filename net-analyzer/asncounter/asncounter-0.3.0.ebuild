@@ -19,6 +19,7 @@ RDEPEND="
 	dev-python/pyasn
 "
 DEPEND="${RDEPEND}"
+BDEPEND="app-text/lowdown"
 
 distutils_enable_tests pytest
 
@@ -30,6 +31,13 @@ src_prepare() {
 
 python_test() {
 	epytest -k 'not test_prometheus_record'
+}
+
+src_install() {
+	distutils-r1_src_install
+
+	lowdown -o asncounter.1 -s -t man asncounter.1.md || die
+	doman asncounter.1
 }
 
 pkg_postinst() {
