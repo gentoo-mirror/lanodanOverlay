@@ -5,7 +5,7 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_12 )
 DISTUTILS_USE_PEP517=setuptools
-inherit distutils-r1
+inherit distutils-r1 optfeature
 
 DESCRIPTION="Count hits per autonomous system number (ASN) and related network blocks"
 HOMEPAGE="https://gitlab.com/anarcat/asncounter"
