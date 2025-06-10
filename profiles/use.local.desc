@@ -2,7 +2,6 @@
 # Please add your descriptions to your package's metadata.xml ONLY.
 # * generated automatically using pmaint *
 
-app-emulation/tinyemu:http - Support fetching disks over HTTP using
 app-i18n/fcitx-configtool:config-qt - Enable fcitx5-config-qt
 app-i18n/fcitx-configtool:kcm - Enable KDE Config Module
 app-i18n/fcitx-qt:only-plugin - Build only plugin
