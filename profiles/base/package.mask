@@ -1,3 +1,10 @@
+# Haelwenn (lanodan) Monnier <contact@hacktivis.me> (2025-06-11)
+# Non-Free
+# https://bugzilla.redhat.com/show_bug.cgi?id=449037
+# https://spot.livejournal.com/303000.html?nojs=1
+# https://raw.githubusercontent.com/kholtman/afio/21f0408cb3df40e5de3d3fa2698eb6626c57df02/afio_license_issues_v5.txt
+app-arch/afio
+
 # Haelwenn (lanodan) Monnier <contact@hacktivis.me> (2025-05-04)
 # Avoid forcing libxcrypt in
 >=virtual/libcrypt-2
