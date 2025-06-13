@@ -1,0 +1,175 @@
+Copyright 1997 The Open Group
+All Rights Reserved
+
+No redistribution permitted.
+
+Not to be further republished without express written
+permission. (If you would like to redistribute a copy
+with a publication please contact Andrew Josey -  a.josey@opengroup.org)
+
+This archive of the Single UNIX Specification is from
+the Go Solo 2 CD_ROM and is supplied with the following
+terms and conditions. 
+
+Downloading of this file is taken as agreement with these
+terms and conditions.
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+       1.  GO_SOLO_2_CD-ROM_Terms_and_Conditions_of_Supply
+
+	 1.  Definitions
+
+	     In	these Terms and	Conditions the following words have
+	     the meanings given:
+
+	     CD-ROM	     the CD-ROM	with the functionality set
+			     out in the	``Help Text'' or user
+			     documentation;
+
+	     Derivative	work any work which incorporates a
+			     substantial portion of any	published
+			     material from any Work, whether or	not
+			     authorised	by this	or any other
+			     License;
+
+	     Internet	     the world-wide publically-accessible
+			     network of	inter-linked computers;
+
+	     Intranet	     a company-wide network of computers,
+			     accessible	by company employees but
+			     protected from enquiry from internet
+			     users and public dial-in access;
+
+	     Licensee	     the company/organisation/individual to
+			     whom the CD-ROM is	supplied;
+
+	     Re-publication  the act of	re-publishing whether or
+			     not the new work is made public;
+
+	     Re-publish	     to	reproduce or make available
+			     publicly or otherwise the text, design
+			     or	graphic	material from any Work,
+			     whether or	not in a form or on a
+			     medium different from that	in or on
+			     which it was supplied by The Open
+			     Group;
+
+	     Work	     any data on the CD-ROM;
+
+	     The Open Group  The Open Group, Apex Plaza, Forbury
+			     Road, Reading, Berkshire, RG1 1AX,
+			     United Kingdom.
+
+	 2.  Right of Use
+
+	     The Licensee shall	have the right to use the Works
+	     contained on the CD-ROM for any purpose, subject to
+	     the limitations of	these Terms and	Conditions on Re-
+	     publication.  Furthermore,	the Licensee shall have	the
+	     right:
+
+	       a.  to store and	have the CD-ROM	stored in
+		   electronic form on one computer at a	time,
+		   subject to the waiver set out in Clause 4;
+
+	       b.  to display the contents of the CD-ROM on a
+		   computer screen; and
+
+	       c.  for the Licensee's internal use only, to produce
+		   paper copies	of limited parts of any	Work, as
+		   provided within the functionality of	the
+		   software.
+
+	     For the avoidance of doubt, nothing in these Terms	and
+	     Conditions	shall entitle the Licensee to use the Work
+	     in	any way	other than for the Licensee's own internal
+	     business purposes,	nor to disclose	the Work to any
+	     third party.
+
+	     Where any Work is subject to the copyright	of any
+	     person other than The Open	Group (``a joint
+	     publication'') the	rights set out here are	subject	to
+	     any further conditions or limitations prescribed in
+	     respect of	that Work (as set out therein) in order	to
+	     protect the rights	of that	other copyright	owner.
+
+	     Where more	than one CD-ROM	is supplied under this
+	     Agreement,	these rights shall apply separately in
+	     respect of	each CD-ROM.
+
+	 3.  Restrictions in Liability
+
+	     THE OPEN GROUP ACCEPTS LIABILITY UP TO A LIMIT EQUAL TO THE
+	     PRICE PAID	FOR THE	CD-ROM.	 THERE SHALL BE	NO LIMIT TO
+	     ANY LEGAL LIABILITY FOR ANY DEATH OR PERSONAL INJURY.
+
+	 4.  Use of html files
+
+	     Files ending in the extension .htm or .html are intended for
+	     viewing by	intranet browser software. Implicit in this
+	     method of browsing	is the concept that the	files may
+	     be	viewed simultaneously by users on remote computers
+	     or	consoles.  It is permitted that	the .htm/.html files on
+	     the CD-ROM	be simultaneously accessed by two or more
+	     computers or consoles at any given	time, provided that
+	     the users of those	computers or consoles are employees
+	     of	the Licensee.
+
+	     The Licensee shall	not be permitted to distribute the
+	     CD-ROM .htm/.html files (or any other files on the CD-ROM)
+	     onto the Internet without prior written permission	of
+	     The Open Group.
+
+	 5.  Re-publication
+
+	     Save as set out above or as separately agreed, the
+	     Licensee shall have no right to Re-publish	or
+	     distribute	the CD-ROM or its contents in any way or on
+	     any medium	whatever.
+
+	 6.  Termination
+
+	     Either party may by written notice	forthwith terminate
+	     this Agreement if the other party commits any material
+	     breach of these Terms and Conditions and fails to
+	     remedy it within a	reasonable period after	receiving
+	     written notice from the other party; the other party
+	     suffers distress or execution, commits an act of
+	     bankruptcy, goes or is put	into liquidation (otherwise
+	     than solely for the purpose of solvent amalgamation or
+	     reconstruction), or seeks any form	of protection
+	     against its creditors from	any competent Court or
+	     Tribunal; or a receiver or	administrative receiver	is
+	     appointed over any	substantial part of the	other
+	     party's business.
+
+	     Upon termination under this Clause	or otherwise, the
+	     Licensee shall within one month deliver up	any
+	     materials or equipment, including any special computer
+	     programs or electronic media supplied by The Open
+	     Group and shall certify that all copies (in electronic
+	     or	other form) derived from the CD-ROM have been
+	     destroyed.
+
+	     Termination of this Agreement (however occurring)
+	     shall not affect any accrued rights or liabilities	of
+	     either party nor shall it affect the coming into force
+	     or	the continuance	in force of any	provision which	is
+	     expressly or by implication intended to come into or
+	     continue in force on or after such	termination.
+
+	 7.  Disputes
+
+	     These Terms and Conditions	shall be construed in
+	     accordance	with the law of	England	and Wales.  Any
+	     dispute arising under or in connection with these
+	     Terms and Conditions shall	be referred to arbitration
+	     before a sole arbitrator to be appointed jointly or,
+	     in	default	of agreement, to be appointed by the
+	     President of the British Computer Society.
+
+
+       Terms and Conditions of Supply of the Go	Solo 2 CD-ROM, May
+       1997.
