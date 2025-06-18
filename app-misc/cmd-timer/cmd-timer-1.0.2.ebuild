@@ -16,6 +16,8 @@ LICENSE="MPL-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
+IUSE="static"
+
 BDEPEND="${BDEPEND} verify-sig? ( sec-keys/signify-keys-lanodan:2025 )"
 
 VERIFY_SIG_OPENPGP_KEY_PATH="/usr/share/signify-keys/signify-keys-lanodan-2025.pub"
@@ -32,6 +34,10 @@ src_unpack() {
 	else
 		default
 	fi
+}
+
+src_configure() {
+	use static && export LDSTATIC=-static
 }
 
 src_install() {
