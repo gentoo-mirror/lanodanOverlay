@@ -1,0 +1,13 @@
+BDEPEND=verify-sig? ( sec-keys/signify-keys-lanodan:2025 ) verify-sig? ( app-crypt/signify )
+DEFINED_PHASES=install unpack
+DESCRIPTION=run command at a specific interval
+EAPI=8
+HOMEPAGE=https://hacktivis.me/git/cmd-timer/
+INHERIT=verify-sig
+IUSE=verify-sig
+KEYWORDS=~amd64
+LICENSE=MPL-2.0
+SLOT=0
+SRC_URI=https://distfiles.hacktivis.me/releases/cmd-timer/cmd-timer-1.0.2.tar.gz verify-sig? ( https://distfiles.hacktivis.me/releases/cmd-timer/cmd-timer-1.0.2.tar.gz.sign )
+_eclasses_=eapi9-pipestatus	d2c134036ac31c3085aebc9147f572bd	verify-sig	7433426b6b28bf2737ba4b82c8aa8c53
+_md5_=e1e0d23680ffd56ec475511209db4927
