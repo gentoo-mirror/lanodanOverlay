@@ -15,7 +15,7 @@ app-emulation/arcem 1.50: Dave Gilbert's Acorn Archimedes emulator
 app-i18n/fcitx-configtool 5.0.17: GUI configuration tool for Fcitx
 app-i18n/fcitx-qt 5.0.17: Qt library and IM module for fcitx5
 app-misc/calendar-data 2022.11: data files for calendar(1) utility
-app-misc/cmd-timer 1.0.2: run command at a specific interval
+app-misc/cmd-timer 1.0.3: run command at a specific interval
 app-text/Text-Reflow 1.17: Perl module for reflowing text files using Knuth's paragraphing algorithm.
 app-text/dadadodo 1.04: Analyse texts for word probabilities and generate random sentences
 app-text/grammalecte 2.1.1: Correcteur grammatical et typographique open source dédié à la langue française
