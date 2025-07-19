@@ -46,3 +46,32 @@ net-vpn/wireguard-tools -wg-quick
 # https://www.openwall.com/lists/musl/2025/05/03/1
 sys-libs/musl crypt
 sys-libs/libxcrypt -system
+
+# https://queer.hacktivis.me/notice/AwHEbmVjrd59CrTrlY
+# (lldb) bt
+# * thread #1, name = 'lldb', stop reason = signal SIGSEGV: address not mapped to object
+#   * frame #0: 0x0000755e617a1ed7 libedit.so.0`re_putc(el=0x0000755da913e000, c=40, shift=1) at refresh.c:206:2
+#     frame #1: 0x0000755e617a13b1 libedit.so.0`prompt_print(el=0x0000755da913e000, op=0) at prompt.c:111:3
+#     frame #2: 0x0000755e617a1ff5 libedit.so.0`re_refresh(el=0x0000755da913e000) at refresh.c:268:2
+#     frame #3: 0x0000755e617a1b6a libedit.so.0`el_wgets(el=0x0000755da913e000, nread=0x00007ffcf246352c) at read.c:0
+#     frame #4: 0x0000755e6a2f3478 liblldb.so.19.1+libcxx`lldb_private::Editline::GetLine(this=0x0000755da78e05a0, line="source info", interrupted=0x00007ffcf24635cf) at Editline.cpp:1495:16
+#     frame #5: 0x0000755e6a26ca36 liblldb.so.19.1+libcxx`lldb_private::IOHandlerEditline::Run(this=0x0000755e59a22038) at IOHandler.cpp:596:11
+#     frame #6: 0x0000755e6a24d7ea liblldb.so.19.1+libcxx`lldb_private::Debugger::RunIOHandlers(this=0x0000755e59c47a90) at Debugger.cpp:1105:16
+#     frame #7: 0x0000755e6a319701 liblldb.so.19.1+libcxx`lldb_private::CommandInterpreter::RunCommandInterpreter(this=0x0000755e59c57a90, options=0x00007ffcf24636f0) at CommandInterpreter.cpp:3403:16
+#     frame #8: 0x0000755e6a05f473 liblldb.so.19.1+libcxx`lldb::SBDebugger::RunCommandInterpreter(this=0x00007ffcf24639a0, auto_handle_events=true, spawn_thread=false) at SBDebugger.cpp:1251:42
+#     frame #9: 0x00005cbfff1f9e92 lldb`Driver::MainLoop(this=0x00007ffcf2463980) at Driver.cpp:617:18
+#     frame #10: 0x00005cbfff1fa9a2 lldb`main(argc=3, argv=0x00007ffcf2463dc8) at Driver.cpp:807:26
+#     frame #11: 0x0000755e6aa67c63 ld-musl-x86_64.so.1`libc_start_main_stage2(main=(lldb`main at Driver.cpp:728), argc=<unavailable>, argv=0x00007ffcf2463dc8) at __libc_start_main.c:95:7
+#     frame #12: 0x00005cbfff1f757e lldb`_start + 22
+# (lldb) f
+# frame #0: 0x0000755e617a1ed7 libedit.so.0`re_putc(el=0x0000755da913e000, c=40, shift=1) at refresh.c:206:2
+#    203          while (shift && (cur->h + w > sizeh))
+#    204              re_putc(el, ' ', 1);
+#    205
+# -> 206          el->el_vdisplay[cur->v][cur->h] = c;
+#    207          /* assumes !shift is only used for single-column chars */
+#    208          i = w;
+#    209          while (--i > 0)
+# (lldb) v el->el_vdisplay
+# (wint_t **) el->el_vdisplay = 0x0000000000000000
+llvm-core/lldb -libedit
