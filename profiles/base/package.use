@@ -22,6 +22,7 @@ net-misc/openssh -scp -ssl
 sys-auth/seatd server
 dev-lang/python -ensurepip # Bundled pip shit for venv
 dev-libs/libxml2 -ftp
+app-alternatives/ninja -reference samurai
 app-alternatives/awk -gawk nawk
 app-alternatives/sh -bash lksh
 app-alternatives/tar -gnu libarchive
