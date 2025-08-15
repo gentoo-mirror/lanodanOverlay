@@ -38,9 +38,11 @@ src_prepare() {
 	default
 
 	# complex: Depends on fuse.js + react
+	# [issue-4080] Cannot read properties of null (reading 'source')
 	sed -i \
 		-e "s;require('source-map');require('source-map-js');" \
 		-e "/check('complex'/,/}),/d" \
+		-e "/check('issue-4080'/,/}),/d" \
 		scripts/verify-source-map.js || die
 
 	# No need to fetch dependencies via npm
