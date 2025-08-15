@@ -45,11 +45,14 @@ src_prepare() {
 		-e "/check('issue-4080'/,/}),/d" \
 		scripts/verify-source-map.js || die
 
-	# No need to fetch dependencies via npm
-	sed -i -e 's;cd scripts && npm ci;true;' Makefile || die
-
-	# Not a dev repo
-	sed -i -e '/git diff/d' Makefile || die
+	# npm ci: No need to fetch dependencies via npm
+	# git diff: Not a dev repo
+	# node-unref-tests: Requires (127.0.0.1) networking
+	sed -i \
+		-e 's;cd scripts && npm ci;true;' \
+		-e '/git diff/d' \
+		-e '/^test-common:/s;node-unref-tests;;' \
+		Makefile || die
 }
 
 src_configure() {
