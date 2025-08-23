@@ -23,7 +23,6 @@ sys-apps/ed
 sys-apps/utils-std
 sys-apps/utils-extra
 sys-apps/man-pages-posix
-llvm-core/clang
 sys-kernel/installkernel
 dev-util/deblob
 net-misc/tinyssh
