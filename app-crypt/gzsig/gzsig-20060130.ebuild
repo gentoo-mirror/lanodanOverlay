@@ -22,6 +22,10 @@ PATCHES=(
 	"${FILESDIR}/gzsig-20060130-Drop-usage-of-ssh.c-and-ssh2.c-for-now.patch"
 )
 
+src_configure() {
+	export MANTARGET=man
+}
+
 src_compile() {
 	bmake || die
 }
