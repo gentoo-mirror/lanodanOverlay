@@ -1,5 +1,5 @@
 BDEPEND=dev-build/bmake
-DEFINED_PHASES=compile install
+DEFINED_PHASES=compile configure install
 DEPEND=dev-libs/openssl:=
 DESCRIPTION=gzsig(1) from MirBSD
 EAPI=8
@@ -9,4 +9,4 @@ LICENSE=BSD ISC MirOS
 RDEPEND=dev-libs/openssl:=
 SLOT=0
 SRC_URI=https://mbsd.evolvis.org/MirOS/dist/mir/gzsig/gzsig-20060130.tgz
-_md5_=ffd6a07e4751de0146d07c32a439ed9a
+_md5_=59e8b4a652a4222e7ea79653af95357f
