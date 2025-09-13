@@ -28,7 +28,7 @@ src_compile() {
 	emake \
 		AR="$(tc-getAR)" \
 		CC="$(tc-getCC)" CFLAGS="$CFLAGS" \
-		LD="$(tc-getCC)" LDFLAGS="$CFLAGS" \
+		LD="$(tc-getCC)" LDFLAGS="$LDFLAGS" \
 		LDDLL="$(tc-getCC)" LDDLLFLAGS="$CFLAGS $LDFLAGS -shared -Wl,-soname,libbearssl.so.${PV%%.*}" \
 		D=".so.$PV"
 }
