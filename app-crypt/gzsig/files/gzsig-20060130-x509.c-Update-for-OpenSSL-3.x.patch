@@ -1,0 +1,75 @@
+From 7ac9a2f8c3b275919ab2df012a5b223880e13f39 Mon Sep 17 00:00:00 2001
+From: "Haelwenn (lanodan) Monnier" <contact@hacktivis.me>
+Date: Sat, 13 Sep 2025 07:29:36 +0200
+Subject: [PATCH 3/4] x509.c: Update for OpenSSL 3.x
+
+---
+ x509.c | 38 ++++++++++++++++++++++++--------------
+ 1 file changed, 24 insertions(+), 14 deletions(-)
+
+diff --git a/x509.c b/x509.c
+index 99dcc52..53f51fc 100644
+--- a/x509.c
++++ b/x509.c
+@@ -75,18 +75,24 @@ x509_load_public(struct key *k, struct iovec *iov)
+ 		return (-1);
+ 
+ 	evp = X509_get_pubkey(cert);
+-	
+-	if (evp->type == EVP_PKEY_RSA) {
++
++	int evp_id = EVP_PKEY_base_id(evp);
++	switch(evp_id)
++	{
++	case EVP_PKEY_RSA:
+ 		k->type = KEY_RSA;
+-		k->data = (void *)RSAPublicKey_dup(evp->pkey.rsa);
+-	} else if (evp->type == EVP_PKEY_DSA) {
++		k->data = EVP_PKEY_get1_RSA(evp);
++		break;
++	case EVP_PKEY_DSA:
+ 		k->type = KEY_DSA;
+-		k->data = (void *)evp->pkey.dsa;
+-		evp->pkey.dsa = NULL;			/* XXX */
+-	} else {
++		k->data = EVP_PKEY_get1_DSA(evp);
++		break;
++	default:
++		fprintf(stderr, "gzsig: error: Unknown key type %d\n", evp_id);
+ 		X509_free(cert);
+ 		return (-1);
+ 	}
++
+ 	X509_free(cert);
+ 	
+ 	return (0);
+@@ -119,15 +125,19 @@ x509_load_private(struct key *k, struct iovec *iov)
+ 	if (evp == NULL)
+ 		return (-1);
+ 
+-	if (evp->type == EVP_PKEY_RSA) {
++	int evp_id = EVP_PKEY_base_id(evp);
++	switch(evp_id)
++	{
++	case EVP_PKEY_RSA:
+ 		k->type = KEY_RSA;
+-		k->data = (void *)evp->pkey.rsa;
+-		evp->pkey.rsa = NULL;			/* XXX */
+-	} else if (evp->type == EVP_PKEY_DSA) {
++		k->data = EVP_PKEY_get1_RSA(evp);
++		break;
++	case EVP_PKEY_DSA:
+ 		k->type = KEY_DSA;
+-		k->data = (void *)evp->pkey.dsa;
+-		evp->pkey.dsa = NULL;			/* XXX */
+-	} else {
++		k->data = EVP_PKEY_get1_DSA(evp);
++		break;
++	default:
++		fprintf(stderr, "gzsig: error: Unknown key type %d\n", evp_id);
+ 		EVP_PKEY_free(evp);
+ 		return (-1);
+ 	}
+-- 
+2.49.1
+

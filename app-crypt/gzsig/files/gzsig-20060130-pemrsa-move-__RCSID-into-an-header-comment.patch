@@ -1,0 +1,31 @@
+From d0dbb04d5460780fd2dd94de09fdff6e13675930 Mon Sep 17 00:00:00 2001
+From: "Haelwenn (lanodan) Monnier" <contact@hacktivis.me>
+Date: Sat, 13 Sep 2025 06:39:34 +0200
+Subject: [PATCH 2/4] pemrsa: move __RCSID into an header comment
+
+---
+ pemrsa.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/pemrsa.c b/pemrsa.c
+index 547864d..f65b68e 100644
+--- a/pemrsa.c
++++ b/pemrsa.c
+@@ -1,3 +1,5 @@
++/* $MirOS: src/usr.bin/gzsig/pemrsa.c,v 1.2 2020/11/26 01:16:10 tg Exp $ */
++
+ /*-
+  * Copyright (c) 2006
+  *	mirabilos <m@mirbsd.org>
+@@ -29,8 +31,6 @@
+ #include "key.h"
+ #include "pemrsa.h"
+ 
+-__RCSID("$MirOS: src/usr.bin/gzsig/pemrsa.c,v 1.2 2020/11/26 01:16:10 tg Exp $");
+-
+ #define PEMRSA_PUBKEY_MAGIC	"-----BEGIN PUBLIC KEY-----"
+ 
+ int
+-- 
+2.49.1
+
