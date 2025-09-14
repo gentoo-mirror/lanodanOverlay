@@ -25,10 +25,10 @@ DEPEND="
 	media-libs/glu
 	media-libs/libogg
 	media-libs/libsdl2
-	media-libs/libtheora
+	media-libs/libtheora:=
 	media-libs/libvorbis
 	media-libs/openal
-	sys-libs/zlib
+	sys-libs/zlib:=
 	virtual/opengl
 "
 RDEPEND="${DEPEND}"
