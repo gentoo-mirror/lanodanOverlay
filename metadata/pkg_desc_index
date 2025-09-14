@@ -93,7 +93,7 @@ dev-util/esbuild 0.25.9: extremely fast bundler for the web
 dev-util/genie 1170: GENie project generator tool (a fork of premake by Branimir Karadžić)
 dev-util/gyp-next 0.16.2: fork of the GYP (Generate Your Projects) build system for use in the Node.js projects
 dev-util/oyacc 6.6-r1: Portable OpenBSD Yacc
-dev-util/uglifyjs 3.17.4: JavaScript parser, minifier, compressor and beautifier toolkit
+dev-util/uglifyjs 3.19.3: JavaScript parser, minifier, compressor and beautifier toolkit
 games-arcade/crypt_of_the_necrodancer 1.29.14917: Crypt of the Necrodancer (GOG)
 games-arcade/emilia-pinball 9999: SDL OpenGL pinball game
 games-arcade/kobodeluxe 9999: An SDL port of xkobo, a addictive space shoot-em-up
