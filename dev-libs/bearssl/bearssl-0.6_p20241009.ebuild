@@ -22,6 +22,8 @@ src_prepare() {
 	default
 
 	rm T0Comp.exe || die
+
+	sed -i 's;^#define BR_MAX_RSA_SIZE.*;#define BR_MAX_RSA_SIZE 8192;' src/inner.h || die
 }
 
 src_compile() {
