@@ -12,4 +12,4 @@ RDEPEND=dev-lang/hare:=
 RESTRICT=!test? ( test )
 SLOT=0
 _eclasses_=git-r3	875eb471682d3e1f18da124be97dcc81
-_md5_=3ef68a2777c3ec3fc7d7a589157d6a6f
+_md5_=f9c5ac12da6ac4b7f1b4568119e88956
