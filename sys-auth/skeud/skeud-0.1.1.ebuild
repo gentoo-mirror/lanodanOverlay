@@ -3,30 +3,30 @@
 
 EAPI=8
 
+VERIFY_SIG_METHOD=signify
+inherit verify-sig
 
 DESCRIPTION="Simple and portable utilities to deal with user accounts (su, login)"
 HOMEPAGE="https://hacktivis.me/git/skeud"
-if [[ "${PV}" = *9999* ]]; then
-	inherit git-r3
-	EGIT_REPO_URI="https://anongit.hacktivis.me/git/skeud.git"
-else
-	VERIFY_SIG_METHOD=signify
-	inherit verify-sig
-
-	SRC_URI="
-		https://distfiles.hacktivis.me/releases/${PN}/${P}.tar.gz
-		verify-sig? ( https://distfiles.hacktivis.me/releases/${PN}/${P}.tar.gz.sign )
-	"
-	KEYWORDS="~amd64 ~arm64 ~riscv"
-fi
+SRC_URI="
+	https://distfiles.hacktivis.me/releases/${PN}/${P}.tar.gz
+	verify-sig? ( https://distfiles.hacktivis.me/releases/${PN}/${P}.tar.gz.sign )
+"
+KEYWORDS="~amd64 ~arm64 ~riscv"
 LICENSE="MPL-2.0"
 SLOT="0"
-IUSE="static test"
+IUSE="system test"
 
 RESTRICT="!test? ( test )"
 
 DEPEND="virtual/libcrypt:="
-RDEPEND="${DEPEND}"
+RDEPEND="
+	${DEPEND}
+	system? (
+		!sys-apps/shadow[su]
+		!sys-apps/util-linux[su]
+	)
+"
 BDEPEND="
 	test? (
 		dev-libs/atf
@@ -34,36 +34,38 @@ BDEPEND="
 	)
 "
 
-if [[ "${PV}" != 9999* ]]
-then
-	BDEPEND="${BDEPEND} verify-sig? ( sec-keys/signify-keys-lanodan:2025 )"
-	VERIFY_SIG_OPENPGP_KEY_PATH="/usr/share/signify-keys/signify-keys-lanodan-2025.pub"
+BDEPEND="${BDEPEND} verify-sig? ( sec-keys/signify-keys-lanodan:2025 )"
+VERIFY_SIG_OPENPGP_KEY_PATH="/usr/share/signify-keys/signify-keys-lanodan-2025.pub"
 
-	src_unpack() {
-		if use verify-sig; then
-			# Too many levels of symbolic links workaround
-			cd "${WORKDIR}" || die
-			cp "${DISTDIR}/${P}.tar.gz" "${DISTDIR}/${P}.tar.gz.sign" "${WORKDIR}/" || die
-			verify-sig_verify_detached "${P}.tar.gz" "${P}.tar.gz.sign"
-			unpack "${WORKDIR}/${P}.tar.gz"
-			rm "${WORKDIR}/${P}.tar.gz"
-		else
-			default
-		fi
-	}
-fi
-
-src_compile() {
-	use static && export LDSTATIC='-static'
-	default
+src_unpack() {
+	if use verify-sig; then
+		# Too many levels of symbolic links workaround
+		cd "${WORKDIR}" || die
+		cp "${DISTDIR}/${P}.tar.gz" "${DISTDIR}/${P}.tar.gz.sign" "${WORKDIR}/" || die
+		verify-sig_verify_detached "${P}.tar.gz" "${P}.tar.gz.sign"
+		unpack "${WORKDIR}/${P}.tar.gz"
+		rm "${WORKDIR}/${P}.tar.gz"
+	else
+		default
+	fi
 }
 
 src_install() {
-	emake install DESTDIR="${D}" PREFIX='/opt/lanodan' SYS_BINDIR='/opt/lanodan/bin'
+	if use system; then
+		into /
+		dosbin su
+		fperms 4755 sbin/su
+		newsbin login skeud-login
+		fperms 0755 sbin/skeud-login
 
-	# before 50baselayout
-	newenvd - 40skeud <<-EOF
-		PATH="/opt/lanodan/bin"
-		MANPATH="/opt/lanodan/share/man"
-	EOF
+		newman login.1 skeud-login.1
+	else
+		emake install DESTDIR="${D}" PREFIX='/opt/lanodan' SYS_BINDIR='/opt/lanodan/bin'
+
+		# before 50baselayout
+		newenvd - 40skeud <<-EOF
+			PATH="/opt/lanodan/bin"
+			MANPATH="/opt/lanodan/share/man"
+		EOF
+	fi
 }
