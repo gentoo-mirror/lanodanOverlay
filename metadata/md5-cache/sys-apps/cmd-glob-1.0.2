@@ -1,0 +1,13 @@
+BDEPEND=verify-sig? ( sec-keys/signify-keys-lanodan:2025 ) verify-sig? ( app-crypt/signify )
+DEFINED_PHASES=install unpack
+DESCRIPTION=glob(1) wrapper around glob(3), inspired by https://github.com/isaacs/node-glob
+EAPI=8
+HOMEPAGE=https://hacktivis.me/git/cmd-glob
+INHERIT=verify-sig
+IUSE=verify-sig
+KEYWORDS=~amd64 ~arm64 ~riscv
+LICENSE=MPL-2.0
+SLOT=0
+SRC_URI=https://distfiles.hacktivis.me/releases/cmd-glob/cmd-glob-1.0.2.tar.gz verify-sig? ( https://distfiles.hacktivis.me/releases/cmd-glob/cmd-glob-1.0.2.tar.gz.sign )
+_eclasses_=eapi9-pipestatus	d2c134036ac31c3085aebc9147f572bd	verify-sig	4e83419d7fb5d336f6a4de8193968319
+_md5_=12cc22d9e2b5a9ff75917cf129ce16d9

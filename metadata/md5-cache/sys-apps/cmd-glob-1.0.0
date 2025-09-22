@@ -1,9 +1,0 @@
-DEFINED_PHASES=install
-DESCRIPTION=glob(1) wrapper around glob(3), inspired by https://github.com/isaacs/node-glob
-EAPI=8
-HOMEPAGE=https://hacktivis.me/git/cmd-glob
-KEYWORDS=~amd64
-LICENSE=MPL-2.0
-SLOT=0
-SRC_URI=https://distfiles.hacktivis.me/releases/cmd-glob-1.0.0.tar.gz
-_md5_=f2e99a4d58ee945689820aaba4307c85
