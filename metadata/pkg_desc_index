@@ -66,7 +66,6 @@ dev-nodejs/json-parse-even-better-errors 2.3.1: JSON.parse with context informat
 dev-nodejs/konami 1.7.0: An easter-egg script for adding the Konami Code to your website or project
 dev-nodejs/kuroshiro 1.2.0-r0 1.2.0: Convert Japanese to Hiragana, Katakana or Romaji with furigana and okurigana modes
 dev-nodejs/kuroshiro-analyzer-mecab 1.0.0: Mecab morphological analyzer for kuroshiro
-dev-nodejs/lru-cache 7.13.2: cache object that deletes the least-recently-used items
 dev-nodejs/mecab-async 0.1.2: Asynchronous japanese morphological analyser using MeCab
 dev-nodejs/minimatch 5.1.0: glob matcher in javascript
 dev-nodejs/minimist 1.2.8: parse argument options
