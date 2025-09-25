@@ -17,7 +17,7 @@ dev-libs/boost
 # Last release (14.4.2) in 2015, known CVEs since
 # Including 2 heap buffer overflows triggerable from a file:
 # CVE-2021-23159, CVE-2021-40426
-media-sound/sox
+<media-sound/sox-14.3
 
 # Haelwenn (lanodan) Monnier <contact@hacktivis.me> (2024-06-04)
 # Last release (0.8.0) in 2009 with several known bugs
@@ -91,6 +91,8 @@ dev-lang/nim
 # Haelwenn (lanodan) Monnier <contact@hacktivis.me> 2023-01-30
 # No bootstrapping, you're supposed to download the blobs from npmjs.org
 # which isn't trustworthy
+# https://github.com/microsoft/TypeScript-go
+# which will eventually merge in typescript proper should be checked
 dev-lang/typescript
 
 # Haelwenn (lanodan) Monnier <contact@hacktivis.me> 2018-12-27
