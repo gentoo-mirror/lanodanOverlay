@@ -10,7 +10,7 @@ HOMEPAGE="https://github.com/illiliti/libudev-zero"
 SRC_URI="https://github.com/illiliti/libudev-zero/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="ISC"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 IUSE="static-libs"
 
