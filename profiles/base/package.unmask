@@ -24,3 +24,6 @@ net-libs/webkit-gtk:4.1
 sci-geosciences/geocode-glib:2
 >=sci-geosciences/gnome-maps-43
 sys-libs/gcompat
+
+# Haelwenn (lanodan) Monnier <contact@hacktivis.me> (2025-10-10)
+>=sys-devel/gettext-666
