@@ -12,7 +12,7 @@ S="${WORKDIR}/gettext-tiny-${PV}/"
 
 LICENSE="MIT"
 SLOT="tiny"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="shim"
 
 RDEPEND="!<sys-devel/gettext-666:0"
