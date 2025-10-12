@@ -9,5 +9,5 @@ LICENSE=Apache-2.0-with-LLVM-exceptions Apache-2.0 MIT CC0-1.0 BSD-2 MIT BSD
 RDEPEND=llvm-core/clang llvm-core/llvm
 SLOT=0
 SRC_URI=https://github.com/WebAssembly/wasi-libc/archive/refs/tags/wasi-sdk-27.tar.gz -> wasi-libc-wasi-sdk-27.tar.gz
-_eclasses_=toolchain-funcs	a0b29008c671a362b505f96fa80ce9c0
+_eclasses_=toolchain-funcs	98d9f464d912ae6b7316fb8a3721f5db
 _md5_=a96e272208c5564dfaa60f95a133209d
