@@ -18,7 +18,7 @@ RDEPEND="
 	>=dev-libs/stfl-0.21
 	>=net-misc/curl-7.18.0
 	>=dev-libs/json-c-0.11:=
-	dev-libs/libxml2
+	dev-libs/libxml2:=
 	sys-libs/ncurses:0=[unicode(+)]
 "
 DEPEND="${RDEPEND}
