@@ -1,3 +1,9 @@
+# Haelwenn (lanodan) Monnier <contact@hacktivis.me> (2025-10-17)
+# Unmaintained, several known security issues (double-free, OOB read, …)
+# CVE-2017-16516 CVE-2022-24795 CVE-2023-33460
+# https://github.com/lloyd/yajl/issues/219
+dev-libs/yajl
+
 # Haelwenn (lanodan) Monnier <contact@hacktivis.me> (2025-06-11)
 # Non-Free
 # https://bugzilla.redhat.com/show_bug.cgi?id=449037
