@@ -44,3 +44,8 @@ then
 		fi
 	}
 fi
+
+src_configure() {
+	export PREFIX=/usr
+	use static && export LDSTATIC=-static
+}
