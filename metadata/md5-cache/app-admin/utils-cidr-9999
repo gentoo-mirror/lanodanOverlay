@@ -1,5 +1,5 @@
 BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
-DEFINED_PHASES=unpack
+DEFINED_PHASES=configure unpack
 DESCRIPTION=utilities to manipulate CIDR ip-ranges
 EAPI=8
 HOMEPAGE=https://hacktivis.me/projects/utils-cidr
@@ -9,4 +9,4 @@ LICENSE=MPL-2.0
 PROPERTIES=live
 SLOT=0
 _eclasses_=git-r3	875eb471682d3e1f18da124be97dcc81
-_md5_=ab33e38fc1a03b4224174cb6d606f1b9
+_md5_=c708f52876f177858a0fc8949d7224b9
