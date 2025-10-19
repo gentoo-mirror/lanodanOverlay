@@ -43,7 +43,8 @@ RESTRICT="test" # Lots of issues due to freetype changes and more; ever since ne
 PATCHES=(
 	# https://bugzilla.gnome.org/show_bug.cgi?id=653323
 	"${FILESDIR}/${PN}-2.40.12-gtk-optional.patch"
-	"${FILESDIR}/librsvg-2.40.21-xmlError-function-pointer-type.patch"
+	# Fix build with libxml2 2.13+
+	"${FILESDIR}/${PN}-2.40.21-libxml2-2.13.patch"
 )
 
 src_prepare() {
