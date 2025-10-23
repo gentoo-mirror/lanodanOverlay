@@ -145,7 +145,7 @@ sys-apps/cmd-glob 1.0.2: glob(1) wrapper around glob(3), inspired by https://git
 sys-apps/rc-status-page 9999: Basic HTML status page based on OpenRC
 sys-apps/sdate 0.7: never ending September date
 sys-apps/tcb 1.2-r1: Libraries and tools implementing the tcb password shadowing scheme
-sys-apps/utils-std 0.0.10 9999: Collection of commonly available Unix tools
+sys-apps/utils-std 0.0.12 9999: Collection of commonly available Unix tools
 sys-apps/xdg-dbus-proxy 0.1.2: filtering proxy for D-Bus connections
 sys-auth/skeud 0.1.2: Simple and portable utilities to deal with user accounts (su, login)
 sys-devel/binutils-x86_64-bunnix 9999: Tools necessary to build programs
