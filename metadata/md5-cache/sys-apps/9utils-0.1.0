@@ -12,5 +12,5 @@ RDEPEND=dev-lang/hare:=
 RESTRICT=!test? ( test )
 SLOT=0
 SRC_URI=https://distfiles.hacktivis.me/releases/9utils/9utils-0.1.0.tar.gz verify-sig? ( https://distfiles.hacktivis.me/releases/9utils/9utils-0.1.0.tar.gz.sign )
-_eclasses_=eapi9-pipestatus	d2c134036ac31c3085aebc9147f572bd	verify-sig	103bd85bd89e7550554d65afe22e8d04
+_eclasses_=eapi9-pipestatus	d2c134036ac31c3085aebc9147f572bd	verify-sig	2cf23b136af9fd4c3fceadc34d0f98ad
 _md5_=f9c5ac12da6ac4b7f1b4568119e88956
