@@ -3,11 +3,12 @@ USE="
 	cacert cjk dane idn mandoc jumbo-build smp threads urandom iproute2 caps pic metric syslog
 "
 
-COMMON_FLAGS="-O2 -pipe -march=native -mtune=native -ggdb -Wall -fPIC -frecord-gcc-switches -Wwrite-strings -Wno-error=incompatible-pointer-types-discards-qualifiers"
-CFLAGS="${COMMON_FLAGS}"
-OBJCCFLAGS="${COMMON_FLAGS}"
-CXXFLAGS="${COMMON_FLAGS}"
-OBJCXXFLAGS="${COMMON_FLAGS}"
+COMMON_FLAGS="-O2 -pipe -march=native -mtune=native -ggdb -Wall -fPIC -frecord-gcc-switches -Wwrite-strings"
+CLANG_EXTRA_FLAGS="-Wno-error=incompatible-pointer-types-discards-qualifiers"
+CFLAGS="${COMMON_FLAGS} ${CLANG_EXTRA_FLAGS}"
+OBJCCFLAGS="${COMMON_FLAGS} ${CLANG_EXTRA_FLAGS}"
+CXXFLAGS="${COMMON_FLAGS} ${CLANG_EXTRA_FLAGS}"
+OBJCXXFLAGS="${COMMON_FLAGS} ${CLANG_EXTRA_FLAGS}"
 LDFLAGS="-Wl,--as-needed -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -Wl,-O1 -Wl,--defsym=__gentoo_check_ldflags__=0"
 LDLINKFLAGS="--as-needed     -z noexecstack     -z relro     -z now     -O1     --defsym=__gentoo_check_ldflags__=0"
 
